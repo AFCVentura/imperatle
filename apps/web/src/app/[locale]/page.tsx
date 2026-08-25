@@ -1,8 +1,19 @@
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
-export default function Home() {
-  const t = useTranslations("HomePage");
+async function getApiHealth() {
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/health`);
+    const data: { status: string } = await res.json();
+    return data.status;
+  } catch {
+    return "unreachable";
+  }
+}
+
+export default async function Home() {
+  const t = await getTranslations("HomePage");
+  const apiStatus = await getApiHealth();
 
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
@@ -21,6 +32,9 @@ export default function Home() {
           </h1>
           <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
             {t("subtitle")}
+          </p>
+          <p className="text-sm text-zinc-500 dark:text-zinc-500">
+            API status: {apiStatus}
           </p>
         </div>
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
