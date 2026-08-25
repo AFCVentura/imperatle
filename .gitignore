@@ -5,6 +5,8 @@ node_modules/
 # .NET
 bin/
 obj/
+.vs/
+*.user
 
 # Env / secrets
 .env
