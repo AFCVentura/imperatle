@@ -14,7 +14,30 @@ public class Empire
     // Astronomical year numbering (negative = BCE), representing the
     // "greatest territorial extent" reference point already decided for the game.
     public int ReferenceYear { get; set; }
-    public YearPrecision YearPrecision { get; set; }
+    public YearPrecision ReferenceYearPrecision { get; set; }
+    public BorderConfidence MapBorderConfidence { get; set; }
 
+    public List<Continent> Continents { get; set; } = [];
+    public Continent PrimaryContinent { get; set; }
+
+    public string SubEraEn { get; set; } = string.Empty;
+    public string SubEraPt { get; set; } = string.Empty;
+
+    public string CapitalEn { get; set; } = string.Empty;
+    public string CapitalPt { get; set; } = string.Empty;
+
+    public string LanguageEn { get; set; } = string.Empty;
+    public string LanguagePt { get; set; } = string.Empty;
+
+    public string ReligionEn { get; set; } = string.Empty;
+    public string ReligionPt { get; set; } = string.Empty;
+
+    // Empire's lifespan, distinct from ReferenceYear (its peak).
+    public int StartYear { get; set; }
+    public YearPrecision StartYearPrecision { get; set; }
+    public int EndYear { get; set; }
+    public YearPrecision EndYearPrecision { get; set; }
+
+    // Max 3, revealed in Order (0 = least obvious, 2 = most obvious).
     public List<EmpireHint> Hints { get; set; } = [];
 }
