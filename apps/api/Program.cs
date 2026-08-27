@@ -30,6 +30,10 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+
+    using var seedScope = app.Services.CreateScope();
+    var db = seedScope.ServiceProvider.GetRequiredService<ImperatleDbContext>();
+    await DevSeeder.SeedAsync(db);
 }
 
 app.UseHttpsRedirection();
