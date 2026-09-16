@@ -1,9 +1,12 @@
+using System.Threading.RateLimiting;
 using Imperatle.Api.Data;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 const string FrontendCorsPolicy = "FrontendCorsPolicy";
+const string AnonymousCookieName = "imperatle_aid";
 
 // Add services to the container.
 
@@ -20,7 +23,29 @@ builder.Services.AddCors(options =>
     {
         policy.WithOrigins("http://localhost:3000")
             .AllowAnyHeader()
-            .AllowAnyMethod();
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+});
+
+builder.Services.AddRateLimiter(options =>
+{
+    options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+
+    // Partitioned by the anonymous cookie when present (falls back to IP for
+    // requests without one yet) so one abusive client can't exhaust another's quota.
+    options.AddPolicy("guess", httpContext =>
+    {
+        var key = httpContext.Request.Cookies[AnonymousCookieName]
+            ?? httpContext.Connection.RemoteIpAddress?.ToString()
+            ?? "unknown";
+
+        return RateLimitPartition.GetFixedWindowLimiter(key, _ => new FixedWindowRateLimiterOptions
+        {
+            Window = TimeSpan.FromMinutes(1),
+            PermitLimit = 20,
+            QueueLimit = 0,
+        });
     });
 });
 
@@ -39,6 +64,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseCors(FrontendCorsPolicy);
+
+app.UseRateLimiter();
 
 app.UseAuthorization();
 

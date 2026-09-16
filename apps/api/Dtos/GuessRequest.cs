@@ -1,3 +1,3 @@
 namespace Imperatle.Api.Dtos;
 
-public record GuessRequest(int EmpireId, int AttemptNumber);
+public record GuessRequest(int EmpireId);

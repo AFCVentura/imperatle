@@ -8,6 +8,7 @@ public class ImperatleDbContext(DbContextOptions<ImperatleDbContext> options) : 
     public DbSet<Empire> Empires => Set<Empire>();
     public DbSet<EmpireHint> EmpireHints => Set<EmpireHint>();
     public DbSet<DailyChallenge> DailyChallenges => Set<DailyChallenge>();
+    public DbSet<PlayerChallengeProgress> PlayerChallengeProgress => Set<PlayerChallengeProgress>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -22,6 +23,10 @@ public class ImperatleDbContext(DbContextOptions<ImperatleDbContext> options) : 
 
         modelBuilder.Entity<DailyChallenge>()
             .HasIndex(c => c.Date)
+            .IsUnique();
+
+        modelBuilder.Entity<PlayerChallengeProgress>()
+            .HasIndex(p => new { p.AnonymousId, p.Date })
             .IsUnique();
     }
 }
