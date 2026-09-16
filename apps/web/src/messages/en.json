@@ -2,5 +2,56 @@
   "HomePage": {
     "title": "Imperatle",
     "subtitle": "Guess the historical empire"
+  },
+  "Game": {
+    "attempts": "Attempts: {used}/{total}",
+    "guessPlaceholder": "Type an empire name…",
+    "guessButton": "Guess",
+    "noChallengeToday": "No challenge today. Check back soon!",
+    "loadError": "Couldn't load today's challenge. Try refreshing.",
+    "correctTitle": "Correct!",
+    "gameOverTitle": "Out of attempts",
+    "answerWasLabel": "The answer was",
+    "mapComingSoon": "Map coming soon",
+    "guessHistoryTitle": "Your guesses",
+    "submitError": "Something went wrong. Try again.",
+    "playAgainTomorrow": "Come back tomorrow for a new empire!",
+    "fields": {
+      "era": "Era",
+      "mapConfidence": "Map border confidence",
+      "continents": "Continent(s)",
+      "subEra": "Sub-era",
+      "capital": "Capital",
+      "language": "Language",
+      "religion": "Religion",
+      "referenceYear": "Peak year",
+      "period": "Existed",
+      "curiosities": "Trivia"
+    },
+    "enums": {
+      "broadEra": {
+        "Antiquity": "Antiquity",
+        "MiddleAges": "Middle Ages",
+        "Modern": "Modern",
+        "Contemporary": "Contemporary"
+      },
+      "borderConfidence": {
+        "Precise": "Precise",
+        "Approximate": "Approximate",
+        "Speculative": "Speculative"
+      },
+      "continent": {
+        "Africa": "Africa",
+        "Asia": "Asia",
+        "Europe": "Europe",
+        "NorthAmerica": "North America",
+        "SouthAmerica": "South America",
+        "Oceania": "Oceania"
+      }
+    },
+    "year": {
+      "bce": "{year} BCE",
+      "ce": "{year} CE"
+    }
   }
 }

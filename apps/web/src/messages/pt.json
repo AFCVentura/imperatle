@@ -2,5 +2,56 @@
   "HomePage": {
     "title": "Imperatle",
     "subtitle": "Adivinhe o império histórico"
+  },
+  "Game": {
+    "attempts": "Tentativas: {used}/{total}",
+    "guessPlaceholder": "Digite o nome de um império…",
+    "guessButton": "Adivinhar",
+    "noChallengeToday": "Sem desafio hoje. Volte em breve!",
+    "loadError": "Não deu pra carregar o desafio de hoje. Tente atualizar a página.",
+    "correctTitle": "Acertou!",
+    "gameOverTitle": "Tentativas esgotadas",
+    "answerWasLabel": "A resposta era",
+    "mapComingSoon": "Mapa em breve",
+    "guessHistoryTitle": "Seus palpites",
+    "submitError": "Algo deu errado. Tente de novo.",
+    "playAgainTomorrow": "Volte amanhã pra um novo império!",
+    "fields": {
+      "era": "Era",
+      "mapConfidence": "Confiança das fronteiras",
+      "continents": "Continente(s)",
+      "subEra": "Sub-era",
+      "capital": "Capital",
+      "language": "Idioma",
+      "religion": "Religião",
+      "referenceYear": "Ano de auge",
+      "period": "Existiu",
+      "curiosities": "Curiosidades"
+    },
+    "enums": {
+      "broadEra": {
+        "Antiquity": "Antiguidade",
+        "MiddleAges": "Idade Média",
+        "Modern": "Idade Moderna",
+        "Contemporary": "Contemporânea"
+      },
+      "borderConfidence": {
+        "Precise": "Precisas",
+        "Approximate": "Aproximadas",
+        "Speculative": "Especulativas"
+      },
+      "continent": {
+        "Africa": "África",
+        "Asia": "Ásia",
+        "Europe": "Europa",
+        "NorthAmerica": "América do Norte",
+        "SouthAmerica": "América do Sul",
+        "Oceania": "Oceania"
+      }
+    },
+    "year": {
+      "bce": "{year} a.E.C.",
+      "ce": "{year} d.C."
+    }
   }
 }
