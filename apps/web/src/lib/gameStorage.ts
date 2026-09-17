@@ -37,3 +37,18 @@ export function saveGameProgress(progress: GameProgress): void {
     // localStorage unavailable (private mode, disabled) -- game still works, just without persistence.
   }
 }
+
+// Dev-only debug tool: wipes every day's saved progress, not just today's,
+// since it's only ever called from the reset button next to the brand.
+export function clearAllGameProgress(): void {
+  try {
+    const keysToRemove: string[] = [];
+    for (let i = 0; i < window.localStorage.length; i++) {
+      const key = window.localStorage.key(i);
+      if (key?.startsWith(STORAGE_KEY_PREFIX)) keysToRemove.push(key);
+    }
+    keysToRemove.forEach((key) => window.localStorage.removeItem(key));
+  } catch {
+    // localStorage unavailable -- nothing to clear.
+  }
+}

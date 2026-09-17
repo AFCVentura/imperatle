@@ -17,14 +17,11 @@ export default async function Home() {
   }
 
   return (
-    <div className="flex flex-1 flex-col items-center gap-8 bg-zinc-50 px-4 py-10 dark:bg-black sm:px-6">
-      <header className="text-center">
-        <h1 className="text-3xl font-semibold tracking-tight text-black dark:text-zinc-50">{tHome("title")}</h1>
-        <p className="mt-1 text-lg text-zinc-600 dark:text-zinc-400">{tHome("subtitle")}</p>
-      </header>
+    <div className="flex flex-1 flex-col items-center gap-6 px-4 py-8 sm:px-6">
+      <p className="text-center text-sm text-foreground/60">{tHome("subtitle")}</p>
 
       {loadError && <p className="text-sm text-red-500">{tGame("loadError")}</p>}
-      {!loadError && !challenge && <p className="text-zinc-600 dark:text-zinc-400">{tGame("noChallengeToday")}</p>}
+      {!loadError && !challenge && <p className="text-foreground/60">{tGame("noChallengeToday")}</p>}
       {!loadError && challenge && <GameBoard challenge={challenge} empires={empires} />}
     </div>
   );

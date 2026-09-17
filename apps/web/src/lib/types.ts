@@ -23,6 +23,7 @@ export function continentFromApi(value: number): Continent {
 export interface TodayChallenge {
   date: string;
   attemptsAllowed: number;
+  challengeNumber: number;
 }
 
 export interface EmpireSummary {

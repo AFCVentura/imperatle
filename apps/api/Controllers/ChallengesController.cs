@@ -10,7 +10,7 @@ namespace Imperatle.Api.Controllers;
 
 [ApiController]
 [Route("challenges")]
-public class ChallengesController(ImperatleDbContext db) : ControllerBase
+public class ChallengesController(ImperatleDbContext db, IWebHostEnvironment env) : ControllerBase
 {
     // Anonymous identity cookie -- a random id, not tied to any account yet.
     // Long-lived so a browser keeps its history across days without an account.
@@ -27,7 +27,8 @@ public class ChallengesController(ImperatleDbContext db) : ControllerBase
             return NotFound();
         }
 
-        return Ok(new TodayChallengeResponse(today, GameRules.AttemptsAllowed));
+        var challengeNumber = today.DayNumber - GameRules.LaunchDate.DayNumber + 1;
+        return Ok(new TodayChallengeResponse(today, GameRules.AttemptsAllowed, challengeNumber));
     }
 
     [HttpPost("today/guess")]
@@ -93,6 +94,35 @@ public class ChallengesController(ImperatleDbContext db) : ControllerBase
         }
 
         return Ok(new GuessResponse(false, false, RevealBuilder.BuildReveal(challenge.Empire, attemptNumber), null));
+    }
+
+    // Dev-only: lets the debug button in the UI replay today's challenge
+    // instead of waiting for tomorrow. Hidden entirely outside Development so
+    // it can never become a public way to bypass the attempt tracking above.
+    [HttpPost("today/reset")]
+    public async Task<IActionResult> ResetToday()
+    {
+        if (!env.IsDevelopment())
+        {
+            return NotFound();
+        }
+
+        if (!Guid.TryParse(Request.Cookies[AnonymousCookieName], out var anonymousId))
+        {
+            return NoContent();
+        }
+
+        var today = DateOnly.FromDateTime(DateTime.UtcNow);
+        var progress = await db.PlayerChallengeProgress
+            .FirstOrDefaultAsync(p => p.AnonymousId == anonymousId && p.Date == today);
+
+        if (progress is not null)
+        {
+            db.PlayerChallengeProgress.Remove(progress);
+            await db.SaveChangesAsync();
+        }
+
+        return NoContent();
     }
 
     private Guid GetOrCreateAnonymousId()

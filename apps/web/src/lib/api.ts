@@ -25,3 +25,13 @@ export async function submitGuess(empireId: number): Promise<GuessResponse> {
   if (!res.ok) throw new Error(`Failed to submit guess: ${res.status}`);
   return res.json();
 }
+
+// Dev-only debug tool -- the API rejects this outside Development, see
+// ChallengesController.ResetToday.
+export async function resetTodayChallenge(): Promise<void> {
+  const res = await fetch(`${API_URL}/challenges/today/reset`, {
+    method: "POST",
+    credentials: "include",
+  });
+  if (!res.ok) throw new Error(`Failed to reset today's challenge: ${res.status}`);
+}

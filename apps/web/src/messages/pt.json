@@ -1,7 +1,23 @@
 {
   "HomePage": {
-    "title": "Imperatle",
     "subtitle": "Adivinhe o império histórico"
+  },
+  "Header": {
+    "menuLabel": "Menu",
+    "closeLabel": "Fechar menu",
+    "menu": {
+      "createAccount": "Criar conta",
+      "statistics": "Estatísticas",
+      "howToPlay": "Como jogar",
+      "support": "Apoiar o projeto",
+      "feedback": "Feedback",
+      "about": "Sobre"
+    }
+  },
+  "Footer": {
+    "copyright": "© {year} Imperatle",
+    "support": "Apoiar o projeto",
+    "challengeNumber": "Imperatle #{number}"
   },
   "Game": {
     "attempts": "Tentativas: {used}/{total}",

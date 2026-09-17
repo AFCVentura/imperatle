@@ -1,7 +1,23 @@
 {
   "HomePage": {
-    "title": "Imperatle",
     "subtitle": "Guess the historical empire"
+  },
+  "Header": {
+    "menuLabel": "Menu",
+    "closeLabel": "Close menu",
+    "menu": {
+      "createAccount": "Create account",
+      "statistics": "Statistics",
+      "howToPlay": "How to play",
+      "support": "Support the project",
+      "feedback": "Feedback",
+      "about": "About"
+    }
+  },
+  "Footer": {
+    "copyright": "© {year} Imperatle",
+    "support": "Support the project",
+    "challengeNumber": "Imperatle #{number}"
   },
   "Game": {
     "attempts": "Attempts: {used}/{total}",
