@@ -1,12 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { submitGuess } from "@/lib/api";
 import { loadGameProgress, saveGameProgress, type GuessHistoryEntry } from "@/lib/gameStorage";
 import { pickLocalized } from "@/lib/pickLocalized";
-import type { ChallengeReveal, EmpireAnswer, EmpireSummary, TodayChallenge } from "@/lib/types";
+import { comparisonFromApi, EMPTY_REVEAL, type ChallengeReveal, type EmpireAnswer, type EmpireSummary, type TodayChallenge } from "@/lib/types";
 import { EmpireAutocomplete } from "./EmpireAutocomplete";
+import { GuessCards } from "./GuessCards";
 import { HintsPanel } from "./HintsPanel";
 
 interface GameBoardProps {
@@ -58,7 +60,14 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
 
       setGuesses((prev) => [
         ...prev,
-        { empireId: empire.id, nameEn: empire.nameEn, namePt: empire.namePt, correct: result.correct },
+        {
+          empireId: empire.id,
+          nameEn: empire.nameEn,
+          namePt: empire.namePt,
+          correct: result.correct,
+          areaComparison: result.comparison ? comparisonFromApi(result.comparison.area) : null,
+          durationComparison: result.comparison ? comparisonFromApi(result.comparison.duration) : null,
+        },
       ]);
       if (result.reveal) setReveal(result.reveal);
       if (result.gameOver) {
@@ -83,9 +92,23 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
         {t("attempts", { used: guesses.length, total: challenge.attemptsAllowed })}
       </p>
 
-      <div className="flex h-48 items-center justify-center rounded-xl border-2 border-dashed border-zinc-300 text-sm text-zinc-400 dark:border-zinc-700">
-        {t("mapComingSoon")}
-      </div>
+      {challenge.mapUrl ? (
+        <div className="flex justify-center rounded-xl border border-zinc-200 bg-white p-4 dark:border-zinc-800">
+          <Image
+            src={challenge.mapUrl}
+            alt={t("mapAlt")}
+            width={553}
+            height={553}
+            unoptimized
+            priority
+            className="h-auto w-full max-w-sm"
+          />
+        </div>
+      ) : (
+        <div className="flex h-48 items-center justify-center rounded-xl border-2 border-dashed border-zinc-300 text-sm text-zinc-400 dark:border-zinc-700">
+          {t("mapComingSoon")}
+        </div>
+      )}
 
       {!gameOver && (
         <div className="flex gap-2">
@@ -102,21 +125,10 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
 
       {error && <p className="text-sm text-red-500">{t("submitError")}</p>}
 
-      {guesses.length > 0 && (
-        <div>
-          <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-zinc-500">{t("guessHistoryTitle")}</h2>
-          <ul className="flex flex-col gap-1">
-            {guesses.map((g, i) => (
-              <li key={i} className="flex items-center gap-2 text-sm">
-                <span>{g.correct ? "✅" : "❌"}</span>
-                <span>{pickLocalized(g.nameEn, g.namePt, locale)}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      {reveal && !gameOver && <HintsPanel reveal={reveal} />}
+      <div>
+        <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-zinc-500">{t("guessHistoryTitle")}</h2>
+        <GuessCards guesses={guesses} attemptsAllowed={challenge.attemptsAllowed} />
+      </div>
 
       {gameOver && answer && (
         <div className="rounded-xl border border-zinc-200 p-4 dark:border-zinc-800">
@@ -124,12 +136,11 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
           <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
             {t("answerWasLabel")}: <strong>{pickLocalized(answer.nameEn, answer.namePt, locale)}</strong>
           </p>
-          <div className="mt-3">
-            <HintsPanel reveal={answer} />
-          </div>
-          <p className="mt-3 text-sm text-zinc-500">{t("playAgainTomorrow")}</p>
+          <p className="mt-1 text-sm text-zinc-500">{t("playAgainTomorrow")}</p>
         </div>
       )}
+
+      <HintsPanel reveal={gameOver && answer ? answer : (reveal ?? EMPTY_REVEAL)} />
     </div>
   );
 }

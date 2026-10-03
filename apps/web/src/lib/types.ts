@@ -20,10 +20,25 @@ export function continentFromApi(value: number): Continent {
   return CONTINENTS[value];
 }
 
+export const AREA_PRECISIONS = ["Exact", "Approximate"] as const;
+export type AreaPrecision = (typeof AREA_PRECISIONS)[number];
+export function areaPrecisionFromApi(value: number): AreaPrecision {
+  return AREA_PRECISIONS[value];
+}
+
+// Ascending order (Smaller < Approximate < Bigger), mirrors the backend enum.
+export const COMPARISON_RESULTS = ["Smaller", "Approximate", "Bigger"] as const;
+export type ComparisonResult = (typeof COMPARISON_RESULTS)[number];
+export function comparisonFromApi(value: number): ComparisonResult {
+  return COMPARISON_RESULTS[value];
+}
+
 export interface TodayChallenge {
   date: string;
   attemptsAllowed: number;
   challengeNumber: number;
+  // Path served from apps/web/public; null while the empire has no map yet.
+  mapUrl: string | null;
 }
 
 export interface EmpireSummary {
@@ -57,9 +72,42 @@ export interface ChallengeReveal {
   startYearPrecision: number | null;
   endYear: number | null;
   endYearPrecision: number | null;
+  durationNotesEn: string | null;
+  durationNotesPt: string | null;
+  peakAreaKm2: number | null;
+  areaPrecision: number | null;
   religionEn: string | null;
   religionPt: string | null;
 }
+
+// All-locked placeholder shown before the player's first guess -- lets the
+// hint board render every row/card from the start instead of appearing as
+// guesses come in.
+export const EMPTY_REVEAL: ChallengeReveal = {
+  broadEra: null,
+  mapBorderConfidence: null,
+  continents: null,
+  primaryContinent: null,
+  subEraEn: null,
+  subEraPt: null,
+  capitalEn: null,
+  capitalPt: null,
+  languageEn: null,
+  languagePt: null,
+  hints: null,
+  referenceYear: null,
+  referenceYearPrecision: null,
+  startYear: null,
+  startYearPrecision: null,
+  endYear: null,
+  endYearPrecision: null,
+  durationNotesEn: null,
+  durationNotesPt: null,
+  peakAreaKm2: null,
+  areaPrecision: null,
+  religionEn: null,
+  religionPt: null,
+};
 
 export interface EmpireAnswer {
   id: number;
@@ -83,8 +131,17 @@ export interface EmpireAnswer {
   startYearPrecision: number;
   endYear: number;
   endYearPrecision: number;
+  durationNotesEn: string;
+  durationNotesPt: string;
+  peakAreaKm2: number;
+  areaPrecision: number;
   religionEn: string;
   religionPt: string;
+}
+
+export interface GuessComparison {
+  area: number;
+  duration: number;
 }
 
 export interface GuessResponse {
@@ -92,4 +149,5 @@ export interface GuessResponse {
   gameOver: boolean;
   reveal: ChallengeReveal | null;
   answer: EmpireAnswer | null;
+  comparison: GuessComparison | null;
 }

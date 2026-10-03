@@ -29,9 +29,16 @@
     "gameOverTitle": "Out of attempts",
     "answerWasLabel": "The answer was",
     "mapComingSoon": "Map coming soon",
+    "mapAlt": "Map of today's empire at its greatest extent",
     "guessHistoryTitle": "Your guesses",
     "submitError": "Something went wrong. Try again.",
     "playAgainTomorrow": "Come back tomorrow for a new empire!",
+    "emptyGuessSlot": "—",
+    "correctGuessMark": "Correct!",
+    "guessColumns": {
+      "area": "Area",
+      "duration": "Duration"
+    },
     "fields": {
       "era": "Era",
       "mapConfidence": "Map border confidence",
@@ -42,7 +49,11 @@
       "religion": "Religion",
       "referenceYear": "Peak year",
       "period": "Existed",
-      "curiosities": "Trivia"
+      "area": "Peak area",
+      "curiosities": "Trivia",
+      "curiosity": "Trivia {n}",
+      "unlockedAt": "Unlocked on attempt {n}",
+      "showNote": "Show note"
     },
     "enums": {
       "broadEra": {

@@ -1,14 +1,29 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
+import { formatAreaKm2 } from "@/lib/formatArea";
 import { splitAstronomicalYear } from "@/lib/formatYear";
 import { pickLocalized } from "@/lib/pickLocalized";
-import { borderConfidenceFromApi, broadEraFromApi, continentFromApi, type ChallengeReveal } from "@/lib/types";
+import {
+  areaPrecisionFromApi,
+  borderConfidenceFromApi,
+  broadEraFromApi,
+  continentFromApi,
+  type ChallengeReveal,
+} from "@/lib/types";
+import { HintCard } from "./HintCard";
 
 interface HintsPanelProps {
   // EmpireAnswer's fields are non-null versions of the same names, so it
   // structurally satisfies this type -- callers pass it as-is at game over.
   reveal: ChallengeReveal;
+}
+
+interface Slot {
+  key: string;
+  label: string;
+  value: string | null;
+  notes?: string | null;
 }
 
 export function HintsPanel({ reveal }: HintsPanelProps) {
@@ -20,90 +35,137 @@ export function HintsPanel({ reveal }: HintsPanelProps) {
     return isBce ? t("year.bce", { year: absoluteYear }) : t("year.ce", { year: absoluteYear });
   }
 
-  const rows: { key: string; label: string; value: string }[] = [];
+  const durationNotes = reveal.durationNotesEn
+    ? pickLocalized(reveal.durationNotesEn, reveal.durationNotesPt ?? reveal.durationNotesEn, locale)
+    : null;
 
-  if (reveal.broadEra !== null) {
-    rows.push({ key: "era", label: t("fields.era"), value: t(`enums.broadEra.${broadEraFromApi(reveal.broadEra)}`) });
-  }
-  if (reveal.mapBorderConfidence !== null) {
-    rows.push({
-      key: "mapConfidence",
-      label: t("fields.mapConfidence"),
-      value: t(`enums.borderConfidence.${borderConfidenceFromApi(reveal.mapBorderConfidence)}`),
-    });
-  }
-  if (reveal.continents && reveal.continents.length > 0) {
-    rows.push({
-      key: "continents",
-      label: t("fields.continents"),
-      value: reveal.continents.map((c) => t(`enums.continent.${continentFromApi(c)}`)).join(", "),
-    });
-  }
-  if (reveal.subEraEn) {
-    rows.push({
-      key: "subEra",
-      label: t("fields.subEra"),
-      value: pickLocalized(reveal.subEraEn, reveal.subEraPt ?? reveal.subEraEn, locale),
-    });
-  }
-  if (reveal.capitalEn) {
-    rows.push({
-      key: "capital",
-      label: t("fields.capital"),
-      value: pickLocalized(reveal.capitalEn, reveal.capitalPt ?? reveal.capitalEn, locale),
-    });
-  }
-  if (reveal.languageEn) {
-    rows.push({
-      key: "language",
-      label: t("fields.language"),
-      value: pickLocalized(reveal.languageEn, reveal.languagePt ?? reveal.languageEn, locale),
-    });
-  }
-  if (reveal.referenceYear !== null) {
-    rows.push({ key: "referenceYear", label: t("fields.referenceYear"), value: formatYear(reveal.referenceYear) });
-  }
-  if (reveal.startYear !== null && reveal.endYear !== null) {
-    rows.push({
-      key: "period",
-      label: t("fields.period"),
-      value: `${formatYear(reveal.startYear)} — ${formatYear(reveal.endYear)}`,
-    });
-  }
-  if (reveal.religionEn) {
-    rows.push({
-      key: "religion",
-      label: t("fields.religion"),
-      value: pickLocalized(reveal.religionEn, reveal.religionPt ?? reveal.religionEn, locale),
-    });
-  }
-
-  if (rows.length === 0 && (!reveal.hints || reveal.hints.length === 0)) {
-    return null;
-  }
+  const rows: { attempt: number; slots: Slot[] }[] = [
+    {
+      attempt: 1,
+      slots: [
+        {
+          key: "era",
+          label: t("fields.era"),
+          value: reveal.broadEra !== null ? t(`enums.broadEra.${broadEraFromApi(reveal.broadEra)}`) : null,
+        },
+        {
+          key: "mapConfidence",
+          label: t("fields.mapConfidence"),
+          value:
+            reveal.mapBorderConfidence !== null
+              ? t(`enums.borderConfidence.${borderConfidenceFromApi(reveal.mapBorderConfidence)}`)
+              : null,
+        },
+      ],
+    },
+    {
+      attempt: 2,
+      slots: [
+        {
+          key: "continents",
+          label: t("fields.continents"),
+          value:
+            reveal.continents && reveal.continents.length > 0
+              ? reveal.continents.map((c) => t(`enums.continent.${continentFromApi(c)}`)).join(", ")
+              : null,
+        },
+      ],
+    },
+    {
+      attempt: 3,
+      slots: [
+        {
+          key: "subEra",
+          label: t("fields.subEra"),
+          value: reveal.subEraEn ? pickLocalized(reveal.subEraEn, reveal.subEraPt ?? reveal.subEraEn, locale) : null,
+        },
+        {
+          key: "capital",
+          label: t("fields.capital"),
+          value: reveal.capitalEn ? pickLocalized(reveal.capitalEn, reveal.capitalPt ?? reveal.capitalEn, locale) : null,
+        },
+      ],
+    },
+    {
+      attempt: 4,
+      slots: [
+        {
+          key: "language",
+          label: t("fields.language"),
+          value: reveal.languageEn ? pickLocalized(reveal.languageEn, reveal.languagePt ?? reveal.languageEn, locale) : null,
+        },
+        {
+          key: "curiosity1",
+          label: t("fields.curiosity", { n: 1 }),
+          value: reveal.hints?.[0] ? pickLocalized(reveal.hints[0].textEn, reveal.hints[0].textPt, locale) : null,
+        },
+      ],
+    },
+    {
+      attempt: 5,
+      slots: [
+        {
+          key: "referenceYear",
+          label: t("fields.referenceYear"),
+          value: reveal.referenceYear !== null ? formatYear(reveal.referenceYear) : null,
+        },
+        {
+          key: "curiosity2",
+          label: t("fields.curiosity", { n: 2 }),
+          value: reveal.hints?.[1] ? pickLocalized(reveal.hints[1].textEn, reveal.hints[1].textPt, locale) : null,
+        },
+      ],
+    },
+    {
+      attempt: 6,
+      slots: [
+        {
+          key: "period",
+          label: t("fields.period"),
+          value:
+            reveal.startYear !== null && reveal.endYear !== null
+              ? `${formatYear(reveal.startYear)} — ${formatYear(reveal.endYear)}`
+              : null,
+          notes: durationNotes,
+        },
+        {
+          key: "area",
+          label: t("fields.area"),
+          value:
+            reveal.peakAreaKm2 !== null
+              ? formatAreaKm2(reveal.peakAreaKm2, locale, areaPrecisionFromApi(reveal.areaPrecision ?? 0) === "Approximate")
+              : null,
+        },
+        {
+          key: "religion",
+          label: t("fields.religion"),
+          value: reveal.religionEn ? pickLocalized(reveal.religionEn, reveal.religionPt ?? reveal.religionEn, locale) : null,
+        },
+        {
+          key: "curiosity3",
+          label: t("fields.curiosity", { n: 3 }),
+          value: reveal.hints?.[2] ? pickLocalized(reveal.hints[2].textEn, reveal.hints[2].textPt, locale) : null,
+        },
+      ],
+    },
+  ];
 
   return (
-    <div className="flex flex-col gap-4 rounded-xl border border-zinc-200 p-4 dark:border-zinc-800">
-      {rows.length > 0 && (
-        <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm">
-          {rows.map((row) => (
-            <div key={row.key} className="contents">
-              <dt className="text-zinc-500">{row.label}</dt>
-              <dd className="text-zinc-900 dark:text-zinc-100">{row.value}</dd>
-            </div>
+    <div className="flex w-full max-w-xl flex-col gap-2">
+      {rows.map((row) => (
+        <div key={row.attempt} className="flex w-full gap-2">
+          {row.slots.map((slot) => (
+            <HintCard
+              key={slot.key}
+              label={slot.label}
+              value={slot.value}
+              unlockedAtLabel={t("fields.unlockedAt", { n: row.attempt })}
+              notes={slot.notes}
+              notesButtonLabel={t("fields.showNote")}
+            />
           ))}
-        </dl>
-      )}
-      {reveal.hints && reveal.hints.length > 0 && (
-        <div>
-          <h3 className="mb-1 text-sm font-semibold uppercase tracking-wide text-zinc-500">{t("fields.curiosities")}</h3>
-          <ul className="list-disc pl-5 text-sm">
-            {reveal.hints.map((hint, i) => (
-              <li key={i}>{pickLocalized(hint.textEn, hint.textPt, locale)}</li>
-            ))}
-          </ul>
         </div>
-      )}
+      ))}
     </div>
   );
 }

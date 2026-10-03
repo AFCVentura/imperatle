@@ -1,10 +1,13 @@
-import type { ChallengeReveal, EmpireAnswer } from "./types";
+import type { ChallengeReveal, ComparisonResult, EmpireAnswer } from "./types";
 
 export interface GuessHistoryEntry {
   empireId: number;
   nameEn: string;
   namePt: string;
   correct: boolean;
+  // Null for a correct guess (no comparison shown -- it's an exact match).
+  areaComparison: ComparisonResult | null;
+  durationComparison: ComparisonResult | null;
 }
 
 export interface GameProgress {

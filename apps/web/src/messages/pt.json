@@ -29,9 +29,16 @@
     "gameOverTitle": "Tentativas esgotadas",
     "answerWasLabel": "A resposta era",
     "mapComingSoon": "Mapa em breve",
+    "mapAlt": "Mapa do império de hoje na sua maior extensão",
     "guessHistoryTitle": "Seus palpites",
     "submitError": "Algo deu errado. Tente de novo.",
     "playAgainTomorrow": "Volte amanhã pra um novo império!",
+    "emptyGuessSlot": "—",
+    "correctGuessMark": "Acertou!",
+    "guessColumns": {
+      "area": "Área",
+      "duration": "Duração"
+    },
     "fields": {
       "era": "Era",
       "mapConfidence": "Confiança das fronteiras",
@@ -42,7 +49,11 @@
       "religion": "Religião",
       "referenceYear": "Ano de auge",
       "period": "Existiu",
-      "curiosities": "Curiosidades"
+      "area": "Área no auge",
+      "curiosities": "Curiosidades",
+      "curiosity": "Curiosidade {n}",
+      "unlockedAt": "Liberado na tentativa {n}",
+      "showNote": "Mostrar observação"
     },
     "enums": {
       "broadEra": {
