@@ -1,3 +1,3 @@
 namespace Imperatle.Api.Dtos;
 
-public record TodayChallengeResponse(DateOnly Date, int AttemptsAllowed, int ChallengeNumber);
+public record TodayChallengeResponse(DateOnly Date, int AttemptsAllowed, int ChallengeNumber, string? MapUrl);

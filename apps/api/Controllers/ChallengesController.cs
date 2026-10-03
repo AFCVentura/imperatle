@@ -21,14 +21,17 @@ public class ChallengesController(ImperatleDbContext db, IWebHostEnvironment env
     {
         var today = DateOnly.FromDateTime(DateTime.UtcNow);
 
-        var hasChallengeToday = await db.DailyChallenges.AnyAsync(c => c.Date == today);
-        if (!hasChallengeToday)
+        var challenge = await db.DailyChallenges
+            .Include(c => c.Empire)
+            .FirstOrDefaultAsync(c => c.Date == today);
+        if (challenge is null)
         {
             return NotFound();
         }
 
         var challengeNumber = today.DayNumber - GameRules.LaunchDate.DayNumber + 1;
-        return Ok(new TodayChallengeResponse(today, GameRules.AttemptsAllowed, challengeNumber));
+        var mapUrl = MockMaps.ForSlug(challenge.Empire.Slug);
+        return Ok(new TodayChallengeResponse(today, GameRules.AttemptsAllowed, challengeNumber, mapUrl));
     }
 
     [HttpPost("today/guess")]
@@ -45,6 +48,12 @@ public class ChallengesController(ImperatleDbContext db, IWebHostEnvironment env
         if (challenge is null)
         {
             return NotFound();
+        }
+
+        var guessedEmpire = await db.Empires.FindAsync(request.EmpireId);
+        if (guessedEmpire is null)
+        {
+            return BadRequest();
         }
 
         var anonymousId = GetOrCreateAnonymousId();
@@ -67,7 +76,7 @@ public class ChallengesController(ImperatleDbContext db, IWebHostEnvironment env
         // direct API call after the real game ended) can't buy more attempts.
         if (progress.Completed)
         {
-            return Ok(new GuessResponse(progress.Correct, true, null, RevealBuilder.BuildAnswer(challenge.Empire)));
+            return Ok(new GuessResponse(progress.Correct, true, null, RevealBuilder.BuildAnswer(challenge.Empire), null));
         }
 
         // The server counts attempts itself; the client's own guess history is
@@ -78,6 +87,7 @@ public class ChallengesController(ImperatleDbContext db, IWebHostEnvironment env
         var correct = request.EmpireId == challenge.EmpireId;
         var attemptsExhausted = attemptNumber >= GameRules.AttemptsAllowed;
         var gameOver = correct || attemptsExhausted;
+        var comparison = correct ? null : RevealBuilder.BuildComparison(guessedEmpire, challenge.Empire);
 
         if (gameOver)
         {
@@ -90,10 +100,10 @@ public class ChallengesController(ImperatleDbContext db, IWebHostEnvironment env
 
         if (gameOver)
         {
-            return Ok(new GuessResponse(correct, true, null, RevealBuilder.BuildAnswer(challenge.Empire)));
+            return Ok(new GuessResponse(correct, true, null, RevealBuilder.BuildAnswer(challenge.Empire), comparison));
         }
 
-        return Ok(new GuessResponse(false, false, RevealBuilder.BuildReveal(challenge.Empire, attemptNumber), null));
+        return Ok(new GuessResponse(false, false, RevealBuilder.BuildReveal(challenge.Empire, attemptNumber), null, comparison));
     }
 
     // Dev-only: lets the debug button in the UI replay today's challenge

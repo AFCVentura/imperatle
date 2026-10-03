@@ -44,9 +44,27 @@ public static class RevealBuilder
             StartYearPrecision: attemptNumber >= 6 ? empire.StartYearPrecision : null,
             EndYear: attemptNumber >= 6 ? empire.EndYear : null,
             EndYearPrecision: attemptNumber >= 6 ? empire.EndYearPrecision : null,
+            DurationNotesEn: attemptNumber >= 6 ? empire.DurationNotesEn : null,
+            DurationNotesPt: attemptNumber >= 6 ? empire.DurationNotesPt : null,
+            PeakAreaKm2: attemptNumber >= 6 ? empire.PeakAreaKm2 : null,
+            AreaPrecision: attemptNumber >= 6 ? empire.AreaPrecision : null,
             ReligionEn: attemptNumber >= 6 ? empire.ReligionEn : null,
             ReligionPt: attemptNumber >= 6 ? empire.ReligionPt : null
         );
+    }
+
+    // Per-guess directional feedback (shown immediately on the guess card,
+    // independent of the hint-stage table above).
+    public static GuessComparison BuildComparison(Empire guessedEmpire, Empire correctEmpire) => new(
+        Compare(guessedEmpire.PeakAreaKm2, correctEmpire.PeakAreaKm2, GameRules.AreaApproximateToleranceRatio),
+        Compare(guessedEmpire.EndYear - guessedEmpire.StartYear, correctEmpire.EndYear - correctEmpire.StartYear, GameRules.DurationApproximateToleranceRatio));
+
+    private static ComparisonResult Compare(double guessedValue, double correctValue, double toleranceRatio)
+    {
+        if (guessedValue == 0) return correctValue == 0 ? ComparisonResult.Approximate : ComparisonResult.Bigger;
+        var relativeDiff = Math.Abs(correctValue - guessedValue) / Math.Abs(guessedValue);
+        if (relativeDiff <= toleranceRatio) return ComparisonResult.Approximate;
+        return correctValue > guessedValue ? ComparisonResult.Bigger : ComparisonResult.Smaller;
     }
 
     public static EmpireAnswer BuildAnswer(Empire empire) => new(
@@ -71,6 +89,10 @@ public static class RevealBuilder
         empire.StartYearPrecision,
         empire.EndYear,
         empire.EndYearPrecision,
+        empire.DurationNotesEn,
+        empire.DurationNotesPt,
+        empire.PeakAreaKm2,
+        empire.AreaPrecision,
         empire.ReligionEn,
         empire.ReligionPt);
 

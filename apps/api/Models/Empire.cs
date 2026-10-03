@@ -38,6 +38,17 @@ public class Empire
     public int EndYear { get; set; }
     public YearPrecision EndYearPrecision { get; set; }
 
+    // Free-text caveat shown next to the duration in the UI, e.g. clarifying
+    // that a range covers only one phase of a longer-named political entity
+    // (the Roman Empire proper, not the Kingdom/Republic/Byzantine phases).
+    // Empty string = no caveat needed for this empire.
+    public string DurationNotesEn { get; set; } = string.Empty;
+    public string DurationNotesPt { get; set; } = string.Empty;
+
+    // Territory at peak extent (same reference point as ReferenceYear), in km².
+    public int PeakAreaKm2 { get; set; }
+    public AreaPrecision AreaPrecision { get; set; }
+
     // Max 3, revealed in Order (0 = least obvious, 2 = most obvious).
     public List<EmpireHint> Hints { get; set; } = [];
 }

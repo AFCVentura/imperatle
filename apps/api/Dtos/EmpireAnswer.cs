@@ -25,6 +25,10 @@ public record EmpireAnswer(
     YearPrecision StartYearPrecision,
     int EndYear,
     YearPrecision EndYearPrecision,
+    string DurationNotesEn,
+    string DurationNotesPt,
+    int PeakAreaKm2,
+    AreaPrecision AreaPrecision,
     string ReligionEn,
     string ReligionPt
 );

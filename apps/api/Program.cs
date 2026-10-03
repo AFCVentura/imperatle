@@ -58,7 +58,7 @@ if (app.Environment.IsDevelopment())
 
     using var seedScope = app.Services.CreateScope();
     var db = seedScope.ServiceProvider.GetRequiredService<ImperatleDbContext>();
-    await DevSeeder.SeedAsync(db);
+    await DevSeeder.SeedAsync(db, app.Configuration["Dev:ForceTodayEmpireSlug"]);
 }
 
 app.UseHttpsRedirection();
