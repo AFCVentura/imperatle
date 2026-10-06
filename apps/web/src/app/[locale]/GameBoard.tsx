@@ -121,7 +121,7 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
         // Phone: pinned to the bottom of the screen (and moved after the
         // hints) so a guess never needs scrolling back up. From md up it sits
         // under the map as before.
-        <div className="sticky bottom-0 z-10 order-last -mx-4 flex gap-2 border-t border-line bg-background px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:static md:order-none md:border-0 md:p-0">
+        <div className="sticky bottom-0 z-10 order-last -mx-4 flex gap-2 border-t border-line bg-background px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:static md:order-none md:mx-0 md:border-0 md:p-0">
           <EmpireAutocomplete
             clearKey={guesses.length}
             empires={empires}
@@ -134,7 +134,7 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
             // Keep focus (and the phone keyboard) on the input for the next guess.
             onMouseDown={(e) => e.preventDefault()}
             disabled={selectedEmpireId === null || submitting}
-            className="rounded-full bg-accent px-5 py-2 font-display text-sm font-semibold text-accent-foreground disabled:opacity-40 md:py-1.5"
+            className="rounded-full bg-accent px-5 py-2 text-sm font-semibold text-accent-foreground disabled:opacity-40 md:py-1.5"
           >
             {t("guessButton")}
           </button>
