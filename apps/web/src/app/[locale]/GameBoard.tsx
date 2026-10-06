@@ -134,7 +134,7 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
             // Keep focus (and the phone keyboard) on the input for the next guess.
             onMouseDown={(e) => e.preventDefault()}
             disabled={selectedEmpireId === null || submitting}
-            className="rounded-full bg-accent px-5 py-2 text-sm font-semibold text-accent-foreground disabled:opacity-40 md:py-1.5"
+            className="rounded-full bg-accent px-5 py-2 font-display text-sm font-semibold text-accent-foreground disabled:opacity-40 md:py-1.5"
           >
             {t("guessButton")}
           </button>
@@ -146,7 +146,7 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
       <div>
         <div className="mb-1.5 flex items-baseline justify-between gap-3">
           <h2 className="font-display text-base tracking-wide text-muted">{t("guessHistoryTitle")}</h2>
-          <p className="text-sm text-muted">
+          <p className="font-display text-sm text-muted">
             {t("attempts", { used: guesses.length, total: challenge.attemptsAllowed })}
           </p>
         </div>

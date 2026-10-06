@@ -16,8 +16,8 @@ export async function Footer({ challengeNumber }: FooterProps) {
       >
         {t("support")}
       </button>
-      <p>{t("copyright", { year })}</p>
-      {challengeNumber !== null && <p>{t("challengeNumber", { number: challengeNumber })}</p>}
+      <p className="font-display">{t("copyright", { year })}</p>
+      {challengeNumber !== null && <p className="font-display">{t("challengeNumber", { number: challengeNumber })}</p>}
     </footer>
   );
 }
