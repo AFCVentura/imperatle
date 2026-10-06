@@ -30,11 +30,14 @@
     "answerWasLabel": "A resposta era",
     "mapComingSoon": "Mapa em breve",
     "mapAlt": "Mapa do império de hoje na sua maior extensão",
-    "guessHistoryTitle": "Seus palpites",
+    "guessHistoryTitle": "Palpites e Dicas",
     "submitError": "Algo deu errado. Tente de novo.",
     "playAgainTomorrow": "Volte amanhã pra um novo império!",
     "emptyGuessSlot": "—",
     "correctGuessMark": "Acertou!",
+    "wrongGuessMark": "Errado",
+    "remainingHintsLabel": "As outras dicas",
+    "unlocksLabel": "Libera: {fields}",
     "guessColumns": {
       "area": "Área",
       "duration": "Duração"
@@ -48,10 +51,10 @@
       "language": "Idioma",
       "religion": "Religião",
       "referenceYear": "Ano de auge",
-      "period": "Existiu",
+      "period": "Duração",
       "area": "Área no auge",
       "curiosities": "Curiosidades",
-      "curiosity": "Curiosidade {n}",
+      "curiosity": "Curiosidade",
       "unlockedAt": "Liberado na tentativa {n}",
       "showNote": "Mostrar observação"
     },

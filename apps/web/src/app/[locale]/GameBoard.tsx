@@ -8,8 +8,9 @@ import { loadGameProgress, saveGameProgress, type GuessHistoryEntry } from "@/li
 import { pickLocalized } from "@/lib/pickLocalized";
 import { comparisonFromApi, EMPTY_REVEAL, type ChallengeReveal, type EmpireAnswer, type EmpireSummary, type TodayChallenge } from "@/lib/types";
 import { EmpireAutocomplete } from "./EmpireAutocomplete";
-import { GuessCards } from "./GuessCards";
-import { HintsPanel } from "./HintsPanel";
+import { AttemptList } from "./AttemptList";
+import { HintRow } from "./HintRow";
+import { useHintRows } from "./useHintRows";
 
 interface GameBoardProps {
   challenge: TodayChallenge;
@@ -82,18 +83,22 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
     }
   }
 
+  // Hooks must run before the early return below.
+  const hintRows = useHintRows(gameOver && answer ? answer : (reveal ?? EMPTY_REVEAL));
+
   if (!hydrated) return null;
 
   const lastGuess = guesses[guesses.length - 1];
+  // Rows not shown under a wrong guess -- after a correct guess, the clues
+  // the player never needed are shown with the answer.
+  const wrongGuessCount = guesses.filter((g) => !g.correct).length;
+  const remainingHintRows = hintRows.slice(wrongGuessCount);
 
   return (
-    <div className="flex w-full max-w-xl flex-col gap-6">
-      <p className="text-center text-sm text-zinc-500">
-        {t("attempts", { used: guesses.length, total: challenge.attemptsAllowed })}
-      </p>
-
+    // Phone-sized column on every screen, so the PC looks like the mobile layout.
+    <div className="flex w-full max-w-md flex-col gap-6 md:gap-3">
       {challenge.mapUrl ? (
-        <div className="flex justify-center rounded-xl border border-zinc-200 bg-white p-4 dark:border-zinc-800">
+        <div className="flex justify-center rounded-xl border border-zinc-200 bg-white p-3 dark:border-zinc-800">
           <Image
             src={challenge.mapUrl}
             alt={t("mapAlt")}
@@ -101,22 +106,35 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
             height={553}
             unoptimized
             priority
-            className="h-auto w-full max-w-sm"
+            // Square, capped at 240px and at 30% of the screen height, so the
+            // map never takes over short screens.
+            className="aspect-square h-auto w-full max-w-[min(15rem,30dvh)]"
           />
         </div>
       ) : (
-        <div className="flex h-48 items-center justify-center rounded-xl border-2 border-dashed border-zinc-300 text-sm text-zinc-400 dark:border-zinc-700">
+        <div className="flex h-40 items-center justify-center rounded-xl border-2 border-dashed border-zinc-300 text-sm text-zinc-400 dark:border-zinc-700">
           {t("mapComingSoon")}
         </div>
       )}
 
       {!gameOver && (
-        <div className="flex gap-2">
-          <EmpireAutocomplete key={guesses.length} empires={empires} disabled={submitting} onSelect={setSelectedEmpireId} />
+        // Phone: pinned to the bottom of the screen (and moved after the
+        // hints) so a guess never needs scrolling back up. From md up it sits
+        // under the map as before.
+        <div className="sticky bottom-0 z-10 order-last -mx-4 flex gap-2 border-t border-foreground/10 bg-background px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:static md:order-none md:border-0 md:p-0">
+          <EmpireAutocomplete
+            clearKey={guesses.length}
+            empires={empires}
+            busy={submitting}
+            onSelect={setSelectedEmpireId}
+            onSubmit={handleGuess}
+          />
           <button
             onClick={handleGuess}
+            // Keep focus (and the phone keyboard) on the input for the next guess.
+            onMouseDown={(e) => e.preventDefault()}
             disabled={selectedEmpireId === null || submitting}
-            className="rounded-full bg-foreground px-5 py-2 text-sm font-medium text-background disabled:opacity-40"
+            className="rounded-full bg-foreground px-5 py-2 text-sm md:py-1.5 font-medium text-background disabled:opacity-40"
           >
             {t("guessButton")}
           </button>
@@ -126,12 +144,22 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
       {error && <p className="text-sm text-red-500">{t("submitError")}</p>}
 
       <div>
-        <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-zinc-500">{t("guessHistoryTitle")}</h2>
-        <GuessCards guesses={guesses} attemptsAllowed={challenge.attemptsAllowed} />
+        <div className="mb-1.5 flex items-baseline justify-between gap-3">
+          <h2 className="text-sm font-semibold uppercase tracking-wide text-zinc-500">{t("guessHistoryTitle")}</h2>
+          <p className="text-sm text-zinc-500">
+            {t("attempts", { used: guesses.length, total: challenge.attemptsAllowed })}
+          </p>
+        </div>
+        <AttemptList
+          guesses={guesses}
+          attemptsAllowed={challenge.attemptsAllowed}
+          hintRows={hintRows}
+          gameOver={gameOver}
+        />
       </div>
 
       {gameOver && answer && (
-        <div className="rounded-xl border border-zinc-200 p-4 dark:border-zinc-800">
+        <div className="rounded-2xl border border-foreground/15 bg-foreground/[0.04] px-4 py-3">
           <h2 className="text-lg font-semibold">{lastGuess?.correct ? t("correctTitle") : t("gameOverTitle")}</h2>
           <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
             {t("answerWasLabel")}: <strong>{pickLocalized(answer.nameEn, answer.namePt, locale)}</strong>
@@ -140,7 +168,20 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
         </div>
       )}
 
-      <HintsPanel reveal={gameOver && answer ? answer : (reveal ?? EMPTY_REVEAL)} />
+      {gameOver && answer && remainingHintRows.length > 0 && (
+        // Same look as an attempt's clue section: one pill, rows and cells
+        // split by dividers.
+        <div>
+          <h2 className="mb-1.5 text-sm font-semibold uppercase tracking-wide text-zinc-500">
+            {t("remainingHintsLabel")}
+          </h2>
+          <div className="divide-y divide-foreground/10 rounded-2xl border border-foreground/15 bg-foreground/[0.04]">
+            {remainingHintRows.map((row) => (
+              <HintRow key={row.attempt} row={row} variant="cell" />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

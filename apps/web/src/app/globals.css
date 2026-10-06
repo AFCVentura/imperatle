@@ -13,6 +13,24 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* MarqueeText sets the distance/duration per element, based on how much
+     the text overflows. */
+  --animate-marquee: marquee var(--marquee-duration, 6s) ease-in-out infinite;
+
+  @keyframes marquee {
+    0%,
+    15% {
+      transform: translateX(0);
+    }
+    50%,
+    65% {
+      transform: translateX(var(--marquee-distance, 0));
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {

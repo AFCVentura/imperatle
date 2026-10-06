@@ -1,5 +1,3 @@
-"use client";
-
 import { useLocale, useTranslations } from "next-intl";
 import { formatAreaKm2 } from "@/lib/formatArea";
 import { splitAstronomicalYear } from "@/lib/formatYear";
@@ -11,22 +9,28 @@ import {
   continentFromApi,
   type ChallengeReveal,
 } from "@/lib/types";
-import { HintCard } from "./HintCard";
 
-interface HintsPanelProps {
-  // EmpireAnswer's fields are non-null versions of the same names, so it
-  // structurally satisfies this type -- callers pass it as-is at game over.
-  reveal: ChallengeReveal;
-}
-
-interface Slot {
+export interface HintSlot {
   key: string;
   label: string;
   value: string | null;
   notes?: string | null;
 }
 
-export function HintsPanel({ reveal }: HintsPanelProps) {
+export interface HintRowData {
+  // The wrong guess that unlocks this row (row N comes with wrong guess N).
+  attempt: number;
+  slots: HintSlot[];
+}
+
+// Builds the hint rows from whatever has been revealed so far. EmpireAnswer's
+// fields are non-null versions of the same names, so it structurally
+// satisfies ChallengeReveal -- callers pass it as-is at game over.
+export function hintRowNames(row: HintRowData, locale: string): string {
+  return new Intl.ListFormat(locale, { type: "conjunction" }).format(row.slots.map((s) => s.label));
+}
+
+export function useHintRows(reveal: ChallengeReveal): HintRowData[] {
   const t = useTranslations("Game");
   const locale = useLocale();
 
@@ -39,7 +43,7 @@ export function HintsPanel({ reveal }: HintsPanelProps) {
     ? pickLocalized(reveal.durationNotesEn, reveal.durationNotesPt ?? reveal.durationNotesEn, locale)
     : null;
 
-  const rows: { attempt: number; slots: Slot[] }[] = [
+  const rows: HintRowData[] = [
     {
       attempt: 1,
       slots: [
@@ -96,7 +100,7 @@ export function HintsPanel({ reveal }: HintsPanelProps) {
         },
         {
           key: "curiosity1",
-          label: t("fields.curiosity", { n: 1 }),
+          label: t("fields.curiosity"),
           value: reveal.hints?.[0] ? pickLocalized(reveal.hints[0].textEn, reveal.hints[0].textPt, locale) : null,
         },
       ],
@@ -111,7 +115,7 @@ export function HintsPanel({ reveal }: HintsPanelProps) {
         },
         {
           key: "curiosity2",
-          label: t("fields.curiosity", { n: 2 }),
+          label: t("fields.curiosity"),
           value: reveal.hints?.[1] ? pickLocalized(reveal.hints[1].textEn, reveal.hints[1].textPt, locale) : null,
         },
       ],
@@ -124,7 +128,7 @@ export function HintsPanel({ reveal }: HintsPanelProps) {
           label: t("fields.period"),
           value:
             reveal.startYear !== null && reveal.endYear !== null
-              ? `${formatYear(reveal.startYear)} — ${formatYear(reveal.endYear)}`
+              ? `${formatYear(reveal.startYear)} – ${formatYear(reveal.endYear)}`
               : null,
           notes: durationNotes,
         },
@@ -143,29 +147,12 @@ export function HintsPanel({ reveal }: HintsPanelProps) {
         },
         {
           key: "curiosity3",
-          label: t("fields.curiosity", { n: 3 }),
+          label: t("fields.curiosity"),
           value: reveal.hints?.[2] ? pickLocalized(reveal.hints[2].textEn, reveal.hints[2].textPt, locale) : null,
         },
       ],
     },
   ];
 
-  return (
-    <div className="flex w-full max-w-xl flex-col gap-2">
-      {rows.map((row) => (
-        <div key={row.attempt} className="flex w-full gap-2">
-          {row.slots.map((slot) => (
-            <HintCard
-              key={slot.key}
-              label={slot.label}
-              value={slot.value}
-              unlockedAtLabel={t("fields.unlockedAt", { n: row.attempt })}
-              notes={slot.notes}
-              notesButtonLabel={t("fields.showNote")}
-            />
-          ))}
-        </div>
-      ))}
-    </div>
-  );
+  return rows;
 }

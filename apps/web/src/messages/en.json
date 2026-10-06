@@ -30,11 +30,14 @@
     "answerWasLabel": "The answer was",
     "mapComingSoon": "Map coming soon",
     "mapAlt": "Map of today's empire at its greatest extent",
-    "guessHistoryTitle": "Your guesses",
+    "guessHistoryTitle": "Guesses & Clues",
     "submitError": "Something went wrong. Try again.",
     "playAgainTomorrow": "Come back tomorrow for a new empire!",
     "emptyGuessSlot": "—",
     "correctGuessMark": "Correct!",
+    "wrongGuessMark": "Wrong",
+    "remainingHintsLabel": "The other clues",
+    "unlocksLabel": "Unlocks: {fields}",
     "guessColumns": {
       "area": "Area",
       "duration": "Duration"
@@ -48,10 +51,10 @@
       "language": "Language",
       "religion": "Religion",
       "referenceYear": "Peak year",
-      "period": "Existed",
+      "period": "Duration",
       "area": "Peak area",
       "curiosities": "Trivia",
-      "curiosity": "Trivia {n}",
+      "curiosity": "Trivia",
       "unlockedAt": "Unlocked on attempt {n}",
       "showNote": "Show note"
     },

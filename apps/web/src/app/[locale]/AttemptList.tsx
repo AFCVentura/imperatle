@@ -4,10 +4,15 @@ import { useLocale, useTranslations } from "next-intl";
 import type { GuessHistoryEntry } from "@/lib/gameStorage";
 import { pickLocalized } from "@/lib/pickLocalized";
 import type { ComparisonResult } from "@/lib/types";
+import { HintRow } from "./HintRow";
+import { MarqueeText } from "./MarqueeText";
+import { hintRowNames, type HintRowData } from "./useHintRows";
 
-interface GuessCardsProps {
+interface AttemptListProps {
   guesses: GuessHistoryEntry[];
   attemptsAllowed: number;
+  hintRows: HintRowData[];
+  gameOver: boolean;
 }
 
 const COMPARISON_ARROW: Record<ComparisonResult, string> = {
@@ -16,52 +21,93 @@ const COMPARISON_ARROW: Record<ComparisonResult, string> = {
   Approximate: "≈",
 };
 
-// All slots render from the start (locked/empty), not just as guesses come
-// in -- same "whole board visible upfront" idea as the hint rows.
-export function GuessCards({ guesses, attemptsAllowed }: GuessCardsProps) {
+// One entry per attempt, newest on top, each a pill holding the guess and
+// the clues about the map's empire that this wrong guess unlocked. Unused slots come last, each saying which
+// clues it would unlock, so the whole board is still visible upfront.
+export function AttemptList({ guesses, attemptsAllowed, hintRows, gameOver }: AttemptListProps) {
   const t = useTranslations("Game");
   const locale = useLocale();
 
-  const slots = Array.from({ length: attemptsAllowed }, (_, i) => guesses[i] ?? null);
+  const emptySlots = gameOver ? [] : hintRows.slice(guesses.length, attemptsAllowed);
 
   return (
-    <div className="flex w-full max-w-xl flex-col gap-1.5">
-      {slots.map((guess, i) => (
-        <div
-          key={i}
-          className={`flex h-10 items-stretch overflow-hidden rounded-full border text-xs ${
-            guess
-              ? guess.correct
-                ? "border-emerald-500/40 bg-emerald-500/10"
-                : "border-foreground/15 bg-foreground/[0.04]"
-              : "border-dashed border-foreground/10"
-          }`}
-        >
-          <span className="flex w-7 shrink-0 items-center justify-center text-foreground/35">{i + 1}</span>
-          <span className="min-w-0 flex-1 truncate self-center px-1 font-medium">
-            {guess ? pickLocalized(guess.nameEn, guess.namePt, locale) : t("emptyGuessSlot")}
-          </span>
-          {guess?.correct && (
-            <span className="shrink-0 self-center px-3 text-emerald-600 dark:text-emerald-400">
-              {t("correctGuessMark")}
-            </span>
-          )}
-          {guess && !guess.correct && guess.areaComparison && guess.durationComparison && (
-            <>
-              <span className="w-px shrink-0 bg-foreground/10" />
-              <span className="flex w-[5.5rem] shrink-0 items-center justify-center gap-1 self-center px-1 text-foreground/70">
-                <span aria-hidden>{COMPARISON_ARROW[guess.areaComparison]}</span>
-                {t("guessColumns.area")}
+    <div className="flex w-full flex-col gap-2">
+      {guesses
+        .map((guess, i) => ({ guess, number: i + 1 }))
+        .reverse()
+        .map(({ guess, number }) => {
+          const hintRow = guess.correct ? null : hintRows[number - 1];
+          return (
+            // One pill per attempt: the guess on top, and -- below a divider,
+            // since they're about the map's empire, not the guessed one --
+            // the clues this wrong guess unlocked.
+            <div
+              key={number}
+              className={`border text-xs ${hintRow ? "rounded-2xl" : "rounded-full"} ${
+                guess.correct ? "border-emerald-500/40 bg-emerald-500/10" : "border-foreground/15 bg-foreground/[0.04]"
+              }`}
+            >
+              <div className="flex h-8 items-stretch">
+                <span className="flex w-7 shrink-0 items-center justify-center text-foreground/35">{number}</span>
+                {!guess.correct && (
+                  <span
+                    role="img"
+                    aria-label={t("wrongGuessMark")}
+                    className="flex shrink-0 items-center pr-1.5 text-sm font-bold text-red-600 dark:text-red-400"
+                  >
+                    ✕
+                  </span>
+                )}
+                <span className="min-w-0 flex-1 self-center px-1">
+                  <MarqueeText className="font-medium text-foreground/60">{pickLocalized(guess.nameEn, guess.namePt, locale)}</MarqueeText>
+                </span>
+                {guess.correct && (
+                  <span className="shrink-0 self-center px-3 text-emerald-600 dark:text-emerald-400">
+                    {t("correctGuessMark")}
+                  </span>
+                )}
+                {!guess.correct && guess.areaComparison && guess.durationComparison && (
+                  <>
+                    <span className="w-px shrink-0 bg-foreground/10" />
+                    <span className="flex w-[5.5rem] shrink-0 items-center justify-center gap-1 self-center px-1 font-medium text-foreground">
+                      <span aria-hidden>{COMPARISON_ARROW[guess.areaComparison]}</span>
+                      {t("guessColumns.area")}
+                    </span>
+                    <span className="w-px shrink-0 bg-foreground/10" />
+                    <span className="flex w-[5.5rem] shrink-0 items-center justify-center gap-1 self-center px-1 font-medium text-foreground">
+                      <span aria-hidden>{COMPARISON_ARROW[guess.durationComparison]}</span>
+                      {t("guessColumns.duration")}
+                    </span>
+                  </>
+                )}
+              </div>
+
+              {hintRow && (
+                <div className="border-t border-foreground/10">
+                  <HintRow row={hintRow} variant="cell" />
+                </div>
+              )}
+            </div>
+          );
+        })}
+
+      {emptySlots.length > 0 && (
+        <div className="flex flex-col gap-1">
+          {emptySlots.map((row) => (
+            <div
+              key={row.attempt}
+              className="flex h-7 items-center overflow-hidden rounded-full border border-dashed border-foreground/10 text-xs"
+            >
+              <span className="flex w-7 shrink-0 items-center justify-center text-foreground/30">{row.attempt}</span>
+              <span className="min-w-0 flex-1 px-1">
+                <MarqueeText className="text-foreground/40">
+                  {t("unlocksLabel", { fields: hintRowNames(row, locale) })}
+                </MarqueeText>
               </span>
-              <span className="w-px shrink-0 bg-foreground/10" />
-              <span className="flex w-[5.5rem] shrink-0 items-center justify-center gap-1 self-center px-1 text-foreground/70">
-                <span aria-hidden>{COMPARISON_ARROW[guess.durationComparison]}</span>
-                {t("guessColumns.duration")}
-              </span>
-            </>
-          )}
+            </div>
+          ))}
         </div>
-      ))}
+      )}
     </div>
   );
 }
