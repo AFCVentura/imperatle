@@ -1,18 +1,66 @@
 @import "tailwindcss";
 
+/* "Autumn Harvest" palette: 6f1d1b (oxblood) bb9457 (tan) 432818 (dark
+   brown) 99582a (rust) ffe6a7 (parchment), with Cinzel for display text and
+   Spectral for body text -- an old-imperial, Roman-inscription feel.
+   Components only use the semantic tokens below (surface, line, muted,
+   accent...), never raw palette colors. */
+
 :root {
-  /* Warm, non-white/non-black neutrals -- deliberately not the pure
-     black-and-white template look, and the same value everywhere (no
-     separate "card" color behind the game column). */
-  --background: #f4f1ea;
-  --foreground: #1c1a17;
+  --background: #fcf3dd;
+  --foreground: #432818;
+  --surface: #f8e4b4;
+  --line: rgb(153 88 42 / 0.3);
+  --muted: #99582a;
+  --header: #6f1d1b;
+  --header-foreground: #ffe6a7;
+  --accent: #6f1d1b;
+  --accent-foreground: #ffe6a7;
+  --highlight: #6f1d1b;
+  --success: #7a6230;
+  --danger: #6f1d1b;
+  --map: #fffaf0;
+  --map-line: #bb9457;
+  --theme-font-display: var(--font-cinzel);
+  --theme-font-body: var(--font-spectral);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #22140c;
+    --foreground: #ffe6a7;
+    --surface: #432818;
+    --line: rgb(255 230 167 / 0.14);
+    --muted: #bb9457;
+    --header: #4a1312;
+    --header-foreground: #ffe6a7;
+    --accent: #bb9457;
+    --accent-foreground: #22140c;
+    --highlight: #e0b46c;
+    --success: #d4b26a;
+    --danger: #e0705e;
+    --map: #ffe6a7;
+    --map-line: #99582a;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-muted: var(--muted);
+  --color-header: var(--header);
+  --color-header-foreground: var(--header-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-highlight: var(--highlight);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-map: var(--map);
+  --color-map-line: var(--map-line);
+  --font-sans: var(--theme-font-body);
+  --font-display: var(--theme-font-display);
 
   /* MarqueeText sets the distance/duration per element, based on how much
      the text overflows. */
@@ -33,15 +81,11 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #20242c;
-    --foreground: #e8e6df;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--theme-font-body), Georgia, serif;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
 }

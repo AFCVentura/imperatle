@@ -41,13 +41,13 @@ export function HintRow({ row, variant = "card" }: HintRowProps) {
     return <div className="flex w-full flex-col gap-1.5 sm:flex-row sm:flex-wrap">{renderCards(row.slots)}</div>;
   }
 
-  const cellLine = "flex w-full flex-col divide-y divide-foreground/10 sm:flex-row sm:divide-x sm:divide-y-0";
+  const cellLine = "flex w-full flex-col divide-y divide-line sm:flex-row sm:divide-x sm:divide-y-0";
   const regular = row.slots.filter((s) => !isCuriosity(s));
   const curiosities = row.slots.filter(isCuriosity);
 
   if (regular.length >= 2 && curiosities.length > 0) {
     return (
-      <div className="flex w-full flex-col divide-y divide-foreground/10">
+      <div className="flex w-full flex-col divide-y divide-line">
         <div className={cellLine}>{renderCards(regular)}</div>
         <div className={cellLine}>{renderCards(curiosities)}</div>
       </div>

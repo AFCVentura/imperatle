@@ -90,7 +90,7 @@ export function EmpireAutocomplete({ empires, clearKey, busy, onSelect, onSubmit
     ranges.forEach(([start, end], i) => {
       parts.push(name.slice(cursor, start));
       parts.push(
-        <strong key={i} className="font-semibold text-blue-600 dark:text-blue-400">
+        <strong key={i} className="font-semibold text-highlight">
           {name.slice(start, end)}
         </strong>,
       );
@@ -121,12 +121,12 @@ export function EmpireAutocomplete({ empires, clearKey, busy, onSelect, onSubmit
         aria-autocomplete="list"
         onBlur={() => setOpen(false)}
         placeholder={t("guessPlaceholder")}
-        className="w-full rounded-full border border-zinc-300 bg-white px-4 py-2 text-sm md:py-1.5 outline-none focus:border-blue-500 read-only:opacity-60 dark:border-zinc-700 dark:bg-black"
+        className="w-full rounded-full border border-line bg-surface px-4 py-2 text-sm outline-none placeholder:text-muted/70 focus:border-highlight read-only:opacity-60 md:py-1.5"
       />
       {/* Opens upward on phones, where the input is pinned to the bottom
           of the screen (see GameBoard). */}
       {listOpen && (
-        <ul id="empire-suggestions" role="listbox" className="absolute bottom-full z-10 mb-1 w-full md:top-full md:bottom-auto md:mt-1 md:mb-0 rounded-lg border border-zinc-200 bg-white py-1 shadow-lg dark:border-zinc-700 dark:bg-zinc-900">
+        <ul id="empire-suggestions" role="listbox" className="absolute bottom-full z-10 mb-1 w-full md:top-full md:bottom-auto md:mt-1 md:mb-0 rounded-lg border border-line bg-background py-1 shadow-lg">
           {suggestions.map((s, i) => (
             <li key={s.empire.id} id={`empire-suggestion-${i}`} role="option" aria-selected={i === activeIndex}>
               <button
@@ -136,7 +136,7 @@ export function EmpireAutocomplete({ empires, clearKey, busy, onSelect, onSubmit
                 onMouseEnter={() => setActiveIndex(i)}
                 onClick={() => selectSuggestion(s)}
                 className={`block w-full px-4 py-2 text-left text-sm ${
-                  i === activeIndex ? "bg-zinc-100 dark:bg-zinc-800" : ""
+                  i === activeIndex ? "bg-surface" : ""
                 }`}
               >
                 {highlight(s.name, s.ranges)}

@@ -41,16 +41,16 @@ export function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-40 flex h-14 shrink-0 items-center justify-center border-b border-foreground/10 bg-background px-4">
+    <header className="sticky top-0 z-40 flex h-14 shrink-0 items-center justify-center bg-header px-4 text-header-foreground shadow-sm">
       <div className="flex items-center gap-2">
-        <span className="text-xl font-bold tracking-wide">Imperatle</span>
+        <span className="font-display text-2xl tracking-wider">Imperatle</span>
         {process.env.NODE_ENV !== "production" && (
           <button
             type="button"
             onClick={handleDebugReset}
             disabled={resetting}
             title="Debug: reset today's attempts"
-            className="rounded-md border border-amber-500/50 bg-amber-500/10 px-2 py-0.5 text-xs font-semibold text-amber-700 hover:bg-amber-500/20 disabled:opacity-50 dark:text-amber-400"
+            className="rounded-md border border-header-foreground/40 px-2 py-0.5 text-xs font-semibold text-header-foreground hover:bg-header-foreground/10 disabled:opacity-50"
           >
             {resetting ? "…" : "DEV reset"}
           </button>
@@ -61,7 +61,7 @@ export function Header() {
         type="button"
         aria-label={t("menuLabel")}
         onClick={() => setOpen(true)}
-        className="absolute right-4 flex h-9 w-9 items-center justify-center rounded-md hover:bg-foreground/10"
+        className="absolute right-4 flex h-9 w-9 items-center justify-center rounded-md hover:bg-header-foreground/10"
       >
         <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2">
           <path strokeLinecap="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -71,14 +71,14 @@ export function Header() {
       {open && (
         <div className="fixed inset-0 z-50">
           <div className="absolute inset-0 bg-black/40" onClick={() => setOpen(false)} />
-          <nav className="absolute right-0 top-0 flex h-full w-72 max-w-[85vw] flex-col gap-1 bg-background p-4 shadow-xl">
+          <nav className="absolute right-0 top-0 flex h-full w-72 max-w-[85vw] flex-col gap-1 bg-background p-4 text-foreground shadow-xl">
             <div className="mb-2 flex items-center justify-between">
-              <span className="text-lg font-semibold">Imperatle</span>
+              <span className="font-display text-xl tracking-wider">Imperatle</span>
               <button
                 type="button"
                 aria-label={t("closeLabel")}
                 onClick={() => setOpen(false)}
-                className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-foreground/10"
+                className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-surface"
               >
                 <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
                   <path strokeLinecap="round" d="M6 6l12 12M18 6L6 18" />
@@ -89,7 +89,7 @@ export function Header() {
               <button
                 key={label}
                 type="button"
-                className="rounded-md px-3 py-2 text-left text-sm hover:bg-foreground/10"
+                className="rounded-md px-3 py-2 text-left text-sm hover:bg-surface"
               >
                 {label}
               </button>

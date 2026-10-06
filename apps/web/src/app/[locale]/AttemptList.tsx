@@ -44,36 +44,36 @@ export function AttemptList({ guesses, attemptsAllowed, hintRows, gameOver }: At
             <div
               key={number}
               className={`border text-xs ${hintRow ? "rounded-2xl" : "rounded-full"} ${
-                guess.correct ? "border-emerald-500/40 bg-emerald-500/10" : "border-foreground/15 bg-foreground/[0.04]"
+                guess.correct ? "border-success/50 bg-success/15" : "border-line bg-surface"
               }`}
             >
               <div className="flex h-8 items-stretch">
-                <span className="flex w-7 shrink-0 items-center justify-center text-foreground/35">{number}</span>
+                <span className="flex w-7 shrink-0 items-center justify-center text-muted/70">{number}</span>
                 {!guess.correct && (
                   <span
                     role="img"
                     aria-label={t("wrongGuessMark")}
-                    className="flex shrink-0 items-center pr-1.5 text-sm font-bold text-red-600 dark:text-red-400"
+                    className="flex shrink-0 items-center pr-1.5 text-sm font-bold text-danger"
                   >
                     ✕
                   </span>
                 )}
                 <span className="min-w-0 flex-1 self-center px-1">
-                  <MarqueeText className="font-medium text-foreground/60">{pickLocalized(guess.nameEn, guess.namePt, locale)}</MarqueeText>
+                  <MarqueeText className="font-medium text-muted">{pickLocalized(guess.nameEn, guess.namePt, locale)}</MarqueeText>
                 </span>
                 {guess.correct && (
-                  <span className="shrink-0 self-center px-3 text-emerald-600 dark:text-emerald-400">
+                  <span className="shrink-0 self-center px-3 font-semibold text-success">
                     {t("correctGuessMark")}
                   </span>
                 )}
                 {!guess.correct && guess.areaComparison && guess.durationComparison && (
                   <>
-                    <span className="w-px shrink-0 bg-foreground/10" />
+                    <span className="w-px shrink-0 bg-line" />
                     <span className="flex w-[5.5rem] shrink-0 items-center justify-center gap-1 self-center px-1 font-medium text-foreground">
                       <span aria-hidden>{COMPARISON_ARROW[guess.areaComparison]}</span>
                       {t("guessColumns.area")}
                     </span>
-                    <span className="w-px shrink-0 bg-foreground/10" />
+                    <span className="w-px shrink-0 bg-line" />
                     <span className="flex w-[5.5rem] shrink-0 items-center justify-center gap-1 self-center px-1 font-medium text-foreground">
                       <span aria-hidden>{COMPARISON_ARROW[guess.durationComparison]}</span>
                       {t("guessColumns.duration")}
@@ -83,7 +83,7 @@ export function AttemptList({ guesses, attemptsAllowed, hintRows, gameOver }: At
               </div>
 
               {hintRow && (
-                <div className="border-t border-foreground/10">
+                <div className="border-t border-line">
                   <HintRow row={hintRow} variant="cell" />
                 </div>
               )}
@@ -96,11 +96,11 @@ export function AttemptList({ guesses, attemptsAllowed, hintRows, gameOver }: At
           {emptySlots.map((row) => (
             <div
               key={row.attempt}
-              className="flex h-7 items-center overflow-hidden rounded-full border border-dashed border-foreground/10 text-xs"
+              className="flex h-7 items-center overflow-hidden rounded-full border border-dashed border-line text-xs"
             >
-              <span className="flex w-7 shrink-0 items-center justify-center text-foreground/30">{row.attempt}</span>
+              <span className="flex w-7 shrink-0 items-center justify-center text-muted/60">{row.attempt}</span>
               <span className="min-w-0 flex-1 px-1">
-                <MarqueeText className="text-foreground/40">
+                <MarqueeText className="text-muted/70">
                   {t("unlocksLabel", { fields: hintRowNames(row, locale) })}
                 </MarqueeText>
               </span>

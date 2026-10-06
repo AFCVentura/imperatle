@@ -46,7 +46,7 @@ export function HintCard({ label, value, unlockedAtLabel, notes, notesButtonLabe
       className={`group relative flex min-w-0 flex-auto cursor-default select-none flex-col items-center justify-center px-3 py-1.5 text-center transition-colors ${
         variant === "cell"
           ? ""
-          : `rounded-2xl border ${unlocked ? "border-foreground/15 bg-foreground/[0.04]" : "border-dashed border-foreground/15"}`
+          : `rounded-2xl border ${unlocked ? "border-line bg-surface" : "border-dashed border-line"}`
       } ${className}`}
     >
       {/* Front and back share one grid cell instead of being absolutely
@@ -56,12 +56,12 @@ export function HintCard({ label, value, unlockedAtLabel, notes, notesButtonLabe
         <MarqueeText
           className={`[grid-area:1/1] text-xs font-medium transition-opacity duration-200 group-hover:opacity-0 ${
             flipped ? "opacity-0" : ""
-          } ${unlocked ? "text-foreground" : "text-foreground/45"}`}
+          } ${unlocked ? "text-foreground" : "text-muted/70"}`}
         >
           {front}
         </MarqueeText>
         <MarqueeText
-          className={`[grid-area:1/1] text-xs font-medium text-foreground/60 transition-opacity duration-200 group-hover:opacity-100 ${
+          className={`[grid-area:1/1] text-xs font-medium text-muted transition-opacity duration-200 group-hover:opacity-100 ${
             flipped ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -82,12 +82,12 @@ export function HintCard({ label, value, unlockedAtLabel, notes, notesButtonLabe
             onPointerUp={(e) => e.stopPropagation()}
             onMouseEnter={() => setNotesOpen(true)}
             onMouseLeave={() => setNotesOpen(false)}
-            className={`absolute flex h-4 w-4 ${variant === "cell" ? "right-1 top-1" : "-right-1.5 -top-1.5"} items-center justify-center rounded-full bg-foreground/15 text-[10px] font-semibold text-foreground/80 hover:bg-foreground/25`}
+            className={`absolute flex h-4 w-4 ${variant === "cell" ? "right-1 top-1" : "-right-1.5 -top-1.5"} items-center justify-center rounded-full bg-muted/20 text-[10px] font-semibold text-foreground hover:bg-muted/35`}
           >
             ?
           </button>
           {notesOpen && (
-            <div className="absolute left-1/2 top-full z-20 mt-1.5 w-56 -translate-x-1/2 rounded-lg border border-foreground/10 bg-background p-2.5 text-left text-xs leading-snug text-foreground shadow-lg">
+            <div className="absolute left-1/2 top-full z-20 mt-1.5 w-56 -translate-x-1/2 rounded-lg border border-line bg-background p-2.5 text-left text-xs leading-snug text-foreground shadow-lg">
               {notes}
             </div>
           )}

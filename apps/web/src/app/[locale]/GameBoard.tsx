@@ -98,7 +98,7 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
     // Phone-sized column on every screen, so the PC looks like the mobile layout.
     <div className="flex w-full max-w-md flex-col gap-6 md:gap-3">
       {challenge.mapUrl ? (
-        <div className="flex justify-center rounded-xl border border-zinc-200 bg-white p-3 dark:border-zinc-800">
+        <div className="flex justify-center rounded-xl border border-map-line bg-map p-3">
           <Image
             src={challenge.mapUrl}
             alt={t("mapAlt")}
@@ -112,7 +112,7 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
           />
         </div>
       ) : (
-        <div className="flex h-40 items-center justify-center rounded-xl border-2 border-dashed border-zinc-300 text-sm text-zinc-400 dark:border-zinc-700">
+        <div className="flex h-40 items-center justify-center rounded-xl border-2 border-dashed border-line text-sm text-muted">
           {t("mapComingSoon")}
         </div>
       )}
@@ -121,7 +121,7 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
         // Phone: pinned to the bottom of the screen (and moved after the
         // hints) so a guess never needs scrolling back up. From md up it sits
         // under the map as before.
-        <div className="sticky bottom-0 z-10 order-last -mx-4 flex gap-2 border-t border-foreground/10 bg-background px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:static md:order-none md:border-0 md:p-0">
+        <div className="sticky bottom-0 z-10 order-last -mx-4 flex gap-2 border-t border-line bg-background px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:static md:order-none md:border-0 md:p-0">
           <EmpireAutocomplete
             clearKey={guesses.length}
             empires={empires}
@@ -134,19 +134,19 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
             // Keep focus (and the phone keyboard) on the input for the next guess.
             onMouseDown={(e) => e.preventDefault()}
             disabled={selectedEmpireId === null || submitting}
-            className="rounded-full bg-foreground px-5 py-2 text-sm md:py-1.5 font-medium text-background disabled:opacity-40"
+            className="rounded-full bg-accent px-5 py-2 text-sm font-semibold text-accent-foreground disabled:opacity-40 md:py-1.5"
           >
             {t("guessButton")}
           </button>
         </div>
       )}
 
-      {error && <p className="text-sm text-red-500">{t("submitError")}</p>}
+      {error && <p className="text-sm text-danger">{t("submitError")}</p>}
 
       <div>
         <div className="mb-1.5 flex items-baseline justify-between gap-3">
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-zinc-500">{t("guessHistoryTitle")}</h2>
-          <p className="text-sm text-zinc-500">
+          <h2 className="font-display text-base tracking-wide text-muted">{t("guessHistoryTitle")}</h2>
+          <p className="text-sm text-muted">
             {t("attempts", { used: guesses.length, total: challenge.attemptsAllowed })}
           </p>
         </div>
@@ -159,12 +159,12 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
       </div>
 
       {gameOver && answer && (
-        <div className="rounded-2xl border border-foreground/15 bg-foreground/[0.04] px-4 py-3">
-          <h2 className="text-lg font-semibold">{lastGuess?.correct ? t("correctTitle") : t("gameOverTitle")}</h2>
-          <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+        <div className="rounded-2xl border border-line bg-surface px-4 py-3">
+          <h2 className="font-display text-xl">{lastGuess?.correct ? t("correctTitle") : t("gameOverTitle")}</h2>
+          <p className="mt-1 text-sm">
             {t("answerWasLabel")}: <strong>{pickLocalized(answer.nameEn, answer.namePt, locale)}</strong>
           </p>
-          <p className="mt-1 text-sm text-zinc-500">{t("playAgainTomorrow")}</p>
+          <p className="mt-1 text-sm text-muted">{t("playAgainTomorrow")}</p>
         </div>
       )}
 
@@ -172,10 +172,10 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
         // Same look as an attempt's clue section: one pill, rows and cells
         // split by dividers.
         <div>
-          <h2 className="mb-1.5 text-sm font-semibold uppercase tracking-wide text-zinc-500">
+          <h2 className="mb-1.5 font-display text-base tracking-wide text-muted">
             {t("remainingHintsLabel")}
           </h2>
-          <div className="divide-y divide-foreground/10 rounded-2xl border border-foreground/15 bg-foreground/[0.04]">
+          <div className="divide-y divide-line rounded-2xl border border-line bg-surface">
             {remainingHintRows.map((row) => (
               <HintRow key={row.attempt} row={row} variant="cell" />
             ))}

@@ -18,10 +18,10 @@ export default async function Home() {
 
   return (
     <div className="flex flex-1 flex-col items-center gap-1.5 px-4 pt-1 pb-8 sm:px-6">
-      <p className="text-center text-sm text-foreground/60">{tHome("subtitle")}</p>
+      <p className="text-center text-sm italic text-muted">{tHome("subtitle")}</p>
 
-      {loadError && <p className="text-sm text-red-500">{tGame("loadError")}</p>}
-      {!loadError && !challenge && <p className="text-foreground/60">{tGame("noChallengeToday")}</p>}
+      {loadError && <p className="text-sm text-danger">{tGame("loadError")}</p>}
+      {!loadError && !challenge && <p className="text-muted">{tGame("noChallengeToday")}</p>}
       {!loadError && challenge && <GameBoard challenge={challenge} empires={empires} />}
     </div>
   );
