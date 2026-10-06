@@ -61,7 +61,14 @@ if (app.Environment.IsDevelopment())
     await DevSeeder.SeedAsync(db, app.Configuration["Dev:ForceTodayEmpireSlug"]);
 }
 
-app.UseHttpsRedirection();
+// In Development the web app calls the plain-HTTP port (5055), which both the
+// "http" and "https" launch profiles expose. Redirecting it to HTTPS would break
+// CORS (the redirect response has no CORS headers) and Node's server-side fetch
+// (it doesn't trust the dev certificate).
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
 app.UseCors(FrontendCorsPolicy);
 
