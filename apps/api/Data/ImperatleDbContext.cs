@@ -28,5 +28,9 @@ public class ImperatleDbContext(DbContextOptions<ImperatleDbContext> options) : 
         modelBuilder.Entity<PlayerChallengeProgress>()
             .HasIndex(p => new { p.AnonymousId, p.Date })
             .IsUnique();
+
+        // Community stats read every finished game of a given day.
+        modelBuilder.Entity<PlayerChallengeProgress>()
+            .HasIndex(p => p.Date);
     }
 }

@@ -14,7 +14,7 @@ public class ChallengesController(ImperatleDbContext db, IWebHostEnvironment env
 {
     // Anonymous identity cookie -- a random id, not tied to any account yet.
     // Long-lived so a browser keeps its history across days without an account.
-    private const string AnonymousCookieName = "imperatle_aid";
+    public const string AnonymousCookieName = "imperatle_aid";
 
     [HttpGet("today")]
     public async Task<IActionResult> GetToday()
@@ -29,7 +29,7 @@ public class ChallengesController(ImperatleDbContext db, IWebHostEnvironment env
             return NotFound();
         }
 
-        var challengeNumber = today.DayNumber - GameRules.LaunchDate.DayNumber + 1;
+        var challengeNumber = GameRules.ChallengeNumber(today);
         var mapUrl = MockMaps.ForSlug(challenge.Empire.Slug);
         return Ok(new TodayChallengeResponse(today, GameRules.AttemptsAllowed, challengeNumber, mapUrl));
     }
