@@ -79,7 +79,9 @@ jobs:
   deploy-api:
     name: Deploy API to Azure
     needs: [api, web]
-    if: github.event_name != 'pull_request'
+    # Off until the Azure resources and secrets exist: set the repository
+    # variable AZURE_DEPLOY to "true" (Settings > Secrets and variables > Actions).
+    if: github.event_name != 'pull_request' && vars.AZURE_DEPLOY == 'true'
     runs-on: ubuntu-latest
     # No "environment:" on purpose: it would change the OIDC token subject, and
     # the Azure federated credential expects "repo:AFCVentura/imperatle:ref:refs/heads/main".
