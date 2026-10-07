@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Cinzel, Spectral } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
@@ -86,6 +87,8 @@ export default async function LocaleLayout({
           <FeedbackDialog />
           <AboutDialog />
         </NextIntlClientProvider>
+        {/* Cookieless page views (no consent banner needed); only reports on Vercel. */}
+        <Analytics />
       </body>
     </html>
   );
