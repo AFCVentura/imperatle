@@ -6,7 +6,7 @@
     "pt": "Império Britânico"
   },
   "peak": {
-    "year": 1920,
+    "year": 1921,
     "precision": "Exact"
   },
   "start": {
@@ -25,7 +25,7 @@
     "km2": 35500000,
     "precision": "Approximate"
   },
-  "mapAccuracy": "Approximate",
+  "mapAccuracy": "Precise",
   "continents": [
     "Europe",
     "Africa",
@@ -49,16 +49,16 @@
   },
   "curiosities": [
     {
-      "en": "It was often said that the sun never set on it, since it always had territory in daylight.",
-      "pt": "Dizia-se que o sol nunca se punha sobre ele, já que sempre tinha território em plena luz do dia."
+      "en": "It used an entire continent as a destination for convicts, shipping prisoners there for 80 years.",
+      "pt": "Usou um continente inteiro como destino de prisioneiros, enviando condenados para lá durante 80 anos."
     },
     {
-      "en": "It was the largest empire in recorded history by territorial extent.",
-      "pt": "Foi o maior império da história registrada em extensão territorial."
+      "en": "It fought wars against China to keep the opium trade going, gaining an island it only handed back 156 years later.",
+      "pt": "Travou guerras contra a China para manter o comércio de ópio e ganhou com isso uma ilha que só devolveu 156 anos depois."
     },
     {
-      "en": "Many of its former territories today form a voluntary association of independent states.",
-      "pt": "Muitos de seus antigos territórios hoje formam uma associação voluntária de estados independentes."
+      "en": "It was the largest empire in history by territorial extent.",
+      "pt": "Foi o maior império da história em extensão territorial."
     }
   ],
   "map": {

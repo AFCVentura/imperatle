@@ -17,6 +17,10 @@
     "year": 1521,
     "precision": "Exact"
   },
+  "durationNotes": {
+    "en": "\"Aztec Empire\" is a modern name for the Triple Alliance of Tenochtitlan, Texcoco and Tlacopan, formed in 1428 and ended by the Spanish capture of Tenochtitlan in 1521.",
+    "pt": "O nome \"Império Asteca\" é moderno: ele era a Tríplice Aliança entre Tenochtitlan, Texcoco e Tlacopan, formada em 1428 e encerrada com a queda de Tenochtitlan diante dos espanhóis em 1521."
+  },
   "area": {
     "km2": 220000,
     "precision": "Approximate"
@@ -35,21 +39,21 @@
     "pt": "Náuatle"
   },
   "religion": {
-    "en": "Aztec religion (worship of Huitzilopochtli and others)",
-    "pt": "Religião asteca (culto a Huitzilopochtli e outros)"
+    "en": "Mexica religion (worship of Huitzilopochtli and others)",
+    "pt": "Religião mexica (culto a Huitzilopochtli e outros)"
   },
   "curiosities": [
     {
-      "en": "It was formed as a Triple Alliance between three city-states.",
-      "pt": "Foi formado como uma Tríplice Aliança entre três cidades-estado."
+      "en": "Its capital, with perhaps 200,000 inhabitants, was among the largest cities in the world at the time.",
+      "pt": "Sua capital, com talvez 200 mil habitantes, estava entre as maiores cidades do mundo na época."
     },
     {
-      "en": "Its capital was built on an island in a lake, connected to shore by causeways.",
-      "pt": "Sua capital foi construída numa ilha em um lago, ligada à terra firme por calçadas."
+      "en": "Its capital was built on an island in a lake, and one of the largest cities in the world stands on its ruins today.",
+      "pt": "Sua capital foi construída numa ilha em um lago, e sobre as ruínas dela está hoje uma das maiores cidades do mundo."
     },
     {
-      "en": "Hernán Cortés led the campaign that brought about its fall.",
-      "pt": "Hernán Cortés liderou a campanha que causou sua queda."
+      "en": "It farmed on artificial islands built on a lake, the so-called \"floating gardens\".",
+      "pt": "Plantava em ilhas artificiais construídas sobre um lago, os chamados \"jardins flutuantes\"."
     }
   ],
   "map": {

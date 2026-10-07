@@ -17,6 +17,10 @@
     "year": 1368,
     "precision": "Approximate"
   },
+  "durationNotes": {
+    "en": "1368 marks the expulsion of the Yuan dynasty, the branch ruling China. 1260, when the empire split into four khanates, and 1294, the death of Kublai Khan, are also accepted end dates.",
+    "pt": "1368 marca a expulsão da dinastia Yuan, o ramo que governava a China. Também são aceitos como fim 1260, quando o império se dividiu em quatro canatos, e 1294, com a morte de Kublai Khan."
+  },
   "area": {
     "km2": 24000000,
     "precision": "Approximate"
@@ -28,16 +32,16 @@
   ],
   "primaryContinent": "Asia",
   "capital": {
-    "en": "Karakorum",
-    "pt": "Karakorum"
+    "en": "Karakorum (later Khanbaliq)",
+    "pt": "Karakorum (depois Khanbaliq)"
   },
   "language": {
     "en": "Mongolian",
     "pt": "Mongol"
   },
   "religion": {
-    "en": "Tengrism (religiously tolerant)",
-    "pt": "Tengrismo (tolerante religiosamente)"
+    "en": "Tengrism (tolerant of other religions)",
+    "pt": "Tengrismo (com tolerância a outras religiões)"
   },
   "curiosities": [
     {
@@ -45,12 +49,12 @@
       "pt": "Foi fundado por um líder que uniu tribos nômades sob uma só bandeira."
     },
     {
-      "en": "It became the largest contiguous land empire in history.",
-      "pt": "Tornou-se o maior império contíguo da história."
+      "en": "Its warriors fought as mounted archers, and each one brought several horses to swap during marches.",
+      "pt": "Seus guerreiros lutavam como arqueiros a cavalo, e cada um levava vários cavalos para trocar durante as marchas."
     },
     {
-      "en": "Its founder is known in the West primarily by a single name: Genghis.",
-      "pt": "Seu fundador é conhecido no Ocidente principalmente por um único nome: Gengis."
+      "en": "It became the largest contiguous land empire in history.",
+      "pt": "Tornou-se o maior império contíguo da história."
     }
   ],
   "map": {

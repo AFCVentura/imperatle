@@ -17,6 +17,10 @@
     "year": 1572,
     "precision": "Exact"
   },
+  "durationNotes": {
+    "en": "Pizarro's Spaniards captured and executed Emperor Atahualpa in 1533, but a rump Inca state held out in Vilcabamba until 1572, when the last emperor, Túpac Amaru, was captured and executed.",
+    "pt": "Os espanhóis de Pizarro capturaram e executaram o imperador Atahualpa em 1533, mas um Estado inca de resistência sobreviveu em Vilcabamba até 1572, quando o último imperador, Túpac Amaru, foi capturado e executado."
+  },
   "area": {
     "km2": 2000000,
     "precision": "Approximate"
@@ -35,21 +39,21 @@
     "pt": "Quéchua"
   },
   "religion": {
-    "en": "Inca religion (worship of Inti, the sun god)",
-    "pt": "Religião inca (culto a Inti, o deus-sol)"
+    "en": "Worship of Inti (the sun god)",
+    "pt": "Culto a Inti (deus-sol)"
   },
   "curiosities": [
     {
-      "en": "It ran an extensive road network through some of the world's most rugged mountain terrain.",
-      "pt": "Mantinha uma extensa rede de estradas por um dos terrenos montanhosos mais acidentados do mundo."
+      "en": "It kept records with knotted cords instead of writing.",
+      "pt": "Guardava registros em cordões com nós em vez de escrita."
     },
     {
-      "en": "It had no written script of the kind used elsewhere, relying instead on knotted-cord records.",
-      "pt": "Não tinha um sistema de escrita nos moldes usuais, usando em vez disso registros de cordas com nós."
+      "en": "The name it is commonly known by was actually a title given to its nobility; its original name was Tawantinsuyu.",
+      "pt": "O nome pelo qual é conhecido era na verdade um título dado à sua nobreza; seu nome original era Tawantinsuyu."
     },
     {
-      "en": "A small band of Spanish conquistadors led by Francisco Pizarro brought it down.",
-      "pt": "Um pequeno grupo de conquistadores espanhóis liderado por Francisco Pizarro o derrubou."
+      "en": "It was the largest empire in the Americas before the arrival of Europeans.",
+      "pt": "Foi o maior império da América antes da chegada dos europeus."
     }
   ],
   "map": {
