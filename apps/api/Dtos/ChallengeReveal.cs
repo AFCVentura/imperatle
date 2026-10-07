@@ -10,8 +10,6 @@ public record ChallengeReveal(
     BorderConfidence? MapBorderConfidence,
     List<Continent>? Continents,
     Continent? PrimaryContinent,
-    string? SubEraEn,
-    string? SubEraPt,
     string? CapitalEn,
     string? CapitalPt,
     string? LanguageEn,

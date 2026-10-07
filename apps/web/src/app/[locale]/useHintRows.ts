@@ -84,12 +84,6 @@ export function useHintRows(reveal: ChallengeReveal): HintRowData[] {
       attempt: 3,
       slots: [
         {
-          key: "subEra",
-          label: t("fields.subEra"),
-          description: t("fieldInfo.subEra"),
-          value: reveal.subEraEn ? pickLocalized(reveal.subEraEn, reveal.subEraPt ?? reveal.subEraEn, locale) : null,
-        },
-        {
           key: "capital",
           label: t("fields.capital"),
           description: t("fieldInfo.capital"),

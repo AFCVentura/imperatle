@@ -59,8 +59,6 @@ export interface ChallengeReveal {
   mapBorderConfidence: number | null;
   continents: number[] | null;
   primaryContinent: number | null;
-  subEraEn: string | null;
-  subEraPt: string | null;
   capitalEn: string | null;
   capitalPt: string | null;
   languageEn: string | null;
@@ -88,8 +86,6 @@ export const EMPTY_REVEAL: ChallengeReveal = {
   mapBorderConfidence: null,
   continents: null,
   primaryContinent: null,
-  subEraEn: null,
-  subEraPt: null,
   capitalEn: null,
   capitalPt: null,
   languageEn: null,
@@ -118,8 +114,6 @@ export interface EmpireAnswer {
   mapBorderConfidence: number;
   continents: number[];
   primaryContinent: number;
-  subEraEn: string;
-  subEraPt: string;
   capitalEn: string;
   capitalPt: string;
   languageEn: string;

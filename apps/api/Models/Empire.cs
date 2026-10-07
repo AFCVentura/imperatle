@@ -20,9 +20,6 @@ public class Empire
     public List<Continent> Continents { get; set; } = [];
     public Continent PrimaryContinent { get; set; }
 
-    public string SubEraEn { get; set; } = string.Empty;
-    public string SubEraPt { get; set; } = string.Empty;
-
     public string CapitalEn { get; set; } = string.Empty;
     public string CapitalPt { get; set; } = string.Empty;
 
