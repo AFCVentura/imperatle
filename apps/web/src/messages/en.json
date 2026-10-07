@@ -6,7 +6,6 @@
     "menuLabel": "Menu",
     "closeLabel": "Close menu",
     "menu": {
-      "createAccount": "Create account",
       "statistics": "Statistics",
       "howToPlay": "How to play",
       "support": "Support the project",
@@ -83,6 +82,7 @@
       "bce": "{year} BCE",
       "ce": "{year} CE"
     },
+    "startPlaying": "Play",
     "comparisonInfo": {
       "area": {
         "Bigger": "The map's empire was larger than this one at its peak.",
@@ -108,6 +108,117 @@
       "religion": "The official religion, or that of the ruling elite, not necessarily that of most of the population.",
       "curiosity": "A striking fact about the map's empire. Usually the most revealing clue."
     },
+    "viewStats": "View stats",
     "lastAttempt": "Last attempt"
+  },
+  "HowToPlay": {
+    "title": "How to play",
+    "close": "Close",
+    "goal": "Find out which empire is on the map, shown at the height of its expansion. You have {attempts} attempts.",
+    "guess": "Type an empire's name, pick it from the list and click Guess (or press Enter twice).",
+    "compare": "Each wrong guess compares the empire you picked with the one on the map:",
+    "wrong": "not this one",
+    "bigger": "the map's empire was larger in area, or lasted longer",
+    "smaller": "the map's empire was smaller in area, or didn't last as long",
+    "approximate": "both are about the same (within 10%)",
+    "hints": "Each miss also unlocks new clues about the map's empire, right under your guess.",
+    "inspect": "Hover or tap a clue, or the area and duration, to see what it means.",
+    "daily": "A new empire every day.",
+    "goalNoCount": "Find out which empire is on the map, shown at the height of its expansion."
+  },
+  "Stats": {
+    "title": "Statistics",
+    "loading": "Loading…",
+    "loadError": "Couldn't load the stats. Please try again.",
+    "played": "Played",
+    "winRate": "Win rate",
+    "currentStreak": "Current streak",
+    "maxStreak": "Best streak",
+    "myDistribution": "Your attempts",
+    "noGamesYet": "Finish today's challenge to start your stats.",
+    "barWin": "Solved on attempt {attempt}: {count, plural, one {# time} other {# times}}",
+    "barLoss": "Not solved: {count, plural, one {# time} other {# times}}",
+    "todayTitle": "Today, Imperatle #{number}",
+    "todaySummary": "{players, plural, one {# person finished} other {# people finished}} · {rate}% solved it",
+    "averageLine": "Average for those who solved it: {avg} attempts.",
+    "yourResult": "You: {attempts}.",
+    "yourResultLost": "You didn't solve it.",
+    "nobodyYet": "Nobody has finished today's challenge yet.",
+    "communityBarWin": "{pct}% solved it on attempt {attempt} ({count, plural, one {# person} other {# people}})",
+    "communityBarLoss": "{pct}% didn't solve it ({count, plural, one {# person} other {# people}})",
+    "share": "Share",
+    "copied": "Copied!",
+    "shareFailed": "Couldn't copy"
+  },
+  "Common": {
+    "close": "Close"
+  },
+  "Support": {
+    "title": "Support the project",
+    "intro": "Imperatle is an independent project, made by one person. Supporters help pay for the servers and the historical research behind each empire.",
+    "perksTitle": "Supporters will get",
+    "perks": {
+      "noAds": {
+        "title": "No ads",
+        "text": "the game as clean as it is now."
+      },
+      "practice": {
+        "title": "Practice mode",
+        "text": "play as much as you like, without affecting your stats."
+      },
+      "archive": {
+        "title": "Past games",
+        "text": "play the challenges from previous days."
+      },
+      "creator": {
+        "title": "Empire creator",
+        "text": "build your own empire on the map."
+      },
+      "request": {
+        "title": "Request an empire",
+        "text": "suggest a new empire for the game."
+      }
+    },
+    "note": "Support isn't available yet. When it is, you'll create an account right here and choose how much to give, once, with no subscription.",
+    "comingSoon": "Coming soon"
+  },
+  "Feedback": {
+    "title": "Feedback",
+    "intro": "Found a bug, have an idea, or spotted a wrong historical fact? Tell us here.",
+    "categoryLabel": "Message type",
+    "categories": {
+      "Bug": "Bug",
+      "Idea": "Idea",
+      "Content": "Historical fact",
+      "Other": "Other"
+    },
+    "placeholders": {
+      "Bug": "What happened? On which screen, phone or computer?",
+      "Idea": "What would you like to see in Imperatle?",
+      "Content": "Which empire and which fact? Include a source if you have one.",
+      "Other": "Go ahead."
+    },
+    "messageLabel": "Message",
+    "emailLabel": "Your e-mail (optional, only if you want a reply)",
+    "emailPlaceholder": "you@example.com",
+    "send": "Send",
+    "sending": "Sending…",
+    "thanks": "Thank you! Your message arrived and will be read.",
+    "done": "Close",
+    "error": "Couldn't send it. Please try again in a moment.",
+    "tooMany": "Too many messages in a row. Wait a few minutes and try again."
+  },
+  "About": {
+    "title": "About",
+    "what": "Imperatle is a daily guessing game. Every day, a different historical empire appears on the map, at the height of its expansion, and you try to figure out which one it is.",
+    "editorialTitle": "A note on empires",
+    "editorial": "The game is only about territorial extent and facts. Showing how far an empire reached isn't celebrating conquest: many of these empires grew through war, colonization and the suffering of other peoples.",
+    "sourcesTitle": "Sources and accuracy",
+    "sources": "Maps are based on files from Wikimedia Commons, under a free license (CC BY-SA). Historical dates, areas and borders are approximations, and sources often disagree.",
+    "mistakes": "Spotted a mistake?",
+    "mistakesLink": "Send us feedback.",
+    "authorTitle": "Who made it",
+    "author": "Made by <link>Ventura</link>, a developer from Brazil.",
+    "stack": "Next.js, ASP.NET Core and PostgreSQL."
   }
 }

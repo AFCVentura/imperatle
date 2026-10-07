@@ -4,12 +4,14 @@ import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { submitGuess } from "@/lib/api";
+import { openStats } from "@/lib/dialogs";
 import { loadGameProgress, saveGameProgress, type GuessHistoryEntry } from "@/lib/gameStorage";
 import { pickLocalized } from "@/lib/pickLocalized";
 import { comparisonFromApi, EMPTY_REVEAL, type ChallengeReveal, type EmpireAnswer, type EmpireSummary, type TodayChallenge } from "@/lib/types";
 import { EmpireAutocomplete } from "./EmpireAutocomplete";
 import { AttemptList } from "./AttemptList";
 import { HintRow } from "./HintRow";
+import { ShareButton } from "./ShareButton";
 import { useHintRows } from "./useHintRows";
 
 interface GameBoardProps {
@@ -74,6 +76,8 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
       if (result.gameOver) {
         setGameOver(true);
         setAnswer(result.answer);
+        // Give the final guess a moment on screen before the stats cover it.
+        window.setTimeout(openStats, 1500);
       }
       setSelectedEmpireId(null);
     } catch {
@@ -172,6 +176,20 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
             {t("answerWasLabel")}: <strong>{pickLocalized(answer.nameEn, answer.namePt, locale)}</strong>
           </p>
           <p className="mt-1 text-sm text-muted">{t("playAgainTomorrow")}</p>
+          <div className="mt-3 flex flex-wrap items-center gap-2">
+            <ShareButton
+              guesses={guesses}
+              challengeNumber={challenge.challengeNumber}
+              attemptsAllowed={challenge.attemptsAllowed}
+            />
+            <button
+              type="button"
+              onClick={openStats}
+              className="rounded-full border border-line px-4 py-1.5 text-sm font-medium hover:bg-background"
+            >
+              {t("viewStats")}
+            </button>
+          </div>
         </div>
       )}
 

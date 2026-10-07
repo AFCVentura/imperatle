@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { SupportButton } from "./SupportButton";
 
 interface FooterProps {
   challengeNumber: number | null;
@@ -10,12 +11,7 @@ export async function Footer({ challengeNumber }: FooterProps) {
 
   return (
     <footer className="flex shrink-0 flex-col items-center gap-2 border-t border-line px-4 py-6 text-center text-sm text-muted">
-      <button
-        type="button"
-        className="rounded-full border border-line px-4 py-1.5 font-medium text-foreground hover:bg-surface"
-      >
-        {t("support")}
-      </button>
+      <SupportButton label={t("support")} />
       <p className="font-display">{t("copyright", { year })}</p>
       {challengeNumber !== null && <p className="font-display">{t("challengeNumber", { number: challengeNumber })}</p>}
     </footer>

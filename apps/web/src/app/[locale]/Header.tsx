@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { resetTodayChallenge } from "@/lib/api";
 import { clearAllGameProgress } from "@/lib/gameStorage";
+import { openAbout, openFeedback, openHowToPlay, openStats, openSupport } from "@/lib/dialogs";
 
 export function Header() {
   const t = useTranslations("Header");
@@ -32,16 +33,27 @@ export function Header() {
   }, [open]);
 
   const menuItems = [
-    t("menu.createAccount"),
-    t("menu.statistics"),
-    t("menu.howToPlay"),
-    t("menu.support"),
-    t("menu.feedback"),
-    t("menu.about"),
+    { label: t("menu.statistics"), open: openStats },
+    { label: t("menu.howToPlay"), open: openHowToPlay },
+    { label: t("menu.support"), open: openSupport },
+    { label: t("menu.feedback"), open: openFeedback },
+    { label: t("menu.about"), open: openAbout },
   ];
 
   return (
     <header className="sticky top-0 z-40 flex h-14 shrink-0 items-center justify-center bg-header px-4 text-header-foreground shadow-sm">
+      <button
+        type="button"
+        aria-label={t("menu.statistics")}
+        title={t("menu.statistics")}
+        onClick={openStats}
+        className="absolute left-4 flex h-9 w-9 items-center justify-center rounded-md hover:bg-header-foreground/10"
+      >
+        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <path strokeLinecap="round" d="M5 20V11M12 20V5M19 20v-6M3 20h18" />
+        </svg>
+      </button>
+
       <div className="flex items-center gap-2">
         <span className="font-display text-2xl tracking-wider">Imperatle</span>
         {process.env.NODE_ENV !== "production" && (
@@ -85,10 +97,14 @@ export function Header() {
                 </svg>
               </button>
             </div>
-            {menuItems.map((label) => (
+            {menuItems.map(({ label, open: openDialog }) => (
               <button
                 key={label}
                 type="button"
+                onClick={() => {
+                  setOpen(false);
+                  openDialog();
+                }}
                 className="rounded-md px-3 py-2 text-left text-sm hover:bg-surface"
               >
                 {label}

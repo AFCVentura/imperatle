@@ -151,3 +151,29 @@ export interface GuessResponse {
   answer: EmpireAnswer | null;
   comparison: GuessComparison | null;
 }
+
+export interface PlayerStats {
+  played: number;
+  wins: number;
+  currentStreak: number;
+  maxStreak: number;
+  // distribution[i] = games won on attempt i + 1.
+  distribution: number[];
+  todayResult: { correct: boolean; attempts: number } | null;
+}
+
+export interface CommunityStats {
+  date: string;
+  challengeNumber: number;
+  attemptsAllowed: number;
+  // Everyone who finished today's challenge, the player included.
+  players: number;
+  wins: number;
+  averageAttempts: number | null;
+  distribution: number[];
+}
+
+export interface StatsResponse {
+  me: PlayerStats;
+  today: CommunityStats;
+}

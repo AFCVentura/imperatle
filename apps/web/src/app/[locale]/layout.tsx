@@ -6,6 +6,11 @@ import { routing } from "@/i18n/routing";
 import { getTodayChallenge } from "@/lib/api";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
+import { HowToPlayDialog } from "./HowToPlayDialog";
+import { AboutDialog } from "./AboutDialog";
+import { FeedbackDialog } from "./FeedbackDialog";
+import { StatsDialog } from "./StatsDialog";
+import { SupportDialog } from "./SupportDialog";
 import "../globals.css";
 
 // Display and body fonts (see globals.css).
@@ -35,12 +40,14 @@ export default async function LocaleLayout({
   }
 
   // Fetched again here (page.tsx also loads it for the game itself) just for
-  // the footer's challenge number -- cheap Postgres lookup, not worth wiring
+  // the footer's challenge number and the attempt count in "How to play" -- cheap Postgres lookup, not worth wiring
   // a shared cache for at this stage.
   let challengeNumber: number | null = null;
+  let attemptsAllowed: number | null = null;
   try {
     const challenge = await getTodayChallenge();
     challengeNumber = challenge?.challengeNumber ?? null;
+    attemptsAllowed = challenge?.attemptsAllowed ?? null;
   } catch {
     challengeNumber = null;
   }
@@ -55,6 +62,11 @@ export default async function LocaleLayout({
           <Header />
           <main className="flex flex-1 flex-col">{children}</main>
           <Footer challengeNumber={challengeNumber} />
+          <HowToPlayDialog attemptsAllowed={attemptsAllowed} />
+          <StatsDialog />
+          <SupportDialog />
+          <FeedbackDialog />
+          <AboutDialog />
         </NextIntlClientProvider>
       </body>
     </html>

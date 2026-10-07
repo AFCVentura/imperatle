@@ -1,4 +1,4 @@
-import type { EmpireSummary, GuessResponse, TodayChallenge } from "./types";
+import type { EmpireSummary, GuessResponse, StatsResponse, TodayChallenge } from "./types";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
@@ -24,6 +24,40 @@ export async function submitGuess(empireId: number): Promise<GuessResponse> {
   });
   if (!res.ok) throw new Error(`Failed to submit guess: ${res.status}`);
   return res.json();
+}
+
+// The player's own history (identified by the anonymous cookie) plus
+// everyone's results for today.
+export async function getStats(): Promise<StatsResponse> {
+  const res = await fetch(`${API_URL}/stats`, { cache: "no-store", credentials: "include" });
+  if (!res.ok) throw new Error(`Failed to load stats: ${res.status}`);
+  return res.json();
+}
+
+export type FeedbackCategory = "Bug" | "Idea" | "Content" | "Other";
+
+export interface FeedbackInput {
+  category: FeedbackCategory;
+  message: string;
+  email: string | null;
+  locale: string;
+  // Honeypot field, empty for real people.
+  website: string;
+}
+
+export async function sendFeedback(input: FeedbackInput): Promise<"ok" | "tooMany" | "error"> {
+  try {
+    const res = await fetch(`${API_URL}/feedback`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify(input),
+    });
+    if (res.status === 429) return "tooMany";
+    return res.ok ? "ok" : "error";
+  } catch {
+    return "error";
+  }
 }
 
 // Dev-only debug tool -- the API rejects this outside Development, see

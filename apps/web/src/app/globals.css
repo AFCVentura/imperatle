@@ -21,6 +21,8 @@
   --danger: #6f1d1b;
   --map: #fffaf0;
   --map-line: #bb9457;
+  --chart-bar: #b07a3a;
+  --chart-highlight: #9a2f28;
   --theme-font-display: var(--font-cinzel);
   --theme-font-body: var(--font-spectral);
 }
@@ -41,6 +43,10 @@
     --danger: #e0705e;
     --map: #ffe6a7;
     --map-line: #99582a;
+    /* #9a4f1c is just under 3:1 on this surface; every tower carries a
+       visible value label, which covers it. */
+    --chart-bar: #9a4f1c;
+    --chart-highlight: #b98d24;
   }
 }
 
@@ -59,6 +65,8 @@
   --color-danger: var(--danger);
   --color-map: var(--map);
   --color-map-line: var(--map-line);
+  --color-chart-bar: var(--chart-bar);
+  --color-chart-highlight: var(--chart-highlight);
   --font-sans: var(--theme-font-body);
   --font-display: var(--theme-font-display);
 

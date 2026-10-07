@@ -6,7 +6,6 @@
     "menuLabel": "Menu",
     "closeLabel": "Fechar menu",
     "menu": {
-      "createAccount": "Criar conta",
       "statistics": "Estatísticas",
       "howToPlay": "Como jogar",
       "support": "Apoiar o projeto",
@@ -83,6 +82,7 @@
       "bce": "{year} a.E.C.",
       "ce": "{year} d.C."
     },
+    "startPlaying": "Jogar",
     "comparisonInfo": {
       "area": {
         "Bigger": "O império do mapa foi maior que este no seu auge.",
@@ -108,6 +108,117 @@
       "religion": "Religião oficial ou da elite governante, não necessariamente a da maioria da população.",
       "curiosity": "Um fato marcante sobre o império do mapa. Costuma ser a dica mais reveladora."
     },
+    "viewStats": "Ver estatísticas",
     "lastAttempt": "Última tentativa"
+  },
+  "HowToPlay": {
+    "title": "Como jogar",
+    "close": "Fechar",
+    "goal": "Descubra qual império aparece no mapa, retratado no auge da sua expansão. Você tem {attempts} tentativas.",
+    "guess": "Digite o nome de um império, escolha na lista e clique em Adivinhar (ou aperte Enter duas vezes).",
+    "compare": "Cada palpite errado compara o império que você chutou com o do mapa:",
+    "wrong": "não é esse",
+    "bigger": "o do mapa foi maior em área, ou durou mais",
+    "smaller": "o do mapa foi menor em área, ou durou menos",
+    "approximate": "os dois são parecidos (até 10% de diferença)",
+    "hints": "Cada erro também libera novas dicas sobre o império do mapa, logo abaixo do seu palpite.",
+    "inspect": "Passe o mouse ou toque numa dica, ou na área e duração, pra ver o que ela significa.",
+    "daily": "Um império novo todo dia.",
+    "goalNoCount": "Descubra qual império aparece no mapa, retratado no auge da sua expansão."
+  },
+  "Stats": {
+    "title": "Estatísticas",
+    "loading": "Carregando…",
+    "loadError": "Não deu pra carregar as estatísticas. Tente de novo.",
+    "played": "Jogos",
+    "winRate": "Vitórias",
+    "currentStreak": "Sequência atual",
+    "maxStreak": "Melhor sequência",
+    "myDistribution": "Suas tentativas",
+    "noGamesYet": "Termine o desafio de hoje pra começar suas estatísticas.",
+    "barWin": "Acertou na tentativa {attempt}: {count, plural, one {# vez} other {# vezes}}",
+    "barLoss": "Não acertou: {count, plural, one {# vez} other {# vezes}}",
+    "todayTitle": "Hoje, no Imperatle #{number}",
+    "todaySummary": "{players, plural, one {# pessoa terminou} other {# pessoas terminaram}} · {rate}% acertaram",
+    "averageLine": "Média de quem acertou: {avg} tentativas.",
+    "yourResult": "Você: {attempts}.",
+    "yourResultLost": "Você não acertou.",
+    "nobodyYet": "Ninguém terminou o desafio de hoje ainda.",
+    "communityBarWin": "{pct}% acertaram na tentativa {attempt} ({count, plural, one {# pessoa} other {# pessoas}})",
+    "communityBarLoss": "{pct}% não acertaram ({count, plural, one {# pessoa} other {# pessoas}})",
+    "share": "Compartilhar",
+    "copied": "Copiado!",
+    "shareFailed": "Não deu pra copiar"
+  },
+  "Common": {
+    "close": "Fechar"
+  },
+  "Support": {
+    "title": "Apoiar o projeto",
+    "intro": "O Imperatle é um projeto independente, feito por uma pessoa só. Quem apoia ajuda a pagar os servidores e a pesquisa histórica por trás de cada império.",
+    "perksTitle": "Quem apoiar vai ter",
+    "perks": {
+      "noAds": {
+        "title": "Sem anúncios",
+        "text": "o jogo limpo, do jeito que está agora."
+      },
+      "practice": {
+        "title": "Modo prática",
+        "text": "jogar à vontade, sem contar nas estatísticas."
+      },
+      "archive": {
+        "title": "Jogos anteriores",
+        "text": "jogar os desafios dos dias que passaram."
+      },
+      "creator": {
+        "title": "Criador de impérios",
+        "text": "montar o seu próprio império no mapa."
+      },
+      "request": {
+        "title": "Pedir um império",
+        "text": "sugerir um império novo pro jogo."
+      }
+    },
+    "note": "O apoio ainda não está disponível. Quando estiver, é só criar uma conta aqui mesmo e escolher quanto quer contribuir, de uma vez só, sem assinatura.",
+    "comingSoon": "Em breve"
+  },
+  "Feedback": {
+    "title": "Feedback",
+    "intro": "Achou um erro, tem uma ideia ou viu algum dado histórico errado? Conta aqui.",
+    "categoryLabel": "Tipo de mensagem",
+    "categories": {
+      "Bug": "Erro no jogo",
+      "Idea": "Ideia",
+      "Content": "Dado histórico",
+      "Other": "Outro"
+    },
+    "placeholders": {
+      "Bug": "O que aconteceu? Em que tela, celular ou computador?",
+      "Idea": "O que você gostaria de ver no Imperatle?",
+      "Content": "Qual império e qual dado? Se tiver, mande a fonte.",
+      "Other": "Pode escrever."
+    },
+    "messageLabel": "Mensagem",
+    "emailLabel": "Seu e-mail (opcional, só se quiser resposta)",
+    "emailPlaceholder": "voce@exemplo.com",
+    "send": "Enviar",
+    "sending": "Enviando…",
+    "thanks": "Obrigado! Sua mensagem chegou e vai ser lida.",
+    "done": "Fechar",
+    "error": "Não deu pra enviar. Tente de novo daqui a pouco.",
+    "tooMany": "Muitas mensagens seguidas. Espere alguns minutos e tente de novo."
+  },
+  "About": {
+    "title": "Sobre",
+    "what": "O Imperatle é um jogo diário de adivinhação. Todo dia, um império histórico diferente aparece no mapa, no auge da sua expansão, e você tenta descobrir qual é.",
+    "editorialTitle": "Uma nota sobre impérios",
+    "editorial": "O jogo trata só de extensão territorial e de fatos. Mostrar até onde um império chegou não é celebrar a conquista: muitos desses impérios cresceram à custa de guerras, colonização e do sofrimento de outros povos.",
+    "sourcesTitle": "Fontes e precisão",
+    "sources": "Os mapas são baseados em arquivos do Wikimedia Commons, sob licença livre (CC BY-SA). Datas, áreas e fronteiras históricas são aproximações, e as fontes costumam divergir.",
+    "mistakes": "Viu algum dado errado?",
+    "mistakesLink": "Mande um feedback.",
+    "authorTitle": "Quem fez",
+    "author": "Feito por <link>Ventura</link>, desenvolvedor brasileiro.",
+    "stack": "Next.js, ASP.NET Core e PostgreSQL."
   }
 }
