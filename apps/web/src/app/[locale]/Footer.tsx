@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { SupportButton } from "./SupportButton";
 
 interface FooterProps {
@@ -14,6 +15,14 @@ export async function Footer({ challengeNumber }: FooterProps) {
       <SupportButton label={t("support")} />
       <p className="font-display">{t("copyright", { year })}</p>
       {challengeNumber !== null && <p className="font-display">{t("challengeNumber", { number: challengeNumber })}</p>}
+      <nav className="flex gap-4 text-xs">
+        <Link href="/privacy" className="underline-offset-2 hover:text-foreground hover:underline">
+          {t("privacy")}
+        </Link>
+        <Link href="/terms" className="underline-offset-2 hover:text-foreground hover:underline">
+          {t("terms")}
+        </Link>
+      </nav>
     </footer>
   );
 }

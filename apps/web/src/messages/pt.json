@@ -21,7 +21,9 @@
   "Footer": {
     "copyright": "© {year} Imperatle",
     "support": "Apoiar o projeto",
-    "challengeNumber": "Imperatle #{number}"
+    "challengeNumber": "Imperatle #{number}",
+    "privacy": "Privacidade",
+    "terms": "Termos"
   },
   "Game": {
     "attempts": "Tentativas: {used}/{total}",
