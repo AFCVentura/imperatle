@@ -16,7 +16,9 @@ public static class ChallengeScheduler
     // Days at the end of a cycle that can't open the next one.
     public const int CycleBoundaryGap = 3;
 
-    // history: empire ids of past challenges, most recent first.
+    // history: empire ids of every past challenge, oldest first. Cycles are
+    // replayed from the start because walking back from today can't tell
+    // where the current cycle began.
     public static int PickNext(IReadOnlyCollection<int> activeEmpireIds, IReadOnlyList<int> history, Random random)
     {
         if (activeEmpireIds.Count == 0)
@@ -26,14 +28,14 @@ public static class ChallengeScheduler
 
         var active = activeEmpireIds.ToHashSet();
 
-        // Walk back through the current cycle: it ends where an empire repeats
-        // or once every active empire has been used.
+        // A cycle ends once every active empire has been used, or when an
+        // empire repeats (the active set changed along the way).
         var usedInCycle = new HashSet<int>();
         foreach (var id in history)
         {
             if (usedInCycle.Contains(id) || usedInCycle.IsSupersetOf(active))
             {
-                break;
+                usedInCycle.Clear();
             }
             usedInCycle.Add(id);
         }
@@ -43,7 +45,7 @@ public static class ChallengeScheduler
         {
             // New cycle: everyone is eligible except the most recent few.
             var gap = Math.Min(CycleBoundaryGap, active.Count - 1);
-            var recent = history.Take(gap).ToHashSet();
+            var recent = history.TakeLast(gap).ToHashSet();
             candidates = active.Except(recent).ToList();
         }
 
@@ -63,11 +65,11 @@ public static class ChallengeScheduler
         }
 
         var activeIds = await db.Empires.Where(e => e.Active).Select(e => e.Id).ToListAsync();
+        // One row per day, so the full history stays small for years.
         var history = await db.DailyChallenges
             .Where(c => c.Date < date)
-            .OrderByDescending(c => c.Date)
+            .OrderBy(c => c.Date)
             .Select(c => c.EmpireId)
-            .Take(activeIds.Count + CycleBoundaryGap)
             .ToListAsync();
 
         var challenge = new DailyChallenge { Date = date, EmpireId = PickNext(activeIds, history, Random.Shared) };
