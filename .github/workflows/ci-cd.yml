@@ -1,0 +1,173 @@
+# Tests the API and the web app on every push and pull request to main. On main
+# (or a manual run), once both pass, the API image is published and deployed to
+# Azure Container Apps. The web app is deployed by Vercel's Git integration.
+name: CI/CD
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "**.md"
+  pull_request:
+    branches: [main]
+    paths-ignore:
+      - "**.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  IMAGE: ghcr.io/afcventura/imperatle-api
+  RESOURCE_GROUP: rg-imperatle
+  CONTAINER_APP: imperatle-api
+  API_URL: https://api.imperatle.com
+
+jobs:
+  api:
+    name: API tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Cache NuGet packages
+        uses: actions/cache@v6
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
+          restore-keys: nuget-${{ runner.os }}-
+
+      # Microsoft.Testing.Platform runner (see global.json), hence --solution.
+      # Includes the content checks: every empire file valid, every map file present.
+      - name: Run tests
+        run: dotnet test --solution apps/api/Imperatle.Api.sln -c Release --report-xunit-trx --results-directory TestResults
+
+      - name: Upload test report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: api-test-results
+          path: TestResults/*.trx
+          if-no-files-found: ignore
+
+  web:
+    name: Web checks
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/web
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      # No API in CI: the build only needs the pages to compile.
+      - run: npm run build
+
+  deploy-api:
+    name: Deploy API to Azure
+    needs: [api, web]
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    # No "environment:" on purpose: it would change the OIDC token subject, and
+    # the Azure federated credential expects "repo:AFCVentura/imperatle:ref:refs/heads/main".
+    permissions:
+      contents: read
+      packages: write # push the image to GHCR
+      id-token: write # OIDC token for Azure, instead of a stored password
+    # Back-to-back pushes deploy one after the other, never at the same time.
+    concurrency:
+      group: deploy-api
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: docker/setup-buildx-action@v4
+
+      - uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # Tagged with the commit hash, so each deploy points to an exact image.
+      - name: Build and push the image
+        uses: docker/build-push-action@v7
+        with:
+          context: apps/api
+          push: true
+          tags: |
+            ${{ env.IMAGE }}:${{ github.sha }}
+            ${{ env.IMAGE }}:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Azure login (OIDC)
+        uses: azure/login@v3
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      # Ingress on 8080 first, then the new image: in this order the new
+      # revision is born probing the right port.
+      - name: Update the Container App
+        run: |
+          az config set extension.use_dynamic_install=yes_without_prompt
+          az containerapp ingress update \
+            --name "$CONTAINER_APP" \
+            --resource-group "$RESOURCE_GROUP" \
+            --target-port 8080
+          az containerapp update \
+            --name "$CONTAINER_APP" \
+            --resource-group "$RESOURCE_GROUP" \
+            --image "$IMAGE:${{ github.sha }}"
+
+      # "az containerapp update" returns once Azure accepts the change, not when
+      # the revision is up. A broken revision (bad content, failed migration)
+      # leaves the old one serving, so without this check the run would go green.
+      - name: Wait for the new revision to be healthy
+        run: |
+          revision=$(az containerapp show --name "$CONTAINER_APP" --resource-group "$RESOURCE_GROUP" \
+            --query properties.latestRevisionName --output tsv)
+          echo "New revision: $revision"
+
+          for attempt in $(seq 1 30); do
+            read -r provisioning running health <<< "$(az containerapp revision show \
+              --name "$CONTAINER_APP" --resource-group "$RESOURCE_GROUP" --revision "$revision" \
+              --query "[properties.provisioningState, properties.runningState, properties.healthState]" --output tsv | tr '\n' ' ')"
+            echo "[$attempt/30] provisioning=$provisioning running=$running health=$health"
+
+            if [ "$provisioning" = "Failed" ] || [ "$running" = "Failed" ]; then
+              echo "::error::Revision $revision failed. See the logs under Container App > Revisions and replicas."
+              exit 1
+            fi
+            if [ "$provisioning" = "Provisioned" ] && [ "$health" = "Healthy" ] && [[ "$running" == Running* ]]; then
+              echo "Revision $revision is up and healthy."
+              exit 0
+            fi
+            sleep 10
+          done
+
+          echo "::error::Revision $revision wasn't healthy after 5 minutes (last: provisioning=$provisioning running=$running health=$health)."
+          exit 1
+
+      # From the outside, through the real domain. Retries cover a cold start.
+      - name: Smoke test
+        run: |
+          curl --fail --silent --show-error --output /dev/null \
+            --retry 5 --retry-delay 10 --retry-all-errors --max-time 30 \
+            --write-out "HTTP %{http_code} in %{time_total}s\n" \
+            "$API_URL/health"

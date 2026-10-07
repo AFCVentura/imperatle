@@ -1,0 +1,8 @@
+**/bin/
+**/obj/
+.vs/
+**/*.user
+*.http
+Dockerfile
+.dockerignore
+Content/README.md
