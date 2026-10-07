@@ -13,6 +13,8 @@ import {
 export interface HintSlot {
   key: string;
   label: string;
+  // What this kind of clue means (tooltip text).
+  description: string;
   value: string | null;
   notes?: string | null;
 }
@@ -50,11 +52,13 @@ export function useHintRows(reveal: ChallengeReveal): HintRowData[] {
         {
           key: "era",
           label: t("fields.era"),
+          description: t("fieldInfo.era"),
           value: reveal.broadEra !== null ? t(`enums.broadEra.${broadEraFromApi(reveal.broadEra)}`) : null,
         },
         {
           key: "mapConfidence",
           label: t("fields.mapConfidence"),
+          description: t("fieldInfo.mapConfidence"),
           value:
             reveal.mapBorderConfidence !== null
               ? t(`enums.borderConfidence.${borderConfidenceFromApi(reveal.mapBorderConfidence)}`)
@@ -68,6 +72,7 @@ export function useHintRows(reveal: ChallengeReveal): HintRowData[] {
         {
           key: "continents",
           label: t("fields.continents"),
+          description: t("fieldInfo.continents"),
           value:
             reveal.continents && reveal.continents.length > 0
               ? reveal.continents.map((c) => t(`enums.continent.${continentFromApi(c)}`)).join(", ")
@@ -81,11 +86,13 @@ export function useHintRows(reveal: ChallengeReveal): HintRowData[] {
         {
           key: "subEra",
           label: t("fields.subEra"),
+          description: t("fieldInfo.subEra"),
           value: reveal.subEraEn ? pickLocalized(reveal.subEraEn, reveal.subEraPt ?? reveal.subEraEn, locale) : null,
         },
         {
           key: "capital",
           label: t("fields.capital"),
+          description: t("fieldInfo.capital"),
           value: reveal.capitalEn ? pickLocalized(reveal.capitalEn, reveal.capitalPt ?? reveal.capitalEn, locale) : null,
         },
       ],
@@ -96,11 +103,13 @@ export function useHintRows(reveal: ChallengeReveal): HintRowData[] {
         {
           key: "language",
           label: t("fields.language"),
+          description: t("fieldInfo.language"),
           value: reveal.languageEn ? pickLocalized(reveal.languageEn, reveal.languagePt ?? reveal.languageEn, locale) : null,
         },
         {
           key: "curiosity1",
           label: t("fields.curiosity"),
+          description: t("fieldInfo.curiosity"),
           value: reveal.hints?.[0] ? pickLocalized(reveal.hints[0].textEn, reveal.hints[0].textPt, locale) : null,
         },
       ],
@@ -111,11 +120,13 @@ export function useHintRows(reveal: ChallengeReveal): HintRowData[] {
         {
           key: "referenceYear",
           label: t("fields.referenceYear"),
+          description: t("fieldInfo.referenceYear"),
           value: reveal.referenceYear !== null ? formatYear(reveal.referenceYear) : null,
         },
         {
           key: "curiosity2",
           label: t("fields.curiosity"),
+          description: t("fieldInfo.curiosity"),
           value: reveal.hints?.[1] ? pickLocalized(reveal.hints[1].textEn, reveal.hints[1].textPt, locale) : null,
         },
       ],
@@ -126,6 +137,7 @@ export function useHintRows(reveal: ChallengeReveal): HintRowData[] {
         {
           key: "period",
           label: t("fields.period"),
+          description: t("fieldInfo.period"),
           value:
             reveal.startYear !== null && reveal.endYear !== null
               ? `${formatYear(reveal.startYear)} – ${formatYear(reveal.endYear)}`
@@ -135,6 +147,7 @@ export function useHintRows(reveal: ChallengeReveal): HintRowData[] {
         {
           key: "area",
           label: t("fields.area"),
+          description: t("fieldInfo.area"),
           value:
             reveal.peakAreaKm2 !== null
               ? formatAreaKm2(reveal.peakAreaKm2, locale, areaPrecisionFromApi(reveal.areaPrecision ?? 0) === "Approximate")
@@ -143,11 +156,13 @@ export function useHintRows(reveal: ChallengeReveal): HintRowData[] {
         {
           key: "religion",
           label: t("fields.religion"),
+          description: t("fieldInfo.religion"),
           value: reveal.religionEn ? pickLocalized(reveal.religionEn, reveal.religionPt ?? reveal.religionEn, locale) : null,
         },
         {
           key: "curiosity3",
           label: t("fields.curiosity"),
+          description: t("fieldInfo.curiosity"),
           value: reveal.hints?.[2] ? pickLocalized(reveal.hints[2].textEn, reveal.hints[2].textPt, locale) : null,
         },
       ],

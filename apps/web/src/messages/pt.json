@@ -44,7 +44,7 @@
     },
     "fields": {
       "era": "Era",
-      "mapConfidence": "Confiança das fronteiras",
+      "mapConfidence": "Precisão do mapa",
       "continents": "Continente(s)",
       "subEra": "Sub-era",
       "capital": "Capital",
@@ -66,9 +66,9 @@
         "Contemporary": "Contemporânea"
       },
       "borderConfidence": {
-        "Precise": "Precisas",
-        "Approximate": "Aproximadas",
-        "Speculative": "Especulativas"
+        "Precise": "Alta",
+        "Approximate": "Média",
+        "Speculative": "Baixa"
       },
       "continent": {
         "Africa": "África",
@@ -82,6 +82,32 @@
     "year": {
       "bce": "{year} a.E.C.",
       "ce": "{year} d.C."
-    }
+    },
+    "comparisonInfo": {
+      "area": {
+        "Bigger": "O império do mapa foi maior que este no seu auge.",
+        "Smaller": "O império do mapa foi menor que este no seu auge.",
+        "Approximate": "Os dois tiveram tamanhos parecidos no auge, com até 10% de diferença."
+      },
+      "duration": {
+        "Bigger": "O império do mapa durou mais tempo que este.",
+        "Smaller": "O império do mapa durou menos tempo que este.",
+        "Approximate": "Os dois duraram mais ou menos o mesmo tempo, com até 10% de diferença."
+      }
+    },
+    "fieldInfo": {
+      "era": "Grande período da história em que o império viveu seu auge. É uma divisão aproximada, criada a partir da história europeia, e nem sempre se encaixa bem em outras regiões do mundo.",
+      "mapConfidence": "Na maior parte da história, as fronteiras de reinos e impérios não eram linhas exatas. Muitos mapas são só aproximações da área controlada, e alguns são reconstruções feitas com pouca evidência.",
+      "continents": "Continentes em que o império controlou território no seu auge.",
+      "subEra": "Um recorte mais específico dentro da era, com o nome que os historiadores costumam dar a esse momento ou região.",
+      "capital": "Alguns impérios tiveram capitais diferentes ao longo do tempo, mais de uma ao mesmo tempo ou nenhuma capital fixa. Aqui aparece a capital mais conhecida ou a cidade principal.",
+      "language": "Língua principal do governo e da elite. Muitos impérios reuniam dezenas de povos e línguas diferentes.",
+      "referenceYear": "Ano do auge da expansão territorial, que é o momento retratado no mapa. Não leva em conta outros fatores, como estabilidade ou prosperidade.",
+      "period": "Do surgimento ao fim do império. Início e fim costumam ser debatidos pelos historiadores, então usamos as datas mais aceitas.",
+      "area": "Maior área que o império chegou a controlar. Estimativas de área histórica variam bastante entre as fontes, então vale mais como ordem de grandeza.",
+      "religion": "Religião oficial ou da elite governante, não necessariamente a da maioria da população.",
+      "curiosity": "Um fato marcante sobre o império do mapa. Costuma ser a dica mais reveladora."
+    },
+    "lastAttempt": "Última tentativa"
   }
 }

@@ -44,7 +44,7 @@
     },
     "fields": {
       "era": "Era",
-      "mapConfidence": "Map border confidence",
+      "mapConfidence": "Map accuracy",
       "continents": "Continent(s)",
       "subEra": "Sub-era",
       "capital": "Capital",
@@ -66,9 +66,9 @@
         "Contemporary": "Contemporary"
       },
       "borderConfidence": {
-        "Precise": "Precise",
-        "Approximate": "Approximate",
-        "Speculative": "Speculative"
+        "Precise": "High",
+        "Approximate": "Medium",
+        "Speculative": "Low"
       },
       "continent": {
         "Africa": "Africa",
@@ -82,6 +82,32 @@
     "year": {
       "bce": "{year} BCE",
       "ce": "{year} CE"
-    }
+    },
+    "comparisonInfo": {
+      "area": {
+        "Bigger": "The map's empire was larger than this one at its peak.",
+        "Smaller": "The map's empire was smaller than this one at its peak.",
+        "Approximate": "Both were about the same size at their peak, within 10%."
+      },
+      "duration": {
+        "Bigger": "The map's empire lasted longer than this one.",
+        "Smaller": "The map's empire didn't last as long as this one.",
+        "Approximate": "Both lasted about the same time, within 10%."
+      }
+    },
+    "fieldInfo": {
+      "era": "The broad period of history in which the empire peaked. It's a rough division, built around European history, and doesn't always fit other parts of the world well.",
+      "mapConfidence": "For most of history, the borders of kingdoms and empires weren't exact lines. Many maps are just approximations of the area under control, and some are reconstructions based on little evidence.",
+      "continents": "Continents where the empire held territory at its peak.",
+      "subEra": "A narrower slice of the era, with the name historians usually give to that moment or region.",
+      "capital": "Some empires changed capitals over time, had more than one at once, or had no fixed capital at all. This is the best-known capital or main city.",
+      "language": "The main language of the government and the elite. Many empires brought together dozens of peoples and languages.",
+      "referenceYear": "The year of the empire's greatest territorial extent, which is what the map shows. Other factors, like stability or prosperity, aren't taken into account.",
+      "period": "From the empire's rise to its end. Start and end dates are often debated by historians, so the most widely accepted ones are used.",
+      "area": "The largest area the empire ever controlled. Estimates of historical area vary a lot between sources, so treat it as an order of magnitude.",
+      "religion": "The official religion, or that of the ruling elite, not necessarily that of most of the population.",
+      "curiosity": "A striking fact about the map's empire. Usually the most revealing clue."
+    },
+    "lastAttempt": "Last attempt"
   }
 }

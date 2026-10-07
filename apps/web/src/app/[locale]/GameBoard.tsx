@@ -98,8 +98,15 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
     // Phone-sized column on every screen, so the PC looks like the mobile layout.
     <div className="flex w-full max-w-md flex-col gap-6 md:gap-3">
       {challenge.mapUrl ? (
-        <div className="flex justify-center rounded-xl border border-map-line bg-map p-3">
+        // Discourages saving/copying the map: no right-click menu, no
+        // dragging, no long-press "save image" on iOS, no selection. It's a
+        // deterrent only -- the file is still reachable from dev tools.
+        <div
+          onContextMenu={(e) => e.preventDefault()}
+          className="flex select-none justify-center rounded-xl border border-map-line bg-map p-3 [-webkit-touch-callout:none]"
+        >
           <Image
+            draggable={false}
             src={challenge.mapUrl}
             alt={t("mapAlt")}
             width={553}
@@ -108,7 +115,7 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
             priority
             // Square, capped at 240px and at 30% of the screen height, so the
             // map never takes over short screens.
-            className="aspect-square h-auto w-full max-w-[min(15rem,30dvh)]"
+            className="pointer-events-none aspect-square h-auto w-full max-w-[min(15rem,30dvh)]"
           />
         </div>
       ) : (
@@ -134,7 +141,7 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
             // Keep focus (and the phone keyboard) on the input for the next guess.
             onMouseDown={(e) => e.preventDefault()}
             disabled={selectedEmpireId === null || submitting}
-            className="rounded-full bg-accent px-5 py-2 text-sm font-semibold text-accent-foreground disabled:opacity-40 md:py-1.5"
+            className="rounded-full bg-accent px-5 py-2 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/85 disabled:opacity-40 disabled:hover:bg-accent md:py-1.5"
           >
             {t("guessButton")}
           </button>
@@ -144,7 +151,7 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
       {error && <p className="text-sm text-danger">{t("submitError")}</p>}
 
       <div>
-        <div className="mb-1.5 flex items-baseline justify-between gap-3">
+        <div className="mb-1.5 flex select-none items-baseline justify-between gap-3">
           <h2 className="font-display text-base tracking-wide text-muted">{t("guessHistoryTitle")}</h2>
           <p className="font-display text-sm text-muted">
             {t("attempts", { used: guesses.length, total: challenge.attemptsAllowed })}
@@ -171,7 +178,7 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
       {gameOver && answer && remainingHintRows.length > 0 && (
         // Same look as an attempt's clue section: one pill, rows and cells
         // split by dividers.
-        <div>
+        <div className="select-none">
           <h2 className="mb-1.5 font-display text-base tracking-wide text-muted">
             {t("remainingHintsLabel")}
           </h2>

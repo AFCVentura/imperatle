@@ -2,11 +2,14 @@
 
 import { useState } from "react";
 import { MarqueeText } from "./MarqueeText";
+import { useTooltip } from "./useTooltip";
 
 interface HintCardProps {
   label: string;
   value: string | null;
   unlockedAtLabel: string;
+  // What this kind of clue means, shown in a tooltip.
+  description: string;
   notes?: string | null;
   notesButtonLabel?: string;
   // "card": standalone bordered card. "cell": flat cell inside an attempt's
@@ -20,27 +23,48 @@ interface HintCardProps {
 // on hover. Both states use the same crossfade so the interaction feels
 // consistent either way. Touch screens have no hover, so a tap flips the
 // card instead (Tailwind's hover: only applies on devices that can hover).
-export function HintCard({ label, value, unlockedAtLabel, notes, notesButtonLabel, variant = "card", className = "" }: HintCardProps) {
+// On top of the flip, a tooltip explains what the clue means: after a short
+// hover delay, or on click/tap.
+export function HintCard({
+  label,
+  value,
+  unlockedAtLabel,
+  description,
+  notes,
+  notesButtonLabel,
+  variant = "card",
+  className = "",
+}: HintCardProps) {
   const [notesOpen, setNotesOpen] = useState(false);
   const [flipped, setFlipped] = useState(false);
+  const { anchorProps, toggle, tooltip } = useTooltip(
+    <>
+      <span className="mb-0.5 block font-display font-semibold">{label}</span>
+      {description}
+    </>,
+  );
   const unlocked = value !== null;
   const front = unlocked ? value : label;
   const back = unlocked ? label : unlockedAtLabel;
 
   return (
     <div
+      {...anchorProps}
       role="button"
       tabIndex={0}
       aria-pressed={flipped}
       // Mouse users already get the flip on hover; flipping on click too
-      // would leave the card stuck on its back after the pointer leaves.
+      // would leave the card stuck on its back after the pointer leaves, so
+      // a click only toggles the tooltip.
       onPointerUp={(e) => {
         if (e.pointerType !== "mouse") setFlipped((f) => !f);
+        toggle();
       }}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
           setFlipped((f) => !f);
+          toggle();
         }
       }}
       className={`group relative flex min-w-0 flex-auto cursor-default select-none flex-col items-center justify-center px-3 py-1.5 text-center transition-colors ${
@@ -93,6 +117,7 @@ export function HintCard({ label, value, unlockedAtLabel, notes, notesButtonLabe
           )}
         </>
       )}
+      {tooltip}
     </div>
   );
 }

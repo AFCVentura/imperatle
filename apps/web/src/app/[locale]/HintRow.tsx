@@ -29,6 +29,7 @@ export function HintRow({ row, variant = "card" }: HintRowProps) {
         label={slot.label}
         value={slot.value}
         unlockedAtLabel={t("fields.unlockedAt", { n: row.attempt })}
+        description={slot.description}
         notes={slot.notes}
         notesButtonLabel={t("fields.showNote")}
         variant={variant}
