@@ -1,5 +1,6 @@
 using System.Threading.RateLimiting;
 using Imperatle.Api.Data;
+using Imperatle.Api.Services;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +17,12 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<ImperatleDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddHttpClient<FeedbackEmailService>(client =>
+{
+    client.BaseAddress = new Uri("https://api.resend.com/");
+    client.Timeout = TimeSpan.FromSeconds(10);
+});
 
 builder.Services.AddCors(options =>
 {
@@ -47,6 +54,17 @@ builder.Services.AddRateLimiter(options =>
             QueueLimit = 0,
         });
     });
+
+    // Feedback: a few messages per IP every 10 minutes is plenty for a person.
+    options.AddPolicy("feedback", httpContext =>
+        RateLimitPartition.GetFixedWindowLimiter(
+            httpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown",
+            _ => new FixedWindowRateLimiterOptions
+            {
+                Window = TimeSpan.FromMinutes(10),
+                PermitLimit = 5,
+                QueueLimit = 0,
+            }));
 });
 
 var app = builder.Build();

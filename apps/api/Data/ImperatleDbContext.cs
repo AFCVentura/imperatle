@@ -9,6 +9,7 @@ public class ImperatleDbContext(DbContextOptions<ImperatleDbContext> options) : 
     public DbSet<EmpireHint> EmpireHints => Set<EmpireHint>();
     public DbSet<DailyChallenge> DailyChallenges => Set<DailyChallenge>();
     public DbSet<PlayerChallengeProgress> PlayerChallengeProgress => Set<PlayerChallengeProgress>();
+    public DbSet<Feedback> Feedback => Set<Feedback>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -32,5 +33,13 @@ public class ImperatleDbContext(DbContextOptions<ImperatleDbContext> options) : 
         // Community stats read every finished game of a given day.
         modelBuilder.Entity<PlayerChallengeProgress>()
             .HasIndex(p => p.Date);
+
+        modelBuilder.Entity<Feedback>(feedback =>
+        {
+            feedback.Property(f => f.Category).HasConversion<string>().HasMaxLength(20);
+            feedback.Property(f => f.Message).HasMaxLength(2000);
+            feedback.Property(f => f.Email).HasMaxLength(254);
+            feedback.Property(f => f.Locale).HasMaxLength(10);
+        });
     }
 }
