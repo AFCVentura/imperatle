@@ -7,7 +7,8 @@ interface AppDialogProps {
   // Window event that opens this dialog (see lib/dialogs.ts).
   event: string;
   title: string;
-  onOpen?: () => void;
+  // Receives the opening event, for dialogs whose content depends on it.
+  onOpen?: (event: Event) => void;
   // Reading/tooling dialogs block text selection; ones with text worth
   // copying or a form keep it.
   selectable?: boolean;
@@ -29,9 +30,9 @@ export function AppDialog({ event, title, onOpen, selectable = false, children }
   });
 
   useEffect(() => {
-    const open = () => {
+    const open = (e: Event) => {
       dialogRef.current?.showModal();
-      onOpenRef.current?.();
+      onOpenRef.current?.(e);
     };
     window.addEventListener(event, open);
     return () => window.removeEventListener(event, open);

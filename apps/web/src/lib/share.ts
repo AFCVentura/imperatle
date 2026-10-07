@@ -1,4 +1,5 @@
 import type { GuessHistoryEntry } from "./gameStorage";
+import { SITE_URL } from "./site";
 import type { ComparisonResult } from "./types";
 
 const ARROW: Record<ComparisonResult, string> = {
@@ -19,8 +20,7 @@ export function buildShareText(guesses: GuessHistoryEntry[], challengeNumber: nu
     const duration = g.durationComparison ? ` ⏳${ARROW[g.durationComparison]}` : "";
     return `❌${area}${duration}`;
   });
-  const url = process.env.NEXT_PUBLIC_SITE_URL ?? "https://imperatle.com";
-  return [`Imperatle #${challengeNumber} 🏛️ ${score}`, "", ...lines, "", url].join("\n");
+  return [`Imperatle #${challengeNumber} 🏛️ ${score}`, "", ...lines, "", SITE_URL].join("\n");
 }
 
 // Phones get the native share sheet (straight to WhatsApp, X, etc.);

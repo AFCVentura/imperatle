@@ -2,16 +2,21 @@
   "HomePage": {
     "subtitle": "Guess the historical empire"
   },
+  "Metadata": {
+    "description": "Guess the historical empire from its map. A new empire every day."
+  },
   "Header": {
     "menuLabel": "Menu",
     "closeLabel": "Close menu",
     "menu": {
+      "createAccount": "Create account",
       "statistics": "Statistics",
       "howToPlay": "How to play",
       "support": "Support the project",
       "feedback": "Feedback",
       "about": "About"
-    }
+    },
+    "language": "Language"
   },
   "Footer": {
     "copyright": "© {year} Imperatle",
@@ -32,7 +37,6 @@
     "guessHistoryTitle": "Guesses & Clues",
     "submitError": "Something went wrong. Try again.",
     "playAgainTomorrow": "Come back tomorrow for a new empire!",
-    "emptyGuessSlot": "—",
     "correctGuessMark": "Correct!",
     "wrongGuessMark": "Wrong",
     "remainingHintsLabel": "The other clues",
@@ -151,34 +155,57 @@
   "Common": {
     "close": "Close"
   },
-  "Support": {
-    "title": "Support the project",
-    "intro": "Imperatle is an independent project, made by one person. Supporters help pay for the servers and the historical research behind each empire.",
-    "perksTitle": "Supporters will get",
-    "perks": {
-      "noAds": {
-        "title": "No ads",
-        "text": "the game as clean as it is now."
+  "ComingSoon": {
+    "badge": "Coming soon",
+    "ok": "Got it",
+    "support": {
+      "title": "Support the project",
+      "intro": "Imperatle is an independent project, made by one person. Supporters help pay for the servers and the historical research behind each empire.",
+      "perksTitle": "Supporters will get",
+      "perks": {
+        "noAds": {
+          "title": "No ads",
+          "text": "the game as clean as it is now."
+        },
+        "practice": {
+          "title": "Practice mode",
+          "text": "play as much as you like, without affecting your stats."
+        },
+        "archive": {
+          "title": "Past games",
+          "text": "play the challenges from previous days."
+        },
+        "creator": {
+          "title": "Empire creator",
+          "text": "build your own empire on the map."
+        },
+        "request": {
+          "title": "Request an empire",
+          "text": "suggest a new empire for the game."
+        }
       },
-      "practice": {
-        "title": "Practice mode",
-        "text": "play as much as you like, without affecting your stats."
-      },
-      "archive": {
-        "title": "Past games",
-        "text": "play the challenges from previous days."
-      },
-      "creator": {
-        "title": "Empire creator",
-        "text": "build your own empire on the map."
-      },
-      "request": {
-        "title": "Request an empire",
-        "text": "suggest a new empire for the game."
-      }
+      "note": "Support isn't available yet. When it is, it'll be a cheap subscription, monthly or yearly, and you'll create your account right there. Cancel anytime."
     },
-    "note": "Support isn't available yet. When it is, you'll create an account right here and choose how much to give, once, with no subscription.",
-    "comingSoon": "Coming soon"
+    "account": {
+      "title": "Create account",
+      "intro": "You don't need an account to play. For now, your progress and stats are saved in this browser.",
+      "perksTitle": "With an account, you'll get",
+      "perks": {
+        "sync": {
+          "title": "Stats everywhere",
+          "text": "your history and streaks on your phone and your computer."
+        },
+        "google": {
+          "title": "Sign in with Google",
+          "text": "no new password to remember."
+        },
+        "safe": {
+          "title": "Progress kept safe",
+          "text": "clearing the browser won't erase your streak."
+        }
+      },
+      "note": "Accounts aren't available yet. They'll arrive together with support for the project."
+    }
   },
   "Feedback": {
     "title": "Feedback",

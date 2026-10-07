@@ -4,7 +4,8 @@ import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { resetTodayChallenge } from "@/lib/api";
 import { clearAllGameProgress } from "@/lib/gameStorage";
-import { openAbout, openFeedback, openHowToPlay, openStats, openSupport } from "@/lib/dialogs";
+import { openAbout, openAccount, openFeedback, openHowToPlay, openStats, openSupport } from "@/lib/dialogs";
+import { LocaleSwitcher } from "./LocaleSwitcher";
 
 export function Header() {
   const t = useTranslations("Header");
@@ -33,6 +34,7 @@ export function Header() {
   }, [open]);
 
   const menuItems = [
+    { label: t("menu.createAccount"), open: openAccount },
     { label: t("menu.statistics"), open: openStats },
     { label: t("menu.howToPlay"), open: openHowToPlay },
     { label: t("menu.support"), open: openSupport },
@@ -110,6 +112,9 @@ export function Header() {
                 {label}
               </button>
             ))}
+            <div className="mt-auto border-t border-line pt-4">
+              <LocaleSwitcher onSwitch={() => setOpen(false)} />
+            </div>
           </nav>
         </div>
       )}

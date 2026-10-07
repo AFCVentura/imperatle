@@ -2,16 +2,21 @@
   "HomePage": {
     "subtitle": "Adivinhe o império histórico"
   },
+  "Metadata": {
+    "description": "Adivinhe o império histórico pelo mapa. Um império novo por dia."
+  },
   "Header": {
     "menuLabel": "Menu",
     "closeLabel": "Fechar menu",
     "menu": {
+      "createAccount": "Criar conta",
       "statistics": "Estatísticas",
       "howToPlay": "Como jogar",
       "support": "Apoiar o projeto",
       "feedback": "Feedback",
       "about": "Sobre"
-    }
+    },
+    "language": "Idioma"
   },
   "Footer": {
     "copyright": "© {year} Imperatle",
@@ -32,7 +37,6 @@
     "guessHistoryTitle": "Palpites e Dicas",
     "submitError": "Algo deu errado. Tente de novo.",
     "playAgainTomorrow": "Volte amanhã pra um novo império!",
-    "emptyGuessSlot": "—",
     "correctGuessMark": "Acertou!",
     "wrongGuessMark": "Errado",
     "remainingHintsLabel": "As outras dicas",
@@ -151,34 +155,57 @@
   "Common": {
     "close": "Fechar"
   },
-  "Support": {
-    "title": "Apoiar o projeto",
-    "intro": "O Imperatle é um projeto independente, feito por uma pessoa só. Quem apoia ajuda a pagar os servidores e a pesquisa histórica por trás de cada império.",
-    "perksTitle": "Quem apoiar vai ter",
-    "perks": {
-      "noAds": {
-        "title": "Sem anúncios",
-        "text": "o jogo limpo, do jeito que está agora."
+  "ComingSoon": {
+    "badge": "Em breve",
+    "ok": "Entendi",
+    "support": {
+      "title": "Apoiar o projeto",
+      "intro": "O Imperatle é um projeto independente, feito por uma pessoa só. Quem apoia ajuda a pagar os servidores e a pesquisa histórica por trás de cada império.",
+      "perksTitle": "Quem apoiar vai ter",
+      "perks": {
+        "noAds": {
+          "title": "Sem anúncios",
+          "text": "o jogo limpo, do jeito que está agora."
+        },
+        "practice": {
+          "title": "Modo prática",
+          "text": "jogar à vontade, sem contar nas estatísticas."
+        },
+        "archive": {
+          "title": "Jogos anteriores",
+          "text": "jogar os desafios dos dias que passaram."
+        },
+        "creator": {
+          "title": "Criador de impérios",
+          "text": "montar o seu próprio império no mapa."
+        },
+        "request": {
+          "title": "Pedir um império",
+          "text": "sugerir um império novo pro jogo."
+        }
       },
-      "practice": {
-        "title": "Modo prática",
-        "text": "jogar à vontade, sem contar nas estatísticas."
-      },
-      "archive": {
-        "title": "Jogos anteriores",
-        "text": "jogar os desafios dos dias que passaram."
-      },
-      "creator": {
-        "title": "Criador de impérios",
-        "text": "montar o seu próprio império no mapa."
-      },
-      "request": {
-        "title": "Pedir um império",
-        "text": "sugerir um império novo pro jogo."
-      }
+      "note": "O apoio ainda não está disponível. Quando estiver, vai ser uma assinatura barata, mensal ou anual, e você cria sua conta ali mesmo. Dá pra cancelar quando quiser."
     },
-    "note": "O apoio ainda não está disponível. Quando estiver, é só criar uma conta aqui mesmo e escolher quanto quer contribuir, de uma vez só, sem assinatura.",
-    "comingSoon": "Em breve"
+    "account": {
+      "title": "Criar conta",
+      "intro": "Você não precisa de conta pra jogar. Por enquanto, seu progresso e suas estatísticas ficam salvos neste navegador.",
+      "perksTitle": "Com uma conta, você vai ter",
+      "perks": {
+        "sync": {
+          "title": "Estatísticas em qualquer lugar",
+          "text": "seu histórico e suas sequências no celular e no computador."
+        },
+        "google": {
+          "title": "Login com Google",
+          "text": "sem senha nova pra decorar."
+        },
+        "safe": {
+          "title": "Progresso guardado",
+          "text": "limpar o navegador não apaga sua sequência."
+        }
+      },
+      "note": "As contas ainda não estão disponíveis. Elas chegam junto com o apoio ao projeto."
+    }
   },
   "Feedback": {
     "title": "Feedback",
