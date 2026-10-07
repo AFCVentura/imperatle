@@ -48,7 +48,7 @@ public static class StatsCalculator
     }
 
     // `games` = everyone's finished games for today's challenge.
-    public static CommunityStats ForToday(IReadOnlyCollection<PlayerChallengeProgress> games, DateOnly today)
+    public static CommunityStats ForToday(IReadOnlyCollection<PlayerChallengeProgress> games, DateOnly today, int challengeNumber)
     {
         var wins = games.Where(g => g.Correct).ToList();
         var distribution = new int[GameRules.AttemptsAllowed];
@@ -59,7 +59,7 @@ public static class StatsCalculator
 
         return new CommunityStats(
             today,
-            GameRules.ChallengeNumber(today),
+            challengeNumber,
             GameRules.AttemptsAllowed,
             games.Count,
             wins.Count,

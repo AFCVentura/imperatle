@@ -1,5 +1,6 @@
 using System.Threading.RateLimiting;
 using Imperatle.Api.Data;
+using Imperatle.Api.Game;
 using Imperatle.Api.Services;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
@@ -81,21 +82,34 @@ var app = builder.Build();
 // Brings the schema up to date before serving anything. EF Core locks the
 // database while migrating, so replicas starting together don't race.
 // Can be turned off (Database__MigrateOnStartup=false) to migrate by hand.
-if (app.Configuration.GetValue("Database:MigrateOnStartup", true))
+using (var startupScope = app.Services.CreateScope())
 {
-    using var migrateScope = app.Services.CreateScope();
-    var db = migrateScope.ServiceProvider.GetRequiredService<ImperatleDbContext>();
-    await db.Database.MigrateAsync();
+    var db = startupScope.ServiceProvider.GetRequiredService<ImperatleDbContext>();
+
+    if (app.Configuration.GetValue("Database:MigrateOnStartup", true))
+    {
+        await db.Database.MigrateAsync();
+    }
+
+    // Content/empires/*.json is the source of truth for the empires; invalid
+    // content stops the startup with every problem listed.
+    var content = EmpireContentLoader.LoadFromDirectory(EmpireContentLoader.DefaultDirectory);
+    var (added, updated, deactivated) = await EmpireContentImporter.SyncAsync(db, content);
+    app.Logger.LogInformation("Empire content: {Added} added, {Updated} updated, {Deactivated} deactivated",
+        added, updated, deactivated);
+
+    await ChallengeScheduler.EnsureForDateAsync(db, DateOnly.FromDateTime(DateTime.UtcNow));
+
+    if (app.Environment.IsDevelopment())
+    {
+        await DevSeeder.ForceTodayAsync(db, app.Configuration["Dev:ForceTodayEmpireSlug"]);
+    }
 }
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
-
-    using var seedScope = app.Services.CreateScope();
-    var db = seedScope.ServiceProvider.GetRequiredService<ImperatleDbContext>();
-    await DevSeeder.SeedAsync(db, app.Configuration["Dev:ForceTodayEmpireSlug"]);
 }
 
 // In Development the web app calls the plain-HTTP port (5055), which both the

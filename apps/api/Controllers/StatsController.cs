@@ -29,6 +29,9 @@ public class StatsController(ImperatleDbContext db) : ControllerBase
             .Where(p => p.Date == today && p.Completed)
             .ToListAsync();
 
-        return new StatsResponse(StatsCalculator.ForPlayer(mine, today), StatsCalculator.ForToday(everyoneToday, today));
+        var challengeNumber = await ChallengeScheduler.NumberForAsync(db, today);
+        return new StatsResponse(
+            StatsCalculator.ForPlayer(mine, today),
+            StatsCalculator.ForToday(everyoneToday, today, challengeNumber));
     }
 }

@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Imperatle empire",
+  "description": "One empire of the game. The file name must be <slug>.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "slug",
+    "name",
+    "peak",
+    "start",
+    "end",
+    "area",
+    "mapAccuracy",
+    "continents",
+    "primaryContinent",
+    "capital",
+    "language",
+    "religion",
+    "curiosities"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "slug": {
+      "description": "Stable id: lowercase words separated by hyphens, e.g. \"mongol-empire\". Never change it after launch (players' history points to it).",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "name": { "$ref": "#/$defs/text", "description": "Name shown in the guess list and in the answer." },
+    "peak": { "$ref": "#/$defs/year", "description": "Year of the greatest territorial extent, the moment the map shows. The era clue is computed from it." },
+    "start": { "$ref": "#/$defs/year", "description": "When the empire began." },
+    "end": { "$ref": "#/$defs/year", "description": "When the empire ended." },
+    "durationNotes": { "$ref": "#/$defs/text", "description": "Optional caveat shown next to the duration, e.g. which phase of a longer state the dates cover." },
+    "area": {
+      "description": "Largest area ever controlled (same moment as peak).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["km2", "precision"],
+      "properties": {
+        "km2": { "type": "integer", "minimum": 1 },
+        "precision": { "enum": ["Exact", "Approximate"] }
+      }
+    },
+    "mapAccuracy": {
+      "description": "How well historians know the borders on the map: Precise (High), Approximate (Medium), Speculative (Low).",
+      "enum": ["Precise", "Approximate", "Speculative"]
+    },
+    "continents": {
+      "description": "Every continent where the empire held territory at its peak.",
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/continent" }
+    },
+    "primaryContinent": { "$ref": "#/$defs/continent", "description": "Where most of the territory was. Must be one of continents." },
+    "capital": { "$ref": "#/$defs/text" },
+    "language": { "$ref": "#/$defs/text", "description": "Main language of the government and the elite." },
+    "religion": { "$ref": "#/$defs/text", "description": "Official religion, or that of the ruling elite." },
+    "curiosities": {
+      "description": "Exactly 3, from the least obvious to the most obvious. They're revealed in this order.",
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": { "$ref": "#/$defs/text" }
+    },
+    "map": {
+      "description": "Optional while the map isn't ready (the game shows a placeholder).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["file"],
+      "properties": {
+        "file": {
+          "description": "File name inside apps/web/public/maps, e.g. \"mongol-empire.webp\".",
+          "type": "string",
+          "pattern": "^[a-z0-9-]+\\.(svg|png|webp|jpg|jpeg)$"
+        },
+        "sourceUrl": { "description": "Page where the map came from (e.g. its Wikimedia Commons page).", "type": "string", "format": "uri" },
+        "author": { "type": "string" },
+        "license": { "description": "e.g. \"CC BY-SA 4.0\".", "type": "string" }
+      }
+    }
+  },
+  "$defs": {
+    "text": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["en", "pt"],
+      "properties": {
+        "en": { "type": "string", "minLength": 1 },
+        "pt": { "type": "string", "minLength": 1 }
+      }
+    },
+    "year": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["year", "precision"],
+      "properties": {
+        "year": {
+          "description": "Negative = BCE, as historians write it: -27 is 27 BCE. There is no year 0.",
+          "type": "integer",
+          "not": { "const": 0 }
+        },
+        "precision": {
+          "description": "Exact, Approximate (circa) or Century (only the century is known).",
+          "enum": ["Exact", "Approximate", "Century"]
+        }
+      }
+    },
+    "continent": { "enum": ["Africa", "Asia", "Europe", "NorthAmerica", "SouthAmerica", "Oceania"] }
+  }
+}

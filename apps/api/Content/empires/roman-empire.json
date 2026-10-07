@@ -1,0 +1,61 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "roman-empire",
+  "name": {
+    "en": "Roman Empire",
+    "pt": "Império Romano"
+  },
+  "peak": {
+    "year": 117,
+    "precision": "Exact"
+  },
+  "start": {
+    "year": -27,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 476,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "Covers the Roman Empire proper only. It excludes the earlier Roman Kingdom and Roman Republic, and the Eastern Roman (Byzantine) Empire, which continued for another millennium and is tracked separately.",
+    "pt": "Cobre só o Império Romano propriamente dito. Exclui o Reino Romano e a República Romana, que vieram antes, e o Império Romano do Oriente (Bizantino), que continuou por mais um milênio e é tratado separadamente."
+  },
+  "area": {
+    "km2": 5000000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Precise",
+  "continents": [
+    "Europe",
+    "Africa",
+    "Asia"
+  ],
+  "primaryContinent": "Europe",
+  "capital": {
+    "en": "Rome",
+    "pt": "Roma"
+  },
+  "language": {
+    "en": "Latin",
+    "pt": "Latim"
+  },
+  "religion": {
+    "en": "Roman polytheism (later Christianity)",
+    "pt": "Politeísmo romano (depois cristianismo)"
+  },
+  "curiosities": [
+    {
+      "en": "Its road network connected the empire's farthest provinces.",
+      "pt": "Sua rede de estradas conectava as províncias mais distantes do império."
+    },
+    {
+      "en": "Its legal code influenced most of Western law for centuries.",
+      "pt": "Seu código legal influenciou a maior parte do direito ocidental por séculos."
+    },
+    {
+      "en": "Its capital gave its name to numerals still used today.",
+      "pt": "Sua capital deu nome a numerais ainda usados hoje."
+    }
+  ]
+}

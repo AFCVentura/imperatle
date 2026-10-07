@@ -4,15 +4,26 @@ public class Empire
 {
     public int Id { get; set; }
 
-    // Stable identifier used to locate this empire's map SVG in the
-    // frontend's public/maps/{Slug}.svg -- the map file itself is not stored here.
+    // Stable identifier, also the content file name (Content/empires/{Slug}.json).
     public string Slug { get; set; } = string.Empty;
+
+    // False when the empire's content file was removed: it leaves the guess
+    // list and the schedule, but stays in the database because past
+    // challenges and player history point to it.
+    public bool Active { get; set; } = true;
+
+    // Map image inside the web app's public/maps folder (null = not ready yet,
+    // the UI shows a placeholder), plus its attribution.
+    public string? MapFile { get; set; }
+    public string? MapSourceUrl { get; set; }
+    public string? MapAuthor { get; set; }
+    public string? MapLicense { get; set; }
 
     public string NameEn { get; set; } = string.Empty;
     public string NamePt { get; set; } = string.Empty;
 
-    // Astronomical year numbering (negative = BCE), representing the
-    // "greatest territorial extent" reference point already decided for the game.
+    // Years are negative for BCE as historians write them (-27 = 27 BCE, no
+    // year 0). This one is the "greatest territorial extent" point the map shows.
     public int ReferenceYear { get; set; }
     public YearPrecision ReferenceYearPrecision { get; set; }
     public BorderConfidence MapBorderConfidence { get; set; }

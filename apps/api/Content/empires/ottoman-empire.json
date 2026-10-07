@@ -1,0 +1,57 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "ottoman-empire",
+  "name": {
+    "en": "Ottoman Empire",
+    "pt": "Império Otomano"
+  },
+  "peak": {
+    "year": 1683,
+    "precision": "Exact"
+  },
+  "start": {
+    "year": 1299,
+    "precision": "Approximate"
+  },
+  "end": {
+    "year": 1922,
+    "precision": "Exact"
+  },
+  "area": {
+    "km2": 5200000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Precise",
+  "continents": [
+    "Europe",
+    "Asia",
+    "Africa"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Constantinople",
+    "pt": "Constantinopla"
+  },
+  "language": {
+    "en": "Ottoman Turkish",
+    "pt": "Turco Otomano"
+  },
+  "religion": {
+    "en": "Sunni Islam",
+    "pt": "Islamismo sunita"
+  },
+  "curiosities": [
+    {
+      "en": "It bridged two continents at its capital, which straddles a strait.",
+      "pt": "Fazia a ponte entre dois continentes em sua capital, situada num estreito."
+    },
+    {
+      "en": "It ended the millennium-long history of an earlier empire when it took that empire's capital.",
+      "pt": "Encerrou a história milenar de um império anterior ao tomar sua capital."
+    },
+    {
+      "en": "Its rule lasted over six centuries, ending in the early 20th century.",
+      "pt": "Seu domínio durou mais de seis séculos, terminando no início do século XX."
+    }
+  ]
+}

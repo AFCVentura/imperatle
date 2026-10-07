@@ -1,0 +1,57 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "achaemenid-empire",
+  "name": {
+    "en": "Achaemenid (Persian) Empire",
+    "pt": "Império Aquemênida (Persa)"
+  },
+  "peak": {
+    "year": -500,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": -550,
+    "precision": "Approximate"
+  },
+  "end": {
+    "year": -330,
+    "precision": "Exact"
+  },
+  "area": {
+    "km2": 5500000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia",
+    "Africa",
+    "Europe"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Persepolis",
+    "pt": "Persépolis"
+  },
+  "language": {
+    "en": "Old Persian",
+    "pt": "Persa Antigo"
+  },
+  "religion": {
+    "en": "Zoroastrianism",
+    "pt": "Zoroastrismo"
+  },
+  "curiosities": [
+    {
+      "en": "It pioneered a long royal road system to speed up messages across its vast territory.",
+      "pt": "Foi pioneiro num sistema de estradas reais pra acelerar mensagens por seu vasto território."
+    },
+    {
+      "en": "It was the largest empire the world had seen up to its time.",
+      "pt": "Foi o maior império que o mundo tinha visto até então."
+    },
+    {
+      "en": "It fell to a young Macedonian conqueror in his campaign eastward.",
+      "pt": "Caiu diante de um jovem conquistador macedônio em sua campanha rumo ao leste."
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "mongol-empire",
+  "name": {
+    "en": "Mongol Empire",
+    "pt": "Império Mongol"
+  },
+  "peak": {
+    "year": 1279,
+    "precision": "Exact"
+  },
+  "start": {
+    "year": 1206,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1368,
+    "precision": "Approximate"
+  },
+  "area": {
+    "km2": 24000000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia",
+    "Europe"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Karakorum",
+    "pt": "Karakorum"
+  },
+  "language": {
+    "en": "Mongolian",
+    "pt": "Mongol"
+  },
+  "religion": {
+    "en": "Tengrism (religiously tolerant)",
+    "pt": "Tengrismo (tolerante religiosamente)"
+  },
+  "curiosities": [
+    {
+      "en": "It was founded by a leader who united nomadic tribes under one banner.",
+      "pt": "Foi fundado por um líder que uniu tribos nômades sob uma só bandeira."
+    },
+    {
+      "en": "It became the largest contiguous land empire in history.",
+      "pt": "Tornou-se o maior império contíguo da história."
+    },
+    {
+      "en": "Its founder is known in the West primarily by a single name: Genghis.",
+      "pt": "Seu fundador é conhecido no Ocidente principalmente por um único nome: Gengis."
+    }
+  ],
+  "map": {
+    "file": "mongol-empire.svg"
+  }
+}

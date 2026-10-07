@@ -1,0 +1,67 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "british-empire",
+  "name": {
+    "en": "British Empire",
+    "pt": "Império Britânico"
+  },
+  "peak": {
+    "year": 1920,
+    "precision": "Exact"
+  },
+  "start": {
+    "year": 1497,
+    "precision": "Approximate"
+  },
+  "end": {
+    "year": 1997,
+    "precision": "Approximate"
+  },
+  "durationNotes": {
+    "en": "There is no single agreed start/end date for the British Empire. This range runs from early transatlantic exploration to the handover of Hong Kong, its last major colonial territory. Formal decolonization was a decades-long, gradual process rather than a single event.",
+    "pt": "Não existe uma data única consensual de início/fim do Império Britânico. Essa faixa vai das primeiras explorações transatlânticas até a devolução de Hong Kong, seu último grande território colonial. A descolonização formal foi um processo gradual de décadas, não um evento único."
+  },
+  "area": {
+    "km2": 35500000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Europe",
+    "Africa",
+    "Asia",
+    "NorthAmerica",
+    "SouthAmerica",
+    "Oceania"
+  ],
+  "primaryContinent": "Europe",
+  "capital": {
+    "en": "London",
+    "pt": "Londres"
+  },
+  "language": {
+    "en": "English",
+    "pt": "Inglês"
+  },
+  "religion": {
+    "en": "Christianity (Anglican, plus many others across its territories)",
+    "pt": "Cristianismo (anglicano, além de muitas outras religiões em seus territórios)"
+  },
+  "curiosities": [
+    {
+      "en": "It was often said that the sun never set on it, since it always had territory in daylight.",
+      "pt": "Dizia-se que o sol nunca se punha sobre ele, já que sempre tinha território em plena luz do dia."
+    },
+    {
+      "en": "It was the largest empire in recorded history by territorial extent.",
+      "pt": "Foi o maior império da história registrada em extensão territorial."
+    },
+    {
+      "en": "Many of its former territories today form a voluntary association of independent states.",
+      "pt": "Muitos de seus antigos territórios hoje formam uma associação voluntária de estados independentes."
+    }
+  ],
+  "map": {
+    "file": "british-empire.png"
+  }
+}

@@ -21,16 +21,11 @@ public class ChallengesController(ImperatleDbContext db, IWebHostEnvironment env
     {
         var today = DateOnly.FromDateTime(DateTime.UtcNow);
 
-        var challenge = await db.DailyChallenges
-            .Include(c => c.Empire)
-            .FirstOrDefaultAsync(c => c.Date == today);
-        if (challenge is null)
-        {
-            return NotFound();
-        }
+        var scheduled = await ChallengeScheduler.EnsureForDateAsync(db, today);
+        var empire = await db.Empires.FindAsync(scheduled.EmpireId);
 
-        var challengeNumber = GameRules.ChallengeNumber(today);
-        var mapUrl = MockMaps.ForSlug(challenge.Empire.Slug);
+        var challengeNumber = await ChallengeScheduler.NumberForAsync(db, today);
+        var mapUrl = empire?.MapFile is null ? null : $"/maps/{empire.MapFile}";
         return Ok(new TodayChallengeResponse(today, GameRules.AttemptsAllowed, challengeNumber, mapUrl));
     }
 
@@ -40,18 +35,14 @@ public class ChallengesController(ImperatleDbContext db, IWebHostEnvironment env
     {
         var today = DateOnly.FromDateTime(DateTime.UtcNow);
 
+        await ChallengeScheduler.EnsureForDateAsync(db, today);
         var challenge = await db.DailyChallenges
             .Include(c => c.Empire)
             .ThenInclude(e => e.Hints)
-            .FirstOrDefaultAsync(c => c.Date == today);
-
-        if (challenge is null)
-        {
-            return NotFound();
-        }
+            .FirstAsync(c => c.Date == today);
 
         var guessedEmpire = await db.Empires.FindAsync(request.EmpireId);
-        if (guessedEmpire is null)
+        if (guessedEmpire is null || !guessedEmpire.Active)
         {
             return BadRequest();
         }

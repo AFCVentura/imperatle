@@ -1,0 +1,57 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "umayyad-caliphate",
+  "name": {
+    "en": "Umayyad Caliphate",
+    "pt": "Califado Omíada"
+  },
+  "peak": {
+    "year": 740,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 661,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 750,
+    "precision": "Exact"
+  },
+  "area": {
+    "km2": 11100000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Africa",
+    "Asia",
+    "Europe"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Damascus",
+    "pt": "Damasco"
+  },
+  "language": {
+    "en": "Arabic",
+    "pt": "Árabe"
+  },
+  "religion": {
+    "en": "Sunni Islam",
+    "pt": "Islamismo sunita"
+  },
+  "curiosities": [
+    {
+      "en": "At its height it stretched from the Iberian Peninsula to the edge of India.",
+      "pt": "Em seu auge, ia da Península Ibérica até as bordas da Índia."
+    },
+    {
+      "en": "It was one of the largest contiguous land empires ever to exist.",
+      "pt": "Foi um dos maiores impérios contíguos que já existiram."
+    },
+    {
+      "en": "A surviving branch of its dynasty went on to rule for centuries from Córdoba.",
+      "pt": "Um ramo sobrevivente de sua dinastia governou por séculos a partir de Córdoba."
+    }
+  ]
+}

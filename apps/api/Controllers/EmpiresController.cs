@@ -13,6 +13,7 @@ public class EmpiresController(ImperatleDbContext db) : ControllerBase
     public async Task<IActionResult> GetAll()
     {
         var empires = await db.Empires
+            .Where(e => e.Active)
             .OrderBy(e => e.NameEn)
             .Select(e => new EmpireSummary(e.Id, e.NameEn, e.NamePt))
             .ToListAsync();

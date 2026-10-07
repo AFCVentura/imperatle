@@ -1,0 +1,58 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "aztec-empire",
+  "name": {
+    "en": "Aztec Empire",
+    "pt": "Império Asteca"
+  },
+  "peak": {
+    "year": 1519,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1428,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1521,
+    "precision": "Exact"
+  },
+  "area": {
+    "km2": 220000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "NorthAmerica"
+  ],
+  "primaryContinent": "NorthAmerica",
+  "capital": {
+    "en": "Tenochtitlan",
+    "pt": "Tenochtitlan"
+  },
+  "language": {
+    "en": "Nahuatl",
+    "pt": "Náuatle"
+  },
+  "religion": {
+    "en": "Aztec religion (worship of Huitzilopochtli and others)",
+    "pt": "Religião asteca (culto a Huitzilopochtli e outros)"
+  },
+  "curiosities": [
+    {
+      "en": "It was formed as a Triple Alliance between three city-states.",
+      "pt": "Foi formado como uma Tríplice Aliança entre três cidades-estado."
+    },
+    {
+      "en": "Its capital was built on an island in a lake, connected to shore by causeways.",
+      "pt": "Sua capital foi construída numa ilha em um lago, ligada à terra firme por calçadas."
+    },
+    {
+      "en": "Hernán Cortés led the campaign that brought about its fall.",
+      "pt": "Hernán Cortés liderou a campanha que causou sua queda."
+    }
+  ],
+  "map": {
+    "file": "aztec-empire.webp"
+  }
+}
