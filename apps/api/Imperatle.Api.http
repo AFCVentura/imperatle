@@ -1,6 +1,21 @@
 @Imperatle.Api_HostAddress = http://localhost:5055
 
-GET {{Imperatle.Api_HostAddress}}/weatherforecast/
+GET {{Imperatle.Api_HostAddress}}/challenges/today
 Accept: application/json
 
 ###
+
+GET {{Imperatle.Api_HostAddress}}/empires
+Accept: application/json
+
+###
+
+POST {{Imperatle.Api_HostAddress}}/challenges/today/guess
+Content-Type: application/json
+
+{ "empireId": 1 }
+
+###
+
+GET {{Imperatle.Api_HostAddress}}/stats
+Accept: application/json

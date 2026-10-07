@@ -12,13 +12,11 @@ interface HintCardProps {
   description: string;
   notes?: string | null;
   notesButtonLabel?: string;
-  // "card": standalone bordered card. "cell": flat cell inside an attempt's
-  // pill, which draws the border and the dividers.
-  variant?: "card" | "cell";
   className?: string;
 }
 
-// Locked: shows the category label by default, "unlocked on attempt N" on
+// A flat cell inside an attempt's pill (the pill draws the border and the
+// dividers). Locked: shows the category label by default, "unlocked on attempt N" on
 // hover. Unlocked: shows the revealed value by default, the category label
 // on hover. Both states use the same crossfade so the interaction feels
 // consistent either way. Touch screens have no hover, so a tap flips the
@@ -32,7 +30,6 @@ export function HintCard({
   description,
   notes,
   notesButtonLabel,
-  variant = "card",
   className = "",
 }: HintCardProps) {
   const [notesOpen, setNotesOpen] = useState(false);
@@ -67,11 +64,7 @@ export function HintCard({
           toggle();
         }
       }}
-      className={`group relative flex min-w-0 flex-auto cursor-default select-none flex-col items-center justify-center px-3 py-1.5 text-center transition-colors ${
-        variant === "cell"
-          ? ""
-          : `rounded-2xl border ${unlocked ? "border-line bg-surface" : "border-dashed border-line"}`
-      } ${className}`}
+      className={`group relative flex min-w-0 flex-auto cursor-default select-none flex-col items-center justify-center px-3 py-1.5 text-center transition-colors ${className}`}
     >
       {/* Front and back share one grid cell instead of being absolutely
           positioned, so the card's natural width is the wider of the two --
@@ -106,7 +99,7 @@ export function HintCard({
             onPointerUp={(e) => e.stopPropagation()}
             onMouseEnter={() => setNotesOpen(true)}
             onMouseLeave={() => setNotesOpen(false)}
-            className={`absolute flex h-4 w-4 ${variant === "cell" ? "right-1 top-1" : "-right-1.5 -top-1.5"} items-center justify-center rounded-full bg-muted/20 text-[10px] font-semibold text-foreground hover:bg-muted/35`}
+            className={`absolute flex h-4 w-4 right-1 top-1 items-center justify-center rounded-full bg-muted/20 text-[10px] font-semibold text-foreground hover:bg-muted/35`}
           >
             ?
           </button>

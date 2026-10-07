@@ -86,7 +86,7 @@ export function AttemptList({ guesses, attemptsAllowed, hintRows, gameOver }: At
 
               {hintRow && (
                 <div className="border-t border-line">
-                  <HintRow row={hintRow} variant="cell" />
+                  <HintRow row={hintRow} />
                 </div>
               )}
             </div>

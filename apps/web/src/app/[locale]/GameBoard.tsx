@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { submitGuess } from "@/lib/api";
 import { openStats } from "@/lib/dialogs";
-import { loadGameProgress, saveGameProgress, type GuessHistoryEntry } from "@/lib/gameStorage";
+import { loadGameProgress, saveGameProgress, type GameProgress, type GuessHistoryEntry } from "@/lib/gameStorage";
 import { pickLocalized } from "@/lib/pickLocalized";
 import { comparisonFromApi, EMPTY_REVEAL, type ChallengeReveal, type EmpireAnswer, type EmpireSummary, type TodayChallenge } from "@/lib/types";
 import { EmpireAutocomplete } from "./EmpireAutocomplete";
@@ -19,37 +19,32 @@ interface GameBoardProps {
   empires: EmpireSummary[];
 }
 
-export function GameBoard({ challenge, empires }: GameBoardProps) {
+const noSubscription = () => () => {};
+
+// Today's progress lives in localStorage, which the server can't read: the
+// board renders nothing on the server and during hydration (so the HTML
+// matches), then mounts with the saved progress as its initial state.
+export function GameBoard(props: GameBoardProps) {
+  const hydrated = useSyncExternalStore(noSubscription, () => true, () => false);
+  if (!hydrated) return null;
+  return <GameBoardInner {...props} initial={loadGameProgress(props.challenge.date)} />;
+}
+
+function GameBoardInner({ challenge, empires, initial }: GameBoardProps & { initial: GameProgress | null }) {
   const t = useTranslations("Game");
   const locale = useLocale();
 
-  const [guesses, setGuesses] = useState<GuessHistoryEntry[]>([]);
-  const [reveal, setReveal] = useState<ChallengeReveal | null>(null);
-  const [gameOver, setGameOver] = useState(false);
-  const [answer, setAnswer] = useState<EmpireAnswer | null>(null);
+  const [guesses, setGuesses] = useState<GuessHistoryEntry[]>(initial?.guesses ?? []);
+  const [reveal, setReveal] = useState<ChallengeReveal | null>(initial?.reveal ?? null);
+  const [gameOver, setGameOver] = useState(initial?.gameOver ?? false);
+  const [answer, setAnswer] = useState<EmpireAnswer | null>(initial?.answer ?? null);
   const [selectedEmpireId, setSelectedEmpireId] = useState<number | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(false);
-  const [hydrated, setHydrated] = useState(false);
-
-  // Restore today's progress from localStorage only after mount -- reading it
-  // during the initial render would desync the server-rendered HTML from what
-  // the browser would render, which React flags as a hydration mismatch.
-  useEffect(() => {
-    const saved = loadGameProgress(challenge.date);
-    if (saved) {
-      setGuesses(saved.guesses);
-      setReveal(saved.reveal);
-      setGameOver(saved.gameOver);
-      setAnswer(saved.answer);
-    }
-    setHydrated(true);
-  }, [challenge.date]);
 
   useEffect(() => {
-    if (!hydrated) return;
     saveGameProgress({ date: challenge.date, guesses, reveal, gameOver, answer });
-  }, [hydrated, challenge.date, guesses, reveal, gameOver, answer]);
+  }, [challenge.date, guesses, reveal, gameOver, answer]);
 
   async function handleGuess() {
     if (selectedEmpireId === null || gameOver || submitting) return;
@@ -87,10 +82,7 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
     }
   }
 
-  // Hooks must run before the early return below.
   const hintRows = useHintRows(gameOver && answer ? answer : (reveal ?? EMPTY_REVEAL));
-
-  if (!hydrated) return null;
 
   const lastGuess = guesses[guesses.length - 1];
   // Rows not shown under a wrong guess -- after a correct guess, the clues
@@ -202,7 +194,7 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
           </h2>
           <div className="divide-y divide-line rounded-2xl border border-line bg-surface">
             {remainingHintRows.map((row) => (
-              <HintRow key={row.attempt} row={row} variant="cell" />
+              <HintRow key={row.attempt} row={row} />
             ))}
           </div>
         </div>
