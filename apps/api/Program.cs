@@ -24,11 +24,20 @@ builder.Services.AddHttpClient<FeedbackEmailService>(client =>
     client.Timeout = TimeSpan.FromSeconds(10);
 });
 
+// Comma-separated so an environment can replace the whole list with one
+// setting (Cors__AllowedOrigins); JSON arrays merge by index across files.
+var allowedOrigins = (builder.Configuration["Cors:AllowedOrigins"] ?? "")
+    .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+if (allowedOrigins.Length == 0)
+{
+    throw new InvalidOperationException("Cors:AllowedOrigins is not configured.");
+}
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(FrontendCorsPolicy, policy =>
     {
-        policy.WithOrigins("http://localhost:3000")
+        policy.WithOrigins(allowedOrigins)
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();
@@ -68,6 +77,16 @@ builder.Services.AddRateLimiter(options =>
 });
 
 var app = builder.Build();
+
+// Brings the schema up to date before serving anything. EF Core locks the
+// database while migrating, so replicas starting together don't race.
+// Can be turned off (Database__MigrateOnStartup=false) to migrate by hand.
+if (app.Configuration.GetValue("Database:MigrateOnStartup", true))
+{
+    using var migrateScope = app.Services.CreateScope();
+    var db = migrateScope.ServiceProvider.GetRequiredService<ImperatleDbContext>();
+    await db.Database.MigrateAsync();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
