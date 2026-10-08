@@ -44,6 +44,9 @@ export function useHintRows(reveal: ChallengeReveal): HintRowData[] {
   const durationNotes = reveal.durationNotesEn
     ? pickLocalized(reveal.durationNotesEn, reveal.durationNotesPt ?? reveal.durationNotesEn, locale)
     : null;
+  const religionNotes = reveal.religionNotesEn
+    ? pickLocalized(reveal.religionNotesEn, reveal.religionNotesPt ?? reveal.religionNotesEn, locale)
+    : null;
 
   const rows: HintRowData[] = [
     {
@@ -152,6 +155,7 @@ export function useHintRows(reveal: ChallengeReveal): HintRowData[] {
           label: t("fields.religion"),
           description: t("fieldInfo.religion"),
           value: reveal.religionEn ? pickLocalized(reveal.religionEn, reveal.religionPt ?? reveal.religionEn, locale) : null,
+          notes: religionNotes,
         },
         {
           key: "curiosity3",

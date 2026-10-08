@@ -101,6 +101,10 @@ public static partial class EmpireContentLoader
         {
             CheckText(errors, "durationNotes", empire.DurationNotes);
         }
+        if (empire.ReligionNotes is not null)
+        {
+            CheckText(errors, "religionNotes", empire.ReligionNotes);
+        }
 
         foreach (var (name, year) in new[] { ("peak", empire.Peak), ("start", empire.Start), ("end", empire.End) })
         {

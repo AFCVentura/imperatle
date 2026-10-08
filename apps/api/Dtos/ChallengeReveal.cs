@@ -26,7 +26,9 @@ public record ChallengeReveal(
     int? PeakAreaKm2,
     AreaPrecision? AreaPrecision,
     string? ReligionEn,
-    string? ReligionPt
+    string? ReligionPt,
+    string? ReligionNotesEn,
+    string? ReligionNotesPt
 );
 
 public record EmpireHintDto(string TextEn, string TextPt);

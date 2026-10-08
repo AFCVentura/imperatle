@@ -53,6 +53,11 @@ public class Empire
     public string DurationNotesEn { get; set; } = string.Empty;
     public string DurationNotesPt { get; set; } = string.Empty;
 
+    // Free-text caveat shown next to the religion in the UI, e.g. noting that
+    // most subjects followed other faiths. Empty string = no caveat needed.
+    public string ReligionNotesEn { get; set; } = string.Empty;
+    public string ReligionNotesPt { get; set; } = string.Empty;
+
     // Territory at peak extent (same reference point as ReferenceYear), in km².
     public int PeakAreaKm2 { get; set; }
     public AreaPrecision AreaPrecision { get; set; }

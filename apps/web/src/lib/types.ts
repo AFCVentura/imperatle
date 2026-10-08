@@ -76,6 +76,8 @@ export interface ChallengeReveal {
   areaPrecision: number | null;
   religionEn: string | null;
   religionPt: string | null;
+  religionNotesEn: string | null;
+  religionNotesPt: string | null;
 }
 
 // All-locked placeholder shown before the player's first guess -- lets the
@@ -103,6 +105,8 @@ export const EMPTY_REVEAL: ChallengeReveal = {
   areaPrecision: null,
   religionEn: null,
   religionPt: null,
+  religionNotesEn: null,
+  religionNotesPt: null,
 };
 
 export interface EmpireAnswer {
@@ -131,6 +135,8 @@ export interface EmpireAnswer {
   areaPrecision: number;
   religionEn: string;
   religionPt: string;
+  religionNotesEn: string;
+  religionNotesPt: string;
 }
 
 export interface GuessComparison {

@@ -23,6 +23,7 @@ public record EmpireContent(
     LocalizedText Religion,
     List<LocalizedText> Curiosities,
     LocalizedText? DurationNotes = null,
+    LocalizedText? ReligionNotes = null,
     MapInfo? Map = null,
     [property: JsonPropertyName("$schema")] string? Schema = null);
 

@@ -47,7 +47,9 @@ public static class RevealBuilder
             PeakAreaKm2: attemptNumber >= 6 ? empire.PeakAreaKm2 : null,
             AreaPrecision: attemptNumber >= 6 ? empire.AreaPrecision : null,
             ReligionEn: attemptNumber >= 6 ? empire.ReligionEn : null,
-            ReligionPt: attemptNumber >= 6 ? empire.ReligionPt : null
+            ReligionPt: attemptNumber >= 6 ? empire.ReligionPt : null,
+            ReligionNotesEn: attemptNumber >= 6 ? empire.ReligionNotesEn : null,
+            ReligionNotesPt: attemptNumber >= 6 ? empire.ReligionNotesPt : null
         );
     }
 
@@ -90,7 +92,9 @@ public static class RevealBuilder
         empire.PeakAreaKm2,
         empire.AreaPrecision,
         empire.ReligionEn,
-        empire.ReligionPt);
+        empire.ReligionPt,
+        empire.ReligionNotesEn,
+        empire.ReligionNotesPt);
 
     private static EmpireHintDto ToDto(EmpireHint hint) => new(hint.TextEn, hint.TextPt);
 }

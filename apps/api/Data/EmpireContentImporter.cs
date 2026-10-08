@@ -66,6 +66,8 @@ public static class EmpireContentImporter
         e.LanguagePt = c.Language.Pt;
         e.ReligionEn = c.Religion.En;
         e.ReligionPt = c.Religion.Pt;
+        e.ReligionNotesEn = c.ReligionNotes?.En ?? string.Empty;
+        e.ReligionNotesPt = c.ReligionNotes?.Pt ?? string.Empty;
         e.MapFile = c.Map?.File;
         e.MapSourceUrl = c.Map?.SourceUrl;
         e.MapAuthor = c.Map?.Author;

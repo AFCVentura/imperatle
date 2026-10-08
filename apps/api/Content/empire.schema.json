@@ -31,6 +31,7 @@
     "start": { "$ref": "#/$defs/year", "description": "When the empire began." },
     "end": { "$ref": "#/$defs/year", "description": "When the empire ended." },
     "durationNotes": { "$ref": "#/$defs/text", "description": "Optional caveat shown next to the duration, e.g. which phase of a longer state the dates cover." },
+    "religionNotes": { "$ref": "#/$defs/text", "description": "Optional caveat shown next to the religion, e.g. that most subjects followed other faiths." },
     "area": {
       "description": "Largest area ever controlled (same moment as peak).",
       "type": "object",

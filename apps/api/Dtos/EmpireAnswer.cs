@@ -28,5 +28,7 @@ public record EmpireAnswer(
     int PeakAreaKm2,
     AreaPrecision AreaPrecision,
     string ReligionEn,
-    string ReligionPt
+    string ReligionPt,
+    string ReligionNotesEn,
+    string ReligionNotesPt
 );
