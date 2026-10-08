@@ -18,8 +18,8 @@
     "precision": "Exact"
   },
   "durationNotes": {
-    "en": "Covers the Roman Empire proper only. It excludes the earlier Roman Kingdom and Roman Republic, and the Eastern Roman (Byzantine) Empire, which continued for another millennium and is tracked separately.",
-    "pt": "Cobre só o Império Romano propriamente dito. Exclui o Reino Romano e a República Romana, que vieram antes, e o Império Romano do Oriente (Bizantino), que continuou por mais um milênio e é tratado separadamente."
+    "en": "Covers the imperial period only. It excludes the kingdom and republic that came before it, and the eastern half that survived the empire's division and lasted another millennium, treated here as a separate empire.",
+    "pt": "Cobre só o período imperial. Exclui o reino e a república que vieram antes, e a metade oriental que sobreviveu à divisão do império e durou mais um milênio, tratada aqui como outro império."
   },
   "area": {
     "km2": 5000000,
@@ -37,8 +37,8 @@
     "pt": "Roma"
   },
   "language": {
-    "en": "Latin",
-    "pt": "Latim"
+    "en": "Latin (and Greek in the East)",
+    "pt": "Latim (e grego no Oriente)"
   },
   "religion": {
     "en": "Roman polytheism (later Christianity)",
@@ -46,16 +46,16 @@
   },
   "curiosities": [
     {
-      "en": "Its road network connected the empire's farthest provinces.",
-      "pt": "Sua rede de estradas conectava as províncias mais distantes do império."
+      "en": "It built a wall across an entire island to mark its northernmost border.",
+      "pt": "Construiu um muro de um lado a outro de uma ilha para marcar sua fronteira mais ao norte."
     },
     {
-      "en": "Its legal code influenced most of Western law for centuries.",
-      "pt": "Seu código legal influenciou a maior parte do direito ocidental por séculos."
+      "en": "Two months of our calendar are named after two of its rulers.",
+      "pt": "Dois meses do nosso calendário homenageiam dois de seus governantes."
     },
     {
-      "en": "Its capital gave its name to numerals still used today.",
-      "pt": "Sua capital deu nome a numerais ainda usados hoje."
+      "en": "According to legend, its capital was founded by twins raised by a she-wolf.",
+      "pt": "Segundo a lenda, sua capital foi fundada por gêmeos criados por uma loba."
     }
   ]
 }

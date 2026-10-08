@@ -33,8 +33,8 @@
     "pt": "Constantinopla"
   },
   "language": {
-    "en": "Ottoman Turkish",
-    "pt": "Turco Otomano"
+    "en": "Turkish (an older form, rich in Arabic and Persian vocabulary)",
+    "pt": "Turco (forma antiga, com muito vocabulário árabe e persa)"
   },
   "religion": {
     "en": "Sunni Islam",
@@ -46,12 +46,15 @@
       "pt": "Fazia a ponte entre dois continentes em sua capital, situada num estreito."
     },
     {
-      "en": "It ended the millennium-long history of an earlier empire when it took that empire's capital.",
-      "pt": "Encerrou a história milenar de um império anterior ao tomar sua capital."
+      "en": "That same city had been the capital of a millennium-old empire, which it brought to an end by conquering it, one of the events used to mark the end of the Middle Ages.",
+      "pt": "Essa mesma cidade tinha sido a capital de um império milenar, que ele encerrou ao conquistá-la, um dos marcos usados para o fim da Idade Média."
     },
     {
-      "en": "Its rule lasted over six centuries, ending in the early 20th century.",
-      "pt": "Seu domínio durou mais de seis séculos, terminando no início do século XX."
+      "en": "It fought on the losing side of World War I and was carved up afterwards.",
+      "pt": "Lutou do lado derrotado na Primeira Guerra Mundial e foi desmembrado depois dela."
     }
-  ]
+  ],
+  "map": {
+    "file": "ottoman-empire.png"
+  }
 }

@@ -6,7 +6,7 @@
     "pt": "Califado Omíada"
   },
   "peak": {
-    "year": 740,
+    "year": 720,
     "precision": "Approximate"
   },
   "start": {
@@ -37,21 +37,28 @@
     "pt": "Árabe"
   },
   "religion": {
-    "en": "Sunni Islam",
-    "pt": "Islamismo sunita"
+    "en": "Islam",
+    "pt": "Islamismo"
+  },
+  "religionNotes": {
+    "en": "This was the Islam later called Sunni, a term not yet in common use. Most of the population was still Christian, Jewish or Zoroastrian, and non-Muslims kept their faith in exchange for a special tax.",
+    "pt": "Era o islamismo que mais tarde seria chamado de sunita, termo que ainda não era comum. A maior parte da população ainda era cristã, judia ou zoroastrista, e os não muçulmanos mantinham sua fé em troca de um imposto especial."
   },
   "curiosities": [
     {
-      "en": "At its height it stretched from the Iberian Peninsula to the edge of India.",
-      "pt": "Em seu auge, ia da Península Ibérica até as bordas da Índia."
+      "en": "Its desert palaces were decorated with frescoes of people and animals, something rare in Islamic art.",
+      "pt": "Seus palácios no deserto tinham afrescos com pessoas e animais, algo raro na arte islâmica."
     },
     {
-      "en": "It was one of the largest contiguous land empires ever to exist.",
-      "pt": "Foi um dos maiores impérios contíguos que já existiram."
+      "en": "It entered the Iberian Peninsula in 711 by crossing a strait that still bears its commander's name.",
+      "pt": "Entrou na Península Ibérica em 711 cruzando um estreito que até hoje leva o nome do seu comandante."
     },
     {
-      "en": "A surviving branch of its dynasty went on to rule for centuries from Córdoba.",
-      "pt": "Um ramo sobrevivente de sua dinastia governou por séculos a partir de Córdoba."
+      "en": "A surviving branch of its dynasty went on to rule for centuries from Córdoba, in Europe.",
+      "pt": "Um ramo sobrevivente de sua dinastia governou por séculos a partir de Córdoba, na Europa."
     }
-  ]
+  ],
+  "map": {
+    "file": "umayyad-caliphate.webp"
+  }
 }

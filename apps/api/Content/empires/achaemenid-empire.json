@@ -29,29 +29,32 @@
   ],
   "primaryContinent": "Asia",
   "capital": {
-    "en": "Persepolis",
-    "pt": "Persépolis"
+    "en": "Several, including Persepolis, Susa and Pasargadae",
+    "pt": "Várias, incluindo Persépolis, Susa e Pasárgada"
   },
   "language": {
-    "en": "Old Persian",
-    "pt": "Persa Antigo"
+    "en": "Imperial Aramaic (with Old Persian and Elamite)",
+    "pt": "Aramaico imperial (com persa antigo e elamita)"
   },
   "religion": {
-    "en": "Zoroastrianism",
-    "pt": "Zoroastrismo"
+    "en": "Worship of Ahura Mazda (linked to Zoroastrianism, tolerant of other religions)",
+    "pt": "Culto a Ahura Mazda (ligado ao zoroastrismo, com tolerância a outras religiões)"
   },
   "curiosities": [
     {
-      "en": "It pioneered a long royal road system to speed up messages across its vast territory.",
-      "pt": "Foi pioneiro num sistema de estradas reais pra acelerar mensagens por seu vasto território."
+      "en": "A Greek tried to persuade Sparta to attack it by claiming its soldiers would be easy to beat, since they fought in trousers.",
+      "pt": "Um grego tentou convencer Esparta a atacá-lo dizendo que seus soldados seriam fáceis de vencer, já que lutavam de calças."
     },
     {
-      "en": "It was the largest empire the world had seen up to its time.",
-      "pt": "Foi o maior império que o mundo tinha visto até então."
+      "en": "Its founder allowed exiled peoples to return home, in a decree inscribed on a clay cylinder that is sometimes called the first charter of human rights.",
+      "pt": "Seu fundador permitiu que os povos exilados voltassem para casa, num decreto gravado num cilindro de argila que às vezes é chamado de primeira carta de direitos humanos."
     },
     {
       "en": "It fell to a young Macedonian conqueror in his campaign eastward.",
       "pt": "Caiu diante de um jovem conquistador macedônio em sua campanha rumo ao leste."
     }
-  ]
+  ],
+  "map": {
+    "file": "achaemenid-empire.webp"
+  }
 }
