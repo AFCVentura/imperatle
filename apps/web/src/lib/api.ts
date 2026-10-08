@@ -1,4 +1,4 @@
-import type { EmpireSummary, GuessResponse, StatsResponse, TodayChallenge } from "./types";
+import type { ChallengeReveal, EmpireSummary, GuessComparison, GuessResponse, StatsResponse, TodayChallenge } from "./types";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
@@ -68,4 +68,29 @@ export async function resetTodayChallenge(): Promise<void> {
     credentials: "include",
   });
   if (!res.ok) throw new Error(`Failed to reset today's challenge: ${res.status}`);
+}
+
+// Dev-only debug tools behind the header's DEV buttons -- the API rejects
+// these outside Development, see DevController.
+export async function devForceToday(slug: string): Promise<void> {
+  const res = await fetch(`${API_URL}/dev/today/force/${slug}`, {
+    method: "POST",
+    credentials: "include",
+  });
+  if (!res.ok) throw new Error(`Failed to force today's empire: ${res.status}`);
+}
+
+export interface DevPreview {
+  date: string;
+  guesses: { empireId: number; nameEn: string; namePt: string; comparison: GuessComparison }[];
+  reveal: ChallengeReveal;
+}
+
+export async function devNextWithGuesses(): Promise<DevPreview> {
+  const res = await fetch(`${API_URL}/dev/today/next-with-guesses`, {
+    method: "POST",
+    credentials: "include",
+  });
+  if (!res.ok) throw new Error(`Failed to load the next empire: ${res.status}`);
+  return res.json();
 }

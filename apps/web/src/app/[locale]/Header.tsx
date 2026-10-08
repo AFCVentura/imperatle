@@ -2,8 +2,9 @@
 
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
-import { resetTodayChallenge } from "@/lib/api";
-import { clearAllGameProgress } from "@/lib/gameStorage";
+import { devForceToday, devNextWithGuesses, resetTodayChallenge } from "@/lib/api";
+import { clearAllGameProgress, saveGameProgress } from "@/lib/gameStorage";
+import { comparisonFromApi } from "@/lib/types";
 import { openAbout, openAccount, openFeedback, openHowToPlay, openStats, openSupport } from "@/lib/dialogs";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 
@@ -12,17 +13,46 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [resetting, setResetting] = useState(false);
 
-  async function handleDebugReset() {
+  // Shared by the DEV buttons: run the action, then reload into a fresh
+  // round. Local progress is cleared first; an action may save its own.
+  async function runDebugAction(action: () => Promise<void>) {
     if (resetting) return;
     setResetting(true);
     try {
-      await resetTodayChallenge();
       clearAllGameProgress();
+      await action();
       window.location.reload();
     } catch {
       setResetting(false);
     }
   }
+
+  const handleDebugReset = () => runDebugAction(resetTodayChallenge);
+  const handleDebugRoman = () => runDebugAction(() => devForceToday("roman-empire"));
+
+  // Next empire with every clue already revealed by random wrong guesses,
+  // for checking each empire's map and clues.
+  const handleDebugNext = () =>
+    runDebugAction(async () => {
+      const preview = await devNextWithGuesses();
+      saveGameProgress({
+        date: preview.date,
+        guesses: preview.guesses.map((g) => ({
+          empireId: g.empireId,
+          nameEn: g.nameEn,
+          namePt: g.namePt,
+          correct: false,
+          areaComparison: comparisonFromApi(g.comparison.area),
+          durationComparison: comparisonFromApi(g.comparison.duration),
+        })),
+        reveal: preview.reveal,
+        gameOver: false,
+        answer: null,
+      });
+    });
+
+  const debugButtonClass =
+    "rounded-md border border-header-foreground/40 px-2 py-0.5 text-xs font-semibold text-header-foreground hover:bg-header-foreground/10 disabled:opacity-50";
 
   useEffect(() => {
     if (!open) return;
@@ -59,15 +89,35 @@ export function Header() {
       <div className="flex items-center gap-2">
         <span className="font-display text-2xl tracking-wider">Imperatle</span>
         {process.env.NODE_ENV !== "production" && (
-          <button
-            type="button"
-            onClick={handleDebugReset}
-            disabled={resetting}
-            title="Debug: reset today's attempts"
-            className="rounded-md border border-header-foreground/40 px-2 py-0.5 text-xs font-semibold text-header-foreground hover:bg-header-foreground/10 disabled:opacity-50"
-          >
-            {resetting ? "…" : "DEV reset"}
-          </button>
+          <>
+            <button
+              type="button"
+              onClick={handleDebugReset}
+              disabled={resetting}
+              title="Debug: reset today's attempts"
+              className={debugButtonClass}
+            >
+              {resetting ? "…" : "DEV reset"}
+            </button>
+            <button
+              type="button"
+              onClick={handleDebugRoman}
+              disabled={resetting}
+              title="Debug: pin today to the Roman Empire, no clues revealed"
+              className={debugButtonClass}
+            >
+              DEV Roma
+            </button>
+            <button
+              type="button"
+              onClick={handleDebugNext}
+              disabled={resetting}
+              title="Debug: next empire, with every clue revealed by random wrong guesses"
+              className={debugButtonClass}
+            >
+              DEV próximo
+            </button>
+          </>
         )}
       </div>
 
