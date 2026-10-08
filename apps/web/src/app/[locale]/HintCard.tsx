@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { MarqueeText } from "./MarqueeText";
 import { useTooltip } from "./useTooltip";
 
 interface HintCardProps {
   label: string;
-  value: string | null;
+  value: ReactNode | null;
   unlockedAtLabel: string;
   // What this kind of clue means, shown in a tooltip.
   description: string;

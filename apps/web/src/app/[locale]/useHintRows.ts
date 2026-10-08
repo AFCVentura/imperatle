@@ -1,3 +1,4 @@
+import { createElement, Fragment, type ReactNode } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { formatAreaKm2 } from "@/lib/formatArea";
 import { splitAstronomicalYear } from "@/lib/formatYear";
@@ -15,7 +16,9 @@ export interface HintSlot {
   label: string;
   // What this kind of clue means (tooltip text).
   description: string;
-  value: string | null;
+  // A node rather than plain text so parts of a value can be styled (the
+  // primary continent in bold). null = still locked.
+  value: ReactNode | null;
   notes?: string | null;
 }
 
@@ -39,6 +42,24 @@ export function useHintRows(reveal: ChallengeReveal): HintRowData[] {
   function formatYear(year: number): string {
     const { absoluteYear, isBce } = splitAstronomicalYear(year);
     return isBce ? t("year.bce", { year: absoluteYear }) : t("year.ce", { year: absoluteYear });
+  }
+
+  // Primary continent first and in bold, then the rest in their content order.
+  function formatContinents(): ReactNode {
+    const { continents, primaryContinent: primary } = reveal;
+    if (!continents || continents.length === 0) return null;
+
+    const ordered =
+      primary !== null && continents.includes(primary) ? [primary, ...continents.filter((c) => c !== primary)] : continents;
+    return ordered.map((c, i) => {
+      const name = t(`enums.continent.${continentFromApi(c)}`);
+      return createElement(
+        Fragment,
+        { key: c },
+        i > 0 ? ", " : null,
+        c === primary ? createElement("strong", { className: "font-bold" }, name) : name,
+      );
+    });
   }
 
   const durationNotes = reveal.durationNotesEn
@@ -76,10 +97,7 @@ export function useHintRows(reveal: ChallengeReveal): HintRowData[] {
           key: "continents",
           label: t("fields.continents"),
           description: t("fieldInfo.continents"),
-          value:
-            reveal.continents && reveal.continents.length > 0
-              ? reveal.continents.map((c) => t(`enums.continent.${continentFromApi(c)}`)).join(", ")
-              : null,
+          value: formatContinents(),
         },
       ],
     },
