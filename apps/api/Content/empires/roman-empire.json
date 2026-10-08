@@ -57,5 +57,8 @@
       "en": "According to legend, its capital was founded by twins raised by a she-wolf.",
       "pt": "Segundo a lenda, sua capital foi fundada por gêmeos criados por uma loba."
     }
-  ]
+  ],
+  "map": {
+    "file": "roman-empire.svg"
+  }
 }
