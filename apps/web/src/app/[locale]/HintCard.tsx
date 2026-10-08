@@ -1,8 +1,11 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { MarqueeText } from "./MarqueeText";
 import { useTooltip } from "./useTooltip";
+
+// Hover delay before the notes open; a bit shorter than the clue tooltip's.
+const NOTES_OPEN_DELAY_MS = 300;
 
 interface HintCardProps {
   label: string;
@@ -33,8 +36,11 @@ export function HintCard({
   className = "",
 }: HintCardProps) {
   const [notesOpen, setNotesOpen] = useState(false);
+  // Pointer over the "?": the notes are about to open (hover delay).
+  const [notesHovered, setNotesHovered] = useState(false);
+  const notesTimerRef = useRef<number | undefined>(undefined);
   const [flipped, setFlipped] = useState(false);
-  const { anchorProps, toggle, tooltip } = useTooltip(
+  const { anchorProps, toggle, hide: hideTooltip, schedule: scheduleTooltip, tooltip } = useTooltip(
     <>
       <span className="mb-0.5 block font-display font-semibold">{label}</span>
       {description}
@@ -43,6 +49,24 @@ export function HintCard({
   const unlocked = value !== null;
   const front = unlocked ? value : label;
   const back = unlocked ? label : unlockedAtLabel;
+  const hasNotes = unlocked && !!notes;
+  // While the notes are open they own the card: no flip to the label and no
+  // explanatory tooltip on top of them.
+  const showBack = flipped && !notesOpen;
+  const hoverFlip = !notesOpen && !notesHovered;
+
+  useEffect(() => () => window.clearTimeout(notesTimerRef.current), []);
+
+  function openNotes() {
+    window.clearTimeout(notesTimerRef.current);
+    hideTooltip();
+    setNotesOpen(true);
+  }
+
+  function closeNotes() {
+    window.clearTimeout(notesTimerRef.current);
+    setNotesOpen(false);
+  }
 
   return (
     <div
@@ -69,36 +93,50 @@ export function HintCard({
       {/* Front and back share one grid cell instead of being absolutely
           positioned, so the card's natural width is the wider of the two --
           that's what lets each card grow to fit its text. */}
-      <div className="grid w-full grid-cols-[minmax(0,1fr)] leading-4">
+      {/* With notes, the text keeps clear of the "?" in the corner instead
+          of scrolling under it. */}
+      <div className={`grid w-full grid-cols-[minmax(0,1fr)] leading-4 ${hasNotes ? "pr-3" : ""}`}>
         <MarqueeText
-          className={`[grid-area:1/1] text-xs font-medium transition-opacity duration-200 group-hover:opacity-0 ${
-            flipped ? "opacity-0" : ""
-          } ${unlocked ? "text-foreground" : "text-muted/70"}`}
+          className={`[grid-area:1/1] text-xs font-medium transition-opacity duration-200 ${
+            hoverFlip ? "group-hover:opacity-0" : ""
+          } ${showBack ? "opacity-0" : ""} ${unlocked ? "text-foreground" : "text-muted/70"}`}
         >
           {front}
         </MarqueeText>
         <MarqueeText
-          className={`[grid-area:1/1] text-xs font-medium text-muted transition-opacity duration-200 group-hover:opacity-100 ${
-            flipped ? "opacity-100" : "opacity-0"
-          }`}
+          className={`[grid-area:1/1] text-xs font-medium text-muted transition-opacity duration-200 ${
+            hoverFlip ? "group-hover:opacity-100" : ""
+          } ${showBack ? "opacity-100" : "opacity-0"}`}
         >
           {back}
         </MarqueeText>
       </div>
 
-      {unlocked && notes && (
+      {hasNotes && (
         <>
           <button
             type="button"
             aria-label={notesButtonLabel}
             onClick={(e) => {
               e.stopPropagation();
-              setNotesOpen((open) => !open);
+              if (notesOpen) closeNotes();
+              else openNotes();
             }}
             // Keep a tap on "?" from also flipping the card.
             onPointerUp={(e) => e.stopPropagation()}
-            onMouseEnter={() => setNotesOpen(true)}
-            onMouseLeave={() => setNotesOpen(false)}
+            onMouseEnter={() => {
+              hideTooltip();
+              setNotesHovered(true);
+              window.clearTimeout(notesTimerRef.current);
+              notesTimerRef.current = window.setTimeout(openNotes, NOTES_OPEN_DELAY_MS);
+            }}
+            onMouseLeave={(e) => {
+              setNotesHovered(false);
+              closeNotes();
+              // Back onto the rest of the card: its tooltip comes back after
+              // the usual delay, as if the pointer had just entered it.
+              if (e.currentTarget.parentElement?.contains(e.relatedTarget as Node)) scheduleTooltip();
+            }}
             className={`absolute flex h-4 w-4 right-1 top-1 items-center justify-center rounded-full bg-muted/20 text-[10px] font-semibold text-foreground hover:bg-muted/35`}
           >
             ?

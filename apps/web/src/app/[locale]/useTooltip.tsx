@@ -54,6 +54,12 @@ export function useTooltip(content: ReactNode) {
     setPinned(false);
   }, []);
 
+  // Opens after the hover delay, as if the pointer had just entered.
+  const schedule = useCallback(() => {
+    window.clearTimeout(timerRef.current);
+    timerRef.current = window.setTimeout(show, OPEN_DELAY_MS);
+  }, [show]);
+
   const toggle = useCallback(() => {
     window.clearTimeout(timerRef.current);
     if (pinned) {
@@ -117,5 +123,5 @@ export function useTooltip(content: ReactNode) {
       document.body,
     );
 
-  return { anchorProps, toggle, tooltip };
+  return { anchorProps, toggle, hide, schedule, tooltip };
 }
