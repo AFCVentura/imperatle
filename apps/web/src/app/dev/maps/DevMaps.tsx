@@ -42,6 +42,8 @@ export function DevMaps({ empires }: { empires: { id: string; label: string; sha
           stage={stage}
           locale={locale}
           labels={{
+            zoomIn: "Aproximar",
+            zoomOut: "Afastar",
             focus: "Voltar pro império",
             fullscreen: "Tela cheia",
             exitFullscreen: "Sair da tela cheia",

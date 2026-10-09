@@ -119,7 +119,13 @@
     "mapExitFullscreen": "Sair da tela cheia",
     "mapLoading": "Carregando mapa…",
     "mapGlobe": "Ver como globo",
-    "mapFlat": "Ver como mapa plano"
+    "mapFlat": "Ver como mapa plano",
+    "mapZoomIn": "Aproximar",
+    "mapZoomOut": "Afastar",
+    "mapStageOutline": "Contorno",
+    "mapStageContinents": "Continentes",
+    "mapStageCountries": "Países",
+    "mapStagesLabel": "Detalhe do mapa"
   },
   "HowToPlay": {
     "title": "Como jogar",

@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { useTooltip } from "./useTooltip";
+import { useTooltip } from "@/lib/useTooltip";
 import type { GuessHistoryEntry } from "@/lib/gameStorage";
 import { pickLocalized } from "@/lib/pickLocalized";
 import type { ComparisonResult } from "@/lib/types";

@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { getMapShape, submitGuess } from "@/lib/api";
 import { EmpireMap } from "@/map/EmpireMap";
-import type { MapLocale } from "@/map/geo";
+import type { MapLocale, MapStage } from "@/map/geo";
 import { mapStageFor } from "@/map/stage";
 import { openStats } from "@/lib/dialogs";
 import { loadGameProgress, saveGameProgress, type GameProgress, type GuessHistoryEntry } from "@/lib/gameStorage";
@@ -14,6 +14,7 @@ import { comparisonFromApi, EMPTY_REVEAL, type ChallengeReveal, type EmpireAnswe
 import { EmpireAutocomplete } from "./EmpireAutocomplete";
 import { AttemptList } from "./AttemptList";
 import { HintRow } from "./HintRow";
+import { MapStagePicker } from "./MapStagePicker";
 import { ShareButton } from "./ShareButton";
 import { useHintRows } from "./useHintRows";
 
@@ -45,6 +46,11 @@ function GameBoardInner({ challenge, empires, initial }: GameBoardProps & { init
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(false);
   const [shape, setShape] = useState<MultiPolygon | "failed" | null>(null);
+  const [pickedStage, setPickedStage] = useState<{ stage: MapStage; unlocked: MapStage } | null>(null);
+  // Levels unlocked before this visit don't flash on a reload.
+  const [stageOnArrival] = useState(() =>
+    mapStageFor(initial?.guesses.filter((g) => !g.correct).length ?? 0, initial?.gameOver ?? false),
+  );
 
   useEffect(() => {
     if (!challenge.hasMap) return;
@@ -106,28 +112,44 @@ function GameBoardInner({ challenge, empires, initial }: GameBoardProps & { init
   const wrongGuessCount = guesses.filter((g) => !g.correct).length;
   const remainingHintRows = hintRows.slice(wrongGuessCount);
 
+  // The map shows the most detailed level unlocked so far, unless the player
+  // picked another one under it; a new unlock switches to it again.
+  const unlockedStage = mapStageFor(wrongGuessCount, gameOver);
+  const shownStage = pickedStage?.unlocked === unlockedStage ? pickedStage.stage : unlockedStage;
+  const justUnlocked = unlockedStage > stageOnArrival ? unlockedStage : null;
+
   return (
     // Phone-sized column on every screen, so the PC looks like the mobile layout.
     <div className="flex w-full max-w-md flex-col gap-6 md:gap-3">
       {challenge.hasMap && shape !== "failed" ? (
-        <div role="img" aria-label={t("mapAlt")}>
-          <EmpireMap
-            empire={shape}
-            stage={mapStageFor(wrongGuessCount, gameOver)}
-            locale={locale as MapLocale}
-            labels={{
-              focus: t("mapFocus"),
-              fullscreen: t("mapFullscreen"),
-              exitFullscreen: t("mapExitFullscreen"),
-              loading: t("mapLoading"),
-              globe: t("mapGlobe"),
-              flat: t("mapFlat"),
-            }}
-            // Same height as the old map card: capped at 30% of the screen
-            // height, so the map never takes over short screens.
-            className="h-[calc(min(15rem,30dvh)+1.5rem)] w-full"
+        <>
+          <div role="img" aria-label={t("mapAlt")}>
+            <EmpireMap
+              empire={shape}
+              stage={shownStage}
+              locale={locale as MapLocale}
+              labels={{
+                zoomIn: t("mapZoomIn"),
+                zoomOut: t("mapZoomOut"),
+                focus: t("mapFocus"),
+                fullscreen: t("mapFullscreen"),
+                exitFullscreen: t("mapExitFullscreen"),
+                loading: t("mapLoading"),
+                globe: t("mapGlobe"),
+                flat: t("mapFlat"),
+              }}
+              // Same height as the old map card: capped at 30% of the screen
+              // height, so the map never takes over short screens.
+              className="h-[calc(min(15rem,30dvh)+1.5rem)] w-full"
+            />
+          </div>
+          <MapStagePicker
+            shown={shownStage}
+            unlocked={unlockedStage}
+            justUnlocked={justUnlocked}
+            onPick={(stage) => setPickedStage({ stage, unlocked: unlockedStage })}
           />
-        </div>
+        </>
       ) : (
         <div className="flex h-40 items-center justify-center rounded-xl border-2 border-dashed border-line text-sm text-muted">
           {t("mapComingSoon")}

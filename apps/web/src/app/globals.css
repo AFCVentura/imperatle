@@ -78,6 +78,16 @@
   --font-sans: var(--theme-font-body);
   --font-display: var(--theme-font-display);
 
+  /* A map detail level that was just unlocked flashes twice under the map. */
+  --animate-unlock: unlock 0.9s ease-in-out 2;
+
+  @keyframes unlock {
+    50% {
+      color: var(--highlight);
+      transform: scale(1.12);
+    }
+  }
+
   /* MarqueeText sets the distance/duration per element, based on how much
      the text overflows. */
   --animate-marquee: marquee var(--marquee-duration, 6s) ease-in-out infinite;

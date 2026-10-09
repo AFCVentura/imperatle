@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { MarqueeText } from "./MarqueeText";
-import { useTooltip } from "./useTooltip";
+import { useTooltip } from "@/lib/useTooltip";
 
 // Hover delay before the notes open; a bit shorter than the clue tooltip's.
 const NOTES_OPEN_DELAY_MS = 300;

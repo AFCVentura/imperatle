@@ -2,6 +2,7 @@
 
 import type { MultiPolygon } from "geojson";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useTooltip } from "@/lib/useTooltip";
 import { FlatMap } from "./FlatMap";
 import { GlobeMap } from "./GlobeMap";
 import { countryName, loadWorld, type CountryFeature, type MapLocale, type MapStage, type World } from "./geo";
@@ -9,6 +10,8 @@ import { countryName, loadWorld, type CountryFeature, type MapLocale, type MapSt
 export type MapMode = "flat" | "globe";
 
 export type EmpireMapLabels = {
+  zoomIn: string;
+  zoomOut: string;
   focus: string;
   fullscreen: string;
   exitFullscreen: string;
@@ -45,8 +48,11 @@ type Label = { id: string; name: string; x: number; y: number; view: unknown[] }
 // "focus" (fly back to the empire) and fullscreen. In fullscreen on a phone it
 // tries to turn to landscape, where the map has more room.
 export function EmpireMap({ empire, stage, locale, labels, className = "aspect-[4/3] w-full" }: Props) {
-  const frameRef = useRef<HTMLDivElement>(null);
+  const frameRef = useRef<HTMLDivElement | null>(null);
+  // Same element, as state: tooltips render inside it while it's fullscreen.
+  const [frame, setFrame] = useState<HTMLDivElement | null>(null);
   const [mode, setMode] = useState<MapMode>(savedMode);
+  const [zoomSignal, setZoomSignal] = useState({ n: 0, factor: 1 });
   const [world, setWorld] = useState<World | null>(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
   const [focusSignal, setFocusSignal] = useState(0);
@@ -125,10 +131,14 @@ export function EmpireMap({ empire, stage, locale, labels, className = "aspect-[
 
   const Map = mode === "flat" ? FlatMap : GlobeMap;
   const isFull = fullscreen !== "off";
+  const tooltipPortal = fullscreen === "native" ? frame : null;
 
   return (
     <div
-      ref={frameRef}
+      ref={(el) => {
+        frameRef.current = el;
+        setFrame(el);
+      }}
       onContextMenu={(e) => e.preventDefault()}
       className={
         "relative overflow-hidden bg-map select-none [-webkit-touch-callout:none] " +
@@ -145,6 +155,7 @@ export function EmpireMap({ empire, stage, locale, labels, className = "aspect-[
           width={size.width}
           height={size.height}
           focusSignal={focusSignal}
+          zoomSignal={zoomSignal}
           selected={label?.id ?? null}
           onCountry={onCountry}
         />
@@ -161,8 +172,19 @@ export function EmpireMap({ empire, stage, locale, labels, className = "aspect-[
         </div>
       )}
 
+      {stage > 1 && (
+        <div className="absolute top-2 right-2 flex flex-col gap-2">
+          <MapButton onClick={() => setZoomSignal((z) => ({ n: z.n + 1, factor: 1.6 }))} title={labels.zoomIn} portal={tooltipPortal}>
+            <path d="M12 5v14M5 12h14" />
+          </MapButton>
+          <MapButton onClick={() => setZoomSignal((z) => ({ n: z.n + 1, factor: 1 / 1.6 }))} title={labels.zoomOut} portal={tooltipPortal}>
+            <path d="M5 12h14" />
+          </MapButton>
+        </div>
+      )}
+
       <div className="absolute right-2 bottom-2 flex gap-2">
-        <MapButton onClick={toggleMode} title={mode === "flat" ? labels.globe : labels.flat}>
+        <MapButton onClick={toggleMode} title={mode === "flat" ? labels.globe : labels.flat} portal={tooltipPortal}>
           {mode === "flat" ? (
             // globe
             <path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 0c2.5 2.4 3.8 5.4 3.8 9s-1.3 6.6-3.8 9m0-18C9.5 5.4 8.2 8.4 8.2 12s1.3 6.6 3.8 9M3.5 9h17m-17 6h17" />
@@ -172,11 +194,11 @@ export function EmpireMap({ empire, stage, locale, labels, className = "aspect-[
           )}
         </MapButton>
         {stage > 1 && (
-          <MapButton onClick={() => setFocusSignal((n) => n + 1)} title={labels.focus}>
+          <MapButton onClick={() => setFocusSignal((n) => n + 1)} title={labels.focus} portal={tooltipPortal}>
             <path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm0-6v3m0 14v3M2 12h3m14 0h3" />
           </MapButton>
         )}
-        <MapButton onClick={toggleFullscreen} title={isFull ? labels.exitFullscreen : labels.fullscreen}>
+        <MapButton onClick={toggleFullscreen} title={isFull ? labels.exitFullscreen : labels.fullscreen} portal={tooltipPortal}>
           {isFull ? (
             <path d="M9 4v5H4m11-5v5h5M9 20v-5H4m11 5v-5h5" />
           ) : (
@@ -188,18 +210,25 @@ export function EmpireMap({ empire, stage, locale, labels, className = "aspect-[
   );
 }
 
-function MapButton({ onClick, title, children }: { onClick: () => void; title: string; children: React.ReactNode }) {
+// Icon button with the game's tooltip on hover (not the browser's). On touch
+// a tap just acts, so the tooltip only follows the mouse.
+function MapButton({ onClick, title, portal, children }: { onClick: () => void; title: string; portal: Element | null; children: React.ReactNode }) {
+  const { anchorProps, hide, tooltip } = useTooltip(title, portal);
   return (
     <button
+      {...anchorProps}
       type="button"
-      onClick={onClick}
-      title={title}
+      onClick={() => {
+        hide();
+        onClick();
+      }}
       aria-label={title}
       className="flex size-9 items-center justify-center rounded-full border border-map-line bg-background/90 text-foreground shadow-sm hover:bg-surface"
     >
       <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
         {children}
       </svg>
+      {tooltip}
     </button>
   );
 }

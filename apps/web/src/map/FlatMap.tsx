@@ -15,6 +15,7 @@ type Props = {
   width: number;
   height: number;
   focusSignal: number; // bump to fly back to the empire
+  zoomSignal: { n: number; factor: number }; // bump n to zoom by factor
   selected: string | null; // country id
   onCountry: (c: CountryFeature | null, x: number, y: number) => void;
 };
@@ -31,7 +32,7 @@ type View = { empire: MultiPolygon; center: [number, number]; k: number };
 //
 // Drawn on canvas: every shape is projected once into a Path2D, and each frame
 // only repaints them at the current zoom, so panning stays smooth and sharp.
-export function FlatMap({ world, empire, stage, width, height, focusSignal, selected, onCountry }: Props) {
+export function FlatMap({ world, empire, stage, width, height, focusSignal, zoomSignal, selected, onCountry }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const zoomRef = useRef<ZoomBehavior<HTMLCanvasElement, unknown> | null>(null);
   const transformRef = useRef<ZoomTransform>(zoomIdentity);
@@ -170,6 +171,13 @@ export function FlatMap({ world, empire, stage, width, height, focusSignal, sele
     const sel = select(canvasRef.current!);
     sel.transition().duration(900).call(zoomRef.current!.transform, geo.focus);
   }, [focusSignal, geo]);
+
+  const zoomedRef = useRef(zoomSignal.n);
+  useEffect(() => {
+    if (zoomSignal.n === zoomedRef.current) return;
+    zoomedRef.current = zoomSignal.n;
+    select(canvasRef.current!).transition().duration(300).call(zoomRef.current!.scaleBy, zoomSignal.factor);
+  }, [zoomSignal]);
 
   useEffect(
     () => () => {

@@ -13,6 +13,7 @@ type Props = {
   width: number;
   height: number;
   focusSignal: number;
+  zoomSignal: { n: number; factor: number };
   selected: string | null;
   onCountry: (c: CountryFeature | null, x: number, y: number) => void;
 };
@@ -23,7 +24,7 @@ const graticule = geoGraticule10();
 
 // Globe you can spin: drag rotates, wheel/pinch zooms, a click names the
 // country under it. Drawn on canvas, since every rotation redraws the world.
-export function GlobeMap({ world, empire, stage, width, height, focusSignal, selected, onCountry }: Props) {
+export function GlobeMap({ world, empire, stage, width, height, focusSignal, zoomSignal, selected, onCountry }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const viewRef = useRef<View>({ rotate: [0, 0], scale: 1 });
   const drawRef = useRef<() => void>(() => {});
@@ -164,6 +165,26 @@ export function GlobeMap({ world, empire, stage, width, height, focusSignal, sel
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
   }, [focusSignal, focus]);
+
+  const zoomedRef = useRef(zoomSignal.n);
+  useEffect(() => {
+    if (zoomSignal.n === zoomedRef.current) return;
+    zoomedRef.current = zoomSignal.n;
+    const from = viewRef.current.scale;
+    const to = Math.min(baseScale * 40, Math.max(baseScale * 0.8, from * zoomSignal.factor));
+    const start = performance.now();
+    let frame = 0;
+    const tick = (now: number) => {
+      const t = Math.min(1, (now - start) / 300);
+      const eased = 1 - (1 - t) ** 3;
+      viewRef.current = { ...viewRef.current, scale: from + (to - from) * eased };
+      moving();
+      drawRef.current();
+      if (t < 1) frame = requestAnimationFrame(tick);
+    };
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [zoomSignal, baseScale]);
 
   // Drag to spin, wheel or pinch to zoom, tap to name a country. Stage 1 is
   // locked on the empire, like the flat map.

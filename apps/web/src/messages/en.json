@@ -119,7 +119,13 @@
     "mapExitFullscreen": "Exit fullscreen",
     "mapLoading": "Loading map…",
     "mapGlobe": "Show as a globe",
-    "mapFlat": "Show as a flat map"
+    "mapFlat": "Show as a flat map",
+    "mapZoomIn": "Zoom in",
+    "mapZoomOut": "Zoom out",
+    "mapStageOutline": "Outline",
+    "mapStageContinents": "Continents",
+    "mapStageCountries": "Countries",
+    "mapStagesLabel": "Map detail"
   },
   "HowToPlay": {
     "title": "How to play",

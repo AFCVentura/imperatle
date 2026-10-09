@@ -1,6 +1,6 @@
 "use client";
 
-import { useTooltip } from "./useTooltip";
+import { useTooltip } from "@/lib/useTooltip";
 
 export interface Tower {
   key: string;
