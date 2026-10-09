@@ -65,19 +65,25 @@
       "items": { "$ref": "#/$defs/text" }
     },
     "map": {
-      "description": "Optional while the map isn't ready (the game shows a placeholder).",
+      "description": "Optional while the map isn't ready (the game shows a placeholder). The shape is built by apps/web/scripts/maps/build-shapes.mjs into Content/shapes/<slug>.json.",
       "type": "object",
       "additionalProperties": false,
-      "required": ["file"],
+      "required": ["parts"],
       "properties": {
-        "file": {
-          "description": "File name inside apps/web/public/maps: a neutral code (10 lowercase hex characters), never the empire's name, e.g. \"3fa9c01b2d.webp\".",
-          "type": "string",
-          "pattern": "^[a-z0-9-]+\\.(svg|png|webp|jpg|jpeg)$"
-        },
-        "sourceUrl": { "description": "Page where the map came from (e.g. its Wikimedia Commons page).", "type": "string", "format": "uri" },
-        "author": { "type": "string" },
-        "license": { "description": "e.g. \"CC BY-SA 4.0\".", "type": "string" }
+        "parts": {
+          "description": "Cliopatria polities merged into the shape, each at a year its record covers (usually the peak year). More than one when the dataset lists part of the empire apart, e.g. a dominion.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["polity", "year"],
+            "properties": {
+              "polity": { "description": "Cliopatria \"Name\", exactly, e.g. \"Mongol Empire\" or \"(British Empire)\".", "type": "string", "minLength": 1 },
+              "year": { "description": "Negative = BCE. There is no year 0.", "type": "integer", "not": { "const": 0 } }
+            }
+          }
+        }
       }
     }
   },

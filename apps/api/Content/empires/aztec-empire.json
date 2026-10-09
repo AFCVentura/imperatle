@@ -57,6 +57,8 @@
     }
   ],
   "map": {
-    "file": "735029245d.webp"
+    "parts": [
+      { "polity": "Aztec Triple Alliance", "year": 1519 }
+    ]
   }
 }

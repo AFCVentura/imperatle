@@ -58,6 +58,8 @@
     }
   ],
   "map": {
-    "file": "d6f71af22b.svg"
+    "parts": [
+      { "polity": "Mongol Empire", "year": 1279 }
+    ]
   }
 }

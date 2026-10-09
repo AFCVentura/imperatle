@@ -55,6 +55,8 @@
     }
   ],
   "map": {
-    "file": "38f78f5dab.webp"
+    "parts": [
+      { "polity": "Achaemenid Empire", "year": -500 }
+    ]
   }
 }

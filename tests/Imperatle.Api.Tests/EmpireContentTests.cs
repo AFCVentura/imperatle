@@ -1,4 +1,3 @@
-using System.Text.RegularExpressions;
 using Imperatle.Api.Data;
 using Imperatle.Api.Models;
 
@@ -42,8 +41,9 @@ public class EmpireContentTests
         { ValidEmpire() with { Capital = new("Rome", " ") }, "capital.pt is empty" },
         { ValidEmpire() with { Religion = new("Old faith — later new", "Antiga") }, "em dash" },
         { ValidEmpire() with { DurationNotes = new("Only one phase -- the rest is elsewhere", "Uma fase") }, "em dash" },
-        { ValidEmpire() with { Map = new("Mongol Map.PNG") }, "map.file" },
-        { ValidEmpire() with { Map = new("mongol-empire.webp") }, "map.file" },
+        { ValidEmpire() with { Map = new([]) }, "at least one Cliopatria polity" },
+        { ValidEmpire() with { Map = new([new(" ", 100)]) }, "polity is empty" },
+        { ValidEmpire() with { Map = new([new("Roman Empire", 0)]) }, "year can't be 0" },
     };
 
     [Theory]
@@ -93,48 +93,56 @@ public class EmpireContentTests
     }
 
     [Fact]
-    public void Every_map_file_referenced_by_the_content_exists()
+    public void A_valid_shape_has_no_errors()
     {
-        var mapsDir = Path.Combine(RepoRoot(), "apps", "web", "public", "maps");
-        var missing = EmpireContentLoader.LoadFromDirectory(EmpireContentLoader.DefaultDirectory)
-            .Where(e => e.Map is not null && !File.Exists(Path.Combine(mapsDir, e.Map.File)))
-            .Select(e => $"{e.Slug}: {e.Map!.File}")
-            .ToList();
-
-        Assert.Empty(missing);
+        Assert.Empty(EmpireContentLoader.ValidateShape("""{"type":"MultiPolygon","coordinates":[[[[0,0],[0,1],[1,1],[0,0]]]]}"""));
     }
 
-    // The file name is already a neutral code, but an SVG can still carry the
-    // original name inside (Inkscape's sodipodi:docname, <title>, labels).
+    public static TheoryData<string, string> InvalidShapes => new()
+    {
+        { "not json", "" },
+        { """{"type":"MultiPolygon","coordinates":[[[[0,0],[0,1],[1,1],[0,0]]]],"properties":{"name":"Rome"}}""", "only \"type\" and \"coordinates\"" },
+        { """{"type":"Polygon","coordinates":[[[0,0],[0,1],[1,1],[0,0]]]}""", "MultiPolygon" },
+        { """{"type":"MultiPolygon","coordinates":[]}""", "non-empty" },
+        { """{"type":"MultiPolygon","coordinates":[[[[0,0],[0,1],[0,0]]]]}""", "at least 4 positions" },
+        { """{"type":"MultiPolygon","coordinates":[[[[0,0],[0,1],[1,1],[1,0]]]]}""", "isn't closed" },
+        { """{"type":"MultiPolygon","coordinates":[[[[0,0],[0,100],[1,1],[0,0]]]]}""", "outside the globe" },
+    };
+
+    [Theory]
+    [MemberData(nameof(InvalidShapes))]
+    public void Invalid_shapes_are_reported(string json, string expectedMessage)
+    {
+        Assert.Contains(EmpireContentLoader.ValidateShape(json), e => e.Contains(expectedMessage));
+    }
+
     [Fact]
-    public void No_svg_map_names_its_empire()
+    public void An_empire_with_a_map_needs_its_shape_file()
     {
-        var mapsDir = Path.Combine(RepoRoot(), "apps", "web", "public", "maps");
-        string[] generic = ["empire", "império", "imperio"];
-        var leaks = new List<string>();
-        foreach (var e in EmpireContentLoader.LoadFromDirectory(EmpireContentLoader.DefaultDirectory)
-                     .Where(e => e.Map is not null && e.Map.File.EndsWith(".svg")))
+        var root = Directory.CreateTempSubdirectory("imperatle-content-");
+        try
         {
-            var svg = File.ReadAllText(Path.Combine(mapsDir, e.Map!.File));
-            var words = e.Slug.Split('-').Concat($"{e.Name.En} {e.Name.Pt}".Split(' '))
-                .Select(w => w.ToLowerInvariant())
-                .Where(w => w.Length >= 4 && !generic.Contains(w))
-                .Distinct();
-            leaks.AddRange(words
-                .Where(w => Regex.IsMatch(svg, $@"(?<!\p{{L}}){Regex.Escape(w)}(?!\p{{L}})", RegexOptions.IgnoreCase))
-                .Select(w => $"{e.Map.File} ({e.Slug}) mentions \"{w}\""));
+            var empires = root.CreateSubdirectory("empires");
+            var json = System.Text.Json.JsonSerializer.Serialize(
+                ValidEmpire() with { Map = new([new("Test Polity", 100)]) },
+                new System.Text.Json.JsonSerializerOptions(System.Text.Json.JsonSerializerDefaults.Web)
+                {
+                    Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() },
+                    DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+                });
+            File.WriteAllText(Path.Combine(empires.FullName, "test-empire.json"), json);
+
+            var ex = Assert.Throws<EmpireContentException>(() => EmpireContentLoader.LoadFromDirectory(empires.FullName));
+            Assert.Contains(ex.Errors, e => e.Contains("shapes/test-empire.json"));
+
+            root.CreateSubdirectory("shapes");
+            File.WriteAllText(Path.Combine(root.FullName, "shapes", "test-empire.json"), """{"type":"MultiPolygon","coordinates":[[[[0,0],[0,1],[1,1],[0,0]]]]}""");
+            var loaded = Assert.Single(EmpireContentLoader.LoadFromDirectory(empires.FullName));
+            Assert.Equal("""{"type":"MultiPolygon","coordinates":[[[[0,0],[0,1],[1,1],[0,0]]]]}""", loaded.MapShape);
         }
-
-        Assert.Empty(leaks);
-    }
-
-    private static string RepoRoot()
-    {
-        var dir = new DirectoryInfo(AppContext.BaseDirectory);
-        while (dir is not null && !File.Exists(Path.Combine(dir.FullName, "global.json")))
+        finally
         {
-            dir = dir.Parent;
+            root.Delete(recursive: true);
         }
-        return dir?.FullName ?? throw new DirectoryNotFoundException("Repository root (global.json) not found.");
     }
 }

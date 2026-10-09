@@ -55,6 +55,8 @@
     }
   ],
   "map": {
-    "file": "1b72b23cf7.png"
+    "parts": [
+      { "polity": "Ottoman Empire", "year": 1683 }
+    ]
   }
 }

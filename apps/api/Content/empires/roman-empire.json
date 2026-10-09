@@ -59,6 +59,8 @@
     }
   ],
   "map": {
-    "file": "5e79365c7f.svg"
+    "parts": [
+      { "polity": "Roman Empire", "year": 117 }
+    ]
   }
 }

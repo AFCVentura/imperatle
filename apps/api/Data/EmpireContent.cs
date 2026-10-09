@@ -25,7 +25,13 @@ public record EmpireContent(
     LocalizedText? DurationNotes = null,
     LocalizedText? ReligionNotes = null,
     MapInfo? Map = null,
-    [property: JsonPropertyName("$schema")] string? Schema = null);
+    [property: JsonPropertyName("$schema")] string? Schema = null)
+{
+    // The empire's shape (GeoJSON MultiPolygon, coordinates only), read from
+    // Content/shapes/<slug>.json by the loader. Not part of the empire file.
+    [JsonIgnore]
+    public string? MapShape { get; init; }
+}
 
 public record LocalizedText(string En, string Pt);
 
@@ -34,5 +40,9 @@ public record YearValue(int Year, YearPrecision Precision);
 
 public record AreaValue(int Km2, AreaPrecision Precision);
 
-// File name inside the web app's public/maps folder, plus attribution.
-public record MapInfo(string File, string? SourceUrl = null, string? Author = null, string? License = null);
+// Where the shape comes from: one or more Cliopatria polities at a given
+// year, merged (e.g. an empire plus a dominion the dataset lists apart).
+// scripts/maps/build-shapes.mjs turns them into Content/shapes/<slug>.json.
+public record MapInfo(List<MapPart> Parts);
+
+public record MapPart(string Polity, int Year);

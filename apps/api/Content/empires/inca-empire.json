@@ -57,6 +57,8 @@
     }
   ],
   "map": {
-    "file": "ffd0b2177b.webp"
+    "parts": [
+      { "polity": "Inca Empire", "year": 1527 }
+    ]
   }
 }

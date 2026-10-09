@@ -1,6 +1,9 @@
+using Imperatle.Api.Controllers;
 using Imperatle.Api.Data;
 using Imperatle.Api.Game;
 using Imperatle.Api.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Imperatle.Api.Tests;
@@ -27,7 +30,12 @@ public class DatabaseTests
         Language: new("L", "L"),
         Religion: new("R", "R"),
         Curiosities: [new("1", "1"), new("2", "2"), new("3", "3")],
-        Map: new($"{slug}.webp", Author: "Someone"));
+        Map: new([new("Polity", 100)]))
+    {
+        MapShape = Shape,
+    };
+
+    private const string Shape = """{"type":"MultiPolygon","coordinates":[[[[0,0],[0,1],[1,1],[0,0]]]]}""";
 
     [Fact]
     public async Task Import_adds_updates_and_deactivates_by_slug()
@@ -42,8 +50,7 @@ public class DatabaseTests
 
         var empires = await db.Empires.Include(e => e.Hints).ToDictionaryAsync(e => e.Slug, TestContext.Current.CancellationToken);
         Assert.Equal("New capital", empires["a"].CapitalEn);
-        Assert.Equal("a.webp", empires["a"].MapFile);
-        Assert.Equal("Someone", empires["a"].MapAuthor);
+        Assert.Equal(Shape, empires["a"].MapShape);
         Assert.False(empires["b"].Active);
         Assert.True(empires["c"].Active);
 
@@ -81,5 +88,28 @@ public class DatabaseTests
 
         Assert.Equal(1, await ChallengeScheduler.NumberForAsync(db, launch));
         Assert.Equal(3, await ChallengeScheduler.NumberForAsync(db, launch.AddDays(2)));
+    }
+
+    // The map endpoint serves a day's shape, but never a future day's: that
+    // would show tomorrow's empire a day early.
+    [Fact]
+    public async Task Map_is_served_up_to_today_but_never_for_a_future_day()
+    {
+        await using var db = NewDb();
+        await EmpireContentImporter.SyncAsync(db, [Content("a")]);
+        var today = DateOnly.FromDateTime(DateTime.UtcNow);
+        await ChallengeScheduler.EnsureForDateAsync(db, today);
+        await ChallengeScheduler.EnsureForDateAsync(db, today.AddDays(1));
+        var controller = new ChallengesController(db, null!)
+        {
+            ControllerContext = new ControllerContext { HttpContext = new DefaultHttpContext() },
+        };
+
+        var served = Assert.IsType<ContentResult>(await controller.GetMap(today));
+        Assert.Equal(Shape, served.Content);
+        Assert.Equal("application/json", served.ContentType);
+
+        Assert.IsType<NotFoundResult>(await controller.GetMap(today.AddDays(1)));
+        Assert.IsType<NotFoundResult>(await controller.GetMap(today.AddDays(-30))); // no challenge that day
     }
 }

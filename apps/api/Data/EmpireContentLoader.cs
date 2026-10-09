@@ -1,4 +1,3 @@
-using System.Security.Cryptography;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
@@ -31,12 +30,11 @@ public static partial class EmpireContentLoader
     [GeneratedRegex("^[a-z0-9]+(-[a-z0-9]+)*$")]
     private static partial Regex SlugPattern();
 
-    // A neutral code, never the empire's name: the file name is public (DevTools,
-    // "open image in new tab"), so a readable name would give the answer away.
-    [GeneratedRegex(@"^[0-9a-f]{10}\.(svg|png|webp|jpg|jpeg)$")]
-    private static partial Regex MapFilePattern();
-
     public static string DefaultDirectory => Path.Combine(AppContext.BaseDirectory, "Content", "empires");
+
+    // Shapes live next to the empires folder: Content/shapes/<slug>.json.
+    public static string ShapesDirectoryFor(string empiresDirectory) =>
+        Path.Combine(Path.GetDirectoryName(Path.TrimEndingDirectorySeparator(Path.GetFullPath(empiresDirectory)))!, "shapes");
 
     public static IReadOnlyList<EmpireContent> LoadFromDirectory(string directory)
     {
@@ -69,6 +67,20 @@ public static partial class EmpireContentLoader
             }
 
             errors.AddRange(Validate(empire, Path.GetFileNameWithoutExtension(path)).Select(e => $"{fileName}: {e}"));
+            if (empire.Map is not null)
+            {
+                var shapePath = Path.Combine(ShapesDirectoryFor(directory), $"{empire.Slug}.json");
+                if (!File.Exists(shapePath))
+                {
+                    errors.Add($"{fileName}: map has no shape file (shapes/{empire.Slug}.json); run scripts/maps/build-shapes.mjs");
+                }
+                else
+                {
+                    var shape = File.ReadAllText(shapePath).Trim();
+                    errors.AddRange(ValidateShape(shape).Select(e => $"shapes/{empire.Slug}.json: {e}"));
+                    empire = empire with { MapShape = shape };
+                }
+            }
             empires.Add(empire);
         }
 
@@ -152,12 +164,122 @@ public static partial class EmpireContentLoader
             CheckText(errors, $"curiosities[{i}]", empire.Curiosities[i]);
         }
 
-        if (empire.Map is not null && !MapFilePattern().IsMatch(empire.Map.File))
+        if (empire.Map is not null)
         {
-            errors.Add($"map.file \"{empire.Map.File}\" must be a neutral code (10 lowercase hex characters) ending in .svg, .png, .webp, .jpg or .jpeg, so it doesn't give the answer away, e.g. \"{Convert.ToHexStringLower(RandomNumberGenerator.GetBytes(5))}.webp\"");
+            if (empire.Map.Parts.Count == 0)
+            {
+                errors.Add("map.parts must list at least one Cliopatria polity");
+            }
+            for (var i = 0; i < empire.Map.Parts.Count; i++)
+            {
+                var part = empire.Map.Parts[i];
+                if (string.IsNullOrWhiteSpace(part.Polity))
+                {
+                    errors.Add($"map.parts[{i}].polity is empty");
+                }
+                if (part.Year == 0)
+                {
+                    errors.Add($"map.parts[{i}].year can't be 0 (there is no year 0)");
+                }
+            }
         }
 
         return errors;
+    }
+
+    // A shape is a GeoJSON MultiPolygon with nothing else in it: no names or
+    // properties that could give the answer away, every ring closed and every
+    // position a real longitude/latitude.
+    public static List<string> ValidateShape(string json)
+    {
+        JsonDocument doc;
+        try
+        {
+            doc = JsonDocument.Parse(json);
+        }
+        catch (JsonException ex)
+        {
+            return [ex.Message];
+        }
+
+        using (doc)
+        {
+            var root = doc.RootElement;
+            if (root.ValueKind != JsonValueKind.Object)
+            {
+                return ["must be a GeoJSON object"];
+            }
+
+            var errors = new List<string>();
+            var extra = root.EnumerateObject().Select(p => p.Name).Except(["type", "coordinates"]).ToList();
+            if (extra.Count > 0)
+            {
+                errors.Add($"only \"type\" and \"coordinates\" are allowed (found {string.Join(", ", extra)})");
+            }
+            if (!root.TryGetProperty("type", out var type) || type.ValueKind != JsonValueKind.String || type.GetString() != "MultiPolygon")
+            {
+                errors.Add("type must be \"MultiPolygon\"");
+            }
+            if (!root.TryGetProperty("coordinates", out var polygons) || polygons.ValueKind != JsonValueKind.Array || polygons.GetArrayLength() == 0)
+            {
+                errors.Add("coordinates must be a non-empty array of polygons");
+                return errors;
+            }
+
+            var p = 0;
+            foreach (var polygon in polygons.EnumerateArray())
+            {
+                if (polygon.ValueKind != JsonValueKind.Array || polygon.GetArrayLength() == 0)
+                {
+                    errors.Add($"polygon {p} has no rings");
+                }
+                else
+                {
+                    var r = 0;
+                    foreach (var ring in polygon.EnumerateArray())
+                    {
+                        if (CheckRing(ring) is { } ringError)
+                        {
+                            errors.Add($"polygon {p}, ring {r}: {ringError}");
+                        }
+                        r++;
+                    }
+                }
+                p++;
+                if (errors.Count >= 10)
+                {
+                    errors.Add("(stopped after 10 errors)");
+                    break;
+                }
+            }
+            return errors;
+        }
+    }
+
+    private static string? CheckRing(JsonElement ring)
+    {
+        if (ring.ValueKind != JsonValueKind.Array || ring.GetArrayLength() < 4)
+        {
+            return "a ring needs at least 4 positions";
+        }
+        foreach (var position in ring.EnumerateArray())
+        {
+            if (position.ValueKind != JsonValueKind.Array || position.GetArrayLength() != 2
+                || position[0].ValueKind != JsonValueKind.Number || position[1].ValueKind != JsonValueKind.Number)
+            {
+                return "positions must be [longitude, latitude]";
+            }
+            var (lon, lat) = (position[0].GetDouble(), position[1].GetDouble());
+            if (lon is < -180 or > 180 || lat is < -90 or > 90)
+            {
+                return $"[{lon}, {lat}] is outside the globe";
+            }
+        }
+        var first = ring[0];
+        var last = ring[ring.GetArrayLength() - 1];
+        return first[0].GetDouble() == last[0].GetDouble() && first[1].GetDouble() == last[1].GetDouble()
+            ? null
+            : "ring isn't closed (the last position must repeat the first)";
     }
 
     // Rules across all files: two empires can't share a slug or a name, or the

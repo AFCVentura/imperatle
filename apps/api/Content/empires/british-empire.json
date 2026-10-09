@@ -62,6 +62,9 @@
     }
   ],
   "map": {
-    "file": "7a7aa332c7.png"
+    "parts": [
+      { "polity": "(British Empire)", "year": 1921 },
+      { "polity": "Commonwealth of Australia", "year": 1921 }
+    ]
   }
 }

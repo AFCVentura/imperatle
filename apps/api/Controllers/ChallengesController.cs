@@ -25,8 +25,31 @@ public class ChallengesController(ImperatleDbContext db, IWebHostEnvironment env
         var empire = await db.Empires.FindAsync(scheduled.EmpireId);
 
         var challengeNumber = await ChallengeScheduler.NumberForAsync(db, today);
-        var mapUrl = empire?.MapFile is null ? null : $"/maps/{empire.MapFile}";
-        return Ok(new TodayChallengeResponse(today, GameRules.AttemptsAllowed, challengeNumber, mapUrl));
+        return Ok(new TodayChallengeResponse(today, GameRules.AttemptsAllowed, challengeNumber, empire?.MapShape is not null));
+    }
+
+    // The empire's shape for a day's challenge: bare coordinates, no name. By
+    // date rather than "today" so it can be cached for good; future dates are
+    // refused, or tomorrow's map would leak a day early.
+    [HttpGet("{date}/map")]
+    public async Task<IActionResult> GetMap(DateOnly date)
+    {
+        if (date > DateOnly.FromDateTime(DateTime.UtcNow))
+        {
+            return NotFound();
+        }
+
+        var shape = await db.DailyChallenges
+            .Where(c => c.Date == date)
+            .Select(c => c.Empire.MapShape)
+            .FirstOrDefaultAsync();
+        if (shape is null)
+        {
+            return NotFound();
+        }
+
+        Response.Headers.CacheControl = "public, max-age=86400";
+        return Content(shape, "application/json");
     }
 
     [HttpPost("today/guess")]

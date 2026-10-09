@@ -12,12 +12,10 @@ public class Empire
     // challenges and player history point to it.
     public bool Active { get; set; } = true;
 
-    // Map image inside the web app's public/maps folder (null = not ready yet,
-    // the UI shows a placeholder), plus its attribution.
-    public string? MapFile { get; set; }
-    public string? MapSourceUrl { get; set; }
-    public string? MapAuthor { get; set; }
-    public string? MapLicense { get; set; }
+    // The empire's shape at ReferenceYear: a GeoJSON MultiPolygon, coordinates
+    // only (Content/shapes, adapted from Cliopatria). Null = map not ready
+    // yet, the UI shows a placeholder.
+    public string? MapShape { get; set; }
 
     public string NameEn { get; set; } = string.Empty;
     public string NamePt { get; set; } = string.Empty;

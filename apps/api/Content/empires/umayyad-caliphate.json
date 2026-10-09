@@ -59,6 +59,8 @@
     }
   ],
   "map": {
-    "file": "209cf9b697.webp"
+    "parts": [
+      { "polity": "Umayyad Caliphate", "year": 720 }
+    ]
   }
 }
