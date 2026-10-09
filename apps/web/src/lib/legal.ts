@@ -164,7 +164,7 @@ const terms: Record<Locale, LegalDocument> = {
       {
         heading: "Intellectual property",
         paragraphs: [
-          "The game's code, design and texts belong to their author. Maps are adapted from files published under free licenses (such as CC BY-SA on Wikimedia Commons) and keep those licenses and their credits.",
+          "The game's code, design and texts belong to their author. Historical borders are adapted from Cliopatria (Bennett et al., Seshat Global History Databank, CC BY 4.0) and the world map comes from Natural Earth (public domain); the About screen credits them.",
         ],
       },
       {
@@ -216,7 +216,7 @@ const terms: Record<Locale, LegalDocument> = {
       {
         heading: "Propriedade intelectual",
         paragraphs: [
-          "O código, o design e os textos do jogo pertencem ao autor. Os mapas são adaptados de arquivos publicados sob licenças livres (como CC BY-SA no Wikimedia Commons) e mantêm essas licenças e seus créditos.",
+          "O código, o design e os textos do jogo pertencem ao autor. As fronteiras históricas são adaptadas do Cliopatria (Bennett et al., Seshat Global History Databank, CC BY 4.0) e o mapa do mundo vem do Natural Earth (domínio público); a tela Sobre traz os créditos.",
         ],
       },
       {

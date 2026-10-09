@@ -113,7 +113,13 @@
       "curiosity": "A striking fact about the map's empire. Usually the most revealing clue."
     },
     "viewStats": "View stats",
-    "lastAttempt": "Last attempt"
+    "lastAttempt": "Last attempt",
+    "mapFocus": "Back to the empire",
+    "mapFullscreen": "Fullscreen",
+    "mapExitFullscreen": "Exit fullscreen",
+    "mapLoading": "Loading map…",
+    "mapGlobe": "Show as a globe",
+    "mapFlat": "Show as a flat map"
   },
   "HowToPlay": {
     "title": "How to play",
@@ -241,7 +247,7 @@
     "editorialTitle": "A note on empires",
     "editorial": "The game is only about territorial extent and facts. Showing how far an empire reached isn't celebrating conquest: many of these empires grew through war, colonization and the suffering of other peoples.",
     "sourcesTitle": "Sources and accuracy",
-    "sources": "Maps are based on files from Wikimedia Commons, under a free license (CC BY-SA). Historical dates, areas and borders are approximations, and sources often disagree.",
+    "sources": "Historical borders are adapted from <clio>Cliopatria</clio> (Bennett et al., Seshat Global History Databank), under <license>CC BY 4.0</license>, simplified and clipped to today's coastline. The world map comes from <ne>Natural Earth</ne> (public domain). Historical dates, areas and borders are approximations, and sources often disagree.",
     "mistakes": "Spotted a mistake?",
     "mistakesLink": "Send us feedback.",
     "authorTitle": "Who made it",

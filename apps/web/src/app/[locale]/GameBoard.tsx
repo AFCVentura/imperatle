@@ -1,9 +1,12 @@
 "use client";
 
-import Image from "next/image";
+import type { MultiPolygon } from "geojson";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState, useSyncExternalStore } from "react";
-import { submitGuess } from "@/lib/api";
+import { getMapShape, submitGuess } from "@/lib/api";
+import { EmpireMap } from "@/map/EmpireMap";
+import type { MapLocale } from "@/map/geo";
+import { mapStageFor } from "@/map/stage";
 import { openStats } from "@/lib/dialogs";
 import { loadGameProgress, saveGameProgress, type GameProgress, type GuessHistoryEntry } from "@/lib/gameStorage";
 import { pickLocalized } from "@/lib/pickLocalized";
@@ -41,6 +44,19 @@ function GameBoardInner({ challenge, empires, initial }: GameBoardProps & { init
   const [selectedEmpireId, setSelectedEmpireId] = useState<number | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(false);
+  const [shape, setShape] = useState<MultiPolygon | "failed" | null>(null);
+
+  useEffect(() => {
+    if (!challenge.hasMap) return;
+    let current = true;
+    getMapShape(challenge.date).then(
+      (s) => current && setShape(s),
+      () => current && setShape("failed"),
+    );
+    return () => {
+      current = false;
+    };
+  }, [challenge.date, challenge.hasMap]);
 
   useEffect(() => {
     saveGameProgress({ date: challenge.date, guesses, reveal, gameOver, answer });
@@ -93,25 +109,23 @@ function GameBoardInner({ challenge, empires, initial }: GameBoardProps & { init
   return (
     // Phone-sized column on every screen, so the PC looks like the mobile layout.
     <div className="flex w-full max-w-md flex-col gap-6 md:gap-3">
-      {challenge.mapUrl ? (
-        // Discourages saving/copying the map: no right-click menu, no
-        // dragging, no long-press "save image" on iOS, no selection. It's a
-        // deterrent only -- the file is still reachable from dev tools.
-        <div
-          onContextMenu={(e) => e.preventDefault()}
-          className="flex select-none justify-center rounded-xl border border-map-line bg-map p-3 [-webkit-touch-callout:none]"
-        >
-          <Image
-            draggable={false}
-            src={challenge.mapUrl}
-            alt={t("mapAlt")}
-            width={553}
-            height={553}
-            unoptimized
-            priority
-            // Square, capped at 240px and at 30% of the screen height, so the
-            // map never takes over short screens.
-            className="pointer-events-none aspect-square h-auto w-full max-w-[min(15rem,30dvh)]"
+      {challenge.hasMap && shape !== "failed" ? (
+        <div role="img" aria-label={t("mapAlt")}>
+          <EmpireMap
+            empire={shape}
+            stage={mapStageFor(wrongGuessCount, gameOver)}
+            locale={locale as MapLocale}
+            labels={{
+              focus: t("mapFocus"),
+              fullscreen: t("mapFullscreen"),
+              exitFullscreen: t("mapExitFullscreen"),
+              loading: t("mapLoading"),
+              globe: t("mapGlobe"),
+              flat: t("mapFlat"),
+            }}
+            // Same height as the old map card: capped at 30% of the screen
+            // height, so the map never takes over short screens.
+            className="h-[calc(min(15rem,30dvh)+1.5rem)] w-full"
           />
         </div>
       ) : (

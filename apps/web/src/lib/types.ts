@@ -37,8 +37,9 @@ export interface TodayChallenge {
   date: string;
   attemptsAllowed: number;
   challengeNumber: number;
-  // Path served from apps/web/public; null while the empire has no map yet.
-  mapUrl: string | null;
+  // Whether getMapShape(date) has a shape to draw; false while the empire has
+  // no map yet.
+  hasMap: boolean;
 }
 
 export interface EmpireSummary {

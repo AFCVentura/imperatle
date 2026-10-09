@@ -1,3 +1,4 @@
+import type { MultiPolygon } from "geojson";
 import type { ChallengeReveal, EmpireSummary, GuessComparison, GuessResponse, StatsResponse, TodayChallenge } from "./types";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -6,6 +7,14 @@ export async function getTodayChallenge(): Promise<TodayChallenge | null> {
   const res = await fetch(`${API_URL}/challenges/today`, { cache: "no-store" });
   if (res.status === 404) return null;
   if (!res.ok) throw new Error(`Failed to load today's challenge: ${res.status}`);
+  return res.json();
+}
+
+// The day's empire shape: coordinates only. By date, so the browser can cache
+// it; the API refuses future dates.
+export async function getMapShape(date: string): Promise<MultiPolygon> {
+  const res = await fetch(`${API_URL}/challenges/${date}/map`);
+  if (!res.ok) throw new Error(`Failed to load the map: ${res.status}`);
   return res.json();
 }
 

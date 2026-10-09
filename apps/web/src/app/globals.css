@@ -21,6 +21,10 @@
   --danger: #6f1d1b;
   --map: #fffaf0;
   --map-line: #bb9457;
+  --map-ocean: #efe0b9;
+  --map-border: #c9a774;
+  --map-empire: #9a2f28;
+  --map-empire-line: #6f1d1b;
   --chart-bar: #b07a3a;
   --chart-highlight: #9a2f28;
   --theme-font-display: var(--font-cinzel);
@@ -43,6 +47,10 @@
     --danger: #e0705e;
     --map: #ffe6a7;
     --map-line: #99582a;
+    --map-ocean: #e3c88e;
+    --map-border: #b08a55;
+    --map-empire: #9a2f28;
+    --map-empire-line: #6f1d1b;
     /* #9a4f1c is just under 3:1 on this surface; every tower carries a
        visible value label, which covers it. */
     --chart-bar: #9a4f1c;

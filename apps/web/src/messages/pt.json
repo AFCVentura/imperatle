@@ -113,7 +113,13 @@
       "curiosity": "Um fato marcante sobre o império do mapa. Costuma ser a dica mais reveladora."
     },
     "viewStats": "Ver estatísticas",
-    "lastAttempt": "Última tentativa"
+    "lastAttempt": "Última tentativa",
+    "mapFocus": "Voltar pro império",
+    "mapFullscreen": "Tela cheia",
+    "mapExitFullscreen": "Sair da tela cheia",
+    "mapLoading": "Carregando mapa…",
+    "mapGlobe": "Ver como globo",
+    "mapFlat": "Ver como mapa plano"
   },
   "HowToPlay": {
     "title": "Como jogar",
@@ -241,7 +247,7 @@
     "editorialTitle": "Uma nota sobre impérios",
     "editorial": "O jogo trata só de extensão territorial e de fatos. Mostrar até onde um império chegou não é celebrar a conquista: muitos desses impérios cresceram à custa de guerras, colonização e do sofrimento de outros povos.",
     "sourcesTitle": "Fontes e precisão",
-    "sources": "Os mapas são baseados em arquivos do Wikimedia Commons, sob licença livre (CC BY-SA). Datas, áreas e fronteiras históricas são aproximações, e as fontes costumam divergir.",
+    "sources": "As fronteiras históricas são adaptadas do <clio>Cliopatria</clio> (Bennett et al., Seshat Global History Databank), sob licença <license>CC BY 4.0</license>, simplificadas e recortadas pelo litoral atual. O mapa do mundo vem do <ne>Natural Earth</ne> (domínio público). Datas, áreas e fronteiras históricas são aproximações, e as fontes costumam divergir.",
     "mistakes": "Viu algum dado errado?",
     "mistakesLink": "Mande um feedback.",
     "authorTitle": "Quem fez",
