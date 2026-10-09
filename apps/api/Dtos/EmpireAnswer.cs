@@ -30,5 +30,7 @@ public record EmpireAnswer(
     string ReligionEn,
     string ReligionPt,
     string ReligionNotesEn,
-    string ReligionNotesPt
+    string ReligionNotesPt,
+    string WikipediaEn,
+    string WikipediaPt
 );

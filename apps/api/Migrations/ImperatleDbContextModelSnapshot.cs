@@ -146,6 +146,14 @@ namespace Imperatle.Api.Migrations
                     b.Property<int>("StartYearPrecision")
                         .HasColumnType("integer");
 
+                    b.Property<string>("WikipediaEn")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("WikipediaPt")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.HasKey("Id");
 
                     b.HasIndex("Slug")

@@ -20,6 +20,7 @@ Every empire in the game is one file in `empires/`, named after its slug (`mongo
 | `continents`, `primaryContinent` | The primary one must be in the list. |
 | `capital`, `language`, `religion` | Short texts. |
 | `curiosities` | Exactly 3, least obvious first. |
+| `wikipedia` | Optional. `en` and `pt` article links (`https://en.wikipedia.org/wiki/...`, `https://pt.wikipedia.org/wiki/...`), shown in the result card once the round is over. |
 | `map` | Optional until the map is ready. `parts`: the Cliopatria polities (exact `Name`) and year the shape is made of; more than one when the dataset lists part of the empire apart (e.g. the British Empire plus Australia). See "Maps" below. |
 
 **Years:** negative for BCE, as historians write them (`-27` is 27 BCE). There is no year 0. `precision` is `Exact`, `Approximate` or `Century`.

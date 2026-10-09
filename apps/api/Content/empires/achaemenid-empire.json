@@ -54,6 +54,10 @@
       "pt": "Caiu diante de um jovem conquistador macedônio em sua campanha rumo ao leste."
     }
   ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Achaemenid_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Aquemênida"
+  },
   "map": {
     "parts": [
       { "polity": "Achaemenid Empire", "year": -500 }

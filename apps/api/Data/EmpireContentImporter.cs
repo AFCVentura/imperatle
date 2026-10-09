@@ -69,6 +69,8 @@ public static class EmpireContentImporter
         e.ReligionNotesEn = c.ReligionNotes?.En ?? string.Empty;
         e.ReligionNotesPt = c.ReligionNotes?.Pt ?? string.Empty;
         e.MapShape = c.MapShape;
+        e.WikipediaEn = c.Wikipedia?.En ?? string.Empty;
+        e.WikipediaPt = c.Wikipedia?.Pt ?? string.Empty;
 
         // Hints are matched by position, so re-importing updates their text
         // in place instead of recreating rows.

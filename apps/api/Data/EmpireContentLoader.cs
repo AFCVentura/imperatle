@@ -164,6 +164,18 @@ public static partial class EmpireContentLoader
             CheckText(errors, $"curiosities[{i}]", empire.Curiosities[i]);
         }
 
+        // Article links shown after the round, one per language.
+        if (empire.Wikipedia is not null)
+        {
+            foreach (var (lang, url) in new[] { ("en", empire.Wikipedia.En), ("pt", empire.Wikipedia.Pt) })
+            {
+                if (!url.StartsWith($"https://{lang}.wikipedia.org/wiki/", StringComparison.Ordinal) || url.Length <= $"https://{lang}.wikipedia.org/wiki/".Length)
+                {
+                    errors.Add($"wikipedia.{lang} must be an article link on {lang}.wikipedia.org, e.g. https://{lang}.wikipedia.org/wiki/...");
+                }
+            }
+        }
+
         if (empire.Map is not null)
         {
             if (empire.Map.Parts.Count == 0)

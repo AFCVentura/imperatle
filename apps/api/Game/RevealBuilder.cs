@@ -94,7 +94,9 @@ public static class RevealBuilder
         empire.ReligionEn,
         empire.ReligionPt,
         empire.ReligionNotesEn,
-        empire.ReligionNotesPt);
+        empire.ReligionNotesPt,
+        empire.WikipediaEn,
+        empire.WikipediaPt);
 
     private static EmpireHintDto ToDto(EmpireHint hint) => new(hint.TextEn, hint.TextPt);
 }

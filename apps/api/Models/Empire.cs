@@ -60,6 +60,11 @@ public class Empire
     public int PeakAreaKm2 { get; set; }
     public AreaPrecision AreaPrecision { get; set; }
 
+    // Wikipedia article in each language, shown once the round is over.
+    // Empty string = no link.
+    public string WikipediaEn { get; set; } = string.Empty;
+    public string WikipediaPt { get; set; } = string.Empty;
+
     // Max 3, revealed in Order (0 = least obvious, 2 = most obvious).
     public List<EmpireHint> Hints { get; set; } = [];
 }

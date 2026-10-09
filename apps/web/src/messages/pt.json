@@ -125,7 +125,8 @@
     "mapStageOutline": "Contorno",
     "mapStageContinents": "Continentes",
     "mapStageCountries": "Países",
-    "mapStagesLabel": "Detalhe do mapa"
+    "mapStagesLabel": "Detalhe do mapa",
+    "readOnWikipedia": "Ler na Wikipedia"
   },
   "HowToPlay": {
     "title": "Como jogar",

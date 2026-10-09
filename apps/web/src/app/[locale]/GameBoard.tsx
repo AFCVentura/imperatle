@@ -112,6 +112,8 @@ function GameBoardInner({ challenge, empires, initial }: GameBoardProps & { init
   const wrongGuessCount = guesses.filter((g) => !g.correct).length;
   const remainingHintRows = hintRows.slice(wrongGuessCount);
 
+  const wikipediaUrl = answer ? pickLocalized(answer.wikipediaEn ?? "", answer.wikipediaPt ?? "", locale) : "";
+
   // The map shows the most detailed level unlocked so far, unless the player
   // picked another one under it; a new unlock switches to it again.
   const unlockedStage = mapStageFor(wrongGuessCount, gameOver);
@@ -217,6 +219,19 @@ function GameBoardInner({ challenge, empires, initial }: GameBoardProps & { init
             >
               {t("viewStats")}
             </button>
+            {wikipediaUrl && (
+              <a
+                href={wikipediaUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border border-line px-4 py-1.5 text-sm font-medium hover:bg-background"
+              >
+                {t("readOnWikipedia")}
+                <svg viewBox="0 0 24 24" className="size-3.5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <path d="M14 4h6v6m0-6-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" />
+                </svg>
+              </a>
+            )}
           </div>
         </div>
       )}

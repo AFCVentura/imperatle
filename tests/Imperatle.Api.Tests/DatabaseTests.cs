@@ -30,7 +30,8 @@ public class DatabaseTests
         Language: new("L", "L"),
         Religion: new("R", "R"),
         Curiosities: [new("1", "1"), new("2", "2"), new("3", "3")],
-        Map: new([new("Polity", 100)]))
+        Map: new([new("Polity", 100)]),
+        Wikipedia: new($"https://en.wikipedia.org/wiki/{slug}", $"https://pt.wikipedia.org/wiki/{slug}"))
     {
         MapShape = Shape,
     };
@@ -51,6 +52,7 @@ public class DatabaseTests
         var empires = await db.Empires.Include(e => e.Hints).ToDictionaryAsync(e => e.Slug, TestContext.Current.CancellationToken);
         Assert.Equal("New capital", empires["a"].CapitalEn);
         Assert.Equal(Shape, empires["a"].MapShape);
+        Assert.Equal("https://pt.wikipedia.org/wiki/a", empires["a"].WikipediaPt);
         Assert.False(empires["b"].Active);
         Assert.True(empires["c"].Active);
 

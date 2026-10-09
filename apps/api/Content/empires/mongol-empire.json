@@ -57,6 +57,10 @@
       "pt": "Tornou-se o maior império contíguo da história."
     }
   ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Mongol_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Mongol"
+  },
   "map": {
     "parts": [
       { "polity": "Mongol Empire", "year": 1279 }

@@ -56,6 +56,10 @@
       "pt": "Plantava em ilhas artificiais construídas sobre um lago, os chamados \"jardins flutuantes\"."
     }
   ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Aztec_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Tríplice_Aliança_Asteca"
+  },
   "map": {
     "parts": [
       { "polity": "Aztec Triple Alliance", "year": 1519 }

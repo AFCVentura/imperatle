@@ -61,6 +61,10 @@
       "pt": "Foi o maior império da história em extensão territorial."
     }
   ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/British_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Britânico"
+  },
   "map": {
     "parts": [
       { "polity": "(British Empire)", "year": 1921 },

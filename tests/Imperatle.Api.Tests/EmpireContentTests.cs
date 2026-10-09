@@ -41,6 +41,8 @@ public class EmpireContentTests
         { ValidEmpire() with { Capital = new("Rome", " ") }, "capital.pt is empty" },
         { ValidEmpire() with { Religion = new("Old faith — later new", "Antiga") }, "em dash" },
         { ValidEmpire() with { DurationNotes = new("Only one phase -- the rest is elsewhere", "Uma fase") }, "em dash" },
+        { ValidEmpire() with { Wikipedia = new("https://en.wikipedia.org/wiki/Rome", "https://en.wikipedia.org/wiki/Rome") }, "wikipedia.pt" },
+        { ValidEmpire() with { Wikipedia = new("Roman Empire", "https://pt.wikipedia.org/wiki/Roma") }, "wikipedia.en" },
         { ValidEmpire() with { Map = new([]) }, "at least one Cliopatria polity" },
         { ValidEmpire() with { Map = new([new(" ", 100)]) }, "polity is empty" },
         { ValidEmpire() with { Map = new([new("Roman Empire", 0)]) }, "year can't be 0" },

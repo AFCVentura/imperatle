@@ -64,6 +64,16 @@
       "maxItems": 3,
       "items": { "$ref": "#/$defs/text" }
     },
+    "wikipedia": {
+      "description": "Wikipedia article links, shown once the round is over (never before, they'd give the answer away).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["en", "pt"],
+      "properties": {
+        "en": { "type": "string", "pattern": "^https://en\\.wikipedia\\.org/wiki/.+" },
+        "pt": { "type": "string", "pattern": "^https://pt\\.wikipedia\\.org/wiki/.+" }
+      }
+    },
     "map": {
       "description": "Optional while the map isn't ready (the game shows a placeholder). The shape is built by apps/web/scripts/maps/build-shapes.mjs into Content/shapes/<slug>.json.",
       "type": "object",

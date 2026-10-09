@@ -58,6 +58,10 @@
       "pt": "Um ramo sobrevivente de sua dinastia governou por séculos a partir de Córdoba, na Europa."
     }
   ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Umayyad_Caliphate",
+    "pt": "https://pt.wikipedia.org/wiki/Califado_Omíada"
+  },
   "map": {
     "parts": [
       { "polity": "Umayyad Caliphate", "year": 720 }

@@ -138,6 +138,10 @@ export interface EmpireAnswer {
   religionPt: string;
   religionNotesEn: string;
   religionNotesPt: string;
+  // Empty when the empire has no link. Missing from answers saved before the
+  // field existed.
+  wikipediaEn?: string;
+  wikipediaPt?: string;
 }
 
 export interface GuessComparison {

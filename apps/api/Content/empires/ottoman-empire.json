@@ -54,6 +54,10 @@
       "pt": "Lutou do lado derrotado na Primeira Guerra Mundial e foi desmembrado depois dela."
     }
   ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Ottoman_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Otomano"
+  },
   "map": {
     "parts": [
       { "polity": "Ottoman Empire", "year": 1683 }

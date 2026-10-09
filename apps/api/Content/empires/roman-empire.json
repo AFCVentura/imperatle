@@ -58,6 +58,10 @@
       "pt": "Segundo a lenda, sua capital foi fundada por gêmeos criados por uma loba."
     }
   ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Roman_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Romano"
+  },
   "map": {
     "parts": [
       { "polity": "Roman Empire", "year": 117 }

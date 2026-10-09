@@ -56,6 +56,10 @@
       "pt": "Foi o maior império da América antes da chegada dos europeus."
     }
   ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Inca_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Inca"
+  },
   "map": {
     "parts": [
       { "polity": "Inca Empire", "year": 1527 }

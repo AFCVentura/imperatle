@@ -25,6 +25,7 @@ public record EmpireContent(
     LocalizedText? DurationNotes = null,
     LocalizedText? ReligionNotes = null,
     MapInfo? Map = null,
+    LocalizedText? Wikipedia = null,
     [property: JsonPropertyName("$schema")] string? Schema = null)
 {
     // The empire's shape (GeoJSON MultiPolygon, coordinates only), read from
