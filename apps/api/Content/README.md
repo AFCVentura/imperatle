@@ -20,7 +20,7 @@ Every empire in the game is one file in `empires/`, named after its slug (`mongo
 | `continents`, `primaryContinent` | The primary one must be in the list. |
 | `capital`, `language`, `religion` | Short texts. |
 | `curiosities` | Exactly 3, least obvious first. |
-| `map` | Optional until the map is ready. `file` lives in `apps/web/public/maps`; `sourceUrl`, `author` and `license` credit it. |
+| `map` | Optional until the map is ready. `file` lives in `apps/web/public/maps` and is named with a neutral code (10 lowercase hex characters, e.g. `3fa9c01b2d.webp`), never the empire's name, since players can see it; if the name is wrong, the validation suggests one. Strip the original name from SVG metadata too (`sodipodi:docname`, `<title>`). `sourceUrl`, `author` and `license` credit it. |
 
 **Years:** negative for BCE, as historians write them (`-27` is 27 BCE). There is no year 0. `precision` is `Exact`, `Approximate` or `Century`.
 

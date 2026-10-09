@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
@@ -30,7 +31,9 @@ public static partial class EmpireContentLoader
     [GeneratedRegex("^[a-z0-9]+(-[a-z0-9]+)*$")]
     private static partial Regex SlugPattern();
 
-    [GeneratedRegex(@"^[a-z0-9-]+\.(svg|png|webp|jpg|jpeg)$")]
+    // A neutral code, never the empire's name: the file name is public (DevTools,
+    // "open image in new tab"), so a readable name would give the answer away.
+    [GeneratedRegex(@"^[0-9a-f]{10}\.(svg|png|webp|jpg|jpeg)$")]
     private static partial Regex MapFilePattern();
 
     public static string DefaultDirectory => Path.Combine(AppContext.BaseDirectory, "Content", "empires");
@@ -151,7 +154,7 @@ public static partial class EmpireContentLoader
 
         if (empire.Map is not null && !MapFilePattern().IsMatch(empire.Map.File))
         {
-            errors.Add($"map.file \"{empire.Map.File}\" must be a lowercase file name ending in .svg, .png, .webp, .jpg or .jpeg");
+            errors.Add($"map.file \"{empire.Map.File}\" must be a neutral code (10 lowercase hex characters) ending in .svg, .png, .webp, .jpg or .jpeg, so it doesn't give the answer away, e.g. \"{Convert.ToHexStringLower(RandomNumberGenerator.GetBytes(5))}.webp\"");
         }
 
         return errors;

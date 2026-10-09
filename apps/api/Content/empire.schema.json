@@ -71,7 +71,7 @@
       "required": ["file"],
       "properties": {
         "file": {
-          "description": "File name inside apps/web/public/maps, e.g. \"mongol-empire.webp\".",
+          "description": "File name inside apps/web/public/maps: a neutral code (10 lowercase hex characters), never the empire's name, e.g. \"3fa9c01b2d.webp\".",
           "type": "string",
           "pattern": "^[a-z0-9-]+\\.(svg|png|webp|jpg|jpeg)$"
         },

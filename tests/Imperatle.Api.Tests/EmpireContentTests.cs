@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using Imperatle.Api.Data;
 using Imperatle.Api.Models;
 
@@ -42,6 +43,7 @@ public class EmpireContentTests
         { ValidEmpire() with { Religion = new("Old faith — later new", "Antiga") }, "em dash" },
         { ValidEmpire() with { DurationNotes = new("Only one phase -- the rest is elsewhere", "Uma fase") }, "em dash" },
         { ValidEmpire() with { Map = new("Mongol Map.PNG") }, "map.file" },
+        { ValidEmpire() with { Map = new("mongol-empire.webp") }, "map.file" },
     };
 
     [Theory]
@@ -100,6 +102,30 @@ public class EmpireContentTests
             .ToList();
 
         Assert.Empty(missing);
+    }
+
+    // The file name is already a neutral code, but an SVG can still carry the
+    // original name inside (Inkscape's sodipodi:docname, <title>, labels).
+    [Fact]
+    public void No_svg_map_names_its_empire()
+    {
+        var mapsDir = Path.Combine(RepoRoot(), "apps", "web", "public", "maps");
+        string[] generic = ["empire", "império", "imperio"];
+        var leaks = new List<string>();
+        foreach (var e in EmpireContentLoader.LoadFromDirectory(EmpireContentLoader.DefaultDirectory)
+                     .Where(e => e.Map is not null && e.Map.File.EndsWith(".svg")))
+        {
+            var svg = File.ReadAllText(Path.Combine(mapsDir, e.Map!.File));
+            var words = e.Slug.Split('-').Concat($"{e.Name.En} {e.Name.Pt}".Split(' '))
+                .Select(w => w.ToLowerInvariant())
+                .Where(w => w.Length >= 4 && !generic.Contains(w))
+                .Distinct();
+            leaks.AddRange(words
+                .Where(w => Regex.IsMatch(svg, $@"(?<!\p{{L}}){Regex.Escape(w)}(?!\p{{L}})", RegexOptions.IgnoreCase))
+                .Select(w => $"{e.Map.File} ({e.Slug}) mentions \"{w}\""));
+        }
+
+        Assert.Empty(leaks);
     }
 
     private static string RepoRoot()
