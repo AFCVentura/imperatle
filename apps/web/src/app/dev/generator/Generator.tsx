@@ -76,7 +76,10 @@ export function Generator() {
   const [existing, setExisting] = useState<{ slug: string; name: Text }[]>([]);
   const [stage, setStage] = useState<MapStage>(2);
   const [showRaw, setShowRaw] = useState(false);
-  const [saveState, setSaveState] = useState<{ ok: boolean; message: string } | null>(null);
+  const [saveError, setSaveError] = useState<string | null>(null);
+  // Once saved, the draft is done: the form locks and only offers to start
+  // the next empire (validating it again would flag it against its own file).
+  const [saved, setSaved] = useState<string[] | null>(null);
 
   useEffect(() => {
     fetch("/api/dev/empires").then((r) => r.json()).then(setExisting, () => {});
@@ -174,7 +177,7 @@ export function Generator() {
   const edit = (change: (d: EmpireDraft) => EmpireDraft, ...fields: AutoField[]) => {
     setDraft(change(shown));
     if (fields.length > 0) setTouched((t) => new Set([...t, ...fields]));
-    setSaveState(null);
+    setSaveError(null);
   };
 
   const errors = useMemo(() => validateDraft(shown, existing), [shown, existing]);
@@ -188,11 +191,22 @@ export function Generator() {
     });
     const body = await res.json();
     if (res.ok) {
-      setSaveState({ ok: true, message: `Salvo: ${body.saved.join(" e ")}. Reinicie a API pra importar e confira em /dev/maps.` });
+      setSaved(body.saved);
       setExisting((e) => [...e, { slug: shown.slug, name: shown.name }]);
     } else {
-      setSaveState({ ok: false, message: body.errors?.join("; ") ?? body.error ?? `erro ${res.status}` });
+      setSaveError(body.errors?.join("; ") ?? body.error ?? `erro ${res.status}`);
     }
+  };
+
+  const startOver = () => {
+    setParts([]);
+    setResult(null);
+    setShapeError(null);
+    setDraft(emptyDraft());
+    setTouched(new Set());
+    setShowRaw(false);
+    setSaveError(null);
+    setSaved(null);
   };
 
   return (
@@ -270,20 +284,36 @@ export function Generator() {
       </section>
 
       <section className="flex flex-col gap-4">
-        <EmpireForm draft={shown} touched={touched} hasAuto={!!auto} edit={edit} continentShares={result?.continents ?? []} />
+        <fieldset disabled={!!saved} className="disabled:opacity-60">
+          <EmpireForm draft={shown} touched={touched} hasAuto={!!auto} edit={edit} continentShares={result?.continents ?? []} />
+        </fieldset>
 
-        <div className="flex flex-col gap-2 rounded-lg border border-line bg-surface p-3 text-sm">
-          {errors.length > 0 ? (
-            <>
-              <p className="font-semibold">Falta resolver ({errors.length}):</p>
-              <ul className="list-disc pl-5 text-muted">
-                {errors.map((e) => (
-                  <li key={e}>{e}</li>
-                ))}
-              </ul>
-            </>
-          ) : (
-            <p className="font-semibold">Tudo certo pra salvar.</p>
+        {saved ? (
+          <div className="flex flex-col gap-2 rounded-lg border border-success bg-surface p-3 text-sm">
+            <p className="font-semibold text-success">✓ Império salvo.</p>
+            <ul className="list-disc pl-5 text-muted">
+              {saved.map((f) => (
+                <li key={f}>{f}</li>
+              ))}
+            </ul>
+            <p className="text-muted">Reinicie a API pra ele entrar no jogo e confira o mapa em /dev/maps. Depois é só commitar.</p>
+            <button type="button" onClick={startOver} className="self-start rounded-full bg-accent px-5 py-2 font-semibold text-accent-foreground">
+              Começar outro império
+            </button>
+          </div>
+        ) : (
+          <div className="flex flex-col gap-2 rounded-lg border border-line bg-surface p-3 text-sm">
+            {errors.length > 0 ? (
+              <>
+                <p className="font-semibold">Falta resolver ({errors.length}):</p>
+                <ul className="list-disc pl-5 text-muted">
+                  {errors.map((e) => (
+                    <li key={e}>{e}</li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <p className="font-semibold">Tudo certo pra salvar.</p>
           )}
           <button
             type="button"
@@ -293,8 +323,9 @@ export function Generator() {
           >
             Salvar império
           </button>
-          {saveState && <p className={saveState.ok ? "text-success" : "text-danger"}>{saveState.message}</p>}
+          {saveError && <p className="text-danger">{saveError}</p>}
         </div>
+        )}
 
         <details className="text-xs">
           <summary className="cursor-pointer text-muted">Ver o JSON que vai ser salvo</summary>
