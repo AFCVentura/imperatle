@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Touch screens from 600px wide: tablets (see the html font-size below). */
+@custom-variant tablet (@media (pointer: coarse) and (min-width: 600px));
+
 /* "Autumn Harvest" palette: 6f1d1b (oxblood) bb9457 (tan) 432818 (dark
    brown) 99582a (rust) ffe6a7 (parchment), with Cinzel for display text and
    Spectral for body text -- an old-imperial, Roman-inscription feel.
@@ -104,6 +107,15 @@
     100% {
       transform: translateX(0);
     }
+  }
+}
+
+/* Tablets: the phone-sized column would sit small in the middle of the
+   screen, so the whole interface (sized in rem) grows with the width, up to
+   21px per rem. Touch screens only, so desktops keep the phone layout. */
+@media (pointer: coarse) and (min-width: 600px) {
+  html {
+    font-size: clamp(16px, 2.6vw, 21px);
   }
 }
 

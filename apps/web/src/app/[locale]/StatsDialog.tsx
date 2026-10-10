@@ -116,7 +116,7 @@ function StatsContent({
         {tiles.map((tile) => (
           <div key={tile.label} className="flex flex-col items-center">
             <span className="font-display text-2xl tabular-nums">{tile.value}</span>
-            <span className="text-[11px] leading-tight text-muted">{tile.label}</span>
+            <span className="text-[0.6875rem] leading-tight text-muted">{tile.label}</span>
           </div>
         ))}
       </div>

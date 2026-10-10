@@ -6,7 +6,8 @@ import { createPortal } from "react-dom";
 // Long enough that sweeping the mouse across the board doesn't flash
 // tooltips, short enough that resting on something feels responsive.
 const OPEN_DELAY_MS = 450;
-const MAX_WIDTH = 256;
+// In rem, so tooltips grow with the rest of the interface on tablets.
+const MAX_WIDTH_REM = 16;
 const GAP = 6;
 const VIEWPORT_MARGIN = 8;
 
@@ -36,7 +37,8 @@ export function useTooltip(content: ReactNode, container?: Element | null) {
     const anchor = anchorRef.current;
     if (!anchor) return;
     const rect = anchor.getBoundingClientRect();
-    const maxWidth = Math.min(MAX_WIDTH, window.innerWidth - VIEWPORT_MARGIN * 2);
+    const rem = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+    const maxWidth = Math.min(MAX_WIDTH_REM * rem, window.innerWidth - VIEWPORT_MARGIN * 2);
     const center = rect.left + rect.width / 2;
     // Below by default; above when the element sits in the bottom third
     // (e.g. near the pinned guess input on phones).

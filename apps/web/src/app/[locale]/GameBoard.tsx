@@ -141,8 +141,9 @@ function GameBoardInner({ challenge, empires, initial }: GameBoardProps & { init
                 flat: t("mapFlat"),
               }}
               // Same height as the old map card: capped at 30% of the screen
-              // height, so the map never takes over short screens.
-              className="h-[calc(min(15rem,30dvh)+1.5rem)] w-full"
+              // height, so the map never takes over short screens. Tablets
+              // have room for a taller one.
+              className="h-[calc(min(15rem,30dvh)+1.5rem)] w-full tablet:h-[calc(min(20rem,36dvh)+1.5rem)]"
             />
           </div>
           <MapStagePicker

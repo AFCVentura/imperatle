@@ -71,7 +71,7 @@ function TowerColumn({ tower, heightPx }: { tower: Tower; heightPx: number }) {
       className="flex flex-1 cursor-default flex-col items-center justify-end gap-0.5"
       style={{ height: MAX_TOWER_PX + 18 }}
     >
-      <span className={`text-[11px] tabular-nums ${tower.highlight ? "font-bold text-foreground" : "text-muted"}`}>
+      <span className={`text-[0.6875rem] tabular-nums ${tower.highlight ? "font-bold text-foreground" : "text-muted"}`}>
         {tower.valueLabel ?? tower.value}
       </span>
       {tower.value > 0 && (

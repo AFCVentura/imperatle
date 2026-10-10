@@ -137,7 +137,7 @@ export function HintCard({
               // the usual delay, as if the pointer had just entered it.
               if (e.currentTarget.parentElement?.contains(e.relatedTarget as Node)) scheduleTooltip();
             }}
-            className={`absolute flex h-4 w-4 right-1 top-1 items-center justify-center rounded-full bg-muted/20 text-[10px] font-semibold text-foreground hover:bg-muted/35`}
+            className={`absolute flex h-4 w-4 right-1 top-1 items-center justify-center rounded-full bg-muted/20 text-[0.625rem] font-semibold text-foreground hover:bg-muted/35`}
           >
             ?
           </button>

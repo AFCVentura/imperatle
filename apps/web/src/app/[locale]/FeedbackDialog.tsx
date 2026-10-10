@@ -88,7 +88,7 @@ export function FeedbackDialog() {
               placeholder={t(`placeholders.${category}`)}
               className="resize-y rounded-xl border border-line bg-surface px-3 py-2 outline-none placeholder:text-muted/70 focus:border-highlight"
             />
-            <span className="self-end text-[11px] tabular-nums text-muted">
+            <span className="self-end text-[0.6875rem] tabular-nums text-muted">
               {message.length}/{MAX_LENGTH}
             </span>
           </label>
