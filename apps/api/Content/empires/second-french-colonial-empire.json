@@ -1,0 +1,86 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "second-french-colonial-empire",
+  "name": {
+    "en": "Second French Colonial Empire",
+    "pt": "Segundo Império Colonial Francês"
+  },
+  "peak": {
+    "year": 1920,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1830,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1962,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "Covers the second colonial empire, from the conquest of Algiers to Algerian independence. It excludes the earlier colonies in the Americas and India, mostly lost in the 18th century, and the overseas territories that are still French today.",
+    "pt": "Cobre o segundo império colonial, da conquista de Argel à independência da Argélia. Não inclui as colônias anteriores nas Américas e na Índia, perdidas em sua maioria no século XVIII, nem os territórios ultramarinos que seguem franceses hoje."
+  },
+  "area": {
+    "km2": 12670000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Precise",
+  "continents": [
+    "Africa",
+    "Asia",
+    "Europe",
+    "SouthAmerica",
+    "NorthAmerica",
+    "Oceania"
+  ],
+  "primaryContinent": "Europe",
+  "capital": {
+    "en": "Paris",
+    "pt": "Paris"
+  },
+  "language": {
+    "en": "French",
+    "pt": "Francês"
+  },
+  "religion": {
+    "en": "Secular state (mostly Catholic in mainland France)",
+    "pt": "Estado laico (maioria católica na metrópole)"
+  },
+  "religionNotes": {
+    "en": "From 1905 on, the state recognized no official religion. In the colonies, Islam was the faith of a large part of the population.",
+    "pt": "Desde 1905, o Estado não reconhecia nenhuma religião oficial. Nas colônias, o islamismo era a fé de grande parte da população."
+  },
+  "curiosities": [
+    {
+      "en": "In 1931 it held a great exhibition of its colonies in the capital, with about 8 million visitors.",
+      "pt": "Em 1931, montou na capital uma grande exposição sobre suas colônias, com cerca de 8 milhões de visitantes."
+    },
+    {
+      "en": "It created a currency for its African colonies that is still used in several countries.",
+      "pt": "Criou para suas colônias africanas uma moeda que ainda circula em vários países."
+    },
+    {
+      "en": "Its language is still official in more than 20 African countries.",
+      "pt": "Sua língua continua oficial em mais de 20 países da África."
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/French_Colonial_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Colonial_Francês"
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "(French Third Republic)",
+        "year": 1920
+      },
+      {
+        "country": "PYF"
+      },
+      {
+        "country": "WLF"
+      }
+    ]
+  }
+}

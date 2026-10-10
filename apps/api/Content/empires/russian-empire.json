@@ -1,0 +1,86 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "russian-empire",
+  "name": {
+    "en": "Russian Empire",
+    "pt": "Império Russo"
+  },
+  "peak": {
+    "year": 1866,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1721,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1917,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts when the monarch took the title of emperor, in 1721, and ends with the abdication of the last one, in 1917. The peak shown is before the sale of Alaska: around 1900 the territory looked larger, but it included a region under military occupation, not annexed.",
+    "pt": "Começa quando o monarca adotou o título de imperador, em 1721, e termina com a abdicação do último, em 1917. O auge escolhido é antes da venda do Alasca: por volta de 1900 o território parecia maior, mas incluía uma região ocupada militarmente, não anexada."
+  },
+  "area": {
+    "km2": 22660000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia",
+    "Europe",
+    "NorthAmerica"
+  ],
+  "primaryContinent": "Europe",
+  "capital": {
+    "en": "Saint Petersburg",
+    "pt": "São Petersburgo"
+  },
+  "language": {
+    "en": "Russian",
+    "pt": "Russo"
+  },
+  "religion": {
+    "en": "Orthodox Christianity",
+    "pt": "Cristianismo Ortodoxo"
+  },
+  "religionNotes": {
+    "en": "The state church was run by a council appointed by the monarch. The empire also had large Muslim, Jewish, Catholic and Buddhist populations.",
+    "pt": "A igreja oficial era dirigida por um conselho nomeado pelo monarca. O império também tinha grandes populações muçulmanas, judaicas, católicas e budistas."
+  },
+  "curiosities": [
+    {
+      "en": "It used a calendar that, in the early 20th century, ran 13 days behind the rest of Europe.",
+      "pt": "Usava um calendário que, no início do século XX, estava 13 dias atrasado em relação ao resto da Europa."
+    },
+    {
+      "en": "It built the longest railway in the world, crossing the continent to the Pacific Ocean.",
+      "pt": "Construiu a ferrovia mais longa do mundo, atravessando o continente até o Oceano Pacífico."
+    },
+    {
+      "en": "Its army withstood Napoleon's invasion in 1812, which ended in a disastrous winter retreat.",
+      "pt": "Seu exército resistiu à invasão de Napoleão em 1812, que terminou com uma retirada desastrosa no inverno."
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Russian_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Russo"
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Russian Empire",
+        "year": 1866
+      },
+      {
+        "country": "RUS",
+        "box": [
+          -180,
+          60,
+          -165,
+          70.5
+        ]
+      }
+    ]
+  }
+}

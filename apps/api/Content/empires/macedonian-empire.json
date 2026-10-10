@@ -1,0 +1,104 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "macedonian-empire",
+  "name": {
+    "en": "Macedonian Empire",
+    "pt": "Império Macedônico"
+  },
+  "peak": {
+    "year": -323,
+    "precision": "Exact"
+  },
+  "start": {
+    "year": -336,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": -323,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "Covers the reign that built the empire, from the conqueror's accession to his death. The Macedonian kingdom existed before, and after 323 BCE the territory was split among the generals, although formal unity lasted a few more years.",
+    "pt": "Cobre o reinado que construiu o império, da subida ao trono à morte do conquistador. O reino macedônio já existia antes, e depois de 323 a.C. o território foi dividido entre os generais, embora a unidade formal tenha durado mais alguns anos."
+  },
+  "area": {
+    "km2": 5160000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia",
+    "Europe",
+    "Africa"
+  ],
+  "primaryContinent": "Europe",
+  "capital": {
+    "en": "Pella, later Babylon",
+    "pt": "Pela, depois Babilônia"
+  },
+  "language": {
+    "en": "Greek (Koine), with Aramaic and Persian in the administration",
+    "pt": "Grego (koiné), além do aramaico e do persa na administração"
+  },
+  "religion": {
+    "en": "Ancient Greek religion (polytheistic), tolerant of local cults",
+    "pt": "Religião grega antiga (politeísta), com tolerância aos cultos locais"
+  },
+  "religionNotes": {
+    "en": "The monarch adopted religious customs of the conquered peoples and, in Egypt, was hailed as the son of a god.",
+    "pt": "O monarca adotou costumes religiosos dos povos conquistados e, no Egito, foi reconhecido como filho de um deus."
+  },
+  "curiosities": [
+    {
+      "en": "After eight years of marching, its army refused to go any further on the banks of a river in India.",
+      "pt": "Depois de oito anos de marcha, seu exército se recusou a seguir adiante às margens de um rio na Índia."
+    },
+    {
+      "en": "Its founder was a student of Aristotle and never lost a pitched battle.",
+      "pt": "Seu fundador era aluno de Aristóteles e nunca perdeu uma batalha em campo aberto."
+    },
+    {
+      "en": "A city it founded in Egypt would later have the most famous lighthouse and library of Antiquity.",
+      "pt": "Uma cidade fundada por ele no Egito teria depois o farol e a biblioteca mais famosos da Antiguidade."
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Alexander_the_Great",
+    "pt": "https://pt.wikipedia.org/wiki/Alexandre,_o_Grande"
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Antigonid Macedonia",
+        "year": -277
+      },
+      {
+        "polity": "Macedonian Empire",
+        "year": -318
+      },
+      {
+        "polity": "(Macedonian Empire)",
+        "year": -323
+      },
+      {
+        "polity": "Kingdom of Lysimachus",
+        "year": -283
+      },
+      {
+        "country": "GRC",
+        "box": [
+          19,
+          36,
+          30,
+          42
+        ]
+      },
+      {
+        "country": "CYP"
+      },
+      {
+        "country": "CYN"
+      }
+    ]
+  }
+}
