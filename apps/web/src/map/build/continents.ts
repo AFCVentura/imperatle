@@ -25,7 +25,10 @@ type Box = [number, number, number, number]; // west, south, east, north
 // Guiana as Europe). For the cases that matter to historical empires, these
 // boxes move a country's land to another continent.
 const SPLITS: Record<string, { box: Box; to: Continent }[]> = {
-  RUS: [{ box: [60, 0, 180, 90], to: "Asia" }], // east of the Urals
+  RUS: [
+    { box: [60, 0, 180, 90], to: "Asia" }, // east of the Urals
+    { box: [-180, 0, -160, 90], to: "Asia" }, // Chukotka beyond the date line
+  ],
   KAZ: [{ box: [-180, -90, 51.5, 90], to: "Europe" }], // west of the Ural river
   TUR: [{ box: [25, 40.3, 29.05, 42.2], to: "Europe" }], // Thrace
   EGY: [{ box: [32.35, 27.7, 35, 31.4], to: "Asia" }], // Sinai
