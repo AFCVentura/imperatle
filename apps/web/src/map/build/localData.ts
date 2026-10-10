@@ -80,11 +80,26 @@ export function getPolity(id: string): Polity | null {
   return { ...summary(p), ranges: p.ranges.map(([from, to, areaKm2]) => ({ from, to, areaKm2 })) };
 }
 
-// The polygons of each part at its year; throws if a polity has no record
-// covering that year.
-export function partPolygons(parts: { id: string; year: number }[]): { polygons: Rings[][]; datasetAreaKm2: number } {
+export function findPolityByName(name: string): Polity | null {
+  const p = loadIndex().find((e) => e.name === name);
+  return p ? getPolity(p.id) : null;
+}
+
+// A part as the endpoints take it: a polity (by index id) at a year, or
+// today's territory by its Natural Earth code.
+export type PartRef = { id: string; year: number } | { country: string };
+
+// The polygons of each part; throws if a polity has no record covering its
+// year or a territory doesn't exist.
+export function partPolygons(parts: PartRef[]): { polygons: Rings[][]; datasetAreaKm2: number } {
   let datasetAreaKm2 = 0;
-  const polygons = parts.map(({ id, year }) => {
+  const polygons = parts.map((part) => {
+    if ("country" in part) {
+      const country = worldLand().countries.get(part.country);
+      if (!country) throw new Error(`no territory ${part.country} in the world map`);
+      return polygonsOf(country);
+    }
+    const { id, year } = part;
     if (!/^p\d{4}$/.test(id)) throw new Error(`unknown polity ${id}`);
     const records = JSON.parse(readFileSync(path.join(CLIOPATRIA, "polities", `${id}.json`), "utf8")) as PolityRecord[];
     const hits = records.filter((r) => r.from <= year && year <= r.to);
@@ -97,7 +112,7 @@ export function partPolygons(parts: { id: string; year: number }[]): { polygons:
 
 type WorldTopology = Topology<{ countries: GeometryCollection<{ continent: string }> }>;
 
-let world: { land: Rings[]; continents: ContinentLand } | null = null;
+let world: { land: Rings[]; continents: ContinentLand; countries: Map<string, MultiPolygon> } | null = null;
 
 // The game's land (for clipping) and each continent's land, built once.
 export function worldLand() {
@@ -107,7 +122,11 @@ export function worldLand() {
     const countries = (feature(topo, obj) as unknown as { features: { id: string; properties: { continent: string }; geometry: MultiPolygon }[] }).features
       .filter((f) => f.geometry)
       .map((f): CountryLand => ({ id: String(f.id), continent: f.properties.continent, geometry: f.geometry }));
-    world = { land: polygonsOf(merge(topo, obj.geometries as never)), continents: continentLand(countries) };
+    world = {
+      land: polygonsOf(merge(topo, obj.geometries as never)),
+      continents: continentLand(countries),
+      countries: new Map(countries.map((c) => [c.id, c.geometry])),
+    };
   }
   return world;
 }

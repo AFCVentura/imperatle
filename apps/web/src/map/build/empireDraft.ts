@@ -10,6 +10,11 @@ export const AREA_PRECISIONS = ["Exact", "Approximate"] as const;
 export const MAP_ACCURACIES = ["Precise", "Approximate", "Speculative"] as const;
 
 export type Text = { en: string; pt: string };
+
+// A Cliopatria polity at a year, or today's territory (Natural Earth's
+// 3-letter code) for land the dataset misses.
+export type MapPart = { polity: string; year: number } | { country: string };
+export const isCountryPart = (p: MapPart): p is { country: string } => "country" in p;
 export type Year = { year: number; precision: (typeof YEAR_PRECISIONS)[number] };
 
 export type EmpireDraft = {
@@ -29,7 +34,7 @@ export type EmpireDraft = {
   religionNotes?: Text;
   curiosities: Text[];
   wikipedia?: Text;
-  map: { parts: { polity: string; year: number }[] };
+  map: { parts: MapPart[] };
 };
 
 export const CURIOSITY_COUNT = 3;
@@ -82,7 +87,10 @@ export function validateDraft(draft: EmpireDraft, others: { slug: string; name: 
     }
   }
 
-  if (draft.map.parts.length === 0) errors.push("o mapa precisa de pelo menos uma entidade do Cliopatria");
+  if (!draft.map.parts.some((p) => !isCountryPart(p))) errors.push("o mapa precisa de pelo menos uma entidade do Cliopatria");
+  for (const p of draft.map.parts) {
+    if (isCountryPart(p) && !/^[A-Z]{3}$/.test(p.country)) errors.push(`território "${p.country}": código de 3 letras maiúsculas`);
+  }
 
   return errors;
 }

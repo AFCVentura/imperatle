@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server";
 import { jsonError, notInProduction } from "@/lib/devOnly";
 import { continentShares } from "@/map/build/continents";
-import { partPolygons, worldLand } from "@/map/build/localData";
+import { partPolygons, worldLand, type PartRef } from "@/map/build/localData";
 import { areaKm2, buildShape, rawShape } from "@/map/build/shape";
 
-export type ShapeRequest = { parts: { id: string; year: number }[] };
+export type ShapeRequest = { parts: PartRef[] };
 
-// POST /api/geo/shape { parts: [{ id, year }] }: the parts merged and clipped
+// POST /api/geo/shape { parts: [{ id, year } | { country }] }: the parts merged and clipped
 // by the game's land (what the game draws), the unclipped version to compare,
 // its area and how it splits across continents.
 export async function POST(request: Request) {

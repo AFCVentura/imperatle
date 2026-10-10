@@ -38,8 +38,14 @@ describe("validateDraft", () => {
     [{ durationNotes: { en: "Only one phase", pt: "" } }, "nota da duração (pt): vazio"],
     [{ wikipedia: { en: "https://en.wikipedia.org/wiki/Rome", pt: "https://en.wikipedia.org/wiki/Rome" } }, "wikipedia (pt)"],
     [{ map: { parts: [] } }, "entidade do Cliopatria"],
+    [{ map: { parts: [{ country: "PYF" }] } }, "entidade do Cliopatria"],
+    [{ map: { parts: [{ polity: "Test Polity", year: 100 }, { country: "pyf" }] } }, "3 letras"],
   ] as [Partial<EmpireDraft>, string][])("reports %o", (change, message) => {
     expect(validateDraft({ ...valid(), ...change }).some((e) => e.includes(message))).toBe(true);
+  });
+
+  it("accepts today's territories next to a polity", () => {
+    expect(validateDraft({ ...valid(), map: { parts: [{ polity: "Test Polity", year: 100 }, { country: "PYF" }] } })).toEqual([]);
   });
 
   it("refuses a slug or a name another empire already uses", () => {

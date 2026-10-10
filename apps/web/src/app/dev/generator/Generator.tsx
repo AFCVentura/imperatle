@@ -3,7 +3,7 @@
 import type { MultiPolygon } from "geojson";
 import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { EmpireMap } from "@/map/EmpireMap";
-import type { MapStage } from "@/map/geo";
+import { loadWorld, type MapStage } from "@/map/geo";
 import { CONTINENTS, type Continent, type ContinentShare } from "@/map/build/continents";
 import {
   AREA_PRECISIONS,
@@ -16,11 +16,16 @@ import {
   type Text,
 } from "@/map/build/empireDraft";
 import type { Polity, PolitySummary } from "@/map/build/localData";
+import type { ResolvedPart } from "@/app/api/dev/empires/[slug]/route";
 
 // The empire generator's screen. Everything it needs comes from the
 // /api/geo/* endpoints, whose contract the public version's API will keep.
 
-type Part = { polity: Polity; rangeIndex: number };
+// A Cliopatria polity at one of its periods, or today's territory (for land
+// the dataset misses, e.g. French Polynesia in a colonial empire).
+type PolityPart = { kind: "polity"; polity: Polity; rangeIndex: number };
+type Part = PolityPart | { kind: "country"; country: string };
+const firstPolity = (parts: Part[]) => parts.find((p): p is PolityPart => p.kind === "polity");
 type ShapeResult = { shape: MultiPolygon; raw: MultiPolygon; areaKm2: number; datasetAreaKm2: number; continents: ContinentShare[] };
 
 const CONTINENT_PT: Record<Continent, string> = {
@@ -57,6 +62,7 @@ const emptyDraft = (): EmpireDraft => ({
 // Fields the generator can fill from the data; each follows the parts until
 // the user edits it.
 type AutoField = "slug" | "nameEn" | "peak" | "start" | "end" | "area" | "continents" | "wikipedia";
+const ALL_AUTO: AutoField[] = ["slug", "nameEn", "peak", "start", "end", "area", "continents", "wikipedia"];
 
 const slugify = (s: string) =>
   s.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -80,20 +86,27 @@ export function Generator() {
   // Once saved, the draft is done: the form locks and only offers to start
   // the next empire (validating it again would flag it against its own file).
   const [saved, setSaved] = useState<string[] | null>(null);
+  // Slug of the existing empire open for editing (null = a new one).
+  const [editing, setEditing] = useState<string | null>(null);
+  const [missingParts, setMissingParts] = useState<string[]>([]);
+  const [countryNames, setCountryNames] = useState<Map<string, string>>(new Map());
 
   useEffect(() => {
     fetch("/api/dev/empires").then((r) => r.json()).then(setExisting, () => {});
+    loadWorld().then((w) => setCountryNames(new Map(w.countries.map((c) => [String(c.id), c.properties.pt]))), () => {});
   }, []);
 
   // Rebuilds the shape whenever the parts change.
-  const partsKey = parts.map((p) => `${p.polity.id}@${p.polity.ranges[p.rangeIndex].from}`).join(",");
+  const partsKey = parts.map((p) => (p.kind === "polity" ? `${p.polity.id}@${p.polity.ranges[p.rangeIndex].from}` : p.country)).join(",");
   useEffect(() => {
     if (parts.length === 0) return;
     let current = true;
     fetch("/api/geo/shape", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ parts: parts.map((p) => ({ id: p.polity.id, year: p.polity.ranges[p.rangeIndex].from })) }),
+      body: JSON.stringify({
+        parts: parts.map((p) => (p.kind === "polity" ? { id: p.polity.id, year: p.polity.ranges[p.rangeIndex].from } : { country: p.country })),
+      }),
     })
       .then(async (r) => {
         const body = await r.json();
@@ -113,8 +126,8 @@ export function Generator() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [partsKey]);
 
-  // Wikipedia links from the first part's Wikidata id.
-  const wikidata = parts[0]?.polity.wikidata ?? null;
+  // Wikipedia links from the first polity's Wikidata id.
+  const wikidata = firstPolity(parts)?.polity.wikidata ?? null;
   const [wikiLinks, setWikiLinks] = useState<{ id: string; links: Text } | null>(null);
   useEffect(() => {
     if (!wikidata) return;
@@ -129,8 +142,9 @@ export function Generator() {
 
   // What the data suggests for the automatic fields.
   const auto = useMemo(() => {
-    if (parts.length === 0) return null;
-    const first = parts[0];
+    const first = firstPolity(parts);
+    if (!first) return null;
+    const polities = parts.filter((p): p is PolityPart => p.kind === "polity");
     const range = first.polity.ranges[first.rangeIndex];
     const name = first.polity.name.replace(/^\((.*)\)$/, "$1");
     const continents = (result?.continents ?? []).filter((c) => c.share >= 0.01).map((c) => c.continent);
@@ -138,8 +152,8 @@ export function Generator() {
       nameEn: name,
       slug: slugify(name),
       peak: range.from,
-      start: Math.min(...parts.map((p) => p.polity.from)),
-      end: Math.max(...parts.map((p) => p.polity.to)),
+      start: Math.min(...polities.map((p) => p.polity.from)),
+      end: Math.max(...polities.map((p) => p.polity.to)),
       area: result?.areaKm2 ?? 0,
       continents,
       primary: continents[0],
@@ -153,7 +167,8 @@ export function Generator() {
     const keep = (f: AutoField) => touched.has(f);
     return {
       ...draft,
-      slug: keep("slug") ? draft.slug : auto.slug,
+      // An existing empire keeps its slug: the database matches it by slug.
+      slug: keep("slug") || editing ? draft.slug : auto.slug,
       name: keep("nameEn") ? draft.name : { ...draft.name, en: auto.nameEn },
       peak: keep("peak") ? draft.peak : { ...draft.peak, year: auto.peak },
       start: keep("start") ? draft.start : { ...draft.start, year: auto.start },
@@ -164,6 +179,7 @@ export function Generator() {
       wikipedia: keep("wikipedia") || !auto.wikipedia ? draft.wikipedia : auto.wikipedia,
       map: {
         parts: parts.map((p) => {
+          if (p.kind === "country") return { country: p.country };
           const r = p.polity.ranges[p.rangeIndex];
           const peak = keep("peak") ? draft.peak.year : auto.peak;
           // The peak year when the record covers it, so the file reads naturally.
@@ -171,7 +187,7 @@ export function Generator() {
         }),
       },
     };
-  }, [draft, auto, touched, parts]);
+  }, [draft, auto, touched, parts, editing]);
 
   // Edits start from what's on screen, and pin the automatic fields they touch.
   const edit = (change: (d: EmpireDraft) => EmpireDraft, ...fields: AutoField[]) => {
@@ -180,19 +196,20 @@ export function Generator() {
     setSaveError(null);
   };
 
-  const errors = useMemo(() => validateDraft(shown, existing), [shown, existing]);
+  // When editing, the empire's own file isn't a clash.
+  const errors = useMemo(() => validateDraft(shown, existing.filter((e) => e.slug !== editing)), [shown, existing, editing]);
 
   const save = async () => {
     if (!result) return;
-    const res = await fetch("/api/dev/empires", {
-      method: "POST",
+    const res = await fetch(editing ? `/api/dev/empires/${editing}` : "/api/dev/empires", {
+      method: editing ? "PUT" : "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ draft: shown, shape: result.shape }),
     });
     const body = await res.json();
     if (res.ok) {
       setSaved(body.saved);
-      setExisting((e) => [...e, { slug: shown.slug, name: shown.name }]);
+      setExisting((e) => [...e.filter((x) => x.slug !== shown.slug), { slug: shown.slug, name: shown.name }]);
     } else {
       setSaveError(body.errors?.join("; ") ?? body.error ?? `erro ${res.status}`);
     }
@@ -207,36 +224,92 @@ export function Generator() {
     setShowRaw(false);
     setSaveError(null);
     setSaved(null);
+    setEditing(null);
+    setMissingParts([]);
   };
+
+  // Opens an existing empire with every field as saved; its automatic fields
+  // stay as they are until "recalculate" is pressed.
+  const openExisting = async (slug: string) => {
+    const res = await fetch(`/api/dev/empires/${slug}`);
+    if (!res.ok) return;
+    const body = (await res.json()) as { draft: EmpireDraft; parts: ResolvedPart[] };
+    startOver();
+    setEditing(slug);
+    setDraft(body.draft);
+    setTouched(new Set(ALL_AUTO));
+    setParts(
+      body.parts.flatMap((p): Part[] =>
+        p.kind === "polity" ? [{ kind: "polity", polity: p.polity, rangeIndex: p.rangeIndex }] : p.kind === "country" ? [{ kind: "country", country: p.country }] : [],
+      ),
+    );
+    setMissingParts(body.parts.flatMap((p) => (p.kind === "missing" ? [p.label] : [])));
+  };
+
+  // After adding or removing parts: area and continents from the new shape.
+  const recalculate = () => setTouched((t) => new Set([...t].filter((f) => f !== "area" && f !== "continents")));
 
   return (
     <main className="mx-auto grid max-w-7xl gap-6 p-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
       <section className="flex flex-col gap-3 lg:sticky lg:top-4 lg:self-start">
-        <h1 className="text-xl font-semibold">Gerador de impérios</h1>
+        <div className="flex flex-wrap items-center gap-3">
+          <h1 className="text-xl font-semibold">Gerador de impérios</h1>
+          <select
+            value={editing ?? ""}
+            onChange={(e) => (e.target.value ? openExisting(e.target.value) : startOver())}
+            className="ml-auto rounded-md border border-line bg-surface px-2 py-1 text-sm"
+          >
+            <option value="">Novo império</option>
+            {existing.map((e) => (
+              <option key={e.slug} value={e.slug}>
+                Editar: {e.name.pt}
+              </option>
+            ))}
+          </select>
+        </div>
+        {editing && (
+          <p className="rounded-md border border-line bg-surface px-3 py-2 text-sm">
+            Editando <strong>{editing}</strong>. Salvar sobrescreve os arquivos dele. Os campos ⚙ ficam com os valores salvos;
+            depois de mexer nas partes, use &quot;Recalcular área e continentes&quot;.
+          </p>
+        )}
+        {missingParts.length > 0 && (
+          <p className="text-sm text-danger">Não achei no índice do Cliopatria (essas partes ficaram de fora): {missingParts.join(", ")}</p>
+        )}
         <p className="text-sm text-muted">
           Busque a entidade no Cliopatria, escolha o período e junte outras partes se precisar. Os campos marcados com ⚙ se
           preenchem sozinhos até você editar.
         </p>
 
-        <PolitySearch onPick={(polity) => setParts((ps) => [...ps, { polity, rangeIndex: peakRangeIndex(polity) }])} />
+        <PolitySearch onPick={(polity) => setParts((ps) => [...ps, { kind: "polity", polity, rangeIndex: peakRangeIndex(polity) }])} />
+        <CountrySearch names={countryNames} onPick={(country) => setParts((ps) => (ps.some((p) => p.kind === "country" && p.country === country) ? ps : [...ps, { kind: "country", country }]))} />
 
         {parts.length > 0 && (
           <ul className="flex flex-col gap-2">
             {parts.map((p, i) => (
-              <li key={`${p.polity.id}-${i}`} className="flex flex-wrap items-center gap-2 rounded-lg border border-line bg-surface px-3 py-2 text-sm">
-                <span className="font-semibold">{p.polity.name}</span>
-                <select
-                  value={p.rangeIndex}
-                  onChange={(e) => setParts((ps) => ps.map((q, j) => (j === i ? { ...q, rangeIndex: Number(e.target.value) } : q)))}
-                  className="rounded border border-line bg-background px-1 py-0.5"
-                >
-                  {p.polity.ranges.map((r, j) => (
-                    <option key={j} value={j}>
-                      {formatYear(r.from)}–{formatYear(r.to)} · {formatKm2(r.areaKm2)}
-                      {r.areaKm2 === p.polity.peakAreaKm2 ? " ★ maior área" : ""}
-                    </option>
-                  ))}
-                </select>
+              <li key={`${p.kind === "polity" ? p.polity.id : p.country}-${i}`} className="flex flex-wrap items-center gap-2 rounded-lg border border-line bg-surface px-3 py-2 text-sm">
+                {p.kind === "country" ? (
+                  <span>
+                    <span className="font-semibold">{countryNames.get(p.country) ?? p.country}</span>{" "}
+                    <span className="text-muted">(território atual, {p.country})</span>
+                  </span>
+                ) : (
+                  <>
+                    <span className="font-semibold">{p.polity.name}</span>
+                    <select
+                      value={p.rangeIndex}
+                      onChange={(e) => setParts((ps) => ps.map((q, j) => (j === i && q.kind === "polity" ? { ...q, rangeIndex: Number(e.target.value) } : q)))}
+                      className="rounded border border-line bg-background px-1 py-0.5"
+                    >
+                      {p.polity.ranges.map((r, j) => (
+                        <option key={j} value={j}>
+                          {formatYear(r.from)}–{formatYear(r.to)} · {formatKm2(r.areaKm2)}
+                          {r.areaKm2 === p.polity.peakAreaKm2 ? " ★ maior área" : ""}
+                        </option>
+                      ))}
+                    </select>
+                  </>
+                )}
                 <button type="button" onClick={() => setParts((ps) => ps.filter((_, j) => j !== i))} className="ml-auto text-muted hover:text-foreground">
                   remover
                 </button>
@@ -285,12 +358,17 @@ export function Generator() {
 
       <section className="flex flex-col gap-4">
         <fieldset disabled={!!saved} className="disabled:opacity-60">
-          <EmpireForm draft={shown} touched={touched} hasAuto={!!auto} edit={edit} continentShares={result?.continents ?? []} />
+          {editing && (
+            <button type="button" onClick={recalculate} className="mb-3 rounded-full border border-line px-4 py-1 text-sm hover:bg-surface">
+              Recalcular área e continentes
+            </button>
+          )}
+          <EmpireForm draft={shown} touched={touched} hasAuto={!!auto} edit={edit} continentShares={result?.continents ?? []} slugLocked={!!editing} />
         </fieldset>
 
         {saved ? (
           <div className="flex flex-col gap-2 rounded-lg border border-success bg-surface p-3 text-sm">
-            <p className="font-semibold text-success">✓ Império salvo.</p>
+            <p className="font-semibold text-success">✓ Império {editing ? "atualizado" : "salvo"}.</p>
             <ul className="list-disc pl-5 text-muted">
               {saved.map((f) => (
                 <li key={f}>{f}</li>
@@ -321,7 +399,7 @@ export function Generator() {
             disabled={errors.length > 0 || !result}
             className="self-start rounded-full bg-accent px-5 py-2 font-semibold text-accent-foreground disabled:opacity-40"
           >
-            Salvar império
+            {editing ? "Salvar alterações" : "Salvar império"}
           </button>
           {saveError && <p className="text-danger">{saveError}</p>}
         </div>
@@ -397,6 +475,44 @@ function PolitySearch({ onPick }: { onPick: (p: Polity) => void }) {
   );
 }
 
+// Today's territories (the game's world map), for land Cliopatria misses.
+function CountrySearch({ names, onPick }: { names: Map<string, string>; onPick: (code: string) => void }) {
+  const [query, setQuery] = useState("");
+  const normalize = (t: string) => t.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase();
+  const q = normalize(query.trim());
+  const list = q.length < 2 ? [] : [...names].filter(([code, name]) => normalize(name).includes(q) || code.toLowerCase() === q).slice(0, 15);
+
+  return (
+    <div className="relative">
+      <input
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="Adicionar território atual (ex.: Polinésia Francesa, Wallis)"
+        className="w-full rounded-lg border border-line bg-surface px-3 py-2 text-sm"
+      />
+      {list.length > 0 && (
+        <ul className="absolute z-20 mt-1 max-h-80 w-full overflow-auto rounded-lg border border-line bg-background text-sm shadow-lg">
+          {list.map(([code, name]) => (
+            <li key={code}>
+              <button
+                type="button"
+                onClick={() => {
+                  onPick(code);
+                  setQuery("");
+                }}
+                className="flex w-full justify-between gap-3 px-3 py-1.5 text-left hover:bg-surface"
+              >
+                <span>{name}</span>
+                <span className="text-muted">{code}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 type EditFn = (change: (d: EmpireDraft) => EmpireDraft, ...fields: AutoField[]) => void;
 
 function EmpireForm({
@@ -405,20 +521,22 @@ function EmpireForm({
   hasAuto,
   edit,
   continentShares,
+  slugLocked,
 }: {
   draft: EmpireDraft;
   touched: Set<AutoField>;
   hasAuto: boolean;
   edit: EditFn;
   continentShares: ContinentShare[];
+  slugLocked: boolean;
 }) {
   const autoMark = (f: AutoField) => (hasAuto && !touched.has(f) ? " ⚙" : "");
   const share = (c: Continent) => continentShares.find((s) => s.continent === c);
 
   return (
     <div className="flex flex-col gap-3 text-sm">
-      <Field label={`Slug (nome do arquivo)${autoMark("slug")}`}>
-        <input value={draft.slug} onChange={(e) => edit((d) => ({ ...d, slug: e.target.value }), "slug")} className={inputClass} />
+      <Field label={slugLocked ? "Slug (nome do arquivo, não muda num império existente)" : `Slug (nome do arquivo)${autoMark("slug")}`}>
+        <input value={draft.slug} disabled={slugLocked} onChange={(e) => edit((d) => ({ ...d, slug: e.target.value }), "slug")} className={inputClass} />
       </Field>
 
       <TextField label={`Nome${autoMark("nameEn")}`} value={draft.name} onChange={(name, lang) => edit((d) => ({ ...d, name }), ...(lang === "en" ? (["nameEn"] as const) : []))} />

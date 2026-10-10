@@ -81,17 +81,29 @@
       "required": ["parts"],
       "properties": {
         "parts": {
-          "description": "Cliopatria polities merged into the shape, each at a year its record covers (usually the peak year). More than one when the dataset lists part of the empire apart, e.g. a dominion.",
+          "description": "Merged into the shape: Cliopatria polities, each at a year its record covers (usually the peak year), plus today's territories for land the dataset misses. At least one polity.",
           "type": "array",
           "minItems": 1,
           "items": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": ["polity", "year"],
-            "properties": {
-              "polity": { "description": "Cliopatria \"Name\", exactly, e.g. \"Mongol Empire\" or \"(British Empire)\".", "type": "string", "minLength": 1 },
-              "year": { "description": "Negative = BCE. There is no year 0.", "type": "integer", "not": { "const": 0 } }
-            }
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["polity", "year"],
+                "properties": {
+                  "polity": { "description": "Cliopatria \"Name\", exactly, e.g. \"Mongol Empire\" or \"(British Empire)\".", "type": "string", "minLength": 1 },
+                  "year": { "description": "Negative = BCE. There is no year 0.", "type": "integer", "not": { "const": 0 } }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["country"],
+                "properties": {
+                  "country": { "description": "A territory as it is today, for land Cliopatria misses: Natural Earth's 3-letter code (ADM0_A3), e.g. \"PYF\" for French Polynesia.", "type": "string", "pattern": "^[A-Z]{3}$" }
+                }
+              }
+            ]
           }
         }
       }

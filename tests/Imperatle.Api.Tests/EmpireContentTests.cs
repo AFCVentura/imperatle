@@ -44,6 +44,10 @@ public class EmpireContentTests
         { ValidEmpire() with { Wikipedia = new("https://en.wikipedia.org/wiki/Rome", "https://en.wikipedia.org/wiki/Rome") }, "wikipedia.pt" },
         { ValidEmpire() with { Wikipedia = new("Roman Empire", "https://pt.wikipedia.org/wiki/Roma") }, "wikipedia.en" },
         { ValidEmpire() with { Map = new([]) }, "at least one Cliopatria polity" },
+        { ValidEmpire() with { Map = new([new(Country: "PYF")]) }, "at least one Cliopatria polity" },
+        { ValidEmpire() with { Map = new([new("Roman Empire", 117), new(Country: "pyf")]) }, "3-letter code" },
+        { ValidEmpire() with { Map = new([new("Roman Empire", 117), new("Gaul", 117, "FRA")]) }, "not both" },
+        { ValidEmpire() with { Map = new([new("Roman Empire")]) }, "year is missing" },
         { ValidEmpire() with { Map = new([new(" ", 100)]) }, "polity is empty" },
         { ValidEmpire() with { Map = new([new("Roman Empire", 0)]) }, "year can't be 0" },
     };

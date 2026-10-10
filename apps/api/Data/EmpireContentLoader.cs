@@ -30,6 +30,10 @@ public static partial class EmpireContentLoader
     [GeneratedRegex("^[a-z0-9]+(-[a-z0-9]+)*$")]
     private static partial Regex SlugPattern();
 
+    // Natural Earth's ADM0_A3, as in apps/web/public/geo/world.json.
+    [GeneratedRegex("^[A-Z]{3}$")]
+    private static partial Regex CountryCodePattern();
+
     public static string DefaultDirectory => Path.Combine(AppContext.BaseDirectory, "Content", "empires");
 
     // Shapes live next to the empires folder: Content/shapes/<slug>.json.
@@ -178,18 +182,34 @@ public static partial class EmpireContentLoader
 
         if (empire.Map is not null)
         {
-            if (empire.Map.Parts.Count == 0)
+            if (!empire.Map.Parts.Any(p => p.Polity is not null))
             {
                 errors.Add("map.parts must list at least one Cliopatria polity");
             }
             for (var i = 0; i < empire.Map.Parts.Count; i++)
             {
                 var part = empire.Map.Parts[i];
+                if (part.Country is not null)
+                {
+                    if (part.Polity is not null || part.Year is not null)
+                    {
+                        errors.Add($"map.parts[{i}] is either a polity with a year or a country, not both");
+                    }
+                    else if (!CountryCodePattern().IsMatch(part.Country))
+                    {
+                        errors.Add($"map.parts[{i}].country \"{part.Country}\" must be a 3-letter code in capitals, e.g. PYF");
+                    }
+                    continue;
+                }
                 if (string.IsNullOrWhiteSpace(part.Polity))
                 {
                     errors.Add($"map.parts[{i}].polity is empty");
                 }
-                if (part.Year == 0)
+                if (part.Year is null)
+                {
+                    errors.Add($"map.parts[{i}].year is missing");
+                }
+                else if (part.Year == 0)
                 {
                     errors.Add($"map.parts[{i}].year can't be 0 (there is no year 0)");
                 }

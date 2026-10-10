@@ -41,9 +41,12 @@ public record YearValue(int Year, YearPrecision Precision);
 
 public record AreaValue(int Km2, AreaPrecision Precision);
 
-// Where the shape comes from: one or more Cliopatria polities at a given
-// year, merged (e.g. an empire plus a dominion the dataset lists apart).
-// scripts/maps/build-shapes.mjs turns them into Content/shapes/<slug>.json.
+// Where the shape comes from, merged: Cliopatria polities at a given year
+// (e.g. an empire plus a dominion the dataset lists apart) and, for land the
+// dataset misses, today's territories from Natural Earth by their 3-letter
+// code (e.g. "PYF", French Polynesia, for a colonial empire). The empire
+// generator and scripts/maps/build-shapes.mjs build Content/shapes/<slug>.json.
 public record MapInfo(List<MapPart> Parts);
 
-public record MapPart(string Polity, int Year);
+// Either Polity + Year, or Country.
+public record MapPart(string? Polity = null, int? Year = null, string? Country = null);
