@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# empire generator: local Cliopatria index (scripts/maps/index-cliopatria.mjs)
+/dev-data
