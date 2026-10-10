@@ -1,0 +1,71 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "empire-of-brazil",
+  "name": {
+    "en": "Empire of Brazil",
+    "pt": "Império do Brasil"
+  },
+  "peak": {
+    "year": 1889,
+    "precision": "Exact"
+  },
+  "start": {
+    "year": 1822,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1889,
+    "precision": "Exact"
+  },
+  "area": {
+    "km2": 8337218,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Precise",
+  "continents": [
+    "SouthAmerica"
+  ],
+  "primaryContinent": "SouthAmerica",
+  "capital": {
+    "en": "Rio de Janeiro",
+    "pt": "Rio de Janeiro"
+  },
+  "language": {
+    "en": "Portuguese",
+    "pt": "Português"
+  },
+  "religion": {
+    "en": "Roman Catholicism",
+    "pt": "Catolicismo Romano"
+  },
+  "religionNotes": {
+    "en": "The constitution allowed other religions only in private worship, in houses with no outward look of a temple.",
+    "pt": "A Constituição permitia outras religiões só em culto particular, em casas sem aparência exterior de templo."
+  },
+  "curiosities": [
+    {
+      "en": "It was one of the few monarchies in the Americas in the 19th century, and the longest-lasting.",
+      "pt": "Foi uma das poucas monarquias das Américas no século XIX, e a mais duradoura delas."
+    },
+    {
+      "en": "In this period, it became the world's largest coffee producer.",
+      "pt": "Nesse período, tornou-se o maior produtor de café do mundo."
+    },
+    {
+      "en": "Before independence, its capital had already been the seat of a European court fleeing Napoleon.",
+      "pt": "Antes da independência, sua capital já tinha sido sede de uma corte europeia que fugiu de Napoleão."
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Empire_of_Brazil",
+    "pt": "https://pt.wikipedia.org/wiki/Império_do_Brasil"
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Empire of Brazil",
+        "year": 1889
+      }
+    ]
+  }
+}
