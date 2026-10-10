@@ -50,13 +50,20 @@ function forD3(rings: Rings): Rings {
 
 const asClip = (polygons: Rings[]) => polygons as unknown as ClipPolygon[];
 
+// polygon-clipping can fail on near-coincident edges with long decimals
+// ("Unable to complete output ring"), e.g. an empire merged with a whole
+// modern country before being clipped by the land. Snapping to 7 decimals
+// (about 1 cm) avoids it without any visible change.
+const snapValue = (n: number) => Math.round(n * 1e7) / 1e7;
+const snap = (polygons: Rings[]): Rings[] => polygons.map((rings) => rings.map((ring) => ring.map(([x, y]) => [snapValue(x), snapValue(y)])));
+
 // The parts (each a list of polygons) merged, before any clipping: what the
 // dataset draws, sea included.
 export function mergeParts(parts: Rings[][]): Rings[] {
   const nonEmpty = parts.filter((p) => p.length > 0);
   if (nonEmpty.length === 0) return [];
   const [first, ...rest] = nonEmpty.map(asClip);
-  return polygonClipping.union(first as Geom, ...(rest as Geom[])) as unknown as Rings[];
+  return snap(polygonClipping.union(first as Geom, ...(rest as Geom[])) as unknown as Rings[]);
 }
 
 // The merged parts clipped by the land (the game's coastline), tidied and

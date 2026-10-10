@@ -9,7 +9,7 @@ import { findPolityByName, type Polity } from "@/map/build/localData";
 
 export type ResolvedPart =
   | { kind: "polity"; polity: Polity; rangeIndex: number }
-  | { kind: "country"; country: string }
+  | { kind: "country"; country: string; box?: [number, number, number, number] }
   | { kind: "missing"; label: string };
 
 // GET /api/dev/empires/{slug}: the empire's file as a draft, plus its map
@@ -23,7 +23,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ slu
   if (!draft) return jsonError("empire not found", 404);
 
   const parts: ResolvedPart[] = draft.map.parts.map((p) => {
-    if (isCountryPart(p)) return { kind: "country", country: p.country };
+    if (isCountryPart(p)) return { kind: "country", country: p.country, box: p.box };
     const polity = findPolityByName(p.polity);
     const rangeIndex = polity?.ranges.findIndex((r) => r.from <= p.year && p.year <= r.to) ?? -1;
     return polity && rangeIndex >= 0

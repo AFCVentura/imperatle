@@ -11,6 +11,7 @@ import {
   MAP_ACCURACIES,
   YEAR_PRECISIONS,
   toContentJson,
+  isValidBox,
   validateDraft,
   type EmpireDraft,
   type Text,
@@ -24,7 +25,8 @@ import type { ResolvedPart } from "@/app/api/dev/empires/[slug]/route";
 // A Cliopatria polity at one of its periods, or today's territory (for land
 // the dataset misses, e.g. French Polynesia in a colonial empire).
 type PolityPart = { kind: "polity"; polity: Polity; rangeIndex: number };
-type Part = PolityPart | { kind: "country"; country: string };
+type Box = [number, number, number, number];
+type Part = PolityPart | { kind: "country"; country: string; box?: Box };
 const firstPolity = (parts: Part[]) => parts.find((p): p is PolityPart => p.kind === "polity");
 type ShapeResult = { shape: MultiPolygon; raw: MultiPolygon; areaKm2: number; datasetAreaKm2: number; continents: ContinentShare[] };
 
@@ -97,7 +99,7 @@ export function Generator() {
   }, []);
 
   // Rebuilds the shape whenever the parts change.
-  const partsKey = parts.map((p) => (p.kind === "polity" ? `${p.polity.id}@${p.polity.ranges[p.rangeIndex].from}` : p.country)).join(",");
+  const partsKey = parts.map((p) => (p.kind === "polity" ? `${p.polity.id}@${p.polity.ranges[p.rangeIndex].from}` : `${p.country}${p.box ? `[${p.box}]` : ""}`)).join(",");
   useEffect(() => {
     if (parts.length === 0) return;
     let current = true;
@@ -105,7 +107,8 @@ export function Generator() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        parts: parts.map((p) => (p.kind === "polity" ? { id: p.polity.id, year: p.polity.ranges[p.rangeIndex].from } : { country: p.country })),
+        // A box only counts once its four numbers make a valid region.
+        parts: parts.map((p) => (p.kind === "polity" ? { id: p.polity.id, year: p.polity.ranges[p.rangeIndex].from } : { country: p.country, ...(p.box && isValidBox(p.box) ? { box: p.box } : {}) })),
       }),
     })
       .then(async (r) => {
@@ -179,7 +182,7 @@ export function Generator() {
       wikipedia: keep("wikipedia") || !auto.wikipedia ? draft.wikipedia : auto.wikipedia,
       map: {
         parts: parts.map((p) => {
-          if (p.kind === "country") return { country: p.country };
+          if (p.kind === "country") return p.box ? { country: p.country, box: p.box } : { country: p.country };
           const r = p.polity.ranges[p.rangeIndex];
           const peak = keep("peak") ? draft.peak.year : auto.peak;
           // The peak year when the record covers it, so the file reads naturally.
@@ -240,7 +243,7 @@ export function Generator() {
     setTouched(new Set(ALL_AUTO));
     setParts(
       body.parts.flatMap((p): Part[] =>
-        p.kind === "polity" ? [{ kind: "polity", polity: p.polity, rangeIndex: p.rangeIndex }] : p.kind === "country" ? [{ kind: "country", country: p.country }] : [],
+        p.kind === "polity" ? [{ kind: "polity", polity: p.polity, rangeIndex: p.rangeIndex }] : p.kind === "country" ? [{ kind: "country", country: p.country, box: p.box }] : [],
       ),
     );
     setMissingParts(body.parts.flatMap((p) => (p.kind === "missing" ? [p.label] : [])));
@@ -289,9 +292,15 @@ export function Generator() {
             {parts.map((p, i) => (
               <li key={`${p.kind === "polity" ? p.polity.id : p.country}-${i}`} className="flex flex-wrap items-center gap-2 rounded-lg border border-line bg-surface px-3 py-2 text-sm">
                 {p.kind === "country" ? (
-                  <span>
-                    <span className="font-semibold">{countryNames.get(p.country) ?? p.country}</span>{" "}
-                    <span className="text-muted">(território atual, {p.country})</span>
+                  <span className="flex flex-wrap items-center gap-2">
+                    <span>
+                      <span className="font-semibold">{countryNames.get(p.country) ?? p.country}</span>{" "}
+                      <span className="text-muted">(território atual, {p.country})</span>
+                    </span>
+                    <BoxInput
+                      value={p.box}
+                      onChange={(box) => setParts((ps) => ps.map((q, j) => (j === i && q.kind === "country" ? { ...q, box } : q)))}
+                    />
                   </span>
                 ) : (
                   <>
@@ -472,6 +481,53 @@ function PolitySearch({ onPick }: { onPick: (p: Polity) => void }) {
         </ul>
       )}
     </div>
+  );
+}
+
+// Optional region of a territory: only the land inside [west, south, east,
+// north], in degrees (negative = west / south). Empty = the whole territory.
+function BoxInput({ value, onChange }: { value?: Box; onChange: (b?: Box) => void }) {
+  const [open, setOpen] = useState(!!value);
+  const labels = ["oeste", "sul", "leste", "norte"];
+  if (!open) {
+    return (
+      <button type="button" onClick={() => setOpen(true)} className="text-xs text-muted underline">
+        recortar uma região
+      </button>
+    );
+  }
+  const box = value ?? ([0, 0, 0, 0] as Box);
+  return (
+    <span className="flex flex-wrap items-center gap-1 text-xs text-muted">
+      recorte (graus):
+      {labels.map((label, k) => (
+        <input
+          key={label}
+          type="number"
+          step="0.5"
+          title={label}
+          placeholder={label}
+          value={value ? box[k] : ""}
+          onChange={(e) => {
+            const next = [...box] as Box;
+            next[k] = Number(e.target.value);
+            onChange(next);
+          }}
+          className="w-16 rounded border border-line bg-background px-1 py-0.5"
+        />
+      ))}
+      {value && !isValidBox(value) && <span className="text-danger">oeste &lt; leste, sul &lt; norte</span>}
+      <button
+        type="button"
+        onClick={() => {
+          onChange(undefined);
+          setOpen(false);
+        }}
+        className="underline"
+      >
+        território inteiro
+      </button>
+    </span>
   );
 }
 

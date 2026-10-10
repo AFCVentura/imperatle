@@ -48,6 +48,8 @@ public class EmpireContentTests
         { ValidEmpire() with { Map = new([new("Roman Empire", 117), new(Country: "pyf")]) }, "3-letter code" },
         { ValidEmpire() with { Map = new([new("Roman Empire", 117), new("Gaul", 117, "FRA")]) }, "not both" },
         { ValidEmpire() with { Map = new([new("Roman Empire")]) }, "year is missing" },
+        { ValidEmpire() with { Map = new([new("Roman Empire", 117), new(Country: "RUS", Box: [-165, 60, -180, 70])]) }, "west < east" },
+        { ValidEmpire() with { Map = new([new("Roman Empire", 117, Box: [0, 0, 1, 1])]) }, "only applies to a country" },
         { ValidEmpire() with { Map = new([new(" ", 100)]) }, "polity is empty" },
         { ValidEmpire() with { Map = new([new("Roman Empire", 0)]) }, "year can't be 0" },
     };

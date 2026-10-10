@@ -3,7 +3,9 @@ import path from "node:path";
 import type { MultiPolygon } from "geojson";
 import { feature, merge } from "topojson-client";
 import type { GeometryCollection, Topology } from "topojson-specification";
+import polygonClipping, { type Geom } from "polygon-clipping";
 import { continentLand, type ContinentLand, type CountryLand } from "./continents.ts";
+import type { Box } from "./empireDraft.ts";
 import { polygonsOf, type Rings } from "./shape.ts";
 
 // The empire generator's data, read from the local Cliopatria index
@@ -87,7 +89,7 @@ export function findPolityByName(name: string): Polity | null {
 
 // A part as the endpoints take it: a polity (by index id) at a year, or
 // today's territory by its Natural Earth code.
-export type PartRef = { id: string; year: number } | { country: string };
+export type PartRef = { id: string; year: number } | { country: string; box?: Box };
 
 // The polygons of each part; throws if a polity has no record covering its
 // year or a territory doesn't exist.
@@ -97,7 +99,10 @@ export function partPolygons(parts: PartRef[]): { polygons: Rings[][]; datasetAr
     if ("country" in part) {
       const country = worldLand().countries.get(part.country);
       if (!country) throw new Error(`no territory ${part.country} in the world map`);
-      return polygonsOf(country);
+      if (!part.box) return polygonsOf(country);
+      const [w, s, e, n] = part.box;
+      const box = [[[w, s], [e, s], [e, n], [w, n], [w, s]]];
+      return polygonClipping.intersection(polygonsOf(country) as unknown as Geom, [box] as unknown as Geom) as unknown as Rings[];
     }
     const { id, year } = part;
     if (!/^p\d{4}$/.test(id)) throw new Error(`unknown polity ${id}`);

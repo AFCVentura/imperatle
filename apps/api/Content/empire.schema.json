@@ -100,7 +100,14 @@
                 "additionalProperties": false,
                 "required": ["country"],
                 "properties": {
-                  "country": { "description": "A territory as it is today, for land Cliopatria misses: Natural Earth's 3-letter code (ADM0_A3), e.g. \"PYF\" for French Polynesia.", "type": "string", "pattern": "^[A-Z]{3}$" }
+                  "country": { "description": "A territory as it is today, for land Cliopatria misses: Natural Earth's 3-letter code (ADM0_A3), e.g. \"PYF\" for French Polynesia.", "type": "string", "pattern": "^[A-Z]{3}$" },
+                  "box": {
+                    "description": "Optional: only the part of the territory inside [west, south, east, north], in degrees, e.g. [-180, 60, -165, 70.5] for the tip of Chukotka.",
+                    "type": "array",
+                    "items": { "type": "number" },
+                    "minItems": 4,
+                    "maxItems": 4
+                  }
                 }
               }
             ]

@@ -13,8 +13,12 @@ export type Text = { en: string; pt: string };
 
 // A Cliopatria polity at a year, or today's territory (Natural Earth's
 // 3-letter code) for land the dataset misses.
-export type MapPart = { polity: string; year: number } | { country: string };
-export const isCountryPart = (p: MapPart): p is { country: string } => "country" in p;
+export type Box = [number, number, number, number]; // west, south, east, north
+export type MapPart = { polity: string; year: number } | { country: string; box?: Box };
+export const isCountryPart = (p: MapPart): p is { country: string; box?: Box } => "country" in p;
+
+export const isValidBox = (b: number[]) =>
+  b.length === 4 && b.every(Number.isFinite) && b[0] >= -180 && b[2] <= 180 && b[0] < b[2] && b[1] >= -90 && b[3] <= 90 && b[1] < b[3];
 export type Year = { year: number; precision: (typeof YEAR_PRECISIONS)[number] };
 
 export type EmpireDraft = {
@@ -90,6 +94,7 @@ export function validateDraft(draft: EmpireDraft, others: { slug: string; name: 
   if (!draft.map.parts.some((p) => !isCountryPart(p))) errors.push("o mapa precisa de pelo menos uma entidade do Cliopatria");
   for (const p of draft.map.parts) {
     if (isCountryPart(p) && !/^[A-Z]{3}$/.test(p.country)) errors.push(`território "${p.country}": código de 3 letras maiúsculas`);
+    if (isCountryPart(p) && p.box && !isValidBox(p.box)) errors.push(`recorte de ${p.country}: oeste < leste e sul < norte, em graus`);
   }
 
   return errors;

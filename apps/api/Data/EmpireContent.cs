@@ -48,5 +48,7 @@ public record AreaValue(int Km2, AreaPrecision Precision);
 // generator and scripts/maps/build-shapes.mjs build Content/shapes/<slug>.json.
 public record MapInfo(List<MapPart> Parts);
 
-// Either Polity + Year, or Country.
-public record MapPart(string? Polity = null, int? Year = null, string? Country = null);
+// Either Polity + Year, or Country. A country can be cut down to a box
+// [west, south, east, north] in degrees, for one region of it (e.g. the tip
+// of Chukotka a dataset border leaves out).
+public record MapPart(string? Polity = null, int? Year = null, string? Country = null, List<double>? Box = null);

@@ -8,6 +8,7 @@
 // Run build-world.mjs first. Source: Cliopatria (Bennett et al., Seshat Global
 // History Databank), CC BY 4.0, https://github.com/Seshat-Global-History-Databank/cliopatria
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import polygonClipping from "polygon-clipping";
 import { feature, merge } from "topojson-client";
 import { buildShape, polygonsOf } from "../../src/map/build/shape.ts";
 
@@ -31,10 +32,12 @@ const polities = read(clioFile).features;
 
 mkdirSync(SHAPES, { recursive: true });
 for (const empire of empires) {
-  const parts = empire.map.parts.map(({ polity, year, country }) => {
+  const parts = empire.map.parts.map(({ polity, year, country, box }) => {
     if (country) {
       if (!countries.has(country)) throw new Error(`${empire.slug}: no territory ${country} in the world map`);
-      return polygonsOf(countries.get(country));
+      if (!box) return polygonsOf(countries.get(country));
+      const [w, s, e, n] = box;
+      return polygonClipping.intersection(polygonsOf(countries.get(country)), [[[[w, s], [e, s], [e, n], [w, n], [w, s]]]]);
     }
     const hits = polities.filter((f) => f.properties.Name === polity && f.properties.FromYear <= year && year <= f.properties.ToYear);
     if (hits.length === 0) throw new Error(`${empire.slug}: no "${polity}" in Cliopatria for ${year}`);

@@ -30,6 +30,11 @@ public static partial class EmpireContentLoader
     [GeneratedRegex("^[a-z0-9]+(-[a-z0-9]+)*$")]
     private static partial Regex SlugPattern();
 
+    private static bool IsValidBox(List<double> box) =>
+        box is [var west, var south, var east, var north]
+        && west >= -180 && east <= 180 && west < east
+        && south >= -90 && north <= 90 && south < north;
+
     // Natural Earth's ADM0_A3, as in apps/web/public/geo/world.json.
     [GeneratedRegex("^[A-Z]{3}$")]
     private static partial Regex CountryCodePattern();
@@ -199,7 +204,15 @@ public static partial class EmpireContentLoader
                     {
                         errors.Add($"map.parts[{i}].country \"{part.Country}\" must be a 3-letter code in capitals, e.g. PYF");
                     }
+                    if (part.Box is not null && !IsValidBox(part.Box))
+                    {
+                        errors.Add($"map.parts[{i}].box must be [west, south, east, north] in degrees, west < east and south < north");
+                    }
                     continue;
+                }
+                if (part.Box is not null)
+                {
+                    errors.Add($"map.parts[{i}].box only applies to a country");
                 }
                 if (string.IsNullOrWhiteSpace(part.Polity))
                 {
