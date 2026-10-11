@@ -71,6 +71,8 @@ export interface ChallengeReveal {
   startYearPrecision: number | null;
   endYear: number | null;
   endYearPrecision: number | null;
+  // With the period: true when the empire still exists (endYear stays null).
+  ongoing: boolean | null;
   durationNotesEn: string | null;
   durationNotesPt: string | null;
   peakAreaKm2: number | null;
@@ -100,6 +102,7 @@ export const EMPTY_REVEAL: ChallengeReveal = {
   startYearPrecision: null,
   endYear: null,
   endYearPrecision: null,
+  ongoing: null,
   durationNotesEn: null,
   durationNotesPt: null,
   peakAreaKm2: null,
@@ -128,8 +131,9 @@ export interface EmpireAnswer {
   referenceYearPrecision: number;
   startYear: number;
   startYearPrecision: number;
-  endYear: number;
-  endYearPrecision: number;
+  endYear: number | null; // null = still exists
+  endYearPrecision: number | null;
+  ongoing: boolean;
   durationNotesEn: string;
   durationNotesPt: string;
   peakAreaKm2: number;

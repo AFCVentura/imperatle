@@ -80,10 +80,10 @@ namespace Imperatle.Api.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("EndYear")
+                    b.Property<int?>("EndYear")
                         .HasColumnType("integer");
 
-                    b.Property<int>("EndYearPrecision")
+                    b.Property<int?>("EndYearPrecision")
                         .HasColumnType("integer");
 
                     b.Property<string>("LanguageEn")

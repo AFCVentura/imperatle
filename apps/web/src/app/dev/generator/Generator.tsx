@@ -3,6 +3,7 @@
 import type { MultiPolygon } from "geojson";
 import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { EmpireMap } from "@/map/EmpireMap";
+import type { DrawMode } from "@/map/FlatMap";
 import { loadWorld, type MapStage } from "@/map/geo";
 import { CONTINENTS, type Continent, type ContinentShare } from "@/map/build/continents";
 import {
@@ -26,7 +27,9 @@ import type { ResolvedPart } from "@/app/api/dev/empires/[slug]/route";
 // the dataset misses, e.g. French Polynesia in a colonial empire).
 type PolityPart = { kind: "polity"; polity: Polity; rangeIndex: number };
 type Box = [number, number, number, number];
-type Part = PolityPart | { kind: "country"; country: string; box?: Box };
+// An area traced by hand on the 2D map, added to the empire or cut out of it.
+type DrawnPart = { kind: "draw"; mode: DrawMode; ring: [number, number][] };
+type Part = PolityPart | { kind: "country"; country: string; box?: Box } | DrawnPart;
 const firstPolity = (parts: Part[]) => parts.find((p): p is PolityPart => p.kind === "polity");
 type ShapeResult = { shape: MultiPolygon; raw: MultiPolygon; areaKm2: number; datasetAreaKm2: number; continents: ContinentShare[] };
 
@@ -92,6 +95,10 @@ export function Generator() {
   const [editing, setEditing] = useState<string | null>(null);
   const [missingParts, setMissingParts] = useState<string[]>([]);
   const [countryNames, setCountryNames] = useState<Map<string, string>>(new Map());
+  const [drawMode, setDrawMode] = useState<DrawMode | null>(null);
+  // The shape before any drawing: the map stays framed on it while areas are
+  // drawn, instead of jumping every time the empire changes a little.
+  const [frame, setFrame] = useState<{ key: string; shape: MultiPolygon } | null>(null);
 
   useEffect(() => {
     fetch("/api/dev/empires").then((r) => r.json()).then(setExisting, () => {});
@@ -99,7 +106,10 @@ export function Generator() {
   }, []);
 
   // Rebuilds the shape whenever the parts change.
-  const partsKey = parts.map((p) => (p.kind === "polity" ? `${p.polity.id}@${p.polity.ranges[p.rangeIndex].from}` : `${p.country}${p.box ? `[${p.box}]` : ""}`)).join(",");
+  const partKey = (p: Part) =>
+    p.kind === "polity" ? `${p.polity.id}@${p.polity.ranges[p.rangeIndex].from}` : p.kind === "country" ? `${p.country}${p.box ? `[${p.box}]` : ""}` : `${p.mode}(${p.ring.join(";")})`;
+  const partsKey = parts.map(partKey).join(",");
+  const frameKey = parts.filter((p) => p.kind !== "draw").map(partKey).join(",");
   useEffect(() => {
     if (parts.length === 0) return;
     let current = true;
@@ -107,8 +117,14 @@ export function Generator() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        // A box only counts once its four numbers make a valid region.
-        parts: parts.map((p) => (p.kind === "polity" ? { id: p.polity.id, year: p.polity.ranges[p.rangeIndex].from } : { country: p.country, ...(p.box && isValidBox(p.box) ? { box: p.box } : {}) })),
+        parts: parts.map((p) =>
+          p.kind === "polity"
+            ? { id: p.polity.id, year: p.polity.ranges[p.rangeIndex].from }
+            : p.kind === "country"
+              ? // A box only counts once its four numbers make a valid region.
+                { country: p.country, ...(p.box && isValidBox(p.box) ? { box: p.box } : {}) }
+              : { draw: p.mode, ring: p.ring },
+        ),
       }),
     })
       .then(async (r) => {
@@ -120,6 +136,7 @@ export function Generator() {
         }
         setShapeError(null);
         setResult(body as ShapeResult);
+        setFrame((f) => (f?.key === frameKey ? f : { key: frameKey, shape: (body as ShapeResult).shape }));
       })
       .catch((e) => current && setShapeError(String(e)));
     return () => {
@@ -175,7 +192,7 @@ export function Generator() {
       name: keep("nameEn") ? draft.name : { ...draft.name, en: auto.nameEn },
       peak: keep("peak") ? draft.peak : { ...draft.peak, year: auto.peak },
       start: keep("start") ? draft.start : { ...draft.start, year: auto.start },
-      end: keep("end") ? draft.end : { ...draft.end, year: auto.end },
+      end: keep("end") ? draft.end : { ...(draft.end ?? emptyDraft().end!), year: auto.end },
       area: keep("area") ? draft.area : { ...draft.area, km2: auto.area },
       continents: keep("continents") ? draft.continents : auto.continents,
       primaryContinent: keep("continents") ? draft.primaryContinent : (auto.primary ?? draft.primaryContinent),
@@ -183,6 +200,7 @@ export function Generator() {
       map: {
         parts: parts.map((p) => {
           if (p.kind === "country") return p.box ? { country: p.country, box: p.box } : { country: p.country };
+          if (p.kind === "draw") return { draw: p.mode, ring: p.ring };
           const r = p.polity.ranges[p.rangeIndex];
           const peak = keep("peak") ? draft.peak.year : auto.peak;
           // The peak year when the record covers it, so the file reads naturally.
@@ -229,6 +247,8 @@ export function Generator() {
     setSaved(null);
     setEditing(null);
     setMissingParts([]);
+    setDrawMode(null);
+    setFrame(null);
   };
 
   // Opens an existing empire with every field as saved; its automatic fields
@@ -243,20 +263,28 @@ export function Generator() {
     setTouched(new Set(ALL_AUTO));
     setParts(
       body.parts.flatMap((p): Part[] =>
-        p.kind === "polity" ? [{ kind: "polity", polity: p.polity, rangeIndex: p.rangeIndex }] : p.kind === "country" ? [{ kind: "country", country: p.country, box: p.box }] : [],
+        p.kind === "polity"
+          ? [{ kind: "polity", polity: p.polity, rangeIndex: p.rangeIndex }]
+          : p.kind === "country"
+            ? [{ kind: "country", country: p.country, box: p.box }]
+            : p.kind === "draw"
+              ? [{ kind: "draw", mode: p.mode, ring: p.ring }]
+              : [],
       ),
     );
     setMissingParts(body.parts.flatMap((p) => (p.kind === "missing" ? [p.label] : [])));
   };
+
+  const drawnRings = useMemo(() => parts.flatMap((p) => (p.kind === "draw" ? [{ mode: p.mode, ring: p.ring }] : [])), [parts]);
 
   // After adding or removing parts: area and continents from the new shape.
   const recalculate = () => setTouched((t) => new Set([...t].filter((f) => f !== "area" && f !== "continents")));
 
   return (
     <main className="mx-auto grid max-w-7xl gap-6 p-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-      <section className="flex flex-col gap-3 lg:sticky lg:top-4 lg:self-start">
+      <section className="flex flex-col gap-2 lg:sticky lg:top-4 lg:self-start">
         <div className="flex flex-wrap items-center gap-3">
-          <h1 className="text-xl font-semibold">Gerador de impérios</h1>
+          <h1 className="text-lg font-semibold">Gerador de impérios</h1>
           <select
             value={editing ?? ""}
             onChange={(e) => (e.target.value ? openExisting(e.target.value) : startOver())}
@@ -271,27 +299,37 @@ export function Generator() {
           </select>
         </div>
         {editing && (
-          <p className="rounded-md border border-line bg-surface px-3 py-2 text-sm">
-            Editando <strong>{editing}</strong>. Salvar sobrescreve os arquivos dele. Os campos ⚙ ficam com os valores salvos;
-            depois de mexer nas partes, use &quot;Recalcular área e continentes&quot;.
+          <p className="rounded-md border border-line bg-surface px-2 py-1 text-xs">
+            Editando <strong>{editing}</strong> (salvar sobrescreve). Mexeu nas partes? &quot;Recalcular área e continentes&quot;.
           </p>
         )}
         {missingParts.length > 0 && (
-          <p className="text-sm text-danger">Não achei no índice do Cliopatria (essas partes ficaram de fora): {missingParts.join(", ")}</p>
+          <p className="text-xs text-danger">Não achei no índice do Cliopatria (essas partes ficaram de fora): {missingParts.join(", ")}</p>
         )}
-        <p className="text-sm text-muted">
-          Busque a entidade no Cliopatria, escolha o período e junte outras partes se precisar. Os campos marcados com ⚙ se
-          preenchem sozinhos até você editar.
-        </p>
+        {parts.length === 0 && (
+          <p className="text-xs text-muted">
+            Busque a entidade no Cliopatria, escolha o período e junte outras partes se precisar. Campos com ⚙ se preenchem
+            sozinhos até você editar.
+          </p>
+        )}
 
-        <PolitySearch onPick={(polity) => setParts((ps) => [...ps, { kind: "polity", polity, rangeIndex: peakRangeIndex(polity) }])} />
-        <CountrySearch names={countryNames} onPick={(country) => setParts((ps) => (ps.some((p) => p.kind === "country" && p.country === country) ? ps : [...ps, { kind: "country", country }]))} />
+        <div className="grid gap-2 sm:grid-cols-2">
+          <PolitySearch onPick={(polity) => setParts((ps) => [...ps, { kind: "polity", polity, rangeIndex: peakRangeIndex(polity) }])} />
+          <CountrySearch names={countryNames} onPick={(country) => setParts((ps) => (ps.some((p) => p.kind === "country" && p.country === country) ? ps : [...ps, { kind: "country", country }]))} />
+        </div>
 
         {parts.length > 0 && (
-          <ul className="flex flex-col gap-2">
+          <ul className="flex flex-col gap-1">
             {parts.map((p, i) => (
-              <li key={`${p.kind === "polity" ? p.polity.id : p.country}-${i}`} className="flex flex-wrap items-center gap-2 rounded-lg border border-line bg-surface px-3 py-2 text-sm">
-                {p.kind === "country" ? (
+              <li key={`${p.kind === "polity" ? p.polity.id : p.kind === "country" ? p.country : p.mode}-${i}`} className="flex flex-wrap items-center gap-2 rounded-lg border border-line bg-surface px-3 py-1 text-sm">
+                {p.kind === "draw" ? (
+                  <span>
+                    <span className="font-semibold" style={{ color: p.mode === "add" ? "rgb(22 140 60)" : "rgb(200 30 30)" }}>
+                      {p.mode === "add" ? "Área adicionada à mão" : "Área removida à mão"}
+                    </span>{" "}
+                    <span className="text-muted">({p.ring.length} pontos, tracejada)</span>
+                  </span>
+                ) : p.kind === "country" ? (
                   <span className="flex flex-wrap items-center gap-2">
                     <span>
                       <span className="font-semibold">{countryNames.get(p.country) ?? p.country}</span>{" "}
@@ -327,12 +365,21 @@ export function Generator() {
           </ul>
         )}
 
-        {shapeError && <p className="text-sm text-danger">{shapeError}</p>}
+        {shapeError && <p className="text-xs text-danger">{shapeError}</p>}
 
         {hydrated && result && parts.length > 0 && (
           <>
+            <DrawTools
+              mode={drawMode}
+              onMode={setDrawMode}
+              canUndo={parts.some((p) => p.kind === "draw")}
+              onUndo={() => setParts((ps) => ps.filter((_, j) => j !== ps.findLastIndex((p) => p.kind === "draw")))}
+            />
             <EmpireMap
               empire={showRaw ? result.raw : result.shape}
+              frameShape={frame?.shape}
+              draw={drawMode ? { mode: drawMode, onDone: (ring) => setParts((ps) => [...ps, { kind: "draw", mode: drawMode, ring }]) } : null}
+              overlays={drawnRings}
               stage={stage}
               locale="pt"
               labels={{
@@ -346,7 +393,7 @@ export function Generator() {
                 flat: "Ver como mapa plano",
               }}
             />
-            <div className="flex flex-wrap items-center gap-3 text-sm">
+            <div className="flex flex-wrap items-center gap-x-3 text-sm">
               {([1, 2, 3] as MapStage[]).map((s) => (
                 <button key={s} type="button" onClick={() => setStage(s)} className={s === stage ? "font-semibold underline underline-offset-4" : "text-muted"}>
                   {["Contorno", "Continentes", "Países"][s - 1]}
@@ -462,8 +509,8 @@ function PolitySearch({ onPick }: { onPick: (p: Polity) => void }) {
       <input
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        placeholder="Adicionar entidade do Cliopatria (em inglês, ex.: mongol, ottoman)"
-        className="w-full rounded-lg border border-line bg-surface px-3 py-2 text-sm"
+        placeholder="Entidade do Cliopatria (inglês: mongol, ottoman)"
+        className="w-full rounded-lg border border-line bg-surface px-3 py-1.5 text-sm"
       />
       {error && <p className="mt-1 text-sm text-danger">{error}</p>}
       {list.length > 0 && (
@@ -479,6 +526,42 @@ function PolitySearch({ onPick }: { onPick: (p: Polity) => void }) {
             </li>
           ))}
         </ul>
+      )}
+    </div>
+  );
+}
+
+// Tracing areas on the 2D map: hold the button and outline the area; on
+// release it closes, smooths and is added to the empire or cut out of it.
+// The coast clips additions, so they can run over the sea.
+function DrawTools({ mode, onMode, canUndo, onUndo }: { mode: DrawMode | null; onMode: (m: DrawMode | null) => void; canUndo: boolean; onUndo: () => void }) {
+  const options: { value: DrawMode | null; label: string }[] = [
+    { value: null, label: "Navegar" },
+    { value: "add", label: "✏ Adicionar área" },
+    { value: "remove", label: "✏ Remover área" },
+  ];
+  return (
+    <div className="flex flex-col gap-1">
+      <div className="flex flex-wrap items-center gap-2 text-xs">
+        {options.map((o) => (
+          <button
+            key={o.label}
+            type="button"
+            onClick={() => onMode(o.value)}
+            className={`rounded-full border px-3 py-0.5 ${mode === o.value ? "border-foreground bg-foreground text-background" : "border-line hover:bg-surface"}`}
+          >
+            {o.label}
+          </button>
+        ))}
+        <button type="button" onClick={onUndo} disabled={!canUndo} className="ml-auto text-muted underline disabled:no-underline disabled:opacity-40">
+          desfazer último desenho
+        </button>
+      </div>
+      {mode && (
+        <p className="text-xs text-muted">
+          Segure e contorne; ao soltar, fecha sozinho. Roda = zoom; arrastar só em Navegar.{" "}
+          {mode === "add" ? "Pode passar pelo mar: o litoral recorta." : "Tudo dentro do contorno sai."}
+        </p>
       )}
     </div>
   );
@@ -543,8 +626,8 @@ function CountrySearch({ names, onPick }: { names: Map<string, string>; onPick: 
       <input
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        placeholder="Adicionar território atual (ex.: Polinésia Francesa, Wallis)"
-        className="w-full rounded-lg border border-line bg-surface px-3 py-2 text-sm"
+        placeholder="Território atual (ex.: Polinésia Francesa)"
+        className="w-full rounded-lg border border-line bg-surface px-3 py-1.5 text-sm"
       />
       {list.length > 0 && (
         <ul className="absolute z-20 mt-1 max-h-80 w-full overflow-auto rounded-lg border border-line bg-background text-sm shadow-lg">
@@ -600,7 +683,7 @@ function EmpireForm({
       <div className="grid grid-cols-3 gap-2">
         <YearField label={`Auge (mapa)${autoMark("peak")}`} value={draft.peak} onChange={(peak) => edit((d) => ({ ...d, peak }), "peak")} />
         <YearField label={`Início${autoMark("start")}`} value={draft.start} onChange={(start) => edit((d) => ({ ...d, start }), "start")} />
-        <YearField label={`Fim${autoMark("end")}`} value={draft.end} onChange={(end) => edit((d) => ({ ...d, end }), "end")} />
+        <EndField label={`Fim${autoMark("end")}`} value={draft.end} onChange={(end) => edit((d) => ({ ...d, end }), "end")} />
       </div>
       <TextField label="Nota da duração (opcional)" value={draft.durationNotes ?? emptyText()} onChange={(durationNotes) => edit((d) => ({ ...d, durationNotes }))} multiline />
 
@@ -705,6 +788,26 @@ function YearField({ label, value, onChange }: { label: string; value: EmpireDra
         <Select value={value.precision} options={YEAR_PRECISIONS} onChange={(precision) => onChange({ ...value, precision })} />
       </div>
     </Field>
+  );
+}
+
+// "Ainda existe" saves "end": null: the game counts the duration up to the
+// current year and shows the period as "1776 – hoje".
+function EndField({ label, value, onChange }: { label: string; value: EmpireDraft["end"]; onChange: (y: EmpireDraft["end"]) => void }) {
+  return (
+    <div className="flex flex-col gap-1">
+      <span className="text-xs font-semibold text-muted">{label}</span>
+      {value && (
+        <div className="flex gap-1">
+          <input type="number" value={value.year} onChange={(e) => onChange({ ...value, year: Number(e.target.value) })} className={inputClass} title="negativo = a.C." />
+          <Select value={value.precision} options={YEAR_PRECISIONS} onChange={(precision) => onChange({ ...value, precision })} />
+        </div>
+      )}
+      <label className="flex items-center gap-1 text-xs text-muted">
+        <input type="checkbox" checked={!value} onChange={(e) => onChange(e.target.checked ? null : { year: new Date().getFullYear(), precision: "Exact" })} />
+        ainda existe
+      </label>
+    </div>
   );
 }
 

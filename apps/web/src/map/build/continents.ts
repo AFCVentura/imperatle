@@ -1,6 +1,6 @@
-import type { MultiPolygon, Position } from "geojson";
+import type { MultiPolygon } from "geojson";
 import polygonClipping, { type Geom, type Polygon as ClipPolygon } from "polygon-clipping";
-import { areaKm2, boxOf, polygonsOf, type Rings } from "./shape.ts";
+import { areaKm2, boxOf, polygonsOf, toStandardLongitudes, type Rings } from "./shape.ts";
 
 // Which continents an empire's shape covers, and how much of it lies on each:
 // the generator pre-fills the "continents" clue with this.
@@ -71,7 +71,9 @@ export type ContinentShare = { continent: Continent; areaKm2: number; share: num
 export function continentShares(shape: MultiPolygon, land: ContinentLand): ContinentShare[] {
   const total = areaKm2(shape);
   if (total === 0 || shape.coordinates.length === 0) return [];
-  const shapeBox = shape.coordinates.map(boxOf).reduce((a, b) => [Math.min(a[0], b[0]), Math.min(a[1], b[1]), Math.max(a[2], b[2]), Math.max(a[3], b[3])]);
+  // The land is within -180..180; a shape across the antimeridian may not be.
+  const polygons = toStandardLongitudes(shape.coordinates as Rings[]);
+  const shapeBox = polygons.map(boxOf).reduce((a, b) => [Math.min(a[0], b[0]), Math.min(a[1], b[1]), Math.max(a[2], b[2]), Math.max(a[3], b[3])]);
   const shares: ContinentShare[] = [];
   for (const continent of CONTINENTS) {
     const nearby = land[continent].filter((p) => {
@@ -80,7 +82,7 @@ export function continentShares(shape: MultiPolygon, land: ContinentLand): Conti
     });
     if (nearby.length === 0) continue;
     // The shape is wound for d3 (clockwise); polygon-clipping takes either.
-    const inside = polygonClipping.intersection(asGeom(shape.coordinates as Position[][][]), asGeom(nearby)) as unknown as Rings[];
+    const inside = polygonClipping.intersection(asGeom(polygons), asGeom(nearby)) as unknown as Rings[];
     const area = inside.length > 0 ? areaKm2(windForD3(inside)) : 0;
     if (area > 0) shares.push({ continent, areaKm2: area, share: area / total });
   }

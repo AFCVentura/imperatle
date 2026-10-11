@@ -1,12 +1,12 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import type { MultiPolygon } from "geojson";
+import type { MultiPolygon, Position } from "geojson";
 import { feature, merge } from "topojson-client";
 import type { GeometryCollection, Topology } from "topojson-specification";
 import polygonClipping, { type Geom } from "polygon-clipping";
 import { continentLand, type ContinentLand, type CountryLand } from "./continents.ts";
 import type { Box } from "./empireDraft.ts";
-import { polygonsOf, type Rings } from "./shape.ts";
+import { drawnPolygons, polygonsOf, type Rings } from "./shape.ts";
 
 // The empire generator's data, read from the local Cliopatria index
 // (scripts/maps/index-cliopatria.mjs) and the game's world map. Server side
@@ -87,15 +87,17 @@ export function findPolityByName(name: string): Polity | null {
   return p ? getPolity(p.id) : null;
 }
 
-// A part as the endpoints take it: a polity (by index id) at a year, or
-// today's territory by its Natural Earth code.
-export type PartRef = { id: string; year: number } | { country: string; box?: Box };
+// A part as the endpoints take it: a polity (by index id) at a year,
+// today's territory by its Natural Earth code, or an area drawn by hand.
+export type PartRef = { id: string; year: number } | { country: string; box?: Box } | { draw: "add" | "remove"; ring: Position[] };
 
-// The polygons of each part; throws if a polity has no record covering its
-// year or a territory doesn't exist.
-export function partPolygons(parts: PartRef[]): { polygons: Rings[][]; datasetAreaKm2: number } {
+// The polygons of each part (areas drawn to remove apart); throws if a polity
+// has no record covering its year or a territory doesn't exist.
+export function partPolygons(parts: PartRef[]): { polygons: Rings[][]; removed: Rings[][]; datasetAreaKm2: number } {
   let datasetAreaKm2 = 0;
-  const polygons = parts.map((part) => {
+  const removed = parts.flatMap((part) => ("draw" in part && part.draw === "remove" ? [drawnPolygons(part.ring)] : []));
+  const polygons = parts.filter((part) => !("draw" in part && part.draw === "remove")).map((part) => {
+    if ("draw" in part) return drawnPolygons(part.ring);
     if ("country" in part) {
       const country = worldLand().countries.get(part.country);
       if (!country) throw new Error(`no territory ${part.country} in the world map`);
@@ -112,7 +114,7 @@ export function partPolygons(parts: PartRef[]): { polygons: Rings[][]; datasetAr
     datasetAreaKm2 += hits.reduce((sum, r) => sum + r.areaKm2, 0);
     return hits.flatMap((r) => polygonsOf(r.geometry));
   });
-  return { polygons, datasetAreaKm2 };
+  return { polygons, removed, datasetAreaKm2 };
 }
 
 type WorldTopology = Topology<{ countries: GeometryCollection<{ continent: string }> }>;

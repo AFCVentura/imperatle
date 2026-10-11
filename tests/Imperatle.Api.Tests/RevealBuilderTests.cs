@@ -5,7 +5,7 @@ namespace Imperatle.Api.Tests;
 
 public class RevealBuilderTests
 {
-    private static Empire Empire(int area = 1_000_000, int start = 100, int end = 300) => new()
+    private static Empire Empire(int area = 1_000_000, int start = 100, int? end = 300) => new()
     {
         ReferenceYear = 200,
         Continents = [Continent.Asia],
@@ -23,6 +23,20 @@ public class RevealBuilderTests
             new EmpireHint { Order = 1, TextEn = "second" },
         ],
     };
+
+    [Fact]
+    public void An_empire_that_still_exists_lasts_until_this_year()
+    {
+        var ongoing = Empire(start: 1776, end: null);
+        var endedThisYear = Empire(start: 1776, end: DateTime.UtcNow.Year);
+
+        Assert.Equal(DateTime.UtcNow.Year - 1776, RevealBuilder.DurationYears(ongoing));
+        Assert.Equal(ComparisonResult.Approximate, RevealBuilder.BuildComparison(endedThisYear, ongoing).Duration);
+        Assert.True(RevealBuilder.BuildReveal(ongoing, 6).Ongoing);
+        Assert.Null(RevealBuilder.BuildReveal(ongoing, 6).EndYear);
+        Assert.False(RevealBuilder.BuildReveal(Empire(), 6).Ongoing);
+        Assert.Null(RevealBuilder.BuildReveal(ongoing, 5).Ongoing);
+    }
 
     [Theory]
     [InlineData(475, BroadEra.Antiquity)]

@@ -154,8 +154,8 @@ export function useHintRows(reveal: ChallengeReveal): HintRowData[] {
           label: t("fields.period"),
           description: t("fieldInfo.period"),
           value:
-            reveal.startYear !== null && reveal.endYear !== null
-              ? `${formatYear(reveal.startYear)} – ${formatYear(reveal.endYear)}`
+            reveal.startYear !== null && (reveal.endYear !== null || reveal.ongoing)
+              ? `${formatYear(reveal.startYear)} – ${reveal.endYear !== null ? formatYear(reveal.endYear) : t("year.present")}`
               : null,
           notes: durationNotes,
         },

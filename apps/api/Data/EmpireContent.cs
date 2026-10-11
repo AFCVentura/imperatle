@@ -13,7 +13,8 @@ public record EmpireContent(
     LocalizedText Name,
     YearValue Peak,
     YearValue Start,
-    YearValue End,
+    // null = the empire still exists ("end": null in the file, never left out).
+    YearValue? End,
     AreaValue Area,
     BorderConfidence MapAccuracy,
     List<Continent> Continents,
@@ -48,7 +49,15 @@ public record AreaValue(int Km2, AreaPrecision Precision);
 // generator and scripts/maps/build-shapes.mjs build Content/shapes/<slug>.json.
 public record MapInfo(List<MapPart> Parts);
 
-// Either Polity + Year, or Country. A country can be cut down to a box
-// [west, south, east, north] in degrees, for one region of it (e.g. the tip
-// of Chukotka a dataset border leaves out).
-public record MapPart(string? Polity = null, int? Year = null, string? Country = null, List<double>? Box = null);
+// Either Polity + Year, Country, or Draw + Ring. A country can be cut down to
+// a box [west, south, east, north] in degrees, for one region of it (e.g. the
+// tip of Chukotka a dataset border leaves out). A drawn part is an area traced
+// by hand in the empire generator, a ring of [longitude, latitude] points,
+// added to the shape ("add") or cut out of it ("remove").
+public record MapPart(
+    string? Polity = null,
+    int? Year = null,
+    string? Country = null,
+    List<double>? Box = null,
+    string? Draw = null,
+    List<List<double>>? Ring = null);

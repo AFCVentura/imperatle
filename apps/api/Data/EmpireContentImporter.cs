@@ -51,8 +51,8 @@ public static class EmpireContentImporter
         e.ReferenceYearPrecision = c.Peak.Precision;
         e.StartYear = c.Start.Year;
         e.StartYearPrecision = c.Start.Precision;
-        e.EndYear = c.End.Year;
-        e.EndYearPrecision = c.End.Precision;
+        e.EndYear = c.End?.Year;
+        e.EndYearPrecision = c.End?.Precision;
         e.DurationNotesEn = c.DurationNotes?.En ?? string.Empty;
         e.DurationNotesPt = c.DurationNotes?.Pt ?? string.Empty;
         e.PeakAreaKm2 = c.Area.Km2;

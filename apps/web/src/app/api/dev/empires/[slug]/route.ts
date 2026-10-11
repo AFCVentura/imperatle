@@ -2,7 +2,7 @@ import type { MultiPolygon } from "geojson";
 import { NextResponse } from "next/server";
 import { jsonError, notInProduction } from "@/lib/devOnly";
 import { empireExists, listEmpires, readEmpire, writeEmpire } from "@/map/build/contentFiles";
-import { isCountryPart, validateDraft, type EmpireDraft } from "@/map/build/empireDraft";
+import { isCountryPart, isDrawPart, validateDraft, type DrawPart, type EmpireDraft } from "@/map/build/empireDraft";
 import { findPolityByName, type Polity } from "@/map/build/localData";
 
 // One existing empire, opened in the generator for editing.
@@ -10,6 +10,7 @@ import { findPolityByName, type Polity } from "@/map/build/localData";
 export type ResolvedPart =
   | { kind: "polity"; polity: Polity; rangeIndex: number }
   | { kind: "country"; country: string; box?: [number, number, number, number] }
+  | { kind: "draw"; mode: DrawPart["draw"]; ring: DrawPart["ring"] }
   | { kind: "missing"; label: string };
 
 // GET /api/dev/empires/{slug}: the empire's file as a draft, plus its map
@@ -24,6 +25,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ slu
 
   const parts: ResolvedPart[] = draft.map.parts.map((p) => {
     if (isCountryPart(p)) return { kind: "country", country: p.country, box: p.box };
+    if (isDrawPart(p)) return { kind: "draw", mode: p.draw, ring: p.ring };
     const polity = findPolityByName(p.polity);
     const rangeIndex = polity?.ranges.findIndex((r) => r.from <= p.year && p.year <= r.to) ?? -1;
     return polity && rangeIndex >= 0

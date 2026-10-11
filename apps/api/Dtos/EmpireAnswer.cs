@@ -21,8 +21,9 @@ public record EmpireAnswer(
     YearPrecision ReferenceYearPrecision,
     int StartYear,
     YearPrecision StartYearPrecision,
-    int EndYear,
-    YearPrecision EndYearPrecision,
+    int? EndYear, // null = still exists
+    YearPrecision? EndYearPrecision,
+    bool Ongoing,
     string DurationNotesEn,
     string DurationNotesPt,
     int PeakAreaKm2,

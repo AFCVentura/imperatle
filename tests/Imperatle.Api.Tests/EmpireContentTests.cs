@@ -26,6 +26,29 @@ public class EmpireContentTests
         Assert.Empty(EmpireContentLoader.Validate(ValidEmpire(), "test-empire"));
     }
 
+    [Fact]
+    public void An_empire_that_still_exists_has_no_end()
+    {
+        Assert.Empty(EmpireContentLoader.Validate(ValidEmpire() with { End = null }, "test-empire"));
+        var future = ValidEmpire() with { End = null, Peak = new(DateTime.UtcNow.Year + 1, YearPrecision.Exact) };
+        Assert.Contains(EmpireContentLoader.Validate(future, "test-empire"), e => e.Contains("this year"));
+    }
+
+    [Fact]
+    public void Areas_drawn_by_hand_are_valid_parts()
+    {
+        var empire = ValidEmpire() with
+        {
+            Map = new([
+                new("Roman Empire", 117),
+                new(Draw: "add", Ring: [[10, 40], [12, 40], [12, 42]]),
+                new(Draw: "add", Ring: [[178, 65], [185, 65], [185, 68]]), // across the antimeridian
+                new(Draw: "remove", Ring: [[44, 12], [46, 12], [46, 14], [44, 14]]),
+            ]),
+        };
+        Assert.Empty(EmpireContentLoader.Validate(empire, "test-empire"));
+    }
+
     public static TheoryData<EmpireContent, string> InvalidEmpires => new()
     {
         { ValidEmpire() with { Slug = "Test_Empire" }, "lowercase" },
@@ -50,6 +73,13 @@ public class EmpireContentTests
         { ValidEmpire() with { Map = new([new("Roman Empire")]) }, "year is missing" },
         { ValidEmpire() with { Map = new([new("Roman Empire", 117), new(Country: "RUS", Box: [-165, 60, -180, 70])]) }, "west < east" },
         { ValidEmpire() with { Map = new([new("Roman Empire", 117, Box: [0, 0, 1, 1])]) }, "only applies to a country" },
+        { ValidEmpire() with { Map = new([new(Draw: "add", Ring: [[0, 0], [1, 0], [1, 1]])]) }, "at least one Cliopatria polity" },
+        { ValidEmpire() with { Map = new([new("Roman Empire", 117), new(Draw: "erase", Ring: [[0, 0], [1, 0], [1, 1]])]) }, "\"add\" or \"remove\"" },
+        { ValidEmpire() with { Map = new([new("Roman Empire", 117), new(Draw: "remove", Ring: [[0, 0], [1, 0]])]) }, "at least 3" },
+        { ValidEmpire() with { Map = new([new("Roman Empire", 117), new(Draw: "remove", Ring: [[0, 0], [1, 0], [1, 95]])]) }, "at least 3" },
+        { ValidEmpire() with { Map = new([new("Roman Empire", 117), new(Draw: "remove", Ring: [[0, 0], [1, 0], [400, 1]])]) }, "at least 3" },
+        { ValidEmpire() with { Map = new([new("Roman Empire", 117), new(Draw: "remove")]) }, "ring must have" },
+        { ValidEmpire() with { Map = new([new("Roman Empire", 117), new(Country: "FRA", Draw: "add", Ring: [[0, 0], [1, 0], [1, 1]])]) }, "nothing else" },
         { ValidEmpire() with { Map = new([new(" ", 100)]) }, "polity is empty" },
         { ValidEmpire() with { Map = new([new("Roman Empire", 0)]) }, "year can't be 0" },
     };
@@ -91,6 +121,34 @@ public class EmpireContentTests
         }
     }
 
+    // "end": null reads as an empire that still exists; leaving "end" out is
+    // still an error, so a forgotten field isn't mistaken for "still exists".
+    [Fact]
+    public void An_end_of_null_reads_as_still_existing()
+    {
+        var root = Directory.CreateTempSubdirectory("imperatle-content-");
+        try
+        {
+            var empires = Directory.CreateDirectory(Path.Combine(root.FullName, "empires"));
+            var shapes = Directory.CreateDirectory(Path.Combine(root.FullName, "shapes"));
+            var source = EmpireContentLoader.DefaultDirectory;
+            var json = System.Text.Json.Nodes.JsonNode.Parse(File.ReadAllText(Path.Combine(source, "roman-empire.json")))!.AsObject();
+            json["end"] = null;
+            File.WriteAllText(Path.Combine(empires.FullName, "roman-empire.json"), json.ToJsonString());
+            File.Copy(Path.Combine(EmpireContentLoader.ShapesDirectoryFor(source), "roman-empire.json"), Path.Combine(shapes.FullName, "roman-empire.json"));
+
+            Assert.Null(Assert.Single(EmpireContentLoader.LoadFromDirectory(empires.FullName)).End);
+
+            json.Remove("end");
+            File.WriteAllText(Path.Combine(empires.FullName, "roman-empire.json"), json.ToJsonString());
+            Assert.Throws<EmpireContentException>(() => EmpireContentLoader.LoadFromDirectory(empires.FullName));
+        }
+        finally
+        {
+            root.Delete(recursive: true);
+        }
+    }
+
     // The real content shipped with the API: catches a broken file before it
     // reaches a deploy (where it would stop the API from starting).
     [Fact]
@@ -106,6 +164,12 @@ public class EmpireContentTests
         Assert.Empty(EmpireContentLoader.ValidateShape("""{"type":"MultiPolygon","coordinates":[[[[0,0],[0,1],[1,1],[0,0]]]]}"""));
     }
 
+    [Fact]
+    public void A_shape_across_the_antimeridian_keeps_going_past_180()
+    {
+        Assert.Empty(EmpireContentLoader.ValidateShape("""{"type":"MultiPolygon","coordinates":[[[[178,65],[185,65],[185,68],[178,65]]]]}"""));
+    }
+
     public static TheoryData<string, string> InvalidShapes => new()
     {
         { "not json", "" },
@@ -115,6 +179,7 @@ public class EmpireContentTests
         { """{"type":"MultiPolygon","coordinates":[[[[0,0],[0,1],[0,0]]]]}""", "at least 4 positions" },
         { """{"type":"MultiPolygon","coordinates":[[[[0,0],[0,1],[1,1],[1,0]]]]}""", "isn't closed" },
         { """{"type":"MultiPolygon","coordinates":[[[[0,0],[0,100],[1,1],[0,0]]]]}""", "outside the globe" },
+        { """{"type":"MultiPolygon","coordinates":[[[[0,0],[400,1],[1,1],[0,0]]]]}""", "outside the globe" },
     };
 
     [Theory]

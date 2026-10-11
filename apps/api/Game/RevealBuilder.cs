@@ -42,6 +42,7 @@ public static class RevealBuilder
             StartYearPrecision: attemptNumber >= 6 ? empire.StartYearPrecision : null,
             EndYear: attemptNumber >= 6 ? empire.EndYear : null,
             EndYearPrecision: attemptNumber >= 6 ? empire.EndYearPrecision : null,
+            Ongoing: attemptNumber >= 6 ? empire.EndYear is null : null,
             DurationNotesEn: attemptNumber >= 6 ? empire.DurationNotesEn : null,
             DurationNotesPt: attemptNumber >= 6 ? empire.DurationNotesPt : null,
             PeakAreaKm2: attemptNumber >= 6 ? empire.PeakAreaKm2 : null,
@@ -57,7 +58,10 @@ public static class RevealBuilder
     // independent of the hint-stage table above).
     public static GuessComparison BuildComparison(Empire guessedEmpire, Empire correctEmpire) => new(
         Compare(guessedEmpire.PeakAreaKm2, correctEmpire.PeakAreaKm2, GameRules.AreaApproximateToleranceRatio),
-        Compare(guessedEmpire.EndYear - guessedEmpire.StartYear, correctEmpire.EndYear - correctEmpire.StartYear, GameRules.DurationApproximateToleranceRatio));
+        Compare(DurationYears(guessedEmpire), DurationYears(correctEmpire), GameRules.DurationApproximateToleranceRatio));
+
+    // An empire that still exists lasts until the current year.
+    public static int DurationYears(Empire empire) => (empire.EndYear ?? DateTime.UtcNow.Year) - empire.StartYear;
 
     private static ComparisonResult Compare(double guessedValue, double correctValue, double toleranceRatio)
     {
@@ -87,6 +91,7 @@ public static class RevealBuilder
         empire.StartYearPrecision,
         empire.EndYear,
         empire.EndYearPrecision,
+        empire.EndYear is null,
         empire.DurationNotesEn,
         empire.DurationNotesPt,
         empire.PeakAreaKm2,

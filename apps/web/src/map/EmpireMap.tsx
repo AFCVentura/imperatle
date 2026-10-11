@@ -3,7 +3,7 @@
 import type { MultiPolygon } from "geojson";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useTooltip } from "@/lib/useTooltip";
-import { FlatMap } from "./FlatMap";
+import { FlatMap, type DrawMode, type DrawnRing } from "./FlatMap";
 import { GlobeMap } from "./GlobeMap";
 import { countryName, loadWorld, type CountryFeature, type MapLocale, type MapStage, type World } from "./geo";
 
@@ -27,6 +27,10 @@ type Props = {
   labels: EmpireMapLabels;
   // Size of the card outside fullscreen.
   className?: string;
+  // Empire generator only (see FlatMap). Drawing keeps the map flat.
+  frameShape?: MultiPolygon;
+  draw?: { mode: DrawMode; onDone: (ring: [number, number][]) => void } | null;
+  overlays?: DrawnRing[];
 };
 
 const MODE_KEY = "imperatle:mapMode";
@@ -47,7 +51,7 @@ type Label = { id: string; name: string; x: number; y: number; view: unknown[] }
 // The map card: flat map or globe (the player's choice, remembered), with
 // "focus" (fly back to the empire) and fullscreen. In fullscreen on a phone it
 // tries to turn to landscape, where the map has more room.
-export function EmpireMap({ empire, stage, locale, labels, className = "aspect-[4/3] w-full" }: Props) {
+export function EmpireMap({ empire, stage, locale, labels, className = "aspect-[4/3] w-full", frameShape, draw = null, overlays }: Props) {
   const frameRef = useRef<HTMLDivElement | null>(null);
   // Same element, as state: tooltips render inside it while it's fullscreen.
   const [frame, setFrame] = useState<HTMLDivElement | null>(null);
@@ -129,7 +133,7 @@ export function EmpireMap({ empire, stage, locale, labels, className = "aspect-[
     [locale, stage, mode, empire],
   );
 
-  const Map = mode === "flat" ? FlatMap : GlobeMap;
+  const flat = mode === "flat" || !!draw;
   const isFull = fullscreen !== "off";
   const tooltipPortal = fullscreen === "native" ? frame : null;
 
@@ -148,17 +152,34 @@ export function EmpireMap({ empire, stage, locale, labels, className = "aspect-[
       }
     >
       {world && empire && size.width > 0 ? (
-        <Map
-          world={world}
-          empire={empire}
-          stage={stage}
-          width={size.width}
-          height={size.height}
-          focusSignal={focusSignal}
-          zoomSignal={zoomSignal}
-          selected={label?.id ?? null}
-          onCountry={onCountry}
-        />
+        flat ? (
+          <FlatMap
+            world={world}
+            empire={empire}
+            frame={frameShape}
+            draw={draw}
+            overlays={overlays}
+            stage={stage}
+            width={size.width}
+            height={size.height}
+            focusSignal={focusSignal}
+            zoomSignal={zoomSignal}
+            selected={label?.id ?? null}
+            onCountry={onCountry}
+          />
+        ) : (
+          <GlobeMap
+            world={world}
+            empire={empire}
+            stage={stage}
+            width={size.width}
+            height={size.height}
+            focusSignal={focusSignal}
+            zoomSignal={zoomSignal}
+            selected={label?.id ?? null}
+            onCountry={onCountry}
+          />
+        )
       ) : (
         <div className="flex h-full items-center justify-center text-sm text-muted">{labels.loading}</div>
       )}
@@ -184,15 +205,17 @@ export function EmpireMap({ empire, stage, locale, labels, className = "aspect-[
       )}
 
       <div className="absolute right-2 bottom-2 flex gap-2">
-        <MapButton onClick={toggleMode} title={mode === "flat" ? labels.globe : labels.flat} portal={tooltipPortal}>
-          {mode === "flat" ? (
-            // globe
-            <path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 0c2.5 2.4 3.8 5.4 3.8 9s-1.3 6.6-3.8 9m0-18C9.5 5.4 8.2 8.4 8.2 12s1.3 6.6 3.8 9M3.5 9h17m-17 6h17" />
-          ) : (
-            // folded flat map
-            <path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2zm0 0v14m6-12v14" />
-          )}
-        </MapButton>
+        {!draw && (
+          <MapButton onClick={toggleMode} title={mode === "flat" ? labels.globe : labels.flat} portal={tooltipPortal}>
+            {mode === "flat" ? (
+              // globe
+              <path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 0c2.5 2.4 3.8 5.4 3.8 9s-1.3 6.6-3.8 9m0-18C9.5 5.4 8.2 8.4 8.2 12s1.3 6.6 3.8 9M3.5 9h17m-17 6h17" />
+            ) : (
+              // folded flat map
+              <path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2zm0 0v14m6-12v14" />
+            )}
+          </MapButton>
+        )}
         {stage > 1 && (
           <MapButton onClick={() => setFocusSignal((n) => n + 1)} title={labels.focus} portal={tooltipPortal}>
             <path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm0-6v3m0 14v3M2 12h3m14 0h3" />

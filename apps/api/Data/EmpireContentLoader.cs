@@ -35,6 +35,11 @@ public static partial class EmpireContentLoader
         && west >= -180 && east <= 180 && west < east
         && south >= -90 && north <= 90 && south < north;
 
+    // A ring drawn across the antimeridian keeps going past ±180° (179, 181...).
+    private static bool IsValidRing(List<List<double>> ring) =>
+        ring.Count >= 3
+        && ring.All(point => point is [var lon, var lat] && lon >= -360 && lon <= 360 && lat >= -90 && lat <= 90);
+
     // Natural Earth's ADM0_A3, as in apps/web/public/geo/world.json.
     [GeneratedRegex("^[A-Z]{3}$")]
     private static partial Regex CountryCodePattern();
@@ -130,20 +135,22 @@ public static partial class EmpireContentLoader
             CheckText(errors, "religionNotes", empire.ReligionNotes);
         }
 
+        // An empire that still exists has no end: its years run to today.
+        var lastYear = empire.End?.Year ?? DateTime.UtcNow.Year;
         foreach (var (name, year) in new[] { ("peak", empire.Peak), ("start", empire.Start), ("end", empire.End) })
         {
-            if (year.Year == 0)
+            if (year is not null && year.Year == 0)
             {
                 errors.Add($"{name}.year can't be 0 (there is no year 0: use -1 for 1 BCE, 1 for 1 CE)");
             }
         }
-        if (empire.Start.Year > empire.End.Year)
+        if (empire.Start.Year > lastYear)
         {
-            errors.Add("start.year must not be after end.year");
+            errors.Add(empire.End is null ? "start.year can't be in the future" : "start.year must not be after end.year");
         }
-        if (empire.Peak.Year < empire.Start.Year || empire.Peak.Year > empire.End.Year)
+        if (empire.Peak.Year < empire.Start.Year || empire.Peak.Year > lastYear)
         {
-            errors.Add("peak.year must be between start.year and end.year");
+            errors.Add(empire.End is null ? "peak.year must be between start.year and this year" : "peak.year must be between start.year and end.year");
         }
 
         if (empire.Area.Km2 <= 0)
@@ -194,6 +201,22 @@ public static partial class EmpireContentLoader
             for (var i = 0; i < empire.Map.Parts.Count; i++)
             {
                 var part = empire.Map.Parts[i];
+                if (part.Draw is not null || part.Ring is not null)
+                {
+                    if (part.Polity is not null || part.Year is not null || part.Country is not null || part.Box is not null)
+                    {
+                        errors.Add($"map.parts[{i}] is a drawn area (draw + ring), nothing else");
+                    }
+                    if (part.Draw is not ("add" or "remove"))
+                    {
+                        errors.Add($"map.parts[{i}].draw must be \"add\" or \"remove\"");
+                    }
+                    if (part.Ring is null || !IsValidRing(part.Ring))
+                    {
+                        errors.Add($"map.parts[{i}].ring must have at least 3 [longitude, latitude] points, in degrees");
+                    }
+                    continue;
+                }
                 if (part.Country is not null)
                 {
                     if (part.Polity is not null || part.Year is not null)
@@ -234,7 +257,7 @@ public static partial class EmpireContentLoader
 
     // A shape is a GeoJSON MultiPolygon with nothing else in it: no names or
     // properties that could give the answer away, every ring closed and every
-    // position a real longitude/latitude.
+    // position a real longitude/latitude (longitudes may run past ±180°).
     public static List<string> ValidateShape(string json)
     {
         JsonDocument doc;
@@ -315,7 +338,9 @@ public static partial class EmpireContentLoader
                 return "positions must be [longitude, latitude]";
             }
             var (lon, lat) = (position[0].GetDouble(), position[1].GetDouble());
-            if (lon is < -180 or > 180 || lat is < -90 or > 90)
+            // Past ±180° only for an empire across the antimeridian, kept in
+            // one piece (185° is -175°; the map draws it on the globe).
+            if (lon is < -360 or > 360 || lat is < -90 or > 90)
             {
                 return $"[{lon}, {lat}] is outside the globe";
             }

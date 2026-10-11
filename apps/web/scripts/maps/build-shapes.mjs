@@ -1,6 +1,7 @@
 // Builds apps/api/Content/shapes/<slug>.json for every empire whose content
 // file has a "map" (or only the slugs given): the Cliopatria polities and
-// today's territories listed in map.parts, merged, clipped by the land of public/geo/world.json (so the
+// today's territories listed in map.parts, merged with the areas drawn to add,
+// minus those drawn to remove, clipped by the land of public/geo/world.json (so the
 // coast is exactly the one the game draws) and written as a bare MultiPolygon,
 // coordinates only, so the file can't give the answer away.
 //
@@ -10,7 +11,7 @@
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import polygonClipping from "polygon-clipping";
 import { feature, merge } from "topojson-client";
-import { buildShape, polygonsOf } from "../../src/map/build/shape.ts";
+import { buildShape, drawnPolygons, polygonsOf } from "../../src/map/build/shape.ts";
 
 const [clioFile, ...only] = process.argv.slice(2);
 if (!clioFile) throw new Error("usage: build-shapes.mjs <cliopatria.geojson> [slug ...]");
@@ -32,7 +33,9 @@ const polities = read(clioFile).features;
 
 mkdirSync(SHAPES, { recursive: true });
 for (const empire of empires) {
-  const parts = empire.map.parts.map(({ polity, year, country, box }) => {
+  const removed = empire.map.parts.filter((p) => p.draw === "remove").map((p) => drawnPolygons(p.ring));
+  const parts = empire.map.parts.filter((p) => p.draw !== "remove").map(({ polity, year, country, box, draw, ring }) => {
+    if (draw) return drawnPolygons(ring);
     if (country) {
       if (!countries.has(country)) throw new Error(`${empire.slug}: no territory ${country} in the world map`);
       if (!box) return polygonsOf(countries.get(country));
@@ -43,7 +46,7 @@ for (const empire of empires) {
     if (hits.length === 0) throw new Error(`${empire.slug}: no "${polity}" in Cliopatria for ${year}`);
     return hits.flatMap((f) => polygonsOf(f.geometry));
   });
-  const { coordinates } = buildShape(parts, land);
+  const { coordinates } = buildShape(parts, land, removed);
 
   const json = JSON.stringify({ type: "MultiPolygon", coordinates });
   writeFileSync(`${SHAPES}/${empire.slug}.json`, json + "\n");

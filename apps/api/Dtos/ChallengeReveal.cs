@@ -21,6 +21,8 @@ public record ChallengeReveal(
     YearPrecision? StartYearPrecision,
     int? EndYear,
     YearPrecision? EndYearPrecision,
+    // With the period: true when the empire still exists (and EndYear is null).
+    bool? Ongoing,
     string? DurationNotesEn,
     string? DurationNotesPt,
     int? PeakAreaKm2,

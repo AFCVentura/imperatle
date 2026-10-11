@@ -11,11 +11,19 @@ export const MAP_ACCURACIES = ["Precise", "Approximate", "Speculative"] as const
 
 export type Text = { en: string; pt: string };
 
-// A Cliopatria polity at a year, or today's territory (Natural Earth's
-// 3-letter code) for land the dataset misses.
+// A Cliopatria polity at a year, today's territory (Natural Earth's 3-letter
+// code) for land the dataset misses, or an area drawn by hand on the map to
+// add or remove (a ring of [longitude, latitude] points).
 export type Box = [number, number, number, number]; // west, south, east, north
-export type MapPart = { polity: string; year: number } | { country: string; box?: Box };
+export type DrawPart = { draw: "add" | "remove"; ring: [number, number][] };
+export type MapPart = { polity: string; year: number } | { country: string; box?: Box } | DrawPart;
 export const isCountryPart = (p: MapPart): p is { country: string; box?: Box } => "country" in p;
+export const isDrawPart = (p: MapPart): p is DrawPart => "draw" in p;
+export const isPolityPart = (p: MapPart): p is { polity: string; year: number } => "polity" in p;
+
+// A ring drawn across the antimeridian keeps going past ±180° (179, 181...).
+export const isValidRing = (ring: number[][]) =>
+  ring.length >= 3 && ring.every((pt) => pt.length === 2 && pt[0] >= -360 && pt[0] <= 360 && pt[1] >= -90 && pt[1] <= 90);
 
 export const isValidBox = (b: number[]) =>
   b.length === 4 && b.every(Number.isFinite) && b[0] >= -180 && b[2] <= 180 && b[0] < b[2] && b[1] >= -90 && b[3] <= 90 && b[1] < b[3];
@@ -26,7 +34,7 @@ export type EmpireDraft = {
   name: Text;
   peak: Year;
   start: Year;
-  end: Year;
+  end: Year | null; // null = still exists (written as "end": null)
   durationNotes?: Text;
   area: { km2: number; precision: (typeof AREA_PRECISIONS)[number] };
   mapAccuracy: (typeof MAP_ACCURACIES)[number];
@@ -67,11 +75,13 @@ export function validateDraft(draft: EmpireDraft, others: { slug: string; name: 
     if (same(o.name.pt, draft.name.pt)) errors.push(`nome (pt): "${draft.name.pt}" já é usado por ${o.slug}`);
   }
 
+  // An empire that still exists runs to this year.
+  const lastYear = draft.end?.year ?? new Date().getFullYear();
   for (const [label, y] of [["auge", draft.peak], ["início", draft.start], ["fim", draft.end]] as const) {
-    if (!Number.isInteger(y.year) || y.year === 0) errors.push(`ano de ${label}: não existe ano 0 (use -1 para 1 a.C., 1 para 1 d.C.)`);
+    if (y && (!Number.isInteger(y.year) || y.year === 0)) errors.push(`ano de ${label}: não existe ano 0 (use -1 para 1 a.C., 1 para 1 d.C.)`);
   }
-  if (draft.start.year > draft.end.year) errors.push("o início não pode ser depois do fim");
-  if (draft.peak.year < draft.start.year || draft.peak.year > draft.end.year) errors.push("o ano de auge tem que estar entre o início e o fim");
+  if (draft.start.year > lastYear) errors.push(draft.end ? "o início não pode ser depois do fim" : "o início não pode estar no futuro");
+  if (draft.peak.year < draft.start.year || draft.peak.year > lastYear) errors.push(`o ano de auge tem que estar entre o início e ${draft.end ? "o fim" : "este ano"}`);
 
   if (!(draft.area.km2 > 0)) errors.push("a área tem que ser positiva");
 
@@ -91,8 +101,9 @@ export function validateDraft(draft: EmpireDraft, others: { slug: string; name: 
     }
   }
 
-  if (!draft.map.parts.some((p) => !isCountryPart(p))) errors.push("o mapa precisa de pelo menos uma entidade do Cliopatria");
+  if (!draft.map.parts.some(isPolityPart)) errors.push("o mapa precisa de pelo menos uma entidade do Cliopatria");
   for (const p of draft.map.parts) {
+    if (isDrawPart(p) && !isValidRing(p.ring)) errors.push("desenho: pelo menos 3 pontos, longitude entre -360 e 360, latitude entre -90 e 90");
     if (isCountryPart(p) && !/^[A-Z]{3}$/.test(p.country)) errors.push(`território "${p.country}": código de 3 letras maiúsculas`);
     if (isCountryPart(p) && p.box && !isValidBox(p.box)) errors.push(`recorte de ${p.country}: oeste < leste e sul < norte, em graus`);
   }
@@ -133,5 +144,8 @@ export function toContentJson(draft: EmpireDraft): string {
     ...(blank(wikipedia) ? {} : { wikipedia }),
     map: rest.map,
   };
-  return JSON.stringify(ordered, null, 2) + "\n";
+  // A drawn ring stays on one line, or each point would take four.
+  const rings: string[] = [];
+  const json = JSON.stringify(ordered, (key, value) => (key === "ring" ? `\u0000${rings.push(JSON.stringify(value)) - 1}` : value), 2);
+  return json.replace(/"\\u0000(\d+)"/g, (_, i: string) => rings[Number(i)]) + "\n";
 }

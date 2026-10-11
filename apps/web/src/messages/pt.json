@@ -23,7 +23,9 @@
     "support": "Apoiar o projeto",
     "challengeNumber": "Imperatle #{number}",
     "privacy": "Privacidade",
-    "terms": "Termos"
+    "terms": "Termos",
+    "version": "Versão {version}",
+    "changelog": "Ver o que mudou em cada versão"
   },
   "Game": {
     "attempts": "Tentativas: {used}/{total}",
@@ -85,7 +87,8 @@
     },
     "year": {
       "bce": "{year} a.E.C.",
-      "ce": "{year} d.C."
+      "ce": "{year} d.C.",
+      "present": "hoje"
     },
     "startPlaying": "Jogar",
     "comparisonInfo": {
@@ -260,5 +263,12 @@
     "authorTitle": "Quem fez",
     "author": "Feito por <link>Ventura</link>, desenvolvedor brasileiro.",
     "stack": "Next.js, ASP.NET Core e PostgreSQL."
+  },
+  "Changelog": {
+    "title": "Histórico de versões",
+    "version": "Versão {version}",
+    "empires": "{count, plural, one {# império novo} other {# impérios novos}}",
+    "features": "Novidades",
+    "fixes": "Ajustes"
   }
 }

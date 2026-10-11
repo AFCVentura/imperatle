@@ -38,11 +38,12 @@ public class Empire
     public string ReligionEn { get; set; } = string.Empty;
     public string ReligionPt { get; set; } = string.Empty;
 
-    // Empire's lifespan, distinct from ReferenceYear (its peak).
+    // Empire's lifespan, distinct from ReferenceYear (its peak). No end year =
+    // it still exists, and its duration runs to the current year.
     public int StartYear { get; set; }
     public YearPrecision StartYearPrecision { get; set; }
-    public int EndYear { get; set; }
-    public YearPrecision EndYearPrecision { get; set; }
+    public int? EndYear { get; set; }
+    public YearPrecision? EndYearPrecision { get; set; }
 
     // Free-text caveat shown next to the duration in the UI, e.g. clarifying
     // that a range covers only one phase of a longer-named political entity
