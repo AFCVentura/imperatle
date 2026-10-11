@@ -1,6 +1,8 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import { CURRENT_VERSION } from "@/lib/changelog";
 import { SupportButton } from "./SupportButton";
+import { VersionButton } from "./VersionButton";
 
 interface FooterProps {
   challengeNumber: number | null;
@@ -15,6 +17,7 @@ export async function Footer({ challengeNumber }: FooterProps) {
       <SupportButton label={t("support")} />
       <p className="font-display">{t("copyright", { year })}</p>
       {challengeNumber !== null && <p className="font-display">{t("challengeNumber", { number: challengeNumber })}</p>}
+      <VersionButton label={t("version", { version: CURRENT_VERSION })} title={t("changelog")} />
       <nav className="flex gap-4 text-xs">
         <Link href="/privacy" className="underline-offset-2 hover:text-foreground hover:underline">
           {t("privacy")}

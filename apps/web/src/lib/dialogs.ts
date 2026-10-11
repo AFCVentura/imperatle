@@ -5,6 +5,7 @@ export const STATS_EVENT = "imperatle:stats";
 export const COMING_SOON_EVENT = "imperatle:coming-soon";
 export const FEEDBACK_EVENT = "imperatle:feedback";
 export const ABOUT_EVENT = "imperatle:about";
+export const CHANGELOG_EVENT = "imperatle:changelog";
 
 const open = (event: string) => () => window.dispatchEvent(new Event(event));
 
@@ -12,6 +13,7 @@ export const openHowToPlay = open(HOW_TO_PLAY_EVENT);
 export const openStats = open(STATS_EVENT);
 export const openFeedback = open(FEEDBACK_EVENT);
 export const openAbout = open(ABOUT_EVENT);
+export const openChangelog = open(CHANGELOG_EVENT);
 
 // Features already in the menu but not built yet. They share one "coming
 // soon" dialog, which reads the feature from the event.

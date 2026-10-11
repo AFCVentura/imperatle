@@ -10,6 +10,7 @@ import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { HowToPlayDialog } from "./HowToPlayDialog";
 import { AboutDialog } from "./AboutDialog";
+import { ChangelogDialog } from "./ChangelogDialog";
 import { FeedbackDialog } from "./FeedbackDialog";
 import { StatsDialog } from "./StatsDialog";
 import { ComingSoonDialog } from "./ComingSoonDialog";
@@ -86,6 +87,7 @@ export default async function LocaleLayout({
           <ComingSoonDialog />
           <FeedbackDialog />
           <AboutDialog />
+          <ChangelogDialog />
         </NextIntlClientProvider>
         {/* Cookieless page views (no consent banner needed); only reports on Vercel. */}
         <Analytics />
