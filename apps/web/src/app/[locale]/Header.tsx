@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import NextLink from "next/link";
 import { useEffect, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { devForceToday, devNextWithGuesses, resetTodayChallenge } from "@/lib/api";
@@ -88,6 +89,12 @@ export function Header() {
       </button>
 
       <div className="flex items-center gap-2">
+        {/* /dev lives outside [locale], so a plain Next link, not the localized one. */}
+        {process.env.NODE_ENV !== "production" && (
+          <NextLink href="/dev/generator" title="Debug: open the empire editor" className={debugButtonClass}>
+            DEV editor
+          </NextLink>
+        )}
         {/* Back to the game from Privacy or Terms. */}
         <Link href="/" className="font-display text-2xl tracking-wider">
           Imperatle
