@@ -1,0 +1,74 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "united-states",
+  "name": {
+    "en": "United States",
+    "pt": "Estados Unidos"
+  },
+  "peak": {
+    "year": 1940,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1776,
+    "precision": "Exact"
+  },
+  "end": null,
+  "durationNotes": {
+    "en": "It starts in 1776, with the declaration of independence (recognised in 1783; the current constitution dates from 1789), and still exists. The peak shown is before the Philippines became independent, in 1946: after World War II the territory looked larger, but it included regions under military occupation.",
+    "pt": "Começa em 1776, com a declaração de independência (reconhecida em 1783; a constituição atual é de 1789), e ainda existe. O auge mostrado é antes da independência das Filipinas, em 1946: depois da Segunda Guerra o território parecia maior, mas incluía regiões sob ocupação militar."
+  },
+  "area": {
+    "km2": 9637940,
+    "precision": "Exact"
+  },
+  "mapAccuracy": "Precise",
+  "continents": [
+    "NorthAmerica",
+    "Asia",
+    "Oceania"
+  ],
+  "primaryContinent": "NorthAmerica",
+  "capital": {
+    "en": "Washington D.C.",
+    "pt": "Washington D.C."
+  },
+  "language": {
+    "en": "English",
+    "pt": "Inglês"
+  },
+  "religion": {
+    "en": "Christianity (mostly Protestant)",
+    "pt": "Cristianismo (maioria protestante)"
+  },
+  "religionNotes": {
+    "en": "The constitution forbids an official religion and guarantees freedom of worship. Most people were Protestant, with large Catholic and Jewish communities.",
+    "pt": "A constituição proíbe uma religião oficial e garante a liberdade de culto. A maioria da população é protestante, com grandes comunidades católica e judaica."
+  },
+  "curiosities": [
+    {
+      "en": "It doubled its size in 1803 by buying a huge territory from a European power for about 15 million dollars.",
+      "pt": "Dobrou de tamanho em 1803 ao comprar um território enorme de uma potência europeia por cerca de 15 milhões de dólares."
+    },
+    {
+      "en": "After a war in 1846–1848, it took about half of its southern neighbour's territory.",
+      "pt": "Depois de uma guerra em 1846–1848, tomou cerca de metade do território do vizinho do sul."
+    },
+    {
+      "en": "It was the first country to use nuclear weapons in a war.",
+      "pt": "Foi o primeiro país a usar armas nucleares em uma guerra."
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/United_States",
+    "pt": "https://pt.wikipedia.org/wiki/Estados_Unidos"
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "United States of America",
+        "year": 1940
+      }
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "mughal-empire",
+  "name": {
+    "en": "Mughal Empire",
+    "pt": "Império Mogol"
+  },
+  "peak": {
+    "year": 1700,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1526,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1857,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 1526, with the victory that gave its founder control of northern India, and ends in 1857, when the last emperor was deposed and exiled after a great revolt. Its rule was interrupted from 1540 to 1555, and after 1707 the emperors gradually lost control of the provinces.",
+    "pt": "Começa em 1526, com a vitória que deu ao fundador o controle do norte da Índia, e termina em 1857, quando o último imperador foi deposto e exilado depois de uma grande revolta. O governo foi interrompido de 1540 a 1555, e depois de 1707 os imperadores foram perdendo o controle das províncias."
+  },
+  "area": {
+    "km2": 3739261,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Agra, later Delhi",
+    "pt": "Agra, depois Délhi"
+  },
+  "language": {
+    "en": "Persian",
+    "pt": "Persa"
+  },
+  "religion": {
+    "en": "Sunni Islam",
+    "pt": "Islamismo Sunita"
+  },
+  "religionNotes": {
+    "en": "The dynasty and the ruling elite were Muslim, but most of the population was Hindu. One emperor even founded his own cult, blending elements of several religions.",
+    "pt": "A dinastia e a elite eram muçulmanas, mas a maior parte da população era hindu. Um dos imperadores chegou a fundar um culto próprio, misturando elementos de várias religiões."
+  },
+  "curiosities": [
+    {
+      "en": "Around 1700, it is estimated to have produced about a quarter of the world's economic output",
+      "pt": "Por volta de 1700, estima-se que produzia cerca de um quarto da riqueza do mundo."
+    },
+    {
+      "en": "Its emperors descended from two great Central Asian conquerors, one on the father's side and the other on the mother's.",
+      "pt": "Seus imperadores descendiam de dois grandes conquistadores da Ásia Central, um pelo lado do pai e outro pelo da mãe."
+    },
+    {
+      "en": "One of its emperors built a white marble mausoleum for his favourite wife, today one of the most visited monuments in the world.",
+      "pt": "Um de seus imperadores construiu um mausoléu de mármore branco para a esposa favorita, hoje um dos monumentos mais visitados do mundo."
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Mughal_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Mogol"
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Mughal Empire",
+        "year": 1700
+      }
+    ]
+  }
+}

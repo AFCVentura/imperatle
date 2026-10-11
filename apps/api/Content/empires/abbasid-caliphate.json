@@ -1,0 +1,84 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "abbasid-caliphate",
+  "name": {
+    "en": "Abbasid Caliphate",
+    "pt": "Califado Abássida"
+  },
+  "peak": {
+    "year": 778,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 750,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1258,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 750, when the family overthrew the previous dynasty, and ends in 1258, when the capital was destroyed by invaders from the steppe. From the 10th century on the caliphs lost most of their political power, and a branch of the family kept the title, without real power, in another city until 1517.",
+    "pt": "Começa em 750, quando a família derrubou a dinastia anterior, e termina em 1258, quando a capital foi destruída por invasores vindos da estepe. A partir do século X os califas perderam quase todo o poder político, e um ramo da família manteve o título, sem poder real, em outra cidade até 1517."
+  },
+  "area": {
+    "km2": 8234982,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia",
+    "Africa"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Baghdad",
+    "pt": "Bagdá"
+  },
+  "language": {
+    "en": "Arabic (Persian also widely used in the east)",
+    "pt": "Árabe (Persa também muito usado no leste)"
+  },
+  "religion": {
+    "en": "Sunni Islam",
+    "pt": "Islamismo Sunita"
+  },
+  "religionNotes": {
+    "en": "The caliphs presented themselves as religious leaders of all Muslims. Large Christian, Jewish and Zoroastrian communities lived in the empire, paying a special tax.",
+    "pt": "Os califas se apresentavam como líderes religiosos de todos os muçulmanos. Grandes comunidades cristãs, judaicas e zoroastristas viviam no império, pagando um imposto especial."
+  },
+  "curiosities": [
+    {
+      "en": "Its banner was black, in contrast to the white of the dynasty it overthrew.",
+      "pt": "Sua bandeira era preta, em oposição à branca da dinastia que derrubou."
+    },
+    {
+      "en": "The numerals we use today reached Europe through books written under its rule, such as those of a mathematician whose name gave us the word \"algorithm\".",
+      "pt": "Os números que usamos hoje chegaram à Europa por meio de livros escritos sob seu governo, como os de um matemático cujo nome deu origem à palavra \"algoritmo\"."
+    },
+    {
+      "en": "One of its caliphs appears as a character in the tales of \"One Thousand and One Nights\".",
+      "pt": "Um de seus califas aparece como personagem nas histórias de \"As Mil e Uma Noites\"."
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Abbasid_Caliphate",
+    "pt": "https://pt.wikipedia.org/wiki/Califado_Abássida"
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Abbasid Caliphate",
+        "year": 778
+      },
+      {
+        "polity": "Sind-Habbari Dynasty",
+        "year": 860
+      },
+      {
+        "draw": "remove",
+        "ring": [[-0.351,42.603],[-0.008,41.89],[0.401,41.284],[0.877,40.782],[1.423,40.383],[2.039,40.086],[2.587,39.847],[3.069,39.668],[3.484,39.547],[3.834,39.483],[4.26,39.446],[4.762,39.436],[5.34,39.452],[5.995,39.494],[6.526,39.557],[6.934,39.641],[7.22,39.747],[7.382,39.874],[7.493,40.012],[7.552,40.16],[7.56,40.319],[7.516,40.489],[7.404,40.707],[7.222,40.974],[6.97,41.289],[6.646,41.654],[6.226,42.079],[5.707,42.565],[5.087,43.113],[4.363,43.725],[3.707,44.186],[3.122,44.494],[2.614,44.649],[2.183,44.649],[1.708,44.588],[1.189,44.467],[0.627,44.285],[0.022,44.043],[-0.341,43.681],[-0.464,43.2]]
+      }
+    ]
+  }
+}

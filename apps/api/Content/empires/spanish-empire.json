@@ -1,0 +1,78 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "spanish-empire",
+  "name": {
+    "en": "Spanish Empire",
+    "pt": "Império Espanhol"
+  },
+  "peak": {
+    "year": 1806,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1492,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1976,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 1492, with the first overseas expedition, and ends in 1976, when it left its last colonial territory in Africa. Almost all of its American colonies became independent between 1810 and 1825.",
+    "pt": "Começa em 1492, com a primeira expedição ultramarina, e termina em 1976, com a saída do último território colonial na África. Quase todas as colônias americanas se tornaram independentes entre 1810 e 1825."
+  },
+  "area": {
+    "km2": 11535775,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "SouthAmerica",
+    "NorthAmerica",
+    "Europe",
+    "Asia"
+  ],
+  "primaryContinent": "Europe",
+  "capital": {
+    "en": "Madrid",
+    "pt": "Madri"
+  },
+  "language": {
+    "en": "Castilian",
+    "pt": "Castelhano"
+  },
+  "religion": {
+    "en": "Catholicism",
+    "pt": "Catolicismo"
+  },
+  "religionNotes": {
+    "en": "The Inquisition watched over Catholic orthodoxy in the homeland and the colonies. Indigenous peoples were converted on a large scale, often blending older beliefs into the new faith.",
+    "pt": "A Inquisição vigiava a ortodoxia católica na metrópole e nas colônias. Os povos indígenas foram convertidos em massa, muitas vezes misturando crenças antigas à nova fé."
+  },
+  "curiosities": [
+    {
+      "en": "A mountain of silver in the Andes, mined with forced Indigenous labour, fed the world economy for centuries.",
+      "pt": "Uma montanha de prata nos Andes, explorada com trabalho forçado indígena, abasteceu a economia mundial por séculos."
+    },
+    {
+      "en": "It conquered two great American empires in less than 20 years, in the 16th century.",
+      "pt": "Conquistou dois grandes impérios americanos em menos de 20 anos, no século XVI."
+    },
+    {
+      "en": "It funded the 1492 voyage that reached the Americas.",
+      "pt": "Financiou a viagem de 1492 que chegou à América."
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Spanish_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Espanhol"
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "(Spanish Empire)",
+        "year": 1806
+      }
+    ]
+  }
+}

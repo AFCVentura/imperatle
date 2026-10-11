@@ -1,0 +1,75 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "qing-dynasty",
+  "name": {
+    "en": "Qing Dynasty",
+    "pt": "Dinastia Qing"
+  },
+  "peak": {
+    "year": 1794,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1636,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1912,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 1636, when the dynasty adopted its name while still ruling only lands north of the Great Wall. Many sources start it in 1644 instead, when it took the country's capital and began ruling the rest of the country. It ends in 1912, with the abdication of the last emperor.",
+    "pt": "Começa em 1636, quando a dinastia adotou o nome, ainda governando só terras ao norte da Grande Muralha. Muitas fontes preferem começar em 1644, quando ela tomou a capital do país e passou a governar o resto do território. Termina em 1912, com a abdicação do último imperador."
+  },
+  "area": {
+    "km2": 12452245,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Beijing",
+    "pt": "Pequim"
+  },
+  "language": {
+    "en": "Classical Chinese, Manchu and Mongolian",
+    "pt": "Chinês clássico, manchu e mongol"
+  },
+  "religion": {
+    "en": "Confucianism, Buddhism and Chinese folk religion",
+    "pt": "Confucionismo, budismo e religião tradicional chinesa"
+  },
+  "religionNotes": {
+    "en": "The court followed Confucian state rites, sponsored Tibetan Buddhism and kept its own shamanic ceremonies from the ruling people's homeland.",
+    "pt": "A corte seguia os ritos confucionistas de Estado, patrocinava o budismo tibetano e mantinha cerimônias xamânicas da terra natal do povo governante."
+  },
+  "curiosities": [
+    {
+      "en": "In the early 19th century, it ruled about a third of the world's population.",
+      "pt": "No início do século XIX, governava cerca de um terço da população mundial."
+    },
+    {
+      "en": "It faced a rebellion led by a man who claimed to be the younger brother of Jesus, one of the deadliest wars in history.",
+      "pt": "Enfrentou uma rebelião liderada por um homem que dizia ser irmão mais novo de Jesus, uma das guerras mais mortais da história."
+    },
+    {
+      "en": "It was its country's last imperial dynasty; its last emperor took the throne at the age of two.",
+      "pt": "Foi a última dinastia imperial de seu país; o último imperador subiu ao trono aos 2 anos."
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Qing_dynasty",
+    "pt": "https://pt.wikipedia.org/wiki/Dinastia_Qing"
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Qing Dynasty",
+        "year": 1794
+      }
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "han-dynasty",
+  "name": {
+    "en": "Han Dynasty",
+    "pt": "Dinastia Han"
+  },
+  "peak": {
+    "year": 100,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": -202,
+    "precision": "Approximate"
+  },
+  "end": {
+    "year": 220,
+    "precision": "Approximate"
+  },
+  "durationNotes": {
+    "en": "It starts in 202 BC, when the founder proclaimed himself emperor (some sources use 206 BC, when he became king). It was interrupted from 9 to 23 AD by a usurper who founded his own dynasty, so it is divided into two phases with different capitals. It ends in 220, with the abdication of the last emperor.",
+    "pt": "Começa em 202 a.C., quando o fundador se proclamou imperador (algumas fontes usam 206 a.C., quando ele se tornou rei). Foi interrompida de 9 a 23 d.C. por um usurpador que fundou a própria dinastia, por isso é dividida em duas fases, com capitais diferentes. Termina em 220, com a abdicação do último imperador."
+  },
+  "area": {
+    "km2": 4534131,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Chang'an, later Luoyang",
+    "pt": "Chang'an, depois Luoyang"
+  },
+  "language": {
+    "en": "Old Chinese",
+    "pt": "Chinês antigo"
+  },
+  "religion": {
+    "en": "Confucianism and Chinese folk religion",
+    "pt": "Confucionismo e religião tradicional chinesa"
+  },
+  "religionNotes": {
+    "en": "Confucianism became the official doctrine of the state and the basis of officials' training. Ancestor worship and Taoism were widespread, and Buddhism began to arrive along the trade routes in the 1st century.",
+    "pt": "O confucionismo virou doutrina oficial do Estado e base da formação dos funcionários do governo. O culto aos ancestrais e o taoísmo eram muito difundidos, e o budismo começou a chegar pelas rotas comerciais no século I."
+  },
+  "curiosities": [
+    {
+      "en": "In the year 2 AD it carried out one of the first detailed censuses in the world, counting about 57 million people.",
+      "pt": "No ano 2 d.C., fez um dos primeiros censos detalhados do mundo, contando cerca de 57 milhões de pessoas."
+    },
+    {
+      "en": "One of its envoys opened contact with Central Asia, starting the routes that would become known as the Silk Road.",
+      "pt": "Um de seus enviados abriu contato com a Ásia Central, dando origem às rotas que ficariam conhecidas como Rota da Seda."
+    },
+    {
+      "en": "Its name is still used today for the country's majority ethnic group and for the characters of its writing.",
+      "pt": "Seu nome é usado até hoje para designar a etnia majoritária do país e os caracteres da sua escrita."
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Han_dynasty",
+    "pt": "https://pt.wikipedia.org/wiki/Dinastia_Han"
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Han Dynasty",
+        "year": 100
+      }
+    ]
+  }
+}

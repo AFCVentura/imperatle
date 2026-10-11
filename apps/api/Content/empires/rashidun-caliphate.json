@@ -1,0 +1,76 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "rashidun-caliphate",
+  "name": {
+    "en": "Rashidun Caliphate",
+    "pt": "Califado Ortodoxo (Rashidun)"
+  },
+  "peak": {
+    "year": 655,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 632,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 661,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 632, right after the death of the founder of the religion, and ends in 661, with the assassination of the fourth caliph. Its rulers were chosen from among the Prophet's companions, not by inheritance.",
+    "pt": "Começa em 632, logo depois da morte do fundador da religião, e termina em 661, com o assassinato do quarto califa. Seus governantes eram escolhidos entre os companheiros do Profeta, e não por herança."
+  },
+  "area": {
+    "km2": 7042927,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia",
+    "Africa"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Medina, later Kufa",
+    "pt": "Medina, depois Kufa"
+  },
+  "language": {
+    "en": "Arabic (Greek and Persian in the administration of the conquered provinces)",
+    "pt": "Árabe (grego e persa na administração das províncias conquistadas)"
+  },
+  "religion": {
+    "en": "Islam",
+    "pt": "Islamismo"
+  },
+  "religionNotes": {
+    "en": "In this period the text of the Quran was gathered into a single official volume. The disputes over who should lead the community, at the end of the period, gave rise to the split between Sunnis and Shias.",
+    "pt": "Nesse período, o texto do Alcorão foi reunido num único volume oficial. As disputas sobre quem deveria liderar a comunidade, no fim do período, deram origem à divisão entre sunitas e xiitas."
+  },
+  "curiosities": [
+    {
+      "en": "In less than 20 years, it brought down a Persian empire that had existed for more than 400 years.",
+      "pt": "Em menos de 20 anos, derrubou um império persa que existia havia mais de 400 anos."
+    },
+    {
+      "en": "It created the calendar that counts from the migration from Mecca to Medina, still used today.",
+      "pt": "Criou o calendário que começa a contar da migração de Meca para Medina, usado até hoje."
+    },
+    {
+      "en": "Most Muslims call its rulers the \"rightly guided\" ones.",
+      "pt": "A maioria dos muçulmanos chama seus governantes de \"bem guiados\"."
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Rashidun_Caliphate",
+    "pt": "https://pt.wikipedia.org/wiki/Califado_Ortodoxo"
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Rashidun Caliphate",
+        "year": 655
+      }
+    ]
+  }
+}
