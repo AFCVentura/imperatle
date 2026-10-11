@@ -46,7 +46,7 @@ public class DevController(ImperatleDbContext db, IWebHostEnvironment env) : Con
             return NotFound();
         }
 
-        var today = DateOnly.FromDateTime(DateTime.UtcNow);
+        var today = GameClock.Today();
         var current = await ChallengeScheduler.EnsureForDateAsync(db, today);
         var empires = await db.Empires.Where(e => e.Active).Include(e => e.Hints).OrderBy(e => e.Id).ToListAsync();
         var currentIndex = empires.FindIndex(e => e.Id == current.EmpireId);
@@ -84,7 +84,7 @@ public class DevController(ImperatleDbContext db, IWebHostEnvironment env) : Con
             return;
         }
 
-        var today = DateOnly.FromDateTime(DateTime.UtcNow);
+        var today = GameClock.Today();
         var progress = await db.PlayerChallengeProgress
             .FirstOrDefaultAsync(p => p.AnonymousId == anonymousId && p.Date == today);
         if (progress is not null)

@@ -98,7 +98,7 @@ using (var startupScope = app.Services.CreateScope())
     app.Logger.LogInformation("Empire content: {Added} added, {Updated} updated, {Deactivated} deactivated",
         added, updated, deactivated);
 
-    await ChallengeScheduler.EnsureForDateAsync(db, DateOnly.FromDateTime(DateTime.UtcNow));
+    await ChallengeScheduler.EnsureForDateAsync(db, GameClock.Today());
 
     if (app.Environment.IsDevelopment())
     {

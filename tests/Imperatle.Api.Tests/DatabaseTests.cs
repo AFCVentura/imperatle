@@ -99,7 +99,7 @@ public class DatabaseTests
     {
         await using var db = NewDb();
         await EmpireContentImporter.SyncAsync(db, [Content("a")]);
-        var today = DateOnly.FromDateTime(DateTime.UtcNow);
+        var today = GameClock.Today();
         await ChallengeScheduler.EnsureForDateAsync(db, today);
         await ChallengeScheduler.EnsureForDateAsync(db, today.AddDays(1));
         var controller = new ChallengesController(db, null!)

@@ -15,7 +15,7 @@ public class StatsController(ImperatleDbContext db) : ControllerBase
     [HttpGet]
     public async Task<StatsResponse> Get()
     {
-        var today = DateOnly.FromDateTime(DateTime.UtcNow);
+        var today = GameClock.Today();
 
         var mine = Guid.TryParse(Request.Cookies[ChallengesController.AnonymousCookieName], out var anonymousId)
             ? await db.PlayerChallengeProgress

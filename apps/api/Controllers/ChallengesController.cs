@@ -19,7 +19,7 @@ public class ChallengesController(ImperatleDbContext db, IWebHostEnvironment env
     [HttpGet("today")]
     public async Task<IActionResult> GetToday()
     {
-        var today = DateOnly.FromDateTime(DateTime.UtcNow);
+        var today = GameClock.Today();
 
         var scheduled = await ChallengeScheduler.EnsureForDateAsync(db, today);
         var empire = await db.Empires.FindAsync(scheduled.EmpireId);
@@ -34,7 +34,7 @@ public class ChallengesController(ImperatleDbContext db, IWebHostEnvironment env
     [HttpGet("{date}/map")]
     public async Task<IActionResult> GetMap(DateOnly date)
     {
-        if (date > DateOnly.FromDateTime(DateTime.UtcNow))
+        if (date > GameClock.Today())
         {
             return NotFound();
         }
@@ -56,7 +56,7 @@ public class ChallengesController(ImperatleDbContext db, IWebHostEnvironment env
     [EnableRateLimiting("guess")]
     public async Task<IActionResult> Guess([FromBody] GuessRequest request)
     {
-        var today = DateOnly.FromDateTime(DateTime.UtcNow);
+        var today = GameClock.Today();
 
         await ChallengeScheduler.EnsureForDateAsync(db, today);
         var challenge = await db.DailyChallenges
@@ -136,7 +136,7 @@ public class ChallengesController(ImperatleDbContext db, IWebHostEnvironment env
             return NoContent();
         }
 
-        var today = DateOnly.FromDateTime(DateTime.UtcNow);
+        var today = GameClock.Today();
         var progress = await db.PlayerChallengeProgress
             .FirstOrDefaultAsync(p => p.AnonymousId == anonymousId && p.Date == today);
 

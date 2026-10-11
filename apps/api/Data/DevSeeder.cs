@@ -15,7 +15,7 @@ public static class DevSeeder
             return;
         }
 
-        var today = DateOnly.FromDateTime(DateTime.UtcNow);
+        var today = GameClock.Today();
         var todayChallenge = await ChallengeScheduler.EnsureForDateAsync(db, today);
         var forced = await db.Empires.FirstOrDefaultAsync(e => e.Slug == forcedTodaySlug && e.Active);
         if (forced is null || todayChallenge.EmpireId == forced.Id)
