@@ -1,9 +1,9 @@
 {
   "$schema": "../empire.schema.json",
-  "slug": "carthaginian-empire",
+  "slug": "carthage",
   "name": {
-    "en": "Carthaginian Empire",
-    "pt": "Império Cartaginês"
+    "en": "Carthage",
+    "pt": "Cartago"
   },
   "peak": {
     "year": -218,
@@ -78,8 +78,6 @@
     "pt": "https://pt.wikipedia.org/wiki/Civilização_cartaginesa"
   },
   "aliases": [
-    "Carthage",
-    "Cartago",
     "Ancient Carthage",
     "Cartago Antiga",
     "Punic Empire",
@@ -89,7 +87,9 @@
     "Phoenicians",
     "Fenícios",
     "Tunisia",
-    "Tunísia"
+    "Tunísia",
+    "Carthaginian Empire",
+    "Império Cartaginês"
   ],
   "summary": {
     "en": "A city founded by Phoenician settlers from Tyre on the coast of today's Tunisia, which became the greatest trading and naval power of the western Mediterranean. It controlled North Africa, southern Spain, Sardinia, parts of Sicily and several islands, and grew rich trading metals, cloth and farm goods. It was a republic run by elected magistrates and a council of wealthy families. It fought Rome in three wars, the Punic Wars, and was destroyed in 146 BCE, at the end of the third.",

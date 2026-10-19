@@ -2,7 +2,7 @@
   "$schema": "../empire.schema.json",
   "slug": "yuan-dynasty",
   "name": {
-    "en": "Yuan dynasty",
+    "en": "Yuan Dynasty",
     "pt": "Dinastia Yuan"
   },
   "peak": {
@@ -59,8 +59,8 @@
       "en": "It was the first dynasty of foreign origin to rule all of China.",
       "pt": "Foi a primeira dinastia de origem estrangeira a governar toda a China.",
       "details": {
-        "en": "Before it, peoples from the north, such as the Khitans and the Jurchens, had founded dynasties, but they ruled only northern China. With the conquest of the Southern Song dynasty, in 1279, the Mongols came to control the whole country, from Beijing. Only the Manchus, who founded the last Chinese dynasty in the 17th century, would do the same again.",
-        "pt": "Antes dela, povos vindos do norte, como os khitans e os jurchens, chegaram a fundar dinastias, mas governaram só o norte da China. Com a conquista da dinastia Song do Sul, em 1279, os mongóis passaram a controlar o país inteiro, a partir de Pequim. Só os manchus, que fundaram a última dinastia chinesa no século XVII, voltariam a fazer o mesmo."
+        "en": "Before it, peoples from the north, such as the Khitans and the Jurchens, had founded dynasties, but they ruled only northern China. With the conquest of the Southern Song Dynasty, in 1279, the Mongols came to control the whole country, from Beijing. Only the Manchus, who founded the last Chinese dynasty in the 17th century, would do the same again.",
+        "pt": "Antes dela, povos vindos do norte, como os khitans e os jurchens, chegaram a fundar dinastias, mas governaram só o norte da China. Com a conquista da Dinastia Song do Sul, em 1279, os mongóis passaram a controlar o país inteiro, a partir de Pequim. Só os manchus, que fundaram a última dinastia chinesa no século XVII, voltariam a fazer o mesmo."
       }
     },
     {
@@ -88,8 +88,8 @@
     "Império Chinês"
   ],
   "summary": {
-    "en": "The dynasty founded by Kublai Khan, grandson of Genghis Khan, who in 1271 adopted the Chinese dynastic name Yuan and in 1279 completed the conquest of the Southern Song dynasty, uniting all of China under a government of foreign origin. With its capital at Dadu, today's Beijing, it also ruled Mongolia, Tibet and Manchuria, and it was the most powerful of the parts into which the Mongol Empire had split. It encouraged trade and received travellers from all over Eurasia. In the 14th century, famines, floods of the Yellow River, inflation and disputes at court led to revolts, and in 1368 the founder of the Ming dynasty drove the court back to the steppe.",
-    "pt": "Dinastia fundada por Kublai Khan, neto de Gêngis Khan, que em 1271 adotou o nome dinástico chinês Yuan e em 1279 completou a conquista da dinastia Song do Sul, unindo toda a China sob um governo de origem estrangeira. Com capital em Dadu, a atual Pequim, governava também a Mongólia, o Tibete e a Manchúria, e era a mais poderosa das partes em que o Império Mongol tinha se dividido. Estimulou o comércio e recebeu viajantes de toda a Eurásia. No século XIV, fomes, enchentes do Rio Amarelo, inflação e disputas na corte levaram a revoltas, e em 1368 o fundador da dinastia Ming expulsou a corte de volta para a estepe."
+    "en": "The dynasty founded by Kublai Khan, grandson of Genghis Khan, who in 1271 adopted the Chinese dynastic name Yuan and in 1279 completed the conquest of the Southern Song Dynasty, uniting all of China under a government of foreign origin. With its capital at Dadu, today's Beijing, it also ruled Mongolia, Tibet and Manchuria, and it was the most powerful of the parts into which the Mongol Empire had split. It encouraged trade and received travellers from all over Eurasia. In the 14th century, famines, floods of the Yellow River, inflation and disputes at court led to revolts, and in 1368 the founder of the Ming Dynasty drove the court back to the steppe.",
+    "pt": "Dinastia fundada por Kublai Khan, neto de Gêngis Khan, que em 1271 adotou o nome dinástico chinês Yuan e em 1279 completou a conquista da Dinastia Song do Sul, unindo toda a China sob um governo de origem estrangeira. Com capital em Dadu, a atual Pequim, governava também a Mongólia, o Tibete e a Manchúria, e era a mais poderosa das partes em que o Império Mongol tinha se dividido. Estimulou o comércio e recebeu viajantes de toda a Eurásia. No século XIV, fomes, enchentes do Rio Amarelo, inflação e disputas na corte levaram a revoltas, e em 1368 o fundador da Dinastia Ming expulsou a corte de volta para a estepe."
   },
   "map": {
     "parts": [

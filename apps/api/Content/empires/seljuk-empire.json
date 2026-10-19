@@ -1,9 +1,9 @@
 {
   "$schema": "../empire.schema.json",
-  "slug": "great-seljuk-empire",
+  "slug": "seljuk-empire",
   "name": {
-    "en": "Great Seljuk Empire",
-    "pt": "Grande Império Seljúcida"
+    "en": "Seljuk Empire",
+    "pt": "Império Seljúcida"
   },
   "peak": {
     "year": 1092,
@@ -78,8 +78,6 @@
     "pt": "https://pt.wikipedia.org/wiki/Império_Seljúcida"
   },
   "aliases": [
-    "Seljuk Empire",
-    "Império Seljúcida",
     "Great Seljuks",
     "Grandes Seljúcidas",
     "Seljuks",
@@ -94,7 +92,9 @@
     "Pérsia",
     "Iran",
     "Irã",
-    "Irão"
+    "Irão",
+    "Great Seljuk Empire",
+    "Grande Império Seljúcida"
   ],
   "summary": {
     "en": "A Turkic Muslim empire founded by the Seljuks, a clan of the Oghuz Turks that migrated from the steppe to Central Asia and converted to Sunni Islam. The brothers Tughril and Chaghri defeated the Ghaznavids at Dandanaqan, in 1040, and conquered Iran. In 1055, Tughril entered Baghdad, freed the Abbasid caliph from the control of the Shi'ite Buyids and received the title of sultan. His nephew Alp Arslan defeated the Byzantines at Manzikert, in 1071, and captured Emperor Romanos IV. Under Malik-Shah and his vizier Nizam al-Mulk, the empire reached its peak, stretching from Central Asia to the Mediterranean, and the poet Omar Khayyam created a new calendar at the Isfahan observatory. After 1092, succession wars divided the empire, and the losses in Anatolia led Byzantium to ask the pope for help, which gave rise to the First Crusade. Sultan Sanjar, in the east, was defeated by the Kara-Khitai in 1141, and in 1194 the last sultan was killed by the Khwarazmshah.",

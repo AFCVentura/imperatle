@@ -1,9 +1,9 @@
 {
   "$schema": "../empire.schema.json",
-  "slug": "eastern-roman-empire",
+  "slug": "byzantine-empire",
   "name": {
-    "en": "Eastern Roman Empire",
-    "pt": "Império Romano Oriental"
+    "en": "Byzantine Empire",
+    "pt": "Império Bizantino"
   },
   "peak": {
     "year": 565,
@@ -79,8 +79,6 @@
     "pt": "https://pt.wikipedia.org/wiki/Império_Bizantino"
   },
   "aliases": [
-    "Byzantine Empire",
-    "Império Bizantino",
     "Byzantium",
     "Bizâncio",
     "Byzantines",
@@ -90,7 +88,9 @@
     "Greece",
     "Grécia",
     "Turkey",
-    "Turquia"
+    "Turquia",
+    "Eastern Roman Empire",
+    "Império Romano Oriental"
   ],
   "summary": {
     "en": "The eastern half of the Roman Empire, which lived on for almost a thousand years after the fall of the West, with Constantinople as its capital. It spoke Greek, was Orthodox Christian and kept Roman law and administration. It peaked under Justinian, in the 6th century, when it took back Italy, North Africa and southern Spain. It later lost lands to the Arabs, Slavs, Bulgarians and Turks, and was sacked by the crusaders in 1204. It ended in 1453, when the Ottomans took Constantinople.",

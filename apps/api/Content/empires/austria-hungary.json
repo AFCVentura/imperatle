@@ -1,8 +1,8 @@
 {
   "$schema": "../empire.schema.json",
-  "slug": "austro-hungarian-empire",
+  "slug": "austria-hungary",
   "name": {
-    "en": "Austro-Hungarian Empire",
+    "en": "Austria-Hungary",
     "pt": "Império Austro-Húngaro"
   },
   "peak": {
@@ -78,13 +78,13 @@
     "pt": "https://pt.wikipedia.org/wiki/Áustria-Hungria"
   },
   "aliases": [
-    "Austria-Hungary",
     "Áustria-Hungria",
     "Austro-Hungarian Monarchy",
     "Monarquia Austro-Húngara",
     "Dual Monarchy",
     "Monarquia Dual",
-    "Österreich-Ungarn"
+    "Österreich-Ungarn",
+    "Austro-Hungarian Empire"
   ],
   "summary": {
     "en": "The state created in 1867, when the Habsburg monarch Franz Joseph, weakened by defeat against Prussia, reached an agreement with the Hungarians and split his realm into two halves: he was emperor of Austria and king of Hungary. It brought together Germans, Hungarians, Czechs, Poles, Ukrainians, Croats, Romanians, Italians and other peoples, and Vienna became one of the great cultural centres of Europe. It occupied Bosnia in 1878 and annexed it in 1908. The assassination of its heir in Sarajevo led to World War I, and defeat in 1918 broke it up into several new states.",

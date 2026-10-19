@@ -1,9 +1,9 @@
 {
   "$schema": "../empire.schema.json",
-  "slug": "danish-empire",
+  "slug": "denmark-norway",
   "name": {
-    "en": "Danish Empire",
-    "pt": "Império Dinamarquês"
+    "en": "Denmark–Norway",
+    "pt": "Dinamarca-Noruega"
   },
   "peak": {
     "year": 1800,
@@ -83,13 +83,14 @@
     "Denmark",
     "Dinamarca",
     "Denmark-Norway",
-    "Dinamarca-Noruega",
     "Danish Colonial Empire",
     "Império Colonial Dinamarquês",
     "Dano-Norwegian Realm",
     "Reino Dano-Norueguês",
     "Norway",
-    "Noruega"
+    "Noruega",
+    "Danish Empire",
+    "Império Dinamarquês"
   ],
   "summary": {
     "en": "The realm of the Danish crown between the Reformation and the Napoleonic Wars, formed by Denmark, Norway, which lost its own government in 1536, the North Atlantic islands of Iceland, the Faroes and Greenland, and small colonies overseas. In the 17th century, Denmark lost to Sweden the provinces east of the Øresund, such as Scania, but founded trading companies that set up Tranquebar in India, in 1620, forts on the Gold Coast of Africa and colonies in the Caribbean, where sugar was produced with enslaved labour. In 1721, the missionary Hans Egede began the colonisation of Greenland. Neutral in most European conflicts, the country grew rich from trade in the 18th century, but sided with Napoleon after the British bombarded Copenhagen in 1807. With the French defeat, the Treaty of Kiel of 1814 handed Norway over to Sweden, while Denmark kept Iceland, the Faroes and Greenland.",

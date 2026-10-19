@@ -2,7 +2,7 @@
   "$schema": "../empire.schema.json",
   "slug": "tang-dynasty",
   "name": {
-    "en": "Tang dynasty",
+    "en": "Tang Dynasty",
     "pt": "Dinastia Tang"
   },
   "peak": {
@@ -18,8 +18,8 @@
     "precision": "Exact"
   },
   "durationNotes": {
-    "en": "It starts in 618, when the founder proclaimed the dynasty after the fall of the Sui dynasty, and ends in 907, when the last emperor was deposed by a general. Between 690 and 705, Empress Wu Zetian ruled under a dynasty of her own, the Zhou, but the original dynasty was restored afterwards. The map leaves out the protectorates in Central Asia, Mongolia and Korea, where local rulers kept power under Chinese supervision. Northern Vietnam is included because, despite being called a protectorate, it was divided into ordinary prefectures, governed like the rest of the territory.",
-    "pt": "Começa em 618, quando o fundador proclamou a dinastia após a queda da dinastia Sui, e termina em 907, quando o último imperador foi deposto por um general. Entre 690 e 705, a imperatriz Wu Zetian governou sob uma dinastia própria, a Zhou, mas a dinastia original foi restaurada depois. O mapa não inclui os protetorados da Ásia Central, da Mongólia e da Coreia, onde governantes locais mantinham o poder sob supervisão chinesa. O norte do Vietnã aparece porque, apesar do nome de protetorado, era dividido em prefeituras comuns, governadas como o resto do território."
+    "en": "It starts in 618, when the founder proclaimed the dynasty after the fall of the Sui Dynasty, and ends in 907, when the last emperor was deposed by a general. Between 690 and 705, Empress Wu Zetian ruled under a dynasty of her own, the Zhou, but the original dynasty was restored afterwards. The map leaves out the protectorates in Central Asia, Mongolia and Korea, where local rulers kept power under Chinese supervision. Northern Vietnam is included because, despite being called a protectorate, it was divided into ordinary prefectures, governed like the rest of the territory.",
+    "pt": "Começa em 618, quando o fundador proclamou a dinastia após a queda da Dinastia Sui, e termina em 907, quando o último imperador foi deposto por um general. Entre 690 e 705, a imperatriz Wu Zetian governou sob uma dinastia própria, a Zhou, mas a dinastia original foi restaurada depois. O mapa não inclui os protetorados da Ásia Central, da Mongólia e da Coreia, onde governantes locais mantinham o poder sob supervisão chinesa. O norte do Vietnã aparece porque, apesar do nome de protetorado, era dividido em prefeituras comuns, governadas como o resto do território."
   },
   "area": {
     "km2": 3400000,
@@ -67,8 +67,8 @@
       "en": "To this day, Chinese people living outside China use the name of this dynasty to refer to themselves and their neighbourhoods.",
       "pt": "Até hoje, chineses que vivem fora da China usam o nome desta dinastia para falar de si mesmos e dos seus bairros.",
       "details": {
-        "en": "In many Chinese communities abroad, especially those of Cantonese origin, people commonly call themselves the \"Tang people\", and Chinatowns are called \"streets of the Tang people\". The dynasty became so associated with the height of Chinese civilization that its name became a synonym for Chinese, like that of the Han dynasty, which gives its name to the majority ethnic group.",
-        "pt": "Em muitas comunidades chinesas no exterior, sobretudo as de origem cantonesa, é comum se chamar de \"povo Tang\", e as Chinatowns são chamadas de \"ruas do povo Tang\". A dinastia ficou tão associada ao auge da civilização chinesa que o nome dela virou sinônimo de chinês, assim como o da dinastia Han, que dá nome à etnia majoritária."
+        "en": "In many Chinese communities abroad, especially those of Cantonese origin, people commonly call themselves the \"Tang people\", and Chinatowns are called \"streets of the Tang people\". The dynasty became so associated with the height of Chinese civilization that its name became a synonym for Chinese, like that of the Han Dynasty, which gives its name to the majority ethnic group.",
+        "pt": "Em muitas comunidades chinesas no exterior, sobretudo as de origem cantonesa, é comum se chamar de \"povo Tang\", e as Chinatowns são chamadas de \"ruas do povo Tang\". A dinastia ficou tão associada ao auge da civilização chinesa que o nome dela virou sinônimo de chinês, assim como o da Dinastia Han, que dá nome à etnia majoritária."
       }
     }
   ],
@@ -88,8 +88,8 @@
     "Império Chinês"
   ],
   "summary": {
-    "en": "The dynasty founded in 618 by Li Yuan and his son Li Shimin, who reunified China after the fall of the Sui dynasty. With its capital at Chang'an, then one of the largest cities in the world, it lived through an era of prosperity marked by trade on the Silk Road, the spread of Buddhism, the civil service examinations and a production of poetry considered the richest in Chinese history. It also extended its influence over Central Asia, Mongolia and Korea through protectorates. From 755, the rebellion of the general An Lushan shook the government, and the military governors of the provinces gained more and more autonomy. After new revolts in the late 9th century, the last emperor was deposed in 907, and China split into several rival states.",
-    "pt": "Dinastia fundada em 618 por Li Yuan e seu filho Li Shimin, que reunificaram a China depois da queda da dinastia Sui. Com capital em Chang'an, então uma das maiores cidades do mundo, viveu uma era de prosperidade marcada pelo comércio na Rota da Seda, pela expansão do budismo, pelos exames para servidores públicos e por uma produção de poesia considerada a mais rica da história chinesa. Também estendeu sua influência pela Ásia Central, pela Mongólia e pela Coreia, por meio de protetorados. A partir de 755, a rebelião do general An Lushan abalou o governo, e os governadores militares das províncias ganharam cada vez mais autonomia. Depois de novas revoltas no fim do século IX, o último imperador foi deposto em 907, e a China se dividiu em vários estados rivais."
+    "en": "The dynasty founded in 618 by Li Yuan and his son Li Shimin, who reunified China after the fall of the Sui Dynasty. With its capital at Chang'an, then one of the largest cities in the world, it lived through an era of prosperity marked by trade on the Silk Road, the spread of Buddhism, the civil service examinations and a production of poetry considered the richest in Chinese history. It also extended its influence over Central Asia, Mongolia and Korea through protectorates. From 755, the rebellion of the general An Lushan shook the government, and the military governors of the provinces gained more and more autonomy. After new revolts in the late 9th century, the last emperor was deposed in 907, and China split into several rival states.",
+    "pt": "Dinastia fundada em 618 por Li Yuan e seu filho Li Shimin, que reunificaram a China depois da queda da Dinastia Sui. Com capital em Chang'an, então uma das maiores cidades do mundo, viveu uma era de prosperidade marcada pelo comércio na Rota da Seda, pela expansão do budismo, pelos exames para servidores públicos e por uma produção de poesia considerada a mais rica da história chinesa. Também estendeu sua influência pela Ásia Central, pela Mongólia e pela Coreia, por meio de protetorados. A partir de 755, a rebelião do general An Lushan abalou o governo, e os governadores militares das províncias ganharam cada vez mais autonomia. Depois de novas revoltas no fim do século IX, o último imperador foi deposto em 907, e a China se dividiu em vários estados rivais."
   },
   "map": {
     "parts": [

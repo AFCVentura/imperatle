@@ -1,9 +1,9 @@
 {
   "$schema": "../empire.schema.json",
-  "slug": "xiongnu-empire",
+  "slug": "xiongnu",
   "name": {
-    "en": "Xiongnu Empire",
-    "pt": "Império Xiongnu"
+    "en": "Xiongnu",
+    "pt": "Xiongnu"
   },
   "peak": {
     "year": -170,
@@ -77,7 +77,6 @@
     "pt": "https://pt.wikipedia.org/wiki/Xiongnu"
   },
   "aliases": [
-    "Xiongnu",
     "Hsiung-nu",
     "Hiong-nu",
     "Xiongnu Confederation",
@@ -85,11 +84,13 @@
     "Asian Huns",
     "Hunos Asiáticos",
     "Mongolia",
-    "Mongólia"
+    "Mongólia",
+    "Xiongnu Empire",
+    "Império Xiongnu"
   ],
   "summary": {
-    "en": "The first great nomadic empire of the Mongolian steppe, founded by Modu Chanyu in 209 BC, a few years after the unification of China by the Qin dynasty. Modu united the tribes, defeated the Donghu to the east and drove the Yuezhi to the west. In 200 BC he surrounded the first Han emperor at Baideng, and the Han dynasty began sending princesses, silk, wine and grain every year in exchange for peace, in a policy called heqin. From 133 BC, Emperor Wu of Han broke the agreement and launched great campaigns that took from the Xiongnu the Hexi corridor and the route to Central Asia. Weakened by civil wars, one of the chanyus submitted to the Han in 51 BC, and in AD 48 the empire split for good into the Northern and Southern Xiongnu. The northern ones were defeated by the Han in 89 and driven out by the Xianbei.",
-    "pt": "Primeiro grande império nômade da estepe da Mongólia, fundado por Modu Chanyu em 209 a.C., poucos anos depois da unificação da China pela dinastia Qin. Modu unificou as tribos, derrotou os donghu, a leste, e expulsou os yuezhi para o oeste. Em 200 a.C., cercou o primeiro imperador Han em Baideng, e a dinastia Han passou a mandar princesas, seda, vinho e grãos todos os anos em troca de paz, numa política chamada heqin. A partir de 133 a.C., o imperador Wu dos Han rompeu o acordo e lançou grandes campanhas que tomaram dos xiongnu o corredor de Hexi e a rota para a Ásia Central. Enfraquecido por guerras civis, um dos chanyus se submeteu aos Han em 51 a.C., e em 48 d.C. o império se dividiu definitivamente em Xiongnu do Norte e do Sul. Os do norte foram derrotados pelos Han em 89 e expulsos pelos xianbei."
+    "en": "The first great nomadic empire of the Mongolian steppe, founded by Modu Chanyu in 209 BC, a few years after the unification of China by the Qin Dynasty. Modu united the tribes, defeated the Donghu to the east and drove the Yuezhi to the west. In 200 BC he surrounded the first Han emperor at Baideng, and the Han Dynasty began sending princesses, silk, wine and grain every year in exchange for peace, in a policy called heqin. From 133 BC, Emperor Wu of Han broke the agreement and launched great campaigns that took from the Xiongnu the Hexi corridor and the route to Central Asia. Weakened by civil wars, one of the chanyus submitted to the Han in 51 BC, and in AD 48 the empire split for good into the Northern and Southern Xiongnu. The northern ones were defeated by the Han in 89 and driven out by the Xianbei.",
+    "pt": "Primeiro grande império nômade da estepe da Mongólia, fundado por Modu Chanyu em 209 a.C., poucos anos depois da unificação da China pela Dinastia Qin. Modu unificou as tribos, derrotou os donghu, a leste, e expulsou os yuezhi para o oeste. Em 200 a.C., cercou o primeiro imperador Han em Baideng, e a Dinastia Han passou a mandar princesas, seda, vinho e grãos todos os anos em troca de paz, numa política chamada heqin. A partir de 133 a.C., o imperador Wu dos Han rompeu o acordo e lançou grandes campanhas que tomaram dos xiongnu o corredor de Hexi e a rota para a Ásia Central. Enfraquecido por guerras civis, um dos chanyus se submeteu aos Han em 51 a.C., e em 48 d.C. o império se dividiu definitivamente em Xiongnu do Norte e do Sul. Os do norte foram derrotados pelos Han em 89 e expulsos pelos xianbei."
   },
   "map": {
     "parts": [

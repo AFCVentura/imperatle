@@ -1,9 +1,9 @@
 {
   "$schema": "../empire.schema.json",
-  "slug": "belgian-empire",
+  "slug": "belgian-colonial-empire",
   "name": {
-    "en": "Belgian Empire",
-    "pt": "Império Belga"
+    "en": "Belgian Colonial Empire",
+    "pt": "Império Colonial Belga"
   },
   "peak": {
     "year": 1925,
@@ -81,11 +81,11 @@
   "aliases": [
     "Belgium",
     "Bélgica",
-    "Belgian Colonial Empire",
-    "Império Colonial Belga",
     "Belgian Congo",
     "Congo Belga",
-    "Ruanda-Urundi"
+    "Ruanda-Urundi",
+    "Belgian Empire",
+    "Império Belga"
   ],
   "summary": {
     "en": "The colonial empire of Belgium, made up almost entirely of the Belgian Congo, a territory about 80 times larger than the home country. From 1885 to 1908 the region had been the personal property of King Leopold II, the Congo Free State, where the exploitation of rubber through forced labour, mutilation and hostage-taking caused the deaths of millions of people. Faced with an international scandal, the Belgian parliament annexed the territory in 1908. The colony came to be governed by an alliance between the State, the Catholic missions and large mining companies, which exploited copper, diamonds and uranium in Katanga and Kasai. After the First World War, Belgium received Ruanda-Urundi, taken from German East Africa, as a League of Nations mandate. The Congo became independent in 1960, amid a crisis that led to the murder of Prime Minister Patrice Lumumba, and Rwanda and Burundi in 1962.",
