@@ -5,7 +5,7 @@ Every empire in the game is one file in `empires/`, named after its slug (`mongo
 - **Add an empire:** copy an existing file, rename it and fill it in. `empire.schema.json` gives autocomplete and inline errors in VS Code.
 - **Edit an empire:** change the file and restart the API.
 - **Remove an empire:** delete the file. The empire is deactivated (it leaves the guess list and the schedule) but stays in the database, since past challenges point to it.
-- **Never rename a slug** after launch.
+- **Rename a slug** only together with a migration that updates the row (see `Migrations/*_RenameEmpireSlugs.cs`): renaming just the files would deactivate the old empire and create a new one, cutting it off from past challenges and player history.
 
 ## Fields
 
