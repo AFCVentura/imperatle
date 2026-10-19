@@ -1,0 +1,111 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "golden-horde",
+  "name": {
+    "en": "Golden Horde",
+    "pt": "Horda Dourada"
+  },
+  "peak": {
+    "year": 1340,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1242,
+    "precision": "Approximate"
+  },
+  "end": {
+    "year": 1502,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts around 1242, when a grandson of the great conqueror returned from a campaign in Central Europe and founded a capital on the lower course of a great river, and ends in 1502, when its last capital was sacked by a rival khanate that had emerged from its break-up. At first it was part of a larger empire, but it acted independently from 1260. The peak shown is around 1340. The map excludes the northern principalities, which kept their own princes but paid tribute and needed the khan's approval to take the throne.",
+    "pt": "Começa por volta de 1242, quando um neto do grande conquistador voltou de uma campanha na Europa Central e fundou uma capital no baixo curso de um grande rio, e termina em 1502, quando a sua última capital foi saqueada por um canato rival que tinha surgido da sua divisão. No início era parte de um império maior, mas agia de forma independente desde 1260. O auge escolhido é por volta de 1340. O mapa exclui os principados do norte, que mantinham os próprios príncipes, mas pagavam tributo e precisavam da aprovação do cã para assumir o trono."
+  },
+  "area": {
+    "km2": 4520000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia",
+    "Europe"
+  ],
+  "primaryContinent": "Europe",
+  "capital": {
+    "en": "Sarai Batu, later Sarai Berke",
+    "pt": "Sarai Batu, depois Sarai Berke"
+  },
+  "language": {
+    "en": "Mongolian, later Kipchak",
+    "pt": "Mongol, depois quipchaco"
+  },
+  "religion": {
+    "en": "Tengrism, later Sunni Islam",
+    "pt": "Tengrismo, depois Islamismo Sunita"
+  },
+  "religionNotes": {
+    "en": "The first khans followed the traditional religion of the steppe and were tolerant of other faiths, and the Orthodox Church of the northern principalities was exempted from taxes. In the early 14th century, Sunni Islam became the official religion and was gradually adopted by most of the steppe peoples.",
+    "pt": "Os primeiros cãs seguiam a religião tradicional da estepe e eram tolerantes com as outras crenças, e a Igreja Ortodoxa dos principados do norte ficou isenta de impostos. No início do século XIV, o islamismo sunita virou a religião oficial e foi adotado aos poucos pela maioria dos povos da estepe."
+  },
+  "curiosities": [
+    {
+      "en": "It chose the princes of a small forest town to collect the tributes of their neighbours, and that town ended up becoming the capital of a great empire.",
+      "pt": "Escolheu os príncipes de uma pequena cidade da floresta para cobrar os tributos dos vizinhos, e essa cidade acabou se tornando a capital de um grande império.",
+      "details": {
+        "en": "Ivan I, \"Kalita\" (\"money bag\"), received from Khan Özbeg, around 1330, the title of grand prince and the right to collect the tributes of all Rus. Moscow grew rich and came to dominate the other principalities.",
+        "pt": "Ivan I, \"Kalita\" (\"bolsa de dinheiro\"), recebeu do cã Özbeg, por volta de 1330, o título de grão-príncipe e o direito de recolher os tributos de toda a Rus. Moscou enriqueceu e passou a dominar os outros principados."
+      }
+    },
+    {
+      "en": "One of its khans was the first Mongol ruler to convert to Islam and allied with a Muslim sultanate against his own Mongol cousins.",
+      "pt": "Um de seus cãs foi o primeiro governante mongol a se converter ao islã e se aliou a um sultanato muçulmano contra os próprios primos mongóis.",
+      "details": {
+        "en": "Berke, Batu's brother, converted around 1252. Outraged by the sack of Baghdad by his cousin Hulagu in 1258, he allied with the Mamluks of Egypt against the Ilkhanate.",
+        "pt": "Berke, irmão de Batu, se converteu por volta de 1252. Indignado com o saque de Bagdá pelo primo Hulagu em 1258, aliou-se aos mamelucos do Egito contra o Ilcanato."
+      }
+    },
+    {
+      "en": "During the siege of an Italian colony in Crimea, its soldiers are said to have thrown the corpses of epidemic victims over the walls.",
+      "pt": "Durante o cerco a uma colônia italiana na Crimeia, seus soldados teriam lançado cadáveres de vítimas de uma epidemia por cima das muralhas.",
+      "details": {
+        "en": "The notary Gabriele de' Mussi says that, in 1346, the army of Khan Jani Beg, struck by the Black Death, catapulted its dead into Caffa. The Genoese ships that fled the city carried the plague to Italy.",
+        "pt": "O notário Gabriele de' Mussi conta que, em 1346, o exército do cã Jani Beg, atingido pela Peste Negra, catapultou os mortos para dentro de Caffa. Os navios genoveses que fugiram da cidade levaram a peste à Itália."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Golden_Horde",
+    "pt": "https://pt.wikipedia.org/wiki/Canato_da_Horda_Dourada"
+  },
+  "aliases": [
+    "Golden Horde",
+    "Horda de Ouro",
+    "Ulus of Jochi",
+    "Ulus de Jochi",
+    "Canato de Jochi",
+    "Jochid Ulus",
+    "Kipchak Khanate",
+    "Canato Quipchaco",
+    "Ulug Ulus",
+    "Tatars",
+    "Tártaros",
+    "Mongols",
+    "Mongóis"
+  ],
+  "summary": {
+    "en": "A Mongol khanate of the steppe between Eastern Europe and Central Asia, formed by the descendants of Jochi, the eldest son of Genghis Khan. Batu, Genghis's grandson, conquered the Kipchak steppe and the principalities of Rus between 1236 and 1240, advanced as far as Poland and Hungary and, on his return, founded the capital Sarai, on the lower Volga. After 1260, with the division of the Mongol Empire, the Horde began to act independently. It controlled the trade routes between the Black Sea, the Volga and Central Asia, and the Russian principalities paid it tribute. Under Özbeg, between 1313 and 1341, Islam became the official religion and the khanate reached its peak. From 1359, a long civil war weakened the power of the khans, and Timur devastated the Volga cities in 1395. In the 15th century, the Horde broke up into the khanates of Kazan, Crimea and Astrakhan and the Great Horde, whose capital was destroyed by the Crimean Tatars in 1502.",
+    "pt": "Canato mongol da estepe entre a Europa Oriental e a Ásia Central, formado pelos descendentes de Jochi, o filho mais velho de Gengis Khan. Batu, neto de Gengis, conquistou a estepe quipchaca e os principados da Rus entre 1236 e 1240, avançou até a Polônia e a Hungria e, ao voltar, fundou a capital Sarai, no baixo Volga. Depois de 1260, com a divisão do Império Mongol, a Horda passou a agir de forma independente. Controlava as rotas comerciais entre o mar Negro, o Volga e a Ásia Central, e os principados russos lhe pagavam tributo. Sob Özbeg, entre 1313 e 1341, o islã virou religião oficial e o canato chegou ao auge. A partir de 1359, uma longa guerra civil enfraqueceu o poder dos cãs, e Tamerlão devastou as cidades do Volga em 1395. No século XV, a Horda se fragmentou nos canatos de Kazan, da Crimeia, de Astracã e na Grande Horda, cuja capital foi destruída pelos tártaros da Crimeia em 1502."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Golden Horde",
+        "year": 1340
+      },
+      {
+        "draw": "remove",
+        "ring": [[22,49.3],[25,49.3],[27,49.6],[29.5,49.6],[31.5,49.4],[32.5,49.8],[33.5,50.8],[34.5,51.5],[36,52],[38,52.5],[40.5,53.2],[42,53.8],[43.5,54.4],[44.6,54.9],[45.5,55.6],[46,56.1],[46.5,60],[22,60],[22,49.3]]
+      }
+    ]
+  }
+}

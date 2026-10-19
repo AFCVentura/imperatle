@@ -52,20 +52,49 @@
   "curiosities": [
     {
       "en": "A mountain of silver in the Andes, mined with forced Indigenous labour, fed the world economy for centuries.",
-      "pt": "Uma montanha de prata nos Andes, explorada com trabalho forçado indígena, abasteceu a economia mundial por séculos."
+      "pt": "Uma montanha de prata nos Andes, explorada com trabalho forçado indígena, abasteceu a economia mundial por séculos.",
+      "details": {
+        "en": "The Cerro Rico of Potosí, in today's Bolivia, was found by the Spaniards in 1545. Its silver, mined by Indigenous people forced to work under the mita system in terrible conditions, supplied Europe and China for centuries. Potosí, more than 4,000 metres above sea level, had close to 160,000 people in the 17th century, more than many European capitals.",
+        "pt": "O Cerro Rico de Potosí, na atual Bolívia, foi descoberto pelos espanhóis em 1545. Sua prata, extraída por indígenas obrigados a trabalhar pelo sistema da mita, em condições terríveis, abasteceu a Europa e a China por séculos. Potosí, a mais de 4 mil metros de altitude, chegou a ter perto de 160 mil habitantes no século XVII, mais que muitas capitais europeias."
+      }
     },
     {
       "en": "It conquered two great American empires in less than 20 years, in the 16th century.",
-      "pt": "Conquistou dois grandes impérios americanos em menos de 20 anos, no século XVI."
+      "pt": "Conquistou dois grandes impérios americanos em menos de 20 anos, no século XVI.",
+      "details": {
+        "en": "Hernán Cortés took Tenochtitlan, the Aztec capital, in 1521, and Francisco Pizarro captured the Inca emperor Atahualpa in 1532, executing him the next year. With only a few hundred Spaniards, they won thanks to thousands of Indigenous allies, steel weapons, horses and, above all, smallpox epidemics, which killed a large part of the population.",
+        "pt": "Hernán Cortés tomou Tenochtitlan, a capital asteca, em 1521, e Francisco Pizarro capturou o imperador inca Atahualpa em 1532, executando-o no ano seguinte. Com poucas centenas de espanhóis, venceram graças a milhares de aliados indígenas, armas de aço, cavalos e, sobretudo, às epidemias de varíola, que mataram grande parte da população."
+      }
     },
     {
       "en": "It funded the 1492 voyage that reached the Americas.",
-      "pt": "Financiou a viagem de 1492 que chegou à América."
+      "pt": "Financiou a viagem de 1492 que chegou à América.",
+      "details": {
+        "en": "Christopher Columbus, a Genoese navigator, persuaded Queen Isabella of Castile and King Ferdinand of Aragon to fund a voyage to reach Asia by sailing west. On 12 October 1492 he landed in the Bahamas. He died in 1506 believing he had reached the Indies, which is why the peoples of the Americas were called \"Indians\".",
+        "pt": "Cristóvão Colombo, um navegador genovês, convenceu a rainha Isabel de Castela e o rei Fernando de Aragão a financiar uma viagem para chegar à Ásia navegando para o oeste. Em 12 de outubro de 1492, desembarcou nas Bahamas. Morreu em 1506 acreditando ter chegado às Índias, e por isso os povos da América foram chamados de \"índios\"."
+      }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Spanish_Empire",
     "pt": "https://pt.wikipedia.org/wiki/Império_Espanhol"
+  },
+  "aliases": [
+    "Spain",
+    "Espanha",
+    "Spanish Monarchy",
+    "Monarquia Espanhola",
+    "Hispanic Monarchy",
+    "Monarquia Hispânica",
+    "Spanish Colonial Empire",
+    "Império Colonial Espanhol",
+    "Imperio Español",
+    "Castile",
+    "Castela"
+  ],
+  "summary": {
+    "en": "The colonial empire that began with Christopher Columbus's voyage, funded by the Catholic Monarchs in 1492, and became one of the first global empires in history. In the 16th century the conquistadors overthrew the Aztecs and the Incas, and Spain came to rule most of the Americas, the Philippines and, for a time, parts of Italy and the Low Countries. American silver paid for wars in Europe and for trade with Asia. The American colonies became independent between 1810 and 1825, Cuba, Puerto Rico and the Philippines were lost in 1898, and the last colonies in Africa were given up in 1975 and 1976.",
+    "pt": "Império colonial que começou com a viagem de Cristóvão Colombo, financiada pelos Reis Católicos em 1492, e se tornou um dos primeiros impérios globais da história. No século XVI, os conquistadores derrubaram os astecas e os incas, e a Espanha passou a dominar a maior parte das Américas, as Filipinas e, por um tempo, partes da Itália e dos Países Baixos. A prata americana pagou guerras na Europa e o comércio com a Ásia. As colônias da América ficaram independentes entre 1810 e 1825, Cuba, Porto Rico e as Filipinas foram perdidas em 1898, e as últimas colônias na África foram deixadas em 1975 e 1976."
   },
   "map": {
     "parts": [

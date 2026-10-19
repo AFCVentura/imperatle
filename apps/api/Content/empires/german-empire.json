@@ -1,0 +1,128 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "german-empire",
+  "name": {
+    "en": "German Empire",
+    "pt": "Império Alemão"
+  },
+  "peak": {
+    "year": 1914,
+    "precision": "Exact"
+  },
+  "start": {
+    "year": 1871,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1918,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts with the proclamation of the emperor in 1871, at the end of a victorious war, and ends with the abdication of the last one, in 1918. The peak shown is that of 1914: in World War I the colonies were occupied right at the start, and the land taken in the east in 1918 was military occupation, not annexation.",
+    "pt": "Começa com a proclamação do imperador em 1871, ao fim de uma guerra vitoriosa, e termina com a abdicação do último, em 1918. O auge escolhido é o de 1914: na Primeira Guerra as colônias foram ocupadas logo no início, e os territórios tomados no leste em 1918 eram ocupação militar, não anexação."
+  },
+  "area": {
+    "km2": 3500000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Europe",
+    "Africa",
+    "Oceania",
+    "Asia"
+  ],
+  "primaryContinent": "Europe",
+  "capital": {
+    "en": "Berlin",
+    "pt": "Berlim"
+  },
+  "language": {
+    "en": "German",
+    "pt": "Alemão"
+  },
+  "religion": {
+    "en": "Christianity (mostly Protestant)",
+    "pt": "Cristianismo (maioria protestante)"
+  },
+  "religionNotes": {
+    "en": "There was no official church for the whole empire: each state had its own. About a third of the population was Catholic, and in the 1870s the government fought a long conflict with the Catholic Church over control of schools and the appointment of clergy.",
+    "pt": "Não havia igreja oficial do império: cada estado tinha a sua. Cerca de um terço da população era católica, e nos anos 1870 o governo travou um longo conflito com a Igreja Católica pelo controle das escolas e da nomeação do clero."
+  },
+  "curiosities": [
+    {
+      "en": "It helped an exiled revolutionary return home on a sealed train, in 1917.",
+      "pt": "Ajudou um revolucionário exilado a voltar para casa num trem lacrado, em 1917.",
+      "details": {
+        "en": "In April 1917, the government let Lenin and about thirty other Russian exiles cross the country from Switzerland in a sealed carriage, hoping they would weaken Russia's war effort. Lenin reached Petrograd and in November led the Bolsheviks to power. Months later, in March 1918, the new Russian government signed a separate peace that took Russia out of the war.",
+        "pt": "Em abril de 1917, o governo deixou Lênin e cerca de trinta outros exilados russos atravessarem o país, vindos da Suíça, num vagão lacrado, na esperança de que enfraquecessem o esforço de guerra da Rússia. Lênin chegou a Petrogrado e em novembro levou os bolcheviques ao poder. Meses depois, em março de 1918, o novo governo russo assinou uma paz separada que tirou a Rússia da guerra."
+      }
+    },
+    {
+      "en": "In one of its African colonies, its troops committed the first genocide of the 20th century, against the Herero and Nama peoples.",
+      "pt": "Em uma de suas colônias africanas, suas tropas cometeram o primeiro genocídio do século XX, contra os povos herero e nama.",
+      "details": {
+        "en": "It happened between 1904 and 1908 in today's Namibia. After an uprising by the Herero, General Lothar von Trotha ordered their extermination: many were driven into the desert to die of thirst, and survivors were held in concentration camps. Estimates speak of up to 80% of the Herero and half of the Nama dead. Germany officially recognised it as genocide in 2021.",
+        "pt": "Aconteceu entre 1904 e 1908, na atual Namíbia. Depois de uma revolta dos herero, o general Lothar von Trotha ordenou seu extermínio: muitos foram empurrados para o deserto para morrer de sede, e os sobreviventes ficaram presos em campos de concentração. As estimativas falam em até 80% dos herero e metade dos nama mortos. A Alemanha reconheceu oficialmente o genocídio em 2021."
+      }
+    },
+    {
+      "en": "It was unified under the leadership of the \"Iron Chancellor\", Otto von Bismarck.",
+      "pt": "Foi unificado sob a liderança do \"Chanceler de Ferro\", Otto von Bismarck.",
+      "details": {
+        "en": "Bismarck became prime minister of Prussia in 1862 and won three short wars, against Denmark, Austria and France, that brought the German states together under the Prussian king, proclaimed emperor in 1871. He then led the government as chancellor for almost twenty years, until the young Wilhelm II dismissed him in 1890. The nickname comes from a speech in which he said the great questions of the day would be decided by \"iron and blood\".",
+        "pt": "Bismarck se tornou primeiro-ministro da Prússia em 1862 e venceu três guerras curtas, contra a Dinamarca, a Áustria e a França, que reuniram os estados alemães sob o rei prussiano, proclamado imperador em 1871. Depois comandou o governo como chanceler por quase vinte anos, até ser demitido pelo jovem Guilherme II em 1890. O apelido vem de um discurso em que disse que as grandes questões da época seriam decididas \"a ferro e sangue\"."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/German_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Alemão"
+  },
+  "aliases": [
+    "German Reich",
+    "Reich Alemão",
+    "Deutsches Reich",
+    "Imperial Germany",
+    "Alemanha Imperial",
+    "Second Reich",
+    "Segundo Reich",
+    "Kaiserreich",
+    "Germany",
+    "Alemanha"
+  ],
+  "summary": {
+    "en": "The state created in 1871, when the German states united under the King of Prussia after the victory over France, in a proclamation held at the Palace of Versailles. It was a federation of 25 states dominated by Prussia, and within a few decades it became the leading industrial power in Europe, pioneering social insurance for workers. From 1884 it acquired colonies in Africa and the Pacific, plus a leased port in China. Under Wilhelm II it built a large navy to rival Britain's. It entered World War I in 1914 and, defeated in 1918, saw a revolution, the emperor's abdication and the loss of all its colonies.",
+    "pt": "Estado criado em 1871, quando os estados alemães se uniram sob o rei da Prússia depois da vitória sobre a França, numa proclamação feita no Palácio de Versalhes. Era uma federação de 25 estados dominada pela Prússia, e em poucas décadas virou a principal potência industrial da Europa, pioneira no seguro social para trabalhadores. A partir de 1884 adquiriu colônias na África e no Pacífico, além de um porto arrendado na China. Sob Guilherme II, construiu uma grande marinha para rivalizar com a britânica. Entrou na Primeira Guerra em 1914 e, derrotado em 1918, viu uma revolução, a abdicação do imperador e a perda de todas as colônias."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "German Empire",
+        "year": 1914
+      },
+      {
+        "polity": "German Africa",
+        "year": 1914
+      },
+      {
+        "country": "WSM"
+      },
+      {
+        "country": "MHL"
+      },
+      {
+        "country": "NRU"
+      },
+      {
+        "country": "MNP"
+      },
+      {
+        "country": "FSM"
+      },
+      {
+        "country": "PLW"
+      }
+    ]
+  }
+}

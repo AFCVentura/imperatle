@@ -1,0 +1,109 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "polish-lithuanian-commonwealth",
+  "name": {
+    "en": "Polish–Lithuanian Commonwealth",
+    "pt": "Comunidade Polaco-Lituana"
+  },
+  "peak": {
+    "year": 1619,
+    "precision": "Exact"
+  },
+  "start": {
+    "year": 1569,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1795,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 1569, when a treaty turned the union between a neighbouring kingdom and grand duchy, which already shared the same monarch, into a single state, with a common king and parliament. It ends in 1795, when its three neighbours divided what was left of the territory. The peak shown is 1619, when a truce with Russia handed over Smolensk and the Chernihiv region. The map leaves out the Duchy of Prussia and the Duchy of Courland, vassals with their own dukes.",
+    "pt": "Começa em 1569, quando um tratado transformou a união entre um reino e um grão-ducado vizinhos, que já dividiam o mesmo monarca, num só Estado, com rei e parlamento comuns. Termina em 1795, quando os três vizinhos dividiram o que restava do território. O auge escolhido é 1619, quando uma trégua com a Rússia entregou Smolensk e a região de Chernihiv. O mapa não inclui o Ducado da Prússia nem o Ducado da Curlândia, que eram vassalos com duques próprios."
+  },
+  "area": {
+    "km2": 900000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Europe"
+  ],
+  "primaryContinent": "Europe",
+  "capital": {
+    "en": "Kraków, later Warsaw (the court moved in 1596)",
+    "pt": "Cracóvia, depois Varsóvia (a corte se mudou em 1596)"
+  },
+  "language": {
+    "en": "Polish and Ruthenian (with Latin in administration and diplomacy)",
+    "pt": "Polonês e rutênio (com o latim na administração e na diplomacia)"
+  },
+  "religion": {
+    "en": "Catholicism",
+    "pt": "Catolicismo"
+  },
+  "religionNotes": {
+    "en": "In 1573, the nobility approved a guarantee of peace between religions, rare in the Europe of the wars of religion. Besides Catholics, there were many Orthodox Christians in the eastern lands, Protestants, Muslim Tatars and the largest Jewish community in the world. In 1596, part of the Orthodox Church came to recognise the pope, giving rise to the Greek Catholic Church. With the Counter-Reformation, tolerance declined over the 17th century.",
+    "pt": "Em 1573, a nobreza aprovou uma garantia de paz entre as religiões, rara na Europa das guerras religiosas. Além dos católicos, havia muitos ortodoxos nas terras do leste, protestantes, tártaros muçulmanos e a maior comunidade judaica do mundo. Em 1596, parte da Igreja Ortodoxa passou a reconhecer o papa, dando origem à Igreja Greco-Católica. Com a Contrarreforma, a tolerância foi diminuindo ao longo do século XVII."
+  },
+  "curiosities": [
+    {
+      "en": "It was home to the largest Jewish community in the world, with its own council that worked like a parliament.",
+      "pt": "Abrigava a maior comunidade judaica do mundo, com um conselho próprio que funcionava como um parlamento.",
+      "details": {
+        "en": "Since the Middle Ages, kings of the region had attracted Jews expelled from other parts of Europe, with guarantees of protection. By the 18th century they numbered about 750,000 people. Between 1580 and 1764, the so-called Council of Four Lands brought together representatives of the communities to collect taxes and decide internal matters. The region became the main centre of Ashkenazi Jewish culture until the 20th century.",
+        "pt": "Desde a Idade Média, reis da região atraíram judeus expulsos de outras partes da Europa, com garantias de proteção. No século XVIII, eram cerca de 750 mil pessoas. Entre 1580 e 1764, o chamado Conselho das Quatro Terras reunia representantes das comunidades para cobrar impostos e decidir questões internas. A região virou o principal centro da cultura judaica asquenaze até o século XX."
+      }
+    },
+    {
+      "en": "Its king led the cavalry charge that defeated the Ottoman siege of Vienna, in 1683.",
+      "pt": "Seu rei liderou a carga de cavalaria que derrotou o cerco otomano a Viena, em 1683.",
+      "details": {
+        "en": "Vienna had been besieged for two months by a huge Ottoman army when a relief force from several Christian states arrived. King Jan III Sobieski commanded the final attack, with about 18,000 horsemen riding down the hills around the city, in what is often described as the largest cavalry charge in history. The defeat marked the beginning of the Ottoman retreat in Europe.",
+        "pt": "Viena estava cercada havia dois meses por um enorme exército otomano quando chegou uma força de socorro de vários Estados cristãos. O rei Jan III Sobieski comandou o ataque final, com cerca de 18 mil cavaleiros descendo as colinas ao redor da cidade, no que costuma ser descrito como a maior carga de cavalaria da história. A derrota marcou o começo do recuo otomano na Europa."
+      }
+    },
+    {
+      "en": "It was partitioned three times between Russia, Prussia and Austria, until it disappeared from the map entirely.",
+      "pt": "Foi repartido três vezes entre a Rússia, a Prússia e a Áustria, até desaparecer completamente do mapa.",
+      "details": {
+        "en": "In the partitions of 1772, 1793 and 1795, the three neighbours took ever larger pieces of the territory, until nothing was left. Poland only returned as an independent country in 1918, after the First World War, 123 years later. Lithuania also became independent at the same time.",
+        "pt": "Nas partilhas de 1772, 1793 e 1795, os três vizinhos tomaram pedaços cada vez maiores do território, até não sobrar nada. O nome Polônia só voltou a existir como país independente em 1918, depois da Primeira Guerra Mundial, 123 anos mais tarde. A Lituânia também se tornou independente na mesma época."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Polish–Lithuanian_Commonwealth",
+    "pt": "https://pt.wikipedia.org/wiki/República_das_Duas_Nações"
+  },
+  "aliases": [
+    "República das Duas Nações",
+    "Polish-Lithuanian Commonwealth",
+    "Commonwealth of Both Nations",
+    "Rzeczpospolita",
+    "Polônia-Lituânia",
+    "Poland-Lithuania",
+    "First Polish Republic",
+    "Primeira República Polonesa",
+    "Poland",
+    "Polônia",
+    "Polish Empire",
+    "Império Polonês"
+  ],
+  "summary": {
+    "en": "A state formed in 1569 by the Union of Lublin, which joined the Kingdom of Poland and the Grand Duchy of Lithuania under a common king and parliament. It was one of the largest and most populous powers in Europe, stretching from the Baltic Sea to near the Black Sea. It had a political system rare for its time: the king was elected by the nobility, which controlled parliament and had broad rights, and religious tolerance was guaranteed by law. In the 17th century, wars against Sweden, Russia and the Ottomans, along with a great Cossack revolt in Ukraine, devastated the country, and the requirement of unanimity in parliament weakened the government. In the 18th century, Russia, Prussia and Austria took the territory in three partitions, despite an attempt at reform with the constitution of 1791, and in 1795 the state disappeared from the map.",
+    "pt": "Estado formado em 1569 pela União de Lublin, que juntou o Reino da Polônia e o Grão-Ducado da Lituânia sob um rei e um parlamento comuns. Era uma das maiores e mais populosas potências da Europa, indo do Mar Báltico até perto do Mar Negro. Tinha um sistema político raro para a época: o rei era eleito pela nobreza, que controlava o parlamento e tinha amplos direitos, e a tolerância religiosa era garantida por lei. No século XVII, guerras contra a Suécia, a Rússia e os otomanos, além de uma grande revolta cossaca na Ucrânia, devastaram o país, e a exigência de unanimidade no parlamento enfraqueceu o governo. No século XVIII, a Rússia, a Prússia e a Áustria tomaram o território em três partilhas, apesar de uma tentativa de reforma com a constituição de 1791, e em 1795 o Estado desapareceu do mapa."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Polish-Lithuanian Commonwealth",
+        "year": 1619
+      },
+      {
+        "draw": "remove",
+        "ring": [[20.0,55.9],[20.0,57.8],[22.6,57.95],[23.6,57.4],[24.0,57.07],[24.08,56.96],[24.15,56.9],[24.4,56.82],[24.75,56.72],[25.25,56.5],[25.85,56.37],[26.25,56.15],[26.35,56.0],[26.45,55.86],[26.6,55.83],[26.75,55.7],[26.6,55.67],[26.05,55.98],[25.6,56.15],[24.9,56.44],[24.3,56.27],[23.7,56.37],[22.9,56.38],[22.1,56.42],[21.7,56.3],[21.05,56.07]]
+      }
+    ]
+  }
+}

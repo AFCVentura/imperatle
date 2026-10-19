@@ -1,0 +1,112 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "italian-empire",
+  "name": {
+    "en": "Italian Empire",
+    "pt": "Império Italiano"
+  },
+  "peak": {
+    "year": 1938,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1882,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1947,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 1882, when the government took over a Red Sea port bought years earlier by a shipping company, and ends in 1947, when a peace treaty forced the country to give up its colonies. From 1950 to 1960, it still administered a territory in the Horn of Africa under UN trusteeship, but without sovereignty. The peak shown is 1938, after the conquest of an independent African empire. The map excludes the Balkan kingdom united with the crown in 1939, which was formally a protectorate, and the lands occupied during the Second World War.",
+    "pt": "Começa em 1882, quando o governo assumiu um porto no mar Vermelho comprado anos antes por uma companhia de navegação, e termina em 1947, quando um tratado de paz obrigou o país a renunciar às colônias. De 1950 a 1960, ainda administrou um território no Chifre da África sob tutela da ONU, mas sem soberania. O auge escolhido é 1938, depois da conquista de um império africano independente. O mapa exclui o reino dos Bálcãs unido à coroa em 1939, que era formalmente um protetorado, e as terras ocupadas durante a Segunda Guerra Mundial."
+  },
+  "area": {
+    "km2": 3620000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Africa",
+    "Europe",
+    "Asia"
+  ],
+  "primaryContinent": "Europe",
+  "capital": {
+    "en": "Rome",
+    "pt": "Roma"
+  },
+  "language": {
+    "en": "Italian (as well as Arabic, Somali, Amharic and Tigrinya in the colonies)",
+    "pt": "Italiano (além de árabe, somali, amárico e tigrínia nas colônias)"
+  },
+  "religion": {
+    "en": "Catholicism",
+    "pt": "Catolicismo"
+  },
+  "religionNotes": {
+    "en": "The Lateran Pacts of 1929 reconciled the State with the pope and confirmed Catholicism as the official religion. In the colonies, most of the population was Muslim, in Libya and Somalia, or Orthodox Christian, in the highlands of Ethiopia and Eritrea, and the regime tried to present itself as a protector of Islam to win support in the Arab world.",
+    "pt": "Os Pactos de Latrão, de 1929, reconciliaram o Estado com o papa e confirmaram o catolicismo como religião oficial. Nas colônias, a maioria da população era muçulmana, na Líbia e na Somália, ou cristã ortodoxa, nas terras altas da Etiópia e da Eritreia, e o regime tentou se apresentar como protetor do islã para ganhar apoio no mundo árabe."
+  },
+  "curiosities": [
+    {
+      "en": "It was the first country to drop bombs from an aeroplane in a war.",
+      "pt": "Foi o primeiro país a lançar bombas de um avião numa guerra.",
+      "details": {
+        "en": "On 1 November 1911, during the war against the Ottomans over Libya, Lieutenant Giulio Gavotti threw four grenades by hand from a monoplane onto camps near Tripoli. It was the first aerial bombing in history, and Italy also used aeroplanes for reconnaissance and propaganda in that war.",
+        "pt": "Em 1º de novembro de 1911, durante a guerra contra os otomanos pela Líbia, o tenente Giulio Gavotti jogou à mão quatro granadas de um monoplano sobre acampamentos perto de Trípoli. Foi o primeiro bombardeio aéreo da história, e a Itália também usou aviões para reconhecimento e propaganda nessa guerra."
+      }
+    },
+    {
+      "en": "It suffered one of the biggest defeats of a European army in colonial Africa, at the hands of an African empire.",
+      "pt": "Sofreu uma das maiores derrotas de um exército europeu na África colonial, diante de um império africano.",
+      "details": {
+        "en": "On 1 March 1896, at the Battle of Adwa, the army of the Ethiopian emperor Menelik II defeated about 17,000 Italian soldiers. The victory secured the independence of Ethiopia, one of only two African countries to escape the colonial partition, and Italy only invaded it again almost 40 years later.",
+        "pt": "Em 1º de março de 1896, na Batalha de Adwa, o exército do imperador etíope Menelik II derrotou cerca de 17 mil soldados italianos. A vitória garantiu a independência da Etiópia, um dos dois únicos países africanos a escapar da partilha colonial, e a Itália só voltou a invadi-la quase 40 anos depois."
+      }
+    },
+    {
+      "en": "Its dictator claimed to be refounding an ancient empire, whose symbols inspired the name of his party.",
+      "pt": "Seu ditador dizia estar refundando um império antigo, cujos símbolos inspiraram o nome do seu partido.",
+      "details": {
+        "en": "Fascism took its name from the \"fasces\", the bundle of rods with an axe carried by the guards of magistrates in Ancient Rome. Mussolini called the Mediterranean \"Mare Nostrum\" and presented the conquests in Africa as the return of the Roman Empire.",
+        "pt": "O fascismo tirou seu nome dos \"fasces\", o feixe de varas com um machado carregado pelos guardas dos magistrados na Roma Antiga. Mussolini chamava o Mediterrâneo de \"Mare Nostrum\" e apresentava as conquistas na África como a volta do Império Romano."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Italian_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Italiano"
+  },
+  "aliases": [
+    "Italian Colonial Empire",
+    "Império Colonial Italiano",
+    "Impero italiano",
+    "Italy",
+    "Itália",
+    "Kingdom of Italy",
+    "Reino da Itália",
+    "Italian East Africa",
+    "África Oriental Italiana"
+  ],
+  "summary": {
+    "en": "A colonial empire formed by the Kingdom of Italy after the unification of the country, starting with the purchase of the port of Assab, on the Red Sea, taken over by the State in 1882. Italy occupied Eritrea and part of Somalia, but its attempt to conquer Ethiopia ended in defeat at Adwa, in 1896. In 1911 and 1912, it took Libya and the Dodecanese from the Ottoman Empire. Under Benito Mussolini's fascist dictatorship, the resistance in Libya was crushed with concentration camps, and in 1935 and 1936 Ethiopia was conquered with the use of poison gas and joined with the other colonies in Italian East Africa. During the Second World War, the British took the African colonies between 1941 and 1943, and through the peace treaty of 1947 Italy gave up all of them.",
+    "pt": "Império colonial formado pelo Reino da Itália depois da unificação do país, a partir da compra do porto de Assab, no mar Vermelho, assumido pelo Estado em 1882. A Itália ocupou a Eritreia e parte da Somália, mas sua tentativa de conquistar a Etiópia terminou com a derrota em Adwa, em 1896. Em 1911 e 1912, tomou a Líbia e o Dodecaneso do Império Otomano. Sob a ditadura fascista de Benito Mussolini, a resistência na Líbia foi esmagada com campos de concentração, e em 1935 e 1936 a Etiópia foi conquistada com o uso de gás venenoso e unida às outras colônias na África Oriental Italiana. Durante a Segunda Guerra Mundial, os britânicos tomaram as colônias africanas entre 1941 e 1943, e pelo tratado de paz de 1947 a Itália renunciou a todas elas."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Kingdom of Italy",
+        "year": 1938
+      },
+      {
+        "polity": "Italian Africa",
+        "year": 1938
+      },
+      {
+        "draw": "add",
+        "ring": [[117.196,39.128],[117.212,39.128],[117.212,39.137],[117.196,39.137],[117.196,39.128]]
+      }
+    ]
+  }
+}

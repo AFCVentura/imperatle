@@ -51,20 +51,50 @@
   "curiosities": [
     {
       "en": "After eight years of marching, its army refused to go any further on the banks of a river in India.",
-      "pt": "Depois de oito anos de marcha, seu exército se recusou a seguir adiante às margens de um rio na Índia."
+      "pt": "Depois de oito anos de marcha, seu exército se recusou a seguir adiante às margens de um rio na Índia.",
+      "details": {
+        "en": "In 326 BCE, after defeating King Porus by the Hydaspes river, the army reached the Hyphasis, today's Beas, in the Punjab. Worn out by eight years of campaigning, monsoon rains and battles, the soldiers refused to march on towards the Ganges valley. Alexander shut himself in his tent for three days but finally gave in and turned back west.",
+        "pt": "Em 326 a.C., depois de vencer o rei Poro às margens do rio Hidaspes, o exército chegou ao rio Hífase, o atual Beas, no Punjab. Cansados após oito anos de campanha, chuvas de monção e batalhas, os soldados se recusaram a seguir rumo ao vale do Ganges. Alexandre ficou três dias trancado na tenda, mas acabou cedendo e voltou para o oeste."
+      }
     },
     {
       "en": "Its founder was a student of Aristotle and never lost a pitched battle.",
-      "pt": "Seu fundador era aluno de Aristóteles e nunca perdeu uma batalha em campo aberto."
+      "pt": "Seu fundador era aluno de Aristóteles e nunca perdeu uma batalha em campo aberto.",
+      "details": {
+        "en": "Philip II hired Aristotle to teach Alexander between the ages of 13 and 16, at Mieza, in Macedon. As a general, Alexander won every major battle he fought, such as the Granicus, Issus, Gaugamela and the Hydaspes, often against much larger armies, and his campaigns are still studied in military academies.",
+        "pt": "Filipe II contratou Aristóteles para educar Alexandre entre os 13 e os 16 anos, em Mieza, na Macedônia. Como general, Alexandre venceu todas as grandes batalhas que travou, como Granico, Isso, Gaugamela e Hidaspes, muitas vezes contra exércitos bem maiores, e suas campanhas são estudadas até hoje em academias militares."
+      }
     },
     {
       "en": "A city it founded in Egypt would later have the most famous lighthouse and library of Antiquity.",
-      "pt": "Uma cidade fundada por ele no Egito teria depois o farol e a biblioteca mais famosos da Antiguidade."
+      "pt": "Uma cidade fundada por ele no Egito teria depois o farol e a biblioteca mais famosos da Antiguidade.",
+      "details": {
+        "en": "Alexander founded Alexandria in 331 BCE, on the Nile delta, and it became the capital of the Ptolemies, the dynasty of one of his generals. The lighthouse on the island of Pharos, more than 100 metres tall, was one of the Seven Wonders of the Ancient World, and the library, the largest of Antiquity, held tens of thousands of scrolls or more. The city still exists and is the second largest in Egypt.",
+        "pt": "Alexandre fundou Alexandria em 331 a.C., no delta do Nilo, e ela virou a capital dos Ptolomeus, a dinastia de um de seus generais. O farol da ilha de Faros, com mais de 100 metros, era uma das Sete Maravilhas do Mundo Antigo, e a biblioteca, a maior da Antiguidade, reunia dezenas de milhares de rolos ou mais. A cidade ainda existe e é a segunda maior do Egito."
+      }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Alexander_the_Great",
     "pt": "https://pt.wikipedia.org/wiki/Alexandre,_o_Grande"
+  },
+  "aliases": [
+    "Macedonia",
+    "Macedônia",
+    "Macedonians",
+    "Macedônios",
+    "Alexander the Great",
+    "Alexandre, o Grande",
+    "Alexander's Empire",
+    "Império de Alexandre",
+    "Argead Empire",
+    "Império Argéada",
+    "Greece",
+    "Grécia"
+  ],
+  "summary": {
+    "en": "The empire built by Alexander the Great, king of Macedon, in northern Greece, who inherited from his father, Philip II, a powerful army and control over the Greek cities. From 334 BCE, in little more than ten years, he conquered the Persian Empire, Egypt and lands as far as northwestern India, without losing a single major battle. He founded dozens of cities and spread the Greek language and culture across the East, opening the Hellenistic age. Alexander died in Babylon in 323 BCE, aged 32, and his generals split the empire into several kingdoms.",
+    "pt": "Império formado por Alexandre, o Grande, rei da Macedônia, no norte da Grécia, que herdou do pai, Filipe II, um exército poderoso e o domínio sobre as cidades gregas. A partir de 334 a.C., em pouco mais de dez anos, conquistou o Império Persa, o Egito e terras até o noroeste da Índia, sem perder nenhuma grande batalha. Fundou dezenas de cidades e espalhou a língua e a cultura gregas pelo Oriente, abrindo o período helenístico. Alexandre morreu na Babilônia em 323 a.C., aos 32 anos, e seus generais dividiram o império em vários reinos."
   },
   "map": {
     "parts": [

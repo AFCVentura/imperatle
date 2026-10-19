@@ -1,0 +1,106 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "yuan-dynasty",
+  "name": {
+    "en": "Yuan dynasty",
+    "pt": "Dinastia Yuan"
+  },
+  "peak": {
+    "year": 1310,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1271,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1368,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 1271, when the ruler adopted a Chinese dynastic name, and ends in 1368, when the court was driven out of the capital and fell back to the steppe, where it carried on for a few more decades. The territory stayed almost the same from the conquest of the south, in 1279, to the 1350s. The map leaves out Korea, a vassal kingdom with its own king, and the northern border, in Siberia, is uncertain: it is not known how far its rule actually reached.",
+    "pt": "Começa em 1271, quando o governante adotou um nome dinástico chinês, e termina em 1368, quando a corte foi expulsa da capital e recuou para a estepe, onde continuou por mais algumas décadas. O território ficou quase igual entre a conquista do sul, em 1279, e os anos 1350. O mapa não inclui a Coreia, que era um reino vassalo com rei próprio, e a fronteira norte, na Sibéria, é incerta: não se sabe até onde iam de fato os seus domínios."
+  },
+  "area": {
+    "km2": 14000000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Dadu (today's Beijing), with Xanadu as the summer capital",
+    "pt": "Dadu (atual Pequim), com Xanadu como capital de verão"
+  },
+  "language": {
+    "en": "Mongolian and Classical Chinese (with Persian also used in administration)",
+    "pt": "Mongol e chinês clássico (com o persa também usado na administração)"
+  },
+  "religion": {
+    "en": "Tibetan Buddhism at court, with tolerance of other religions",
+    "pt": "Budismo tibetano na corte, com tolerância a outras religiões"
+  },
+  "religionNotes": {
+    "en": "The emperors favoured Tibetan Buddhism, and a Tibetan monk headed Buddhist affairs across the whole territory. At the same time, Confucians, Taoists, Muslims and Christians had wide freedom, and steppe traditions remained alive at court.",
+    "pt": "Os imperadores favoreciam o budismo tibetano, e um monge tibetano chefiava os assuntos budistas de todo o território. Ao mesmo tempo, confucionistas, taoístas, muçulmanos e cristãos tinham ampla liberdade, e as tradições da estepe continuavam vivas na corte."
+  },
+  "curiosities": [
+    {
+      "en": "It was the first state to make paper money its main circulating currency.",
+      "pt": "Foi o primeiro Estado a fazer do papel-moeda o principal dinheiro em circulação.",
+      "details": {
+        "en": "The first banknotes appeared in China in the 11th century, but they served as a complement to metal coins. The Yuan went further: its notes, called chao, became the main money across the whole territory, and refusing them was a crime. At first they could be exchanged for silver, later they circulated without that backing. Marco Polo described the system with amazement, and overprinting in the 14th century caused inflation that helped weaken the dynasty.",
+        "pt": "As primeiras cédulas surgiram na China no século XI, mas serviam como complemento das moedas de metal. A Yuan foi além: suas notas, chamadas chao, viraram o dinheiro principal em todo o território, e recusá-las era crime. No começo podiam ser trocadas por prata, depois passaram a circular sem esse lastro. Marco Polo descreveu o sistema com espanto, e o excesso de emissão no século XIV gerou uma inflação que ajudou a enfraquecer a dinastia."
+      }
+    },
+    {
+      "en": "It was the first dynasty of foreign origin to rule all of China.",
+      "pt": "Foi a primeira dinastia de origem estrangeira a governar toda a China.",
+      "details": {
+        "en": "Before it, peoples from the north, such as the Khitans and the Jurchens, had founded dynasties, but they ruled only northern China. With the conquest of the Southern Song dynasty, in 1279, the Mongols came to control the whole country, from Beijing. Only the Manchus, who founded the last Chinese dynasty in the 17th century, would do the same again.",
+        "pt": "Antes dela, povos vindos do norte, como os khitans e os jurchens, chegaram a fundar dinastias, mas governaram só o norte da China. Com a conquista da dinastia Song do Sul, em 1279, os mongóis passaram a controlar o país inteiro, a partir de Pequim. Só os manchus, que fundaram a última dinastia chinesa no século XVII, voltariam a fazer o mesmo."
+      }
+    },
+    {
+      "en": "It received the Venetian merchant Marco Polo at court, who served the emperor for almost two decades.",
+      "pt": "Recebeu na corte o mercador veneziano Marco Polo, que serviu ao imperador por quase duas décadas.",
+      "details": {
+        "en": "Marco Polo reached the court around 1275, with his father and uncle, and stayed about 17 years, serving the emperor on missions across the territory. Back in Europe, imprisoned in Genoa, he dictated the account of his journey to a cellmate, and it became one of the most widely read books of the Middle Ages. Some details are still debated by historians, but most accept that he really was in China.",
+        "pt": "Marco Polo chegou à corte por volta de 1275, com o pai e o tio, e ficou cerca de 17 anos, servindo ao imperador em missões pelo território. De volta à Europa, preso em Gênova, ditou a um companheiro de cela o relato da viagem, que virou um dos livros mais lidos da Idade Média. Alguns detalhes ainda são debatidos pelos historiadores, mas a maioria aceita que ele esteve mesmo na China."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Yuan_dynasty",
+    "pt": "https://pt.wikipedia.org/wiki/Dinastia_Yuan"
+  },
+  "aliases": [
+    "China",
+    "Yuan Empire",
+    "Império Yuan",
+    "Great Yuan",
+    "Grande Yuan",
+    "Yuan China",
+    "China Yuan",
+    "Chinese Empire",
+    "Império Chinês"
+  ],
+  "summary": {
+    "en": "The dynasty founded by Kublai Khan, grandson of Genghis Khan, who in 1271 adopted the Chinese dynastic name Yuan and in 1279 completed the conquest of the Southern Song dynasty, uniting all of China under a government of foreign origin. With its capital at Dadu, today's Beijing, it also ruled Mongolia, Tibet and Manchuria, and it was the most powerful of the parts into which the Mongol Empire had split. It encouraged trade and received travellers from all over Eurasia. In the 14th century, famines, floods of the Yellow River, inflation and disputes at court led to revolts, and in 1368 the founder of the Ming dynasty drove the court back to the steppe.",
+    "pt": "Dinastia fundada por Kublai Khan, neto de Gêngis Khan, que em 1271 adotou o nome dinástico chinês Yuan e em 1279 completou a conquista da dinastia Song do Sul, unindo toda a China sob um governo de origem estrangeira. Com capital em Dadu, a atual Pequim, governava também a Mongólia, o Tibete e a Manchúria, e era a mais poderosa das partes em que o Império Mongol tinha se dividido. Estimulou o comércio e recebeu viajantes de toda a Eurásia. No século XIV, fomes, enchentes do Rio Amarelo, inflação e disputas na corte levaram a revoltas, e em 1368 o fundador da dinastia Ming expulsou a corte de volta para a estepe."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Yuan Dynasty",
+        "year": 1310
+      },
+      {
+        "draw": "remove",
+        "ring": [[124.2,40.05],[125.4,40.5],[126.5,40.3],[127.3,39.7],[127.7,39.25],[130,38.5],[130,33],[124,33],[123.8,37.5]]
+      }
+    ]
+  }
+}

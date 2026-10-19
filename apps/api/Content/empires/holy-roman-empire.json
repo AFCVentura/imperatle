@@ -1,0 +1,128 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "holy-roman-empire",
+  "name": {
+    "en": "Holy Roman Empire",
+    "pt": "Sacro Império Romano-Germânico"
+  },
+  "peak": {
+    "year": 1050,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 962,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1806,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 962, when a German king was crowned emperor in Rome, although some historians date it back to 800. It ends in 1806, dissolved under pressure from a French conqueror.",
+    "pt": "Começa em 962, quando um rei germânico foi coroado imperador em Roma, embora alguns historiadores o façam começar em 800. Termina em 1806, dissolvido sob pressão de um conquistador francês."
+  },
+  "area": {
+    "km2": 883033,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Europe"
+  ],
+  "primaryContinent": "Europe",
+  "capital": {
+    "en": "No fixed capital (travelling court; Aachen for coronations)",
+    "pt": "Sem capital fixa (corte itinerante; Aachen para as coroações)"
+  },
+  "language": {
+    "en": "Latin (and German, along with many local languages)",
+    "pt": "Latim (e alemão, além de muitas línguas locais)"
+  },
+  "religion": {
+    "en": "Catholicism (later also Lutheranism and Calvinism)",
+    "pt": "Catolicismo (depois também luteranismo e calvinismo)"
+  },
+  "religionNotes": {
+    "en": "After the Reformation, a peace signed in 1555 let each prince choose the religion of his own territory, Catholic or Lutheran.",
+    "pt": "Depois da Reforma, uma paz assinada em 1555 permitiu que cada príncipe escolhesse a religião do seu território, católica ou luterana."
+  },
+  "curiosities": [
+    {
+      "en": "Its ruler was not born to the throne but chosen by a small group of princes, seven of them for centuries.",
+      "pt": "Seu governante não herdava o trono, mas era escolhido por um pequeno grupo de príncipes, sete deles durante séculos.",
+      "details": {
+        "en": "The Golden Bull of 1356 fixed seven prince-electors: the archbishops of Mainz, Cologne and Trier, the King of Bohemia, the Count Palatine of the Rhine, the Duke of Saxony and the Margrave of Brandenburg. The number changed a little later on. In practice, from 1438 they almost always chose a Habsburg, but candidates still had to buy votes and make promises to the electors.",
+        "pt": "A Bula de Ouro de 1356 fixou sete príncipes eleitores: os arcebispos de Mainz, Colônia e Trier, o rei da Boêmia, o conde palatino do Reno, o duque da Saxônia e o margrave de Brandemburgo. Depois o número mudou um pouco. Na prática, a partir de 1438 eles quase sempre escolheram um Habsburgo, mas os candidatos ainda precisavam comprar votos e fazer promessas aos eleitores."
+      }
+    },
+    {
+      "en": "The Protestant Reformation began in its lands, when a monk published his 95 theses in 1517.",
+      "pt": "A Reforma Protestante começou em suas terras, quando um monge publicou suas 95 teses em 1517.",
+      "details": {
+        "en": "In 1517 the monk Martin Luther made public in Wittenberg, in Saxony, 95 theses against the Church's sale of indulgences. Thanks to the printing press his ideas spread quickly, and many princes turned Protestant, partly to gain independence from the emperor and the pope. The religious split later led to the Thirty Years' War (1618 to 1648), one of the most destructive in European history.",
+        "pt": "Em 1517, o monge Martinho Lutero divulgou em Wittenberg, na Saxônia, 95 teses contra a venda de indulgências pela Igreja. Graças à imprensa, as ideias se espalharam rápido, e muitos príncipes aderiram ao protestantismo, em parte para ganhar autonomia diante do imperador e do papa. A divisão religiosa levou mais tarde à Guerra dos Trinta Anos (1618 a 1648), uma das mais destrutivas da história da Europa."
+      }
+    },
+    {
+      "en": "A French philosopher joked that it was neither holy, nor Roman, nor an empire.",
+      "pt": "Um filósofo francês brincou que ele não era nem sacro, nem romano, nem império.",
+      "details": {
+        "en": "The line is Voltaire's, from an essay of 1756: the body that called itself the Holy Roman Empire was \"in no way holy, nor Roman, nor an empire\". He was mocking an empire that, by then, was a patchwork of more than 300 states with an emperor of very limited power.",
+        "pt": "A frase é de Voltaire, num ensaio de 1756: o conjunto que se chamava Sacro Império Romano \"não era de forma alguma nem sacro, nem romano, nem império\". Ele zombava de um império que, na época, era uma colcha de mais de 300 Estados, com um imperador de poder bem limitado."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Holy_Roman_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Sacro_Império_Romano-Germânico"
+  },
+  "aliases": [
+    "HRE",
+    "SIRG",
+    "Sacro Império",
+    "Sacro Império Romano",
+    "Holy Empire",
+    "Holy Roman Empire of the German Nation",
+    "Heiliges Römisches Reich",
+    "Germany",
+    "Alemanha",
+    "Austria",
+    "Áustria"
+  ],
+  "summary": {
+    "en": "A union of kingdoms, duchies, bishoprics and cities in central Europe that saw itself as heir to the Western Roman Empire, joining the kingdoms of Germany, Italy and, later, Burgundy. It began with the crowning of Otto I by the pope in 962 and peaked in the 11th century, when emperors even had a say in choosing popes. From the 13th century on, power shifted more and more to the princes, and the empire became a patchwork of hundreds of nearly independent states, led from the 15th century by the Habsburg family. Napoleon brought it to an end in 1806.",
+    "pt": "União de reinos, ducados, bispados e cidades da Europa central que se via como herdeira do Império Romano do Ocidente, reunindo os reinos da Alemanha, da Itália e, depois, da Borgonha. Começou com a coroação de Oto I pelo papa, em 962, e teve o auge no século XI, quando os imperadores chegavam a interferir na escolha dos papas. A partir do século XIII, o poder passou cada vez mais para os príncipes, e o império virou uma colcha de centenas de Estados quase independentes, liderada desde o século XV pela família Habsburgo. Napoleão o levou ao fim em 1806."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "(Holy Roman Empire)",
+        "year": 1050
+      },
+      {
+        "draw": "add",
+        "ring": [[10.95,53.3],[11.47,53.09],[11.9,52.85],[11.97,52.6],[11.8,52.35],[11.68,52.18],[11.8,52],[12.2,51.86],[12,51.65],[11.2,51.9],[10.85,52.6]]
+      },
+      {
+        "draw": "add",
+        "ring": [[4.85,43.3],[5.5,42.95],[6.5,42.9],[7.4,43.45],[8.3,43.85],[8.9,44.25],[9.6,43.95],[10,43.4],[10,42.65],[10.6,42.55],[11,42.3],[11.5,42.25],[11.6,42.6],[11.3,43.2],[10.9,44],[9.8,44.6],[8.6,44.8],[7.6,44.35],[6.5,43.9],[5.5,43.75],[4.85,43.7]]
+      },
+      {
+        "draw": "add",
+        "ring": [[12.95,45.85],[13.1,45.62],[13.4,45.65],[13.4,45.3],[13.45,44.95],[13.75,44.7],[14,44.85],[14.2,45.1],[14.35,45.35],[14,45.6],[13.5,46],[13,46.1]]
+      },
+      {
+        "draw": "add",
+        "ring": [[4.376,43.55],[4.362,43.544],[4.35,43.535],[4.34,43.523],[4.332,43.507],[4.326,43.487],[4.315,43.465],[4.3,43.441],[4.28,43.414],[4.255,43.386],[4.24,43.359],[4.233,43.333],[4.234,43.308],[4.244,43.285],[4.262,43.264],[4.286,43.246],[4.316,43.231],[4.354,43.219],[4.395,43.209],[4.438,43.203],[4.484,43.2],[4.533,43.2],[4.581,43.202],[4.627,43.205],[4.672,43.211],[4.716,43.218],[4.795,43.239],[4.909,43.275],[5.058,43.325],[5.242,43.389],[5.31,43.442],[5.262,43.483],[5.098,43.513],[4.818,43.531],[4.604,43.543],[4.456,43.549]]
+      },
+      {
+        "draw": "add",
+        "ring": [[12.219,45.135],[12.264,45.142],[12.306,45.146],[12.346,45.147],[12.384,45.145],[12.419,45.139],[12.449,45.132],[12.474,45.124],[12.493,45.115],[12.507,45.104],[12.543,45.061],[12.599,44.986],[12.677,44.88],[12.775,44.742],[12.884,44.6],[13.003,44.452],[13.133,44.3],[13.272,44.143],[13.407,43.986],[13.535,43.827],[13.658,43.669],[13.775,43.509],[13.889,43.385],[14,43.295],[14.108,43.241],[14.213,43.222],[14.297,43.203],[14.361,43.184],[14.403,43.167],[14.424,43.15],[14.449,43.094],[14.477,42.997],[14.509,42.861],[14.543,42.686],[14.577,42.544],[14.61,42.437],[14.643,42.365],[14.674,42.326],[14.698,42.294],[14.716,42.269],[14.726,42.251],[14.729,42.24],[14.728,42.231],[14.723,42.224],[14.712,42.219],[14.698,42.216],[14.69,42.212],[14.688,42.206],[14.692,42.2],[14.703,42.191],[14.703,42.181],[14.694,42.168],[14.674,42.154],[14.645,42.137],[14.599,42.119],[14.537,42.1],[14.458,42.079],[14.364,42.057],[14.272,42.041],[14.183,42.031],[14.097,42.028],[14.014,42.031],[13.94,42.035],[13.875,42.042],[13.819,42.051],[13.772,42.062],[13.707,42.084],[13.622,42.116],[13.519,42.158],[13.397,42.211],[13.29,42.27],[13.197,42.337],[13.118,42.41],[13.055,42.491],[12.993,42.578],[12.933,42.671],[12.875,42.771],[12.819,42.877],[12.762,42.971],[12.705,43.053],[12.648,43.124],[12.591,43.182],[12.529,43.26],[12.463,43.357],[12.393,43.472],[12.318,43.607],[12.245,43.73],[12.173,43.841],[12.103,43.94],[12.035,44.028],[11.96,44.144],[11.879,44.29],[11.792,44.464],[11.699,44.669],[11.628,44.836],[11.579,44.967],[11.554,45.061],[11.551,45.118],[11.586,45.156],[11.66,45.174],[11.773,45.174],[11.924,45.154],[12.049,45.141],[12.147,45.134]]
+      },
+      {
+        "draw": "add",
+        "ring": [[8.268,42.323],[8.342,42.308],[8.408,42.294],[8.466,42.28],[8.516,42.266],[8.558,42.252],[8.639,42.216],[8.76,42.158],[8.92,42.079],[9.119,41.979],[9.272,41.896],[9.378,41.832],[9.439,41.786],[9.453,41.757],[9.463,41.726],[9.468,41.69],[9.47,41.652],[9.468,41.609],[9.464,41.576],[9.459,41.55],[9.451,41.533],[9.442,41.524],[9.404,41.514],[9.338,41.503],[9.242,41.49],[9.118,41.476],[9.013,41.467],[8.926,41.464],[8.859,41.465],[8.811,41.472],[8.754,41.489],[8.69,41.515],[8.617,41.551],[8.536,41.597],[8.454,41.652],[8.371,41.716],[8.288,41.79],[8.204,41.873],[8.136,41.943],[8.083,42],[8.046,42.045],[8.025,42.077],[8.008,42.106],[7.996,42.134],[7.989,42.159],[7.986,42.182],[7.995,42.207],[8.016,42.234],[8.048,42.264],[8.091,42.296],[8.142,42.316],[8.201,42.325]]
+      }
+    ]
+  }
+}

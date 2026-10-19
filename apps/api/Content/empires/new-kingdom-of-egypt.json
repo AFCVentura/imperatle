@@ -1,0 +1,105 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "new-kingdom-of-egypt",
+  "name": {
+    "en": "New Kingdom of Egypt",
+    "pt": "Império Novo do Egito"
+  },
+  "peak": {
+    "year": -1400,
+    "precision": "Century"
+  },
+  "start": {
+    "year": -1550,
+    "precision": "Century"
+  },
+  "end": {
+    "year": -1070,
+    "precision": "Century"
+  },
+  "durationNotes": {
+    "en": "The dates follow the usual chronology and may shift by a few decades. It starts with the expulsion of foreign rulers from the north of the country and ends when power split between two centres.",
+    "pt": "As datas seguem a cronologia mais aceita e podem variar algumas décadas. Começa com a expulsão de governantes estrangeiros do norte do país e termina quando o poder se dividiu entre dois centros."
+  },
+  "area": {
+    "km2": 703078,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Speculative",
+  "continents": [
+    "Asia",
+    "Africa"
+  ],
+  "primaryContinent": "Africa",
+  "capital": {
+    "en": "Thebes",
+    "pt": "Tebas"
+  },
+  "language": {
+    "en": "Egyptian",
+    "pt": "Egípcio"
+  },
+  "religion": {
+    "en": "Worship of Amun-Ra (king of the gods)",
+    "pt": "Culto a Amon-Rá (rei dos deuses)"
+  },
+  "religionNotes": {
+    "en": "For about two decades, one king imposed the worship of a single sun god and moved the capital to a new city. Everything was undone after his death.",
+    "pt": "Por cerca de duas décadas, um rei impôs o culto a um único deus solar e mudou a capital para uma cidade nova. Tudo foi desfeito após sua morte."
+  },
+  "curiosities": [
+    {
+      "en": "The craftsmen who built the royal tombs staged the first recorded strike in history, over late payments of grain.",
+      "pt": "Os artesãos que construíam as tumbas reais fizeram a primeira greve registrada da história, por atraso no pagamento em grãos.",
+      "details": {
+        "en": "The craftsmen of the village of Deir el-Medina, who built the tombs of the Valley of the Kings, laid down their tools around 1157 BCE, under Ramesses III, because the rations of wheat and barley they were paid in were late. They sat in front of the temples until they were paid. The episode was recorded on a papyrus now in Turin.",
+        "pt": "Os artesãos da aldeia de Deir el-Medina, que construíam as tumbas do Vale dos Reis, cruzaram os braços por volta de 1157 a.C., no reinado de Ramsés III, porque as rações de trigo e cevada que recebiam como salário estavam atrasadas. Sentaram-se diante dos templos até serem pagos. O episódio foi registrado num papiro hoje guardado em Turim."
+      }
+    },
+    {
+      "en": "Its kings were no longer buried in pyramids, but in tombs cut into the rock of a valley near the capital.",
+      "pt": "Seus reis já não eram enterrados em pirâmides, mas em tumbas escavadas na rocha de um vale perto da capital.",
+      "details": {
+        "en": "Pyramids drew tomb robbers, so the pharaohs of the New Kingdom were buried in tombs hidden in the rock of the Valley of the Kings, across the Nile from Thebes, today's Luxor. More than 60 tombs have been found there, their walls covered in paintings and religious texts. Even so, almost all were robbed in Antiquity.",
+        "pt": "As pirâmides atraíam saqueadores, então os faraós do Império Novo passaram a ser enterrados em tumbas escondidas na rocha do Vale dos Reis, do outro lado do Nilo em frente a Tebas, a atual Luxor. Já foram encontradas mais de 60 tumbas no vale, com paredes cobertas de pinturas e textos religiosos. Mesmo assim, quase todas foram saqueadas ainda na Antiguidade."
+      }
+    },
+    {
+      "en": "In 1922, the almost intact tomb of one of its young kings was found, full of gold.",
+      "pt": "Em 1922, foi encontrada quase intacta a tumba de um de seus reis jovens, cheia de ouro.",
+      "details": {
+        "en": "In November 1922 the British archaeologist Howard Carter found the tomb of Tutankhamun, a pharaoh who came to the throne at about 9 and died at about 19. The tomb was almost intact, with more than 5,000 objects, among them the famous gold mask. He was a minor king in his day, and that is precisely why his small, forgotten tomb escaped the robbers.",
+        "pt": "Em novembro de 1922, o arqueólogo britânico Howard Carter achou a tumba de Tutancâmon, um faraó que subiu ao trono por volta dos 9 anos e morreu por volta dos 19. A tumba estava quase intacta, com mais de 5 mil objetos, entre eles a famosa máscara de ouro. Ele foi um rei pouco importante na época, e foi justamente por isso que sua tumba, pequena e esquecida, escapou dos saqueadores."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/New_Kingdom_of_Egypt",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Novo"
+  },
+  "aliases": [
+    "Egypt",
+    "Egito",
+    "Egipto",
+    "Ancient Egypt",
+    "Antigo Egito",
+    "Egyptian Empire",
+    "Império Egípcio",
+    "Egyptian New Kingdom",
+    "Novo Império",
+    "Pharaohs",
+    "Faraós"
+  ],
+  "summary": {
+    "en": "The most powerful period of ancient Egypt, which began around 1550 BCE, when Pharaoh Ahmose drove out the Hyksos, foreign rulers of the north of the country. Pharaohs such as Thutmose III and Ramesses II extended Egyptian rule to Nubia, in the south, and to the Levant, where they fought the Hittites. Wealth from Nubian gold and trade paid for giant temples such as Karnak, Luxor and Abu Simbel. It was also the age of Hatshepsut, Akhenaten and Tutankhamun. It ended around 1070 BCE, with power split between the priests of Thebes and kings in the north.",
+    "pt": "Período mais poderoso do Egito antigo, que começou por volta de 1550 a.C., quando o faraó Ahmose expulsou os hicsos, governantes estrangeiros do norte do país. Faraós como Tutmés III e Ramsés II estenderam o domínio egípcio à Núbia, ao sul, e ao Levante, onde enfrentaram os hititas. A riqueza do ouro núbio e do comércio pagou templos gigantes, como os de Karnak, Luxor e Abu Simbel. Foi também a época de Hatshepsut, Aquenáton e Tutancâmon. Terminou por volta de 1070 a.C., com o poder dividido entre os sacerdotes de Tebas e reis no norte."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "New Kingdom of Egypt",
+        "year": -1400
+      }
+    ]
+  }
+}

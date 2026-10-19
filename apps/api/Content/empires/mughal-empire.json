@@ -49,20 +49,54 @@
   "curiosities": [
     {
       "en": "Around 1700, it is estimated to have produced about a quarter of the world's economic output",
-      "pt": "Por volta de 1700, estima-se que produzia cerca de um quarto da riqueza do mundo."
+      "pt": "Por volta de 1700, estima-se que produzia cerca de um quarto da riqueza do mundo.",
+      "details": {
+        "en": "Estimates by the economic historian Angus Maddison put Mughal India at about 24% of world output around 1700, more than all of Western Europe. The wealth came from farming, from cotton and silk cloth sold all over the world and from a very efficient land tax.",
+        "pt": "Estimativas do historiador econômico Angus Maddison indicam que, por volta de 1700, a Índia mogol respondia por cerca de 24% da produção mundial, mais que toda a Europa ocidental. A riqueza vinha da agricultura, dos tecidos de algodão e seda vendidos para o mundo inteiro e de um imposto sobre a terra muito eficiente."
+      }
     },
     {
       "en": "Its emperors descended from two great Central Asian conquerors, one on the father's side and the other on the mother's.",
-      "pt": "Seus imperadores descendiam de dois grandes conquistadores da Ásia Central, um pelo lado do pai e outro pelo da mãe."
+      "pt": "Seus imperadores descendiam de dois grandes conquistadores da Ásia Central, um pelo lado do pai e outro pelo da mãe.",
+      "details": {
+        "en": "The founder, Babur, descended from Tamerlane on his father's side and from Genghis Khan on his mother's. The word \"Mughal\" itself comes from the Persian word for \"Mongol\".",
+        "pt": "O fundador, Babur, descendia de Tamerlão pelo lado do pai e de Gengis Khan pelo lado da mãe. A própria palavra \"mogol\" vem da palavra persa para \"mongol\"."
+      }
     },
     {
       "en": "One of its emperors built a white marble mausoleum for his favourite wife, today one of the most visited monuments in the world.",
-      "pt": "Um de seus imperadores construiu um mausoléu de mármore branco para a esposa favorita, hoje um dos monumentos mais visitados do mundo."
+      "pt": "Um de seus imperadores construiu um mausoléu de mármore branco para a esposa favorita, hoje um dos monumentos mais visitados do mundo.",
+      "details": {
+        "en": "The Taj Mahal, in Agra, was built by the emperor Shah Jahan for Mumtaz Mahal, who died in 1631 giving birth to the couple's 14th child. It took about 20 years and some 20,000 workers, and today draws millions of visitors a year.",
+        "pt": "O Taj Mahal, em Agra, foi construído pelo imperador Shah Jahan para Mumtaz Mahal, que morreu em 1631 ao dar à luz o 14º filho do casal. A obra levou cerca de 20 anos e uns 20 mil trabalhadores, e hoje recebe milhões de visitantes por ano."
+      }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Mughal_Empire",
     "pt": "https://pt.wikipedia.org/wiki/Império_Mogol"
+  },
+  "aliases": [
+    "Mughal",
+    "Mughals",
+    "Mugal",
+    "Mogal",
+    "Mogul",
+    "Moghul",
+    "Mogóis",
+    "Great Mogul",
+    "Grão-Mogol",
+    "Mughal India",
+    "Índia Mogol",
+    "Gurkani",
+    "Hindustan",
+    "Indostão",
+    "India",
+    "Índia"
+  ],
+  "summary": {
+    "en": "A Muslim dynasty of Turco-Mongol origin that ruled almost all of the Indian subcontinent from the 16th to the 19th century. Founded by Babur, a prince from Central Asia, it peaked under Akbar, Jahangir, Shah Jahan and Aurangzeb, when it was one of the richest and most populous states in the world. A Persian-speaking Muslim elite ruled a mostly Hindu population. After 1707 it broke apart, and the British deposed the last emperor in 1857.",
+    "pt": "Dinastia muçulmana de origem turco-mongol que governou quase todo o subcontinente indiano entre os séculos XVI e XIX. Fundada por Babur, um príncipe vindo da Ásia Central, teve o auge com Akbar, Jahangir, Shah Jahan e Aurangzeb, quando era um dos Estados mais ricos e populosos do mundo. Uma elite muçulmana de língua persa governava uma população majoritariamente hindu. Depois de 1707 se fragmentou, e os britânicos depuseram o último imperador em 1857."
   },
   "map": {
     "parts": [

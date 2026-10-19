@@ -1,0 +1,110 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "carthaginian-empire",
+  "name": {
+    "en": "Carthaginian Empire",
+    "pt": "Império Cartaginês"
+  },
+  "peak": {
+    "year": -218,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": -814,
+    "precision": "Approximate"
+  },
+  "end": {
+    "year": -146,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "Tradition places its founding in 814 BCE, by settlers from a Phoenician city. It became an independent power from the 7th century BCE and ends in 146 BCE, when its capital was destroyed.",
+    "pt": "A tradição situa sua fundação em 814 a.C., por colonos de uma cidade fenícia. Tornou-se uma potência independente a partir do século VII a.C. e termina em 146 a.C., quando sua capital foi destruída."
+  },
+  "area": {
+    "km2": 440591,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Speculative",
+  "continents": [
+    "Europe",
+    "Africa"
+  ],
+  "primaryContinent": "Africa",
+  "capital": {
+    "en": "Carthage",
+    "pt": "Cartago"
+  },
+  "language": {
+    "en": "Punic",
+    "pt": "Púnico"
+  },
+  "religion": {
+    "en": "Phoenician polytheism (worship of Baal Hammon and Tanit)",
+    "pt": "Politeísmo fenício (culto a Baal Hammon e Tanit)"
+  },
+  "religionNotes": {
+    "en": "Ancient writers accused it of sacrificing children to its gods. Burial grounds full of infant remains found by archaeologists keep the debate alive.",
+    "pt": "Escritores antigos o acusavam de sacrificar crianças aos deuses. Cemitérios cheios de restos de bebês encontrados por arqueólogos mantêm o debate vivo."
+  },
+  "curiosities": [
+    {
+      "en": "After its fall, the victors ordered one of its farming manuals translated into Latin, so highly was it valued.",
+      "pt": "Depois de sua queda, os vencedores mandaram traduzir para o latim um de seus manuais de agricultura, de tão valorizado que era.",
+      "details": {
+        "en": "Mago wrote a treatise on farming in 28 books, in the Punic language. When Carthage was destroyed in 146 BCE, the Roman Senate gave the city's libraries to the Numidian kings, but ordered this one work translated into Latin. Roman writers such as Columella called him the \"father of agriculture\". The original is lost; only passages quoted by them survive.",
+        "pt": "Magão escreveu um tratado de agricultura em 28 livros, em língua púnica. Quando Cartago foi destruída, em 146 a.C., o Senado romano deu as bibliotecas da cidade aos reis númidas, mas mandou traduzir para o latim apenas essa obra. Autores romanos como Columela o chamavam de \"pai da agricultura\". O original se perdeu, e só restam trechos citados por eles."
+      }
+    },
+    {
+      "en": "Its capital had a circular military harbour that could shelter more than 200 warships, with the admiral's headquarters on an island in the middle.",
+      "pt": "Sua capital tinha um porto militar circular capaz de abrigar mais de 200 navios de guerra, com o quartel do almirante numa ilha no meio.",
+      "details": {
+        "en": "Carthage had two harbours: a rectangular one for merchant ships and a circular one, the cothon, for the war fleet. According to the historian Appian, the naval harbour had covered docks for 220 ships and, on a central island, the admiral's house, from which the sea was watched. The outlines of both harbours can still be seen in Carthage, in Tunisia.",
+        "pt": "Cartago tinha dois portos: um retangular, para os navios mercantes, e outro circular, o cóton, para a frota de guerra. Segundo o historiador Apiano, o porto militar tinha docas cobertas para 220 navios e, numa ilha no centro, a casa do almirante, de onde se vigiava o mar. Os contornos dos dois portos ainda podem ser vistos em Cartago, na Tunísia."
+      }
+    },
+    {
+      "en": "One of its generals crossed the Alps with war elephants to invade Italy.",
+      "pt": "Um de seus generais atravessou os Alpes com elefantes de guerra para invadir a Itália.",
+      "details": {
+        "en": "Hannibal Barca left Spain in 218 BCE with tens of thousands of soldiers and about 37 elephants, crossed the Pyrenees and the Alps and invaded Italy. Almost all the elephants died on the way or in the first winter, but he beat the Romans at the Trebia, Lake Trasimene and Cannae. He stayed 15 years in Italy without taking Rome and was defeated at Zama, in Africa, in 202 BCE.",
+        "pt": "Aníbal Barca saiu da Espanha em 218 a.C. com dezenas de milhares de soldados e cerca de 37 elefantes, atravessou os Pireneus e os Alpes e invadiu a Itália. Quase todos os elefantes morreram no caminho ou no primeiro inverno, mas ele venceu os romanos no Trébia, no lago Trasimeno e em Canas. Ficou 15 anos na Itália sem tomar Roma e foi derrotado em Zama, na África, em 202 a.C."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Ancient_Carthage",
+    "pt": "https://pt.wikipedia.org/wiki/Civilização_cartaginesa"
+  },
+  "aliases": [
+    "Carthage",
+    "Cartago",
+    "Ancient Carthage",
+    "Cartago Antiga",
+    "Punic Empire",
+    "Império Púnico",
+    "Carthaginians",
+    "Cartagineses",
+    "Phoenicians",
+    "Fenícios",
+    "Tunisia",
+    "Tunísia"
+  ],
+  "summary": {
+    "en": "A city founded by Phoenician settlers from Tyre on the coast of today's Tunisia, which became the greatest trading and naval power of the western Mediterranean. It controlled North Africa, southern Spain, Sardinia, parts of Sicily and several islands, and grew rich trading metals, cloth and farm goods. It was a republic run by elected magistrates and a council of wealthy families. It fought Rome in three wars, the Punic Wars, and was destroyed in 146 BCE, at the end of the third.",
+    "pt": "Cidade fundada por colonos fenícios de Tiro no litoral da atual Tunísia, que virou a maior potência comercial e naval do Mediterrâneo ocidental. Controlava o norte da África, o sul da Espanha, a Sardenha, partes da Sicília e várias ilhas, e enriquecia com o comércio de metais, tecidos e produtos agrícolas. Era uma república governada por magistrados eleitos e por um conselho de famílias ricas. Enfrentou Roma em três guerras, as Guerras Púnicas, e foi destruída em 146 a.C., ao fim da terceira."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Carthage",
+        "year": -218
+      },
+      {
+        "draw": "remove",
+        "ring": [[2.87,46.036],[2.878,45.818],[2.916,45.569],[2.985,45.287],[3.084,44.974],[3.213,44.629],[3.415,44.353],[3.689,44.143],[3.85,43.9],[4.036,44],[4.457,43.923],[4.783,43.867],[5.015,43.833],[5.153,43.821],[5.198,43.829],[5.24,43.848],[5.28,43.878],[5.317,43.919],[5.352,43.97],[5.403,44.085],[5.47,44.265],[5.553,44.509],[5.652,44.819],[5.717,45.073],[5.746,45.272],[5.74,45.415],[5.698,45.501],[5.617,45.595],[5.496,45.695],[5.337,45.801],[5.137,45.914],[4.864,46.017],[4.517,46.108],[4.096,46.189],[3.601,46.259],[3.231,46.257],[2.987,46.182]]
+      }
+    ]
+  }
+}

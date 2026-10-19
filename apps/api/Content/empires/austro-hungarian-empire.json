@@ -1,0 +1,101 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "austro-hungarian-empire",
+  "name": {
+    "en": "Austro-Hungarian Empire",
+    "pt": "Império Austro-Húngaro"
+  },
+  "peak": {
+    "year": 1914,
+    "precision": "Exact"
+  },
+  "start": {
+    "year": 1867,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1918,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts with the 1867 agreement that split the territory into two halves under the same monarch, and ends with its dissolution at the end of World War I, in 1918. The peak shown is before the war: between 1916 and 1918 the territory looked larger, but it included regions under military occupation, not annexed.",
+    "pt": "Começa com o acordo de 1867 que dividiu o território em duas metades com o mesmo monarca, e termina com a dissolução no fim da Primeira Guerra, em 1918. O auge escolhido é o de antes da guerra: entre 1916 e 1918 o território parecia maior, mas incluía regiões ocupadas militarmente, não anexadas."
+  },
+  "area": {
+    "km2": 676000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Precise",
+  "continents": [
+    "Europe",
+    "Asia"
+  ],
+  "primaryContinent": "Europe",
+  "capital": {
+    "en": "Vienna and Budapest (one for each half of the empire)",
+    "pt": "Viena e Budapeste (uma para cada metade do império)"
+  },
+  "language": {
+    "en": "German and Hungarian (plus many regional languages)",
+    "pt": "Alemão e húngaro (além de muitas línguas regionais)"
+  },
+  "religion": {
+    "en": "Catholicism",
+    "pt": "Catolicismo"
+  },
+  "religionNotes": {
+    "en": "The ruling dynasty was Catholic, and the Church carried great weight in the state. The empire also had large Protestant, Orthodox and Jewish populations, and a Muslim one in Bosnia.",
+    "pt": "A dinastia governante era católica, e a Igreja tinha grande peso no Estado. O império também tinha grandes populações protestantes, ortodoxas e judaicas, e uma muçulmana na Bósnia."
+  },
+  "curiosities": [
+    {
+      "en": "It held a small concession on Chinese territory, in the city of Tianjin.",
+      "pt": "Mantinha uma pequena concessão em território chinês, na cidade de Tianjin.",
+      "details": {
+        "en": "It was one of the eight powers that put down the Boxer Rebellion in China, and in 1901 it received a riverside district of Tianjin, near Beijing. The concession had its own garrison, police and schools, and was administered by a consul. It was lost in 1917, when China entered World War I against it and took the area back.",
+        "pt": "Foi uma das oito potências que reprimiram a Revolta dos Boxers na China, e em 1901 recebeu um bairro às margens do rio em Tianjin, perto de Pequim. A concessão tinha guarnição, polícia e escolas próprias, e era administrada por um cônsul. Foi perdida em 1917, quando a China entrou na Primeira Guerra contra o império e retomou a área."
+      }
+    },
+    {
+      "en": "Its two halves had their own parliaments and governments, sharing only the monarch, the army, foreign policy and the common finances.",
+      "pt": "Suas duas metades tinham parlamentos e governos próprios, dividindo só o monarca, o exército, a política externa e as finanças comuns.",
+      "details": {
+        "en": "The 1867 Compromise turned the realm into a dual monarchy: each half had its own constitution, parliament and prime minister. Only three joint ministries existed, for foreign affairs, war and the finances that paid for them. The customs union and each half's share of the costs were renegotiated every ten years, often after tense disputes.",
+        "pt": "O Compromisso de 1867 transformou o reino numa monarquia dual: cada metade tinha constituição, parlamento e primeiro-ministro próprios. Só existiam três ministérios comuns, o das relações exteriores, o da guerra e o das finanças que os pagava. A união aduaneira e a parte de cada metade nos gastos eram renegociadas a cada dez anos, muitas vezes depois de disputas tensas."
+      }
+    },
+    {
+      "en": "The assassination of the heir to its throne in Sarajevo, in 1914, set off World War I.",
+      "pt": "O assassinato do herdeiro do seu trono em Sarajevo, em 1914, desencadeou a Primeira Guerra Mundial.",
+      "details": {
+        "en": "On 28 June 1914, Archduke Franz Ferdinand and his wife Sophie were shot in Sarajevo by Gavrilo Princip, a young Bosnian Serb nationalist. The government in Vienna blamed Serbia and declared war on it a month later. The alliances between the powers then pulled in Germany, Russia, France and the United Kingdom within days.",
+        "pt": "Em 28 de junho de 1914, o arquiduque Francisco Ferdinando e sua esposa Sofia foram baleados em Sarajevo por Gavrilo Princip, um jovem nacionalista sérvio da Bósnia. O governo de Viena culpou a Sérvia e declarou guerra a ela um mês depois. As alianças entre as potências arrastaram em poucos dias a Alemanha, a Rússia, a França e o Reino Unido."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Austria-Hungary",
+    "pt": "https://pt.wikipedia.org/wiki/Áustria-Hungria"
+  },
+  "aliases": [
+    "Austria-Hungary",
+    "Áustria-Hungria",
+    "Austro-Hungarian Monarchy",
+    "Monarquia Austro-Húngara",
+    "Dual Monarchy",
+    "Monarquia Dual",
+    "Österreich-Ungarn"
+  ],
+  "summary": {
+    "en": "The state created in 1867, when the Habsburg monarch Franz Joseph, weakened by defeat against Prussia, reached an agreement with the Hungarians and split his realm into two halves: he was emperor of Austria and king of Hungary. It brought together Germans, Hungarians, Czechs, Poles, Ukrainians, Croats, Romanians, Italians and other peoples, and Vienna became one of the great cultural centres of Europe. It occupied Bosnia in 1878 and annexed it in 1908. The assassination of its heir in Sarajevo led to World War I, and defeat in 1918 broke it up into several new states.",
+    "pt": "Estado criado em 1867, quando o monarca Habsburgo Francisco José, enfraquecido pela derrota para a Prússia, fez um acordo com os húngaros e dividiu seu reino em duas metades: era imperador da Áustria e rei da Hungria. Reunia alemães, húngaros, tchecos, poloneses, ucranianos, croatas, romenos, italianos e outros povos, e Viena se tornou um dos grandes centros culturais da Europa. Ocupou a Bósnia em 1878 e a anexou em 1908. O assassinato do seu herdeiro em Sarajevo levou à Primeira Guerra Mundial, e a derrota em 1918 o desfez em vários Estados novos."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Austria-Hungary",
+        "year": 1914
+      }
+    ]
+  }
+}

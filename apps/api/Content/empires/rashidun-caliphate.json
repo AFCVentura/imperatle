@@ -3,7 +3,7 @@
   "slug": "rashidun-caliphate",
   "name": {
     "en": "Rashidun Caliphate",
-    "pt": "Califado Ortodoxo (Rashidun)"
+    "pt": "Califado Rashidun"
   },
   "peak": {
     "year": 655,
@@ -50,20 +50,47 @@
   "curiosities": [
     {
       "en": "In less than 20 years, it brought down a Persian empire that had existed for more than 400 years.",
-      "pt": "Em menos de 20 anos, derrubou um império persa que existia havia mais de 400 anos."
+      "pt": "Em menos de 20 anos, derrubou um império persa que existia havia mais de 400 anos.",
+      "details": {
+        "en": "The Sasanian Empire had ruled Iran and Iraq since 224, but came out of a long war against the Byzantines exhausted. The Arabs beat it at Qadisiyya, around 636, took its capital, Ctesiphon, and won again at Nahavand in 642. The last king, Yazdegerd III, fled east and was killed in 651, near Merv.",
+        "pt": "O Império Sassânida governava o Irã e o Iraque desde 224, mas saiu esgotado de uma longa guerra contra os bizantinos. Os árabes o venceram em Qadisiya, por volta de 636, tomaram a capital, Ctesifonte, e venceram de novo em Nahavand, em 642. O último rei, Yazdegerd III, fugiu para o leste e foi morto em 651, perto de Merv."
+      }
     },
     {
       "en": "It created the calendar that counts from the migration from Mecca to Medina, still used today.",
-      "pt": "Criou o calendário que começa a contar da migração de Meca para Medina, usado até hoje."
+      "pt": "Criou o calendário que começa a contar da migração de Meca para Medina, usado até hoje.",
+      "details": {
+        "en": "The Islamic calendar, the Hijri, was created by the caliph Umar around 638. It counts from the year Muhammad and his followers migrated from Mecca to Medina, 622 in the Christian calendar. It is lunar, with years of 354 or 355 days, which is why the dates of Ramadan shift every year.",
+        "pt": "O calendário islâmico, ou da hégira, foi criado pelo califa Omar por volta de 638. Conta a partir do ano em que Maomé e seus seguidores migraram de Meca para Medina, 622 do calendário cristão. É lunar, com anos de 354 ou 355 dias, e por isso as datas do Ramadã mudam a cada ano."
+      }
     },
     {
       "en": "Most Muslims call its rulers the \"rightly guided\" ones.",
-      "pt": "A maioria dos muçulmanos chama seus governantes de \"bem guiados\"."
+      "pt": "A maioria dos muçulmanos chama seus governantes de \"bem guiados\".",
+      "details": {
+        "en": "Sunnis call Abu Bakr, Umar, Uthman and Ali the \"Rashidun\", the \"rightly guided\" caliphs, seen as models of just rule because they lived alongside the Prophet. Shias, however, believe Ali should have been the first successor and do not recognise the three before him. Three of the four caliphs were assassinated.",
+        "pt": "Os sunitas chamam Abu Bakr, Omar, Otomão e Ali de \"rashidun\", os califas \"bem guiados\", vistos como modelos de governo justo por terem convivido com o Profeta. Os xiitas, porém, acreditam que Ali deveria ter sido o primeiro sucessor e não reconhecem os três anteriores. Três dos quatro califas foram assassinados."
+      }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Rashidun_Caliphate",
     "pt": "https://pt.wikipedia.org/wiki/Califado_Ortodoxo"
+  },
+  "aliases": [
+    "Califado Ortodoxo",
+    "Rashidun",
+    "Rashidun Empire",
+    "Rightly Guided Caliphate",
+    "Califado Bem Guiado",
+    "Arab Caliphate",
+    "Califado Árabe",
+    "Islamic Caliphate",
+    "Califado Islâmico"
+  ],
+  "summary": {
+    "en": "The first caliphate of Islam, ruled by the four caliphs who succeeded the Prophet Muhammad after his death in 632: Abu Bakr, Umar, Uthman and Ali. In less than 30 years Arab armies conquered Arabia, Syria, Palestine, Egypt, Iraq and Iran, defeating the Byzantine and Sasanian empires. The capital was Medina and, at the end, Kufa, in Iraq. Disputes over the succession led to the first Muslim civil war, and the caliphate ended in 661, with Ali's murder and the rise of the Umayyads. That dispute lies at the root of the split between Sunnis and Shias.",
+    "pt": "Primeiro califado do Islã, governado pelos quatro califas que sucederam o profeta Maomé após sua morte, em 632: Abu Bakr, Omar, Otomão e Ali. Em menos de 30 anos, os exércitos árabes conquistaram a Arábia, a Síria, a Palestina, o Egito, o Iraque e o Irã, derrotando os impérios Bizantino e Sassânida. A capital ficou em Medina e, no fim, em Cufa, no Iraque. Disputas pela sucessão levaram à primeira guerra civil muçulmana, e o califado acabou em 661, com o assassinato de Ali e a chegada dos omíadas ao poder. Essa disputa está na origem da divisão entre sunitas e xiitas."
   },
   "map": {
     "parts": [

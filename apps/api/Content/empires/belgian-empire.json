@@ -1,0 +1,116 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "belgian-empire",
+  "name": {
+    "en": "Belgian Empire",
+    "pt": "Império Belga"
+  },
+  "peak": {
+    "year": 1925,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1908,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1962,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 1908, when the country took over a colony in Central Africa that until then had been the personal property of the king, and ends in 1962, with the independence of two small neighbouring kingdoms administered under an international mandate; the large colony became independent in 1960. The previous 23 years, when the territory belonged to the king and not to the country, are not included. The peak shown is 1925, when the mandated territories were administratively united with the colony, and the map includes a small concession in a Chinese city, returned in 1931.",
+    "pt": "Começa em 1908, quando o país assumiu uma colônia na África Central que até então era propriedade pessoal do rei, e termina em 1962, com a independência de dois pequenos reinos vizinhos administrados sob mandato internacional; a grande colônia ficou independente em 1960. Os 23 anos anteriores, em que o território pertencia ao rei e não ao país, não estão incluídos. O auge escolhido é 1925, quando os territórios sob mandato foram unidos administrativamente à colônia, e o mapa inclui uma pequena concessão numa cidade chinesa, devolvida em 1931."
+  },
+  "area": {
+    "km2": 2410000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Africa",
+    "Europe",
+    "Asia"
+  ],
+  "primaryContinent": "Europe",
+  "capital": {
+    "en": "Brussels",
+    "pt": "Bruxelas"
+  },
+  "language": {
+    "en": "French and Dutch (as well as Lingala, Swahili, Kikongo and Tshiluba in the colonies)",
+    "pt": "Francês e neerlandês (além de lingala, suaíli, kikongo e tshiluba nas colônias)"
+  },
+  "religion": {
+    "en": "Catholicism",
+    "pt": "Catolicismo"
+  },
+  "religionNotes": {
+    "en": "An agreement with the Vatican, in 1906, handed Catholic missions almost all schooling and much of the health care in the African colony, with land and subsidies from the government. Protestant missions were also active, and African religious movements were repressed, such as that of the prophet Simon Kimbangu, arrested in 1921 and kept in prison until his death, 30 years later.",
+    "pt": "Um acordo com o Vaticano, de 1906, entregou às missões católicas quase todo o ensino e boa parte da saúde na colônia africana, com terras e subsídios do governo. Missões protestantes também atuavam, e movimentos religiosos africanos foram reprimidos, como o do profeta Simon Kimbangu, preso em 1921 e mantido na prisão até a morte, 30 anos depois."
+  },
+  "curiosities": [
+    {
+      "en": "Uranium from one of its mines was used in the first atomic bombs.",
+      "pt": "O urânio de uma de suas minas foi usado nas primeiras bombas atômicas.",
+      "details": {
+        "en": "The Shinkolobwe mine, in Katanga, had an exceptionally rich uranium ore. In 1940, a director of the mining company shipped more than a thousand tonnes to a warehouse in New York, fearing the Germans would seize it. This uranium was bought by the Manhattan Project and used in the bombs dropped on Hiroshima and Nagasaki.",
+        "pt": "A mina de Shinkolobwe, em Katanga, tinha um minério de urânio excepcionalmente rico. Em 1940, um diretor da empresa mineradora mandou mais de mil toneladas para um depósito em Nova York, temendo que os alemães o tomassem. Esse urânio foi comprado pelo Projeto Manhattan e usado nas bombas de Hiroshima e Nagasaki."
+      }
+    },
+    {
+      "en": "The first prime minister of its main colony after independence was murdered a few months later, with the involvement of agents of the former colonial power.",
+      "pt": "O primeiro primeiro-ministro de sua principal colônia, depois da independência, foi assassinado poucos meses depois, com participação de agentes da antiga metrópole.",
+      "details": {
+        "en": "Patrice Lumumba was deposed in 1960 and executed in January 1961, in Katanga, by separatists backed by Belgian officers. In 2002, Belgium acknowledged its \"moral responsibility\", and in 2022 it returned to his family one of Lumumba's teeth, the only remains left.",
+        "pt": "Patrice Lumumba foi deposto em 1960 e executado em janeiro de 1961, em Katanga, por separatistas apoiados por oficiais belgas. Em 2002, a Bélgica reconheceu sua \"responsabilidade moral\", e em 2022 devolveu à família um dente de Lumumba, o único resto que sobrou."
+      }
+    },
+    {
+      "en": "It inherited from its own king a colony that had become world-famous for the severed hands of workers who failed to meet rubber quotas.",
+      "pt": "Herdou do próprio rei uma colônia que tinha ficado mundialmente famosa pelas mãos cortadas de trabalhadores que não cumpriam as metas de borracha.",
+      "details": {
+        "en": "In the Congo Free State, owned by Leopold II, soldiers cut off the hands of those who did not deliver enough rubber, and photos of these victims shocked Europe. International pressure led Belgium to annex the territory in 1908, but forced labour continued for years.",
+        "pt": "No Estado Livre do Congo, propriedade de Leopoldo II, soldados cortavam as mãos de quem não entregava borracha suficiente, e fotos dessas vítimas chocaram a Europa. A pressão internacional levou a Bélgica a anexar o território em 1908, mas o trabalho forçado continuou por anos."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Belgian_colonial_empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Belga"
+  },
+  "aliases": [
+    "Belgium",
+    "Bélgica",
+    "Belgian Colonial Empire",
+    "Império Colonial Belga",
+    "Belgian Congo",
+    "Congo Belga",
+    "Ruanda-Urundi"
+  ],
+  "summary": {
+    "en": "The colonial empire of Belgium, made up almost entirely of the Belgian Congo, a territory about 80 times larger than the home country. From 1885 to 1908 the region had been the personal property of King Leopold II, the Congo Free State, where the exploitation of rubber through forced labour, mutilation and hostage-taking caused the deaths of millions of people. Faced with an international scandal, the Belgian parliament annexed the territory in 1908. The colony came to be governed by an alliance between the State, the Catholic missions and large mining companies, which exploited copper, diamonds and uranium in Katanga and Kasai. After the First World War, Belgium received Ruanda-Urundi, taken from German East Africa, as a League of Nations mandate. The Congo became independent in 1960, amid a crisis that led to the murder of Prime Minister Patrice Lumumba, and Rwanda and Burundi in 1962.",
+    "pt": "Império colonial da Bélgica, formado quase só pelo Congo Belga, um território cerca de 80 vezes maior que a metrópole. A região tinha sido, de 1885 a 1908, propriedade pessoal do rei Leopoldo II, o Estado Livre do Congo, onde a exploração da borracha com trabalho forçado, mutilações e reféns causou a morte de milhões de pessoas. Diante do escândalo internacional, o parlamento belga anexou o território em 1908. A colônia passou a ser governada por uma aliança entre o Estado, as missões católicas e grandes empresas de mineração, que exploravam cobre, diamantes e urânio em Katanga e Kasai. Depois da Primeira Guerra Mundial, a Bélgica recebeu Ruanda-Urundi, tomada da África Oriental Alemã, como mandato da Liga das Nações. O Congo ficou independente em 1960, em meio a uma crise que levou ao assassinato do primeiro-ministro Patrice Lumumba, e Ruanda e Burundi em 1962."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Belgian Congo",
+        "year": 1925
+      },
+      {
+        "polity": "Kingdom of Belgium",
+        "year": 1925
+      },
+      {
+        "country": "RWA"
+      },
+      {
+        "country": "BDI"
+      },
+      {
+        "draw": "add",
+        "ring": [[117.24,39.085],[117.262,39.085],[117.262,39.098],[117.24,39.098],[117.24,39.085]]
+      }
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "xiongnu-empire",
+  "name": {
+    "en": "Xiongnu Empire",
+    "pt": "Império Xiongnu"
+  },
+  "peak": {
+    "year": -170,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": -209,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 48,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 209 BC, when a prince killed his own father, took command and united the steppe tribes north of China, and ends in AD 48, when a succession dispute split the empire into two halves: the southern one submitted to China, and the northern one was destroyed decades later. The peak shown is around 170 BC, after the founder drove a rival people to the west. The map excludes the valley of a Central Asian river occupied by a vassal people that soon became independent.",
+    "pt": "Começa em 209 a.C., quando um príncipe matou o próprio pai, assumiu o comando e unificou as tribos da estepe ao norte da China, e termina em 48 d.C., quando uma disputa pela sucessão dividiu o império em duas metades: a do sul se submeteu à China, e a do norte foi destruída décadas depois. O auge escolhido é por volta de 170 a.C., depois que o fundador expulsou um povo rival para o oeste. O mapa exclui o vale de um rio da Ásia Central ocupado por um povo vassalo que logo se tornou independente."
+  },
+  "area": {
+    "km2": 5120000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Longcheng (itinerant court)",
+    "pt": "Longcheng (corte itinerante)"
+  },
+  "language": {
+    "en": "Unknown (Chinese was used in diplomacy)",
+    "pt": "Desconhecida (o chinês era usado na diplomacia)"
+  },
+  "religion": {
+    "en": "Tengrism",
+    "pt": "Tengrismo"
+  },
+  "religionNotes": {
+    "en": "Chinese sources say the ruler worshipped heaven, called Chengli, an early form of the name Tengri, as well as the sun, the moon and the ancestors, with great ritual gatherings every year. The elite tombs, with horse sacrifices and objects from China and the West, show the importance of the cult of the dead.",
+    "pt": "As fontes chinesas contam que o soberano cultuava o céu, chamado Chengli, uma forma antiga do nome Tengri, além do sol, da lua e dos ancestrais, com grandes reuniões rituais todos os anos. Os túmulos da elite, com sacrifícios de cavalos e objetos vindos da China e do Ocidente, mostram a importância do culto aos mortos."
+  },
+  "curiosities": [
+    {
+      "en": "It captured and held for ten years a Chinese envoy whose journey ended up opening the Silk Road.",
+      "pt": "Capturou e manteve preso por dez anos um enviado chinês cuja viagem acabou abrindo a Rota da Seda.",
+      "details": {
+        "en": "Zhang Qian set out around 138 BC to seek an alliance with the Yuezhi, was captured by the Xiongnu, married and had children among them, escaped and reached Central Asia. His reports led China to open the routes to the West.",
+        "pt": "Zhang Qian partiu por volta de 138 a.C. para buscar uma aliança com os yuezhi, foi preso pelos xiongnu, casou e teve filhos entre eles, fugiu e chegou à Ásia Central. Os relatos dele levaram a China a abrir as rotas para o Ocidente."
+      }
+    },
+    {
+      "en": "It was mainly against its raids that China linked and extended the walls that would form the Great Wall.",
+      "pt": "Foi principalmente contra os seus ataques que a China ligou e ampliou as muralhas que formariam a Grande Muralha.",
+      "details": {
+        "en": "The first Qin emperor joined the walls of the northern kingdoms around 214 BC, and the Han extended them along the Hexi corridor to protect the Silk Road.",
+        "pt": "O primeiro imperador Qin juntou as muralhas dos reinos do norte por volta de 214 a.C., e os Han as estenderam pelo corredor de Hexi para proteger a Rota da Seda."
+      }
+    },
+    {
+      "en": "Many historians believe its descendants were the Huns who, centuries later, invaded Europe.",
+      "pt": "Muitos historiadores acreditam que seus descendentes foram os hunos que, séculos depois, invadiram a Europa.",
+      "details": {
+        "en": "The link is still debated, but the name of the Xiongnu in Old Chinese sounded similar to \"hun\", and some objects of the two peoples look alike.",
+        "pt": "A ligação ainda é discutida, mas o nome dos xiongnu em chinês antigo soava parecido com \"hun\", e alguns objetos dos dois povos se parecem."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Xiongnu",
+    "pt": "https://pt.wikipedia.org/wiki/Xiongnu"
+  },
+  "aliases": [
+    "Xiongnu",
+    "Hsiung-nu",
+    "Hiong-nu",
+    "Xiongnu Confederation",
+    "Confederação Xiongnu",
+    "Asian Huns",
+    "Hunos Asiáticos",
+    "Mongolia",
+    "Mongólia"
+  ],
+  "summary": {
+    "en": "The first great nomadic empire of the Mongolian steppe, founded by Modu Chanyu in 209 BC, a few years after the unification of China by the Qin dynasty. Modu united the tribes, defeated the Donghu to the east and drove the Yuezhi to the west. In 200 BC he surrounded the first Han emperor at Baideng, and the Han dynasty began sending princesses, silk, wine and grain every year in exchange for peace, in a policy called heqin. From 133 BC, Emperor Wu of Han broke the agreement and launched great campaigns that took from the Xiongnu the Hexi corridor and the route to Central Asia. Weakened by civil wars, one of the chanyus submitted to the Han in 51 BC, and in AD 48 the empire split for good into the Northern and Southern Xiongnu. The northern ones were defeated by the Han in 89 and driven out by the Xianbei.",
+    "pt": "Primeiro grande império nômade da estepe da Mongólia, fundado por Modu Chanyu em 209 a.C., poucos anos depois da unificação da China pela dinastia Qin. Modu unificou as tribos, derrotou os donghu, a leste, e expulsou os yuezhi para o oeste. Em 200 a.C., cercou o primeiro imperador Han em Baideng, e a dinastia Han passou a mandar princesas, seda, vinho e grãos todos os anos em troca de paz, numa política chamada heqin. A partir de 133 a.C., o imperador Wu dos Han rompeu o acordo e lançou grandes campanhas que tomaram dos xiongnu o corredor de Hexi e a rota para a Ásia Central. Enfraquecido por guerras civis, um dos chanyus se submeteu aos Han em 51 a.C., e em 48 d.C. o império se dividiu definitivamente em Xiongnu do Norte e do Sul. Os do norte foram derrotados pelos Han em 89 e expulsos pelos xianbei."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Xiongnu",
+        "year": -170
+      }
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "mali-empire",
+  "name": {
+    "en": "Mali Empire",
+    "pt": "Império do Mali"
+  },
+  "peak": {
+    "year": 1380,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1235,
+    "precision": "Approximate"
+  },
+  "end": {
+    "year": 1670,
+    "precision": "Approximate"
+  },
+  "durationNotes": {
+    "en": "It starts with a battle won by its founder around 1235. From the 15th century on it lost most of its lands, and it survived as a small kingdom until about 1670, when its capital was sacked.",
+    "pt": "Começa com uma batalha vencida pelo fundador, por volta de 1235. A partir do século XV perdeu a maior parte das terras e sobreviveu como um pequeno reino até cerca de 1670, quando sua capital foi saqueada."
+  },
+  "area": {
+    "km2": 1113811,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Speculative",
+  "continents": [
+    "Africa"
+  ],
+  "primaryContinent": "Africa",
+  "capital": {
+    "en": "Niani",
+    "pt": "Niani"
+  },
+  "language": {
+    "en": "Mandinka",
+    "pt": "Mandinka"
+  },
+  "religion": {
+    "en": "Sunni Islam",
+    "pt": "Islamismo Sunita"
+  },
+  "religionNotes": {
+    "en": "The rulers and merchants were Muslim, but most of the rural population kept traditional African religions, and the court kept some of their rituals.",
+    "pt": "Os governantes e mercadores eram muçulmanos, mas a maior parte da população rural manteve as religiões tradicionais africanas, e a corte conservou alguns de seus rituais."
+  },
+  "curiosities": [
+    {
+      "en": "According to an account of the time, one of its kings set out across the Atlantic with a large fleet and never came back.",
+      "pt": "Segundo um relato da época, um de seus reis partiu pelo Atlântico com uma grande frota e nunca mais voltou.",
+      "details": {
+        "en": "The story comes from Mansa Musa himself, who told it in Cairo, according to the historian al-Umari: the king before him wanted to find the end of the ocean. He first sent hundreds of boats, of which only one came back; then he set out himself with an even larger fleet and was never seen again, leaving the throne to Musa. There is no evidence that they reached anywhere.",
+        "pt": "O relato vem do próprio Mansa Musa, que o contou no Cairo, segundo o historiador al-Umari: o rei anterior quis descobrir onde o oceano terminava. Primeiro mandou centenas de barcos, dos quais só um voltou; depois partiu ele mesmo com uma frota ainda maior e nunca mais foi visto, deixando o trono para Musa. Não há provas de que tenham chegado a algum lugar."
+      }
+    },
+    {
+      "en": "The story of its founder is still told by griots, traditional singers and storytellers, in a long oral epic.",
+      "pt": "A história do seu fundador ainda é contada por griôs, cantores e contadores de histórias tradicionais, numa longa epopeia oral.",
+      "details": {
+        "en": "The Epic of Sundiata tells how Sundiata Keita, a crippled and scorned boy who walked late in life, overcame exile and defeated the sorcerer king Sumanguru. It has been handed down for generations by the griots, who still sing it today in Mali, Guinea and other countries of the region.",
+        "pt": "A Epopeia de Sundiata conta como Sundiata Keita, um menino aleijado e desprezado que só aprendeu a andar tarde, superou o exílio e derrotou o rei feiticeiro Sumanguru. É transmitida de geração em geração pelos griôs, que até hoje a cantam no Mali, na Guiné e em outros países da região."
+      }
+    },
+    {
+      "en": "On a pilgrimage to Mecca in 1324, its ruler spent so much gold in Cairo that the metal lost value there for years.",
+      "pt": "Numa peregrinação a Meca em 1324, seu governante gastou tanto ouro no Cairo que o metal perdeu valor ali por anos.",
+      "details": {
+        "en": "Mansa Musa travelled to Mecca in 1324 with a retinue of thousands and huge amounts of gold. In Cairo he and his followers spent and gave away so much that gold lost value in the city for years, according to al-Umari. The journey put Mali on European maps, such as the Catalan Atlas of 1375, where Musa is drawn holding a gold nugget.",
+        "pt": "Mansa Musa viajou a Meca em 1324 com uma comitiva de milhares de pessoas e enormes quantidades de ouro. No Cairo, ele e sua comitiva gastaram e doaram tanto que o ouro perdeu valor na cidade por anos, segundo al-Umari. A viagem pôs o Mali nos mapas europeus, como o Atlas Catalão de 1375, em que Musa aparece segurando uma pepita de ouro."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Mali_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_do_Mali"
+  },
+  "aliases": [
+    "Mali",
+    "Kingdom of Mali",
+    "Reino do Mali",
+    "Manden",
+    "Manding",
+    "Mandinka Empire",
+    "Império Mandinga",
+    "Mandinga",
+    "Malinke"
+  ],
+  "summary": {
+    "en": "A West African empire founded around 1235 by Sundiata Keita, king of the Mandinka, when he defeated King Sumanguru at the Battle of Kirina. It controlled the gold mines and the trade routes across the Sahara that linked West Africa with the north of the continent. It had rich cities such as Timbuktu, Djenné and Gao, which became centres of Islamic learning. It peaked in the 14th century, under Mansa Musa and Mansa Suleyman, and from the 15th century lost lands to the Tuareg and the Songhai Empire until it became a small kingdom.",
+    "pt": "Império da África Ocidental fundado por volta de 1235 por Sundiata Keita, rei dos mandingas, ao vencer o rei Sumanguru na batalha de Kirina. Controlava as minas de ouro e as rotas de comércio que cruzavam o Saara, ligando a África Ocidental ao norte do continente. Tinha cidades ricas, como Tombuctu, Djenné e Gao, que viraram centros de estudo do Islã. Teve o auge no século XIV, com Mansa Musa e Mansa Suleiman, e a partir do século XV perdeu terras para os tuaregues e para o Império Songai, até virar um pequeno reino."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Mali Empire",
+        "year": 1415
+      }
+    ]
+  }
+}

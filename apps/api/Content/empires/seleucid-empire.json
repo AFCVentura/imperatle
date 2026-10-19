@@ -1,0 +1,95 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "seleucid-empire",
+  "name": {
+    "en": "Seleucid Empire",
+    "pt": "Império Selêucida"
+  },
+  "peak": {
+    "year": -281,
+    "precision": "Exact"
+  },
+  "start": {
+    "year": -312,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": -63,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It begins in 312 BCE, when its founder retook Babylon, a year that became the start of a calendar. The end used here is 63 BCE, when what was left of the kingdom was annexed by Rome.",
+    "pt": "Começa em 312 a.C., quando seu fundador retomou a Babilônia, ano que virou o início de um calendário. O fim usado aqui é 63 a.C., quando o que restava do reino foi anexado por Roma."
+  },
+  "area": {
+    "km2": 2787950,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Antioch (at first, a new city on the Tigris)",
+    "pt": "Antioquia (no início, uma nova cidade às margens do Tigre)"
+  },
+  "language": {
+    "en": "Greek (koine), with Aramaic in local administration",
+    "pt": "Grego (koiné), além do aramaico na administração local"
+  },
+  "religion": {
+    "en": "Ancient Greek religion (polytheistic), alongside local cults",
+    "pt": "Religião grega antiga (politeísta), ao lado dos cultos locais"
+  },
+  "curiosities": [
+    {
+      "en": "The calendar it started was used in the Middle East for over a thousand years after it fell.",
+      "pt": "O calendário que ele inaugurou foi usado no Oriente Médio por mais de mil anos depois de sua queda.",
+      "details": {
+        "en": "The Seleucid era counted the years from 312 BCE, when the founder retook Babylon. It outlived the dynasty by far: Jewish communities used it in contracts until the Middle Ages, in Yemen into the 20th century, and Syriac Christians still use it in some church documents.",
+        "pt": "A era selêucida contava os anos a partir de 312 a.C., quando o fundador retomou a Babilônia. Ela sobreviveu muito à dinastia: comunidades judaicas a usaram em contratos até a Idade Média, no Iêmen até o século XX, e cristãos siríacos ainda a usam em alguns documentos da igreja."
+      }
+    },
+    {
+      "en": "A revolt against one of its kings is still remembered in a religious festival today.",
+      "pt": "Uma revolta contra um de seus reis é lembrada até hoje numa festa religiosa.",
+      "details": {
+        "en": "In 167 BCE Antiochus IV banned Jewish practices and dedicated the Temple of Jerusalem to Zeus. The Maccabees led a revolt and in 164 BCE rededicated the Temple, which Jews celebrate every year at Hanukkah, the festival of lights.",
+        "pt": "Em 167 a.C., Antíoco IV proibiu práticas judaicas e dedicou o Templo de Jerusalém a Zeus. Os macabeus lideraram uma revolta e em 164 a.C. reconsagraram o Templo, o que os judeus celebram todo ano no Hanukkah, a festa das luzes."
+      }
+    },
+    {
+      "en": "It was founded by one of Alexander the Great's generals and kept most of his empire.",
+      "pt": "Foi fundado por um dos generais de Alexandre, o Grande, e ficou com a maior parte do império dele.",
+      "details": {
+        "en": "After Alexander died in 323 BCE, his generals, the Diadochi, fought over his conquests for decades. Seleucus began as a cavalry officer, became governor of Babylon and ended up with the largest share, from Asia Minor to Central Asia, while Egypt went to Ptolemy and Macedonia to other rivals.",
+        "pt": "Depois que Alexandre morreu, em 323 a.C., seus generais, os diádocos, disputaram suas conquistas por décadas. Seleuco começou como oficial de cavalaria, virou governador da Babilônia e terminou com a maior fatia, da Ásia Menor à Ásia Central, enquanto o Egito ficou com Ptolomeu e a Macedônia com outros rivais."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Seleucid_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Selêucida"
+  },
+  "aliases": [
+    "Seleucids",
+    "Selêucidas",
+    "Seleucid Kingdom",
+    "Reino Selêucida",
+    "Seleucid dynasty",
+    "Dinastia Selêucida"
+  ],
+  "summary": {
+    "en": "A Hellenistic kingdom founded by Seleucus I Nicator, one of Alexander the Great's generals, who retook Babylon in 312 BCE. At its height it stretched from the Aegean to Central Asia, and its kings founded dozens of Greek cities, such as Antioch and Seleucia, spreading Greek language and culture across the Middle East. Seleucus was murdered in 281 BCE, just after winning Asia Minor. His successors lost the east to the Parthians and to Greek kings in Bactria, and Antiochus III, after briefly restoring the empire, was defeated by Rome in 190 BCE. Reduced to Syria, the kingdom was annexed by Pompey in 63 BCE.",
+    "pt": "Reino helenístico fundado por Seleuco I Nicátor, um dos generais de Alexandre, o Grande, que retomou a Babilônia em 312 a.C. No auge ia do Egeu à Ásia Central, e seus reis fundaram dezenas de cidades gregas, como Antioquia e Selêucia, espalhando a língua e a cultura gregas pelo Oriente Médio. Seleuco foi assassinado em 281 a.C., logo depois de conquistar a Ásia Menor. Seus sucessores perderam o leste para os partos e para reis gregos da Báctria, e Antíoco III, depois de restaurar o império por pouco tempo, foi derrotado por Roma em 190 a.C. Reduzido à Síria, o reino foi anexado por Pompeu em 63 a.C."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Seleucid Empire",
+        "year": -281
+      }
+    ]
+  }
+}

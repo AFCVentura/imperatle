@@ -1,0 +1,102 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "hawaiian-kingdom",
+  "name": {
+    "en": "Hawaiian Kingdom",
+    "pt": "Reino do Havaí"
+  },
+  "peak": {
+    "year": 1810,
+    "precision": "Exact"
+  },
+  "start": {
+    "year": 1795,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1893,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 1795, when the conquest of Oahu gave the founder control of most of the archipelago, and ends with the overthrow of the monarchy, in 1893. The peak shown is 1810, when the last remaining island accepted the king's rule without war. After that, the kingdom only added small uninhabited islands to the northwest.",
+    "pt": "Começa em 1795, quando a conquista de Oahu deu ao fundador o controle da maior parte do arquipélago, e termina com a derrubada da monarquia, em 1893. O auge escolhido é 1810, quando a última ilha que faltava aceitou o domínio do rei sem guerra. Depois disso, o reino só acrescentou pequenas ilhas desabitadas a noroeste."
+  },
+  "area": {
+    "km2": 16600,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Precise",
+  "continents": [
+    "Oceania"
+  ],
+  "primaryContinent": "Oceania",
+  "capital": {
+    "en": "Honolulu (earlier, Kailua and Lahaina)",
+    "pt": "Honolulu (antes, Kailua e Lahaina)"
+  },
+  "language": {
+    "en": "Hawaiian (and English, increasingly used in the late 19th century)",
+    "pt": "Havaiano (e inglês, cada vez mais usado no fim do século XIX)"
+  },
+  "religion": {
+    "en": "Traditional religion (worship of Kū, Lono and other gods), later Protestant Christianity",
+    "pt": "Religião tradicional (culto a Kū, Lono e outros deuses), depois cristianismo protestante"
+  },
+  "religionNotes": {
+    "en": "In 1819, the rulers themselves abolished the old system of religious prohibitions, the kapu, shortly before the first American Protestant missionaries arrived, in 1820. Over the 19th century, most of the population converted to Christianity.",
+    "pt": "Em 1819, os próprios governantes aboliram o antigo sistema de proibições religiosas, o kapu, pouco antes da chegada dos primeiros missionários protestantes americanos, em 1820. Ao longo do século XIX, a maior parte da população se converteu ao cristianismo."
+  },
+  "curiosities": [
+    {
+      "en": "Its flag, still in use today, has the flag of the United Kingdom in the corner, even though the territory was never a British colony.",
+      "pt": "Sua bandeira, usada até hoje, traz a bandeira do Reino Unido no canto, embora o território nunca tenha sido colônia britânica.",
+      "details": {
+        "en": "The kingdom's founder received a British flag from the explorer George Vancouver in 1794 and kept good relations with the United Kingdom. In the early 19th century the current design appeared, combining the British cross with stripes inspired by the American flag: the eight stripes stand for the eight main islands. In 1843 a British officer even occupied the kingdom for five months, but the British government itself returned sovereignty to the king. Today it is the flag of the state of Hawaii.",
+        "pt": "O fundador do reino recebeu uma bandeira britânica do explorador George Vancouver em 1794 e manteve boas relações com o Reino Unido. Nas primeiras décadas do século XIX, surgiu o desenho atual, que junta a cruz britânica com listras inspiradas nas americanas: as oito listras representam as oito ilhas principais. Em 1843, um oficial britânico chegou a ocupar o reino por cinco meses, mas o próprio governo britânico devolveu a soberania ao rei. Hoje é a bandeira do estado do Havaí."
+      }
+    },
+    {
+      "en": "Surfing was practised by the nobility and was part of its culture long before it became a worldwide sport.",
+      "pt": "O surfe era praticado pela nobreza e fazia parte da sua cultura muito antes de virar esporte mundial.",
+      "details": {
+        "en": "He'e nalu, \"wave sliding\", was part of the islands' life and religion. Nobles had reserved beaches and their own boards, more than five metres long and made of native wood, while commoners used smaller ones. In the 19th century missionaries discouraged the practice, which almost disappeared. It was revived in the early 20th century, and the swimmer Duke Kahanamoku took it to California and Australia.",
+        "pt": "O he'e nalu, \"deslizar na onda\", era parte da vida e da religião das ilhas. Os nobres tinham praias reservadas e pranchas próprias, que passavam de cinco metros e eram feitas de madeira nativa, enquanto o povo usava pranchas menores. No século XIX, os missionários desencorajaram a prática, que quase sumiu. Ela renasceu no início do século XX, e o nadador Duke Kahanamoku a levou para a Califórnia e a Austrália."
+      }
+    },
+    {
+      "en": "The name of its founder inspired the most famous attack of one of the most popular anime in the world.",
+      "pt": "O nome do seu fundador inspirou o golpe mais famoso de um dos animes mais populares do mundo.",
+      "details": {
+        "en": "Kamehameha the Great unified the islands and founded the kingdom. Almost two centuries later, Akira Toriyama used his name for Goku's energy attack in Dragon Ball, at his wife's suggestion. The name also made a pun in Japanese: \"kame\" means turtle, and the one who teaches the attack is Master Roshi, known in Japan as Kame-sennin, the \"turtle hermit\".",
+        "pt": "Kamehameha, o Grande, unificou as ilhas e fundou o reino. Quase dois séculos depois, Akira Toriyama usou o nome dele para o golpe de energia de Goku em Dragon Ball, por sugestão da esposa. O nome ainda rendia um trocadilho em japonês: \"kame\" significa tartaruga, e quem ensina o golpe é o Mestre Kame, o \"eremita tartaruga\"."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Hawaiian_Kingdom",
+    "pt": "https://pt.wikipedia.org/wiki/Reino_do_Havaí"
+  },
+  "aliases": [
+    "Kingdom of Hawaii",
+    "Reino Havaiano",
+    "Hawaii",
+    "Havaí",
+    "Ko Hawaiʻi Pae ʻĀina"
+  ],
+  "summary": {
+    "en": "The kingdom founded by Kamehameha I, who between 1795 and 1810 brought under his rule the islands of the archipelago, until then divided among rival chiefs. Over the 19th century it became a constitutional monarchy recognised by the great powers, with schools, newspapers and one of the highest literacy rates in the world. The sandalwood trade, whaling and later the sugar cane plantations attracted foreigners, mostly Americans, and workers from Asia. In 1893, American businessmen overthrew Queen Liliʻuokalani with the support of United States marines, and the islands were annexed by the Americans in 1898. Over the kingdom's existence, diseases brought by foreigners, such as measles and smallpox, reduced the native population from a few hundred thousand to about 40,000.",
+    "pt": "Reino fundado por Kamehameha I, que entre 1795 e 1810 uniu sob seu governo as ilhas do arquipélago, até então divididas entre chefes rivais. Ao longo do século XIX, tornou-se uma monarquia constitucional reconhecida pelas grandes potências, com escolas, jornais e uma das maiores taxas de alfabetização do mundo. O comércio de sândalo, a caça às baleias e, depois, as plantações de cana-de-açúcar atraíram estrangeiros, sobretudo americanos, e trabalhadores vindos da Ásia. Em 1893, empresários americanos derrubaram a rainha Liliʻuokalani com o apoio de fuzileiros dos Estados Unidos, e as ilhas foram anexadas pelos americanos em 1898. Ao longo da existência do reino, doenças trazidas por estrangeiros, como o sarampo e a varíola, reduziram a população nativa de algumas centenas de milhares para cerca de 40 mil pessoas."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Kingdom of Hawaï'i",
+        "year": 1811
+      },
+      {
+        "country": "USA",
+        "box": [-161, 18.5, -154, 22.6]
+      }
+    ]
+  }
+}

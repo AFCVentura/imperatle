@@ -1,0 +1,102 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "ming-dynasty",
+  "name": {
+    "en": "Ming Dynasty",
+    "pt": "Dinastia Ming"
+  },
+  "peak": {
+    "year": 1422,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1368,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1644,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 1368, when a rebel leader drove out the foreign dynasty that ruled the country and proclaimed himself emperor. It ends in 1644, when rebels took the capital and the last emperor took his own life. Loyal courts held out in the south for a few more decades.",
+    "pt": "Começa em 1368, quando um líder rebelde expulsou a dinastia estrangeira que governava o país e se proclamou imperador. Termina em 1644, quando rebeldes tomaram a capital e o último imperador tirou a própria vida. Cortes leais resistiram no sul por mais algumas décadas."
+  },
+  "area": {
+    "km2": 6218876,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Nanjing, later Beijing",
+    "pt": "Nanquim, depois Pequim"
+  },
+  "language": {
+    "en": "Classical Chinese (and Mandarin spoken at court)",
+    "pt": "Chinês clássico (e mandarim falado na corte)"
+  },
+  "religion": {
+    "en": "Confucianism, Buddhism and Chinese folk religion",
+    "pt": "Confucionismo, budismo e religião tradicional chinesa"
+  },
+  "religionNotes": {
+    "en": "Neo-Confucianism was the basis of the civil service exams and of state rites. Buddhism and Taoism were widespread, and some emperors were devoted Taoists.",
+    "pt": "O neoconfucionismo era a base dos exames para o serviço público e dos ritos de Estado. O budismo e o taoísmo eram muito difundidos, e alguns imperadores eram taoístas devotos."
+  },
+  "curiosities": [
+    {
+      "en": "Its founder had been a poor peasant and a novice in a Buddhist monastery before leading a rebellion.",
+      "pt": "Seu fundador tinha sido um camponês pobre e noviço num mosteiro budista antes de liderar uma rebelião.",
+      "details": {
+        "en": "The founder, Zhu Yuanzhang, lost almost all his family to famine and plague in 1344 and joined a Buddhist monastery so as not to starve, also begging along the roads. He then joined the Red Turbans, a revolt against the Mongols, rose to lead the rebels and, in 1368, proclaimed himself the Hongwu Emperor.",
+        "pt": "O fundador, Zhu Yuanzhang, perdeu quase toda a família para a fome e uma epidemia em 1344 e entrou num mosteiro budista para não morrer de fome, chegando a mendigar pelas estradas. Depois se juntou aos Turbantes Vermelhos, uma revolta contra os mongóis, virou líder rebelde e, em 1368, se proclamou o imperador Hongwu."
+      }
+    },
+    {
+      "en": "Its blue and white porcelain became so prized that its name is still used today as a synonym for priceless vases.",
+      "pt": "Sua porcelana azul e branca ficou tão valorizada que seu nome é usado até hoje como sinônimo de vaso de valor inestimável.",
+      "details": {
+        "en": "Blue and white porcelain from Jingdezhen, painted with cobalt under the glaze, was sold across Asia, the Islamic world and Europe. Ming pieces are worth fortunes today: in 2014, a small Ming cup sold at auction for about 36 million dollars.",
+        "pt": "A porcelana azul e branca de Jingdezhen, pintada com cobalto sob o vidrado, era vendida para a Ásia, o mundo islâmico e a Europa. Peças Ming valem fortunas hoje: em 2014, uma pequena taça Ming foi leiloada por cerca de 36 milhões de dólares."
+      }
+    },
+    {
+      "en": "It built the Forbidden City, the imperial palace in the heart of its capital, as well as the majority of the Great Wall.",
+      "pt": "Construiu a Cidade Proibida, o palácio imperial no coração de sua capital, bem como a maior parte da Grande Muralha.",
+      "details": {
+        "en": "The Forbidden City was built from 1406 to 1420, when the Yongle Emperor moved the capital from Nanjing to Beijing. It has about 980 buildings and was home to 24 emperors. The Ming also rebuilt the Great Wall in stone and brick against the Mongols, and its most famous stretches, such as Badaling and Mutianyu, date from their time.",
+        "pt": "A Cidade Proibida foi construída entre 1406 e 1420, quando o imperador Yongle levou a capital de Nanquim para Pequim. Tem cerca de 980 edifícios e foi a residência de 24 imperadores. Os Ming também reconstruíram a Grande Muralha em pedra e tijolo contra os mongóis, e os trechos mais famosos, como Badaling e Mutianyu, são dessa época."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Ming_dynasty",
+    "pt": "https://pt.wikipedia.org/wiki/Dinastia_Ming"
+  },
+  "aliases": [
+    "China",
+    "Ming Empire",
+    "Império Ming",
+    "Great Ming",
+    "Grande Ming",
+    "Ming China",
+    "China Ming",
+    "Chinese Empire",
+    "Império Chinês"
+  ],
+  "summary": {
+    "en": "The last Chinese dynasty ruled by the Han people, from 1368 to 1644. It rose from a revolt that drove the Mongol rulers out of China and rebuilt a strong, centralised state, with exams to choose its officials. It peaked early in the 15th century, when it sent great fleets across the Indian Ocean and moved the capital to Beijing. Later it turned inward, faced money troubles and peasant revolts, and fell when rebels took Beijing; soon after, the Manchus founded the Qing dynasty.",
+    "pt": "Última dinastia chinesa governada pela etnia han, entre 1368 e 1644. Surgiu de uma revolta que expulsou os governantes mongóis da China e reconstruiu um Estado forte e centralizado, com exames para escolher os funcionários públicos. Teve o auge no começo do século XV, quando mandou grandes frotas pelo oceano Índico e mudou a capital para Pequim. Depois se fechou mais para o exterior, enfrentou crises financeiras e revoltas camponesas, e caiu quando rebeldes tomaram Pequim; logo em seguida, os manchus fundaram a dinastia Qing."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Ming Dynasty",
+        "year": 1422
+      }
+    ]
+  }
+}

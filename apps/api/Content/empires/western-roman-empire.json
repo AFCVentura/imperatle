@@ -1,0 +1,99 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "western-roman-empire",
+  "name": {
+    "en": "Western Roman Empire",
+    "pt": "Império Romano do Ocidente"
+  },
+  "peak": {
+    "year": 395,
+    "precision": "Exact"
+  },
+  "start": {
+    "year": 395,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 476,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 395, with the death of the last emperor to rule the whole territory alone, when the division into two halves with their own emperors became permanent. It ends in 476, with the deposition of the last emperor by a Germanic military leader; some historians prefer 480, the year of death of the last emperor recognised by the other half. The peak shown is 395, since after that the territory only shrank, with the loss of Britain, Hispania, Gaul and Africa.",
+    "pt": "Começa em 395, com a morte do último imperador a governar sozinho todo o território, quando a divisão em duas metades com imperadores próprios se tornou permanente. Termina em 476, com a deposição do último imperador por um chefe militar germânico; alguns historiadores preferem 480, ano da morte do último imperador reconhecido pela outra metade. O auge escolhido é 395, já que depois disso o território só encolheu, com a perda da Britânia, da Hispânia, da Gália e da África."
+  },
+  "area": {
+    "km2": 2100000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Europe",
+    "Africa"
+  ],
+  "primaryContinent": "Europe",
+  "capital": {
+    "en": "Milan, later Ravenna",
+    "pt": "Milão, depois Ravena"
+  },
+  "language": {
+    "en": "Latin",
+    "pt": "Latim"
+  },
+  "religion": {
+    "en": "Christianity",
+    "pt": "Cristianismo"
+  },
+  "religionNotes": {
+    "en": "Christianity had become the official religion shortly before, and pagan cults were banned by law at the end of the 4th century, but part of the aristocracy of the old capital remained faithful to the traditional gods for decades. Many of the Germanic peoples who served in the army or settled in the territory were Arian Christians, a current considered heretical by the official Church.",
+    "pt": "O cristianismo havia se tornado a religião oficial pouco antes, e os cultos pagãos foram proibidos por lei no fim do século IV, mas parte da aristocracia da antiga capital continuou fiel aos deuses tradicionais por décadas. Muitos dos povos germânicos que serviam no exército ou se instalaram no território eram cristãos arianos, uma corrente considerada herética pela Igreja oficial."
+  },
+  "curiosities": [
+    {
+      "en": "Its last emperor bore the name of the legendary founder of its most famous city and that of the first emperor.",
+      "pt": "Seu último imperador tinha o nome do fundador lendário de sua cidade mais famosa e o do primeiro imperador.",
+      "details": {
+        "en": "Romulus Augustus, still a teenager, was placed on the throne by his father, the general Orestes, in 475. Because he was young and had no real power, he was nicknamed Augustulus, \"little Augustus\". Odoacer deposed him in 476 but spared his life and sent him to live on a pension in southern Italy.",
+        "pt": "Rômulo Augusto, ainda adolescente, foi colocado no trono pelo pai, o general Orestes, em 475. Por ser jovem e sem poder real, ganhou o apelido de Augústulo, \"pequeno Augusto\". Odoacro o depôs em 476, mas poupou sua vida e o mandou viver com uma pensão no sul da Itália."
+      }
+    },
+    {
+      "en": "It arose from the division of a gigantic empire between two brothers, each with his own half.",
+      "pt": "Surgiu da divisão de um império gigantesco entre dois irmãos, cada um com sua própria metade.",
+      "details": {
+        "en": "Theodosius I left the West to Honorius and the East to Arcadius. The other half lasted almost a thousand years longer, until 1453.",
+        "pt": "Teodósio I deixou o Ocidente para Honório e o Oriente para Arcádio. A outra metade durou quase mil anos a mais, até 1453."
+      }
+    },
+    {
+      "en": "Its fall is traditionally used as the marker of the end of Antiquity and the beginning of the Middle Ages.",
+      "pt": "Sua queda é tradicionalmente usada como marco do fim da Antiguidade e do início da Idade Média.",
+      "details": {
+        "en": "The deposition of the last emperor, in 476, became the textbook date for the transition between the two eras. Today historians see this change as gradual: city life, Latin and the Church carried on, now under Germanic kingdoms.",
+        "pt": "A deposição do último imperador, em 476, virou a data escolar de transição entre as duas eras. Hoje os historiadores veem essa passagem como gradual: a vida nas cidades, o latim e a Igreja continuaram, agora sob reinos germânicos."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Western_Roman_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Romano_do_Ocidente"
+  },
+  "aliases": [
+    "Império Romano Ocidental",
+    "Western Empire",
+    "Império do Ocidente",
+    "Roma Ocidental",
+    "Hesperium Imperium"
+  ],
+  "summary": {
+    "en": "The western half of the Roman Empire, which permanently had its own emperor after the death of Theodosius I in 395, when the empire was divided between his sons Honorius and Arcadius. Ruled from Milan and later from Ravenna, throughout the 5th century it faced invasions and migrations of Germanic peoples and the Huns: Rome was sacked by the Visigoths in 410 and by the Vandals in 455, and provinces such as Britain, Hispania, Gaul and Africa were lost one by one. Real power passed more and more to generals of barbarian origin, who appointed and deposed emperors. In 476, the Germanic leader Odoacer deposed the young Romulus Augustus and sent the imperial insignia to Constantinople, a date traditionally used as the marker of the end of Antiquity.",
+    "pt": "Metade ocidental do Império Romano, que passou a ter imperador próprio de forma permanente após a morte de Teodósio I, em 395, quando o império foi dividido entre seus filhos Honório e Arcádio. Governada a partir de Milão e depois de Ravena, enfrentou ao longo do século V invasões e migrações de povos germânicos e dos hunos: Roma foi saqueada pelos visigodos em 410 e pelos vândalos em 455, e províncias como a Britânia, a Hispânia, a Gália e a África foram perdidas uma a uma. O poder real passou cada vez mais para generais de origem bárbara, que nomeavam e depunham imperadores. Em 476, o chefe germânico Odoacro depôs o jovem Rômulo Augusto e enviou as insígnias imperiais a Constantinopla, data tradicionalmente usada como marco do fim da Antiguidade."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Western Roman Empire",
+        "year": 395
+      }
+    ]
+  }
+}

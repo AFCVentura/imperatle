@@ -50,20 +50,49 @@
   "curiosities": [
     {
       "en": "It used an entire continent as a destination for convicts, shipping prisoners there for 80 years.",
-      "pt": "Usou um continente inteiro como destino de prisioneiros, enviando condenados para lá durante 80 anos."
+      "pt": "Usou um continente inteiro como destino de prisioneiros, enviando condenados para lá durante 80 anos.",
+      "details": {
+        "en": "Between 1788 and 1868, Britain sent about 162,000 convicts to Australia, many of them for petty crimes such as theft. The First Fleet arrived at Sydney Cove in 1788. Before that, prisoners had been shipped to the American colonies, an outlet that the independence of the United States closed.",
+        "pt": "Entre 1788 e 1868, o Reino Unido mandou cerca de 162 mil condenados para a Austrália, muitos por crimes pequenos, como furto. A primeira frota chegou à baía de Sydney em 1788. Antes disso, os presos eram enviados para as colônias americanas, saída que a independência dos Estados Unidos fechou."
+      }
     },
     {
       "en": "It fought wars against China to keep the opium trade going, gaining an island it only handed back 156 years later.",
-      "pt": "Travou guerras contra a China para manter o comércio de ópio e ganhou com isso uma ilha que só devolveu 156 anos depois."
+      "pt": "Travou guerras contra a China para manter o comércio de ópio e ganhou com isso uma ilha que só devolveu 156 anos depois.",
+      "details": {
+        "en": "In the Opium Wars, China tried to stop the drug that British merchants brought from India. Defeated in the first war, it ceded Hong Kong Island in the Treaty of Nanjing of 1842; the British had held it since 1841. Britain only handed it back to China in 1997, together with territories leased later.",
+        "pt": "Nas Guerras do Ópio, a China tentou barrar a droga que comerciantes britânicos levavam da Índia. Derrotada na primeira guerra, cedeu a ilha de Hong Kong pelo Tratado de Nanquim, de 1842; os britânicos já a ocupavam desde 1841. O Reino Unido só a devolveu à China em 1997, junto com territórios arrendados depois."
+      }
     },
     {
       "en": "It was the largest empire in history by territorial extent.",
-      "pt": "Foi o maior império da história em extensão territorial."
+      "pt": "Foi o maior império da história em extensão territorial.",
+      "details": {
+        "en": "At its height, around 1920, the British Empire covered about 35 million km², nearly a quarter of the planet's land, and had more than 400 million people. That is why it was called \"the empire on which the sun never sets\": some part of it was always in daylight.",
+        "pt": "No auge, por volta de 1920, o Império Britânico tinha cerca de 35 milhões de km², quase um quarto das terras do planeta, e mais de 400 milhões de habitantes. Por isso era chamado de \"o império onde o sol nunca se põe\": sempre havia algum território seu à luz do dia."
+      }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/British_Empire",
     "pt": "https://pt.wikipedia.org/wiki/Império_Britânico"
+  },
+  "aliases": [
+    "United Kingdom",
+    "Reino Unido",
+    "UK",
+    "Great Britain",
+    "Grã-Bretanha",
+    "Britain",
+    "England",
+    "Inglaterra",
+    "English Empire",
+    "Império Inglês",
+    "Commonwealth"
+  ],
+  "summary": {
+    "en": "The colonies, dominions, protectorates and territories ruled by the United Kingdom, which began with English voyages and settlements in the 16th and 17th centuries. After losing the Thirteen American Colonies in 1783, it turned to India, Australia, Africa and the Pacific, and in the 19th century became the world's leading power, backed by the Royal Navy and the Industrial Revolution. At its height, around 1920, it ruled about a quarter of the world's land and people. After World War II its colonies became independent, and the handover of Hong Kong to China in 1997 is seen as its end.",
+    "pt": "Conjunto de colônias, domínios, protetorados e territórios governados pelo Reino Unido, que começou com as viagens e colônias inglesas dos séculos XVI e XVII. Depois de perder as Treze Colônias americanas em 1783, voltou-se para a Índia, a Austrália, a África e o Pacífico, e no século XIX virou a maior potência do planeta, apoiada na Marinha Real e na Revolução Industrial. No auge, por volta de 1920, governava cerca de um quarto das terras e da população do mundo. Depois da Segunda Guerra, as colônias se tornaram independentes, e a entrega de Hong Kong à China, em 1997, é vista como o seu fim."
   },
   "map": {
     "parts": [

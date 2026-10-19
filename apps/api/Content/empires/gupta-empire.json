@@ -1,0 +1,106 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "gupta-empire",
+  "name": {
+    "en": "Gupta Empire",
+    "pt": "Império Gupta"
+  },
+  "peak": {
+    "year": 420,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 320,
+    "precision": "Approximate"
+  },
+  "end": {
+    "year": 550,
+    "precision": "Approximate"
+  },
+  "durationNotes": {
+    "en": "It starts around 320, when the third king of the dynasty, married to a princess of a powerful clan, took the title of \"great king of kings\" and began a new era for counting the years, and ends around 550, after invasions from Central Asia and revolts by the governors had reduced the kingdom to a small region. The peak shown is around 420. The map excludes the kingdoms of the south and of the east coast that were defeated in a great military campaign but handed back to their kings in exchange for tribute.",
+    "pt": "Começa por volta de 320, quando o terceiro rei da dinastia, casado com uma princesa de um clã poderoso, assumiu o título de \"grande rei dos reis\" e iniciou uma nova era de contagem dos anos, e termina por volta de 550, depois que invasões vindas da Ásia Central e revoltas dos governadores reduziram o reino a uma pequena região. O auge escolhido é por volta de 420. O mapa exclui os reinos do sul e da costa leste que foram derrotados numa grande campanha militar, mas devolvidos aos seus reis em troca de tributo."
+  },
+  "area": {
+    "km2": 2230000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Pataliputra (Ujjain as a second capital)",
+    "pt": "Pataliputra (Ujjain como segunda capital)"
+  },
+  "language": {
+    "en": "Sanskrit (as well as the Prakrits)",
+    "pt": "Sânscrito (além dos prácritos)"
+  },
+  "religion": {
+    "en": "Hinduism",
+    "pt": "Hinduísmo"
+  },
+  "religionNotes": {
+    "en": "The kings presented themselves as devotees of Vishnu, and it was in this period that Hinduism took its classical form, with the great stone temples, the Puranas and the devotional worship of Vishnu and Shiva. Buddhism and Jainism remained protected, and one of the kings founded a great Buddhist monastery that became the most famous centre of learning in Asia.",
+    "pt": "Os reis se apresentavam como devotos de Vishnu, e foi nessa época que o hinduísmo ganhou a forma clássica, com os grandes templos de pedra, os Puranas e o culto devocional a Vishnu e Shiva. O budismo e o jainismo continuaram protegidos, e um dos reis fundou um grande mosteiro budista que se tornou o centro de estudos mais famoso da Ásia."
+  },
+  "curiosities": [
+    {
+      "en": "An astronomer of its time proposed that the Earth spins on its own axis and calculated the value of pi to four decimal places.",
+      "pt": "Um astrônomo da sua época propôs que a Terra gira em torno do próprio eixo e calculou o valor de pi com quatro casas decimais.",
+      "details": {
+        "en": "Aryabhata wrote the \"Aryabhatiya\" in 499, at the age of 23. India's first space satellite, launched in 1975, was named after him.",
+        "pt": "Aryabhata escreveu o \"Aryabhatiya\" em 499, aos 23 anos. O primeiro satélite espacial da Índia, lançado em 1975, recebeu o nome dele."
+      }
+    },
+    {
+      "en": "The game that gave rise to chess appeared in its territory, around the end of the dynasty.",
+      "pt": "O jogo que deu origem ao xadrez surgiu no seu território, por volta do fim da dinastia.",
+      "details": {
+        "en": "Chaturanga, with pieces representing the infantry, cavalry, elephants and chariots of the army, appears around the 6th century. It passed to Persia and then to the Arab world and Europe.",
+        "pt": "O chaturanga, com peças que representavam a infantaria, a cavalaria, os elefantes e os carros do exército, aparece por volta do século VI. Ele passou à Pérsia e depois ao mundo árabe e à Europa."
+      }
+    },
+    {
+      "en": "It was in its time that the positional decimal system took shape which, carried to Europe by the Arabs, gave rise to the numerals we use today.",
+      "pt": "Foi na sua época que se consolidou o sistema decimal posicional que, levado pelos árabes à Europa, deu origem aos algarismos que usamos hoje.",
+      "details": {
+        "en": "The Indian system of ten digits with place value became established in this period and reached Europe through Arab mathematicians, which is why the numerals are called \"Hindu-Arabic\".",
+        "pt": "O sistema indiano de dez algarismos com valor posicional se firmou nesse período e chegou à Europa pelos matemáticos árabes, por isso os algarismos são chamados de \"indo-arábicos\"."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Gupta_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Gupta"
+  },
+  "aliases": [
+    "Gupta",
+    "Guptas",
+    "Gupta dynasty",
+    "Dinastia Gupta",
+    "Gupta India",
+    "Índia Gupta",
+    "Magadha",
+    "India",
+    "Índia"
+  ],
+  "summary": {
+    "en": "An empire of northern India founded by Chandragupta I around 320, from Magadha, in the Ganges valley. His son Samudragupta conquered much of the north and led a great campaign in the south, where the defeated kings came to pay tribute. Chandragupta II defeated the Western Satraps and took the empire to the Arabian Sea, opening the ports of the trade with Rome and Southeast Asia. The period is considered the Golden Age of India: the poet Kalidasa wrote his works, the astronomer Aryabhata calculated the value of pi and proposed the rotation of the Earth, and the positional decimal system took the form that gave rise to the numerals used today. From the middle of the 5th century, the invasions of the Hephthalite Huns, from Central Asia, weakened the empire, and the provincial governors became independent, until the dynasty disappeared around 550.",
+    "pt": "Império do norte da Índia fundado por Chandragupta I por volta de 320, a partir de Magadha, no vale do Ganges. Seu filho Samudragupta conquistou boa parte do norte e fez uma grande campanha no sul, onde os reis derrotados passaram a pagar tributo. Chandragupta II derrotou os Sátrapas Ocidentais e levou o império até o mar Arábico, abrindo os portos do comércio com Roma e o Sudeste Asiático. O período é considerado a Idade de Ouro da Índia: o poeta Kalidasa escreveu suas obras, o astrônomo Aryabhata calculou o valor de pi e propôs a rotação da Terra, e o sistema decimal posicional ganhou a forma que deu origem aos algarismos usados hoje. A partir de meados do século V, as invasões dos hunos heftalitas, vindos da Ásia Central, enfraqueceram o império, e os governadores das províncias se tornaram independentes, até que a dinastia desapareceu por volta de 550."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Gupta Empire",
+        "year": 420
+      },
+      {
+        "draw": "remove",
+        "ring": [[78,9],[89,9],[89,20.2],[86.75,20.25],[86.4,20.4],[85.9,20.45],[85.4,20.45],[84.9,20.6],[84.4,20.75],[84,21],[83.6,21.35],[83.2,21.55],[82.6,21.6],[82,21.5],[81.4,21.2],[80.5,20.6],[78,20.3],[78,9]]
+      }
+    ]
+  }
+}

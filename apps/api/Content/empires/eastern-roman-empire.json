@@ -2,8 +2,8 @@
   "$schema": "../empire.schema.json",
   "slug": "eastern-roman-empire",
   "name": {
-    "en": "Eastern Roman Empire (Byzantine Empire)",
-    "pt": "Império Romano Oriental (Império Bizantino)"
+    "en": "Eastern Roman Empire",
+    "pt": "Império Romano Oriental"
   },
   "peak": {
     "year": 565,
@@ -51,20 +51,50 @@
   "curiosities": [
     {
       "en": "A devastating plague of the 6th century is named after one of its emperors.",
-      "pt": "Uma praga devastadora do século VI leva o nome de um de seus imperadores."
+      "pt": "Uma praga devastadora do século VI leva o nome de um de seus imperadores.",
+      "details": {
+        "en": "The Plague of Justinian reached Egypt in 541 and Constantinople in 542, where, according to the historian Procopius, it killed thousands of people a day. It was caused by the same bacterium as the Black Death, Yersinia pestis, and came back in waves for two centuries. The emperor himself caught it but survived.",
+        "pt": "A Peste de Justiniano chegou ao Egito em 541 e a Constantinopla em 542, onde, segundo o historiador Procópio, matava milhares de pessoas por dia. Era causada pela mesma bactéria da Peste Negra, a Yersinia pestis, e voltou em ondas por dois séculos. O próprio imperador pegou a doença, mas sobreviveu."
+      }
     },
     {
       "en": "It fell when its capital was taken by a 21-year-old sultan who used giant cannons against the walls.",
-      "pt": "Caiu quando sua capital foi tomada por um sultão de 21 anos, que usou canhões gigantes contra as muralhas."
+      "pt": "Caiu quando sua capital foi tomada por um sultão de 21 anos, que usou canhões gigantes contra as muralhas.",
+      "details": {
+        "en": "The Ottoman sultan Mehmed II was 21 when he besieged Constantinople in 1453. He used huge cannons, one of them cast by a Hungarian founder named Orban, to batter the Theodosian Walls, which had held for almost a thousand years. The city fell on 29 May, and the last emperor, Constantine XI, died fighting.",
+        "pt": "O sultão otomano Mehmed II tinha 21 anos quando cercou Constantinopla, em 1453. Usou canhões enormes, um deles fundido por um húngaro chamado Orbán, para bater nas Muralhas de Teodósio, que resistiam havia quase mil anos. A cidade caiu em 29 de maio, e o último imperador, Constantino XI, morreu lutando."
+      }
     },
     {
       "en": "Its people called themselves Romans; the name it is known by today was coined by historians centuries later.",
-      "pt": "Seus habitantes se chamavam de romanos; o nome pelo qual o império é conhecido hoje foi criado por historiadores séculos depois."
+      "pt": "Seus habitantes se chamavam de romanos; o nome pelo qual o império é conhecido hoje foi criado por historiadores séculos depois.",
+      "details": {
+        "en": "Its people called themselves \"Romaioi\", Romans, and to them the state was simply the Roman Empire. The word \"Byzantine\", from Byzantium, the old Greek name of the city, was popularised by the German historian Hieronymus Wolf in 1557, more than a hundred years after the empire fell.",
+        "pt": "Seus habitantes se chamavam de \"romaioi\", romanos, e para eles o Estado era simplesmente o Império Romano. O termo \"bizantino\", de Bizâncio, o antigo nome grego da cidade, foi popularizado pelo historiador alemão Hieronymus Wolf em 1557, mais de cem anos depois da queda do império."
+      }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Byzantine_Empire",
     "pt": "https://pt.wikipedia.org/wiki/Império_Bizantino"
+  },
+  "aliases": [
+    "Byzantine Empire",
+    "Império Bizantino",
+    "Byzantium",
+    "Bizâncio",
+    "Byzantines",
+    "Bizantinos",
+    "East Roman Empire",
+    "Império Romano do Oriente",
+    "Greece",
+    "Grécia",
+    "Turkey",
+    "Turquia"
+  ],
+  "summary": {
+    "en": "The eastern half of the Roman Empire, which lived on for almost a thousand years after the fall of the West, with Constantinople as its capital. It spoke Greek, was Orthodox Christian and kept Roman law and administration. It peaked under Justinian, in the 6th century, when it took back Italy, North Africa and southern Spain. It later lost lands to the Arabs, Slavs, Bulgarians and Turks, and was sacked by the crusaders in 1204. It ended in 1453, when the Ottomans took Constantinople.",
+    "pt": "Metade oriental do Império Romano, que continuou existindo por quase mil anos depois da queda do Ocidente, com capital em Constantinopla. Falava grego, era cristã ortodoxa e manteve o direito e a administração romanos. Teve o auge com Justiniano, no século VI, quando retomou a Itália, o norte da África e o sul da Espanha. Depois perdeu terras para árabes, eslavos, búlgaros e turcos, e foi saqueada pelos cruzados em 1204. Acabou em 1453, quando os otomanos tomaram Constantinopla."
   },
   "map": {
     "parts": [

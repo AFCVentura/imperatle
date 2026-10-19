@@ -1,0 +1,178 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "danish-empire",
+  "name": {
+    "en": "Danish Empire",
+    "pt": "Império Dinamarquês"
+  },
+  "peak": {
+    "year": 1800,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1536,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1814,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 1536, when the neighbouring kingdom to the north lost its own government and came to be ruled from the capital, and ends in 1814, when, defeated alongside Napoleon, the country had to hand that kingdom over to another neighbour. The peak shown is 1800. The map includes the whole of the large Arctic island claimed by the crown, although colonisation was limited to posts on its west coast, and excludes a duchy to the south that the king ruled as a vassal of the Holy Roman Empire. The Caribbean islands and some of the trading posts are too small to appear on the map.",
+    "pt": "Começa em 1536, quando o reino vizinho do norte perdeu o governo próprio e passou a ser governado a partir da capital, e termina em 1814, quando, derrotado ao lado de Napoleão, o país teve de entregar esse reino a outro vizinho. O auge escolhido é 1800. O mapa inclui toda a grande ilha do Ártico reivindicada pela coroa, embora a colonização se limitasse a postos no litoral oeste, e exclui um ducado ao sul que o rei governava como vassalo do Sacro Império. As ilhas do Caribe e alguns entrepostos são pequenos demais para aparecer no mapa."
+  },
+  "area": {
+    "km2": 2610000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "NorthAmerica",
+    "Europe",
+    "Asia",
+    "Africa"
+  ],
+  "primaryContinent": "Europe",
+  "capital": {
+    "en": "Copenhagen",
+    "pt": "Copenhague"
+  },
+  "language": {
+    "en": "Danish (as well as Norwegian, German, Icelandic, Faroese and Greenlandic)",
+    "pt": "Dinamarquês (além de norueguês, alemão, islandês, feroês e groenlandês)"
+  },
+  "religion": {
+    "en": "Lutheranism",
+    "pt": "Luteranismo"
+  },
+  "religionNotes": {
+    "en": "The Reformation was imposed by the king in 1536, and the Lutheran Church became a state church headed by the monarch, with other faiths restricted for a long time. Missionaries took Lutheranism to Greenland and to the trading post in India, where the first Protestant mission in Asia was founded in 1706.",
+    "pt": "A Reforma foi imposta pelo rei em 1536, e a Igreja Luterana virou uma igreja de Estado chefiada pelo monarca, com as outras religiões restringidas por muito tempo. Missionários levaram o luteranismo à Groenlândia e ao entreposto na Índia, onde foi fundada, em 1706, a primeira missão protestante da Ásia."
+  },
+  "curiosities": [
+    {
+      "en": "It was the first country to ban the transatlantic slave trade.",
+      "pt": "Foi o primeiro país a proibir o tráfico transatlântico de escravizados.",
+      "details": {
+        "en": "A royal decree of 1792 banned the trade in enslaved Africans to its Caribbean colonies, with a ten-year transition period, and the ban came into force in 1803, before the British and American bans. Slavery itself, however, was only abolished in the Danish West Indies in 1848, after a revolt.",
+        "pt": "Um decreto real de 1792 proibiu o tráfico de africanos escravizados para suas colônias no Caribe, com dez anos de transição, e a proibição entrou em vigor em 1803, antes das proibições britânica e americana. A escravidão em si, porém, só foi abolida nas Índias Ocidentais Dinamarquesas em 1848, depois de uma revolta."
+      }
+    },
+    {
+      "en": "It sold its Caribbean islands to the United States during the First World War.",
+      "pt": "Vendeu suas ilhas no Caribe aos Estados Unidos durante a Primeira Guerra Mundial.",
+      "details": {
+        "en": "In 1917, Denmark sold the Danish West Indies, St. Thomas, St. John and St. Croix, to the United States for 25 million dollars in gold. The Americans feared that Germany would use the islands as a submarine base, and they became the US Virgin Islands.",
+        "pt": "Em 1917, a Dinamarca vendeu as Índias Ocidentais Dinamarquesas, St. Thomas, St. John e St. Croix, aos Estados Unidos por 25 milhões de dólares em ouro. Os americanos temiam que a Alemanha usasse as ilhas como base de submarinos, e elas viraram as Ilhas Virgens Americanas."
+      }
+    },
+    {
+      "en": "Its flag, a white cross on a red background, is considered the oldest still in use by a country, and according to legend it fell from the sky during a battle in 1219.",
+      "pt": "Sua bandeira, uma cruz branca sobre fundo vermelho, é considerada a mais antiga ainda em uso por um país, e segundo a lenda caiu do céu durante uma batalha em 1219.",
+      "details": {
+        "en": "According to the legend, the Dannebrog fell from the sky during the Battle of Lyndanisse, in Estonia, when King Valdemar II's army was losing, and turned the fight in favour of the Danes. The flag has been documented since the 14th century, and its Nordic cross inspired the flags of Sweden, Norway, Finland and Iceland.",
+        "pt": "Segundo a lenda, o Dannebrog caiu do céu durante a Batalha de Lyndanisse, na Estônia, quando o exército do rei Valdemar II estava perdendo, e virou a luta a favor dos dinamarqueses. A bandeira é documentada desde o século XIV, e sua cruz nórdica inspirou as bandeiras da Suécia, da Noruega, da Finlândia e da Islândia."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Danish_colonial_empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_colonial_dinamarquês"
+  },
+  "aliases": [
+    "Denmark",
+    "Dinamarca",
+    "Denmark-Norway",
+    "Dinamarca-Noruega",
+    "Danish Colonial Empire",
+    "Império Colonial Dinamarquês",
+    "Dano-Norwegian Realm",
+    "Reino Dano-Norueguês",
+    "Norway",
+    "Noruega"
+  ],
+  "summary": {
+    "en": "The realm of the Danish crown between the Reformation and the Napoleonic Wars, formed by Denmark, Norway, which lost its own government in 1536, the North Atlantic islands of Iceland, the Faroes and Greenland, and small colonies overseas. In the 17th century, Denmark lost to Sweden the provinces east of the Øresund, such as Scania, but founded trading companies that set up Tranquebar in India, in 1620, forts on the Gold Coast of Africa and colonies in the Caribbean, where sugar was produced with enslaved labour. In 1721, the missionary Hans Egede began the colonisation of Greenland. Neutral in most European conflicts, the country grew rich from trade in the 18th century, but sided with Napoleon after the British bombarded Copenhagen in 1807. With the French defeat, the Treaty of Kiel of 1814 handed Norway over to Sweden, while Denmark kept Iceland, the Faroes and Greenland.",
+    "pt": "Conjunto de territórios da coroa dinamarquesa entre a Reforma e as Guerras Napoleônicas, formado pela Dinamarca, pela Noruega, que perdeu o governo próprio em 1536, pelas ilhas do Atlântico Norte, Islândia, Faroé e Groenlândia, e por pequenas colônias ultramarinas. No século XVII, a Dinamarca perdeu para a Suécia as províncias a leste do Øresund, como a Escânia, mas fundou companhias de comércio que criaram Tranquebar, na Índia, em 1620, fortes na Costa do Ouro, na África, e colônias no Caribe, onde se produzia açúcar com trabalho escravo. Em 1721, o missionário Hans Egede iniciou a colonização da Groenlândia. Neutro na maioria dos conflitos europeus, o país enriqueceu com o comércio no século XVIII, mas ficou do lado de Napoleão depois que os britânicos bombardearam Copenhague em 1807. Com a derrota francesa, o Tratado de Kiel, de 1814, entregou a Noruega à Suécia, e a Dinamarca ficou com a Islândia, as Faroé e a Groenlândia."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Denmark-Norway",
+        "year": 1800
+      },
+      {
+        "country": "GRL"
+      },
+      {
+        "country": "FRO"
+      },
+      {
+        "country": "DEU",
+        "box": [
+          11,
+          54.4,
+          11.35,
+          54.56
+        ]
+      },
+      {
+        "country": "IND",
+        "box": [
+          92.6,
+          6.6,
+          94,
+          9.4
+        ]
+      },
+      {
+        "draw": "add",
+        "ring": [[79.77,10.99],[79.85,10.99],[79.85,11.07],[79.77,11.07],[79.77,10.99]]
+      },
+      {
+        "draw": "add",
+        "ring": [[88.33,22.73],[88.36,22.73],[88.36,22.77],[88.33,22.77],[88.33,22.73]]
+      },
+      {
+        "draw": "add",
+        "ring": [[-0.2,5.55],[-0.17,5.55],[-0.17,5.59],[-0.2,5.59],[-0.2,5.55]]
+      },
+      {
+        "draw": "add",
+        "ring": [[-0.12,5.58],[-0.08,5.58],[-0.08,5.62],[-0.12,5.62],[-0.12,5.58]]
+      },
+      {
+        "draw": "add",
+        "ring": [[0.17,5.74],[0.2,5.74],[0.2,5.77],[0.17,5.77],[0.17,5.74]]
+      },
+      {
+        "draw": "add",
+        "ring": [[0.62,5.77],[0.65,5.77],[0.65,5.8],[0.62,5.8],[0.62,5.77]]
+      },
+      {
+        "draw": "add",
+        "ring": [[0.98,5.9],[1.01,5.9],[1.01,5.93],[0.98,5.93],[0.98,5.9]]
+      },
+      {
+        "draw": "remove",
+        "ring": [[8.4,54.24],[8.95,54.27],[9.3,54.26],[9.67,54.29],[9.9,54.33],[10.13,54.37],[10.18,54.44],[10.4,54.45],[10.9,54.42],[11.4,54.395],[11.4,53.3],[8.4,53.3],[8.4,54.24]]
+      },
+      {
+        "draw": "add",
+        "ring": [[9.403,54.8],[9.483,54.745],[9.565,54.698],[9.648,54.66],[9.733,54.631],[9.819,54.611],[9.953,54.592],[10.134,54.574],[10.363,54.558],[10.638,54.543],[10.873,54.523],[11.067,54.498],[11.22,54.467],[11.331,54.432],[11.475,54.408],[11.651,54.396],[11.86,54.394],[12.101,54.404],[12.305,54.422],[12.471,54.447],[12.599,54.48],[12.69,54.52],[12.766,54.56],[12.829,54.601],[12.878,54.641],[12.913,54.681],[12.916,54.758],[12.889,54.872],[12.831,55.023],[12.743,55.211],[12.674,55.363],[12.625,55.478],[12.596,55.556],[12.587,55.596],[12.585,55.648],[12.591,55.709],[12.604,55.781],[12.624,55.863],[12.628,55.935],[12.615,55.997],[12.585,56.049],[12.538,56.09],[12.503,56.126],[12.481,56.157],[12.471,56.183],[12.473,56.204],[12.389,56.272],[12.22,56.389],[11.965,56.554],[11.623,56.768],[11.351,56.953],[11.148,57.111],[11.014,57.24],[10.952,57.34],[10.885,57.423],[10.815,57.489],[10.741,57.538],[10.664,57.57],[10.595,57.611],[10.534,57.661],[10.482,57.721],[10.439,57.79],[10.398,57.843],[10.362,57.88],[10.328,57.902],[10.298,57.907],[10.229,57.9],[10.122,57.882],[9.976,57.851],[9.792,57.809],[9.623,57.763],[9.469,57.716],[9.331,57.665],[9.207,57.612],[9.082,57.554],[8.955,57.49],[8.827,57.422],[8.696,57.348],[8.582,57.274],[8.484,57.2],[8.402,57.127],[8.336,57.053],[8.274,56.963],[8.215,56.855],[8.16,56.731],[8.109,56.59],[8.052,56.455],[7.989,56.325],[7.92,56.201],[7.846,56.082],[7.781,55.966],[7.724,55.853],[7.677,55.743],[7.639,55.635],[7.609,55.526],[7.586,55.416],[7.57,55.305],[7.563,55.193],[7.56,55.102],[7.564,55.031],[7.573,54.98],[7.587,54.949],[7.611,54.919],[7.645,54.889],[7.687,54.858],[7.739,54.828],[7.771,54.784],[7.782,54.726],[7.773,54.654],[7.743,54.568],[7.713,54.494],[7.681,54.431],[7.65,54.379],[7.617,54.339],[7.624,54.309],[7.67,54.289],[7.755,54.279],[7.88,54.279],[8.049,54.317],[8.263,54.392],[8.521,54.505],[8.825,54.656],[9.074,54.756],[9.267,54.804]]
+      },
+      {
+        "draw": "add",
+        "ring": [[11.148,59.481],[11.095,59.288],[11.051,59.137],[11.015,59.027],[10.986,58.957],[10.965,58.928],[10.925,58.893],[10.864,58.853],[10.784,58.807],[10.685,58.756],[10.554,58.694],[10.394,58.621],[10.203,58.538],[9.981,58.443],[9.749,58.358],[9.505,58.282],[9.25,58.215],[8.983,58.157],[8.747,58.097],[8.54,58.036],[8.364,57.973],[8.218,57.908],[8.039,57.849],[7.828,57.795],[7.584,57.747],[7.308,57.704],[7.017,57.681],[6.712,57.677],[6.392,57.693],[6.057,57.729],[5.762,57.786],[5.507,57.865],[5.292,57.966],[5.116,58.088],[4.97,58.202],[4.854,58.307],[4.767,58.403],[4.709,58.49],[4.651,58.619],[4.591,58.791],[4.531,59.005],[4.471,59.263],[4.435,59.51],[4.425,59.748],[4.44,59.976],[4.481,60.193],[4.501,60.381],[4.499,60.54],[4.475,60.669],[4.43,60.768],[4.398,60.88],[4.38,61.006],[4.375,61.145],[4.385,61.299],[4.415,61.472],[4.467,61.666],[4.539,61.88],[4.633,62.114],[4.729,62.322],[4.827,62.503],[4.927,62.658],[5.029,62.785],[5.138,62.906],[5.254,63.022],[5.378,63.132],[5.509,63.237],[5.687,63.362],[5.913,63.507],[6.186,63.673],[6.508,63.861],[6.785,64.014],[7.017,64.133],[7.204,64.217],[7.344,64.267],[7.579,64.333],[7.91,64.416],[8.337,64.515],[8.86,64.632],[9.37,64.769],[9.867,64.929],[10.352,65.11],[10.825,65.313],[11.241,65.485],[11.6,65.626],[11.901,65.735],[12.144,65.812],[12.387,65.875],[12.631,65.922],[12.875,65.954],[13.119,65.972],[13.311,65.978],[13.451,65.974],[13.538,65.959],[13.573,65.933],[13.555,65.87],[13.485,65.771],[13.363,65.636],[13.19,65.466],[12.958,65.198],[12.67,64.836],[12.329,64.383],[11.937,63.84],[11.635,63.4],[11.421,63.058],[11.291,62.813],[11.244,62.662],[11.209,62.507],[11.187,62.35],[11.176,62.188],[11.178,62.024],[11.181,61.773],[11.186,61.436],[11.194,61.015],[11.206,60.513],[11.203,60.092],[11.184,59.748]]
+      },
+      {
+        "draw": "add",
+        "ring": [[30.581,69.642],[30.644,69.633],[30.734,69.671],[30.852,69.755],[30.999,69.886],[31.175,70.064],[31.36,70.275],[31.556,70.521],[31.762,70.801],[31.979,71.118],[32.141,71.374],[32.246,71.568],[32.294,71.697],[32.284,71.76],[32.257,71.831],[32.213,71.909],[32.151,71.994],[32.072,72.086],[31.97,72.155],[31.843,72.202],[31.693,72.225],[31.519,72.225],[31.296,72.26],[31.024,72.329],[30.701,72.435],[30.328,72.576],[30.01,72.692],[29.747,72.782],[29.54,72.846],[29.388,72.885],[28.693,72.906],[27.453,72.911],[25.669,72.899],[23.343,72.87],[21.496,72.832],[20.129,72.784],[19.241,72.727],[18.832,72.661],[18.497,72.599],[18.238,72.543],[18.053,72.491],[17.942,72.444],[17.679,72.301],[17.266,72.065],[16.705,71.738],[16.001,71.323],[15.405,70.995],[14.913,70.749],[14.524,70.583],[14.235,70.497],[13.971,70.398],[13.73,70.286],[13.515,70.162],[13.324,70.025],[13.13,69.852],[12.935,69.642],[12.739,69.396],[12.542,69.115],[12.365,68.88],[12.206,68.689],[12.065,68.541],[11.943,68.437],[11.827,68.325],[11.718,68.205],[11.617,68.078],[11.523,67.943],[11.405,67.723],[11.265,67.418],[11.102,67.032],[10.92,66.567],[10.836,66.187],[10.847,65.889],[10.951,65.671],[11.148,65.531],[11.342,65.424],[11.532,65.351],[11.718,65.311],[11.9,65.304],[12.087,65.306],[12.277,65.317],[12.472,65.337],[12.672,65.366],[12.898,65.432],[13.152,65.534],[13.434,65.674],[13.745,65.852],[14.042,66.041],[14.326,66.243],[14.596,66.458],[14.853,66.685],[15.082,66.881],[15.282,67.046],[15.452,67.178],[15.592,67.279],[15.707,67.356],[15.796,67.411],[15.859,67.442],[15.896,67.449],[15.974,67.5],[16.096,67.594],[16.259,67.731],[16.466,67.912],[16.651,68.056],[16.814,68.163],[16.953,68.233],[17.07,68.265],[17.221,68.325],[17.408,68.413],[17.631,68.529],[17.89,68.675],[18.127,68.8],[18.342,68.906],[18.534,68.992],[18.702,69.058],[18.891,69.119],[19.098,69.177],[19.324,69.23],[19.569,69.28],[19.824,69.319],[20.089,69.348],[20.362,69.367],[20.645,69.375],[20.935,69.392],[21.231,69.417],[21.534,69.45],[21.845,69.491],[22.162,69.519],[22.486,69.531],[22.816,69.529],[23.153,69.512],[23.543,69.541],[23.988,69.617],[24.489,69.738],[25.046,69.907],[25.61,70.036],[26.182,70.125],[26.761,70.175],[27.344,70.183],[27.813,70.175],[28.167,70.149],[28.406,70.106],[28.53,70.047],[28.729,69.981],[29.002,69.909],[29.348,69.831],[29.769,69.747],[30.09,69.686],[30.311,69.648],[30.432,69.633],[30.455,69.642],[30.487,69.646],[30.529,69.646]]
+      },
+      {
+        "draw": "add",
+        "ring": [[-4.212,64.69],[-4.64,63.302],[-5.046,62.223],[-5.442,61.43],[-5.834,60.908],[-6.229,60.646],[-6.708,60.368],[-7.27,60.072],[-7.914,59.76],[-8.639,59.432],[-9.668,59.174],[-11.003,58.985],[-12.645,58.863],[-14.594,58.809],[-16.835,58.782],[-19.367,58.782],[-22.194,58.809],[-25.317,58.863],[-28.126,58.881],[-30.617,58.863],[-32.789,58.809],[-34.64,58.72],[-36.102,58.666],[-37.177,58.648],[-37.867,58.666],[-38.173,58.72],[-38.481,58.814],[-38.794,58.949],[-39.11,59.124],[-39.431,59.342],[-40.2,59.499],[-41.418,59.595],[-43.083,59.63],[-45.193,59.604],[-47.106,59.726],[-48.829,59.997],[-50.369,60.42],[-51.731,60.998],[-53.239,61.912],[-54.918,63.183],[-56.803,64.847],[-58.942,66.961],[-61.174,68.867],[-63.472,70.53],[-65.805,71.909],[-68.138,72.955],[-69.995,73.841],[-71.35,74.548],[-72.179,75.055],[-72.468,75.345],[-72.719,75.651],[-72.934,75.973],[-73.111,76.313],[-73.251,76.671],[-73.367,77.038],[-73.457,77.414],[-73.523,77.8],[-73.563,78.197],[-73.541,78.554],[-73.456,78.869],[-73.309,79.137],[-73.097,79.356],[-72.679,79.523],[-72.053,79.636],[-71.22,79.692],[-70.181,79.692],[-69.283,79.778],[-68.527,79.951],[-67.91,80.216],[-67.432,80.581],[-66.774,80.863],[-65.936,81.055],[-64.919,81.153],[-63.723,81.153],[-62.5,81.402],[-61.243,81.921],[-59.947,82.764],[-58.604,84.063],[-54.921,85.286],[-48.875,86.366],[-40.469,87.144],[-29.73,87.348],[-20.684,86.606],[-13.388,85.346],[-7.869,83.875],[-4.128,82.303],[-1.457,80.894],[0.173,79.579],[0.788,78.323],[0.42,77.107],[0.074,76.137],[-0.254,75.366],[-0.567,74.769],[-0.869,74.329],[-1.132,73.987],[-1.359,73.736],[-1.551,73.573],[-1.709,73.497],[-2.148,73.678],[-2.873,74.123],[-3.891,74.851],[-5.215,75.897],[-6.386,76.739],[-7.396,77.342],[-8.234,77.678],[-8.894,77.727],[-9.604,77.654],[-10.361,77.461],[-11.163,77.154],[-12.005,76.739],[-12.705,76.368],[-13.264,76.038],[-13.684,75.747],[-13.967,75.492],[-14.313,75.055],[-14.718,74.448],[-15.179,73.688],[-15.691,72.789],[-16.019,72.015],[-16.17,71.351],[-16.149,70.79],[-15.959,70.323],[-15.651,69.889],[-15.229,69.485],[-14.692,69.111],[-14.041,68.766],[-13,68.478],[-11.568,68.247],[-9.748,68.071],[-7.538,67.949],[-5.838,67.801],[-4.648,67.628],[-3.965,67.43],[-3.786,67.207],[-3.773,66.665],[-3.918,65.819]]
+      }
+    ]
+  }
+}

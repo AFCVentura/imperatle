@@ -1,0 +1,112 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "vijayanagara-empire",
+  "name": {
+    "en": "Vijayanagara Empire",
+    "pt": "Império Vijayanagara"
+  },
+  "peak": {
+    "year": 1520,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1336,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1646,
+    "precision": "Approximate"
+  },
+  "durationNotes": {
+    "en": "It starts in 1336, when two brothers founded a kingdom on the banks of a southern river to resist the advance of the Muslim rulers of the north, and ends around 1646, with the death of the last king, who no longer held real power. The capital was destroyed in 1565, and from then on the kingdom survived ever smaller, further south. The peak shown is 1520, in the reign of the dynasty's most famous king, who the year before had handed back to a neighbouring kingdom the lands conquered north of a great river.",
+    "pt": "Começa em 1336, quando dois irmãos fundaram um reino às margens de um rio do sul para resistir ao avanço dos governantes muçulmanos do norte, e termina por volta de 1646, com a morte do último rei, que já não tinha poder real. A capital foi destruída em 1565, e a partir daí o reino sobreviveu cada vez menor, mais ao sul. O auge escolhido é 1520, no reinado do rei mais famoso da dinastia, que no ano anterior tinha devolvido a um reino vizinho as terras conquistadas ao norte de um grande rio."
+  },
+  "area": {
+    "km2": 418000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Vijayanagara (modern Hampi), later Penukonda and Chandragiri",
+    "pt": "Vijayanagara (atual Hampi), depois Penukonda e Chandragiri"
+  },
+  "language": {
+    "en": "Kannada and Telugu (as well as Tamil and Sanskrit)",
+    "pt": "Canarês e télugo (além de tâmil e sânscrito)"
+  },
+  "religion": {
+    "en": "Hinduism",
+    "pt": "Hinduísmo"
+  },
+  "religionNotes": {
+    "en": "The kings were protectors of the Hindu temples, which gained huge gateway towers and halls with hundreds of carved columns, and they sponsored both the worship of Shiva and that of Vishnu. Even so, the army had Muslim archers and horsemen, and the capital had a mosque for them.",
+    "pt": "Os reis eram protetores dos templos hindus, que ganharam enormes torres de entrada e salões com centenas de colunas esculpidas, e patrocinaram tanto o culto a Shiva quanto o culto a Vishnu. Mesmo assim, o exército tinha arqueiros e cavaleiros muçulmanos, e a capital tinha uma mesquita para eles."
+  },
+  "curiosities": [
+    {
+      "en": "A Portuguese traveller described its capital as \"as large as Rome and very beautiful to the sight\".",
+      "pt": "Um viajante português descreveu a sua capital como \"tão grande como Roma e muito formosa à vista\".",
+      "details": {
+        "en": "Domingos Paes visited the city around 1520, in the reign of Krishnadevaraya, and left one of the most detailed accounts of it. The Portuguese called the empire \"Bisnaga\" or \"Narsinga\".",
+        "pt": "Domingos Paes visitou a cidade por volta de 1520, no reinado de Krishnadevaraya, e deixou um dos relatos mais detalhados dela. Os portugueses chamavam o império de \"Bisnaga\" ou \"Narsinga\"."
+      }
+    },
+    {
+      "en": "It depended so much on imported horses for its army that it even paid the Portuguese to receive all those they brought by sea.",
+      "pt": "Dependia tanto de cavalos importados para o exército que chegou a pagar aos portugueses para receber todos os que eles trouxessem pelo mar.",
+      "details": {
+        "en": "Horses did not breed well in the climate of southern India. The empire bought thousands a year, from Arabia and Persia, through the ports of the west coast, and Portuguese control of Goa made this trade strategic.",
+        "pt": "Os cavalos não se criavam bem no clima do sul da Índia. O império comprava milhares por ano, vindos da Arábia e da Pérsia pelos portos da costa oeste, e o controle de Goa pelos portugueses tornou esse comércio estratégico."
+      }
+    },
+    {
+      "en": "The ruins of its capital, scattered among huge boulders, form one of the largest archaeological sites in the world and are a World Heritage Site.",
+      "pt": "As ruínas da sua capital, espalhadas entre enormes rochas, formam um dos maiores sítios arqueológicos do mundo e são Patrimônio da Humanidade.",
+      "details": {
+        "en": "Hampi, in the state of Karnataka, has more than 1,600 monuments spread over about 40 km², including temples, palaces, markets and elephant stables.",
+        "pt": "Hampi, no estado de Karnataka, tem mais de 1.600 monumentos espalhados por cerca de 40 km², entre templos, palácios, mercados e estábulos de elefantes."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Vijayanagara_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Vijayanagara"
+  },
+  "aliases": [
+    "Vijayanagar",
+    "Vijayanagara",
+    "Bisnaga",
+    "Bisnagá",
+    "Narsinga",
+    "Reino de Bisnaga",
+    "Karnata Empire",
+    "Império de Karnata",
+    "Sangama dynasty",
+    "Dinastia Sangama",
+    "Tuluva dynasty",
+    "Dinastia Tuluva",
+    "Hampi",
+    "India",
+    "Índia"
+  ],
+  "summary": {
+    "en": "A Hindu empire of southern India, founded in 1336 by the brothers Harihara and Bukka, of the Sangama dynasty, on the banks of the Tungabhadra river. For more than two centuries, the empire was the main barrier against the Muslim sultanates of the Deccan, first the Bahmani and then the five sultanates that emerged from its break-up. Four dynasties succeeded one another on the throne, and the most famous was the Tuluva, of Krishnadevaraya, who defeated the sultans of Bijapur and the king of Orissa and was also a poet in Telugu. The empire grew rich from the trade in spices and cotton through the ports of the west coast, where the Portuguese settled in Goa in 1510. In 1565, at the Battle of Talikota, an alliance of the sultanates defeated the imperial army, and the capital was sacked for months and abandoned. The Aravidu dynasty went on reigning from Penukonda and Chandragiri, but the provincial governors, the nayaks, became independent, and the empire disappeared in the middle of the 17th century.",
+    "pt": "Império hindu do sul da Índia, fundado em 1336 pelos irmãos Harihara e Bukka, da dinastia Sangama, às margens do rio Tungabhadra. Durante mais de dois séculos, o império foi a principal barreira contra os sultanatos muçulmanos do Decão, primeiro o Bahmani e depois os cinco sultanatos que surgiram da sua divisão. Quatro dinastias se sucederam no trono, e a mais famosa foi a Tuluva, de Krishnadevaraya, que derrotou os sultões de Bijapur e o rei de Orissa e foi também poeta em télugo. O império enriqueceu com o comércio de especiarias e algodão pelos portos da costa oeste, onde os portugueses se instalaram em Goa em 1510. Em 1565, na Batalha de Talikota, uma aliança dos sultanatos derrotou o exército imperial, e a capital foi saqueada durante meses e abandonada. A dinastia Aravidu continuou reinando a partir de Penukonda e Chandragiri, mas os governadores das províncias, os nayaks, tornaram-se independentes, e o império desapareceu em meados do século XVII."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Vijayanagara Empire",
+        "year": 1520
+      },
+      {
+        "draw": "remove",
+        "ring": [[75,16.6],[75.9,16.3],[76.5,16.4],[77,16.35],[77.5,16.3],[78.2,15.95],[78.9,16.1],[79.3,16.6],[80.1,16.7],[80.6,16.5],[81.2,15.7],[84,15.7],[84,20],[75,20],[75,16.6]]
+      }
+    ]
+  }
+}

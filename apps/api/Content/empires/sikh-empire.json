@@ -1,0 +1,108 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "sikh-empire",
+  "name": {
+    "en": "Sikh Empire",
+    "pt": "Império Sikh"
+  },
+  "peak": {
+    "year": 1842,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1799,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1849,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 1799, when a young military chief took the main city of a region crossed by five rivers and began to unite the rival chiefs of his community, and ends in 1849, when the region was annexed by a European trading company after two wars. The peak shown is 1842, three years after the founder's death, when the conquests in the northern mountains were complete. The map includes the mountain principalities ruled by court nobles as fiefs of the kingdom.",
+    "pt": "Começa em 1799, quando um jovem chefe militar tomou a principal cidade de uma região cortada por cinco rios e passou a unificar os chefes rivais da sua comunidade, e termina em 1849, quando a região foi anexada por uma companhia comercial europeia depois de duas guerras. O auge escolhido é 1842, três anos depois da morte do fundador, quando as conquistas nas montanhas do norte estavam completas. O mapa inclui os principados das montanhas governados por nobres da corte como feudos do reino."
+  },
+  "area": {
+    "km2": 398000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Lahore",
+    "pt": "Lahore"
+  },
+  "language": {
+    "en": "Persian and Punjabi",
+    "pt": "Persa e punjabi"
+  },
+  "religion": {
+    "en": "Sikhism",
+    "pt": "Siquismo"
+  },
+  "religionNotes": {
+    "en": "The maharaja and much of the army were Sikhs, but most of the population was Muslim, with a large Hindu minority, and the court had ministers and generals of all three religions. The maharaja made donations to great Hindu and Sikh shrines and kept the mosques open, but the largest mosque in the capital was used as a military depot.",
+    "pt": "O marajá e boa parte do exército eram siques, mas a maioria da população era muçulmana, com uma grande minoria hindu, e a corte tinha ministros e generais das três religiões. O marajá doou a grandes santuários hindus e siques e manteve abertas as mesquitas, mas a maior mesquita da capital foi usada como depósito militar."
+  },
+  "curiosities": [
+    {
+      "en": "Its army was trained by veterans of Napoleon's wars, and one of its units received orders in French.",
+      "pt": "Seu exército foi treinado por veteranos das guerras de Napoleão, e uma das unidades recebia ordens em francês.",
+      "details": {
+        "en": "Generals Jean-François Allard and Jean-Baptiste Ventura, the latter Italian, arrived in Lahore in 1822 and organised the Fauj-i-Khas, the kingdom's elite force, with a tricolour flag and commands in French.",
+        "pt": "Os generais Jean-François Allard e Jean-Baptiste Ventura, este italiano, chegaram a Lahore em 1822 e organizaram o Fauj-i-Khas, a tropa de elite do reino, com bandeira tricolor e comandos em francês."
+      }
+    },
+    {
+      "en": "Its last ruler took the throne at the age of five and, after the annexation, was taken to England, where he became a friend of the queen and lived as a country aristocrat.",
+      "pt": "Seu último soberano assumiu o trono aos cinco anos e, depois da anexação, foi levado para a Inglaterra, onde virou amigo da rainha e viveu como aristocrata do interior.",
+      "details": {
+        "en": "Duleep Singh converted to Christianity, was raised among the English nobility and bought an estate at Elveden, where he went shooting with the Prince of Wales. Later in life he tried to return to Sikhism and to India, and died in Paris in 1893.",
+        "pt": "Duleep Singh se converteu ao cristianismo, foi criado entre a nobreza inglesa e comprou uma propriedade em Elveden, onde caçava com o príncipe de Gales. Mais velho, tentou voltar ao siquismo e à Índia, e morreu em Paris em 1893."
+      }
+    },
+    {
+      "en": "One of the most famous diamonds in the world belonged to its treasury and, after its defeat, was handed over to the British queen.",
+      "pt": "Um dos diamantes mais famosos do mundo pertencia ao seu tesouro e, depois da derrota, foi entregue à rainha britânica.",
+      "details": {
+        "en": "Ranjit Singh took the Koh-i-Noor from the former Afghan emir Shah Shuja in 1813. In 1849 the diamond went to Queen Victoria, and today it is in the Queen Mother's crown, among the British Crown Jewels, claimed by India, Pakistan and Afghanistan.",
+        "pt": "Ranjit Singh tomou o Koh-i-Noor do ex-emir afegão Shah Shuja em 1813. Em 1849, o diamante foi para a rainha Vitória, e hoje está na coroa da rainha-mãe, entre as joias da Coroa britânica, reclamado pela Índia, pelo Paquistão e pelo Afeganistão."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Sikh_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Sique"
+  },
+  "aliases": [
+    "Sikh",
+    "Sikhs",
+    "Sique",
+    "Siques",
+    "Sikh Raj",
+    "Sarkar-i-Khalsa",
+    "Khalsa Raj",
+    "Punjab",
+    "Panjab",
+    "Punjabe",
+    "Lahore Darbar",
+    "Kingdom of Lahore",
+    "Reino de Lahore",
+    "Kingdom of Punjab",
+    "Reino do Punjab"
+  ],
+  "summary": {
+    "en": "A kingdom of northwestern India founded by Ranjit Singh, who took Lahore in 1799, was proclaimed maharaja of the Punjab in 1801 and united the rival Sikh confederacies, the misls. In the following decades he conquered Multan, Kashmir and Peshawar from the Afghans, and a treaty of 1809 with the British fixed the eastern border on the Sutlej river. The Khalsa, the kingdom's army, became one of the strongest in Asia. After Ranjit Singh's death, in 1839, a series of murders and coups at court weakened the government, and the army, ever more powerful, went to war against the British East India Company. Defeated in the First Anglo-Sikh War, between 1845 and 1846, the kingdom lost Kashmir and came under British tutelage, and after the Second Anglo-Sikh War it was annexed in 1849.",
+    "pt": "Reino do noroeste da Índia fundado por Ranjit Singh, que tomou Lahore em 1799, foi proclamado marajá do Punjab em 1801 e unificou as confederações siques rivais, as misls. Nas décadas seguintes, conquistou Multan, a Caxemira e Peshawar dos afegãos, e um tratado de 1809 com os britânicos fixou a fronteira leste no rio Sutlej. O Khalsa, o exército do reino, se tornou um dos mais fortes da Ásia. Depois da morte de Ranjit Singh, em 1839, uma sequência de assassinatos e golpes na corte enfraqueceu o governo, e o exército, cada vez mais poderoso, entrou em guerra contra a Companhia Britânica das Índias Orientais. Derrotado na Primeira Guerra Anglo-Sikh, entre 1845 e 1846, o reino perdeu a Caxemira e ficou sob tutela britânica, e depois da Segunda Guerra Anglo-Sikh foi anexado em 1849."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Sikh Empire",
+        "year": 1842
+      }
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "hunnic-empire",
+  "name": {
+    "en": "Hunnic Empire",
+    "pt": "Império Huno"
+  },
+  "peak": {
+    "year": 451,
+    "precision": "Exact"
+  },
+  "start": {
+    "year": 370,
+    "precision": "Approximate"
+  },
+  "end": {
+    "year": 469,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "There is no exact start date: these peoples reached Europe around 370, but were only united under a single ruler decades later. The end used here is 469, when the last of the empire's great leaders died.",
+    "pt": "Não há uma data exata para o início: esses povos chegaram à Europa por volta de 370, mas só se uniram sob um único governante décadas depois. O fim usado aqui é 469, quando morreu o último dos grandes líderes do império."
+  },
+  "area": {
+    "km2": 1832119,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Speculative",
+  "continents": [
+    "Europe",
+    "Asia"
+  ],
+  "primaryContinent": "Europe",
+  "capital": {
+    "en": "No fixed capital (itinerant court; the main one was on the Pannonian plain)",
+    "pt": "Sem capital fixa (corte itinerante; a principal ficava na planície da Panônia)"
+  },
+  "language": {
+    "en": "Unknown (Gothic and Latin were also spoken at court)",
+    "pt": "Desconhecida (gótico e latim também eram falados na corte)"
+  },
+  "religion": {
+    "en": "Traditional steppe religion (poorly documented)",
+    "pt": "Religião tradicional da estepe (pouco documentada)"
+  },
+  "curiosities": [
+    {
+      "en": "Many of its people had elongated skulls, shaped by binding babies' heads.",
+      "pt": "Muitos de seus habitantes tinham o crânio alongado, moldado com faixas amarradas na cabeça dos bebês.",
+      "details": {
+        "en": "Tight bands or boards were tied around infants' heads while the skull was still soft, stretching it upwards. Elongated skulls from this period appear in graves from the Danube to the Caucasus, and the custom spread to allied peoples, including several Germanic groups, as a mark of status.",
+        "pt": "Faixas apertadas ou tábuas eram amarradas na cabeça dos bebês enquanto o crânio ainda era mole, alongando-o para cima. Crânios alongados dessa época aparecem em túmulos do Danúbio ao Cáucaso, e o costume se espalhou para povos aliados, entre eles vários grupos germânicos, como sinal de status."
+      }
+    },
+    {
+      "en": "Its arrival pushed entire peoples across the borders of Rome.",
+      "pt": "Sua chegada empurrou povos inteiros para dentro das fronteiras de Roma.",
+      "details": {
+        "en": "Around 375 these horsemen crushed the Goths north of the Black Sea. In 376 tens of thousands of Goths begged to cross the Danube into Roman territory; mistreated, they rebelled and in 378 killed Emperor Valens at the Battle of Adrianople, one of the worst Roman defeats ever.",
+        "pt": "Por volta de 375, esses cavaleiros esmagaram os godos ao norte do Mar Negro. Em 376, dezenas de milhares de godos pediram para atravessar o Danúbio e entrar em território romano; maltratados, eles se revoltaram e em 378 mataram o imperador Valente na Batalha de Adrianópolis, uma das piores derrotas romanas."
+      }
+    },
+    {
+      "en": "Its most famous leader became known as the \"Scourge of God\" and turned back from Rome after meeting the pope.",
+      "pt": "Seu líder mais famoso ficou conhecido como o \"Flagelo de Deus\" e desistiu de Roma depois de se encontrar com o papa.",
+      "details": {
+        "en": "In 452 Attila invaded northern Italy and destroyed Aquileia. Near Mantua he met an embassy led by Pope Leo I and withdrew. Tradition credits the pope, but hunger and disease in his army, and an Eastern Roman attack on his lands, probably weighed more. The nickname comes from later Christian writers, who saw him as a punishment sent by God.",
+        "pt": "Em 452, Átila invadiu o norte da Itália e destruiu Aquileia. Perto de Mântua recebeu uma embaixada liderada pelo papa Leão I e recuou. A tradição dá o mérito ao papa, mas a fome e as doenças no exército, e um ataque romano oriental às suas terras, provavelmente pesaram mais. O apelido vem de escritores cristãos posteriores, que o viam como um castigo enviado por Deus."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Huns",
+    "pt": "https://pt.wikipedia.org/wiki/Hunos"
+  },
+  "aliases": [
+    "Huns",
+    "Hunos",
+    "Empire of Attila",
+    "Império de Átila",
+    "Attila",
+    "Átila"
+  ],
+  "summary": {
+    "en": "A confederation of nomadic peoples from the steppes, of still debated origin, that reached Europe around 370 and pushed the Goths into the Roman Empire. Under Attila, who ruled from 434 (alongside his brother Bleda until 445) to 453, it dominated the lands from the Danube plain to the Caspian Sea and extracted heavy tributes in gold from Constantinople. In 451 it invaded Gaul and was stopped at the Battle of the Catalaunian Plains, and in 452 it ravaged northern Italy. After Attila's death the subject peoples rebelled and defeated his sons at the Battle of Nedao, in 454, and the empire fell apart soon after.",
+    "pt": "Confederação de povos nômades das estepes, de origem ainda debatida, que chegou à Europa por volta de 370 e empurrou os godos para dentro do Império Romano. Sob Átila, que governou de 434 (ao lado do irmão Bleda até 445) a 453, dominou as terras da planície do Danúbio ao Mar Cáspio e cobrou pesados tributos em ouro de Constantinopla. Em 451 invadiu a Gália e foi detido na Batalha dos Campos Cataláunicos, e em 452 devastou o norte da Itália. Após a morte de Átila, os povos submetidos se revoltaram e derrotaram seus filhos na Batalha de Nedao, em 454, e o império se desfez pouco depois."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Hunnic Empire",
+        "year": 451
+      },
+      {
+        "draw": "remove",
+        "ring": [[7.6,46.5],[7.6,47.6],[7.8,48.6],[8.2,49.3],[8.3,50],[7.6,50.4],[7,50.9],[6.7,51.4],[6.6,51.7],[6,51.85],[5,52],[4.3,53],[4,55],[-5,55],[-5,46.5]]
+      },
+      {
+        "draw": "add",
+        "ring": [[8.297,49.821],[8.312,49.867],[8.32,49.925],[8.321,49.995],[8.315,50.078],[8.303,50.172],[8.296,50.253],[8.294,50.321],[8.297,50.375],[8.305,50.415],[8.319,50.457],[8.338,50.501],[8.362,50.546],[8.392,50.593],[8.419,50.629],[8.445,50.655],[8.468,50.671],[8.489,50.677],[8.531,50.68],[8.594,50.681],[8.677,50.68],[8.781,50.676],[8.873,50.67],[8.952,50.661],[9.018,50.65],[9.072,50.636],[9.122,50.622],[9.169,50.606],[9.212,50.59],[9.251,50.572],[9.311,50.524],[9.39,50.446],[9.489,50.337],[9.608,50.198],[9.714,50.035],[9.807,49.847],[9.887,49.636],[9.954,49.4],[9.999,49.196],[10.02,49.023],[10.019,48.881],[9.996,48.769],[9.979,48.681],[9.969,48.616],[9.965,48.576],[9.967,48.559],[9.964,48.545],[9.956,48.533],[9.943,48.525],[9.924,48.519],[9.906,48.51],[9.89,48.498],[9.875,48.482],[9.86,48.463],[9.845,48.447],[9.829,48.434],[9.811,48.424],[9.793,48.416],[9.762,48.409],[9.718,48.401],[9.662,48.393],[9.593,48.386],[9.501,48.38],[9.387,48.376],[9.25,48.375],[9.09,48.375],[8.969,48.376],[8.885,48.38],[8.839,48.386],[8.83,48.393],[8.824,48.406],[8.821,48.423],[8.819,48.444],[8.82,48.471],[8.787,48.568],[8.72,48.735],[8.618,48.974],[8.482,49.284],[8.382,49.529],[8.32,49.708]]
+      }
+    ]
+  }
+}

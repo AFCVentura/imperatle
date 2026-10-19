@@ -1,0 +1,128 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "dutch-empire",
+  "name": {
+    "en": "Dutch Empire",
+    "pt": "Império Neerlandês"
+  },
+  "peak": {
+    "year": 1938,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1602,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1975,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 1602, with the founding of a trading company with powers of government in the East, and ends in 1975, with the independence of the last large colony, in South America. The peak shown is 1938, when rule over the Southeast Asian archipelago was complete. The most famous colonies of the 17th century, in Brazil, southern Africa and North America, had already been lost, and the Caribbean islands are still linked to the country today as autonomous territories.",
+    "pt": "Começa em 1602, com a fundação de uma companhia de comércio com poderes de governo no Oriente, e termina em 1975, com a independência da última grande colônia, na América do Sul. O auge escolhido é 1938, quando o domínio sobre o arquipélago do Sudeste Asiático estava completo. As colônias mais famosas do século XVII, no Brasil, no sul da África e na América do Norte, já tinham sido perdidas, e as ilhas do Caribe continuam ligadas ao país até hoje como territórios autônomos."
+  },
+  "area": {
+    "km2": 2040000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia",
+    "Europe",
+    "Oceania",
+    "SouthAmerica",
+    "NorthAmerica"
+  ],
+  "primaryContinent": "Europe",
+  "capital": {
+    "en": "Amsterdam",
+    "pt": "Amsterdã"
+  },
+  "language": {
+    "en": "Dutch",
+    "pt": "Neerlandês"
+  },
+  "religion": {
+    "en": "Christianity (mostly Protestant)",
+    "pt": "Cristianismo (maioria protestante)"
+  },
+  "religionNotes": {
+    "en": "In the home country, the Reformed Church, of Calvinist tradition, was the official church, but Catholics, Jews and other groups could practise their faith with relative freedom, which attracted refugees from all over Europe. In the colonies, the trading companies rarely imposed conversion, and most of the population of the Asian archipelago remained Muslim.",
+    "pt": "Na metrópole, a Igreja Reformada, de linha calvinista, era a igreja oficial, mas católicos, judeus e outros grupos podiam praticar sua fé com relativa liberdade, o que atraiu refugiados de toda a Europa. Nas colônias, as companhias de comércio raramente impunham a conversão, e a maior parte da população do arquipélago asiático continuou muçulmana."
+  },
+  "curiosities": [
+    {
+      "en": "One of its trading companies is considered the first company in the world to sell shares to the public on a stock exchange.",
+      "pt": "Uma de suas companhias de comércio é considerada a primeira empresa do mundo a vender ações ao público em bolsa.",
+      "details": {
+        "en": "The East India Company, founded in 1602, sold stakes to anyone interested, and these shares came to be traded on the Amsterdam stock exchange. Besides trading, the company could wage war, mint coins, sign treaties and govern territories. For almost two centuries it was one of the largest companies in the world, until it went bankrupt and was dissolved in 1799.",
+        "pt": "A Companhia das Índias Orientais, fundada em 1602, vendia participações a qualquer interessado, e essas ações passaram a ser negociadas na bolsa de Amsterdã. Além de comerciar, a companhia podia fazer guerra, cunhar moeda, assinar tratados e governar territórios. Durante quase dois séculos, foi uma das maiores empresas do mundo, até falir e ser dissolvida em 1799."
+      }
+    },
+    {
+      "en": "New Zealand was named after one of its provinces.",
+      "pt": "A Nova Zelândia recebeu o nome de uma de suas províncias.",
+      "details": {
+        "en": "In 1642, the navigator Abel Tasman, in the service of the East India Company, was the first European to sight the islands. Shortly afterwards, cartographers named them New Zealand, after the province of Zeeland, in the southwest of the country. At the same time, Australia was called New Holland, and Tasmania was named after the navigator himself.",
+        "pt": "Em 1642, o navegador Abel Tasman, a serviço da Companhia das Índias Orientais, foi o primeiro europeu a avistar as ilhas. Pouco depois, cartógrafos as batizaram de Nova Zelândia, em homenagem à província da Zelândia, no sudoeste do país. Na mesma época, a Austrália era chamada de Nova Holanda, e a Tasmânia ganhou o nome do próprio navegador."
+      }
+    },
+    {
+      "en": "It founded New Amsterdam, the city that later became New York.",
+      "pt": "Fundou Nova Amsterdã, a cidade que depois virou Nova York.",
+      "details": {
+        "en": "In 1625, settlers founded New Amsterdam at the tip of Manhattan island, which according to tradition was bought from the local Indigenous people for goods worth 60 guilders. In 1664, the English took the city and renamed it in honour of the Duke of York. Names such as Harlem and Brooklyn come from towns in the home country, Haarlem and Breukelen.",
+        "pt": "Em 1625, colonos fundaram Nova Amsterdã na ponta da ilha de Manhattan, que segundo a tradição foi comprada dos indígenas locais por mercadorias no valor de 60 florins. Em 1664, os ingleses tomaram a cidade e a rebatizaram em homenagem ao Duque de York. Nomes como Harlem e Brooklyn vêm de cidades da metrópole, Haarlem e Breukelen."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Dutch_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Colonial_Holandês"
+  },
+  "aliases": [
+    "Dutch Colonial Empire",
+    "Império Holandês",
+    "Império Colonial Holandês",
+    "Império Colonial Neerlandês",
+    "Netherlands",
+    "Países Baixos",
+    "Holland",
+    "Holanda",
+    "Kingdom of the Netherlands",
+    "Reino dos Países Baixos",
+    "Dutch Republic",
+    "República Holandesa"
+  ],
+  "summary": {
+    "en": "An empire built from the early 17th century by the trading companies of the Netherlands: the East India Company, founded in 1602, and the West India Company, of 1621. In the 17th century, known as the Golden Age, the Dutch dominated the Asian spice trade, took trading posts in Ceylon and Malaysia from the Portuguese and founded colonies such as New Amsterdam, the future New York, Cape Town and Dutch Brazil, in the Northeast. They also took a large part in the trade of enslaved Africans to the Americas. Many of these colonies were lost to the British and the Portuguese, but rule over the islands that today form Indonesia grew throughout the 19th century, through wars and a system of forced cultivation. After the Second World War, Indonesia won its independence, recognised in 1949, and Suriname became independent in 1975.",
+    "pt": "Império formado a partir do início do século XVII pelas companhias de comércio dos Países Baixos: a Companhia das Índias Orientais, fundada em 1602, e a das Índias Ocidentais, de 1621. No século XVII, chamado de Era de Ouro, os neerlandeses dominaram o comércio de especiarias da Ásia, tomaram dos portugueses postos no Ceilão e na Malásia e fundaram colônias como Nova Amsterdã, a futura Nova York, a Cidade do Cabo e o Brasil holandês, no Nordeste. Também participaram intensamente do tráfico de africanos escravizados para as Américas. Muitas dessas colônias foram perdidas para britânicos e portugueses, mas o domínio sobre as ilhas que hoje formam a Indonésia cresceu ao longo do século XIX, por meio de guerras e de um sistema de cultivo forçado. Depois da Segunda Guerra Mundial, a Indonésia conquistou a independência, reconhecida em 1949, e o Suriname se tornou independente em 1975."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "(Netherlands)",
+        "year": 1938
+      },
+      {
+        "country": "IDN"
+      },
+      {
+        "country": "SUR"
+      },
+      {
+        "country": "CUW"
+      },
+      {
+        "country": "ABW"
+      },
+      {
+        "country": "SXM"
+      },
+      {
+        "country": "NLD",
+        "box": [-70, 11, -62, 19]
+      }
+    ]
+  }
+}

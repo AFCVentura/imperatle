@@ -49,20 +49,45 @@
   "curiosities": [
     {
       "en": "In the year 2 AD it carried out one of the first detailed censuses in the world, counting about 57 million people.",
-      "pt": "No ano 2 d.C., fez um dos primeiros censos detalhados do mundo, contando cerca de 57 milhões de pessoas."
+      "pt": "No ano 2 d.C., fez um dos primeiros censos detalhados do mundo, contando cerca de 57 milhões de pessoas.",
+      "details": {
+        "en": "The census of 2 CE counted 57.7 million people in about 12 million households, a figure close to the population of the Roman Empire at the same time. The register was used to collect taxes and to call men up for labour and the army, and it is one of the oldest and most complete population records in the world.",
+        "pt": "O censo do ano 2 d.C. contou 57,7 milhões de pessoas em cerca de 12 milhões de domicílios, número próximo ao da população do Império Romano na mesma época. O registro servia para cobrar impostos e convocar homens para o trabalho e o exército, e é um dos dados populacionais mais antigos e completos do mundo."
+      }
     },
     {
       "en": "One of its envoys opened contact with Central Asia, starting the routes that would become known as the Silk Road.",
-      "pt": "Um de seus enviados abriu contato com a Ásia Central, dando origem às rotas que ficariam conhecidas como Rota da Seda."
+      "pt": "Um de seus enviados abriu contato com a Ásia Central, dando origem às rotas que ficariam conhecidas como Rota da Seda.",
+      "details": {
+        "en": "Around 138 BCE, Emperor Wu sent the diplomat Zhang Qian to look for allies against the Xiongnu in Central Asia. He was held captive by the nomads for about ten years, escaped and returned to China more than a decade after leaving, with news of kingdoms such as Bactria and Ferghana and its famous horses. His journeys opened the trade routes that, in the 19th century, a German geographer named the Silk Road.",
+        "pt": "Por volta de 138 a.C., o imperador Wu mandou o diplomata Zhang Qian buscar aliados contra os xiongnu na Ásia Central. Ele ficou cerca de dez anos preso pelos nômades, fugiu e voltou à China mais de uma década depois de partir, com notícias de reinos como a Báctria e Fergana e seus cavalos famosos. Suas viagens abriram as rotas comerciais que, no século XIX, um geógrafo alemão chamou de Rota da Seda."
+      }
     },
     {
       "en": "Its name is still used today for the country's majority ethnic group and for the characters of its writing.",
-      "pt": "Seu nome é usado até hoje para designar a etnia majoritária do país e os caracteres da sua escrita."
+      "pt": "Seu nome é usado até hoje para designar a etnia majoritária do país e os caracteres da sua escrita.",
+      "details": {
+        "en": "To this day most Chinese call themselves the \"Han people\" (Hanzu), about 90% of the country's population, and the characters of Chinese writing are called \"hanzi\", Han characters. In Japan the same characters are called \"kanji\", from the same word.",
+        "pt": "Até hoje, a maioria dos chineses se chama de \"povo han\" (hanzu), cerca de 90% da população do país, e os caracteres da escrita chinesa são chamados de \"hanzi\", caracteres han. No Japão, os mesmos caracteres são chamados de \"kanji\", da mesma palavra."
+      }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Han_dynasty",
     "pt": "https://pt.wikipedia.org/wiki/Dinastia_Han"
+  },
+  "aliases": [
+    "China",
+    "Han Empire",
+    "Império Han",
+    "Han China",
+    "China Han",
+    "Chinese Empire",
+    "Império Chinês"
+  ],
+  "summary": {
+    "en": "China's second imperial dynasty, founded in 202 BCE by Liu Bang, a rebel leader of peasant origin, after the fall of the Qin dynasty. It lasted more than four centuries, with a brief break from 9 to 23 CE, and is seen as a golden age: it made Confucianism the doctrine of the state, opened the Silk Road and saw inventions such as paper. It expanded into Korea, Vietnam and Central Asia while fighting the Xiongnu nomads in the north. It fell in 220, split among generals, which opened the Three Kingdoms period.",
+    "pt": "Segunda dinastia imperial da China, fundada em 202 a.C. por Liu Bang, um líder rebelde de origem camponesa, depois da queda da dinastia Qin. Durou mais de quatro séculos, com uma breve interrupção entre 9 e 23 d.C., e é vista como uma era de ouro: fez do confucionismo a doutrina do Estado, abriu a Rota da Seda e viu surgir invenções como o papel. Expandiu o território até a Coreia, o Vietnã e a Ásia Central, enquanto enfrentava os nômades xiongnu no norte. Caiu em 220, dividida entre generais, o que abriu o período dos Três Reinos."
   },
   "map": {
     "parts": [

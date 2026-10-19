@@ -47,20 +47,53 @@
   "curiosities": [
     {
       "en": "Its desert palaces were decorated with frescoes of people and animals, something rare in Islamic art.",
-      "pt": "Seus palácios no deserto tinham afrescos com pessoas e animais, algo raro na arte islâmica."
+      "pt": "Seus palácios no deserto tinham afrescos com pessoas e animais, algo raro na arte islâmica.",
+      "details": {
+        "en": "Palaces such as Qusayr Amra, in today's Jordan, built in the early 8th century, have walls covered in paintings of hunts, musicians, dancers and bathers, and even a dome with a map of the constellations. Islamic religious art avoided images of living beings, but the Umayyads, drawing on Byzantine and Persian art, used them in their palaces. Qusayr Amra is a World Heritage Site.",
+        "pt": "Palácios como Qusayr Amra, na atual Jordânia, construído no início do século VIII, têm paredes cobertas de pinturas de caçadas, músicos, dançarinas e banhistas, e até uma cúpula com um mapa das constelações. A arte religiosa islâmica evitava imagens de seres vivos, mas os omíadas, influenciados pela arte bizantina e persa, as usavam nos palácios. Qusayr Amra é Patrimônio Mundial."
+      }
     },
     {
       "en": "It entered the Iberian Peninsula in 711 by crossing a strait that still bears its commander's name.",
-      "pt": "Entrou na Península Ibérica em 711 cruzando um estreito que até hoje leva o nome do seu comandante."
+      "pt": "Entrou na Península Ibérica em 711 cruzando um estreito que até hoje leva o nome do seu comandante.",
+      "details": {
+        "en": "In 711 the Berber general Tariq ibn Ziyad crossed the strait with an army of about 7,000 men and defeated the Visigothic king Roderic. The rock where he landed became known as Jabal Tariq, \"Tariq's mountain\" in Arabic, from which the name Gibraltar comes. Within a few years the Muslims ruled almost the whole peninsula.",
+        "pt": "Em 711, o general berbere Tárique ibne Ziade cruzou o estreito com um exército de cerca de 7 mil homens e derrotou o rei visigodo Rodrigo. O rochedo onde desembarcou ficou conhecido como Jabal Tariq, \"monte de Tárique\" em árabe, de onde vem o nome Gibraltar. Em poucos anos, os muçulmanos dominaram quase toda a península."
+      }
     },
     {
       "en": "A surviving branch of its dynasty went on to rule for centuries from Córdoba, in Europe.",
-      "pt": "Um ramo sobrevivente de sua dinastia governou por séculos a partir de Córdoba, na Europa."
+      "pt": "Um ramo sobrevivente de sua dinastia governou por séculos a partir de Córdoba, na Europa.",
+      "details": {
+        "en": "When the Abbasids massacred the Umayyad family in 750, Prince Abd al-Rahman fled west and, in 756, founded an independent emirate in Córdoba, in the Iberian Peninsula. His descendants proclaimed themselves caliphs in 929 and ruled until 1031. The Great Mosque of Córdoba, begun by him, is now a cathedral and a World Heritage Site.",
+        "pt": "Quando os abássidas massacraram a família omíada, em 750, o príncipe Abd al-Rahman fugiu para o oeste e, em 756, fundou um emirado independente em Córdoba, na Península Ibérica. Seus descendentes se proclamaram califas em 929 e governaram até 1031. A Grande Mesquita de Córdoba, iniciada por ele, é hoje uma catedral e Patrimônio Mundial."
+      }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Umayyad_Caliphate",
     "pt": "https://pt.wikipedia.org/wiki/Califado_Omíada"
+  },
+  "aliases": [
+    "Umayyads",
+    "Omíadas",
+    "Omayyad",
+    "Umayyad Dynasty",
+    "Dinastia Omíada",
+    "Umayyad Empire",
+    "Império Omíada",
+    "Arab Empire",
+    "Império Árabe",
+    "Arab Caliphate",
+    "Califado Árabe",
+    "Islamic Caliphate",
+    "Califado Islâmico",
+    "Syria",
+    "Síria"
+  ],
+  "summary": {
+    "en": "The first hereditary dynasty of caliphs, founded in 661 by Muawiya, governor of Syria, who made Damascus the capital. It carried on the Arab conquests and, in the early 8th century, ruled from North Africa and the Iberian Peninsula to Central Asia and the Indus valley, one of the largest empires the world had seen. It made Arabic the language of government, minted the first Islamic coins and built the Dome of the Rock, in Jerusalem. Discontent among non-Arab Muslims and internal rivalries led to the Abbasid revolt, which overthrew the dynasty in 750.",
+    "pt": "Primeira dinastia hereditária de califas, fundada em 661 por Muawiya, governador da Síria, que fez de Damasco a capital. Continuou as conquistas árabes e, no início do século VIII, governava do norte da África e da Península Ibérica até a Ásia Central e o vale do Indo, um dos maiores impérios que o mundo já tinha visto. Fez do árabe a língua da administração, cunhou as primeiras moedas islâmicas e construiu a Cúpula da Rocha, em Jerusalém. A insatisfação dos muçulmanos não árabes e as rivalidades internas levaram à revolta abássida, que derrubou a dinastia em 750."
   },
   "map": {
     "parts": [

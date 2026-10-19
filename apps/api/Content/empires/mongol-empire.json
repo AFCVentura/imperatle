@@ -46,20 +46,46 @@
   "curiosities": [
     {
       "en": "It was founded by a leader who united nomadic tribes under one banner.",
-      "pt": "Foi fundado por um líder que uniu tribos nômades sob uma só bandeira."
+      "pt": "Foi fundado por um líder que uniu tribos nômades sob uma só bandeira.",
+      "details": {
+        "en": "Temüjin lost his father as a child and grew up in poverty, abandoned by his own clan. Through alliances and wars he united rival tribes such as the Tatars, Merkits and Naimans, and in 1206 an assembly, the kurultai, proclaimed him Genghis Khan. He reorganised the warriors into units of 10, 100, 1,000 and 10,000 men, mixing the tribes to end old rivalries.",
+        "pt": "Temujin perdeu o pai ainda criança e cresceu na pobreza, abandonado pelo próprio clã. Com alianças e guerras, uniu tribos rivais como tártaros, merquitas e naimanes, e em 1206 uma assembleia, o kurultai, o proclamou Gengis Khan. Ele reorganizou os guerreiros em unidades de 10, 100, 1.000 e 10.000 homens, misturando as tribos para acabar com as velhas rivalidades."
+      }
     },
     {
       "en": "Its warriors fought as mounted archers, and each one brought several horses to swap during marches.",
-      "pt": "Seus guerreiros lutavam como arqueiros a cavalo, e cada um levava vários cavalos para trocar durante as marchas."
+      "pt": "Seus guerreiros lutavam como arqueiros a cavalo, e cada um levava vários cavalos para trocar durante as marchas.",
+      "details": {
+        "en": "Each Mongol warrior took three to five horses, switching whenever one tired, which let armies cover long distances quickly. They shot short, powerful composite bows from the saddle, and on the longest marches they even lived on their animals' milk and blood.",
+        "pt": "Cada guerreiro mongol levava de três a cinco cavalos e trocava sempre que um cansava, o que permitia percorrer longas distâncias em pouco tempo. Disparavam arcos compostos, curtos e potentes, de cima da sela, e nas marchas mais longas chegavam a se alimentar do leite e do sangue dos animais."
+      }
     },
     {
       "en": "It became the largest contiguous land empire in history.",
-      "pt": "Tornou-se o maior império contíguo da história."
+      "pt": "Tornou-se o maior império contíguo da história.",
+      "details": {
+        "en": "At its height, around 1279, the empire covered about 24 million km², from Korea to eastern Europe and from Siberia to the Persian Gulf. Only the British Empire was larger, but it was spread over several continents; no other empire has held so much unbroken territory.",
+        "pt": "No auge, por volta de 1279, o império cobria cerca de 24 milhões de km², da Coreia ao leste da Europa e da Sibéria ao Golfo Pérsico. Só o Império Britânico foi maior, mas espalhado por vários continentes; nenhum outro teve tanto território contínuo."
+      }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Mongol_Empire",
     "pt": "https://pt.wikipedia.org/wiki/Império_Mongol"
+  },
+  "aliases": [
+    "Mongols",
+    "Mongóis",
+    "Mongolian Empire",
+    "Império Mongólico",
+    "Mongolia",
+    "Mongólia",
+    "Genghis Khan",
+    "Gengis Khan"
+  ],
+  "summary": {
+    "en": "An empire founded in 1206 by Temüjin, who took the title Genghis Khan after uniting the nomadic tribes of Mongolia. With fast, disciplined cavalry, he and his successors conquered China, Central Asia, Persia, Russia and parts of the Middle East, in campaigns of enormous violence. The empire made the Silk Road safe, easing trade and journeys such as Marco Polo's. After 1260 it split into four great khanates, and the Yuan dynasty, in China, fell in 1368.",
+    "pt": "Império fundado em 1206 por Temujin, que recebeu o título de Gengis Khan ao unir as tribos nômades da Mongólia. Com uma cavalaria rápida e disciplinada, ele e seus sucessores conquistaram a China, a Ásia Central, a Pérsia, a Rússia e partes do Oriente Médio, em campanhas de enorme violência. O império deu segurança à Rota da Seda, facilitando o comércio e viagens como a de Marco Polo. Depois de 1260 se dividiu em quatro grandes canatos, e a dinastia Yuan, na China, caiu em 1368."
   },
   "map": {
     "parts": [

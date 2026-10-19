@@ -54,20 +54,46 @@
   "curiosities": [
     {
       "en": "In 1931 it held a great exhibition of its colonies in the capital, with about 8 million visitors.",
-      "pt": "Em 1931, montou na capital uma grande exposição sobre suas colônias, com cerca de 8 milhões de visitantes."
+      "pt": "Em 1931, montou na capital uma grande exposição sobre suas colônias, com cerca de 8 milhões de visitantes.",
+      "details": {
+        "en": "The International Colonial Exhibition of 1931, in the Bois de Vincennes, in Paris, ran for six months and had about 8 million visitors. It showed replicas of colonial monuments, such as the temple of Angkor Wat, and even people brought from Africa and Asia displayed as attractions. Surrealists and Communists organised a counter-exhibition against colonialism.",
+        "pt": "A Exposição Colonial Internacional de 1931, no Bosque de Vincennes, em Paris, durou seis meses e teve cerca de 8 milhões de visitantes. Mostrava réplicas de monumentos das colônias, como o templo de Angkor Wat, e até pessoas trazidas da África e da Ásia exibidas como atração. Surrealistas e comunistas organizaram uma contraexposição contra o colonialismo."
+      }
     },
     {
       "en": "It created a currency for its African colonies that is still used in several countries.",
-      "pt": "Criou para suas colônias africanas uma moeda que ainda circula em vários países."
+      "pt": "Criou para suas colônias africanas uma moeda que ainda circula em vários países.",
+      "details": {
+        "en": "The CFA franc was created in 1945 for France's African colonies. It is still used today in 14 countries of West and Central Africa, in two versions, and has a fixed exchange rate with the euro, guaranteed by the French Treasury. Many Africans criticise it as a leftover of colonialism.",
+        "pt": "O franco CFA foi criado em 1945 para as colônias francesas da África. Ainda hoje circula em 14 países da África Ocidental e Central, em duas versões, e tem câmbio fixo com o euro, garantido pelo Tesouro francês. Muitos africanos criticam a moeda como um resquício do colonialismo."
+      }
     },
     {
       "en": "Its language is still official in more than 20 African countries.",
-      "pt": "Sua língua continua oficial em mais de 20 países da África."
+      "pt": "Sua língua continua oficial em mais de 20 países da África.",
+      "details": {
+        "en": "French is an official language in 21 African countries, such as Senegal, Côte d'Ivoire, Mali and the Democratic Republic of the Congo, a former Belgian colony. That is why most of the world's French speakers now live in Africa, and why Kinshasa is often called the largest French-speaking city in the world.",
+        "pt": "O francês é língua oficial em 21 países africanos, como Senegal, Costa do Marfim, Mali e a República Democrática do Congo, esta uma ex-colônia belga. Por isso, a maior parte dos falantes de francês do mundo vive hoje na África, e Kinshasa costuma ser apontada como a maior cidade francófona do planeta."
+      }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/French_Colonial_Empire",
     "pt": "https://pt.wikipedia.org/wiki/Império_Colonial_Francês"
+  },
+  "aliases": [
+    "France",
+    "França",
+    "French Colonial Empire",
+    "Império Colonial Francês",
+    "French Empire",
+    "Império Francês",
+    "French Union",
+    "União Francesa"
+  ],
+  "summary": {
+    "en": "The colonial empire France built from 1830, with the conquest of Algeria, after losing almost all its earlier colonies. It grew above all in the late 19th century, with the occupation of much of West and Central Africa, Madagascar and Indochina, and became the world's second largest empire, after the British. The French spoke of a \"civilising mission\", but their rule relied on forced labour and violent repression. After World War II it lost Indochina in the war of 1946 to 1954, and the independence of Algeria in 1962, after a bloody war, marked its end.",
+    "pt": "Império colonial que a França construiu a partir de 1830, com a conquista da Argélia, depois de perder quase todas as colônias anteriores. Cresceu sobretudo no fim do século XIX, com a ocupação de boa parte da África Ocidental e Central, de Madagascar e da Indochina, e se tornou o segundo maior império do mundo, depois do britânico. Os franceses falavam numa \"missão civilizadora\", mas o domínio se apoiava em trabalho forçado e em repressões violentas. Depois da Segunda Guerra, perdeu a Indochina na guerra de 1946 a 1954, e a independência da Argélia, em 1962, depois de uma guerra sangrenta, marcou seu fim."
   },
   "map": {
     "parts": [

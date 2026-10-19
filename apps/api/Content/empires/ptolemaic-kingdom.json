@@ -1,0 +1,100 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "ptolemaic-kingdom",
+  "name": {
+    "en": "Ptolemaic Kingdom",
+    "pt": "Reino Ptolemaico"
+  },
+  "peak": {
+    "year": -241,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": -305,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": -30,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It begins in 305 BCE, when its founder, who had governed Egypt since 323 BCE, took the title of king; 323 BCE is also accepted. It ends in 30 BCE, with the Roman conquest.",
+    "pt": "Começa em 305 a.C., quando seu fundador, que governava o Egito desde 323 a.C., assumiu o título de rei; 323 a.C. também é aceito. Termina em 30 a.C., com a conquista romana."
+  },
+  "area": {
+    "km2": 770018,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Africa",
+    "Asia"
+  ],
+  "primaryContinent": "Africa",
+  "capital": {
+    "en": "Alexandria",
+    "pt": "Alexandria"
+  },
+  "language": {
+    "en": "Greek (koine) at court and in government; Egyptian (Demotic) for most of the population",
+    "pt": "Grego (koiné) na corte e no governo; egípcio (demótico) para a maioria da população"
+  },
+  "religion": {
+    "en": "Egyptian and Greek polytheism (with the cult of Serapis, created by the dynasty)",
+    "pt": "Politeísmo egípcio e grego (com o culto a Serápis, criado pela dinastia)"
+  },
+  "curiosities": [
+    {
+      "en": "A decree issued under one of its kings, written in three scripts, was the key to deciphering hieroglyphs.",
+      "pt": "Um decreto emitido sob um de seus reis, escrito em três escritas, foi a chave para decifrar os hieróglifos.",
+      "details": {
+        "en": "In 196 BCE Egyptian priests issued a decree honouring Ptolemy V in hieroglyphs, Demotic and Greek. A copy carved in stone was found in 1799 by French soldiers near Rosetta, and by comparing it with the Greek text Champollion deciphered the hieroglyphs in 1822.",
+        "pt": "Em 196 a.C., sacerdotes egípcios emitiram um decreto em honra de Ptolomeu V em hieróglifos, demótico e grego. Uma cópia gravada em pedra foi encontrada em 1799 por soldados franceses perto de Roseta, e comparando-a com o texto grego Champollion decifrou os hieróglifos em 1822."
+      }
+    },
+    {
+      "en": "Its capital had one of the Seven Wonders of the Ancient World and the greatest library of its time.",
+      "pt": "Sua capital tinha uma das Sete Maravilhas do Mundo Antigo e a maior biblioteca de sua época.",
+      "details": {
+        "en": "The Lighthouse of Alexandria, on the island of Pharos, was finished around 280 BCE and stood over 100 metres tall. The Library, founded by the first kings of the dynasty, gathered tens or hundreds of thousands of scrolls; ships entering the port could have their books copied for it.",
+        "pt": "O Farol de Alexandria, na ilha de Faros, ficou pronto por volta de 280 a.C. e tinha mais de 100 metros de altura. A Biblioteca, fundada pelos primeiros reis da dinastia, reuniu dezenas ou centenas de milhares de rolos; navios que chegavam ao porto podiam ter seus livros copiados para ela."
+      }
+    },
+    {
+      "en": "Only its last ruler bothered to learn the language of the people it ruled.",
+      "pt": "Só sua última governante se deu ao trabalho de aprender a língua do povo que governava.",
+      "details": {
+        "en": "For almost three centuries the dynasty spoke only Greek. According to Plutarch, Cleopatra VII was the first of them to learn Egyptian, and she spoke several other languages, dealing with envoys of many peoples without interpreters.",
+        "pt": "Por quase três séculos, a dinastia falou só grego. Segundo Plutarco, Cleópatra VII foi a primeira deles a aprender egípcio, e falava várias outras línguas, recebendo embaixadores de muitos povos sem intérpretes."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Ptolemaic_Kingdom",
+    "pt": "https://pt.wikipedia.org/wiki/Reino_Ptolemaico"
+  },
+  "aliases": [
+    "Ptolemaic Egypt",
+    "Egito Ptolemaico",
+    "Ptolemaic Empire",
+    "Império Ptolemaico",
+    "Ptolemies",
+    "Ptolomeus",
+    "Lagid dynasty",
+    "Dinastia Lágida",
+    "Egypt",
+    "Egito"
+  ],
+  "summary": {
+    "en": "A Hellenistic kingdom founded by Ptolemy I Soter, one of Alexander the Great's generals, who took Egypt after Alexander's death and made himself king in 305 BCE. His Macedonian dynasty ruled like pharaohs, with Greek as the language of power, and turned Alexandria into the greatest city of the Mediterranean, home to the Library and the Lighthouse. At its height it also held Cyrenaica, Palestine, Phoenicia, Cyprus and parts of Asia Minor and the Aegean, which it disputed with the Seleucids in a series of wars. From the 2nd century BCE it weakened under family struggles and Roman influence, until Cleopatra VII and Mark Antony were defeated by Octavian, and Egypt became a Roman province in 30 BCE.",
+    "pt": "Reino helenístico fundado por Ptolomeu I Sóter, um dos generais de Alexandre, o Grande, que ficou com o Egito após a morte de Alexandre e se proclamou rei em 305 a.C. Sua dinastia macedônia governou como os faraós, com o grego como língua do poder, e fez de Alexandria a maior cidade do Mediterrâneo, sede da Biblioteca e do Farol. No auge também controlou a Cirenaica, a Palestina, a Fenícia, Chipre e partes da Ásia Menor e do Egeu, que disputou com os selêucidas em uma série de guerras. A partir do século II a.C. se enfraqueceu com disputas familiares e a influência de Roma, até que Cleópatra VII e Marco Antônio foram derrotados por Otaviano, e o Egito virou província romana em 30 a.C."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Ptolemaic Kingdom",
+        "year": -241
+      }
+    ]
+  }
+}

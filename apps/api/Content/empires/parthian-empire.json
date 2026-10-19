@@ -1,0 +1,108 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "parthian-empire",
+  "name": {
+    "en": "Parthian Empire",
+    "pt": "Império Parta"
+  },
+  "peak": {
+    "year": -90,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": -247,
+    "precision": "Approximate"
+  },
+  "end": {
+    "year": 224,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts around 247 BC, when a nomadic people from Central Asia occupied a province in the northeast of the Iranian plateau that had just broken away from a Hellenistic kingdom, and ends in AD 224, when a subordinate king from the south rebelled and defeated the last ruler. The peak shown is around 90 BC, when the borders reached the Euphrates. The map includes the subordinate kingdoms that recognised the \"king of kings\" and were part of the structure of the empire, and excludes the Caucasian kingdom disputed with Rome and the lands occupied only during the wars with the Romans.",
+    "pt": "Começa por volta de 247 a.C., quando um povo nômade da Ásia Central ocupou uma província no nordeste do planalto iraniano que acabava de se separar de um reino helenístico, e termina em 224 d.C., quando um rei subordinado do sul se revoltou e derrotou o último soberano. O auge escolhido é por volta de 90 a.C., quando as fronteiras chegaram ao Eufrates. O mapa inclui os reinos subordinados que reconheciam o \"rei dos reis\" e faziam parte da estrutura do império, e exclui o reino do Cáucaso disputado com Roma e as terras ocupadas só durante as guerras com os romanos."
+  },
+  "area": {
+    "km2": 2890000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Ctesiphon (earlier, Nisa and Hecatompylos)",
+    "pt": "Ctesifonte (antes, Nisa e Hecatômpilo)"
+  },
+  "language": {
+    "en": "Arsacid Pahlavi (as well as Greek and Aramaic)",
+    "pt": "Pálavi arsácida (além de grego e aramaico)"
+  },
+  "religion": {
+    "en": "Zoroastrianism",
+    "pt": "Zoroastrismo"
+  },
+  "religionNotes": {
+    "en": "Zoroastrianism was the religion of the court, but without a church organised by the State, and it coexisted with the cult of Mithra, with the Greek gods in the cities founded by Alexander's successors and with the Babylonian religions. Large Jewish communities lived in Mesopotamia with considerable autonomy, and Christianity began to spread through the region in the last centuries of the empire.",
+    "pt": "O zoroastrismo era a religião da corte, mas sem uma igreja organizada pelo Estado, e convivia com o culto a Mitra, com os deuses gregos nas cidades fundadas pelos sucessores de Alexandre e com as religiões babilônicas. Comunidades judaicas grandes viviam na Mesopotâmia com bastante autonomia, e o cristianismo começou a se espalhar pela região nos últimos séculos do império."
+  },
+  "curiosities": [
+    {
+      "en": "Its mounted archers pretended to flee and shot backwards, a manoeuvre that still bears their name.",
+      "pt": "Seus arqueiros a cavalo fingiam fugir e atiravam virados para trás, uma manobra que até hoje leva o nome deles.",
+      "details": {
+        "en": "The \"Parthian shot\" let horse archers keep attacking while retreating, luring the enemy into a chase. In English, the expression turned into \"parting shot\", a last cutting remark made on the way out.",
+        "pt": "O \"tiro parto\" permitia aos arqueiros a cavalo continuar atacando enquanto recuavam, atraindo o inimigo para uma perseguição. Em inglês, a expressão virou \"parting shot\", a última farpada antes de ir embora."
+      }
+    },
+    {
+      "en": "It defeated and killed the richest man in Rome, who, according to legend, had molten gold poured into his mouth.",
+      "pt": "Derrotou e matou o homem mais rico de Roma, que, segundo a lenda, teve ouro derretido despejado na boca.",
+      "details": {
+        "en": "Marcus Licinius Crassus, a member of the First Triumvirate with Caesar and Pompey, invaded Mesopotamia and was crushed at the Battle of Carrhae, in 53 BC. He was killed during negotiations after the battle, and the story of the molten gold, a punishment for his greed, was told by later authors.",
+        "pt": "Marco Licínio Crasso, membro do Primeiro Triunvirato com César e Pompeu, invadiu a Mesopotâmia e foi esmagado na Batalha de Carras, em 53 a.C. Ele foi morto durante uma negociação depois da batalha, e a história do ouro derretido, um castigo pela sua ganância, foi contada por autores posteriores."
+      }
+    },
+    {
+      "en": "It was overthrown by a subordinate king from the south, who founded the dynasty that would rule Iran until the arrival of the Arabs.",
+      "pt": "Foi derrubado por um rei subordinado do sul, que fundou a dinastia que governaria o Irã até a chegada dos árabes.",
+      "details": {
+        "en": "Ardashir, king of Persis, defeated and killed Artabanus IV at the Battle of Hormozgan, in AD 224, and founded the Sasanian Empire, which lasted until the Muslim conquest, in the 7th century.",
+        "pt": "Ardaxir, rei da Pérsida, derrotou e matou Artabano IV na Batalha de Hormozgan, em 224 d.C., e fundou o Império Sassânida, que durou até a conquista muçulmana, no século VII."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Parthian_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Parta"
+  },
+  "aliases": [
+    "Parthia",
+    "Pártia",
+    "Arsacid Empire",
+    "Império Arsácida",
+    "Arsacids",
+    "Arsácidas",
+    "Arsacid dynasty",
+    "Dinastia Arsácida",
+    "Persian Empire",
+    "Império Persa",
+    "Persia",
+    "Pérsia",
+    "Iran",
+    "Irã",
+    "Irão"
+  ],
+  "summary": {
+    "en": "An Iranian empire founded by the Arsacid dynasty, which began when the Parni, a nomadic people from Central Asia, occupied the province of Parthia, in northeastern Iran, around 247 BC. Under Mithridates I and Mithridates II, the Parthians took the Iranian plateau and Mesopotamia from the Seleucids and pushed the borders to the Euphrates. Controlling the central stretch of the Silk Road, they grew rich as middlemen between Rome and China. From 53 BC, when they defeated Crassus at Carrhae, the Parthians were for almost three centuries Rome's main rival in the East, fighting over Armenia and Mesopotamia, where the Romans sacked the capital Ctesiphon several times. The empire was decentralised, with subordinate kings and great noble families, and was weakened by civil wars between claimants to the throne. In AD 224, Artabanus IV was defeated by Ardashir, king of Persis, who founded the Sasanian Empire.",
+    "pt": "Império iraniano fundado pela dinastia arsácida, que começou quando os parnos, um povo nômade da Ásia Central, ocuparam a província da Pártia, no nordeste do Irã, por volta de 247 a.C. Sob Mitrídates I e Mitrídates II, os partas tomaram dos selêucidas o planalto iraniano e a Mesopotâmia e levaram as fronteiras até o Eufrates. Controlando o trecho central da Rota da Seda, enriqueceram como intermediários entre Roma e a China. A partir de 53 a.C., quando derrotaram Crasso em Carras, os partas foram por quase três séculos o principal rival de Roma no Oriente, disputando a Armênia e a Mesopotâmia, onde os romanos saquearam a capital Ctesifonte várias vezes. O império era descentralizado, com reis subordinados e grandes famílias nobres, e se enfraqueceu com as guerras civis entre pretendentes ao trono. Em 224 d.C., Artabano IV foi derrotado por Ardaxir, rei da Pérsida, que fundou o Império Sassânida."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Parthian Empire",
+        "year": -90
+      }
+    ]
+  }
+}

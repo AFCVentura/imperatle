@@ -1,0 +1,118 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "maurya-empire",
+  "name": {
+    "en": "Maurya Empire",
+    "pt": "Império Máuria"
+  },
+  "peak": {
+    "year": -250,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": -322,
+    "precision": "Approximate"
+  },
+  "end": {
+    "year": -185,
+    "precision": "Approximate"
+  },
+  "durationNotes": {
+    "en": "It starts around 322 BCE, when its founder overthrew the ruling dynasty of the Ganges valley, and ends around 185 BCE, when the last king was killed by his own general.",
+    "pt": "Começa por volta de 322 a.C., quando o fundador derrubou a dinastia que governava o vale do Ganges, e termina por volta de 185 a.C., quando o último rei foi morto pelo próprio general."
+  },
+  "area": {
+    "km2": 3920869,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Speculative",
+  "continents": [
+    "Asia"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Pataliputra",
+    "pt": "Pataliputra"
+  },
+  "language": {
+    "en": "Prakrit (Magadhi)",
+    "pt": "Prácrito (Magadi)"
+  },
+  "religion": {
+    "en": "Brahmanism, Buddhism and Jainism",
+    "pt": "Bramanismo, budismo e jainismo"
+  },
+  "religionNotes": {
+    "en": "Tradition says the founder ended his life as a Jain monk, and his grandson embraced Buddhism and sent missionaries to spread it abroad. Most of the people followed the Brahmanical traditions that gave rise to Hinduism.",
+    "pt": "A tradição diz que o fundador terminou a vida como monge jainista, e seu neto abraçou o budismo e enviou missionários para espalhá-lo no exterior. A maior parte do povo seguia as tradições bramânicas que deram origem ao hinduísmo."
+  },
+  "curiosities": [
+    {
+      "en": "One of its emperors had his edicts carved on rocks and pillars across the subcontinent, the oldest deciphered texts of the region.",
+      "pt": "Um de seus imperadores mandou gravar seus editos em rochas e pilares por todo o subcontinente, os textos mais antigos já decifrados da região.",
+      "details": {
+        "en": "Ashoka's edicts were carved on more than 30 rocks and pillars from Afghanistan to southern India, most of them in Prakrit, in the Brahmi script, and a few in Greek and Aramaic. They preach dharma: respect for parents, kindness to animals and tolerance between religions. The Brahmi script was only deciphered in 1837, by the Briton James Prinsep.",
+        "pt": "Os editos de Ashoka foram gravados em mais de 30 rochas e pilares do Afeganistão ao sul da Índia, a maioria em prácrito, na escrita brami, e alguns em grego e aramaico. Pregam o dharma: respeito aos pais, bondade com os animais e tolerância entre as religiões. A escrita brami só foi decifrada em 1837, pelo britânico James Prinsep."
+      }
+    },
+    {
+      "en": "Horrified by a bloody war on the east coast, its most famous emperor gave up conquest and embraced Buddhism.",
+      "pt": "Horrorizado com uma guerra sangrenta na costa leste, seu imperador mais famoso desistiu das conquistas e abraçou o budismo.",
+      "details": {
+        "en": "Around 261 BCE Ashoka conquered Kalinga, in today's Odisha. In one of his edicts he himself says that 100,000 people were killed and 150,000 deported, and that he felt deep remorse. From then on he embraced Buddhism, gave up wars of conquest and sent missionaries to other lands, including Sri Lanka.",
+        "pt": "Por volta de 261 a.C., Ashoka conquistou Kalinga, na atual Odisha. Num de seus editos, ele mesmo conta que 100 mil pessoas foram mortas e 150 mil deportadas, e diz sentir um remorso profundo. A partir daí, abraçou o budismo, renunciou às guerras de conquista e mandou missionários a outras terras, entre elas o Sri Lanka."
+      }
+    },
+    {
+      "en": "The lions carved on top of one of its pillars are today the national emblem of India.",
+      "pt": "Os leões esculpidos no alto de um de seus pilares são hoje o emblema nacional da Índia.",
+      "details": {
+        "en": "The Lion Capital of Sarnath, with four lions standing back to back on a base with a wheel, was carved for a pillar of Ashoka at the place where the Buddha is said to have given his first sermon. It was adopted as India's national emblem in 1950, and the wheel, the Ashoka Chakra, sits at the centre of the country's flag.",
+        "pt": "O Capitel dos Leões de Sarnath, com quatro leões de costas uns para os outros sobre uma base com uma roda, foi esculpido para um pilar de Ashoka no lugar onde Buda teria feito seu primeiro sermão. Foi adotado como emblema nacional da Índia em 1950, e a roda, o Ashoka Chakra, está no centro da bandeira do país."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Maurya_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Máuria"
+  },
+  "aliases": [
+    "Mauryan Empire",
+    "Maurya",
+    "Máuria",
+    "Mauria",
+    "Maurya Dynasty",
+    "Dinastia Máuria",
+    "Magadha",
+    "India",
+    "Índia"
+  ],
+  "summary": {
+    "en": "The first empire to unite almost all of the Indian subcontinent, founded around 322 BCE by Chandragupta Maurya, who overthrew the Nanda dynasty in the kingdom of Magadha, in the Ganges valley. Chandragupta took today's Afghanistan from the Greek king Seleucus, and his son Bindusara pushed the empire south. His grandson Ashoka conquered Kalinga, converted to Buddhism and began to rule by preaching non-violence and tolerance. The empire had a large bureaucracy and a huge army, but it broke apart after Ashoka and ended around 185 BCE, when the last king was killed by his general.",
+    "pt": "Primeiro império a unificar quase todo o subcontinente indiano, fundado por volta de 322 a.C. por Chandragupta Máuria, que derrubou a dinastia Nanda no reino de Mágada, no vale do Ganges. Chandragupta tomou do rei grego Seleuco o atual Afeganistão, e seu filho Bindusara levou o império para o sul. O neto, Ashoka, conquistou Kalinga, se converteu ao budismo e passou a governar pregando a não violência e a tolerância. O império tinha uma grande burocracia e um exército enorme, mas se fragmentou depois de Ashoka e acabou por volta de 185 a.C., quando o último rei foi morto pelo próprio general."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Maurya Empire",
+        "year": -250
+      },
+      {
+        "draw": "add",
+        "ring": [[71.6,36.1],[71,35.75],[70,35.55],[69,35.3],[68,35.05],[67.2,34.85],[66.4,34.45],[65.6,33.8],[65,33.1],[64.6,32.3],[64.2,31.6],[64,30.9],[64.3,30],[65.5,29.4],[67,29.5],[70,31],[71.3,33.8]]
+      },
+      {
+        "draw": "add",
+        "ring": [[71.188,35.7],[71.074,35.653],[70.961,35.613],[70.847,35.582],[70.733,35.558],[70.618,35.542],[70.462,35.534],[70.263,35.534],[70.022,35.542],[69.739,35.558],[69.481,35.542],[69.248,35.495],[69.04,35.416],[68.857,35.306],[68.673,35.227],[68.487,35.18],[68.3,35.164],[68.111,35.18],[67.932,35.158],[67.763,35.099],[67.604,35.003],[67.454,34.869],[67.321,34.773],[67.205,34.714],[67.104,34.692],[67.02,34.708],[66.932,34.714],[66.838,34.71],[66.74,34.696],[66.637,34.673],[66.509,34.602],[66.354,34.485],[66.174,34.32],[65.968,34.109],[65.785,33.904],[65.626,33.705],[65.49,33.512],[65.377,33.326],[65.263,33.158],[65.148,33.011],[65.032,32.883],[64.915,32.774],[64.823,32.678],[64.756,32.592],[64.714,32.519],[64.697,32.457],[64.621,32.351],[64.487,32.2],[64.293,32.005],[64.042,31.766],[63.851,31.547],[63.72,31.347],[63.649,31.167],[63.639,31.006],[63.7,30.843],[63.833,30.678],[64.037,30.512],[64.312,30.344],[64.501,30.195],[64.605,30.065],[64.624,29.954],[64.558,29.863],[64.511,29.787],[64.484,29.726],[64.477,29.68],[64.488,29.65],[64.528,29.619],[64.596,29.589],[64.691,29.559],[64.815,29.528],[64.926,29.492],[65.024,29.45],[65.111,29.403],[65.184,29.349],[65.269,29.325],[65.365,29.329],[65.473,29.361],[65.591,29.422],[65.704,29.494],[65.812,29.578],[65.914,29.673],[66.01,29.779],[66.099,29.869],[66.182,29.941],[66.258,29.996],[66.328,30.034],[66.681,30.412],[67.321,31.132],[68.252,32.198],[69.483,33.617],[70.388,34.679],[70.958,35.375]]
+      },
+      {
+        "draw": "add",
+        "ring": [[64.835,29.631],[64.866,29.608],[64.892,29.56],[64.911,29.488],[64.924,29.391],[64.93,29.27],[64.968,29.171],[65.038,29.095],[65.14,29.042],[65.273,29.012],[65.399,29.017],[65.518,29.059],[65.631,29.137],[65.737,29.251],[65.802,29.359],[65.828,29.462],[65.813,29.559],[65.757,29.65],[65.66,29.711],[65.522,29.741],[65.341,29.741],[65.12,29.711],[64.961,29.682],[64.866,29.656]]
+      },
+      {
+        "draw": "add",
+        "ring": [[90.79,22.597],[90.837,22.617],[90.88,22.63],[90.921,22.635],[90.957,22.634],[90.99,22.624],[91.064,22.593],[91.179,22.541],[91.335,22.467],[91.532,22.372],[91.688,22.294],[91.805,22.234],[91.881,22.191],[91.918,22.166],[91.943,22.133],[91.958,22.09],[91.962,22.04],[91.955,21.98],[91.906,21.936],[91.816,21.905],[91.684,21.889],[91.51,21.888],[91.361,21.889],[91.236,21.895],[91.137,21.904],[91.062,21.916],[91,21.926],[90.95,21.932],[90.912,21.935],[90.887,21.935],[90.865,21.937],[90.845,21.94],[90.828,21.944],[90.814,21.951],[90.793,21.967],[90.766,21.995],[90.733,22.033],[90.693,22.081],[90.656,22.142],[90.623,22.214],[90.593,22.299],[90.566,22.396],[90.557,22.47],[90.568,22.522],[90.598,22.551],[90.646,22.557],[90.695,22.567],[90.742,22.58]]
+      }
+    ]
+  }
+}

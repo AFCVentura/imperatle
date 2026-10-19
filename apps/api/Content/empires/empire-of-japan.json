@@ -1,0 +1,133 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "empire-of-japan",
+  "name": {
+    "en": "Empire of Japan",
+    "pt": "Império do Japão"
+  },
+  "peak": {
+    "year": 1942,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1868,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1947,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 1868, when power returned to the emperor after centuries of military rule, and ends in 1947, when a new constitution took effect. It had surrendered in 1945 and was under foreign occupation until then.",
+    "pt": "Começa em 1868, quando o poder voltou ao imperador após séculos de governo militar, e termina em 1947, quando entrou em vigor uma nova constituição. Tinha se rendido em 1945 e estava sob ocupação estrangeira desde então."
+  },
+  "area": {
+    "km2": 6545391,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia",
+    "Oceania"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Tokyo",
+    "pt": "Tóquio"
+  },
+  "language": {
+    "en": "Japanese",
+    "pt": "Japonês"
+  },
+  "religion": {
+    "en": "State Shinto",
+    "pt": "Xintoísmo de Estado"
+  },
+  "religionNotes": {
+    "en": "The state promoted the worship of the emperor, said to descend from a sun goddess, as a patriotic duty. Buddhism remained widespread among the people.",
+    "pt": "O Estado promovia o culto ao imperador, tido como descendente de uma deusa do sol, como dever patriótico. O budismo continuava muito difundido entre a população."
+  },
+  "curiosities": [
+    {
+      "en": "In 1905, it became the first Asian country in modern times to defeat a European great power in a war.",
+      "pt": "Em 1905, tornou-se o primeiro país asiático dos tempos modernos a derrotar uma grande potência europeia numa guerra.",
+      "details": {
+        "en": "In the Russo-Japanese War of 1904 and 1905, Japan took the Russian base of Port Arthur, in Manchuria, and destroyed Russia's Baltic Fleet at the Battle of Tsushima, after it had sailed halfway around the world. The peace was negotiated in the United States, and the victory showed the world that an Asian power could defeat a European one.",
+        "pt": "Na Guerra Russo-Japonesa, de 1904 e 1905, o Japão tomou a base russa de Port Arthur, na Manchúria, e destruiu a frota russa do Báltico na batalha de Tsushima, depois de ela ter navegado meio mundo. A paz foi negociada nos Estados Unidos, e a vitória mostrou ao mundo que uma potência asiática podia derrotar uma europeia."
+      }
+    },
+    {
+      "en": "Its surprise attack on a naval base in Hawaii brought the United States into World War II.",
+      "pt": "Seu ataque surpresa a uma base naval no Havaí levou os Estados Unidos à Segunda Guerra Mundial.",
+      "details": {
+        "en": "On 7 December 1941, planes launched from Japanese aircraft carriers attacked the base at Pearl Harbor, in Hawaii, without a declaration of war. They sank or damaged eight battleships and killed more than 2,400 Americans. The next day the United States declared war on Japan, and soon after Germany declared war on the United States.",
+        "pt": "Em 7 de dezembro de 1941, aviões lançados de porta-aviões japoneses atacaram a base de Pearl Harbor, no Havaí, sem declaração de guerra. Afundaram ou danificaram oito encouraçados e mataram mais de 2.400 americanos. No dia seguinte, os Estados Unidos declararam guerra ao Japão, e logo depois a Alemanha declarou guerra aos Estados Unidos."
+      }
+    },
+    {
+      "en": "It surrendered in 1945, days after two of its cities were destroyed by atomic bombs.",
+      "pt": "Rendeu-se em 1945, dias depois de duas de suas cidades serem destruídas por bombas atômicas.",
+      "details": {
+        "en": "The United States dropped atomic bombs on Hiroshima on 6 August 1945 and on Nagasaki three days later, killing more than 100,000 people at once and many more later from radiation. The Soviet Union also declared war on Japan on 8 August. Emperor Hirohito announced the surrender on the radio on 15 August, and it was signed on 2 September.",
+        "pt": "Os Estados Unidos lançaram bombas atômicas sobre Hiroshima, em 6 de agosto de 1945, e sobre Nagasaki, três dias depois, matando mais de 100 mil pessoas de imediato e muitas outras depois, pela radiação. A União Soviética também declarou guerra ao Japão em 8 de agosto. O imperador Hirohito anunciou a rendição pelo rádio em 15 de agosto, e ela foi assinada em 2 de setembro."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Empire_of_Japan",
+    "pt": "https://pt.wikipedia.org/wiki/Império_do_Japão"
+  },
+  "aliases": [
+    "Japan",
+    "Japão",
+    "Imperial Japan",
+    "Japão Imperial",
+    "Japanese Empire",
+    "Império Japonês",
+    "Empire of Great Japan",
+    "Grande Império do Japão",
+    "Dai Nippon",
+    "Nippon",
+    "Nihon"
+  ],
+  "summary": {
+    "en": "The Japanese state between the Meiji Restoration of 1868, when power returned to the emperor after centuries of rule by the shoguns, and the constitution of 1947. In a few decades Japan industrialised, built a modern army and navy and defeated China and Russia. It annexed Taiwan and Korea, seized Manchuria and, from 1937, invaded China. In World War II it occupied Southeast Asia and much of the Pacific, with great brutality towards civilians and prisoners. It surrendered in 1945 and was occupied by the United States until 1952.",
+    "pt": "Estado japonês entre a Restauração Meiji, em 1868, quando o poder voltou ao imperador depois de séculos de governo dos xoguns, e a Constituição de 1947. Em poucas décadas, o Japão se industrializou, criou um exército e uma marinha modernos e venceu a China e a Rússia. Anexou Taiwan e a Coreia, tomou a Manchúria e, a partir de 1937, invadiu a China. Na Segunda Guerra, ocupou o Sudeste Asiático e boa parte do Pacífico, com grande brutalidade contra civis e prisioneiros. Rendeu-se em 1945 e ficou ocupado pelos Estados Unidos até 1952."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Empire of Japan",
+        "year": 1943
+      },
+      {
+        "country": "FSM"
+      },
+      {
+        "country": "MNP"
+      },
+      {
+        "country": "PLW"
+      },
+      {
+        "country": "MHL"
+      },
+      {
+        "country": "VNM"
+      },
+      {
+        "country": "KHM"
+      },
+      {
+        "country": "NRU"
+      },
+      {
+        "country": "LAO"
+      },
+      {
+        "draw": "remove",
+        "ring": [[99.213,22.031],[99.11,21.912],[98.99,21.796],[98.854,21.683],[98.7,21.573],[98.529,21.467],[98.42,21.362],[98.371,21.259],[98.383,21.157],[98.456,21.057],[98.482,20.963],[98.462,20.875],[98.395,20.794],[98.282,20.719],[98.193,20.621],[98.128,20.499],[98.088,20.354],[98.072,20.185],[98.077,20.021],[98.103,19.863],[98.148,19.708],[98.215,19.559],[98.332,19.444],[98.499,19.363],[98.716,19.316],[98.984,19.304],[99.214,19.302],[99.406,19.312],[99.559,19.332],[99.675,19.363],[99.76,19.411],[99.815,19.476],[99.841,19.559],[99.836,19.659],[99.861,19.752],[99.915,19.839],[99.999,19.92],[100.113,19.995],[100.199,20.059],[100.26,20.112],[100.293,20.154],[100.3,20.185],[100.297,20.21],[100.283,20.229],[100.26,20.241],[100.226,20.248],[100.2,20.258],[100.183,20.274],[100.173,20.294],[100.172,20.319],[100.182,20.341],[100.202,20.36],[100.232,20.376],[100.274,20.388],[100.301,20.435],[100.313,20.516],[100.312,20.632],[100.296,20.782],[100.297,20.93],[100.315,21.077],[100.35,21.223],[100.401,21.367],[100.439,21.492],[100.463,21.599],[100.473,21.686],[100.469,21.755],[100.428,21.832],[100.347,21.917],[100.229,22.01],[100.072,22.11],[99.949,22.204],[99.86,22.292],[99.805,22.374],[99.784,22.449],[99.744,22.484],[99.685,22.478],[99.607,22.431],[99.511,22.343],[99.413,22.247],[99.314,22.143]]
+      }
+    ]
+  }
+}

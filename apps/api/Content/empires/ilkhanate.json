@@ -1,0 +1,119 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "ilkhanate",
+  "name": {
+    "en": "Ilkhanate",
+    "pt": "Ilcanato"
+  },
+  "peak": {
+    "year": 1300,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1256,
+    "precision": "Approximate"
+  },
+  "end": {
+    "year": 1335,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts around 1256, when a grandson of the great conqueror reached the Iranian plateau at the head of a huge army and began conquering the Middle East, and ends in 1335, when the last khan died without an heir and the provinces were divided among the military chiefs. The peak shown is around 1300. The map excludes the Christian kingdom of the Caucasus, which kept its own kings, and the small Turkmen principalities of western Anatolia, which recognised the khan only in name.",
+    "pt": "Começa por volta de 1256, quando um neto do grande conquistador chegou ao planalto iraniano à frente de um enorme exército e passou a conquistar o Oriente Médio, e termina em 1335, quando o último cã morreu sem herdeiro e as províncias foram divididas entre os chefes militares. O auge escolhido é por volta de 1300. O mapa exclui o reino cristão do Cáucaso, que mantinha os próprios reis, e os pequenos principados turcomanos do oeste da Anatólia, que só reconheciam o cã no nome."
+  },
+  "area": {
+    "km2": 3830000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia",
+    "Europe"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Maragheh, later Tabriz and Soltaniyeh",
+    "pt": "Maragheh, depois Tabriz e Soltaniyeh"
+  },
+  "language": {
+    "en": "Persian and Mongolian",
+    "pt": "Persa e mongol"
+  },
+  "religion": {
+    "en": "Tengrism and Buddhism, later Islam",
+    "pt": "Tengrismo e budismo, depois islamismo"
+  },
+  "religionNotes": {
+    "en": "The first khans followed the traditional Mongol religion and Buddhism, and protected the Nestorian Christians, who had great influence at court. In 1295 one of the khans converted to Islam, which became the official religion, and Buddhist temples and churches were destroyed. His successor even adopted Shi'ism, and his son returned to Sunnism.",
+    "pt": "Os primeiros cãs seguiam a religião tradicional mongol e o budismo, e protegiam os cristãos nestorianos, que tinham grande influência na corte. Em 1295, um dos cãs se converteu ao islã, que virou a religião oficial, e templos budistas e igrejas foram destruídos. O seu sucessor chegou a adotar o xiismo, e o filho dele voltou ao sunismo."
+  },
+  "curiosities": [
+    {
+      "en": "It sent to Europe as ambassador a Christian monk born near Beijing, who met the pope and the kings of France and England.",
+      "pt": "Mandou à Europa como embaixador um monge cristão nascido perto de Pequim, que se encontrou com o papa e com os reis da França e da Inglaterra.",
+      "details": {
+        "en": "Rabban Bar Sauma, a Uyghur or Ongut Nestorian, was sent by Khan Arghun in 1287 to propose an alliance against the Mamluks. No European king sent armies.",
+        "pt": "Rabban Bar Sauma, um nestoriano uigur ou ongut, foi enviado pelo cã Arghun em 1287 para propor uma aliança contra os mamelucos. Nenhum rei europeu mandou exércitos."
+      }
+    },
+    {
+      "en": "One of its ministers wrote one of the first histories of the world, covering from China to Europe.",
+      "pt": "Um de seus ministros escreveu uma das primeiras histórias do mundo, cobrindo da China à Europa.",
+      "details": {
+        "en": "The \"Jami al-Tawarikh\", by the vizier Rashid al-Din, completed around 1310, covered the history of the Mongols, the Chinese, the Indians, the Jews and the Franks, with illustrations.",
+        "pt": "O \"Jami al-Tawarikh\", do vizir Rashid al-Din, terminado por volta de 1310, trazia a história dos mongóis, dos chineses, dos indianos, dos judeus e dos francos, com ilustrações."
+      }
+    },
+    {
+      "en": "It sacked the capital of a caliphate, and, according to tradition, the caliph was rolled up in a carpet and trampled by horses.",
+      "pt": "Saqueou a capital de um califado, e, segundo a tradição, o califa foi enrolado num tapete e pisoteado por cavalos.",
+      "details": {
+        "en": "The sack of Baghdad, in 1258, ended the Abbasid Caliphate. According to tradition, the Mongols did not want to shed royal blood, so they rolled the caliph up in a carpet.",
+        "pt": "O saque de Bagdá, em 1258, encerrou o Califado Abássida. Segundo a tradição, os mongóis não queriam derramar sangue real, por isso enrolaram o califa num tapete."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Ilkhanate",
+    "pt": "https://pt.wikipedia.org/wiki/Ilcanato"
+  },
+  "aliases": [
+    "Ilkhanate",
+    "Il-Khanate",
+    "Ilkhanato",
+    "Il-Canato",
+    "Ilkhanids",
+    "Ilcânidas",
+    "Hulaguids",
+    "Hulágidas",
+    "Mongol Persia",
+    "Pérsia Mongol",
+    "Mongols",
+    "Mongóis",
+    "Persia",
+    "Pérsia",
+    "Iran",
+    "Irã",
+    "Irão"
+  ],
+  "summary": {
+    "en": "A Mongol khanate of Iran and the Middle East, founded by Hulagu, grandson of Genghis Khan, sent by his brother, the great khan Möngke, to subdue the lands to the west. Hulagu destroyed the fortresses of the Nizari sect in 1256 and took Mesopotamia, but was stopped by the Mamluks of Egypt in 1260, at the Battle of Ain Jalut. The khanate recognised the authority of the great khan in China and fought wars against the Golden Horde and the Mamluks. Under Ghazan, who converted to Islam in 1295, the government adopted Persian culture and administration, and the vizier Rashid al-Din reformed taxation. Tabriz became one of the greatest trading centres of the Silk Road. With the death of Abu Said in 1335, leaving no heir, the khanate was divided among rival dynasties, such as the Jalayirids and the Chobanids.",
+    "pt": "Canato mongol do Irã e do Oriente Médio, fundado por Hulagu, neto de Gengis Khan, enviado pelo irmão, o grão-cã Möngke, para submeter as terras a oeste. Hulagu destruiu as fortalezas da seita dos nizaritas, em 1256, e tomou a Mesopotâmia, mas foi detido pelos mamelucos do Egito em 1260, na Batalha de Ain Jalut. O canato reconhecia a autoridade do grão-cã da China e travou guerras contra a Horda Dourada e contra os mamelucos. Sob Ghazan, que se converteu ao islã em 1295, o governo adotou a cultura e a administração persas, e o vizir Rashid al-Din reformou os impostos. Tabriz virou um dos maiores centros comerciais da Rota da Seda. Com a morte de Abu Said, em 1335, sem deixar herdeiro, o canato se dividiu entre dinastias rivais, como os jalairidas e os chobânidas."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Ilkhanate",
+        "year": 1300
+      },
+      {
+        "draw": "remove",
+        "ring": [[43.44,41.11],[42.57,41.56],[41.92,41.5],[41.51,41.52],[41.76,41.97],[41.49,42.66],[40.84,43.06],[39.98,43.42],[40.65,43.53],[41.36,43.33],[42.05,43.19],[42.99,43.09],[43.78,42.75],[43.96,42.57],[44.77,42.62],[45.21,42.65],[45.73,42.48],[45.95,42.04],[46.18,41.66],[46.67,41.29],[46.17,41.2],[45.72,41.34],[45,41.29],[44.23,41.21],[43.44,41.11]]
+      },
+      {
+        "draw": "remove",
+        "ring": [[24,42.5],[30.4,41.3],[30.6,40.4],[31.2,39.8],[31.6,39],[31.4,38.3],[31.6,37.6],[32,36.4],[32,34.5],[24,34.5],[24,42.5]]
+      }
+    ]
+  }
+}

@@ -50,20 +50,51 @@
   "curiosities": [
     {
       "en": "Its banner was black, in contrast to the white of the dynasty it overthrew.",
-      "pt": "Sua bandeira era preta, em oposição à branca da dinastia que derrubou."
+      "pt": "Sua bandeira era preta, em oposição à branca da dinastia que derrubou.",
+      "details": {
+        "en": "The Abbasids raised black banners in the revolt that began in 747 in Khorasan, in eastern Iran, a colour linked to prophecies about a coming saviour and to mourning. The Umayyads used white, and black became the official colour of the new dynasty, on its flags and in the clothes of its court.",
+        "pt": "Os abássidas ergueram estandartes pretos na revolta que começou em 747 no Coraçã, no leste do Irã, uma cor ligada a profecias sobre a chegada de um salvador e ao luto. Os omíadas usavam o branco, e o preto virou a cor oficial da nova dinastia, nas bandeiras e nas roupas da corte."
+      }
     },
     {
       "en": "The numerals we use today reached Europe through books written under its rule, such as those of a mathematician whose name gave us the word \"algorithm\".",
-      "pt": "Os números que usamos hoje chegaram à Europa por meio de livros escritos sob seu governo, como os de um matemático cujo nome deu origem à palavra \"algoritmo\"."
+      "pt": "Os números que usamos hoje chegaram à Europa por meio de livros escritos sob seu governo, como os de um matemático cujo nome deu origem à palavra \"algoritmo\".",
+      "details": {
+        "en": "Muhammad ibn Musa al-Khwarizmi worked at the House of Wisdom in Baghdad in the 9th century. His book on calculating with Indian numerals, translated into Latin in the 12th century, spread across Europe the digits 0 to 9 we now call Arabic. His name, Latinised as \"Algoritmi\", gave us \"algorithm\", and another of his books gave its name to algebra.",
+        "pt": "Muhammad ibn Musa al-Khwarizmi trabalhou na Casa da Sabedoria, em Bagdá, no século IX. Seu livro sobre o cálculo com os algarismos indianos, traduzido para o latim no século XII, espalhou pela Europa os números de 0 a 9 que hoje chamamos de arábicos. Seu nome, latinizado como \"Algoritmi\", deu origem a \"algoritmo\", e outro livro seu deu nome à álgebra."
+      }
     },
     {
       "en": "One of its caliphs appears as a character in the tales of \"One Thousand and One Nights\".",
-      "pt": "Um de seus califas aparece como personagem nas histórias de \"As Mil e Uma Noites\"."
+      "pt": "Um de seus califas aparece como personagem nas histórias de \"As Mil e Uma Noites\".",
+      "details": {
+        "en": "The caliph is Harun al-Rashid, who ruled from 786 to 809, at the height of Baghdad's wealth. In the \"One Thousand and One Nights\" he walks the city at night in disguise with his vizier Jafar. In real life he exchanged embassies with Charlemagne, to whom he is said to have sent an elephant as a gift.",
+        "pt": "O califa é Harun al-Rashid, que governou de 786 a 809, no auge da riqueza de Bagdá. Nas \"Mil e Uma Noites\", ele passeia disfarçado pela cidade à noite com seu vizir Jafar. Na vida real, trocou embaixadas com Carlos Magno, a quem teria mandado um elefante de presente."
+      }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Abbasid_Caliphate",
     "pt": "https://pt.wikipedia.org/wiki/Califado_Abássida"
+  },
+  "aliases": [
+    "Abbasids",
+    "Abássidas",
+    "Abbasid Dynasty",
+    "Dinastia Abássida",
+    "Abbasid Empire",
+    "Império Abássida",
+    "Abasida",
+    "Arab Caliphate",
+    "Califado Árabe",
+    "Islamic Caliphate",
+    "Califado Islâmico",
+    "Iraq",
+    "Iraque"
+  ],
+  "summary": {
+    "en": "The second great dynasty of caliphs in Islam, which took power from the Umayyads in 750 after a revolt that began in eastern Iran. In 762 it founded Baghdad, which became one of the largest cities in the world and the centre of a golden age of science, philosophy and the translation of Greek, Persian and Indian works. From the 9th century on, governors and regional dynasties took real power, and the caliph became mainly a religious figure. It fell in 1258, when the Mongols sacked Baghdad and killed the last caliph.",
+    "pt": "Segunda grande dinastia de califas do Islã, que tomou o poder dos omíadas em 750, depois de uma revolta que começou no leste do Irã. Em 762 fundou Bagdá, que virou uma das maiores cidades do mundo e o centro de uma era de ouro da ciência, da filosofia e da tradução de obras gregas, persas e indianas. A partir do século IX, governadores e dinastias regionais passaram a mandar de fato, e o califa virou uma figura sobretudo religiosa. Caiu em 1258, quando os mongóis saquearam Bagdá e mataram o último califa."
   },
   "map": {
     "parts": [

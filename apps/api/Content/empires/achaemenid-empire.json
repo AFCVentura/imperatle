@@ -2,8 +2,8 @@
   "$schema": "../empire.schema.json",
   "slug": "achaemenid-empire",
   "name": {
-    "en": "Achaemenid (Persian) Empire",
-    "pt": "Império Aquemênida (Persa)"
+    "en": "Achaemenid Empire",
+    "pt": "Império Aquemênida"
   },
   "peak": {
     "year": -500,
@@ -43,20 +43,53 @@
   "curiosities": [
     {
       "en": "A Greek tried to persuade Sparta to attack it by claiming its soldiers would be easy to beat, since they fought in trousers.",
-      "pt": "Um grego tentou convencer Esparta a atacá-lo dizendo que seus soldados seriam fáceis de vencer, já que lutavam de calças."
+      "pt": "Um grego tentou convencer Esparta a atacá-lo dizendo que seus soldados seriam fáceis de vencer, já que lutavam de calças.",
+      "details": {
+        "en": "The episode is told by Herodotus: around 499 BCE, Aristagoras of Miletus, leader of the revolt of the Greek cities of Ionia, went to Sparta to ask King Cleomenes for help. To win him over, he described the Persians as easy to beat, since they fought in trousers and turbans. Sparta refused, but Athens sent ships, which led to the Greco-Persian Wars.",
+        "pt": "O episódio é contado por Heródoto: por volta de 499 a.C., Aristágoras de Mileto, líder da revolta das cidades gregas da Jônia, foi a Esparta pedir ajuda ao rei Cleômenes. Para convencê-lo, descreveu os persas como fáceis de vencer, já que lutavam de calças e turbantes. Esparta recusou, mas Atenas mandou navios, o que levou às Guerras Médicas."
+      }
     },
     {
       "en": "Its founder allowed exiled peoples to return home, in a decree inscribed on a clay cylinder that is sometimes called the first charter of human rights.",
-      "pt": "Seu fundador permitiu que os povos exilados voltassem para casa, num decreto gravado num cilindro de argila que às vezes é chamado de primeira carta de direitos humanos."
+      "pt": "Seu fundador permitiu que os povos exilados voltassem para casa, num decreto gravado num cilindro de argila que às vezes é chamado de primeira carta de direitos humanos.",
+      "details": {
+        "en": "The Cyrus Cylinder, found in Babylon in 1879 and kept in the British Museum, celebrates the capture of the city in 539 BCE and says Cyrus let deported peoples return to their lands and rebuild their temples. The Bible also tells that he freed the exiled Jews. Calling it the \"first charter of human rights\" is a modern reading that historians dispute.",
+        "pt": "O Cilindro de Ciro, achado na Babilônia em 1879 e guardado no Museu Britânico, celebra a conquista da cidade em 539 a.C. e diz que Ciro deixou os povos deportados voltarem às suas terras e reconstruírem seus templos. A Bíblia também conta que ele libertou os judeus exilados. Chamá-lo de \"primeira carta de direitos humanos\" é uma leitura moderna, contestada pelos historiadores."
+      }
     },
     {
       "en": "It fell to a young Macedonian conqueror in his campaign eastward.",
-      "pt": "Caiu diante de um jovem conquistador macedônio em sua campanha rumo ao leste."
+      "pt": "Caiu diante de um jovem conquistador macedônio em sua campanha rumo ao leste.",
+      "details": {
+        "en": "Alexander the Great crossed into Asia in 334 BCE and beat the Persians at the Granicus, Issus and Gaugamela, the last two against King Darius III himself. Darius was killed by his own nobles in 330 BCE while fleeing, and Alexander presented himself as his successor, adopting some of the customs of the Persian court.",
+        "pt": "Alexandre, o Grande, entrou na Ásia em 334 a.C. e venceu os persas em Granico, Isso e Gaugamela, as duas últimas contra o próprio rei Dario III. Dario foi morto pelos próprios nobres em 330 a.C., durante a fuga, e Alexandre se apresentou como seu sucessor, adotando parte dos costumes da corte persa."
+      }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Achaemenid_Empire",
     "pt": "https://pt.wikipedia.org/wiki/Império_Aquemênida"
+  },
+  "aliases": [
+    "Achaemenid Persian Empire",
+    "Império Persa Aquemênida",
+    "Persian Empire",
+    "Império Persa",
+    "First Persian Empire",
+    "Primeiro Império Persa",
+    "Persia",
+    "Pérsia",
+    "Achaemenids",
+    "Aquemênidas",
+    "Aquemenida",
+    "Achemenid",
+    "Iran",
+    "Irã",
+    "Irão"
+  ],
+  "summary": {
+    "en": "The first great Persian empire, founded by Cyrus the Great around 550 BCE, when he defeated the Medes. Within a few decades he and his successors conquered Lydia, Babylon and Egypt, building the largest empire the world had yet seen, from Egypt and Anatolia to the Indus valley. It was divided into provinces, the satrapies, linked by roads with relay stations, and it usually respected local religions and customs. It failed to conquer Greece and fell to Alexander the Great in 330 BCE.",
+    "pt": "Primeiro grande império persa, fundado por Ciro, o Grande, por volta de 550 a.C., quando ele derrotou os medos. Em poucas décadas, ele e seus sucessores conquistaram a Lídia, a Babilônia e o Egito, formando o maior império que o mundo tinha visto até então, do Egito e da Anatólia até o vale do Indo. Era dividido em províncias, as satrapias, ligadas por estradas com postos de troca de cavalos, e costumava respeitar as religiões e os costumes locais. Fracassou ao tentar conquistar a Grécia e caiu diante de Alexandre, o Grande, em 330 a.C."
   },
   "map": {
     "parts": [

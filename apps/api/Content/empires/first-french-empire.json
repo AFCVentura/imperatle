@@ -1,0 +1,102 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "first-french-empire",
+  "name": {
+    "en": "First French Empire",
+    "pt": "Primeiro Império Francês"
+  },
+  "peak": {
+    "year": 1812,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1804,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1815,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 1804, when the ruler was proclaimed emperor, and ends in 1815. It had already fallen once in 1814, but its ruler returned from exile and held power again for about a hundred days.",
+    "pt": "Começa em 1804, quando o governante foi proclamado imperador, e termina em 1815. Já tinha caído uma vez em 1814, mas o governante voltou do exílio e retomou o poder por cerca de cem dias."
+  },
+  "area": {
+    "km2": 868342,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Precise",
+  "continents": [
+    "Europe"
+  ],
+  "primaryContinent": "Europe",
+  "capital": {
+    "en": "Paris",
+    "pt": "Paris"
+  },
+  "language": {
+    "en": "French",
+    "pt": "Francês"
+  },
+  "religion": {
+    "en": "Catholicism",
+    "pt": "Catolicismo"
+  },
+  "religionNotes": {
+    "en": "An agreement with the pope made Catholicism the religion of most of the population, but not the official religion. Protestants and Jews were also recognised and protected by the state.",
+    "pt": "Um acordo com o papa definiu o catolicismo como religião da maioria da população, mas não como religião oficial. Protestantes e judeus também foram reconhecidos e protegidos pelo Estado."
+  },
+  "curiosities": [
+    {
+      "en": "It tried to ruin a rival island nation by banning the whole continent from trading with it.",
+      "pt": "Tentou arruinar uma nação insular rival proibindo todo o continente de comerciar com ela.",
+      "details": {
+        "en": "The Continental System, decreed in 1806, banned the countries under French rule or allied with France from trading with Britain, which Napoleon could not beat at sea after his defeat at Trafalgar. The blockade also hurt Europe's own economy and led to wars: Portugal refused to join, and Russia stopped enforcing it, which prompted the invasion of 1812.",
+        "pt": "O Bloqueio Continental, decretado em 1806, proibia os países sob domínio ou aliança francesa de comerciar com o Reino Unido, que Napoleão não conseguia vencer no mar desde a derrota em Trafalgar. O bloqueio também prejudicou a economia europeia e levou a guerras: Portugal se recusou a aderir, e a Rússia deixou de cumpri-lo, o que motivou a invasão de 1812."
+      }
+    },
+    {
+      "en": "Its invasion of a neighbour made that neighbour's royal court flee to South America in 1807.",
+      "pt": "Sua invasão a um país vizinho fez a corte real desse país fugir para a América do Sul em 1807.",
+      "details": {
+        "en": "In November 1807, General Junot's troops invaded Portugal, which had not joined the Continental System. The Prince Regent João, Queen Maria I and some 10,000 to 15,000 people sailed for Brazil under escort of the British navy, taking the government and the crown's treasures with them. The court stayed in Rio de Janeiro until 1821.",
+        "pt": "Em novembro de 1807, as tropas do general Junot invadiram Portugal, que não tinha aderido ao Bloqueio Continental. O príncipe regente dom João, a rainha dona Maria I e cerca de 10 a 15 mil pessoas embarcaram para o Brasil sob escolta da Marinha britânica, levando o governo e os tesouros da coroa. A corte ficou no Rio de Janeiro até 1821."
+      }
+    },
+    {
+      "en": "Its emperor died in exile on a remote island in the South Atlantic.",
+      "pt": "Seu imperador morreu exilado numa ilha remota no Atlântico Sul.",
+      "details": {
+        "en": "After Waterloo, the British sent Napoleon to Saint Helena, an island in the middle of the South Atlantic, almost 2,000 km from the coast of Africa. He spent his last six years there and died in 1821, probably of stomach cancer. In 1840 his remains were brought to Paris, and they now lie at Les Invalides.",
+        "pt": "Depois de Waterloo, os britânicos mandaram Napoleão para Santa Helena, uma ilha no meio do Atlântico Sul, a quase 2 mil km da costa da África. Ele viveu ali seus últimos seis anos e morreu em 1821, provavelmente de câncer no estômago. Em 1840, seus restos foram levados para Paris e estão hoje no Palácio dos Inválidos."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/First_French_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Primeiro_Império_Francês"
+  },
+  "aliases": [
+    "France",
+    "França",
+    "French Empire",
+    "Império Francês",
+    "Napoleonic Empire",
+    "Império Napoleônico",
+    "Napoleon",
+    "Napoleão",
+    "Napoleonic France",
+    "França Napoleônica"
+  ],
+  "summary": {
+    "en": "The regime created by Napoleon Bonaparte, who seized power in a coup in 1799 and crowned himself Emperor of the French in 1804. Through a string of victories he dominated most of Europe: he annexed lands in Italy, Germany and the Low Countries and put relatives and allies on the thrones of Spain, Naples and Holland. He spread the Civil Code and ideas of the French Revolution across the continent. The empire began to fall with the disastrous invasion of Russia in 1812 and ended with the defeat at Waterloo in 1815.",
+    "pt": "Regime criado por Napoleão Bonaparte, que chegou ao poder num golpe em 1799 e se coroou imperador dos franceses em 1804. Com uma série de vitórias, dominou a maior parte da Europa: anexou terras da Itália, da Alemanha e dos Países Baixos e pôs parentes e aliados nos tronos da Espanha, de Nápoles e da Holanda. Espalhou pelo continente o Código Civil e ideias da Revolução Francesa. Começou a cair com o desastre da invasão da Rússia, em 1812, e acabou com a derrota em Waterloo, em 1815."
+  },
+  "map": {
+    "parts": [
+      { "polity": "(First French Empire)", "year": 1812 },
+      { "draw": "remove", "ring": [[-10,44.5],[-1.78,43.39],[-1.45,43.27],[-1.38,43.05],[-0.75,42.95],[-0.3,42.82],[0.3,42.68],[0.68,42.85],[0.66,42.4],[0.45,41.8],[0.35,41.2],[0.5,40.52],[0.6,39.0],[-10,39.0]] },
+      { "draw": "remove", "ring": [[22,57],[40,57],[40,52.5],[22,52.5]] }
+    ]
+  }
+}

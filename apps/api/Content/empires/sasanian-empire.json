@@ -1,0 +1,114 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "sasanian-empire",
+  "name": {
+    "en": "Sasanian Empire",
+    "pt": "Império Sassânida"
+  },
+  "peak": {
+    "year": 623,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 224,
+    "precision": "Approximate"
+  },
+  "end": {
+    "year": 651,
+    "precision": "Approximate"
+  },
+  "durationNotes": {
+    "en": "It starts in 224, when a local ruler from the south of Iran overthrew the previous dynasty, and ends in 651, with the death of its last king while fleeing the Arab conquest.",
+    "pt": "Começa em 224, quando um governante local do sul do Irã derrubou a dinastia anterior, e termina em 651, com a morte do último rei enquanto fugia da conquista árabe."
+  },
+  "area": {
+    "km2": 4957246,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia",
+    "Africa"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Ctesiphon",
+    "pt": "Ctesifonte"
+  },
+  "language": {
+    "en": "Middle Persian (Pahlavi)",
+    "pt": "Persa médio (pálavi)"
+  },
+  "religion": {
+    "en": "Zoroastrianism",
+    "pt": "Zoroastrismo"
+  },
+  "religionNotes": {
+    "en": "It was the official faith, with a powerful priesthood. The empire also had large Christian and Jewish communities, and a new religion that spread as far as China was born within it.",
+    "pt": "Era a fé oficial, com um clero poderoso. O império também tinha grandes comunidades cristãs e judaicas, e dentro dele nasceu uma nova religião que se espalhou até a China."
+  },
+  "curiosities": [
+    {
+      "en": "The game that became chess arrived in its court from India, and words like \"checkmate\" come from its language.",
+      "pt": "O jogo que virou o xadrez chegou à sua corte vindo da Índia, e palavras como \"xeque-mate\" vêm da sua língua.",
+      "details": {
+        "en": "Chess was born in India as chaturanga and reached the Sasanian court in the 6th century, where it was called chatrang. A text in Middle Persian tells that an Indian king sent the game as a challenge to King Khosrow I. \"Check\" comes from \"shah\", king in Persian, and \"checkmate\" from \"shah mat\", roughly \"the king is helpless\".",
+        "pt": "O xadrez nasceu na Índia como chaturanga e chegou à corte sassânida no século VI, onde foi chamado de chatrang. Um texto em persa médio conta que um rei indiano mandou o jogo como desafio ao rei Cosroes I. \"Xeque\" vem de \"xá\", rei em persa, e \"xeque-mate\" vem de \"shah mat\", algo como \"o rei está indefeso\"."
+      }
+    },
+    {
+      "en": "It fell to the armies of the first caliphs, and its lands became the heart of the Islamic world in the east.",
+      "pt": "Caiu diante dos exércitos dos primeiros califas, e suas terras viraram o coração do mundo islâmico no leste.",
+      "details": {
+        "en": "Soon after a long war against Byzantium, which ended in 628, the Muslim Arabs beat the Sasanians at Qadisiyya, around 636, and at Nahavand, in 642. Iran became Muslim slowly, over centuries, but kept the Persian language, and cities such as Baghdad, founded near the old capital, became centres of the Islamic world.",
+        "pt": "Logo depois de uma longa guerra contra Bizâncio, que terminou em 628, os árabes muçulmanos venceram os sassânidas em Qadisiya, por volta de 636, e em Nahavand, em 642. O Irã se islamizou aos poucos, ao longo de séculos, mas manteve a língua persa, e cidades como Bagdá, fundada perto da antiga capital, viraram centros do mundo islâmico."
+      }
+    },
+    {
+      "en": "It was the last great Persian empire before Islam, and ruled from what is today Iran and Iraq.",
+      "pt": "Foi o último grande império persa antes do Islã, governando a partir do que hoje são o Irã e o Iraque.",
+      "details": {
+        "en": "The Sasanians saw themselves as heirs of the Achaemenids and called their realm Eranshahr, the \"empire of the Iranians\", the origin of the name Iran. The capital, Ctesiphon, stood on the Tigris, about 35 km from today's Baghdad, where the huge brick arch of the royal palace, the Taq Kasra, still stands.",
+        "pt": "Os sassânidas se viam como herdeiros dos aquemênidas e chamavam seu reino de Eranshahr, o \"império dos iranianos\", origem do nome Irã. A capital, Ctesifonte, ficava às margens do Tigre, a uns 35 km da atual Bagdá, onde ainda está de pé o enorme arco de tijolos do palácio real, o Taq Kasra."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Sasanian_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Sassânida"
+  },
+  "aliases": [
+    "Sassanid Empire",
+    "Sassanian Empire",
+    "Sasanid",
+    "Sassanid",
+    "Sassânidas",
+    "Sassanid Persia",
+    "Pérsia Sassânida",
+    "Neo-Persian Empire",
+    "Persian Empire",
+    "Império Persa",
+    "Persia",
+    "Pérsia",
+    "Eranshahr",
+    "Iran",
+    "Irã",
+    "Irão"
+  ],
+  "summary": {
+    "en": "The last great Persian empire before Islam, founded in 224 by Ardashir I, who overthrew the Parthians. It ruled from today's Iran and Iraq, with its capital at Ctesiphon, near modern Baghdad, and had Zoroastrianism as its official religion. For more than four centuries it rivalled Rome and then Byzantium, in almost constant wars over Mesopotamia and Armenia. At its height, under Khosrow II, it even occupied Egypt and Syria. Exhausted by that war, it fell to the Muslim Arabs within a few years, and its last king died in 651.",
+    "pt": "Último grande império persa antes do Islã, fundado em 224 por Ardashir I, que derrubou os partos. Governava a partir dos atuais Irã e Iraque, com capital em Ctesifonte, perto da atual Bagdá, e tinha o zoroastrismo como religião oficial. Por mais de quatro séculos rivalizou com Roma e depois com Bizâncio, em guerras quase constantes pela Mesopotâmia e pela Armênia. No auge, com Cosroes II, chegou a ocupar o Egito e a Síria. Esgotado por essa guerra, caiu diante dos árabes muçulmanos em poucos anos, e seu último rei morreu em 651."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Sasanian Empire",
+        "year": 623
+      },
+      {
+        "draw": "remove",
+        "ring": [[25,43],[40.6,43],[40.6,41.1],[40.2,40.3],[39.5,39.75],[38.5,39.6],[38.75,38.8],[38.35,38.35],[38.55,37.55],[37.6,37.65],[36.9,37.6],[36.3,37.4],[35.6,37.4],[34.8,37.3],[34.2,36.8],[33.9,36.3],[25,35.5]]
+      }
+    ]
+  }
+}

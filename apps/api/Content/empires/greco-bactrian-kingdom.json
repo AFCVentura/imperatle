@@ -1,0 +1,100 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "greco-bactrian-kingdom",
+  "name": {
+    "en": "Greco-Bactrian Kingdom",
+    "pt": "Reino Greco-Bactriano"
+  },
+  "peak": {
+    "year": -170,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": -256,
+    "precision": "Approximate"
+  },
+  "end": {
+    "year": -120,
+    "precision": "Approximate"
+  },
+  "durationNotes": {
+    "en": "It starts around 256 BC, when the Greek governor of the region, appointed by the Seleucid Empire, began to act independently, and ends around 120 BC, with the conquest by nomadic peoples from the north. The dates are uncertain because much of its history is known only from coins. The peak shown is 170 BC, after the conquest of lands in northern India, which soon afterwards broke away as kingdoms ruled by rival kings, the Indo-Greeks.",
+    "pt": "Começa por volta de 256 a.C., quando o governador grego da região, nomeado pelo Império Selêucida, passou a agir de forma independente, e termina por volta de 120 a.C., com a conquista por povos nômades vindos do norte. As datas são incertas porque boa parte da história é conhecida só pelas moedas. O auge escolhido é 170 a.C., depois da conquista de terras no norte da Índia, que pouco depois se separaram como reinos governados por reis rivais, os indo-gregos."
+  },
+  "area": {
+    "km2": 1360000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Balkh",
+    "pt": "Balkh"
+  },
+  "language": {
+    "en": "Greek (alongside local Iranian languages and, in the Indian lands, Prakrit)",
+    "pt": "Grego (ao lado de línguas iranianas locais e, nas terras indianas, do prácrito)"
+  },
+  "religion": {
+    "en": "Ancient Greek religion (polytheistic), alongside local cults",
+    "pt": "Religião grega antiga (politeísta), ao lado dos cultos locais"
+  },
+  "religionNotes": {
+    "en": "Coins showed Greek gods such as Zeus, Heracles and Apollo, but the temples in the cities followed local models, and deities of the region, such as that of the river Oxus, also received offerings from Greeks. In the lands conquered in India, some kings began to use Buddhist and Hindu symbols on their coins.",
+    "pt": "As moedas mostravam deuses gregos como Zeus, Héracles e Apolo, mas os templos das cidades seguiam modelos locais, e divindades da região, como a do rio Oxus, também recebiam oferendas de gregos. Nas terras conquistadas na Índia, alguns reis passaram a usar símbolos budistas e hindus nas moedas."
+  },
+  "curiosities": [
+    {
+      "en": "One of its kings minted coins with the oldest known images of the Hindu gods Krishna and Balarama.",
+      "pt": "Um de seus reis cunhou moedas com as imagens mais antigas conhecidas dos deuses hindus Krishna e Balarama.",
+      "details": {
+        "en": "Around 180 BC, King Agathocles issued coins with inscriptions in Greek and in an Indian script, showing the two divine brothers with their attributes: Krishna with a wheel and a conch, and Balarama with a plough. The coins were found at Ai-Khanoum in 1970. They show how the Greek kings adapted their propaganda to their Indian subjects.",
+        "pt": "Por volta de 180 a.C., o rei Agátocles emitiu moedas com inscrições em grego e numa escrita indiana, mostrando os dois irmãos divinos com seus atributos: Krishna com uma roda e uma concha, e Balarama com um arado. As moedas foram encontradas em Ai-Khanoum, em 1970. Elas mostram como os reis gregos adaptavam a sua propaganda aos súditos indianos."
+      }
+    },
+    {
+      "en": "Ancient authors called it the kingdom \"of a thousand cities\".",
+      "pt": "Autores antigos o chamavam de reino \"das mil cidades\".",
+      "details": {
+        "en": "The Roman historian Justin, summarising an older work, speaks of the governor \"of the thousand cities\" of the region. The number is an exaggeration, but the area was rich, with irrigated oases, gold and trade routes between India, Persia and the steppes. Excavations have found planned and fortified cities, and the region was seen as one of the most prosperous in the East.",
+        "pt": "O historiador romano Justino, resumindo uma obra mais antiga, fala do governador \"das mil cidades\" da região. O número é um exagero, mas a área era rica, com oásis irrigados, ouro e rotas de comércio entre a Índia, a Pérsia e as estepes. Escavações encontraram cidades planejadas e fortificadas, e a região era vista como uma das mais prósperas do Oriente."
+      }
+    },
+    {
+      "en": "It was founded by Greeks who stayed in Central Asia after the conquests of Alexander the Great.",
+      "pt": "Foi fundado por gregos que ficaram na Ásia Central depois das conquistas de Alexandre, o Grande.",
+      "details": {
+        "en": "After Alexander's death, the region passed to the Seleucid Empire, which sent Greek settlers to found cities. Around 256 BC, the governor Diodotus broke with the Seleucids, and the region became an independent kingdom, ruled by Greeks thousands of kilometres from Greece.",
+        "pt": "Depois da morte de Alexandre, a região passou para o Império Selêucida, que enviou colonos gregos para fundar cidades. Por volta de 256 a.C., o governador Diodoto rompeu com os selêucidas, e a região virou um reino independente, governado por gregos a milhares de quilômetros da Grécia."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Greco-Bactrian_Kingdom",
+    "pt": "https://pt.wikipedia.org/wiki/Reino_Greco-Báctrio"
+  },
+  "aliases": [
+    "Graeco-Bactrian Kingdom",
+    "Reino Greco-Báctrio",
+    "Bactria",
+    "Báctria",
+    "Bactriana",
+    "Greco-Bactrians",
+    "Greco-Bactrianos"
+  ],
+  "summary": {
+    "en": "A kingdom formed around 256 BC by Greeks who governed Bactria, the region between the Hindu Kush and the Amu Darya river, in today's Afghanistan, and who broke away from the Seleucid Empire. It was one of the most distant points of the Greek world that arose from the conquests of Alexander the Great, and it combined cities with Greek-style theatres and gymnasiums with Persian and Central Asian traditions. Under Euthydemus and his son Demetrius, it withstood a Seleucid siege and expanded into northern India around 180 BC. Later, disputes between rival kings divided the territory, and the Indian lands formed separate Indo-Greek kingdoms. Around 120 BC, nomadic peoples from the north, such as the Yuezhi and the Saka, conquered the region.",
+    "pt": "Reino formado por volta de 256 a.C. por gregos que governavam a Báctria, região entre o Hindu Kush e o rio Amu Darya, no atual Afeganistão, e que se separaram do Império Selêucida. Era um dos pontos mais distantes do mundo grego surgido das conquistas de Alexandre, o Grande, e combinava cidades com teatros e ginásios ao estilo grego com tradições persas e da Ásia Central. Sob Eutidemo e seu filho Demétrio, resistiu a um cerco selêucida e se expandiu para o norte da Índia por volta de 180 a.C. Depois, disputas entre reis rivais dividiram o território, e as terras indianas formaram reinos indo-gregos separados. Por volta de 120 a.C., povos nômades vindos do norte, como os iuezhis e os sakas, conquistaram a região."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Greco-Bactrian Kingdom",
+        "year": -170
+      }
+    ]
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "first-babylonian-empire",
+  "name": {
+    "en": "First Babylonian Empire",
+    "pt": "Primeiro Império Babilônico"
+  },
+  "peak": {
+    "year": -1750,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": -1894,
+    "precision": "Approximate"
+  },
+  "end": {
+    "year": -1595,
+    "precision": "Approximate"
+  },
+  "durationNotes": {
+    "en": "Dates follow the middle chronology, the most widely used; other chronologies shift them by up to about 60 years. It starts around 1894 BC, when the dynasty was founded in the city, which stayed a small city-state until its most famous king conquered its neighbours from 1763 BC. It ends in 1595 BC, when the capital was sacked by invaders from Anatolia.",
+    "pt": "As datas seguem a cronologia média, a mais usada; outras cronologias deslocam tudo em até cerca de 60 anos. Começa por volta de 1894 a.C., com a fundação da dinastia na cidade, que continuou uma pequena cidade-estado até seu rei mais famoso conquistar os vizinhos a partir de 1763 a.C. Termina em 1595 a.C., quando a capital foi saqueada por invasores vindos da Anatólia."
+  },
+  "area": {
+    "km2": 225055,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Speculative",
+  "continents": [
+    "Asia"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Babylon",
+    "pt": "Babilônia"
+  },
+  "language": {
+    "en": "Akkadian (Sumerian survived as a scholarly language)",
+    "pt": "Acadiano (o sumério continuava como língua erudita)"
+  },
+  "religion": {
+    "en": "Mesopotamian polytheism",
+    "pt": "Politeísmo mesopotâmico"
+  },
+  "religionNotes": {
+    "en": "Each city had its own protector god and temple. The capital's god rose to prominence in this period and later became the main god of the whole region.",
+    "pt": "Cada cidade tinha seu deus protetor e seu templo. O deus da capital ganhou destaque nesse período e mais tarde se tornou o principal deus de toda a região."
+  },
+  "curiosities": [
+    {
+      "en": "One of its clay tablets shows that its mathematicians knew the \"Pythagorean theorem\" more than a thousand years before Pythagoras.",
+      "pt": "Uma de suas tábuas de argila mostra que seus matemáticos conheciam o \"teorema de Pitágoras\" mais de mil anos antes de Pitágoras.",
+      "details": {
+        "en": "The tablet Plimpton 322, from around 1800 BCE and now at Columbia University in New York, holds a table of numbers that form Pythagorean triples, such as 3, 4 and 5, where the square of one side plus the square of the other equals the square of the hypotenuse. The Babylonians counted in base 60, a legacy that survives in the 60 minutes of an hour and the 360 degrees of a circle.",
+        "pt": "A tábua Plimpton 322, de cerca de 1800 a.C. e hoje na Universidade Columbia, em Nova York, traz uma tabela de números que formam ternos pitagóricos, como 3, 4 e 5, em que o quadrado de um lado mais o do outro é igual ao quadrado da hipotenusa. Os babilônios contavam na base 60, herança que sobrevive nos 60 minutos da hora e nos 360 graus do círculo."
+      }
+    },
+    {
+      "en": "Its law code became famous for the rule of \"an eye for an eye, a tooth for a tooth\".",
+      "pt": "Seu código de leis ficou famoso pela regra do \"olho por olho, dente por dente\".",
+      "details": {
+        "en": "The Code of Hammurabi has 282 laws carved on a basalt stele more than 2 metres tall, found in 1901 in Susa, in Iran, and now in the Louvre. It set punishments equal to the harm done, an eye for an eye and a tooth for a tooth, but only between people of the same class: injuring a slave or a commoner cost only a fine.",
+        "pt": "O Código de Hamurabi tem 282 leis gravadas numa estela de basalto com mais de 2 metros de altura, achada em 1901 em Susa, no Irã, e hoje no Museu do Louvre. Previa castigos iguais ao dano, olho por olho e dente por dente, mas só entre pessoas da mesma classe: ferir um escravo ou um plebeu custava apenas uma multa."
+      }
+    },
+    {
+      "en": "Its capital appears in the Bible, in the book of Genesis, as the city where people built a tower to reach the sky.",
+      "pt": "Sua capital aparece na Bíblia, no livro do Gênesis, como a cidade onde construíram uma torre para alcançar o céu.",
+      "details": {
+        "en": "The story of the Tower of Babel, in Genesis, is set in Babel, the Hebrew name for Babylon. Many historians think it was inspired by the city's great ziggurat, Etemenanki, rebuilt centuries later by Nebuchadnezzar II. In the story, God confuses the builders' languages to stop the tower from reaching heaven.",
+        "pt": "O relato da Torre de Babel, no Gênesis, se passa em Babel, o nome hebraico de Babilônia. Muitos historiadores acham que a história foi inspirada no grande zigurate da cidade, o Etemenanki, reconstruído séculos depois por Nabucodonosor II. No relato, Deus confunde as línguas dos construtores para impedir que a torre chegue ao céu."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Old_Babylonian_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Imp%C3%A9rio_Paleobabil%C3%B4nico"
+  },
+  "aliases": [
+    "Babylon",
+    "Babilônia",
+    "Babylonia",
+    "Babylonian Empire",
+    "Império Babilônico",
+    "Old Babylonian Empire",
+    "Império Paleobabilônico",
+    "Paleobabilônico",
+    "Mesopotamia",
+    "Mesopotâmia",
+    "Iraq",
+    "Iraque"
+  ],
+  "summary": {
+    "en": "A kingdom in Mesopotamia, in today's Iraq, ruled by an Amorite dynasty that made the city of Babylon its capital around 1894 BCE. It was just one of several rival cities until the reign of Hammurabi, who between 1792 and 1750 BCE defeated neighbouring kingdoms such as Larsa and Mari and united southern and central Mesopotamia. His law code and its tablets of mathematics and astronomy are among the best-known records of Antiquity. It shrank after him and ended in 1595 BCE, when the Hittites sacked the city.",
+    "pt": "Reino da Mesopotâmia, no atual Iraque, governado por uma dinastia amorita que fez da cidade de Babilônia sua capital por volta de 1894 a.C. Era só uma entre várias cidades rivais até o reinado de Hamurabi, que entre 1792 e 1750 a.C. venceu reinos vizinhos, como Larsa e Mari, e unificou o sul e o centro da Mesopotâmia. Seu código de leis e suas tábuas de matemática e astronomia estão entre os registros mais famosos da Antiguidade. Encolheu depois dele e acabou em 1595 a.C., quando os hititas saquearam a cidade."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Babylonia",
+        "year": -1400
+      }
+    ]
+  }
+}

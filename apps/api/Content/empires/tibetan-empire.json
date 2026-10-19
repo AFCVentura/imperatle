@@ -1,0 +1,110 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "tibetan-empire",
+  "name": {
+    "en": "Tibetan Empire",
+    "pt": "Império Tibetano"
+  },
+  "peak": {
+    "year": 800,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 618,
+    "precision": "Approximate"
+  },
+  "end": {
+    "year": 842,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts around 618, when the founder took the throne and completed the union of the clans of the plateau, and ends in 842, when the emperor's assassination led to a dispute between heirs that split the territory. The peak shown is 800, when it already controlled the Hexi Corridor, taken from the Tang dynasty. The map leaves out Khotan and the cities of the Tarim Basin, where local rulers stayed in power under supervision, as well as the lands further north, which changed hands several times in the wars against the Uyghurs.",
+    "pt": "Começa por volta de 618, quando o fundador assumiu o trono e completou a união dos clãs do planalto, e termina em 842, quando o assassinato do imperador levou a uma disputa entre herdeiros que dividiu o território. O auge escolhido é 800, quando já controlava o corredor de Hexi, tomado da dinastia Tang. O mapa não inclui Khotan e as cidades da Bacia do Tarim, onde governantes locais continuaram no poder sob supervisão, nem as terras mais ao norte, que trocaram de mãos várias vezes nas guerras contra os uigures."
+  },
+  "area": {
+    "km2": 2700000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Lhasa (although the court spent much of its time in travelling camps)",
+    "pt": "Lhasa (embora a corte vivesse boa parte do tempo em acampamentos itinerantes)"
+  },
+  "language": {
+    "en": "Old Tibetan",
+    "pt": "Tibetano antigo"
+  },
+  "religion": {
+    "en": "Traditional Tibetan religion, later Buddhism",
+    "pt": "Religião tradicional tibetana, depois budismo"
+  },
+  "religionNotes": {
+    "en": "The first kings were seen as descendants of deities who came down from the sky, and the traditional religion had rituals performed by court priests. Buddhism arrived in the 7th century and became the official religion around 779, when the first monastery was founded. The rivalry between nobles tied to the two traditions continued until the end of the empire.",
+    "pt": "Os primeiros reis eram vistos como descendentes de divindades que desceram do céu, e a religião tradicional tinha rituais feitos por sacerdotes da corte. O budismo chegou no século VII e virou religião oficial por volta de 779, quando foi fundado o primeiro mosteiro. A disputa entre os nobres ligados às duas tradições continuou até o fim do império."
+  },
+  "curiosities": [
+    {
+      "en": "The script it created from an Indian alphabet is still in use today, with few changes.",
+      "pt": "A escrita que criou a partir de um alfabeto indiano é usada até hoje, com poucas mudanças.",
+      "details": {
+        "en": "According to tradition, the king sent a minister, Thonmi Sambhota, to study in India, and he came back with an alphabet adapted from the script used there. The script was used to translate Buddhist texts, record laws and write court chronicles. More than 1,300 years later, it is still used for Tibetan and for neighbouring languages, such as Dzongkha, the official language of Bhutan.",
+        "pt": "Segundo a tradição, o rei enviou um ministro, Thonmi Sambhota, para estudar na Índia, e ele voltou com um alfabeto adaptado da escrita usada lá. A escrita serviu para traduzir textos budistas, registrar leis e escrever crônicas da corte. Mais de 1.300 anos depois, ela continua sendo usada para o tibetano e para línguas vizinhas, como o dzongkha, a língua oficial do Butão."
+      }
+    },
+    {
+      "en": "Its founder built a palace on the hill where the Potala Palace stands today.",
+      "pt": "Seu fundador construiu um palácio no morro onde hoje fica o Palácio de Potala.",
+      "details": {
+        "en": "According to tradition, the king built a fortress on the Red Hill, in Lhasa, in the 7th century. A thousand years later, in the 17th century, the fifth Dalai Lama built the Potala Palace on the same spot, with more than a thousand rooms, and it was the seat of government until 1959. Two rooms of the palace are said to be remains of the original building.",
+        "pt": "Segundo a tradição, o rei ergueu uma fortaleza no Morro Vermelho, em Lhasa, no século VII. Mil anos depois, no século XVII, o quinto Dalai Lama construiu no mesmo lugar o Palácio de Potala, com mais de mil cômodos, que foi sede do governo até 1959. Duas salas do palácio seriam ainda restos da construção original."
+      }
+    },
+    {
+      "en": "Its territory lay on the highest plateau in the world, with an average altitude of more than 4,000 metres.",
+      "pt": "Seu território ficava no planalto mais alto do mundo, com altitude média acima de 4 mil metros.",
+      "details": {
+        "en": "The plateau, surrounded by the Himalayas to the south and by other mountain ranges to the north and west, is called the \"roof of the world\". The thin air and the cold made life hard for foreign armies, which helped the empire hold out against its enemies. At the same time, the horsemen of the plateau came down to fight on the plains of China and Central Asia.",
+        "pt": "O planalto, cercado pelo Himalaia ao sul e por outras cordilheiras ao norte e oeste, é chamado de \"teto do mundo\". O ar rarefeito e o frio dificultavam a vida de exércitos estrangeiros, o que ajudou o império a resistir aos inimigos. Ao mesmo tempo, os cavaleiros do planalto desciam para lutar nas planícies da China e da Ásia Central."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Tibetan_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Tibetano"
+  },
+  "aliases": [
+    "Tibet",
+    "Tibete",
+    "Tubo",
+    "Tufan",
+    "Bod",
+    "Tibetan Kingdom",
+    "Reino Tibetano",
+    "Yarlung dynasty",
+    "Dinastia Yarlung"
+  ],
+  "summary": {
+    "en": "An empire formed in the early 7th century, when Songtsen Gampo united the peoples of the Tibetan Plateau and made Lhasa its centre. According to tradition, he married princesses from Nepal and China and had the Tibetan script created from an Indian alphabet. In the 8th and 9th centuries, the empire competed with the Tang dynasty, the Uyghurs and the Arabs for control of Central Asia and the Silk Road, and it even occupied the Chinese capital, Chang'an, for a few days in 763. Under Trisong Detsen, Buddhism became the official religion. In 821, a peace treaty with China fixed the borders between the two. In 842, the assassination of Emperor Langdarma led to a war of succession, and the empire split into several local kingdoms.",
+    "pt": "Império formado no início do século VII, quando Songtsen Gampo uniu os povos do planalto tibetano e fez de Lhasa o seu centro. Segundo a tradição, ele se casou com princesas do Nepal e da China e mandou criar a escrita tibetana a partir de um alfabeto indiano. Nos séculos VIII e IX, o império disputou com a dinastia Tang, com os uigures e com os árabes o controle da Ásia Central e da Rota da Seda, e chegou a ocupar por alguns dias a capital chinesa, Chang'an, em 763. Sob Trisong Detsen, o budismo virou religião oficial. Em 821, um tratado de paz com a China fixou as fronteiras entre os dois. Em 842, o assassinato do imperador Langdarma levou a uma guerra de sucessão, e o império se dividiu em vários reinos locais."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Tibetan Empire",
+        "year": 800
+      },
+      {
+        "draw": "remove",
+        "ring": [[73.588,39.376],[73.779,39.413],[74.025,39.49],[74.329,39.607],[74.689,39.765],[75.107,39.963],[75.472,40.124],[75.785,40.248],[76.045,40.335],[76.252,40.384],[76.487,40.481],[76.751,40.624],[77.043,40.814],[77.364,41.051],[77.711,41.235],[78.084,41.367],[78.483,41.445],[78.908,41.47],[79.344,41.508],[79.792,41.558],[80.251,41.621],[80.722,41.696],[81.144,41.775],[81.517,41.856],[81.84,41.941],[82.115,42.03],[82.382,42.099],[82.643,42.149],[82.896,42.181],[83.143,42.194],[83.421,42.244],[83.729,42.333],[84.069,42.459],[84.441,42.624],[84.888,42.792],[85.41,42.963],[86.008,43.138],[86.683,43.317],[87.314,43.457],[87.902,43.559],[88.446,43.623],[88.945,43.649],[89.415,43.69],[89.856,43.748],[90.267,43.822],[90.65,43.911],[90.996,43.998],[91.304,44.082],[91.576,44.162],[91.81,44.239],[92.002,44.323],[92.153,44.413],[92.262,44.51],[92.329,44.613],[92.367,44.72],[92.376,44.83],[92.355,44.943],[92.304,45.06],[92.199,45.19],[92.039,45.333],[91.824,45.489],[91.553,45.659],[90.964,45.855],[90.055,46.078],[88.824,46.327],[87.268,46.604],[85.628,46.815],[83.905,46.961],[82.103,47.04],[80.223,47.054],[78.72,47.057],[77.593,47.05],[76.844,47.034],[76.471,47.007],[76.051,46.951],[75.584,46.865],[75.07,46.749],[74.51,46.604],[73.931,46.419],[73.333,46.196],[72.717,45.934],[72.084,45.633],[71.585,45.382],[71.219,45.18],[70.985,45.028],[70.883,44.924],[70.746,44.72],[70.574,44.416],[70.368,44.014],[70.127,43.514],[69.916,43.043],[69.734,42.598],[69.582,42.181],[69.459,41.79],[69.391,41.335],[69.377,40.817],[69.416,40.235],[69.507,39.592],[69.589,39.09],[69.662,38.728],[69.729,38.505],[69.789,38.419],[70.046,38.419],[70.503,38.505],[71.158,38.676],[72.014,38.933],[72.705,39.136],[73.23,39.284]]
+      },
+      {
+        "draw": "remove",
+        "ring": [[90.497,43.419],[91.828,43.24],[92.842,43.18],[93.54,43.237],[93.924,43.412],[93.995,43.706],[93.885,43.969],[93.596,44.201],[93.124,44.4],[92.472,44.568],[91.784,44.72],[91.061,44.856],[90.303,44.976],[89.51,45.079],[88.926,45.06],[88.551,44.917],[88.385,44.652],[88.429,44.265],[88.797,43.931],[89.486,43.649]]
+      }
+    ]
+  }
+}

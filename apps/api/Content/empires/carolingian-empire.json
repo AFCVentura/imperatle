@@ -1,0 +1,127 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "carolingian-empire",
+  "name": {
+    "en": "Carolingian Empire",
+    "pt": "Império Carolíngio"
+  },
+  "peak": {
+    "year": 814,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 800,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 888,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 800, when the king was crowned emperor by the pope in Rome, and ends in 888, with the death of the last ruler to bring all the parts together, after which the territory split for good into separate kingdoms. The peak shown is 814, the year the first emperor died. The map leaves out Rome and the pope's lands, which were under imperial protection but ruled by the pope himself, as well as the Duchy of Benevento and the Slavic peoples to the east, who paid tribute but kept their own rulers.",
+    "pt": "Começa em 800, quando o rei foi coroado imperador pelo papa em Roma, e termina em 888, com a morte do último governante a reunir todas as partes, depois da qual o território se dividiu de vez em reinos separados. O auge escolhido é 814, ano da morte do primeiro imperador. O mapa não inclui Roma e as terras do papa, que ficavam sob proteção imperial mas eram governadas pelo próprio papa, nem o ducado de Benevento e os povos eslavos a leste, que pagavam tributo mas mantinham governantes próprios."
+  },
+  "area": {
+    "km2": 1300000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Europe"
+  ],
+  "primaryContinent": "Europe",
+  "capital": {
+    "en": "Aachen",
+    "pt": "Aachen"
+  },
+  "language": {
+    "en": "Latin (and Germanic and Romance dialects spoken by the people)",
+    "pt": "Latim (e dialetos germânicos e românicos falados pelo povo)"
+  },
+  "religion": {
+    "en": "Catholicism",
+    "pt": "Catolicismo"
+  },
+  "religionNotes": {
+    "en": "The emperor ruled in alliance with the pope and saw it as his mission to protect and spread the faith. In the conquest of Saxony, baptism was imposed by force, and one law even set the death penalty for those who refused it. Monasteries were centres of teaching, book copying and land administration.",
+    "pt": "O imperador governava em aliança com o papa e via como sua missão proteger e espalhar a fé. Na conquista da Saxônia, o batismo foi imposto à força, e uma lei chegou a prever pena de morte para quem recusasse. Os mosteiros eram centros de ensino, de cópia de livros e de administração das terras."
+  },
+  "curiosities": [
+    {
+      "en": "Its first emperor probably never learned to write, although he tried in his old age.",
+      "pt": "Seu primeiro imperador provavelmente nunca aprendeu a escrever, embora tenha tentado na velhice.",
+      "details": {
+        "en": "His biographer, Einhard, says he kept tablets and sheets under his pillow to practise his letters in his spare time, but that he started too late. Even so, he spoke Latin, understood Greek and gathered at court the greatest scholars of the time, such as the English monk Alcuin of York.",
+        "pt": "Seu biógrafo, Eginhardo, conta que ele guardava tábuas e folhas debaixo do travesseiro para treinar as letras nas horas vagas, mas que começou tarde demais. Mesmo assim, ele falava latim, entendia grego e reuniu na corte os maiores sábios da época, como o monge inglês Alcuíno de York."
+      }
+    },
+    {
+      "en": "The division of the territory between three grandsons of the founder gave rise, in the long run, to France and Germany.",
+      "pt": "A divisão do território entre três netos do fundador deu origem, a longo prazo, à França e à Alemanha.",
+      "details": {
+        "en": "Under the Treaty of Verdun, in 843, the western part went to Charles the Bald and became the basis of France. The eastern part went to Louis the German and gave rise to Germany. The middle strip, with Italy and the lands between the other two, went to Lothair and ended up disputed by its neighbours for centuries, like the region of Alsace and Lorraine.",
+        "pt": "Pelo Tratado de Verdun, de 843, a parte oeste ficou com Carlos, o Calvo, e virou a base da França. A parte leste ficou com Luís, o Germânico, e deu origem à Alemanha. A faixa do meio, com a Itália e as terras entre os dois, ficou com Lotário e acabou disputada pelos vizinhos durante séculos, como a região da Alsácia e da Lorena."
+      }
+    },
+    {
+      "en": "Its founder is called the \"father of Europe\".",
+      "pt": "Seu fundador é chamado de \"pai da Europa\".",
+      "details": {
+        "en": "A poem of the time already called Charlemagne the \"father of Europe\", for having brought under one government much of the lands that today make up France, Germany, Italy, Belgium, the Netherlands, Switzerland and Austria. Today, one of the most important prizes of the European Union, awarded in Aachen, bears his name.",
+        "pt": "Um poema da época já chamava Carlos Magno de \"pai da Europa\", por ter reunido sob um só governo boa parte das terras que hoje formam a França, a Alemanha, a Itália, a Bélgica, a Holanda, a Suíça e a Áustria. Hoje, um dos prêmios mais importantes da União Europeia, entregue em Aachen, leva o nome dele."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Carolingian_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Carolíngio"
+  },
+  "aliases": [
+    "Francia",
+    "Frância",
+    "Frankish Empire",
+    "Império Franco",
+    "Kingdom of the Franks",
+    "Reino dos Francos",
+    "Franks",
+    "Francos",
+    "Empire of Charlemagne",
+    "Império de Carlos Magno"
+  ],
+  "summary": {
+    "en": "An empire formed when Charlemagne, king of the Franks, was crowned emperor by Pope Leo III in Rome, on Christmas Day in the year 800. Heir to a kingdom that already ruled much of today's France, he conquered the Lombard kingdom in Italy, Saxony, Bavaria and the lands of the Avars, bringing most of Western and Central Europe under one government for the first time since the Roman Empire. His court at Aachen promoted a revival of learning and of the copying of ancient books, known as the Carolingian Renaissance. After the death of his son Louis the Pious, in 840, his grandsons fought over the inheritance, and the Treaty of Verdun, in 843, divided the empire into three parts, which in the long run gave rise to France and Germany. Unity was briefly restored by Charles the Fat, but disappeared for good in 888.",
+    "pt": "Império formado quando Carlos Magno, rei dos francos, foi coroado imperador pelo papa Leão III em Roma, no Natal do ano 800. Herdeiro de um reino que já dominava boa parte da atual França, ele conquistou o reino lombardo, na Itália, a Saxônia, a Baviera e as terras dos ávaros, reunindo a maior parte da Europa Ocidental e Central sob um só governo pela primeira vez desde o Império Romano. Sua corte em Aachen promoveu um renascimento do ensino e da cópia de livros antigos, conhecido como Renascimento Carolíngio. Depois da morte de seu filho Luís, o Piedoso, em 840, os netos disputaram a herança, e o Tratado de Verdun, de 843, dividiu o império em três partes, que a longo prazo deram origem à França e à Alemanha. A unidade foi restaurada brevemente por Carlos, o Gordo, mas desapareceu de vez em 888."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "(Carolingian Empire)",
+        "year": 814
+      },
+      {
+        "draw": "add",
+        "ring": [[0.6,42.9],[1.5,42.85],[2.5,42.7],[3.4,42.6],[3.4,41.9],[2.8,41.6],[2.1,41.25],[1.75,41.45],[1.45,41.75],[1.15,41.95],[0.85,42.2],[0.6,42.5]]
+      },
+      {
+        "draw": "add",
+        "ring": [[2.882,42.03],[3.007,41.98],[3.157,41.942],[3.332,41.916],[3.531,41.904],[3.754,41.904],[3.967,41.92],[4.169,41.951],[4.36,41.999],[4.541,42.062],[4.753,42.147],[4.995,42.255],[5.269,42.385],[5.575,42.538],[5.918,42.681],[6.3,42.815],[6.719,42.939],[7.177,43.054],[7.565,43.158],[7.882,43.251],[8.129,43.333],[8.305,43.403],[8.5,43.453],[8.713,43.482],[8.945,43.49],[9.196,43.477],[9.429,43.443],[9.646,43.389],[9.845,43.313],[10.027,43.217],[10.185,43.109],[10.32,42.987],[10.432,42.853],[10.521,42.707],[10.601,42.586],[10.674,42.49],[10.738,42.42],[10.795,42.376],[10.855,42.336],[10.916,42.301],[10.98,42.271],[11.045,42.246],[11.119,42.227],[11.202,42.214],[11.293,42.208],[11.392,42.208],[11.494,42.227],[11.599,42.265],[11.707,42.322],[11.817,42.398],[11.901,42.492],[11.958,42.603],[11.989,42.732],[11.994,42.879],[11.977,43.022],[11.94,43.163],[11.882,43.301],[11.803,43.435],[11.745,43.543],[11.71,43.623],[11.697,43.676],[11.706,43.702],[11.745,43.72],[11.812,43.729],[11.908,43.731],[12.034,43.724],[12.146,43.708],[12.246,43.683],[12.332,43.647],[12.406,43.602],[12.506,43.517],[12.631,43.392],[12.781,43.227],[12.957,43.022],[13.129,42.842],[13.297,42.686],[13.462,42.554],[13.624,42.446],[13.78,42.357],[13.93,42.287],[14.075,42.236],[14.214,42.205],[14.352,42.181],[14.488,42.165],[14.622,42.157],[14.755,42.157],[14.876,42.17],[14.985,42.195],[15.082,42.233],[15.167,42.284],[15.235,42.349],[15.285,42.428],[15.317,42.522],[15.331,42.63],[15.317,42.748],[15.274,42.876],[15.202,43.013],[15.102,43.16],[15.012,43.281],[14.934,43.378],[14.866,43.448],[14.81,43.493],[14.816,43.527],[14.884,43.549],[15.014,43.56],[15.207,43.56],[15.392,43.536],[15.569,43.488],[15.738,43.416],[15.899,43.32],[16.053,43.245],[16.2,43.19],[16.34,43.157],[16.473,43.144],[16.55,43.145],[16.572,43.161],[16.538,43.192],[16.449,43.237],[16.383,43.277],[16.339,43.312],[16.318,43.342],[16.32,43.368],[16.338,43.392],[16.373,43.414],[16.424,43.435],[16.492,43.455],[16.548,43.475],[16.591,43.498],[16.622,43.522],[16.64,43.548],[16.653,43.58],[16.66,43.618],[16.66,43.663],[16.655,43.715],[16.64,43.765],[16.614,43.813],[16.577,43.859],[16.529,43.905],[16.467,43.95],[16.391,43.995],[16.299,44.04],[16.193,44.085],[16.074,44.164],[15.942,44.277],[15.797,44.425],[15.64,44.606],[15.509,44.746],[15.405,44.843],[15.328,44.899],[15.278,44.912],[15.241,44.933],[15.218,44.962],[15.207,45],[15.21,45.045],[15.194,45.105],[15.16,45.181],[15.108,45.27],[15.038,45.375],[14.939,45.499],[14.811,45.643],[14.654,45.808],[14.469,45.992],[14.233,46.176],[13.949,46.361],[13.614,46.546],[13.229,46.732],[12.884,46.885],[12.581,47.004],[12.318,47.091],[12.097,47.144],[11.897,47.201],[11.719,47.261],[11.562,47.325],[11.427,47.391],[11.271,47.448],[11.096,47.495],[10.902,47.532],[10.687,47.559],[10.477,47.579],[10.27,47.592],[10.068,47.599],[9.87,47.599],[9.62,47.592],[9.318,47.579],[8.965,47.559],[8.56,47.532],[8.142,47.492],[7.711,47.438],[7.268,47.371],[6.813,47.291],[6.294,47.156],[5.712,46.966],[5.069,46.722],[4.366,46.424],[3.806,46.181],[3.39,45.993],[3.115,45.86],[2.982,45.781],[2.857,45.689],[2.742,45.584],[2.635,45.466],[2.538,45.336],[2.436,45.164],[2.33,44.952],[2.218,44.7],[2.103,44.408],[2.002,44.171],[1.917,43.987],[1.846,43.856],[1.79,43.779],[1.811,43.623],[1.907,43.389],[2.079,43.077],[2.326,42.687],[2.541,42.384],[2.727,42.165]]
+      },
+      {
+        "draw": "remove",
+        "ring": [[16.58,43.274],[16.51,43.274],[16.455,43.267],[16.416,43.251],[16.392,43.229],[16.383,43.198],[16.38,43.172],[16.382,43.15],[16.389,43.131],[16.403,43.117],[16.429,43.106],[16.469,43.098],[16.523,43.093],[16.59,43.091],[16.643,43.092],[16.68,43.094],[16.703,43.099],[16.71,43.106],[16.716,43.116],[16.72,43.127],[16.723,43.141],[16.724,43.157],[16.722,43.175],[16.717,43.195],[16.71,43.216],[16.7,43.239],[16.675,43.257],[16.635,43.268]]
+      },
+      {
+        "draw": "add",
+        "ring": [[-1.251,46.088],[-1.467,46.088],[-1.632,46.086],[-1.746,46.082],[-1.809,46.077],[-1.82,46.069],[-1.831,46.055],[-1.84,46.035],[-1.848,46.009],[-1.855,45.975],[-1.86,45.936],[-1.862,45.89],[-1.86,45.838],[-1.857,45.779],[-1.851,45.729],[-1.845,45.688],[-1.838,45.656],[-1.829,45.632],[-1.809,45.605],[-1.777,45.576],[-1.734,45.544],[-1.68,45.509],[-1.599,45.479],[-1.493,45.454],[-1.359,45.433],[-1.2,45.416],[-1.046,45.403],[-0.898,45.394],[-0.755,45.389],[-0.618,45.387],[-0.513,45.389],[-0.44,45.394],[-0.399,45.403],[-0.39,45.416],[-0.384,45.438],[-0.381,45.469],[-0.381,45.509],[-0.384,45.559],[-0.42,45.624],[-0.488,45.705],[-0.59,45.803],[-0.724,45.917],[-0.88,46.002],[-1.055,46.059]]
+      },
+      {
+        "draw": "add",
+        "ring": [[-0.792,44.627],[-0.897,44.638],[-0.993,44.652],[-1.081,44.669],[-1.161,44.689],[-1.233,44.713],[-1.296,44.728],[-1.352,44.735],[-1.4,44.734],[-1.439,44.725],[-1.491,44.716],[-1.555,44.707],[-1.632,44.698],[-1.72,44.689],[-1.792,44.68],[-1.847,44.671],[-1.884,44.662],[-1.905,44.653],[-1.928,44.639],[-1.952,44.62],[-1.979,44.596],[-2.007,44.567],[-2.028,44.517],[-2.039,44.447],[-2.043,44.355],[-2.038,44.244],[-2.032,44.154],[-2.025,44.088],[-2.018,44.044],[-2.009,44.022],[-1.991,43.992],[-1.963,43.955],[-1.925,43.909],[-1.877,43.855],[-1.836,43.81],[-1.802,43.774],[-1.775,43.747],[-1.756,43.729],[-1.736,43.714],[-1.716,43.701],[-1.697,43.691],[-1.678,43.684],[-1.663,43.665],[-1.653,43.635],[-1.648,43.593],[-1.647,43.539],[-1.648,43.497],[-1.65,43.466],[-1.655,43.448],[-1.662,43.441],[-1.665,43.433],[-1.664,43.425],[-1.66,43.416],[-1.653,43.407],[-1.634,43.399],[-1.603,43.391],[-1.56,43.383],[-1.506,43.376],[-1.449,43.372],[-1.39,43.37],[-1.328,43.371],[-1.263,43.374],[-1.203,43.384],[-1.148,43.4],[-1.098,43.423],[-1.053,43.451],[-1.009,43.488],[-0.966,43.534],[-0.924,43.588],[-0.883,43.651],[-0.844,43.743],[-0.807,43.866],[-0.771,44.017],[-0.736,44.199],[-0.711,44.358],[-0.694,44.494],[-0.685,44.606],[-0.686,44.695],[-0.683,44.748],[-0.677,44.765],[-0.668,44.746],[-0.655,44.692],[-0.672,44.654],[-0.718,44.632]]
+      },
+      {
+        "draw": "add",
+        "ring": [[6.6,53.011],[6.521,53.071],[6.445,53.122],[6.373,53.164],[6.305,53.197],[6.241,53.22],[6.136,53.249],[5.991,53.283],[5.805,53.322],[5.579,53.367],[5.383,53.401],[5.217,53.424],[5.082,53.437],[4.976,53.439],[4.85,53.432],[4.702,53.416],[4.534,53.39],[4.344,53.355],[4.192,53.324],[4.077,53.299],[4,53.278],[3.959,53.261],[3.91,53.237],[3.851,53.204],[3.783,53.163],[3.705,53.114],[3.644,53.071],[3.598,53.034],[3.569,53.002],[3.555,52.977],[3.544,52.948],[3.536,52.917],[3.532,52.883],[3.53,52.846],[3.532,52.803],[3.538,52.754],[3.548,52.699],[3.561,52.639],[3.583,52.57],[3.611,52.493],[3.647,52.407],[3.691,52.312],[3.735,52.23],[3.779,52.16],[3.823,52.102],[3.868,52.056],[3.912,52.019],[3.954,51.991],[3.996,51.973],[4.037,51.964],[4.099,51.957],[4.181,51.952],[4.285,51.95],[4.409,51.95],[4.646,51.959],[4.997,51.978],[5.462,52.005],[6.04,52.042],[6.521,52.079],[6.906,52.117],[7.194,52.156],[7.386,52.195],[7.531,52.23],[7.631,52.261],[7.686,52.288],[7.694,52.311],[7.64,52.364],[7.521,52.447],[7.338,52.56],[7.091,52.704],[6.885,52.827],[6.721,52.929]]
+      }
+    ]
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "tang-dynasty",
+  "name": {
+    "en": "Tang dynasty",
+    "pt": "Dinastia Tang"
+  },
+  "peak": {
+    "year": 742,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 618,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 907,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 618, when the founder proclaimed the dynasty after the fall of the Sui dynasty, and ends in 907, when the last emperor was deposed by a general. Between 690 and 705, Empress Wu Zetian ruled under a dynasty of her own, the Zhou, but the original dynasty was restored afterwards. The map leaves out the protectorates in Central Asia, Mongolia and Korea, where local rulers kept power under Chinese supervision. Northern Vietnam is included because, despite being called a protectorate, it was divided into ordinary prefectures, governed like the rest of the territory.",
+    "pt": "Começa em 618, quando o fundador proclamou a dinastia após a queda da dinastia Sui, e termina em 907, quando o último imperador foi deposto por um general. Entre 690 e 705, a imperatriz Wu Zetian governou sob uma dinastia própria, a Zhou, mas a dinastia original foi restaurada depois. O mapa não inclui os protetorados da Ásia Central, da Mongólia e da Coreia, onde governantes locais mantinham o poder sob supervisão chinesa. O norte do Vietnã aparece porque, apesar do nome de protetorado, era dividido em prefeituras comuns, governadas como o resto do território."
+  },
+  "area": {
+    "km2": 3400000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Chang'an (today's Xi'an), with Luoyang as a secondary capital",
+    "pt": "Chang'an (atual Xi'an), com Luoyang como capital secundária"
+  },
+  "language": {
+    "en": "Middle Chinese (with Classical Chinese as the written language)",
+    "pt": "Chinês médio (com o chinês clássico como língua escrita)"
+  },
+  "religion": {
+    "en": "Buddhism, Taoism and Confucianism",
+    "pt": "Budismo, taoísmo e confucionismo"
+  },
+  "religionNotes": {
+    "en": "The imperial family claimed descent from Laozi, the founder of Taoism, and favoured that religion, but Buddhism reached its height, with thousands of monasteries. In 845, an emperor closed most of them and seized their lands. Foreign religions, such as Nestorian Christianity, Manichaeism, Zoroastrianism and Islam, also had temples in the capital.",
+    "pt": "A família imperial dizia descender de Laozi, o fundador do taoísmo, e favorecia essa religião, mas o budismo viveu seu auge, com milhares de mosteiros. Em 845, um imperador fechou a maioria deles e confiscou suas terras. Religiões estrangeiras, como o cristianismo nestoriano, o maniqueísmo, o zoroastrismo e o islã, também tinham templos na capital."
+  },
+  "curiosities": [
+    {
+      "en": "Alchemists in its territory, searching for the elixir of immortality, recorded the mixture that gave rise to gunpowder.",
+      "pt": "Alquimistas do seu território, em busca do elixir da imortalidade, registraram a mistura que deu origem à pólvora.",
+      "details": {
+        "en": "Taoist monks experimented with substances such as saltpetre and sulphur trying to prolong life. A 9th-century text warns that certain mixtures caught fire and burned the hands, the face and even the house of whoever prepared them. It is the oldest known reference to gunpowder, which in the following centuries came to be used in weapons and fireworks.",
+        "pt": "Monges taoístas faziam experiências com substâncias como salitre e enxofre tentando prolongar a vida. Um texto do século IX alerta que certas misturas pegavam fogo e queimavam as mãos, o rosto e até a casa de quem as preparava. É a referência mais antiga conhecida à pólvora, que nos séculos seguintes passou a ser usada em armas e fogos de artifício."
+      }
+    },
+    {
+      "en": "Its era is considered the golden age of Chinese poetry, with poets such as Li Bai and Du Fu.",
+      "pt": "Sua época é considerada a idade de ouro da poesia chinesa, com poetas como Li Bai e Du Fu.",
+      "details": {
+        "en": "Writing poetry was part of the education of any cultivated person, and it was even required in the civil service examinations. Li Bai was famous for his poems about wine, the moon and nature, and Du Fu for his verses about war and the suffering of the people. An anthology compiled in the 18th century gathered about 49,000 poems by more than 2,000 authors of the period.",
+        "pt": "Escrever poesia fazia parte da formação de qualquer pessoa culta, e chegou a ser cobrado nos exames para o serviço público. Li Bai era famoso pelos poemas sobre vinho, lua e natureza, e Du Fu pelos versos sobre a guerra e o sofrimento do povo. Uma coletânea feita no século XVIII reuniu cerca de 49 mil poemas de mais de 2 mil autores do período."
+      }
+    },
+    {
+      "en": "To this day, Chinese people living outside China use the name of this dynasty to refer to themselves and their neighbourhoods.",
+      "pt": "Até hoje, chineses que vivem fora da China usam o nome desta dinastia para falar de si mesmos e dos seus bairros.",
+      "details": {
+        "en": "In many Chinese communities abroad, especially those of Cantonese origin, people commonly call themselves the \"Tang people\", and Chinatowns are called \"streets of the Tang people\". The dynasty became so associated with the height of Chinese civilization that its name became a synonym for Chinese, like that of the Han dynasty, which gives its name to the majority ethnic group.",
+        "pt": "Em muitas comunidades chinesas no exterior, sobretudo as de origem cantonesa, é comum se chamar de \"povo Tang\", e as Chinatowns são chamadas de \"ruas do povo Tang\". A dinastia ficou tão associada ao auge da civilização chinesa que o nome dela virou sinônimo de chinês, assim como o da dinastia Han, que dá nome à etnia majoritária."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Tang_dynasty",
+    "pt": "https://pt.wikipedia.org/wiki/Dinastia_Tang"
+  },
+  "aliases": [
+    "China",
+    "Tang Empire",
+    "Império Tang",
+    "Great Tang",
+    "Grande Tang",
+    "Tang China",
+    "China Tang",
+    "Chinese Empire",
+    "Império Chinês"
+  ],
+  "summary": {
+    "en": "The dynasty founded in 618 by Li Yuan and his son Li Shimin, who reunified China after the fall of the Sui dynasty. With its capital at Chang'an, then one of the largest cities in the world, it lived through an era of prosperity marked by trade on the Silk Road, the spread of Buddhism, the civil service examinations and a production of poetry considered the richest in Chinese history. It also extended its influence over Central Asia, Mongolia and Korea through protectorates. From 755, the rebellion of the general An Lushan shook the government, and the military governors of the provinces gained more and more autonomy. After new revolts in the late 9th century, the last emperor was deposed in 907, and China split into several rival states.",
+    "pt": "Dinastia fundada em 618 por Li Yuan e seu filho Li Shimin, que reunificaram a China depois da queda da dinastia Sui. Com capital em Chang'an, então uma das maiores cidades do mundo, viveu uma era de prosperidade marcada pelo comércio na Rota da Seda, pela expansão do budismo, pelos exames para servidores públicos e por uma produção de poesia considerada a mais rica da história chinesa. Também estendeu sua influência pela Ásia Central, pela Mongólia e pela Coreia, por meio de protetorados. A partir de 755, a rebelião do general An Lushan abalou o governo, e os governadores militares das províncias ganharam cada vez mais autonomia. Depois de novas revoltas no fim do século IX, o último imperador foi deposto em 907, e a China se dividiu em vários estados rivais."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Tang Dynasty",
+        "year": 742
+      },
+      {
+        "draw": "add",
+        "ring": [[93.4,40],[94.2,40.6],[94.6,41.6],[94.5,42.3],[95.4,42.7],[95.9,43.3],[94.8,43.8],[93,43.9],[91,44.2],[89.5,44.4],[88.2,44.4],[87.5,44.1],[87.7,43.4],[88.4,42.8],[89.3,42.5],[90.6,42.6],[92,42.7],[93,42.4],[93.4,41.6]]
+      },
+      {
+        "draw": "remove",
+        "ring": [[93.411,40.765],[93.468,40.662],[93.522,40.577],[93.574,40.512],[93.623,40.465],[93.67,40.438],[93.708,40.388],[93.739,40.317],[93.761,40.224],[93.776,40.109],[93.805,40.001],[93.848,39.901],[93.907,39.807],[93.979,39.721],[94.03,39.647],[94.057,39.588],[94.063,39.542],[94.046,39.509],[93.952,39.462],[93.783,39.402],[93.537,39.327],[93.216,39.239],[92.941,39.156],[92.712,39.077],[92.528,39.002],[92.39,38.932],[92.289,38.89],[92.225,38.875],[92.198,38.888],[92.208,38.928],[92.21,38.96],[92.204,38.984],[92.191,38.999],[92.17,39.006],[92.135,38.987],[92.085,38.942],[92.021,38.871],[91.943,38.774],[91.865,38.7],[91.786,38.65],[91.706,38.622],[91.625,38.618],[91.522,38.598],[91.396,38.561],[91.247,38.509],[91.076,38.44],[90.87,38.385],[90.629,38.343],[90.354,38.314],[90.043,38.299],[89.59,38.374],[88.994,38.538],[88.253,38.793],[87.365,39.139],[86.67,39.421],[86.17,39.637],[85.867,39.788],[85.762,39.873],[85.652,39.975],[85.537,40.096],[85.415,40.233],[85.288,40.389],[85.133,40.543],[84.95,40.695],[84.738,40.845],[84.498,40.993],[84.267,41.177],[84.044,41.397],[83.83,41.652],[83.624,41.944],[83.46,42.192],[83.34,42.398],[83.263,42.56],[83.231,42.68],[83.213,42.789],[83.21,42.888],[83.222,42.978],[83.249,43.057],[83.332,43.111],[83.473,43.139],[83.67,43.141],[83.924,43.117],[84.121,43.091],[84.261,43.063],[84.344,43.033],[84.371,43.002],[84.438,42.96],[84.546,42.908],[84.694,42.846],[84.883,42.775],[85.099,42.711],[85.342,42.656],[85.612,42.608],[85.908,42.568],[86.175,42.539],[86.411,42.519],[86.617,42.509],[86.793,42.509],[86.935,42.515],[87.041,42.527],[87.114,42.545],[87.151,42.568],[87.317,42.566],[87.612,42.539],[88.034,42.485],[88.584,42.406],[89.1,42.325],[89.583,42.242],[90.031,42.157],[90.445,42.07],[90.802,41.985],[91.102,41.902],[91.344,41.821],[91.53,41.743],[91.729,41.67],[91.943,41.603],[92.172,41.542],[92.415,41.487],[92.632,41.415],[92.822,41.327],[92.985,41.222],[93.121,41.101],[93.237,40.984],[93.334,40.872]]
+      },
+      {
+        "draw": "remove",
+        "ring": [[90.642,40.845],[90.536,40.918],[90.416,40.984],[90.284,41.042],[90.139,41.092],[89.981,41.135],[89.796,41.201],[89.583,41.291],[89.342,41.404],[89.073,41.542],[88.739,41.738],[88.34,41.994],[87.875,42.308],[87.342,42.682],[86.831,43.012],[86.342,43.297],[85.876,43.537],[85.434,43.732],[85.036,43.892],[84.682,44.016],[84.373,44.106],[84.108,44.16],[83.494,44.198],[82.528,44.22],[81.213,44.225],[79.547,44.214],[77.989,44.171],[76.538,44.095],[75.195,43.986],[73.961,43.846],[72.966,43.702],[72.209,43.556],[71.69,43.408],[71.407,43.257],[71.189,43.117],[71.035,42.988],[70.944,42.87],[70.917,42.763],[70.971,42.351],[71.102,41.637],[71.304,40.629],[71.568,39.332],[71.78,38.347],[71.949,37.668],[72.082,37.289],[72.181,37.207],[72.28,37.14],[72.379,37.089],[72.478,37.053],[72.577,37.033],[72.867,36.99],[73.347,36.923],[74.016,36.834],[74.875,36.722],[75.813,36.63],[76.831,36.559],[77.927,36.508],[79.104,36.477],[80.191,36.416],[81.188,36.325],[82.095,36.203],[82.912,36.051],[83.664,35.936],[84.352,35.86],[84.978,35.822],[85.541,35.822],[85.996,35.83],[86.343,35.845],[86.581,35.868],[86.711,35.898],[86.83,35.936],[86.938,35.982],[87.035,36.035],[87.121,36.096],[87.216,36.193],[87.32,36.325],[87.432,36.493],[87.554,36.696],[87.716,36.923],[87.919,37.174],[88.164,37.448],[88.45,37.745],[88.68,38.012],[88.853,38.249],[88.969,38.456],[89.028,38.632],[89.103,38.792],[89.193,38.937],[89.299,39.067],[89.421,39.181],[89.587,39.353],[89.797,39.582],[90.051,39.869],[90.35,40.214],[90.549,40.492],[90.646,40.702]]
+      },
+      {
+        "draw": "remove",
+        "ring": [[93.546,40.301],[93.666,40.217],[93.82,40.128],[94.009,40.034],[94.232,39.935],[94.489,39.831],[94.685,39.739],[94.82,39.66],[94.893,39.594],[94.904,39.54],[94.899,39.482],[94.876,39.42],[94.835,39.355],[94.777,39.286],[94.692,39.233],[94.579,39.196],[94.438,39.175],[94.271,39.17],[94.133,39.172],[94.026,39.179],[93.948,39.193],[93.901,39.212],[93.78,39.269],[93.586,39.362],[93.318,39.493],[92.976,39.66],[92.712,39.802],[92.526,39.919],[92.42,40.009],[92.393,40.073],[92.436,40.138],[92.55,40.202],[92.733,40.266],[92.986,40.331],[93.206,40.358],[93.393,40.348]]
+      },
+      {
+        "draw": "add",
+        "ring": [[96.345,40.79],[96.261,40.842],[96.15,40.9],[96.012,40.964],[95.846,41.035],[95.653,41.112],[95.461,41.211],[95.271,41.332],[95.083,41.474],[94.897,41.638],[94.729,41.771],[94.579,41.873],[94.449,41.943],[94.337,41.982],[94.227,42.002],[94.119,42.002],[94.014,41.982],[93.91,41.943],[93.827,41.902],[93.764,41.859],[93.721,41.813],[93.698,41.766],[93.684,41.697],[93.68,41.606],[93.686,41.494],[93.7,41.36],[93.706,41.235],[93.702,41.119],[93.688,41.011],[93.665,40.912],[93.649,40.831],[93.639,40.767],[93.635,40.719],[93.639,40.689],[93.65,40.659],[93.671,40.629],[93.699,40.599],[93.736,40.57],[93.774,40.542],[93.813,40.516],[93.854,40.492],[93.895,40.471],[93.979,40.45],[94.105,40.428],[94.273,40.407],[94.482,40.386],[94.671,40.368],[94.837,40.356],[94.983,40.347],[95.107,40.343],[95.237,40.344],[95.374,40.35],[95.517,40.362],[95.667,40.379],[95.815,40.411],[95.962,40.458],[96.108,40.52],[96.253,40.597],[96.34,40.668],[96.371,40.732]]
+      },
+      {
+        "draw": "add",
+        "ring": [[93.722,40.949],[93.695,41.003],[93.648,41.072],[93.58,41.156],[93.491,41.255],[93.381,41.368],[93.28,41.481],[93.188,41.595],[93.104,41.709],[93.029,41.822],[92.936,41.94],[92.824,42.062],[92.693,42.188],[92.543,42.318],[92.418,42.429],[92.316,42.522],[92.238,42.596],[92.185,42.652],[92.141,42.702],[92.107,42.748],[92.083,42.788],[92.068,42.824],[92.06,42.855],[92.059,42.88],[92.066,42.901],[92.079,42.917],[92.115,42.932],[92.173,42.946],[92.253,42.959],[92.355,42.97],[92.475,42.977],[92.615,42.979],[92.773,42.976],[92.95,42.968],[93.089,42.955],[93.189,42.935],[93.252,42.909],[93.276,42.877],[93.306,42.817],[93.339,42.728],[93.378,42.61],[93.42,42.464],[93.472,42.329],[93.533,42.205],[93.602,42.091],[93.681,41.989],[93.737,41.852],[93.772,41.679],[93.784,41.472],[93.775,41.229],[93.762,41.062],[93.744,40.968]]
+      }
+    ]
+  }
+}

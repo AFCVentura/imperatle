@@ -35,8 +35,8 @@
     "pt": "Português"
   },
   "religion": {
-    "en": "Roman Catholicism",
-    "pt": "Catolicismo Romano"
+    "en": "Catholicism",
+    "pt": "Catolicismo"
   },
   "religionNotes": {
     "en": "The constitution allowed other religions only in private worship, in houses with no outward look of a temple.",
@@ -45,20 +45,43 @@
   "curiosities": [
     {
       "en": "It was one of the few monarchies in the Americas in the 19th century, and the longest-lasting.",
-      "pt": "Foi uma das poucas monarquias das Américas no século XIX, e a mais duradoura delas."
+      "pt": "Foi uma das poucas monarquias das Américas no século XIX, e a mais duradoura delas.",
+      "details": {
+        "en": "Besides Brazil, there were short-lived monarchies in Mexico, under Agustín de Iturbide (1822 to 1823) and Maximilian of Habsburg (1864 to 1867), and in Haiti. The Empire of Brazil lasted 67 years and was seen as a model of stability while its Spanish-speaking neighbours went through coups and civil wars.",
+        "pt": "Além do Brasil, houve monarquias passageiras no México, com Agustín de Iturbide (1822 a 1823) e Maximiliano de Habsburgo (1864 a 1867), e no Haiti. O Império do Brasil durou 67 anos e chegou a ser visto como um modelo de estabilidade, enquanto os vizinhos de língua espanhola viviam golpes e guerras civis."
+      }
     },
     {
       "en": "In this period, it became the world's largest coffee producer.",
-      "pt": "Nesse período, tornou-se o maior produtor de café do mundo."
+      "pt": "Nesse período, tornou-se o maior produtor de café do mundo.",
+      "details": {
+        "en": "Coffee spread through the Paraíba valley, between Rio de Janeiro and São Paulo, and later into western São Paulo. By the 1840s Brazil grew about 40% of the world's coffee, and by the end of the century more than half. The wealth of the \"coffee barons\" underpinned much of the empire's politics.",
+        "pt": "O café se espalhou pelo vale do Paraíba, entre o Rio de Janeiro e São Paulo, e depois pelo oeste paulista. Já na década de 1840, o Brasil produzia cerca de 40% do café do mundo, e no fim do século passou da metade. A riqueza dos \"barões do café\" sustentou boa parte da política do império."
+      }
     },
     {
       "en": "Before independence, its capital had already been the seat of a European court fleeing Napoleon.",
-      "pt": "Antes da independência, sua capital já tinha sido sede de uma corte europeia que fugiu de Napoleão."
+      "pt": "Antes da independência, sua capital já tinha sido sede de uma corte europeia que fugiu de Napoleão.",
+      "details": {
+        "en": "In 1808 the Portuguese royal family and thousands of nobles and officials arrived in Rio de Janeiro, fleeing Napoleon's troops, which had invaded Portugal. The city became the capital of the whole Portuguese empire and gained the Royal Library, the Botanical Garden and the Bank of Brazil. In 1815 Brazil was raised to a kingdom united with Portugal, a key step towards independence.",
+        "pt": "Em 1808, a família real portuguesa e milhares de nobres e funcionários chegaram ao Rio de Janeiro, fugindo das tropas de Napoleão, que tinham invadido Portugal. A cidade virou a capital de todo o império português e ganhou a Biblioteca Real, o Jardim Botânico e o Banco do Brasil. Em 1815, o Brasil foi elevado a reino unido a Portugal, um passo importante rumo à independência."
+      }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Empire_of_Brazil",
     "pt": "https://pt.wikipedia.org/wiki/Império_do_Brasil"
+  },
+  "aliases": [
+    "Brazilian Empire",
+    "Império Brasileiro",
+    "Brasil Império",
+    "Imperial Brazil",
+    "Brasil Imperial"
+  ],
+  "summary": {
+    "en": "The monarchy that ruled Brazil from 1822, when Dom Pedro I proclaimed independence from Portugal, until 1889, when a military coup set up the Republic. It had two emperors: Pedro I, who abdicated in 1831, and Pedro II, who reigned for almost 50 years after a period of regencies. It kept together the huge territory inherited from Portugal, faced regional revolts and won the Paraguayan War. The economy relied on coffee and slave labour, abolished only in 1888, which cost the monarchy the support of the great landowners.",
+    "pt": "Monarquia que governou o Brasil de 1822, quando dom Pedro I proclamou a independência de Portugal, até 1889, quando um golpe militar instaurou a República. Teve dois imperadores: Pedro I, que abdicou em 1831, e Pedro II, que reinou por quase 50 anos depois de um período de regências. Manteve unido o enorme território herdado de Portugal, enfrentou revoltas regionais e venceu a Guerra do Paraguai. A economia dependia do café e do trabalho escravo, abolido só em 1888, o que custou à monarquia o apoio dos grandes fazendeiros."
   },
   "map": {
     "parts": [

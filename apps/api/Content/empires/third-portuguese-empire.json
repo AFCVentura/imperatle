@@ -1,0 +1,108 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "third-portuguese-empire",
+  "name": {
+    "en": "Third Portuguese Empire",
+    "pt": "Terceiro Império Português"
+  },
+  "peak": {
+    "year": 1920,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1822,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1999,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 1822, when the independence of the large colony in South America shifted the centre of the empire to Africa, and ends in 1999, with the handover of the last overseas territory to China. Most of the African colonies became independent in 1975, after a revolution in the home country. The peak shown is 1920, when the occupation of the African interior was complete; the borders stayed like this until 1961, when the territories in India were taken. The earlier phases, focused on trade in Asia and then on South America, are treated here as separate empires.",
+    "pt": "Começa em 1822, quando a independência da grande colônia na América do Sul deslocou o centro do império para a África, e termina em 1999, com a devolução do último território ultramarino à China. A maior parte das colônias africanas ficou independente em 1975, depois de uma revolução na metrópole. O auge escolhido é 1920, quando a ocupação do interior africano estava completa; as fronteiras ficaram assim até 1961, quando os territórios na Índia foram tomados. As fases anteriores, voltadas ao comércio na Ásia e depois à América do Sul, são tratadas aqui como impérios separados."
+  },
+  "area": {
+    "km2": 2170000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Africa",
+    "Europe",
+    "Asia"
+  ],
+  "primaryContinent": "Europe",
+  "capital": {
+    "en": "Lisbon",
+    "pt": "Lisboa"
+  },
+  "language": {
+    "en": "Portuguese",
+    "pt": "Português"
+  },
+  "religion": {
+    "en": "Catholicism",
+    "pt": "Catolicismo"
+  },
+  "religionNotes": {
+    "en": "The republic set up in 1910 separated Church and State, but the authoritarian regime that came later brought the two back together through a concordat, in 1940, which handed Catholic missions much of the schooling in the colonies. In Africa, most of the population kept following traditional religions or, in northern Mozambique and in Guinea, Islam.",
+    "pt": "A república instalada em 1910 separou a Igreja do Estado, mas o regime autoritário que veio depois reaproximou os dois por meio de uma concordata, em 1940, que entregou às missões católicas boa parte do ensino nas colônias. Na África, a maioria da população continuou seguindo religiões tradicionais ou, no norte de Moçambique e na Guiné, o islamismo."
+  },
+  "curiosities": [
+    {
+      "en": "Its colonial wars lasted 13 years and came to consume almost half of the country's budget.",
+      "pt": "Suas guerras coloniais duraram 13 anos e chegaram a consumir quase metade do orçamento do país.",
+      "details": {
+        "en": "From 1961 to 1974, Portugal fought independence movements in Angola, Mozambique and Guinea, mobilising more than 800,000 soldiers. The strain of the war led the military itself to overthrow the regime in 1974.",
+        "pt": "De 1961 a 1974, Portugal combateu movimentos de independência em Angola, Moçambique e Guiné, mobilizando mais de 800 mil soldados. O desgaste da guerra levou os próprios militares a derrubar o regime em 1974."
+      }
+    },
+    {
+      "en": "Its end began with a revolution in the home country announced by a song on the radio, in which soldiers put flowers in their rifles.",
+      "pt": "Seu fim começou com uma revolução na metrópole anunciada por uma canção no rádio, em que soldados puseram flores nos fuzis.",
+      "details": {
+        "en": "On 25 April 1974, the song \"Grândola, Vila Morena\", by Zeca Afonso, played on the radio, was the signal for the military to overthrow the dictatorship. People handed carnations to the soldiers, and the new government negotiated the independence of the African colonies the following year.",
+        "pt": "Em 25 de abril de 1974, a música \"Grândola, Vila Morena\", de Zeca Afonso, tocada no rádio, foi o sinal para os militares derrubarem a ditadura. A população distribuiu cravos aos soldados, e o novo governo negociou a independência das colônias africanas no ano seguinte."
+      }
+    },
+    {
+      "en": "Its last territory was the last European colony in Asia.",
+      "pt": "Seu último território foi a última colônia europeia na Ásia.",
+      "details": {
+        "en": "Macau, occupied by the Portuguese since the 1550s, was handed back to China on 20 December 1999, two years after Hong Kong. Like Hong Kong, it became a special administrative region, and Portuguese is still an official language there.",
+        "pt": "Macau, ocupada pelos portugueses desde a década de 1550, foi devolvida à China em 20 de dezembro de 1999, dois anos depois de Hong Kong. Como Hong Kong, virou uma região administrativa especial, e o português continua sendo língua oficial ali."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Portuguese_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Português"
+  },
+  "aliases": [
+    "Portugal",
+    "Portuguese Empire",
+    "Império Português",
+    "Third Portuguese Empire",
+    "Portuguese Colonial Empire",
+    "Império Colonial Português",
+    "Império Ultramarino Português",
+    "Ultramar",
+    "Lusitanian Empire",
+    "Império Lusitano",
+    "Portuguese Africa",
+    "África Portuguesa",
+    "Províncias Ultramarinas"
+  ],
+  "summary": {
+    "en": "The last phase of the Portuguese empire, which began after the independence of Brazil, in 1822, and had Africa as its centre. Throughout the 19th century, Portugal still controlled little more than the coast of Angola and Mozambique, but with the race of the European powers for Africa it occupied the interior through military campaigns that only ended around 1915. The plan to join the two colonies from coast to coast was blocked by a British ultimatum in 1890. During the Estado Novo dictatorship, from 1933 to 1974, the colonies came to be called overseas provinces, and from 1961 the country faced long wars against the independence movements in Angola, Mozambique and Guinea. The Carnation Revolution, in 1974, ended the dictatorship and led to the independence of the African colonies in 1975. Macau, the last territory, was handed back to China in 1999.",
+    "pt": "Última fase do império português, que começou depois da independência do Brasil, em 1822, e teve a África como centro. Ao longo do século XIX, Portugal ainda controlava pouco mais que o litoral de Angola e Moçambique, mas, com a corrida das potências europeias pela África, ocupou o interior por meio de campanhas militares que só terminaram por volta de 1915. O projeto de unir as duas colônias de costa a costa foi barrado por um ultimato britânico em 1890. Durante a ditadura do Estado Novo, de 1933 a 1974, as colônias passaram a ser chamadas de províncias ultramarinas, e a partir de 1961 o país enfrentou longas guerras contra os movimentos de independência em Angola, Moçambique e Guiné. A Revolução dos Cravos, em 1974, encerrou a ditadura e levou à independência das colônias africanas em 1975. Macau, o último território, foi devolvida à China em 1999."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Portuguese Republic",
+        "year": 1920
+      }
+    ]
+  }
+}

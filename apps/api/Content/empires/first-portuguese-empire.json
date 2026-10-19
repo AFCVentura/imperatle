@@ -1,0 +1,120 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "first-portuguese-empire",
+  "name": {
+    "en": "First Portuguese Empire",
+    "pt": "Primeiro Império Português"
+  },
+  "peak": {
+    "year": 1579,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1415,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1663,
+    "precision": "Approximate"
+  },
+  "durationNotes": {
+    "en": "It starts in 1415, with the capture of a North African port, and ends around 1663, when the loss of the main fortresses in South Asia to a rival power shifted the centre of the empire to South America. From 1580 to 1640, the crown was united with that of the neighbouring kingdom, so the peak shown is 1579, the last year before the union. The map shows only the fortresses, cities and captaincies under direct control and excludes protected or tributary kingdoms, such as the one on a large island in South Asia. The later phases, focused first on South America and then on Africa, are treated here as separate empires.",
+    "pt": "Começa em 1415, com a tomada de um porto no norte da África, e termina por volta de 1663, quando a perda das principais fortalezas no sul da Ásia para uma potência rival deslocou o centro do império para a América do Sul. De 1580 a 1640, a coroa ficou unida à do reino vizinho, e por isso o auge escolhido é 1579, último ano antes da união. O mapa mostra só as fortalezas, cidades e capitanias sob controle direto e exclui reinos protegidos ou que pagavam tributo, como o de uma grande ilha no sul da Ásia. As fases posteriores, voltadas primeiro à América do Sul e depois à África, são tratadas aqui como impérios separados."
+  },
+  "area": {
+    "km2": 494000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "SouthAmerica",
+    "Europe",
+    "Asia",
+    "Africa"
+  ],
+  "primaryContinent": "Europe",
+  "capital": {
+    "en": "Lisbon",
+    "pt": "Lisboa"
+  },
+  "language": {
+    "en": "Portuguese",
+    "pt": "Português"
+  },
+  "religion": {
+    "en": "Catholicism",
+    "pt": "Catolicismo"
+  },
+  "religionNotes": {
+    "en": "The Inquisition was set up in 1536 in the home country and in 1560 in Goa, where it persecuted mainly New Christians and converts accused of keeping Hindu practices. By a grant from the pope, the Crown controlled the appointment of bishops and the missions overseas, and the Jesuits took Catholicism as far as India, China and Japan.",
+    "pt": "A Inquisição foi instalada em 1536 na metrópole e em 1560 em Goa, onde perseguiu sobretudo cristãos-novos e convertidos acusados de manter práticas hindus. Por concessão do papa, a Coroa controlava a nomeação de bispos e as missões no ultramar, e os jesuítas levaram o catolicismo até a Índia, a China e o Japão."
+  },
+  "curiosities": [
+    {
+      "en": "Its sailors were the first Europeans to reach Japan, and left words in Japanese such as \"pan\", for bread.",
+      "pt": "Seus navegadores foram os primeiros europeus a chegar ao Japão, e deixaram palavras no japonês como \"pan\", para pão.",
+      "details": {
+        "en": "In 1543 Portuguese traders landed on the island of Tanegashima, in southern Japan, bringing the first firearms seen in the country. Jesuit missionaries and a busy trade between Japan, Macau and Europe soon followed. Words such as \"pan\" (bread), \"botan\" (button) and probably \"tempura\" entered Japanese at that time.",
+        "pt": "Em 1543, comerciantes portugueses chegaram à ilha de Tanegashima, no sul do Japão, levando as primeiras armas de fogo vistas no país. Logo vieram missionários jesuítas e um comércio intenso entre o Japão, Macau e a Europa. Palavras como \"pan\" (pão), \"botan\" (botão) e, provavelmente, \"tempura\" entraram no japonês nessa época."
+      }
+    },
+    {
+      "en": "Through a treaty, it divided the still unexplored lands of the world with the neighbouring kingdom, using a line drawn from pole to pole.",
+      "pt": "Dividiu com o reino vizinho, por um tratado, as terras ainda não exploradas do mundo, com uma linha traçada de polo a polo.",
+      "details": {
+        "en": "The Treaty of Tordesillas, of 1494, set a line 370 leagues west of Cape Verde. The lands to the east would belong to Portugal, and those to the west to Spain. It is because of it that Brazil speaks Portuguese.",
+        "pt": "O Tratado de Tordesilhas, de 1494, fixou uma linha a 370 léguas a oeste de Cabo Verde. As terras a leste ficariam com Portugal, e as a oeste, com a Espanha. É por causa dele que o Brasil fala português."
+      }
+    },
+    {
+      "en": "In 1500, one of its fleets bound for India reached the coast of South America.",
+      "pt": "Em 1500, uma de suas frotas a caminho da Índia chegou ao litoral da América do Sul.",
+      "details": {
+        "en": "Pedro Álvares Cabral's fleet of 13 ships left Lisbon in March 1500 for India and swung far from the African coast to catch the winds of the South Atlantic. On 22 April it sighted the coast of Bahia, at a place the Portuguese named Porto Seguro. The fleet stayed only a few days and sailed on to India.",
+        "pt": "A frota de Pedro Álvares Cabral, com 13 navios, saiu de Lisboa em março de 1500 rumo à Índia e se afastou muito da costa africana para aproveitar os ventos do Atlântico Sul. Em 22 de abril, avistou o litoral da Bahia, num lugar que os portugueses batizaram de Porto Seguro. A frota ficou poucos dias e seguiu viagem para a Índia."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Portuguese_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Português"
+  },
+  "aliases": [
+    "Portugal",
+    "Portuguese Empire",
+    "Império Português",
+    "First Portuguese Empire",
+    "Portuguese Colonial Empire",
+    "Império Colonial Português",
+    "Império Ultramarino Português",
+    "Ultramar",
+    "Lusitanian Empire",
+    "Império Lusitano",
+    "Estado da Índia",
+    "Portuguese State of India"
+  ],
+  "summary": {
+    "en": "The first phase of the Portuguese empire, focused on maritime trade, which began with the capture of Ceuta, in North Africa, in 1415. Portuguese navigators explored the African coast, rounded the Cape of Good Hope with Bartolomeu Dias in 1488, reached India with Vasco da Gama in 1498 and Brazil with Pedro Álvares Cabral in 1500. Instead of conquering large territories, the empire relied on a network of fortresses and trading posts, from Goa and Malacca to Hormuz and Macau, to control the spice trade of the Indian Ocean. In 1580, after the death of King Sebastian in Morocco and the lack of heirs, the crown passed to the king of Spain, and the colonies became targets for Spain's enemies, above all the Dutch. Portugal regained its independence in 1640, but by around 1663 it had already lost most of its positions in Asia to them.",
+    "pt": "Primeira fase do império português, voltada ao comércio marítimo, que começou com a tomada de Ceuta, no norte da África, em 1415. Os navegadores portugueses exploraram a costa africana, contornaram o Cabo da Boa Esperança com Bartolomeu Dias em 1488, chegaram à Índia com Vasco da Gama em 1498 e ao Brasil com Pedro Álvares Cabral em 1500. Em vez de conquistar grandes territórios, o império se apoiava numa rede de fortalezas e feitorias, de Goa e Malaca a Ormuz e Macau, para controlar o comércio de especiarias do Oceano Índico. Em 1580, após a morte do rei D. Sebastião no Marrocos e a falta de herdeiros, a coroa passou ao rei da Espanha, e as colônias se tornaram alvo dos inimigos espanhóis, principalmente os neerlandeses. Portugal recuperou a independência em 1640, mas por volta de 1663 já tinha perdido para eles a maior parte das posições na Ásia."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "(Portuguese Empire)",
+        "year": 1579
+      },
+      {
+        "draw": "remove",
+        "ring": [[79.4,5.8],[82.2,5.8],[82.2,10],[79.4,10],[79.4,5.8]]
+      },
+      {
+        "draw": "remove",
+        "ring": [[39,-8.3],[40.2,-8.3],[40.2,-4.7],[39,-4.7],[39,-8.3]]
+      },
+      {
+        "draw": "remove",
+        "ring": [[50.2,25.6],[50.9,25.6],[50.9,26.4],[50.2,26.4],[50.2,25.6]]
+      }
+    ]
+  }
+}

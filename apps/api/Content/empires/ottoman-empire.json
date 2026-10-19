@@ -38,25 +38,56 @@
   },
   "religion": {
     "en": "Sunni Islam",
-    "pt": "Islamismo sunita"
+    "pt": "Islamismo Sunita"
   },
   "curiosities": [
     {
       "en": "It bridged two continents at its capital, which straddles a strait.",
-      "pt": "Fazia a ponte entre dois continentes em sua capital, situada num estreito."
+      "pt": "Fazia a ponte entre dois continentes em sua capital, situada num estreito.",
+      "details": {
+        "en": "Istanbul, the former Constantinople, lies on both sides of the Bosphorus, the strait that links the Black Sea with the Sea of Marmara and separates Europe from Asia. The Ottomans thus controlled the crossing between two continents and two seas, a key point for trade and war. Today it is Turkey's largest city, with more than 15 million people.",
+        "pt": "Istambul, a antiga Constantinopla, fica dos dois lados do Bósforo, o estreito que liga o mar Negro ao mar de Mármara e separa a Europa da Ásia. Os otomanos controlavam assim a passagem entre dois continentes e entre dois mares, um ponto estratégico para o comércio e a guerra. Hoje é a maior cidade da Turquia, com mais de 15 milhões de habitantes."
+      }
     },
     {
       "en": "That same city had been the capital of a millennium-old empire, which it brought to an end by conquering it, one of the events used to mark the end of the Middle Ages.",
-      "pt": "Essa mesma cidade tinha sido a capital de um império milenar, que ele encerrou ao conquistá-la, um dos marcos usados para o fim da Idade Média."
+      "pt": "Essa mesma cidade tinha sido a capital de um império milenar, que ele encerrou ao conquistá-la, um dos marcos usados para o fim da Idade Média.",
+      "details": {
+        "en": "In 1453 Sultan Mehmed II took Constantinople and ended the Eastern Roman Empire, which had existed for more than a thousand years. Many historians use the date, along with Europeans reaching the Americas in 1492, to mark the end of the Middle Ages. The basilica of Hagia Sophia became a mosque, and the city became the new Ottoman capital.",
+        "pt": "Em 1453, o sultão Mehmed II tomou Constantinopla e acabou com o Império Romano Oriental, que existia havia mais de mil anos. Muitos historiadores usam essa data, junto com a chegada dos europeus à América, em 1492, para marcar o fim da Idade Média. A basílica de Santa Sofia virou mesquita, e a cidade se tornou a nova capital otomana."
+      }
     },
     {
       "en": "It fought on the losing side of World War I and was carved up afterwards.",
-      "pt": "Lutou do lado derrotado na Primeira Guerra Mundial e foi desmembrado depois dela."
+      "pt": "Lutou do lado derrotado na Primeira Guerra Mundial e foi desmembrado depois dela.",
+      "details": {
+        "en": "The empire entered World War I in 1914 on the side of Germany and Austria-Hungary. After the defeat, Britain and France divided its Arab lands, such as Syria, Iraq and Palestine. In Anatolia, Mustafa Kemal Atatürk led a war of independence, abolished the sultanate in 1922 and founded the Republic of Turkey in 1923.",
+        "pt": "O império entrou na Primeira Guerra em 1914, ao lado da Alemanha e da Áustria-Hungria. Com a derrota, britânicos e franceses dividiram suas terras árabes, como a Síria, o Iraque e a Palestina. Na Anatólia, Mustafa Kemal Atatürk liderou uma guerra de independência, aboliu o sultanato em 1922 e fundou a República da Turquia em 1923."
+      }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Ottoman_Empire",
     "pt": "https://pt.wikipedia.org/wiki/Império_Otomano"
+  },
+  "aliases": [
+    "Ottomans",
+    "Otomanos",
+    "Ottoman Sultanate",
+    "Sultanato Otomano",
+    "Turkish Empire",
+    "Império Turco",
+    "Ottoman Turkey",
+    "Turkey",
+    "Turquia",
+    "Sublime Porte",
+    "Sublime Porta",
+    "Osmanli",
+    "Osmanlı"
+  ],
+  "summary": {
+    "en": "An empire founded around 1299 by Osman I, chief of a small Turkish principality in northwestern Anatolia. His successors conquered the Balkans and, in 1453, Constantinople, which became Istanbul and the empire's capital. At its height, under Suleiman the Magnificent in the 16th century, it ruled southeastern Europe, the Middle East and North Africa, and even besieged Vienna. It was a Muslim monarchy that governed many peoples and faiths, giving Christian and Jewish communities a good deal of self-rule. It lost ground from the 18th century and ended in 1922, after defeat in World War I.",
+    "pt": "Império fundado por volta de 1299 por Osman I, chefe de um pequeno principado turco no noroeste da Anatólia. Seus sucessores conquistaram os Bálcãs e, em 1453, Constantinopla, que virou Istambul e a capital do império. No auge, com Solimão, o Magnífico, no século XVI, dominava o sudeste da Europa, o Oriente Médio e o norte da África, e chegou a cercar Viena. Era uma monarquia muçulmana que governava muitos povos e religiões, com bastante autonomia para as comunidades cristãs e judaicas. Foi perdendo territórios a partir do século XVIII e acabou em 1922, depois da derrota na Primeira Guerra."
   },
   "map": {
     "parts": [

@@ -48,20 +48,48 @@
   "curiosities": [
     {
       "en": "It doubled its size in 1803 by buying a huge territory from a European power for about 15 million dollars.",
-      "pt": "Dobrou de tamanho em 1803 ao comprar um território enorme de uma potência europeia por cerca de 15 milhões de dólares."
+      "pt": "Dobrou de tamanho em 1803 ao comprar um território enorme de uma potência europeia por cerca de 15 milhões de dólares.",
+      "details": {
+        "en": "In 1803 President Thomas Jefferson bought the Louisiana territory from Napoleon's France: about 2.1 million km² between the Mississippi river and the Rocky Mountains, for 15 million dollars. Napoleon needed money for the war against Britain and had lost Haiti. The purchase doubled the size of the country, and all or part of 15 of today's states came out of it.",
+        "pt": "Em 1803, o presidente Thomas Jefferson comprou da França de Napoleão o território da Louisiana, cerca de 2,1 milhões de km² entre o rio Mississippi e as Montanhas Rochosas, por 15 milhões de dólares. Napoleão precisava de dinheiro para a guerra contra o Reino Unido e tinha perdido o Haiti. A compra dobrou o tamanho do país, e dela saíram, no todo ou em parte, 15 estados atuais."
+      }
     },
     {
       "en": "After a war in 1846–1848, it took about half of its southern neighbour's territory.",
-      "pt": "Depois de uma guerra em 1846–1848, tomou cerca de metade do território do vizinho do sul."
+      "pt": "Depois de uma guerra em 1846–1848, tomou cerca de metade do território do vizinho do sul.",
+      "details": {
+        "en": "After annexing Texas, the United States went to war with Mexico in 1846. By the Treaty of Guadalupe Hidalgo, in 1848, Mexico gave up today's California, Nevada and Utah and most of Arizona, New Mexico and Colorado, in exchange for 15 million dollars; counting Texas, it lost about 55% of its territory. Gold was found in California that very year.",
+        "pt": "Depois de anexar o Texas, os Estados Unidos entraram em guerra com o México em 1846. Pelo Tratado de Guadalupe Hidalgo, de 1848, o México cedeu as atuais Califórnia, Nevada e Utah e boa parte do Arizona, do Novo México e do Colorado, em troca de 15 milhões de dólares; contando o Texas, perdeu cerca de 55% do território. Naquele mesmo ano, foi descoberto ouro na Califórnia."
+      }
     },
     {
       "en": "It was the first country to use nuclear weapons in a war.",
-      "pt": "Foi o primeiro país a usar armas nucleares em uma guerra."
+      "pt": "Foi o primeiro país a usar armas nucleares em uma guerra.",
+      "details": {
+        "en": "The United States built the atomic bomb in the Manhattan Project and was the first to test it, in July 1945. In August it dropped bombs on Hiroshima and Nagasaki, in Japan, killing more than 100,000 people at once. To this day they are the only nuclear weapons ever used in war.",
+        "pt": "Os Estados Unidos desenvolveram a bomba atômica no Projeto Manhattan e foram os primeiros a testá-la, em julho de 1945. Em agosto, lançaram bombas sobre Hiroshima e Nagasaki, no Japão, matando mais de 100 mil pessoas de imediato. Até hoje, são as únicas armas nucleares já usadas numa guerra."
+      }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/United_States",
     "pt": "https://pt.wikipedia.org/wiki/Estados_Unidos"
+  },
+  "aliases": [
+    "USA",
+    "EUA",
+    "US",
+    "U.S.A.",
+    "America",
+    "América",
+    "United States of America",
+    "Estados Unidos da América",
+    "American Empire",
+    "Império Americano"
+  ],
+  "summary": {
+    "en": "A country formed by the thirteen British colonies on the Atlantic coast, which declared independence in 1776 and set up a federal republic, with a Constitution of 1787 that is still in force. During the 19th century it expanded to the Pacific through purchases, such as Louisiana and Alaska, and wars against Mexico and Native American peoples. The dispute over slavery led to the Civil War, from 1861 to 1865. In 1898 it took colonies such as Puerto Rico and the Philippines, and after the two world wars it became the greatest economic and military power on Earth.",
+    "pt": "País formado pelas Treze Colônias britânicas da costa atlântica, que declararam independência em 1776 e criaram uma república federal, com uma Constituição de 1787 que ainda está em vigor. Ao longo do século XIX, se expandiu até o Pacífico com compras, como a da Louisiana e a do Alasca, e guerras contra o México e os povos indígenas. A disputa sobre a escravidão levou à Guerra Civil, de 1861 a 1865. Em 1898 tomou colônias como Porto Rico e as Filipinas, e depois das duas guerras mundiais virou a maior potência econômica e militar do planeta."
   },
   "map": {
     "parts": [

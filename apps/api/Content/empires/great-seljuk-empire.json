@@ -1,0 +1,127 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "great-seljuk-empire",
+  "name": {
+    "en": "Great Seljuk Empire",
+    "pt": "Grande Império Seljúcida"
+  },
+  "peak": {
+    "year": 1092,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1037,
+    "precision": "Approximate"
+  },
+  "end": {
+    "year": 1194,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts around 1037, when two brothers from a clan of Turkic nomads took the first great cities of northeastern Iran, and ends in 1194, when the last sultan was killed in battle by a former vassal from Central Asia. From 1118, the empire was divided between two branches of the family, and the sultans' power passed more and more to the military governors. The peak shown is 1092, the year of the death of the dynasty's most powerful sultan. The map excludes the Christian kingdom of the Caucasus, which paid tribute but kept its own kings, and the Turkic khanates of Central Asia, which had become vassals only a few years before.",
+    "pt": "Começa por volta de 1037, quando dois irmãos de um clã de nômades turcos tomaram as primeiras grandes cidades do nordeste do Irã, e termina em 1194, quando o último sultão foi morto em batalha por um antigo vassalo da Ásia Central. A partir de 1118, o império ficou dividido entre dois ramos da família, e o poder dos sultões passou cada vez mais aos governadores militares. O auge escolhido é 1092, ano da morte do sultão mais poderoso da dinastia. O mapa exclui o reino cristão do Cáucaso, que pagava tributo mas mantinha os próprios reis, e os canatos turcos da Ásia Central, que só tinham se tornado vassalos poucos anos antes."
+  },
+  "area": {
+    "km2": 3400000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia",
+    "Europe"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Isfahan (earlier, Nishapur and Rey; later, Merv and Hamadan)",
+    "pt": "Isfahan (antes, Nishapur e Rey; depois, Merv e Hamadã)"
+  },
+  "language": {
+    "en": "Persian (as well as Turkic and Arabic)",
+    "pt": "Persa (além do turco e do árabe)"
+  },
+  "religion": {
+    "en": "Sunni Islam",
+    "pt": "Islamismo Sunita"
+  },
+  "religionNotes": {
+    "en": "The sultans presented themselves as defenders of Sunni Islam and of the caliph of Baghdad, at a time when much of the Islamic world was ruled by Shi'ite dynasties, such as the one that ruled Egypt.",
+    "pt": "Os sultões se apresentavam como defensores do islamismo sunita e do califa de Bagdá, num momento em que boa parte do mundo islâmico era governada por dinastias xiitas, como a que governava o Egito."
+  },
+  "curiosities": [
+    {
+      "en": "Its most powerful vizier was one of the first famous victims of a sect that gave rise to the word \"assassin\".",
+      "pt": "Seu vizir mais poderoso foi uma das primeiras vítimas famosas de uma seita que deu origem à palavra \"assassino\".",
+      "details": {
+        "en": "Nizam al-Mulk was killed in 1092 by a Nizari disguised as a dervish, on the orders of Hassan-i Sabbah, of Alamut. The Nizaris were called \"hashishiyyin\", from which the word \"assassin\" comes.",
+        "pt": "Nizam al-Mulk foi morto em 1092 por um nizarita disfarçado de dervixe, a mando de Hassan-i Sabbah, de Alamut. Os nizaritas eram chamados de \"hashishiyyin\", de onde vem a palavra \"assassino\"."
+      }
+    },
+    {
+      "en": "It created a network of great state-funded religious schools, considered forerunners of universities.",
+      "pt": "Criou uma rede de grandes escolas religiosas mantidas pelo Estado, consideradas precursoras das universidades.",
+      "details": {
+        "en": "The Nizamiyya madrasas, founded by Nizam al-Mulk from 1065 in Baghdad, Nishapur and other cities, had paid teachers and students on scholarships. The philosopher al-Ghazali taught at the one in Baghdad.",
+        "pt": "As madraças Nizamiyya, fundadas por Nizam al-Mulk a partir de 1065 em Bagdá, Nishapur e outras cidades, tinham professores pagos e alunos com bolsa. O filósofo al-Ghazali ensinou na de Bagdá."
+      }
+    },
+    {
+      "en": "It was after one of its victories that Turkic peoples began to settle in the region that is now Turkey.",
+      "pt": "Foi a partir de uma vitória sua que povos turcos começaram a se instalar na região que hoje é a Turquia.",
+      "details": {
+        "en": "After Manzikert, in 1071, the Turkmens occupied Anatolia, and a branch of the family founded the Sultanate of Rum there.",
+        "pt": "Depois de Manzikert, em 1071, os turcomanos ocuparam a Anatólia, e um ramo da família fundou ali o Sultanato de Rum."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Seljuk_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Seljúcida"
+  },
+  "aliases": [
+    "Seljuk Empire",
+    "Império Seljúcida",
+    "Great Seljuks",
+    "Grandes Seljúcidas",
+    "Seljuks",
+    "Seljúcidas",
+    "Seljuqs",
+    "Saljuqs",
+    "Seljuk Turks",
+    "Turcos Seljúcidas",
+    "Seljuk Sultanate",
+    "Sultanato Seljúcida",
+    "Persia",
+    "Pérsia",
+    "Iran",
+    "Irã",
+    "Irão"
+  ],
+  "summary": {
+    "en": "A Turkic Muslim empire founded by the Seljuks, a clan of the Oghuz Turks that migrated from the steppe to Central Asia and converted to Sunni Islam. The brothers Tughril and Chaghri defeated the Ghaznavids at Dandanaqan, in 1040, and conquered Iran. In 1055, Tughril entered Baghdad, freed the Abbasid caliph from the control of the Shi'ite Buyids and received the title of sultan. His nephew Alp Arslan defeated the Byzantines at Manzikert, in 1071, and captured Emperor Romanos IV. Under Malik-Shah and his vizier Nizam al-Mulk, the empire reached its peak, stretching from Central Asia to the Mediterranean, and the poet Omar Khayyam created a new calendar at the Isfahan observatory. After 1092, succession wars divided the empire, and the losses in Anatolia led Byzantium to ask the pope for help, which gave rise to the First Crusade. Sultan Sanjar, in the east, was defeated by the Kara-Khitai in 1141, and in 1194 the last sultan was killed by the Khwarazmshah.",
+    "pt": "Império turco e muçulmano fundado pelos seljúcidas, um clã dos turcos oguzes que migrou da estepe para a Ásia Central e se converteu ao islamismo sunita. Os irmãos Tughril e Chaghri derrotaram os gaznévidas em Dandanaqan, em 1040, e conquistaram o Irã. Em 1055, Tughril entrou em Bagdá, libertou o califa abássida do controle dos buídas, que eram xiitas, e recebeu o título de sultão. Seu sobrinho Alp Arslan derrotou os bizantinos em Manzikert, em 1071, e capturou o imperador Romano IV. Sob Malik-Shah e o seu vizir Nizam al-Mulk, o império chegou ao auge, indo da Ásia Central ao Mediterrâneo, e o poeta Omar Khayyam criou um novo calendário no observatório de Isfahan. Depois de 1092, guerras de sucessão dividiram o império, e as perdas na Anatólia levaram Bizâncio a pedir ajuda ao papa, o que deu origem à Primeira Cruzada. O sultão Sanjar, no leste, foi derrotado pelos Kara-Khitai em 1141, e em 1194 o último sultão foi morto pelo xá de Khwarezm."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Great Seljuk Empire",
+        "year": 1092
+      },
+      {
+        "draw": "remove",
+        "ring": [[43.44,41.11],[42.57,41.56],[41.92,41.5],[41.51,41.52],[41.76,41.97],[41.49,42.66],[40.84,43.06],[39.98,43.42],[40.65,43.53],[41.36,43.33],[42.05,43.19],[42.99,43.09],[43.78,42.75],[43.96,42.57],[44.77,42.62],[45.21,42.65],[45.73,42.48],[45.95,42.04],[46.18,41.66],[46.67,41.29],[46.17,41.2],[45.72,41.34],[45,41.29],[44.23,41.21],[43.44,41.11]]
+      },
+      {
+        "draw": "remove",
+        "ring": [[67.4,37.1],[65.2,37.9],[63.6,39.1],[62.3,40.4],[61.5,41.2],[61.8,41.8],[61.5,42.6],[60.5,43.3],[59,44.5],[58,46.5],[80,46.5],[80,37],[74.5,37],[72.5,37],[71.6,37.9],[71,38.2],[70.2,37.6],[69.4,37.2],[68.3,37.1],[67.4,37.1]]
+      },
+      {
+        "draw": "remove",
+        "ring": [[43.855,42.31],[44.204,42.31],[44.479,42.311],[44.679,42.314],[44.804,42.318],[44.855,42.323],[44.938,42.327],[45.054,42.331],[45.202,42.334],[45.382,42.335],[45.55,42.344],[45.704,42.36],[45.846,42.383],[45.975,42.413],[46.077,42.44],[46.154,42.463],[46.205,42.482],[46.23,42.498],[46.249,42.516],[46.261,42.534],[46.267,42.554],[46.267,42.576],[46.233,42.606],[46.167,42.645],[46.069,42.693],[45.937,42.75],[45.82,42.798],[45.718,42.837],[45.631,42.867],[45.558,42.888],[45.455,42.912],[45.322,42.938],[45.158,42.966],[44.964,42.996],[44.798,43.019],[44.661,43.035],[44.551,43.044],[44.47,43.046],[44.385,43.05],[44.298,43.056],[44.207,43.065],[44.114,43.076],[44.004,43.086],[43.878,43.096],[43.736,43.105],[43.577,43.114],[43.443,43.114],[43.334,43.105],[43.25,43.087],[43.191,43.06],[43.161,42.996],[43.16,42.893],[43.188,42.753],[43.245,42.576],[43.376,42.443],[43.579,42.354]]
+      },
+      {
+        "draw": "remove",
+        "ring": [[68.067,35.453],[68.078,35.478],[68.116,35.514],[68.18,35.559],[68.271,35.614],[68.389,35.678],[68.483,35.75],[68.555,35.827],[68.605,35.911],[68.631,36.002],[68.646,36.088],[68.65,36.168],[68.643,36.245],[68.625,36.316],[68.572,36.425],[68.484,36.571],[68.361,36.755],[68.203,36.976],[68.085,37.168],[68.007,37.332],[67.969,37.466],[67.971,37.57],[68.005,37.67],[68.071,37.765],[68.169,37.856],[68.3,37.941],[68.506,38.007],[68.788,38.053],[69.147,38.079],[69.581,38.085],[69.98,38.056],[70.345,37.99],[70.675,37.888],[70.97,37.751],[71.199,37.587],[71.361,37.397],[71.458,37.181],[71.489,36.94],[71.505,36.742],[71.508,36.585],[71.497,36.472],[71.471,36.4],[71.372,36.274],[71.201,36.092],[70.957,35.856],[70.642,35.566],[70.274,35.366],[69.852,35.256],[69.377,35.237],[68.847,35.308],[68.452,35.367],[68.192,35.416]]
+      }
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "kushan-empire",
+  "name": {
+    "en": "Kushan Empire",
+    "pt": "Império Cuchana"
+  },
+  "peak": {
+    "year": 127,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 30,
+    "precision": "Approximate"
+  },
+  "end": {
+    "year": 375,
+    "precision": "Approximate"
+  },
+  "durationNotes": {
+    "en": "It starts around 30, when the chief of one of the five tribes of a nomadic people from the borders of China united the others and began conquering the lands south of the Hindu Kush mountains, and ends around 375, after more than a century of decline, in which the western half fell to a neighbouring Iranian empire and the eastern half broke apart. The peak shown is around 127, at the start of the reign of the dynasty's most famous king. The map excludes the oasis cities east of the Pamir mountains, where the empire's influence was short-lived and contested with China.",
+    "pt": "Começa por volta de 30, quando o chefe de uma das cinco tribos de um povo nômade vindo das fronteiras da China unificou as outras e passou a conquistar as terras ao sul das montanhas do Hindu Kush, e termina por volta de 375, depois de mais de um século de declínio, em que a metade ocidental caiu nas mãos de um império iraniano vizinho e a oriental se fragmentou. O auge escolhido é por volta de 127, no início do reinado do rei mais famoso da dinastia. O mapa exclui as cidades-oásis a leste das montanhas do Pamir, onde a influência do império foi passageira e disputada com a China."
+  },
+  "area": {
+    "km2": 2010000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Purushapura (modern Peshawar), as well as Mathura and Kapisa",
+    "pt": "Purushapura (atual Peshawar), além de Mathura e Kapisa"
+  },
+  "language": {
+    "en": "Bactrian (as well as Greek and Gandhari)",
+    "pt": "Bactriano (além de grego e gandhari)"
+  },
+  "religion": {
+    "en": "Buddhism, Iranian cults and Hinduism",
+    "pt": "Budismo, cultos iranianos e hinduísmo"
+  },
+  "religionNotes": {
+    "en": "The kings' coins showed gods of several traditions side by side: Iranian deities such as Mithra and the goddess Nana, Greek gods, Shiva and the Buddha. One of the kings became famous as a protector of Buddhism and is said to have called a great council of monks in Kashmir.",
+    "pt": "As moedas dos reis mostravam deuses de várias tradições lado a lado: divindades iranianas como Mithra e a deusa Nana, deuses gregos, Shiva e o Buda. Um dos reis ficou famoso como protetor do budismo e teria convocado um grande concílio de monges na Caxemira."
+  },
+  "curiosities": [
+    {
+      "en": "It wrote its official language, of Iranian origin, in the Greek alphabet.",
+      "pt": "Escrevia a sua língua oficial, de origem iraniana, com o alfabeto grego.",
+      "details": {
+        "en": "Bactrian was written in adapted Greek letters, a legacy of the Hellenistic kingdoms of the region. The Rabatak inscription, found in Afghanistan in 1993, tells Kanishka's genealogy in Bactrian.",
+        "pt": "O bactriano era escrito em letras gregas adaptadas, herança dos reinos helenísticos da região. A inscrição de Rabatak, encontrada no Afeganistão em 1993, conta em bactriano a genealogia de Kanishka."
+      }
+    },
+    {
+      "en": "Monks from its territory are among the first to translate Buddhist texts into Chinese.",
+      "pt": "Monges vindos do seu território estão entre os primeiros a traduzir textos budistas para o chinês.",
+      "details": {
+        "en": "Lokaksema, a Kushan monk, translated sutras in Luoyang around 170 to 190. Buddhism reached China largely along the Silk Road that passed through the empire.",
+        "pt": "Lokaksema, um monge cuchana, traduziu sutras em Luoyang por volta de 170 a 190. O budismo chegou à China em grande parte pela Rota da Seda que passava pelo império."
+      }
+    },
+    {
+      "en": "The art of its time mixed Greek and Indian styles and created some of the first images of the Buddha in human form.",
+      "pt": "A arte da sua época misturou estilos gregos e indianos e criou algumas das primeiras imagens do Buda em forma humana.",
+      "details": {
+        "en": "This is the Greco-Buddhist art of Gandhara, in present-day Pakistan. Before it, the Buddha was represented only by symbols, such as footprints or a tree.",
+        "pt": "É a arte greco-budista de Gandhara, no atual Paquistão. Antes dela, o Buda era representado só por símbolos, como pegadas ou uma árvore."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Kushan_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Cuchana"
+  },
+  "aliases": [
+    "Kushan",
+    "Kushans",
+    "Kushana",
+    "Kushanas",
+    "Cuchana",
+    "Cuchanas",
+    "Kushana Empire",
+    "Império Kushan",
+    "Império Kushana",
+    "Yuezhi",
+    "Iuechi",
+    "Guishuang"
+  ],
+  "summary": {
+    "en": "An empire of Central Asia and northern India founded by the Kushans, one of the five tribes of the Yuezhi, a nomadic people driven from the borders of China who settled in Bactria in the 2nd century BC. Around 30, Kujula Kadphises united the tribes and conquered Gandhara, and his successors advanced through the Indus valley and the Ganges plain. Under Kanishka, in the 2nd century, the empire reached its peak and stood among the four great powers of the world, alongside Rome, the Parthians and Han China. At the centre of the Silk Road, it grew rich from the trade between the Mediterranean, India and China. From around 230, the Sasanians took the western part, and what remained in the east broke apart until it was absorbed by the Guptas and by invaders from Central Asia, around 375.",
+    "pt": "Império da Ásia Central e do norte da Índia fundado pelos cuchanas, uma das cinco tribos dos yuezhi, um povo nômade expulso das fronteiras da China que se estabeleceu na Báctria no século II a.C. Por volta de 30, Kujula Kadphises unificou as tribos e conquistou Gandhara, e seus sucessores avançaram pelo vale do Indo e pela planície do Ganges. Sob Kanishka, no século II, o império chegou ao auge e ficou entre as quatro grandes potências do mundo, ao lado de Roma, dos partas e da China dos Han. No centro da Rota da Seda, enriqueceu com o comércio entre o Mediterrâneo, a Índia e a China. A partir de cerca de 230, os Sassânidas tomaram a parte ocidental, e o que restou no leste se fragmentou até ser absorvido pelos Gupta e pelos invasores vindos da Ásia Central, por volta de 375."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Kushan Empire",
+        "year": 127
+      },
+      {
+        "draw": "remove",
+        "ring": [[75.4,36.8],[75,37.2],[75,38],[74.8,38.5],[73.8,39],[73.7,39.5],[73.6,40.2],[73.5,41.5],[73.5,45],[95,45],[95,37],[76.5,37],[75.4,36.8]]
+      }
+    ]
+  }
+}

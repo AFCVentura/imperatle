@@ -1,0 +1,107 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "first-turkic-khaganate",
+  "name": {
+    "en": "First Turkic Khaganate",
+    "pt": "Primeiro Canato Turco"
+  },
+  "peak": {
+    "year": 576,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 552,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 603,
+    "precision": "Approximate"
+  },
+  "durationNotes": {
+    "en": "It starts in 552, when the chief of a clan subject to another steppe people rebelled, defeated its former masters and took the title of great khan, and ends around 603, when the wars between the heirs split the khaganate for good into two halves, an eastern and a western one. The peak shown is around 576, when the armies of the western half reached the Black Sea. The map includes the merchant cities of Central Asia that kept their own princes but paid tribute and received overseers from the khaganate, and excludes most of the oasis kingdoms further southeast.",
+    "pt": "Começa em 552, quando o chefe de um clã vassalo de outro povo da estepe se revoltou, derrotou os antigos senhores e assumiu o título de grão-cã, e termina por volta de 603, quando as guerras entre os herdeiros dividiram o canato definitivamente em duas metades, uma oriental e outra ocidental. O auge escolhido é por volta de 576, quando os exércitos da metade ocidental chegaram ao mar Negro. O mapa inclui as cidades de mercadores da Ásia Central que mantinham os próprios príncipes, mas pagavam tributo e recebiam supervisores do canato, e exclui a maior parte dos reinos-oásis mais ao sudeste."
+  },
+  "area": {
+    "km2": 6410000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia",
+    "Europe"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Ötüken (itinerant court)",
+    "pt": "Ötüken (corte itinerante)"
+  },
+  "language": {
+    "en": "Old Turkic (with Sogdian in writing)",
+    "pt": "Turco antigo (com o sogdiano na escrita)"
+  },
+  "religion": {
+    "en": "Tengrism",
+    "pt": "Tengrismo"
+  },
+  "religionNotes": {
+    "en": "The traditional religion worshipped Tengri, the sky god, and the goddess of earth and water, and gave the great khan a heavenly mandate to rule. One of the great khans converted to Buddhism and had Buddhist texts translated into his language, and the merchants of Central Asia brought Manichaeism and Zoroastrianism to the khaganate.",
+    "pt": "A religião tradicional cultuava Tengri, o deus do céu, e a deusa da terra e da água, e dava ao grão-cã um mandato celeste para governar. Um dos grão-cãs se converteu ao budismo e mandou traduzir textos budistas para a sua língua, e os mercadores da Ásia Central levaram ao canato o maniqueísmo e o zoroastrismo."
+  },
+  "curiosities": [
+    {
+      "en": "Before founding the empire, its people were known as blacksmiths in the service of another steppe people.",
+      "pt": "Antes de criar o império, seu povo era conhecido como ferreiro a serviço de outro povo da estepe.",
+      "details": {
+        "en": "Chinese chronicles say the Ashina worked iron for the Rourans in the Altai mountains. When Bumin asked for a Rouran princess in marriage, the great khan replied: \"You are my blacksmith slave, how dare you?\", and Bumin rebelled.",
+        "pt": "As crônicas chinesas dizem que os Ashina trabalhavam o ferro para os rourans nas montanhas Altai. Quando Bumin pediu uma princesa rourana em casamento, o grão-cã respondeu: \"Você é meu escravo ferreiro, como ousa?\", e Bumin se revoltou."
+      }
+    },
+    {
+      "en": "According to its origin legend, the dynasty descended from a boy saved and raised by a she-wolf.",
+      "pt": "Segundo sua lenda de origem, a dinastia descendia de um menino salvo e criado por uma loba.",
+      "details": {
+        "en": "The legend of Asena tells that a she-wolf saved the only survivor of a massacre and gave birth to ten sons, ancestors of the Ashina clan. The grey wolf is still a symbol of Turkish nationalism.",
+        "pt": "A lenda de Asena conta que uma loba salvou o único sobrevivente de um massacre e deu à luz dez filhos, ancestrais do clã Ashina. O lobo cinzento continua sendo um símbolo do nacionalismo turco."
+      }
+    },
+    {
+      "en": "It was the first state to use as a political name the word from which the name of a present-day country comes.",
+      "pt": "Foi o primeiro Estado a usar como nome político a palavra da qual vem o nome de um país atual.",
+      "details": {
+        "en": "\"Türk\" first appears as the name of a state with this khaganate. The word passed to the Turkic peoples and, centuries later, to Turkey.",
+        "pt": "\"Türk\" aparece pela primeira vez como nome de um Estado com esse canato. A palavra passou aos povos turcos e, séculos depois, à Turquia."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/First_Turkic_Khaganate",
+    "pt": "https://pt.wikipedia.org/wiki/Primeiro_Canato_Turco"
+  },
+  "aliases": [
+    "Göktürks",
+    "Gokturks",
+    "Goturcos",
+    "Göktürk Khaganate",
+    "Canato Göktürk",
+    "Turkic Khaganate",
+    "Canato Turco",
+    "Kök Türk",
+    "Celestial Turks",
+    "Turcos Celestes",
+    "Ashina",
+    "Tujue",
+    "Türk"
+  ],
+  "summary": {
+    "en": "The first great empire of the Turkic peoples, founded in 552 by Bumin, of the Ashina clan, who rebelled against the Rourans, masters of the Mongolian steppe, and took the title of great khan. His brother Istämi, who ruled the western half as a subordinate khan, allied with the Sasanian Persians to destroy the Hephthalites, around 560, and shared their Central Asian lands with them. Within a few years, the khaganate stretched from Manchuria to the Black Sea, controlling the stretch of the Silk Road that crossed the steppe. Sogdian merchants, subjects of the khaganate, ran the silk trade, and the dynasties of northern China paid huge tributes in silk to avoid raids. From 581, succession disputes, encouraged by the diplomacy of the Sui dynasty, led to civil wars, and around 603 the khaganate split for good into an Eastern Turkic Khaganate and a Western Turkic Khaganate.",
+    "pt": "Primeiro grande império dos povos turcos, fundado em 552 por Bumin, do clã Ashina, que se revoltou contra os rourans, senhores da estepe da Mongólia, e assumiu o título de grão-cã. Seu irmão Istämi, que governava a metade ocidental como cã subordinado, aliou-se aos persas sassânidas para destruir os heftalitas, por volta de 560, e dividiu com eles as terras da Ásia Central. Em poucos anos, o canato se estendeu da Manchúria ao mar Negro, controlando o trecho da Rota da Seda que passava pela estepe. Os mercadores sogdianos, súditos do canato, conduziam o comércio da seda, e as dinastias do norte da China pagavam tributos enormes em seda para evitar ataques. A partir de 581, disputas pela sucessão, incentivadas pela diplomacia da dinastia Sui, levaram a guerras civis, e por volta de 603 o canato se dividiu definitivamente em um Canato Turco Oriental e um Canato Turco Ocidental."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Göktürk Khaganate",
+        "year": 576
+      }
+    ]
+  }
+}

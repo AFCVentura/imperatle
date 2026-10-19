@@ -1,0 +1,114 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "maratha-empire",
+  "name": {
+    "en": "Maratha Empire",
+    "pt": "Império Marata"
+  },
+  "peak": {
+    "year": 1760,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1674,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1818,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 1674, when a warrior leader from the western Deccan was crowned king, defying the Muslim empire that dominated the north, and ends in 1818, when the last head of government surrendered to a European trading company. From around 1720, power passed in practice to hereditary prime ministers, and the empire became a confederacy of great military chiefs. The peak shown is 1760, shortly before a catastrophic defeat suffered in 1761. The map includes the lands of these chiefs and the Deccan territories ceded by a neighbouring state that same year.",
+    "pt": "Começa em 1674, quando um líder guerreiro do oeste do Decão foi coroado rei, desafiando o império muçulmano que dominava o norte, e termina em 1818, quando o último chefe do governo se rendeu a uma companhia comercial europeia. A partir de cerca de 1720, o poder passou de fato a primeiros-ministros hereditários, e o império virou uma confederação de grandes chefes militares. O auge escolhido é 1760, pouco antes de uma derrota catastrófica sofrida em 1761. O mapa inclui as terras desses chefes e os territórios do Decão cedidos por um Estado vizinho naquele mesmo ano."
+  },
+  "area": {
+    "km2": 1140000,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia"
+  ],
+  "primaryContinent": "Asia",
+  "capital": {
+    "en": "Raigad, later Satara and Pune",
+    "pt": "Raigad, depois Satara e Pune"
+  },
+  "language": {
+    "en": "Marathi (as well as Persian)",
+    "pt": "Marati (além do persa)"
+  },
+  "religion": {
+    "en": "Hinduism",
+    "pt": "Hinduísmo"
+  },
+  "religionNotes": {
+    "en": "The founder presented himself as a protector of Hindus and temples against the Muslim rulers, and his coronation followed traditional Vedic rituals. Even so, the empire had Muslims in the army and the administration, and the court used Persian in part of its records.",
+    "pt": "O fundador se apresentava como protetor dos hindus e dos templos diante dos governantes muçulmanos, e a coroação dele seguiu rituais védicos tradicionais. Mesmo assim, o império tinha muçulmanos no exército e na administração, e a corte usava o persa em parte da documentação."
+  },
+  "curiosities": [
+    {
+      "en": "The international airport and the main railway station of Mumbai are named after its founder.",
+      "pt": "O aeroporto internacional e a principal estação de trem de Mumbai levam o nome do seu fundador.",
+      "details": {
+        "en": "Chhatrapati Shivaji Maharaj International Airport and the Chhatrapati Shivaji Terminus station, formerly Victoria Terminus, a World Heritage Site.",
+        "pt": "O Aeroporto Internacional Chhatrapati Shivaji Maharaj e a estação Chhatrapati Shivaji Terminus, antiga Victoria Terminus, que é Patrimônio da Humanidade."
+      }
+    },
+    {
+      "en": "In 1761, it suffered a defeat in one of the largest battles of the 18th century, in which tens of thousands of soldiers died in a single day.",
+      "pt": "Sofreu, em 1761, uma derrota numa das maiores batalhas do século XVIII, em que dezenas de milhares de soldados morreram num só dia.",
+      "details": {
+        "en": "This was the Third Battle of Panipat, against the Afghan Ahmad Shah Durrani. It opened the way for the British in northern India.",
+        "pt": "É a Terceira Batalha de Panipat, contra o afegão Ahmad Shah Durrani. Ela abriu caminho para os britânicos no norte da Índia."
+      }
+    },
+    {
+      "en": "It was defeated in three wars against the British East India Company, the last great obstacle before the company dominated India.",
+      "pt": "Foi derrotado em três guerras contra a Companhia Britânica das Índias Orientais, o último grande obstáculo antes de ela dominar a Índia.",
+      "details": {
+        "en": "These were the Anglo-Maratha Wars, from 1775 to 1782, from 1803 to 1805 and from 1817 to 1818.",
+        "pt": "São as guerras Anglo-Maratas, de 1775 a 1782, de 1803 a 1805 e de 1817 a 1818."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Maratha_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Marata"
+  },
+  "aliases": [
+    "Maratha",
+    "Marathas",
+    "Maratas",
+    "Maratha Confederacy",
+    "Confederação Marata",
+    "Maratha Kingdom",
+    "Reino Marata",
+    "Maratha Swarajya",
+    "Hindavi Swarajya",
+    "Peshwa",
+    "Peshwas",
+    "India",
+    "Índia"
+  ],
+  "summary": {
+    "en": "A Hindu empire of western India, founded by Shivaji, who fought against the Deccan sultanates and the Mughal Empire and was crowned king in 1674, at Raigad. After the death of Aurangzeb, in 1707, the Marathas advanced northwards, and from 1720 power passed to the Peshwas, hereditary prime ministers who ruled from Pune, while great chiefs such as the Scindias, the Holkars, the Bhonsles and the Gaekwads built their own domains within the confederacy. In 1758 Maratha armies reached Attock, on the Indus, but in 1761 they were crushed by the Afghan Ahmad Shah Durrani at the Third Battle of Panipat. The empire recovered and in 1771 again controlled Delhi, with the Mughal emperor under its protection. The three wars against the British East India Company, between 1775 and 1818, ended with the surrender of the last Peshwa, and the British came to dominate almost all of India.",
+    "pt": "Império hindu do oeste da Índia, fundado por Shivaji, que lutou contra os sultanatos do Decão e o Império Mogol e foi coroado rei em 1674, em Raigad. Depois da morte de Aurangzeb, em 1707, os maratas avançaram para o norte, e a partir de 1720 o poder passou aos Peshwas, primeiros-ministros hereditários que governavam de Pune, enquanto grandes chefes como os Scindia, os Holkar, os Bhonsle e os Gaekwad criavam seus próprios domínios dentro da confederação. Em 1758 os exércitos maratas chegaram a Attock, no rio Indo, mas em 1761 foram esmagados pelo afegão Ahmad Shah Durrani na Terceira Batalha de Panipat. O império se recuperou e, em 1771, voltou a controlar Délhi, com o imperador mogol sob sua proteção. As três guerras contra a Companhia Britânica das Índias Orientais, entre 1775 e 1818, terminaram com a rendição do último Peshwa, e os britânicos passaram a dominar quase toda a Índia."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Maratha Empire",
+        "year": 1760
+      },
+      {
+        "draw": "add",
+        "ring": [[74.5,20.2],[77.7,20.2],[77.7,20],[78,19.8],[77.55,19.6],[77.6,19.4],[77.9,19.2],[77.9,19],[77.65,18.8],[77.75,18.6],[77.85,18.4],[78.2,18.2],[78.05,18],[77.8,17.8],[77.55,17.6],[77.35,17.4],[77.3,17.2],[77.25,17],[77.05,16.8],[76.95,16.6],[76.9,16.4],[76.8,16.2],[76.65,16],[76.35,15.8],[76.25,15.6],[76.15,15.4],[76.2,15.2],[74.5,15.2],[74.5,20.2]]
+      },
+      {
+        "draw": "add",
+        "ring": [[74.669,19.536],[74.851,19.523],[75,19.518],[75.118,19.521],[75.205,19.533],[75.259,19.553],[75.342,19.616],[75.455,19.72],[75.597,19.868],[75.769,20.057],[75.899,20.208],[75.99,20.32],[76.039,20.393],[76.048,20.427],[76.039,20.462],[76.011,20.5],[75.966,20.539],[75.901,20.579],[75.79,20.615],[75.63,20.645],[75.423,20.671],[75.167,20.691],[74.935,20.686],[74.726,20.656],[74.54,20.6],[74.377,20.518],[74.25,20.411],[74.161,20.279],[74.108,20.122],[74.092,19.939],[74.112,19.79],[74.168,19.675],[74.26,19.594],[74.387,19.546],[74.503,19.509],[74.608,19.482],[74.701,19.465],[74.783,19.458],[74.813,19.46],[74.79,19.47],[74.715,19.489],[74.587,19.516],[74.537,19.533],[74.564,19.539]]
+      }
+    ]
+  }
+}
