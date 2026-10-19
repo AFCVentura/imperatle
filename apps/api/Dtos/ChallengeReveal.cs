@@ -34,3 +34,7 @@ public record ChallengeReveal(
 );
 
 public record EmpireHintDto(string TextEn, string TextPt);
+
+// A clue in the full answer, with its explanation (empty = none). Kept apart
+// from EmpireHintDto so a reveal mid-round can't carry the explanations.
+public record EmpireHintAnswerDto(string TextEn, string TextPt, string DetailsEn, string DetailsPt);

@@ -84,7 +84,7 @@ public static class RevealBuilder
         empire.CapitalPt,
         empire.LanguageEn,
         empire.LanguagePt,
-        empire.Hints.OrderBy(h => h.Order).Select(ToDto).ToList(),
+        empire.Hints.OrderBy(h => h.Order).Select(ToAnswerDto).ToList(),
         empire.ReferenceYear,
         empire.ReferenceYearPrecision,
         empire.StartYear,
@@ -101,7 +101,11 @@ public static class RevealBuilder
         empire.ReligionNotesEn,
         empire.ReligionNotesPt,
         empire.WikipediaEn,
-        empire.WikipediaPt);
+        empire.WikipediaPt,
+        empire.SummaryEn,
+        empire.SummaryPt);
 
     private static EmpireHintDto ToDto(EmpireHint hint) => new(hint.TextEn, hint.TextPt);
+
+    private static EmpireHintAnswerDto ToAnswerDto(EmpireHint hint) => new(hint.TextEn, hint.TextPt, hint.DetailsEn, hint.DetailsPt);
 }

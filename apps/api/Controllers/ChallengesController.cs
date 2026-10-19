@@ -48,7 +48,9 @@ public class ChallengesController(ImperatleDbContext db, IWebHostEnvironment env
             return NotFound();
         }
 
-        Response.Headers.CacheControl = "public, max-age=86400";
+        // In Development the DEV buttons change today's empire, so a cached map
+        // would show the previous empire's shape under the new one's clues.
+        Response.Headers.CacheControl = env.IsDevelopment() ? "no-store" : "public, max-age=86400";
         return Content(shape, "application/json");
     }
 

@@ -27,6 +27,18 @@ public class EmpireContentTests
     }
 
     [Fact]
+    public void Aliases_a_summary_and_curiosity_details_are_optional_extras()
+    {
+        var empire = ValidEmpire() with
+        {
+            Aliases = ["Mughal", "Mugal", "India"],
+            Summary = new("A great empire.", "Um grande império."),
+            Curiosities = [new("One.", "Um.", new("More on one.", "Mais sobre um.")), new("Two.", "Dois."), new("Three.", "Três.")],
+        };
+        Assert.Empty(EmpireContentLoader.Validate(empire, "test-empire"));
+    }
+
+    [Fact]
     public void An_empire_that_still_exists_has_no_end()
     {
         Assert.Empty(EmpireContentLoader.Validate(ValidEmpire() with { End = null }, "test-empire"));
@@ -66,6 +78,10 @@ public class EmpireContentTests
         { ValidEmpire() with { DurationNotes = new("Only one phase -- the rest is elsewhere", "Uma fase") }, "em dash" },
         { ValidEmpire() with { Wikipedia = new("https://en.wikipedia.org/wiki/Rome", "https://en.wikipedia.org/wiki/Rome") }, "wikipedia.pt" },
         { ValidEmpire() with { Wikipedia = new("Roman Empire", "https://pt.wikipedia.org/wiki/Roma") }, "wikipedia.en" },
+        { ValidEmpire() with { Summary = new("A great empire.", "") }, "summary.pt is empty" },
+        { ValidEmpire() with { Curiosities = [new("One.", "Um.", new("More — on one.", "Mais.")), new("Two.", "Dois."), new("Three.", "Três.")] }, "curiosities[0].details.en has an em dash" },
+        { ValidEmpire() with { Aliases = ["Mughal", " "] }, "aliases[1] is empty" },
+        { ValidEmpire() with { Aliases = ["Mughal", "mughal "] }, "more than once" },
         { ValidEmpire() with { Map = new([]) }, "at least one Cliopatria polity" },
         { ValidEmpire() with { Map = new([new(Country: "PYF")]) }, "at least one Cliopatria polity" },
         { ValidEmpire() with { Map = new([new("Roman Empire", 117), new(Country: "pyf")]) }, "3-letter code" },

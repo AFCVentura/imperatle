@@ -16,7 +16,7 @@ public record EmpireAnswer(
     string CapitalPt,
     string LanguageEn,
     string LanguagePt,
-    List<EmpireHintDto> Hints,
+    List<EmpireHintAnswerDto> Hints,
     int ReferenceYear,
     YearPrecision ReferenceYearPrecision,
     int StartYear,
@@ -33,5 +33,7 @@ public record EmpireAnswer(
     string ReligionNotesEn,
     string ReligionNotesPt,
     string WikipediaEn,
-    string WikipediaPt
+    string WikipediaPt,
+    string SummaryEn,
+    string SummaryPt
 );

@@ -7,7 +7,7 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-17-4169E1?logo=postgresql&logoColor=white)
 ![Azure Container Apps](https://img.shields.io/badge/Azure-Container_Apps-0078D4?logo=microsoftazure&logoColor=white)
 
-A daily guessing game about historical empires. Every day the map shows one empire at its greatest extent, and players have 7 attempts to name it. Each wrong guess says whether the answer was larger or smaller and lasted longer or shorter, and unlocks new clues: era, continents, capital, language, peak year and more.
+A daily guessing game about historical empires and other great powers. Every day the map shows one of them at its greatest extent, and players have 7 attempts to name it. Each wrong guess says whether the answer was larger or smaller and lasted longer or shorter, and unlocks new clues: era, continents, capital, language, peak year and more.
 
 Available in English and Portuguese.
 

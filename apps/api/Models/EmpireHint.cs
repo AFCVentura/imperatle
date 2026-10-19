@@ -11,4 +11,9 @@ public class EmpireHint
 
     public string TextEn { get; set; } = string.Empty;
     public string TextPt { get; set; } = string.Empty;
+
+    // Longer explanation of the clue, shown only once the round is over (it
+    // may name what the clue hides). Empty string = none.
+    public string DetailsEn { get; set; } = string.Empty;
+    public string DetailsPt { get; set; } = string.Empty;
 }

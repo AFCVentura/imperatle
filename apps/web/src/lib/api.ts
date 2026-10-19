@@ -11,9 +11,10 @@ export async function getTodayChallenge(): Promise<TodayChallenge | null> {
 }
 
 // The day's empire shape: coordinates only. By date, so the browser can cache
-// it; the API refuses future dates.
+// it; the API refuses future dates. Not in development, where the DEV buttons
+// change today's empire and a cached map would be the previous one's.
 export async function getMapShape(date: string): Promise<MultiPolygon> {
-  const res = await fetch(`${API_URL}/challenges/${date}/map`);
+  const res = await fetch(`${API_URL}/challenges/${date}/map`, process.env.NODE_ENV === "production" ? undefined : { cache: "no-store" });
   if (!res.ok) throw new Error(`Failed to load the map: ${res.status}`);
   return res.json();
 }

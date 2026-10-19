@@ -46,11 +46,18 @@ export interface EmpireSummary {
   id: number;
   nameEn: string;
   namePt: string;
+  // Other names the search also matches (spellings, other languages, "China"
+  // for a Chinese dynasty).
+  aliases: string[];
 }
 
 export interface EmpireHint {
   textEn: string;
   textPt: string;
+  // Only in the answer, once the round is over: a longer explanation of the
+  // clue. Empty when there's none; missing from answers saved before it existed.
+  detailsEn?: string;
+  detailsPt?: string;
 }
 
 // Cumulative reveal for the current attempt count -- every field stays null
@@ -146,6 +153,10 @@ export interface EmpireAnswer {
   // field existed.
   wikipediaEn?: string;
   wikipediaPt?: string;
+  // What the empire was, in a few sentences. Empty when there's none yet;
+  // missing from answers saved before the field existed.
+  summaryEn?: string;
+  summaryPt?: string;
 }
 
 export interface GuessComparison {

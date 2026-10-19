@@ -63,4 +63,27 @@ describe("toContentJson", () => {
       "primaryContinent", "capital", "language", "religion", "curiosities", "map",
     ]);
   });
+
+  it("writes aliases, the summary and clue explanations only when filled in", () => {
+    const draft: EmpireDraft = {
+      ...valid(),
+      aliases: [" Mughal ", "", "Mugal"],
+      summary: { en: "What it was.", pt: "O que foi." },
+      curiosities: [
+        { en: "One.", pt: "Um.", details: { en: "More.", pt: "Mais." } },
+        { en: "Two.", pt: "Dois.", details: { en: "", pt: "" } },
+        { en: "Three.", pt: "Três." },
+      ],
+    };
+    const json = JSON.parse(toContentJson(draft));
+    expect(json.aliases).toEqual(["Mughal", "Mugal"]);
+    expect(json.summary).toEqual({ en: "What it was.", pt: "O que foi." });
+    expect(json.curiosities[0].details).toEqual({ en: "More.", pt: "Mais." });
+    expect(json.curiosities[1]).toEqual({ en: "Two.", pt: "Dois." });
+    expect(Object.keys(json).slice(-3)).toEqual(["aliases", "summary", "map"]);
+  });
+
+  it("flags a repeated alias", () => {
+    expect(validateDraft({ ...valid(), aliases: ["Mughal", "mughal"] })).toContainEqual(expect.stringContaining("repetido"));
+  });
 });

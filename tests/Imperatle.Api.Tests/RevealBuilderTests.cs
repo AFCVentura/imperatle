@@ -19,10 +19,28 @@ public class RevealBuilderTests
         Hints =
         [
             new EmpireHint { Order = 2, TextEn = "third" },
-            new EmpireHint { Order = 0, TextEn = "first" },
+            new EmpireHint { Order = 0, TextEn = "first", DetailsEn = "first, explained" },
             new EmpireHint { Order = 1, TextEn = "second" },
         ],
     };
+
+    // The explanations may name what a clue hides: only the answer, sent once
+    // the round is over, carries them (and the summary).
+    [Fact]
+    public void Clue_explanations_and_the_summary_come_only_with_the_answer()
+    {
+        var empire = Empire();
+        empire.SummaryEn = "What it was.";
+
+        var answer = RevealBuilder.BuildAnswer(empire);
+        Assert.Equal("first, explained", answer.Hints[0].DetailsEn);
+        Assert.Equal("", answer.Hints[1].DetailsEn);
+        Assert.Equal("What it was.", answer.SummaryEn);
+
+        var json = System.Text.Json.JsonSerializer.Serialize(RevealBuilder.BuildReveal(empire, 6));
+        Assert.DoesNotContain("explained", json);
+        Assert.DoesNotContain("What it was", json);
+    }
 
     [Fact]
     public void An_empire_that_still_exists_lasts_until_this_year()

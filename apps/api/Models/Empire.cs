@@ -66,6 +66,15 @@ public class Empire
     public string WikipediaEn { get; set; } = string.Empty;
     public string WikipediaPt { get; set; } = string.Empty;
 
+    // Other names the guess list also matches (spellings, other languages,
+    // "China" for a Chinese dynasty). Never shown as the answer.
+    public List<string> Aliases { get; set; } = [];
+
+    // What the empire was, in a few sentences, shown once the round is over.
+    // Empty string = none yet.
+    public string SummaryEn { get; set; } = string.Empty;
+    public string SummaryPt { get; set; } = string.Empty;
+
     // Max 3, revealed in Order (0 = least obvious, 2 = most obvious).
     public List<EmpireHint> Hints { get; set; } = [];
 }

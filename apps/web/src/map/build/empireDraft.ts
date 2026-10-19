@@ -44,10 +44,17 @@ export type EmpireDraft = {
   language: Text;
   religion: Text;
   religionNotes?: Text;
-  curiosities: Text[];
+  curiosities: Curiosity[];
   wikipedia?: Text;
+  // Other names the guess list also matches; never shown as the answer.
+  aliases?: string[];
+  // What the empire was, shown once the round is over.
+  summary?: Text;
   map: { parts: MapPart[] };
 };
+
+// A clue, plus an optional explanation shown once the round is over.
+export type Curiosity = Text & { details?: Text };
 
 export const CURIOSITY_COUNT = 3;
 
@@ -91,7 +98,19 @@ export function validateDraft(draft: EmpireDraft, others: { slug: string; name: 
   if (!draft.continents.includes(draft.primaryContinent)) errors.push("o continente principal tem que estar entre os marcados");
 
   if (draft.curiosities.length !== CURIOSITY_COUNT) errors.push(`são exatamente ${CURIOSITY_COUNT} dicas`);
-  draft.curiosities.forEach((c, i) => checkText(errors, `dica ${i + 1}`, c));
+  draft.curiosities.forEach((c, i) => {
+    checkText(errors, `dica ${i + 1}`, c);
+    if (!isBlank(c.details)) checkText(errors, `explicação da dica ${i + 1}`, c.details!);
+  });
+  if (!isBlank(draft.summary)) checkText(errors, "resumo", draft.summary!);
+
+  const aliases = cleanAliases(draft.aliases);
+  const seen = new Set<string>();
+  for (const alias of aliases) {
+    const key = alias.toLowerCase();
+    if (seen.has(key)) errors.push(`nomes alternativos: "${alias}" repetido`);
+    seen.add(key);
+  }
 
   if (!isBlank(draft.wikipedia)) {
     for (const lang of ["en", "pt"] as const) {
@@ -120,10 +139,16 @@ function checkText(errors: string[], label: string, text: Text) {
   }
 }
 
+// Aliases as saved: trimmed, empty entries dropped.
+export const cleanAliases = (aliases?: string[]) => (aliases ?? []).map((a) => a.trim()).filter(Boolean);
+
 // Optional texts are left out of the file when both languages are empty.
 export function toContentJson(draft: EmpireDraft): string {
   const blank = isBlank;
-  const { durationNotes, religionNotes, wikipedia, ...rest } = draft;
+  const { durationNotes, religionNotes, wikipedia, summary, ...rest } = draft;
+  const aliases = cleanAliases(rest.aliases);
+  // A clue's explanation is left out when empty, like the other optional texts.
+  const curiosities = rest.curiosities.map(({ details, ...text }) => (blank(details) ? text : { ...text, details }));
   const ordered = {
     $schema: "../empire.schema.json",
     slug: rest.slug,
@@ -140,8 +165,10 @@ export function toContentJson(draft: EmpireDraft): string {
     language: rest.language,
     religion: rest.religion,
     ...(blank(religionNotes) ? {} : { religionNotes }),
-    curiosities: rest.curiosities,
+    curiosities,
     ...(blank(wikipedia) ? {} : { wikipedia }),
+    ...(aliases.length === 0 ? {} : { aliases }),
+    ...(blank(summary) ? {} : { summary }),
     map: rest.map,
   };
   // A drawn ring stays on one line, or each point would take four.

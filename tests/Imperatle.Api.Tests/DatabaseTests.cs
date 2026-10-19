@@ -2,9 +2,11 @@ using Imperatle.Api.Controllers;
 using Imperatle.Api.Data;
 using Imperatle.Api.Game;
 using Imperatle.Api.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 
 namespace Imperatle.Api.Tests;
 
@@ -102,7 +104,7 @@ public class DatabaseTests
         var today = GameClock.Today();
         await ChallengeScheduler.EnsureForDateAsync(db, today);
         await ChallengeScheduler.EnsureForDateAsync(db, today.AddDays(1));
-        var controller = new ChallengesController(db, null!)
+        var controller = new ChallengesController(db, new FakeEnvironment("Production"))
         {
             ControllerContext = new ControllerContext { HttpContext = new DefaultHttpContext() },
         };
@@ -110,8 +112,37 @@ public class DatabaseTests
         var served = Assert.IsType<ContentResult>(await controller.GetMap(today));
         Assert.Equal(Shape, served.Content);
         Assert.Equal("application/json", served.ContentType);
+        Assert.Equal("public, max-age=86400", controller.Response.Headers.CacheControl.ToString());
 
         Assert.IsType<NotFoundResult>(await controller.GetMap(today.AddDays(1)));
         Assert.IsType<NotFoundResult>(await controller.GetMap(today.AddDays(-30))); // no challenge that day
+    }
+
+    // In Development the DEV buttons change today's empire, so the map can't be
+    // cached or the browser would keep showing the previous empire's shape.
+    [Fact]
+    public async Task Map_is_not_cached_in_development()
+    {
+        await using var db = NewDb();
+        await EmpireContentImporter.SyncAsync(db, [Content("a")]);
+        var today = GameClock.Today();
+        await ChallengeScheduler.EnsureForDateAsync(db, today);
+        var controller = new ChallengesController(db, new FakeEnvironment("Development"))
+        {
+            ControllerContext = new ControllerContext { HttpContext = new DefaultHttpContext() },
+        };
+
+        Assert.IsType<ContentResult>(await controller.GetMap(today));
+        Assert.Equal("no-store", controller.Response.Headers.CacheControl.ToString());
+    }
+
+    private sealed class FakeEnvironment(string name) : IWebHostEnvironment
+    {
+        public string EnvironmentName { get; set; } = name;
+        public string ApplicationName { get; set; } = "Imperatle.Api";
+        public string WebRootPath { get; set; } = "";
+        public IFileProvider WebRootFileProvider { get; set; } = new NullFileProvider();
+        public string ContentRootPath { get; set; } = "";
+        public IFileProvider ContentRootFileProvider { get; set; } = new NullFileProvider();
     }
 }

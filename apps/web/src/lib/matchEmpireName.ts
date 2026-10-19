@@ -35,3 +35,27 @@ export function matchEmpireByQuery(name: string, query: string): [number, number
   });
   return ranges;
 }
+
+export interface EmpireMatch {
+  // Ranges to highlight in the shown name; empty when only another name matched.
+  ranges: [number, number][];
+  // The other name that matched, shown next to the empire's name.
+  alias?: { text: string; ranges: [number, number][] };
+}
+
+// Matches the empire's name in the player's language first (substring or
+// initials), then its other names: the name in the other language and its
+// aliases (spellings like "Mugal", or "China" for a Chinese dynasty), by
+// substring only, so short queries don't pull in unrelated empires by initials.
+export function matchEmpire(name: string, otherNames: string[], query: string): EmpireMatch | null {
+  const ranges = matchEmpireByQuery(name, query);
+  if (ranges) return { ranges };
+
+  const normalizedQuery = normalize(query.trim());
+  if (!normalizedQuery) return null;
+  for (const other of otherNames) {
+    const index = normalize(other).indexOf(normalizedQuery);
+    if (index !== -1) return { ranges: [], alias: { text: other, ranges: [[index, index + normalizedQuery.length]] } };
+  }
+  return null;
+}

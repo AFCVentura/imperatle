@@ -19,8 +19,10 @@ Every empire in the game is one file in `empires/`, named after its slug (`mongo
 | `mapAccuracy` | `Precise`, `Approximate` or `Speculative` (shown as High, Medium, Low). |
 | `continents`, `primaryContinent` | The primary one must be in the list. |
 | `capital`, `language`, `religion` | Short texts. |
-| `curiosities` | Exactly 3, least obvious first. |
+| `curiosities` | Exactly 3, least obvious first. Each can have an optional `details` (`en`, `pt`): a longer explanation shown only once the round is over, so it may name what the clue hides. |
 | `wikipedia` | Optional. `en` and `pt` article links (`https://en.wikipedia.org/wiki/...`, `https://pt.wikipedia.org/wiki/...`), shown in the result card once the round is over. |
+| `aliases` | Optional. Other names the guess list also matches, never shown as the answer: spellings (`"Mughal"`, `"Mugal"`), other languages, or the country an empire is often called by (`"China"` for every Chinese dynasty). The name in the other language already counts. |
+| `summary` | Optional. What the empire was, in a few sentences (`en`, `pt`), shown in the result card once the round is over. |
 | `map` | Optional until the map is ready. `parts`: the Cliopatria polities (exact `Name`) and year the shape is made of; more than one when the dataset lists part of the empire apart (e.g. the British Empire plus Australia). Land Cliopatria misses can come from today's territories: `{ "country": "PYF" }` (Natural Earth's 3-letter code, here French Polynesia), optionally cut to a box `[west, south, east, north]` in degrees for one region of it, e.g. `{ "country": "RUS", "box": [-180, 60, -165, 70.5] }` for the tip of Chukotka. See "Maps" below. |
 
 **Years:** negative for BCE, as historians write them (`-27` is 27 BCE). There is no year 0. `precision` is `Exact`, `Approximate` or `Century`.

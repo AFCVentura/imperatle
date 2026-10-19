@@ -59,8 +59,10 @@ const emptyDraft = (): EmpireDraft => ({
   language: emptyText(),
   religion: emptyText(),
   religionNotes: emptyText(),
-  curiosities: Array.from({ length: CURIOSITY_COUNT }, emptyText),
+  curiosities: Array.from({ length: CURIOSITY_COUNT }, () => ({ ...emptyText(), details: emptyText() })),
   wikipedia: emptyText(),
+  aliases: [],
+  summary: emptyText(),
   map: { parts: [] },
 });
 
@@ -738,14 +740,31 @@ function EmpireForm({
       <TextField label="Nota da religião (opcional)" value={draft.religionNotes ?? emptyText()} onChange={(religionNotes) => edit((d) => ({ ...d, religionNotes }))} multiline />
 
       {draft.curiosities.map((c, i) => (
-        <TextField
-          key={i}
-          label={`Dica ${i + 1} (${["menos óbvia", "média", "mais óbvia"][i]})`}
-          value={c}
-          onChange={(text) => edit((d) => ({ ...d, curiosities: d.curiosities.map((x, j) => (j === i ? text : x)) }))}
-          multiline
-        />
+        <div key={i} className="flex flex-col gap-1">
+          <TextField
+            label={`Dica ${i + 1} (${["menos óbvia", "média", "mais óbvia"][i]})`}
+            value={c}
+            onChange={(text) => edit((d) => ({ ...d, curiosities: d.curiosities.map((x, j) => (j === i ? { ...x, en: text.en, pt: text.pt } : x)) }))}
+            multiline
+          />
+          <TextField
+            label={`Explicação da dica ${i + 1} (opcional, aparece no fim do jogo)`}
+            value={c.details ?? emptyText()}
+            onChange={(details) => edit((d) => ({ ...d, curiosities: d.curiosities.map((x, j) => (j === i ? { ...x, details } : x)) }))}
+            multiline
+          />
+        </div>
       ))}
+
+      <TextField label="Sobre o império (opcional, aparece no fim do jogo)" value={draft.summary ?? emptyText()} onChange={(summary) => edit((d) => ({ ...d, summary }))} multiline />
+
+      <Field label="Nomes alternativos (opcional, separados por vírgula; só para a busca, ex.: Mughal, Mugal, Índia)">
+        <input
+          value={(draft.aliases ?? []).join(",")}
+          onChange={(e) => edit((d) => ({ ...d, aliases: e.target.value.split(",") }))}
+          className={inputClass}
+        />
+      </Field>
 
       <TextField label={`Wikipedia (links)${autoMark("wikipedia")}`} value={draft.wikipedia ?? emptyText()} onChange={(wikipedia) => edit((d) => ({ ...d, wikipedia }), "wikipedia")} />
     </div>

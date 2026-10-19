@@ -1,3 +1,5 @@
 namespace Imperatle.Api.Dtos;
 
-public record EmpireSummary(int Id, string NameEn, string NamePt);
+// One entry of the guess list. Aliases are other names the search also
+// matches (spellings, other languages, "China" for a Chinese dynasty).
+public record EmpireSummary(int Id, string NameEn, string NamePt, List<string> Aliases);

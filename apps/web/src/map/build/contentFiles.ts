@@ -35,6 +35,9 @@ export function readEmpire(slug: string): EmpireDraft | null {
     durationNotes: json.durationNotes ?? blank(),
     religionNotes: json.religionNotes ?? blank(),
     wikipedia: json.wikipedia ?? blank(),
+    aliases: json.aliases ?? [],
+    summary: json.summary ?? blank(),
+    curiosities: json.curiosities.map((c) => ({ ...c, details: c.details ?? blank() })),
     map: json.map ?? { parts: [] },
   };
 }

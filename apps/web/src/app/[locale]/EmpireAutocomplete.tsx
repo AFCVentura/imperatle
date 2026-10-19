@@ -2,7 +2,7 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import { useMemo, useState, type KeyboardEvent, type ReactNode } from "react";
-import { matchEmpireByQuery } from "@/lib/matchEmpireName";
+import { matchEmpire, type EmpireMatch } from "@/lib/matchEmpireName";
 import { pickLocalized } from "@/lib/pickLocalized";
 import type { EmpireSummary } from "@/lib/types";
 
@@ -20,10 +20,9 @@ interface EmpireAutocompleteProps {
   onSubmit: () => void;
 }
 
-interface Suggestion {
+interface Suggestion extends EmpireMatch {
   empire: EmpireSummary;
   name: string;
-  ranges: [number, number][];
 }
 
 export function EmpireAutocomplete({ empires, clearKey, busy, onSelect, onSubmit }: EmpireAutocompleteProps) {
@@ -45,14 +44,17 @@ export function EmpireAutocomplete({ empires, clearKey, busy, onSelect, onSubmit
 
   const suggestions = useMemo<Suggestion[]>(() => {
     if (!query.trim()) return [];
-    return empires
+    const matches = empires
       .map((empire) => {
         const name = pickLocalized(empire.nameEn, empire.namePt, locale);
-        const ranges = matchEmpireByQuery(name, query);
-        return ranges ? { empire, name, ranges } : null;
+        // The name in the other language counts as one more alias.
+        const otherName = name === empire.nameEn ? empire.namePt : empire.nameEn;
+        const match = matchEmpire(name, [otherName, ...(empire.aliases ?? [])], query);
+        return match ? { empire, name, ...match } : null;
       })
-      .filter((s): s is Suggestion => s !== null)
-      .slice(0, 8);
+      .filter((s): s is Suggestion => s !== null);
+    // Empires matched by their own name come before those matched by another one.
+    return [...matches.filter((s) => !s.alias), ...matches.filter((s) => s.alias)].slice(0, 8);
   }, [empires, query, locale]);
 
   function selectSuggestion(suggestion: Suggestion) {
@@ -140,6 +142,7 @@ export function EmpireAutocomplete({ empires, clearKey, busy, onSelect, onSubmit
                 }`}
               >
                 {highlight(s.name, s.ranges)}
+                {s.alias && <span className="ml-1.5 text-muted">({highlight(s.alias.text, s.alias.ranges)})</span>}
               </button>
             </li>
           ))}

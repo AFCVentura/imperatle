@@ -1,5 +1,26 @@
 import { describe, expect, it } from "vitest";
-import { matchEmpireByQuery } from "./matchEmpireName";
+import { matchEmpire, matchEmpireByQuery } from "./matchEmpireName";
+
+describe("matchEmpire", () => {
+  it("prefers the empire's own name", () => {
+    expect(matchEmpire("Império Mogol", ["Mughal Empire", "Mogul"], "mog")).toEqual({ ranges: [[8, 11]] });
+  });
+
+  it("falls back to other names, and says which one matched", () => {
+    expect(matchEmpire("Império Mogol", ["Mughal Empire", "Mugal"], "mugal")).toEqual({
+      ranges: [],
+      alias: { text: "Mugal", ranges: [[0, 5]] },
+    });
+    expect(matchEmpire("Dinastia Ming", ["Ming Dynasty", "China"], "china")).toEqual({
+      ranges: [],
+      alias: { text: "China", ranges: [[0, 5]] },
+    });
+  });
+
+  it("matches other names by substring only, never by initials", () => {
+    expect(matchEmpire("Dinastia Ming", ["Ming Dynasty"], "md")).toBeNull();
+  });
+});
 
 describe("matchEmpireByQuery", () => {
   it("matches a substring and returns the range to highlight", () => {

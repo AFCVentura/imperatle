@@ -1,9 +1,9 @@
 {
   "HomePage": {
-    "subtitle": "Adivinhe o império histórico"
+    "subtitle": "Adivinhe o império ou a potência histórica"
   },
   "Metadata": {
-    "description": "Adivinhe o império histórico pelo mapa. Um império novo por dia."
+    "description": "Adivinhe pelo mapa impérios e outras potências da história. Um novo por dia."
   },
   "Header": {
     "menuLabel": "Menu",
@@ -29,7 +29,7 @@
   },
   "Game": {
     "attempts": "Tentativas: {used}/{total}",
-    "guessPlaceholder": "Digite o nome de um império…",
+    "guessPlaceholder": "Digite um nome…",
     "guessButton": "Adivinhar",
     "noChallengeToday": "Sem desafio hoje. Volte em breve!",
     "loadError": "Não deu pra carregar o desafio de hoje. Tente atualizar a página.",
@@ -37,13 +37,15 @@
     "gameOverTitle": "Tentativas esgotadas",
     "answerWasLabel": "A resposta era",
     "mapComingSoon": "Mapa em breve",
-    "mapAlt": "Mapa do império de hoje na sua maior extensão",
+    "mapAlt": "Mapa da resposta de hoje na sua maior extensão",
     "guessHistoryTitle": "Palpites e Dicas",
     "submitError": "Algo deu errado. Tente de novo.",
-    "playAgainTomorrow": "Volte amanhã pra um novo império!",
+    "playAgainTomorrow": "Volte amanhã pra um novo mapa!",
     "correctGuessMark": "Acertou!",
     "wrongGuessMark": "Errado",
     "remainingHintsLabel": "As outras dicas",
+    "aboutEmpireTitle": "Contexto histórico",
+    "curiositiesExplainedTitle": "As curiosidades, explicadas",
     "unlocksLabel": "Libera: {fields}",
     "guessColumns": {
       "area": "Área",
@@ -93,31 +95,31 @@
     "startPlaying": "Jogar",
     "comparisonInfo": {
       "area": {
-        "Bigger": "O império do mapa foi maior que este no seu auge.",
-        "Smaller": "O império do mapa foi menor que este no seu auge.",
+        "Bigger": "A resposta foi maior que este no seu auge.",
+        "Smaller": "A resposta foi menor que este no seu auge.",
         "Approximate": "Os dois tiveram tamanhos parecidos no auge, com até 10% de diferença."
       },
       "duration": {
-        "Bigger": "O império do mapa durou mais tempo que este.",
-        "Smaller": "O império do mapa durou menos tempo que este.",
+        "Bigger": "A resposta durou mais tempo que este.",
+        "Smaller": "A resposta durou menos tempo que este.",
         "Approximate": "Os dois duraram mais ou menos o mesmo tempo, com até 10% de diferença."
       }
     },
     "fieldInfo": {
-      "era": "Grande período da história em que o império viveu seu auge. É uma divisão aproximada, criada a partir da história europeia, e nem sempre se encaixa bem em outras regiões do mundo.",
+      "era": "Grande período da história em que aconteceu o auge. É uma divisão aproximada, criada a partir da história europeia, e nem sempre se encaixa bem em outras regiões do mundo.",
       "mapConfidence": "Na maior parte da história, as fronteiras de reinos e impérios não eram linhas exatas. Muitos mapas são só aproximações da área controlada, e alguns são reconstruções feitas com pouca evidência.",
-      "continents": "Continentes em que o império controlou território no seu auge.",
+      "continents": "Continentes em que controlava território no seu auge.",
       "capital": "Alguns impérios tiveram capitais diferentes ao longo do tempo, mais de uma ao mesmo tempo ou nenhuma capital fixa. Aqui aparece a capital mais conhecida ou a cidade principal.",
       "language": "Língua principal do governo e da elite. Muitos impérios reuniam dezenas de povos e línguas diferentes.",
       "referenceYear": "Ano do auge da expansão territorial, que é o momento retratado no mapa. Não leva em conta outros fatores, como estabilidade ou prosperidade.",
-      "period": "Do surgimento ao fim do império. Início e fim costumam ser debatidos pelos historiadores, então usamos as datas mais aceitas.",
-      "area": "Maior área que o império chegou a controlar. Estimativas de área histórica variam bastante entre as fontes, então vale mais como ordem de grandeza.",
+      "period": "Do surgimento ao fim. Início e fim costumam ser debatidos pelos historiadores, então usamos as datas mais aceitas.",
+      "area": "Maior área já controlada. Estimativas de área histórica variam bastante entre as fontes, então vale mais como ordem de grandeza.",
       "religion": "Religião oficial ou da elite governante, não necessariamente a da maioria da população.",
-      "curiosity": "Um fato marcante sobre o império do mapa. Costuma ser a dica mais reveladora."
+      "curiosity": "Um fato marcante sobre a resposta. Costuma ser a dica mais reveladora."
     },
     "viewStats": "Ver estatísticas",
     "lastAttempt": "Última tentativa",
-    "mapFocus": "Voltar pro império",
+    "mapFocus": "Voltar pro mapa",
     "mapFullscreen": "Tela cheia",
     "mapExitFullscreen": "Sair da tela cheia",
     "mapLoading": "Carregando mapa…",
@@ -134,17 +136,17 @@
   "HowToPlay": {
     "title": "Como jogar",
     "close": "Fechar",
-    "goal": "Descubra qual império aparece no mapa, retratado no auge da sua expansão. Você tem {attempts} tentativas.",
-    "guess": "Digite o nome de um império, escolha na lista e clique em Adivinhar (ou aperte Enter duas vezes).",
-    "compare": "Cada palpite errado compara o império que você chutou com o do mapa:",
+    "goal": "Descubra qual potência histórica aparece no mapa, retratada no auge da sua expansão. Você tem {attempts} tentativas.",
+    "guess": "Digite um nome, escolha na lista e clique em Adivinhar (ou aperte Enter duas vezes).",
+    "compare": "Cada palpite errado compara o seu chute com a resposta:",
     "wrong": "não é esse",
     "bigger": "o do mapa foi maior em área, ou durou mais",
     "smaller": "o do mapa foi menor em área, ou durou menos",
     "approximate": "os dois são parecidos (até 10% de diferença)",
-    "hints": "Cada erro também libera novas dicas sobre o império do mapa, logo abaixo do seu palpite.",
+    "hints": "Cada erro também libera novas dicas sobre a resposta, logo abaixo do seu palpite.",
     "inspect": "Passe o mouse ou toque numa dica, ou na área e duração, pra ver o que ela significa.",
-    "daily": "Um império novo todo dia.",
-    "goalNoCount": "Descubra qual império aparece no mapa, retratado no auge da sua expansão."
+    "daily": "Um mapa novo todo dia.",
+    "goalNoCount": "Descubra qual potência histórica aparece no mapa, retratada no auge da sua expansão."
   },
   "Stats": {
     "title": "Estatísticas",
@@ -178,7 +180,7 @@
     "ok": "Entendi",
     "support": {
       "title": "Apoiar o projeto",
-      "intro": "O Imperatle é um projeto independente, feito por uma pessoa só. Quem apoia ajuda a pagar os servidores e a pesquisa histórica por trás de cada império.",
+      "intro": "O Imperatle é um projeto independente, feito por uma pessoa só. Quem apoia ajuda a pagar os servidores e a pesquisa histórica por trás de cada mapa.",
       "perksTitle": "Quem apoiar vai ter",
       "perks": {
         "noAds": {
@@ -198,8 +200,8 @@
           "text": "montar o seu próprio império no mapa."
         },
         "request": {
-          "title": "Pedir um império",
-          "text": "sugerir um império novo pro jogo."
+          "title": "Pedir um mapa",
+          "text": "sugerir um império ou outra potência pro jogo."
         }
       },
       "note": "O apoio ainda não está disponível. Quando estiver, vai ser uma assinatura barata, mensal ou anual, e você cria sua conta ali mesmo. Dá pra cancelar quando quiser."
@@ -238,7 +240,7 @@
     "placeholders": {
       "Bug": "O que aconteceu? Em que tela, celular ou computador?",
       "Idea": "O que você gostaria de ver no Imperatle?",
-      "Content": "Qual império e qual dado? Se tiver, mande a fonte.",
+      "Content": "Qual mapa e qual dado? Se tiver, mande a fonte.",
       "Other": "Pode escrever."
     },
     "messageLabel": "Mensagem",
@@ -253,9 +255,9 @@
   },
   "About": {
     "title": "Sobre",
-    "what": "O Imperatle é um jogo diário de adivinhação. Todo dia, um império histórico diferente aparece no mapa, no auge da sua expansão, e você tenta descobrir qual é.",
+    "what": "O Imperatle é um jogo diário de adivinhação. Todo dia, um império ou outra potência da história aparece no mapa, no auge da sua expansão, e você tenta descobrir qual é.",
     "editorialTitle": "Uma nota sobre impérios",
-    "editorial": "O jogo trata só de extensão territorial e de fatos. Mostrar até onde um império chegou não é celebrar a conquista: muitos desses impérios cresceram à custa de guerras, colonização e do sofrimento de outros povos.",
+    "editorial": "O jogo trata só de extensão territorial e de fatos. Mostrar até onde um império chegou não é celebrar a conquista: muitos deles cresceram à custa de guerras, colonização e do sofrimento de outros povos.",
     "sourcesTitle": "Fontes e precisão",
     "sources": "As fronteiras históricas são adaptadas do <clio>Cliopatria</clio> (Bennett et al., Seshat Global History Databank), sob licença <license>CC BY 4.0</license>, simplificadas e recortadas pelo litoral atual. O mapa do mundo vem do <ne>Natural Earth</ne> (domínio público). Datas, áreas e fronteiras históricas são aproximações, e as fontes costumam divergir.",
     "mistakes": "Viu algum dado errado?",
@@ -267,7 +269,7 @@
   "Changelog": {
     "title": "Histórico de versões",
     "version": "Versão {version}",
-    "empires": "{count, plural, one {# império novo} other {# impérios novos}}",
+    "empires": "{count, plural, one {# mapa novo} other {# mapas novos}}",
     "features": "Novidades",
     "fixes": "Ajustes"
   }

@@ -22,11 +22,17 @@ public record EmpireContent(
     LocalizedText Capital,
     LocalizedText Language,
     LocalizedText Religion,
-    List<LocalizedText> Curiosities,
+    List<Curiosity> Curiosities,
     LocalizedText? DurationNotes = null,
     LocalizedText? ReligionNotes = null,
     MapInfo? Map = null,
     LocalizedText? Wikipedia = null,
+    // Other names players may type for this empire: spellings, other
+    // languages, the country it's often called by (e.g. "China" for every
+    // Chinese dynasty). Only searched, never shown as the answer.
+    List<string>? Aliases = null,
+    // A few sentences on what the empire was, shown once the round is over.
+    LocalizedText? Summary = null,
     [property: JsonPropertyName("$schema")] string? Schema = null)
 {
     // The empire's shape (GeoJSON MultiPolygon, coordinates only), read from
@@ -36,6 +42,10 @@ public record EmpireContent(
 }
 
 public record LocalizedText(string En, string Pt);
+
+// A clue revealed during the round, plus an optional longer explanation of
+// it shown only once the round is over (it may name what the clue hides).
+public record Curiosity(string En, string Pt, LocalizedText? Details = null);
 
 // Negative = BCE as historians write it (-27 is 27 BCE); there is no year 0.
 public record YearValue(int Year, YearPrecision Precision);

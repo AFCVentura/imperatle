@@ -65,8 +65,24 @@
       "type": "array",
       "minItems": 3,
       "maxItems": 3,
-      "items": { "$ref": "#/$defs/text" }
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["en", "pt"],
+        "properties": {
+          "en": { "type": "string", "minLength": 1 },
+          "pt": { "type": "string", "minLength": 1 },
+          "details": { "$ref": "#/$defs/text", "description": "Optional longer explanation of the clue, shown only once the round is over (it may name what the clue hides)." }
+        }
+      }
     },
+    "aliases": {
+      "description": "Other names the guess list also matches, never shown as the answer: spellings (\"Mughal\", \"Mugal\"), other languages, or the country an empire is often called by (\"China\" for every Chinese dynasty).",
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "summary": { "$ref": "#/$defs/text", "description": "What the empire was, in a few sentences, shown once the round is over." },
     "wikipedia": {
       "description": "Wikipedia article links, shown once the round is over (never before, they'd give the answer away).",
       "type": "object",

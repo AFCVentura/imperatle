@@ -150,7 +150,7 @@ const terms: Record<Locale, LegalDocument> = {
       {
         heading: "Historical content",
         paragraphs: [
-          "Dates, areas and borders of historical empires are often debated, and different sources disagree. The game uses widely cited figures and marks approximate ones, but it isn't a reference work. If you spot a mistake, the Feedback form is the best way to report it.",
+          "Dates, areas and borders of empires and other historical powers are often debated, and different sources disagree. The game uses widely cited figures and marks approximate ones, but it isn't a reference work. If you spot a mistake, the Feedback form is the best way to report it.",
         ],
       },
       {
@@ -202,7 +202,7 @@ const terms: Record<Locale, LegalDocument> = {
       {
         heading: "Conteúdo histórico",
         paragraphs: [
-          "Datas, áreas e fronteiras de impérios históricos costumam ser debatidas, e as fontes divergem. O jogo usa números amplamente citados e marca os aproximados, mas não é uma obra de referência. Se encontrar um erro, o formulário de Feedback é o melhor caminho para avisar.",
+          "Datas, áreas e fronteiras de impérios e outras potências históricas costumam ser debatidas, e as fontes divergem. O jogo usa números amplamente citados e marca os aproximados, mas não é uma obra de referência. Se encontrar um erro, o formulário de Feedback é o melhor caminho para avisar.",
         ],
       },
       {

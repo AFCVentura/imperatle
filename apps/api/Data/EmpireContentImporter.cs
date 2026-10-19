@@ -71,6 +71,9 @@ public static class EmpireContentImporter
         e.MapShape = c.MapShape;
         e.WikipediaEn = c.Wikipedia?.En ?? string.Empty;
         e.WikipediaPt = c.Wikipedia?.Pt ?? string.Empty;
+        e.Aliases = [.. c.Aliases ?? []];
+        e.SummaryEn = c.Summary?.En ?? string.Empty;
+        e.SummaryPt = c.Summary?.Pt ?? string.Empty;
 
         // Hints are matched by position, so re-importing updates their text
         // in place instead of recreating rows.
@@ -84,6 +87,8 @@ public static class EmpireContentImporter
             }
             hint.TextEn = c.Curiosities[order].En;
             hint.TextPt = c.Curiosities[order].Pt;
+            hint.DetailsEn = c.Curiosities[order].Details?.En ?? string.Empty;
+            hint.DetailsPt = c.Curiosities[order].Details?.Pt ?? string.Empty;
         }
         e.Hints.RemoveAll(h => h.Order >= c.Curiosities.Count);
     }

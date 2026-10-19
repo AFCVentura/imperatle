@@ -134,6 +134,23 @@ public static partial class EmpireContentLoader
         {
             CheckText(errors, "religionNotes", empire.ReligionNotes);
         }
+        if (empire.Summary is not null)
+        {
+            CheckText(errors, "summary", empire.Summary);
+        }
+
+        var aliases = empire.Aliases ?? [];
+        for (var i = 0; i < aliases.Count; i++)
+        {
+            if (string.IsNullOrWhiteSpace(aliases[i]))
+            {
+                errors.Add($"aliases[{i}] is empty");
+            }
+        }
+        foreach (var group in aliases.GroupBy(a => a.Trim(), StringComparer.OrdinalIgnoreCase).Where(g => g.Count() > 1))
+        {
+            errors.Add($"aliases has \"{group.Key}\" more than once");
+        }
 
         // An empire that still exists has no end: its years run to today.
         var lastYear = empire.End?.Year ?? DateTime.UtcNow.Year;
@@ -177,7 +194,12 @@ public static partial class EmpireContentLoader
         }
         for (var i = 0; i < empire.Curiosities.Count; i++)
         {
-            CheckText(errors, $"curiosities[{i}]", empire.Curiosities[i]);
+            var curiosity = empire.Curiosities[i];
+            CheckText(errors, $"curiosities[{i}]", new LocalizedText(curiosity.En, curiosity.Pt));
+            if (curiosity.Details is not null)
+            {
+                CheckText(errors, $"curiosities[{i}].details", curiosity.Details);
+            }
         }
 
         // Article links shown after the round, one per language.

@@ -1,9 +1,9 @@
 {
   "HomePage": {
-    "subtitle": "Guess the historical empire"
+    "subtitle": "Guess the historical empire or power"
   },
   "Metadata": {
-    "description": "Guess the historical empire from its map. A new empire every day."
+    "description": "Guess empires and other historical powers from their maps. A new one every day."
   },
   "Header": {
     "menuLabel": "Menu",
@@ -29,7 +29,7 @@
   },
   "Game": {
     "attempts": "Attempts: {used}/{total}",
-    "guessPlaceholder": "Type an empire name…",
+    "guessPlaceholder": "Type a name…",
     "guessButton": "Guess",
     "noChallengeToday": "No challenge today. Check back soon!",
     "loadError": "Couldn't load today's challenge. Try refreshing.",
@@ -37,13 +37,15 @@
     "gameOverTitle": "Out of attempts",
     "answerWasLabel": "The answer was",
     "mapComingSoon": "Map coming soon",
-    "mapAlt": "Map of today's empire at its greatest extent",
+    "mapAlt": "Map of today's answer at its greatest extent",
     "guessHistoryTitle": "Guesses & Clues",
     "submitError": "Something went wrong. Try again.",
-    "playAgainTomorrow": "Come back tomorrow for a new empire!",
+    "playAgainTomorrow": "Come back tomorrow for a new map!",
     "correctGuessMark": "Correct!",
     "wrongGuessMark": "Wrong",
     "remainingHintsLabel": "The other clues",
+    "aboutEmpireTitle": "Historical context",
+    "curiositiesExplainedTitle": "The curiosities, explained",
     "unlocksLabel": "Unlocks: {fields}",
     "guessColumns": {
       "area": "Area",
@@ -93,31 +95,31 @@
     "startPlaying": "Play",
     "comparisonInfo": {
       "area": {
-        "Bigger": "The map's empire was larger than this one at its peak.",
-        "Smaller": "The map's empire was smaller than this one at its peak.",
+        "Bigger": "The answer was larger than this one at its peak.",
+        "Smaller": "The answer was smaller than this one at its peak.",
         "Approximate": "Both were about the same size at their peak, within 10%."
       },
       "duration": {
-        "Bigger": "The map's empire lasted longer than this one.",
-        "Smaller": "The map's empire didn't last as long as this one.",
+        "Bigger": "The answer lasted longer than this one.",
+        "Smaller": "The answer didn't last as long as this one.",
         "Approximate": "Both lasted about the same time, within 10%."
       }
     },
     "fieldInfo": {
-      "era": "The broad period of history in which the empire peaked. It's a rough division, built around European history, and doesn't always fit other parts of the world well.",
+      "era": "The broad period of history in which the peak took place. It's a rough division, built around European history, and doesn't always fit other parts of the world well.",
       "mapConfidence": "For most of history, the borders of kingdoms and empires weren't exact lines. Many maps are just approximations of the area under control, and some are reconstructions based on little evidence.",
-      "continents": "Continents where the empire held territory at its peak.",
+      "continents": "Continents where it held territory at its peak.",
       "capital": "Some empires changed capitals over time, had more than one at once, or had no fixed capital at all. This is the best-known capital or main city.",
       "language": "The main language of the government and the elite. Many empires brought together dozens of peoples and languages.",
-      "referenceYear": "The year of the empire's greatest territorial extent, which is what the map shows. Other factors, like stability or prosperity, aren't taken into account.",
-      "period": "From the empire's rise to its end. Start and end dates are often debated by historians, so the most widely accepted ones are used.",
-      "area": "The largest area the empire ever controlled. Estimates of historical area vary a lot between sources, so treat it as an order of magnitude.",
+      "referenceYear": "The year of the greatest territorial extent, which is what the map shows. Other factors, like stability or prosperity, aren't taken into account.",
+      "period": "From its rise to its end. Start and end dates are often debated by historians, so the most widely accepted ones are used.",
+      "area": "The largest area ever controlled. Estimates of historical area vary a lot between sources, so treat it as an order of magnitude.",
       "religion": "The official religion, or that of the ruling elite, not necessarily that of most of the population.",
-      "curiosity": "A striking fact about the map's empire. Usually the most revealing clue."
+      "curiosity": "A striking fact about the answer. Usually the most revealing clue."
     },
     "viewStats": "View stats",
     "lastAttempt": "Last attempt",
-    "mapFocus": "Back to the empire",
+    "mapFocus": "Back to the map",
     "mapFullscreen": "Fullscreen",
     "mapExitFullscreen": "Exit fullscreen",
     "mapLoading": "Loading map…",
@@ -134,17 +136,17 @@
   "HowToPlay": {
     "title": "How to play",
     "close": "Close",
-    "goal": "Find out which empire is on the map, shown at the height of its expansion. You have {attempts} attempts.",
-    "guess": "Type an empire's name, pick it from the list and click Guess (or press Enter twice).",
-    "compare": "Each wrong guess compares the empire you picked with the one on the map:",
+    "goal": "Find out which historical power is on the map, shown at the height of its expansion. You have {attempts} attempts.",
+    "guess": "Type a name, pick it from the list and click Guess (or press Enter twice).",
+    "compare": "Each wrong guess compares your pick with the answer:",
     "wrong": "not this one",
-    "bigger": "the map's empire was larger in area, or lasted longer",
-    "smaller": "the map's empire was smaller in area, or didn't last as long",
+    "bigger": "the answer was larger in area, or lasted longer",
+    "smaller": "the answer was smaller in area, or didn't last as long",
     "approximate": "both are about the same (within 10%)",
-    "hints": "Each miss also unlocks new clues about the map's empire, right under your guess.",
+    "hints": "Each miss also unlocks new clues about the answer, right under your guess.",
     "inspect": "Hover or tap a clue, or the area and duration, to see what it means.",
-    "daily": "A new empire every day.",
-    "goalNoCount": "Find out which empire is on the map, shown at the height of its expansion."
+    "daily": "A new map every day.",
+    "goalNoCount": "Find out which historical power is on the map, shown at the height of its expansion."
   },
   "Stats": {
     "title": "Statistics",
@@ -178,7 +180,7 @@
     "ok": "Got it",
     "support": {
       "title": "Support the project",
-      "intro": "Imperatle is an independent project, made by one person. Supporters help pay for the servers and the historical research behind each empire.",
+      "intro": "Imperatle is an independent project, made by one person. Supporters help pay for the servers and the historical research behind each map.",
       "perksTitle": "Supporters will get",
       "perks": {
         "noAds": {
@@ -198,8 +200,8 @@
           "text": "build your own empire on the map."
         },
         "request": {
-          "title": "Request an empire",
-          "text": "suggest a new empire for the game."
+          "title": "Request a map",
+          "text": "suggest an empire or other power for the game."
         }
       },
       "note": "Support isn't available yet. When it is, it'll be a cheap subscription, monthly or yearly, and you'll create your account right there. Cancel anytime."
@@ -238,7 +240,7 @@
     "placeholders": {
       "Bug": "What happened? On which screen, phone or computer?",
       "Idea": "What would you like to see in Imperatle?",
-      "Content": "Which empire and which fact? Include a source if you have one.",
+      "Content": "Which map and which fact? Include a source if you have one.",
       "Other": "Go ahead."
     },
     "messageLabel": "Message",
@@ -253,9 +255,9 @@
   },
   "About": {
     "title": "About",
-    "what": "Imperatle is a daily guessing game. Every day, a different historical empire appears on the map, at the height of its expansion, and you try to figure out which one it is.",
+    "what": "Imperatle is a daily guessing game. Every day, an empire or other historical power appears on the map, at the height of its expansion, and you try to figure out which one it is.",
     "editorialTitle": "A note on empires",
-    "editorial": "The game is only about territorial extent and facts. Showing how far an empire reached isn't celebrating conquest: many of these empires grew through war, colonization and the suffering of other peoples.",
+    "editorial": "The game is only about territorial extent and facts. Showing how far an empire reached isn't celebrating conquest: many of them grew through war, colonization and the suffering of other peoples.",
     "sourcesTitle": "Sources and accuracy",
     "sources": "Historical borders are adapted from <clio>Cliopatria</clio> (Bennett et al., Seshat Global History Databank), under <license>CC BY 4.0</license>, simplified and clipped to today's coastline. The world map comes from <ne>Natural Earth</ne> (public domain). Historical dates, areas and borders are approximations, and sources often disagree.",
     "mistakes": "Spotted a mistake?",
@@ -267,7 +269,7 @@
   "Changelog": {
     "title": "Version history",
     "version": "Version {version}",
-    "empires": "{count, plural, one {# new empire} other {# new empires}}",
+    "empires": "{count, plural, one {# new map} other {# new maps}}",
     "features": "New",
     "fixes": "Adjustments"
   }

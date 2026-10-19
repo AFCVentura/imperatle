@@ -113,6 +113,14 @@ function GameBoardInner({ challenge, empires, initial }: GameBoardProps & { init
   const remainingHintRows = hintRows.slice(wrongGuessCount);
 
   const wikipediaUrl = answer ? pickLocalized(answer.wikipediaEn ?? "", answer.wikipediaPt ?? "", locale) : "";
+  const summary = answer ? pickLocalized(answer.summaryEn ?? "", answer.summaryPt ?? "", locale) : "";
+  // Only the curiosities that come with an explanation.
+  const explainedCuriosities = (answer?.hints ?? [])
+    .map((hint) => ({
+      text: pickLocalized(hint.textEn, hint.textPt, locale),
+      details: pickLocalized(hint.detailsEn ?? "", hint.detailsPt ?? "", locale),
+    }))
+    .filter((c) => c.details);
 
   // The map shows the most detailed level unlocked so far, unless the player
   // picked another one under it; a new unlock switches to it again.
@@ -206,6 +214,12 @@ function GameBoardInner({ challenge, empires, initial }: GameBoardProps & { init
           <p className="mt-1 text-sm">
             {t("answerWasLabel")}: <strong>{pickLocalized(answer.nameEn, answer.namePt, locale)}</strong>
           </p>
+          {summary && (
+            <div className="mt-3 border-t border-line pt-3">
+              <h3 className="font-display text-sm tracking-wide text-muted">{t("aboutEmpireTitle")}</h3>
+              <p className="mt-1 text-sm leading-relaxed">{summary}</p>
+            </div>
+          )}
           <p className="mt-1 text-sm text-muted">{t("playAgainTomorrow")}</p>
           <div className="mt-3 flex flex-wrap items-center gap-2">
             <ShareButton
@@ -249,6 +263,20 @@ function GameBoardInner({ challenge, empires, initial }: GameBoardProps & { init
               <HintRow key={row.attempt} row={row} />
             ))}
           </div>
+        </div>
+      )}
+
+      {gameOver && explainedCuriosities.length > 0 && (
+        <div>
+          <h2 className="mb-1.5 font-display text-base tracking-wide text-muted">{t("curiositiesExplainedTitle")}</h2>
+          <ul className="divide-y divide-line rounded-2xl border border-line bg-surface">
+            {explainedCuriosities.map((c, i) => (
+              <li key={i} className="px-4 py-3">
+                <p className="text-sm font-medium">{c.text}</p>
+                <p className="mt-1 text-sm leading-relaxed text-muted">{c.details}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       )}
     </div>
