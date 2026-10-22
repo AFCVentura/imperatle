@@ -39,6 +39,21 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         "x-default": "/",
       },
     },
+    // The share image itself comes from opengraph-image.png and
+    // twitter-image.png next to this layout; this adds the text around it.
+    openGraph: {
+      title: "Imperatle",
+      description: t("description"),
+      siteName: "Imperatle",
+      type: "website",
+      locale,
+      url: `/${locale}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Imperatle",
+      description: t("description"),
+    },
   };
 }
 
