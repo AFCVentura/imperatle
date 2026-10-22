@@ -1,0 +1,103 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "songhai-empire",
+  "name": {
+    "en": "Songhai Empire",
+    "pt": "Império Songai"
+  },
+  "peak": {
+    "year": 1520,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1464,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1591,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "The kingdom of Gao had existed since the 7th century, but it only became an empire from 1464, when Sonni Ali took the throne and began his conquests. It ends in 1591, when an invading army from the north won the decisive battle and took the main cities; part of the royal family held out in the south for decades, in a small kingdom. The map leaves out the eastern states that only paid tribute.",
+    "pt": "O reino de Gao existia desde o século VII, mas só virou império a partir de 1464, quando Sonni Ali subiu ao trono e começou as conquistas. Termina em 1591, quando um exército invasor vindo do norte venceu a batalha decisiva e tomou as principais cidades; parte da família real resistiu no sul por décadas, num pequeno reino. O mapa não inclui os Estados do leste que só pagavam tributo."
+  },
+  "area": {
+    "km2": 631450,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Africa"
+  ],
+  "primaryContinents": [
+    "Africa"
+  ],
+  "capital": {
+    "en": "Gao",
+    "pt": "Gao"
+  },
+  "language": {
+    "en": "Songhai (with Arabic as the written language and the language of religion)",
+    "pt": "Songai (com o árabe como língua escrita e da religião)"
+  },
+  "religion": {
+    "en": "Islam in the cities and at court, with traditional religions in the countryside",
+    "pt": "Islamismo nas cidades e na corte, com religiões tradicionais no campo"
+  },
+  "religionNotes": {
+    "en": "The first great ruler mixed Islam with the traditional cults and persecuted the Muslim scholars of Timbuktu; the Islamic chronicles remember him as a tyrant, and oral tradition as a sorcerer king. His successor, who took power in a coup, was a devout Muslim, supported the scholars and used Islam to unite the administration. In the countryside, most of the population still followed the cults of the ancestors and of the river spirits.",
+    "pt": "O primeiro grande governante misturava o islã com os cultos tradicionais e perseguiu os sábios muçulmanos de Tombuctu; as crônicas islâmicas o lembram como tirano, e a tradição oral, como um rei feiticeiro. O sucessor, que tomou o poder num golpe, foi um muçulmano devoto, apoiou os estudiosos e usou o islã para unir a administração. No campo, a maioria da população continuava seguindo os cultos dos ancestrais e dos espíritos do rio."
+  },
+  "curiosities": [
+    {
+      "en": "In the Saharan salt mines the empire fought over, the houses and even the mosque were made of blocks of salt.",
+      "pt": "Nas minas de sal do Saara que o império disputava, as casas e até a mesquita eram feitas de blocos de sal.",
+      "details": {
+        "en": "Taghaza, in the middle of the desert, in the north of today's Mali, was described in the 14th century by the traveller Ibn Battuta: houses and a mosque of salt blocks, with roofs of camel skin, and enslaved workers digging out the salt. Each camel carried two large slabs to Timbuktu, where salt, scarce in the south, was exchanged for gold. Control of the mines was disputed with Morocco and was one of the causes of the invasion that ended the empire.",
+        "pt": "Tegaza, no meio do deserto, no norte do atual Mali, foi descrita no século XIV pelo viajante Ibn Battuta: casas e mesquita de blocos de sal, com telhados de couro de camelo, e trabalhadores escravizados escavando o sal. Cada camelo levava duas grandes placas até Tombuctu, onde o sal, raro no sul, era trocado por ouro. O controle das minas era disputado com o Marrocos e foi uma das causas da invasão que acabou com o império."
+      }
+    },
+    {
+      "en": "In 2012, librarians in Timbuktu, one of the empire's great cities, hid and smuggled out more than 300,000 old manuscripts in sacks and canoes to save them from jihadist groups.",
+      "pt": "Em 2012, bibliotecários de Tombuctu, uma das grandes cidades do império, esconderam e contrabandearam em sacos e canoas mais de 300 mil manuscritos antigos para salvá-los de grupos jihadistas.",
+      "details": {
+        "en": "The manuscripts, from the 13th to the 19th century, cover law, astronomy, medicine, mathematics and poetry, and many were copied in the period when the city's scholars were famous throughout the Islamic world. One of them, Ahmad Baba, said that his library of 1,600 volumes was among the smallest in his family. When jihadist groups took the city, families and librarians took the books in secret to Bamako, the capital of Mali; even so, the occupiers burned about 4,000 manuscripts before leaving, in 2013.",
+        "pt": "Os manuscritos, do século XIII ao XIX, tratam de direito, astronomia, medicina, matemática e poesia, e muitos foram copiados na época em que os sábios da cidade eram famosos em todo o mundo islâmico. Um deles, Ahmad Baba, dizia que sua biblioteca de 1.600 volumes estava entre as menores da família. Quando grupos jihadistas tomaram a cidade, famílias e bibliotecários levaram os livros às escondidas até Bamako, a capital do Mali; mesmo assim, os ocupantes queimaram cerca de 4 mil manuscritos antes de sair, em 2013."
+      }
+    },
+    {
+      "en": "It was one of the largest empires in African history, successor to the empire where Mansa Musa reigned.",
+      "pt": "Foi um dos maiores impérios da história da África, sucessor do império onde reinou Mansa Musa.",
+      "details": {
+        "en": "In the 14th century, Gao was a vassal of the Mali Empire. As Mali weakened, the Songhai took Timbuktu in 1468 and Djenné in 1473, and went on to rule a strip of about 2,000 km along the Niger, from the region of the Senegal River to the Aïr, in today's Niger. Counting the states that paid tribute, some historians estimate its area at about 1.4 million km².",
+        "pt": "No século XIV, Gao era vassala do Império do Mali. Com o enfraquecimento do Mali, os songais tomaram Tombuctu em 1468 e Djenné em 1473, e passaram a dominar uma faixa de cerca de 2 mil km ao longo do Níger, da região do rio Senegal até o Aïr, no atual Níger. Contando os Estados que pagavam tributo, alguns historiadores estimam sua área em cerca de 1,4 milhão de km²."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Songhai_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Songai"
+  },
+  "aliases": [
+    "Songhai",
+    "Songai",
+    "Songhay",
+    "Songhay Empire",
+    "Império Songhai",
+    "Império Songhay",
+    "Gao Empire",
+    "Império de Gao"
+  ],
+  "summary": {
+    "en": "A West African empire formed in the 15th century along the Niger River, from the city of Gao. Sonni Ali, who had a fleet of war canoes on the river, took Timbuktu and Djenné and extended his rule over much of the Niger valley. After his death, the general Askia Muhammad seized power and founded a new dynasty, which organised the territory into provinces, with governors, a standing army and common weights and measures. The empire controlled the trade in gold, salt and enslaved people that crossed the Sahara. Succession disputes weakened the dynasty at the end of the 16th century, shortly before the invasion that put an end to the empire.",
+    "pt": "Império da África Ocidental formado no século XV ao longo do rio Níger, a partir da cidade de Gao. Sonni Ali, que tinha uma frota de canoas de guerra no rio, tomou Tombuctu e Djenné e estendeu o domínio por boa parte do vale do Níger. Depois da morte dele, o general Askia Muhammad tomou o poder e fundou uma nova dinastia, que organizou o território em províncias, com governadores, um exército permanente e pesos e medidas comuns. O império controlava o comércio de ouro, sal e escravizados que cruzava o Saara. Disputas pela sucessão enfraqueceram a dinastia no fim do século XVI, pouco antes da invasão que pôs fim ao império."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Songhai Empire",
+        "year": 1520
+      }
+    ]
+  }
+}

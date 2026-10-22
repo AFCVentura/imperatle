@@ -1,0 +1,105 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "ethiopian-empire",
+  "name": {
+    "en": "Ethiopian Empire",
+    "pt": "Império Etíope"
+  },
+  "peak": {
+    "year": 1962,
+    "precision": "Exact"
+  },
+  "start": {
+    "year": 1270,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1974,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 1270, when a nobleman overthrew the previous dynasty and founded a line that claimed descent from King Solomon. It ends in 1974, when a military junta deposed the last emperor; the monarchy was officially abolished the following year. Between 1936 and 1941 the country was occupied by Italy. The map shows the peak, after the annexation of the neighbouring coastal territory in 1962.",
+    "pt": "Começa em 1270, quando um nobre derrubou a dinastia anterior e fundou uma linhagem que dizia descender do rei Salomão. Termina em 1974, quando uma junta militar depôs o último imperador; a monarquia foi abolida oficialmente no ano seguinte. Entre 1936 e 1941 o país esteve ocupado pela Itália. O mapa mostra o auge, depois da anexação do território vizinho no litoral, em 1962."
+  },
+  "area": {
+    "km2": 1253493,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Precise",
+  "continents": [
+    "Africa"
+  ],
+  "primaryContinents": [
+    "Africa"
+  ],
+  "capital": {
+    "en": "Itinerant for centuries, then Gondar and, from 1886, Addis Ababa",
+    "pt": "Itinerante por séculos, depois Gondar e, a partir de 1886, Adis Abeba"
+  },
+  "language": {
+    "en": "Amharic (with Ge'ez as the language of the Church)",
+    "pt": "Amárico (com o gueês como língua da Igreja)"
+  },
+  "religion": {
+    "en": "Orthodox Christianity (Tewahedo Church)",
+    "pt": "Cristianismo ortodoxo (Igreja Tewahedo)"
+  },
+  "religionNotes": {
+    "en": "The Church was the official religion and a pillar of imperial power, but for centuries it depended on the patriarch of Alexandria, in Egypt, who sent an Egyptian bishop to head it; only in 1959 did it gain a patriarch of its own. There were large Muslim populations in the east and south, as well as an ancient Jewish community in the north, the Beta Israel.",
+    "pt": "A Igreja era a religião oficial e um pilar do poder imperial, mas por séculos dependeu do patriarca de Alexandria, no Egito, que enviava um bispo egípcio para chefiá-la; só em 1959 ela ganhou um patriarca próprio. Havia grandes populações muçulmanas no leste e no sul, além de uma comunidade judaica antiga no norte, os Beta Israel."
+  },
+  "curiosities": [
+    {
+      "en": "The country still uses its own calendar, with 13 months and about seven years behind the Western one, and celebrated the turn of the year 2000 in September 2007.",
+      "pt": "O país ainda usa um calendário próprio, com 13 meses e uns sete anos de atraso em relação ao ocidental, e comemorou a virada do ano 2000 em setembro de 2007.",
+      "details": {
+        "en": "The calendar comes from the old Egyptian Christian calendar: 12 months of 30 days and a 13th month of five days, or six in leap years. The difference of seven or eight years comes from a different calculation of the date of the Annunciation of Jesus. The new year falls on 11 September, and the hours are traditionally counted from dawn, so 7 a.m. on a Western clock is \"one o'clock\".",
+        "pt": "O calendário vem do antigo calendário cristão do Egito: 12 meses de 30 dias e um 13º mês de cinco dias, ou seis nos anos bissextos. A diferença de sete ou oito anos vem de um cálculo diferente da data da Anunciação de Jesus. O ano novo cai em 11 de setembro, e as horas são contadas tradicionalmente a partir do amanhecer, então as 7h do relógio ocidental são \"uma hora\"."
+      }
+    },
+    {
+      "en": "In 1896 it defeated the Italian army in a great battle and was one of the few African countries to keep its independence during the Scramble for Africa.",
+      "pt": "Em 1896, derrotou o exército italiano numa grande batalha e foi um dos poucos países africanos que mantiveram a independência na partilha da África.",
+      "details": {
+        "en": "At Adwa, on 1 March 1896, Menelik II's army, about 100,000 men with modern rifles bought from European powers, crushed an Italian force of some 17,000 soldiers. Italy had to recognise the country's independence that same year. The victory became a symbol of resistance for the whole continent, and when African colonies gained independence in the 20th century, several of them, such as Ghana, adopted the green, yellow and red of the Ethiopian flag.",
+        "pt": "Em Adwa, em 1º de março de 1896, o exército de Menelik II, com cerca de 100 mil homens e fuzis modernos comprados de potências europeias, esmagou uma força italiana de uns 17 mil soldados. A Itália teve de reconhecer a independência do país no mesmo ano. A vitória virou símbolo de resistência para todo o continente, e quando as colônias africanas se tornaram independentes no século XX, várias, como Gana, adotaram o verde, o amarelo e o vermelho da bandeira etíope."
+      }
+    },
+    {
+      "en": "The last emperor, baptised Tafari, is seen as a messiah by the Rastafari movement, born in Jamaica, to which Bob Marley belonged.",
+      "pt": "O último imperador, batizado Tafari, é visto como messias pelo movimento rastafári, nascido na Jamaica, do qual Bob Marley fazia parte.",
+      "details": {
+        "en": "Before being crowned, he was known as Ras Tafari, \"Prince Tafari\", which gave the movement its name. In Jamaica, preachers saw his coronation in 1930 as the fulfilment of a prophecy by the activist Marcus Garvey, who had told Black people to look to Africa, where a Black king would be crowned. When the emperor visited Jamaica in 1966, a crowd invaded the airport runway to see him. He himself remained an Orthodox Christian and never claimed to be divine.",
+        "pt": "Antes de ser coroado, ele era conhecido como Ras Tafari, \"príncipe Tafari\", o que deu nome ao movimento. Na Jamaica, pregadores viram sua coroação, em 1930, como o cumprimento de uma profecia do ativista Marcus Garvey, que mandara os negros olharem para a África, onde um rei negro seria coroado. Quando o imperador visitou a Jamaica, em 1966, uma multidão invadiu a pista do aeroporto para vê-lo. Ele próprio continuou cristão ortodoxo e nunca disse ser divino."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Ethiopian_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Etíope"
+  },
+  "aliases": [
+    "Ethiopia",
+    "Etiópia",
+    "Empire of Ethiopia",
+    "Império da Etiópia",
+    "Abyssinia",
+    "Abissínia",
+    "Abyssinian Empire",
+    "Império Abissínio",
+    "Solomonic Dynasty",
+    "Dinastia Salomônica"
+  ],
+  "summary": {
+    "en": "A Christian monarchy in the Horn of Africa, ruled for more than seven centuries by a dynasty that claimed descent from King Solomon and the Queen of Sheba. In the Middle Ages, its emperors spent most of their time in itinerant camps, surrounded by the court and the army, and fought long wars with the neighbouring Muslim sultanates. At the end of the 19th century, Menelik II conquered lands in the south and east and founded the current capital. Occupied by Italy between 1936 and 1941, the country regained its independence with British help and, under Haile Selassie, became a founding member of the UN and the seat of the Organisation of African Unity. Famine, poverty and discontent with the regime led the military to overthrow the emperor in 1974.",
+    "pt": "Monarquia cristã do Chifre da África, governada por mais de sete séculos por uma dinastia que dizia descender do rei Salomão e da rainha de Sabá. Na Idade Média, seus imperadores ficavam a maior parte do tempo em acampamentos itinerantes, cercados pela corte e pelo exército, e enfrentaram longas guerras com os sultanatos muçulmanos vizinhos. No fim do século XIX, Menelik II conquistou terras no sul e no leste e fundou a capital atual. Ocupado pela Itália entre 1936 e 1941, o país recuperou a independência com ajuda britânica e, sob Haile Selassie, virou membro fundador da ONU e sede da Organização da Unidade Africana. A fome, a pobreza e a insatisfação com o regime levaram militares a derrubar o imperador em 1974."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Ethiopia",
+        "year": 1962
+      }
+    ]
+  }
+}

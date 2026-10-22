@@ -1,0 +1,104 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "sui-dynasty",
+  "name": {
+    "en": "Sui Dynasty",
+    "pt": "Dinastia Sui"
+  },
+  "peak": {
+    "year": 610,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 581,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 618,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 581, when a minister of one of the northern kingdoms took the throne from a child emperor, but China was only reunified in 589, with the conquest of the southern kingdom. It ends in 618, when the emperor was killed by his own guard and a general proclaimed a new dynasty. The map leaves out the lands in the west taken from a nomadic people in 609, which were held for only a few years.",
+    "pt": "Começa em 581, quando um ministro de um dos reinos do norte tomou o trono de um imperador criança, mas a China só foi reunificada em 589, com a conquista do reino do sul. Termina em 618, quando o imperador foi morto pela própria guarda e um general proclamou uma nova dinastia. O mapa não inclui as terras do oeste tomadas de um povo nômade em 609, que foram controladas só por poucos anos."
+  },
+  "area": {
+    "km2": 3367764,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia"
+  ],
+  "primaryContinents": [
+    "Asia"
+  ],
+  "capital": {
+    "en": "Daxing (today's Xi'an), with Luoyang as a secondary capital",
+    "pt": "Daxing (atual Xi'an), com Luoyang como capital secundária"
+  },
+  "language": {
+    "en": "Middle Chinese (with Classical Chinese as the written language)",
+    "pt": "Chinês médio (com o chinês clássico como língua escrita)"
+  },
+  "religion": {
+    "en": "Buddhism, Confucianism and Taoism",
+    "pt": "Budismo, confucionismo e taoísmo"
+  },
+  "religionNotes": {
+    "en": "The founder was raised by a Buddhist nun in a temple and, once emperor, had relics of the Buddha sent to more than a hundred provinces, where towers were built to keep them. Confucianism again became the basis of the officials' education, and Taoism also had temples and the court's support.",
+    "pt": "O fundador foi criado por uma monja budista num templo e, já imperador, mandou distribuir relíquias de Buda a mais de cem províncias, onde foram erguidas torres para guardá-las. O confucionismo voltou a ser a base da formação dos funcionários, e o taoísmo também tinha templos e apoio da corte."
+  },
+  "curiosities": [
+    {
+      "en": "An envoy from Japan brought a letter that called the Japanese ruler \"Son of Heaven where the sun rises\", which angered the emperor.",
+      "pt": "Um enviado do Japão trouxe uma carta que tratava o governante japonês como \"filho do Céu onde o sol nasce\", o que irritou o imperador.",
+      "details": {
+        "en": "In 607, the Japanese court sent an envoy with a letter that began: \"The Son of Heaven where the sun rises writes to the Son of Heaven where the sun sets\". For the Chinese there could be only one Son of Heaven, the emperor of China, and treating the Japanese king as an equal was an offence. Annoyed as he was, the emperor sent an embassy back the following year. The idea of the rising sun returns in the name the country later adopted, Nihon, \"origin of the sun\".",
+        "pt": "Em 607, a corte japonesa mandou um enviado com uma carta que começava assim: \"O filho do Céu onde o sol nasce escreve ao filho do Céu onde o sol se põe\". Para os chineses, só podia existir um filho do Céu, o imperador da China, e tratar o rei japonês como igual era uma ofensa. Mesmo irritado, o imperador mandou uma embaixada de volta no ano seguinte. A ideia do sol nascente reaparece no nome que o país adotou depois, Nihon, \"origem do sol\"."
+      }
+    },
+    {
+      "en": "In a campaign against a Korean kingdom in 612, of about 300,000 soldiers who marched on the enemy capital, only some 2,700 came back.",
+      "pt": "Numa campanha contra um reino da Coreia, em 612, de cerca de 300 mil soldados que avançaram rumo à capital inimiga, só uns 2.700 voltaram.",
+      "details": {
+        "en": "The emperor gathered more than a million soldiers against Goguryeo, a kingdom in northern Korea, and sent about 300,000 straight towards its capital, Pyongyang. The Korean general Eulji Mundeok feigned retreat several times to wear the enemy down and attacked while the troops were crossing the Salsu River on their way back. The defeat was followed by two more failed campaigns, in 613 and 614, and the cost of the wars helped spark the revolts that brought the dynasty down. In Korea, Eulji Mundeok is still remembered as a national hero.",
+        "pt": "O imperador reuniu mais de 1 milhão de soldados contra Goguryeo, um reino do norte da Coreia, e mandou cerca de 300 mil avançarem direto para a capital, Pyongyang. O general coreano Eulji Mundeok fingiu recuar várias vezes para cansar o inimigo e atacou quando a tropa atravessava o rio Salsu, na volta. A derrota foi seguida de mais duas campanhas fracassadas, em 613 e 614, e o custo das guerras ajudou a provocar as revoltas que derrubaram a dinastia. Na Coreia, Eulji Mundeok é lembrado até hoje como herói nacional."
+      }
+    },
+    {
+      "en": "It linked the Yellow River to the Yangtze with a network of canals over 2,000 km long, the basis of the longest artificial canal in the world and one of the greatest engineering works in human history.",
+      "pt": "Ligou o Rio Amarelo ao Yangtzé com uma rede de canais de mais de 2 mil km, base do canal artificial mais longo do mundo e uma das maiores obras de engenharia da história da humanidade.",
+      "details": {
+        "en": "Between 605 and 610, the emperor had old canals joined and new stretches dug, from Luoyang to the Yangtze, from there to Hangzhou in the south, and in the north to near today's Beijing. More than a million people worked on the first stretch alone, and many died in the works. The canal carried rice from the more fertile south to the capitals and armies in the north. Later dynasties rebuilt it and changed its route, and the Grand Canal, as it is known today, has been a UNESCO World Heritage Site since 2014.",
+        "pt": "Entre 605 e 610, o imperador mandou ligar canais antigos e abrir novos trechos, de Luoyang ao Yangtzé, dali até Hangzhou, no sul, e no norte até perto da atual Pequim. Só no primeiro trecho trabalharam mais de 1 milhão de pessoas, e muitas morreram nas obras. O canal levava o arroz do sul, mais fértil, para as capitais e os exércitos do norte. As dinastias seguintes o reformaram e mudaram seu traçado, e o Grande Canal, como é conhecido hoje, é Patrimônio Mundial da UNESCO desde 2014."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Sui_dynasty",
+    "pt": "https://pt.wikipedia.org/wiki/Dinastia_Sui"
+  },
+  "aliases": [
+    "China",
+    "Sui Empire",
+    "Império Sui",
+    "Great Sui",
+    "Grande Sui",
+    "Sui China",
+    "China Sui",
+    "Chinese Empire",
+    "Império Chinês"
+  ],
+  "summary": {
+    "en": "The dynasty founded in 581 by Yang Jian, Emperor Wen, who in 589 conquered the south and reunified China after almost three centuries of division. He issued a new law code, took a census of the population, redistributed land to the peasants and reorganised the government into ministries, a structure that would last for centuries. His son, Emperor Yang, rebuilt Luoyang and launched gigantic works with the forced labour of millions of people, as well as costly wars against the neighbours. The spending and the defeats set off revolts across the country, and in 618 the emperor was murdered. Like the Qin centuries earlier, it was short-lived, but it left a unified state to one of China's longest dynasties, the Tang.",
+    "pt": "Dinastia fundada em 581 por Yang Jian, o imperador Wen, que em 589 conquistou o sul e reunificou a China depois de quase três séculos de divisão. Ele fez um novo código de leis, recenseou a população, redistribuiu terras aos camponeses e reorganizou o governo em ministérios, estrutura que duraria séculos. Seu filho, o imperador Yang, reconstruiu Luoyang e lançou obras gigantescas com trabalho forçado de milhões de pessoas, além de guerras caras contra os vizinhos. Os gastos e as derrotas provocaram revoltas por todo o país, e em 618 o imperador foi assassinado. Como a Qin séculos antes, durou pouco, mas deixou o Estado unificado para uma das dinastias mais longas da China, a Tang."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Sui Dynasty",
+        "year": 610
+      }
+    ]
+  }
+}

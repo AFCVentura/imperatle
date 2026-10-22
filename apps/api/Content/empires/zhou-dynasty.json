@@ -1,0 +1,108 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "zhou-dynasty",
+  "name": {
+    "en": "Zhou Dynasty",
+    "pt": "Dinastia Zhou"
+  },
+  "peak": {
+    "year": -950,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": -1046,
+    "precision": "Approximate"
+  },
+  "end": {
+    "year": -256,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "The start is traditionally dated to 1046 BC, but historians still debate the exact year; the end is in 256 BC, when one of the rival states deposed the last king. From 771 BC, after losing the western capital, the kings kept only a ceremonial role, while the vassal states acted as independent kingdoms. The map shows the early phase, around 950 BC, with the lands of the court and its vassals, whose borders are uncertain.",
+    "pt": "O início é tradicionalmente datado de 1046 a.C., mas os historiadores ainda discutem o ano exato; o fim é em 256 a.C., quando um dos Estados rivais depôs o último rei. A partir de 771 a.C., depois de perder a capital do oeste, os reis mantiveram só um papel cerimonial, enquanto os Estados vassalos agiam como reinos independentes. O mapa mostra a fase inicial, por volta de 950 a.C., com as terras da corte e dos vassalos, cujas fronteiras são incertas."
+  },
+  "area": {
+    "km2": 688721,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Speculative",
+  "continents": [
+    "Asia"
+  ],
+  "primaryContinents": [
+    "Asia"
+  ],
+  "capital": {
+    "en": "Haojing (near today's Xi'an), later Luoyi (today's Luoyang)",
+    "pt": "Haojing (perto da atual Xi'an), depois Luoyi (atual Luoyang)"
+  },
+  "language": {
+    "en": "Old Chinese",
+    "pt": "Chinês antigo"
+  },
+  "religion": {
+    "en": "Traditional Chinese religion",
+    "pt": "Religião tradicional chinesa"
+  },
+  "religionNotes": {
+    "en": "The king bore the title \"Son of Heaven\" and was the only one who could offer sacrifices to Heaven on behalf of everyone. Noble families worshipped their ancestors with ritual banquets, served in bronze vessels with inscriptions recording the family's honours and deeds. To consult the future, divination with burnt bones gradually gave way to a method using plant stalks.",
+    "pt": "O rei tinha o título de \"Filho do Céu\" e era o único que podia oferecer sacrifícios ao Céu em nome de todos. As famílias nobres cultuavam os ancestrais com banquetes rituais, servidos em vasos de bronze com inscrições que registravam honras e feitos da família. Para consultar o futuro, a adivinhação com ossos queimados foi aos poucos dando lugar a um método com varetas de planta."
+  },
+  "curiosities": [
+    {
+      "en": "By the end of this era, the Chinese were already melting iron to cast tools in moulds, more than a thousand years before Europe.",
+      "pt": "No fim desta época, os chineses já derretiam ferro para fazer ferramentas em moldes, mais de mil anos antes da Europa.",
+      "details": {
+        "en": "From around the 5th century BC, Chinese furnaces, fed by large bellows, reached temperatures high enough to melt iron, which could then be poured into moulds like bronze. That made it possible to produce ploughs, hoes and axes in large numbers and cheaply, which increased harvests and helped feed the ever larger armies of the rival states. In Europe, iron was worked by hammering, and cast iron only spread in the late Middle Ages.",
+        "pt": "A partir do século V a.C., mais ou menos, os fornos chineses, alimentados por grandes foles, chegavam a temperaturas altas o bastante para derreter o ferro, que podia então ser despejado em moldes como o bronze. Isso permitiu fabricar arados, enxadas e machados em grande quantidade e a baixo custo, o que aumentou as colheitas e ajudou a alimentar os exércitos cada vez maiores dos Estados rivais. Na Europa, o ferro era trabalhado a marteladas, e o ferro fundido só se espalhou no fim da Idade Média."
+      }
+    },
+    {
+      "en": "It created the idea that Heaven grants the right to rule to the just and takes it away from the corrupt, used to justify changes of dynasty for almost 3,000 years.",
+      "pt": "Criou a ideia de que o Céu dá o direito de governar a quem é justo e o tira de quem é corrupto, usada para justificar a troca de dinastias por quase 3 mil anos.",
+      "details": {
+        "en": "To explain why they had overthrown the previous kings, the new rulers said that the last of them had been cruel and decadent, and that Heaven had therefore passed the \"Mandate of Heaven\" to them. From then on, famines, floods and revolts were seen as signs that a dynasty had lost the mandate, and a victorious rebellion was taken as proof that the new ruler had received it. The idea was used by every dynasty until the end of the empire, in 1912.",
+        "pt": "Para explicar por que tinham derrubado os reis anteriores, os novos governantes diziam que o último deles tinha sido cruel e decadente e que, por isso, o Céu havia passado a eles o \"Mandato do Céu\". Daí em diante, fomes, enchentes e revoltas eram vistas como sinais de que uma dinastia tinha perdido o mandato, e uma rebelião vitoriosa era tida como prova de que o novo governante o havia recebido. A ideia foi usada por todas as dinastias até o fim do império, em 1912."
+      }
+    },
+    {
+      "en": "Confucius, Laozi and Sun Tzu lived in this era.",
+      "pt": "Confúcio, Laozi e Sun Tzu viveram nesta época.",
+      "details": {
+        "en": "With the kings weakened, the rival states competed for advisers, and so many thinkers emerged that the period became known as that of the \"Hundred Schools of Thought\". Confucius (551–479 BC) taught that good government depends on the virtue of the ruler and on respect within the family. Laozi, to whom the Tao Te Ching is attributed, is the reference of Taoism, and Sun Tzu is credited with The Art of War, still read today; historians debate whether the latter two really existed as single individuals.",
+        "pt": "Com os reis enfraquecidos, os Estados rivais disputavam conselheiros, e surgiram tantos pensadores que o período ficou conhecido como o das \"Cem Escolas de Pensamento\". Confúcio (551–479 a.C.) ensinava que o bom governo depende da virtude do governante e do respeito dentro da família. Laozi, a quem se atribui o Tao Te Ching, é a referência do taoísmo, e a Sun Tzu se atribui A Arte da Guerra, lida até hoje; os historiadores discutem se esses dois existiram mesmo como pessoas únicas."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Zhou_dynasty",
+    "pt": "https://pt.wikipedia.org/wiki/Dinastia_Chou"
+  },
+  "aliases": [
+    "China",
+    "Zhou Empire",
+    "Império Zhou",
+    "Chou",
+    "Dinastia Chou",
+    "Western Zhou",
+    "Zhou Ocidental",
+    "Eastern Zhou",
+    "Zhou Oriental",
+    "Zhou China",
+    "China Zhou",
+    "Chinese Empire",
+    "Império Chinês"
+  ],
+  "summary": {
+    "en": "The longest dynasty in China's history, founded around 1046 BC, when King Wu defeated the last king of the previous dynasty, the Shang, at the Battle of Muye. The new kings handed out lands to relatives and allies, who ruled their territories as vassals in exchange for loyalty and troops. In 771 BC, nomads allied with rebel nobles sacked the western capital and killed the king, and the court moved east. From then on, the kings lost their real power, and the vassal states spent centuries fighting one another, in the periods known as the Spring and Autumn and the Warring States. In 256 BC, the state of Qin deposed the last king and, a few decades later, unified China.",
+    "pt": "A dinastia mais longa da história da China, fundada por volta de 1046 a.C., quando o rei Wu derrotou o último rei da dinastia anterior, a Shang, na batalha de Muye. Os novos reis distribuíram terras a parentes e aliados, que governavam seus territórios como vassalos em troca de lealdade e tropas. Em 771 a.C., nômades aliados a nobres rebeldes saquearam a capital do oeste e mataram o rei, e a corte se mudou para o leste. Daí em diante, os reis perderam o poder real, e os Estados vassalos passaram séculos guerreando entre si, nos períodos conhecidos como Primaveras e Outonos e Reinos Combatentes. Em 256 a.C., o Estado de Qin depôs o último rei e, poucas décadas depois, unificou a China."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Zhou Dynasty",
+        "year": -950
+      }
+    ]
+  }
+}

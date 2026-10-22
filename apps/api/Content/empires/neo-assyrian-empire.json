@@ -1,0 +1,116 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "neo-assyrian-empire",
+  "name": {
+    "en": "Neo-Assyrian Empire",
+    "pt": "Império Neoassírio"
+  },
+  "peak": {
+    "year": -663,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": -911,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": -609,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 911 BC, when a king resumed campaigns of expansion from the old heartland in northern Mesopotamia, and ends in 609 BC, when the last king lost the city where he had taken refuge after the fall of the capital. The peak shown is around 663 BC, when the empire ruled Egypt as far as Thebes. The map excludes the rival kingdom in the northern mountains and the plateau of central Anatolia, which were never conquered, and Cyprus, whose kings only paid tribute.",
+    "pt": "Começa em 911 a.C., quando um rei retomou as campanhas de expansão a partir do antigo núcleo no norte da Mesopotâmia, e termina em 609 a.C., quando o último rei perdeu a cidade onde tinha se refugiado depois da queda da capital. O auge mostrado é por volta de 663 a.C., quando o império dominava o Egito até Tebas. O mapa exclui o reino rival das montanhas do norte e o planalto da Anatólia central, que nunca foram conquistados, e Chipre, cujos reis só pagavam tributo."
+  },
+  "area": {
+    "km2": 1126334,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia",
+    "Africa"
+  ],
+  "primaryContinents": [
+    "Asia"
+  ],
+  "capital": {
+    "en": "Nineveh (earlier, Assur, Kalhu and Dur-Sharrukin)",
+    "pt": "Nínive (antes, Assur, Kalhu e Dur-Sharrukin)"
+  },
+  "language": {
+    "en": "Akkadian and Aramaic (Aramaic became the everyday language)",
+    "pt": "Acadiano e aramaico (o aramaico virou a língua do dia a dia)"
+  },
+  "religion": {
+    "en": "Mesopotamian polytheism",
+    "pt": "Politeísmo mesopotâmico"
+  },
+  "religionNotes": {
+    "en": "The chief god had the same name as the empire's city of origin, and the king ruled as his high priest and representative on earth. Alongside him, the great gods of Mesopotamia, such as Ishtar, Nabu and Shamash, were worshipped.",
+    "pt": "O deus principal tinha o mesmo nome da cidade de origem do império, e o rei governava como seu sumo sacerdote e representante na terra. Ao lado dele eram cultuados os grandes deuses da Mesopotâmia, como Ishtar, Nabu e Shamash."
+  },
+  "curiosities": [
+    {
+      "en": "When omens foretold the king's death, a substitute was put on the throne for up to a hundred days and then executed, while the real king hid.",
+      "pt": "Quando os presságios anunciavam a morte do rei, um substituto era posto no trono por até cem dias e depois executado, enquanto o rei verdadeiro se escondia.",
+      "details": {
+        "en": "The substitute king ritual appears in dozens of letters between the kings and their astrologers, above all in the reign of Esarhaddon (681-669 BC). When an eclipse foretold the king's death, a substitute, usually a prisoner or a commoner, was given the royal robes and throne to draw the bad omen onto himself, while the real king stayed hidden and was called \"the farmer\" in the letters. Once the danger had passed, the substitute was killed so that the omen would be fulfilled. In 671 BC the one chosen was Damqi, son of a senior Babylonian official.",
+        "pt": "O ritual do rei substituto aparece em dezenas de cartas trocadas entre os reis e seus astrólogos, sobretudo no reinado de Assaradão (681-669 a.C.). Quando um eclipse anunciava a morte do rei, um substituto, em geral um prisioneiro ou um homem simples, recebia as roupas e o trono reais para atrair o mau presságio, enquanto o rei verdadeiro ficava escondido e era chamado nas cartas de \"o lavrador\". Passado o perigo, o substituto era morto para que o presságio se cumprisse. Em 671 a.C., o escolhido foi Damqi, filho de um alto funcionário babilônico."
+      }
+    },
+    {
+      "en": "A royal library of more than 30,000 clay tablets preserved the most complete version of the Epic of Gilgamesh, the oldest known work of literature.",
+      "pt": "Uma biblioteca real com mais de 30 mil tábuas de argila guardou a versão mais completa da Epopeia de Gilgamesh, a obra literária mais antiga que se conhece.",
+      "details": {
+        "en": "The Library of Ashurbanipal, in Nineveh, was gathered in the 7th century BC by the king, who boasted that he could read cuneiform and sent scribes to copy texts all over Babylonia. Excavated between 1849 and 1853 by Austen Henry Layard and Hormuzd Rassam, it is now in the British Museum. In 1872 George Smith deciphered a tablet there with a flood story very similar to Noah's, which caused a sensation in England. The fire that destroyed Nineveh in 612 BC baked the clay tablets and helped preserve them.",
+        "pt": "A Biblioteca de Assurbanípal, em Nínive, foi reunida no século VII a.C. pelo rei, que se gabava de saber ler a escrita cuneiforme e mandava escribas copiar textos por toda a Babilônia. Escavada entre 1849 e 1853 por Austen Henry Layard e Hormuzd Rassam, está hoje no Museu Britânico. Em 1872, George Smith decifrou ali uma tábua com um relato do dilúvio muito parecido com o de Noé, o que causou sensação na Inglaterra. O incêndio que destruiu Nínive em 612 a.C. cozeu as tábuas de argila e ajudou a conservá-las."
+      }
+    },
+    {
+      "en": "It conquered the kingdom of Israel and deported its people, giving rise to the legend of the \"ten lost tribes\".",
+      "pt": "Conquistou o reino de Israel e deportou sua população, dando origem à lenda das \"dez tribos perdidas\".",
+      "details": {
+        "en": "In 722 BC, after a three-year siege, Samaria, the capital of the northern kingdom of Israel, fell. Sargon II claimed to have deported 27,290 people and brought other peoples to take their place, as the Second Book of Kings also tells. The deportees mixed with the peoples of Mesopotamia and Media, and the ten northern tribes vanished from history, while the kingdom of Judah, to the south, survived as a vassal. Since then, several groups around the world, such as the Beta Israel of Ethiopia and the Bnei Menashe of India, have claimed descent from them.",
+        "pt": "Em 722 a.C., depois de um cerco de três anos, caiu Samaria, a capital do reino de Israel, no norte. Sargão II afirmou ter deportado 27.290 pessoas e trouxe outros povos para o seu lugar, como conta também o Segundo Livro dos Reis. Os deportados se misturaram aos povos da Mesopotâmia e da Média, e as dez tribos do norte sumiram da história, enquanto o reino de Judá, ao sul, sobreviveu como vassalo. Desde então, vários grupos pelo mundo, como os Beta Israel da Etiópia e os Bnei Menashe da Índia, dizem descender delas."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Neo-Assyrian_Empire",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Neoassírio"
+  },
+  "aliases": [
+    "Assyria",
+    "Assíria",
+    "Assyrian Empire",
+    "Império Assírio",
+    "Assyrians",
+    "Assírios",
+    "Neo-Assyrian",
+    "Neoassírio",
+    "Mesopotamia",
+    "Mesopotâmia",
+    "Iraq",
+    "Iraque"
+  ],
+  "summary": {
+    "en": "A Mesopotamian empire that grew from the city of Assur, in northern Iraq, and was the greatest power of the Near East between the 9th and 7th centuries BC. From 911 BC its kings retook lost lands and, under Tiglath-Pileser III (745-727 BC), created a standing army and divided the territory into provinces run by royal officials. Sargon II, Sennacherib and Esarhaddon conquered the Levant, subdued Babylon and reached Egypt, taken between 671 and 663 BC. The empire became famous for the violence of its campaigns and the mass deportations of conquered peoples, but also for the palaces of Nineveh and Kalhu, decorated with stone reliefs. After the death of Ashurbanipal, civil wars and a Babylonian revolt opened the way for an alliance of Babylonians and Medes, which destroyed Nineveh in 612 BC; the last king held out at Harran until 609 BC.",
+    "pt": "Império da Mesopotâmia que cresceu a partir da cidade de Assur, no norte do atual Iraque, e foi a maior potência do Oriente Próximo entre os séculos IX e VII a.C. A partir de 911 a.C., seus reis retomaram as terras perdidas e, com Tiglate-Pileser III (745-727 a.C.), criaram um exército permanente e dividiram o território em províncias governadas por oficiais do rei. Sargão II, Senaqueribe e Assaradão conquistaram o Levante, submeteram Babilônia e chegaram ao Egito, tomado entre 671 e 663 a.C. O império ficou famoso pela violência das campanhas e pelas deportações em massa de povos vencidos, mas também pelos palácios de Nínive e Kalhu, decorados com relevos de pedra. Depois da morte de Assurbanípal, guerras civis e a revolta de Babilônia abriram caminho para uma aliança de babilônios e medos, que destruiu Nínive em 612 a.C.; o último rei resistiu em Harã até 609 a.C."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Neo-Assyrian Empire",
+        "year": -663
+      },
+      {
+        "draw": "remove",
+        "ring": [[33,36.2],[33.9,36.3],[34.6,37.2],[35.8,37.55],[36.6,37.95],[37.6,38],[38.2,38.1],[39.2,38.3],[40.2,38.4],[41.2,38.6],[41.6,38.7],[42.3,38.3],[43,38.1],[43.8,37.6],[44.3,37.1],[44.9,36.8],[45.6,36.6],[46.5,36.4],[50.5,36.4],[50.5,42.5],[33,42.5]]
+      },
+      {
+        "draw": "remove",
+        "ring": [[32,34.4],[34.8,34.4],[34.8,35.8],[32,35.8]]
+      }
+    ]
+  }
+}

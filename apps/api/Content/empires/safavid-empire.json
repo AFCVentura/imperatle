@@ -1,0 +1,105 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "safavid-empire",
+  "name": {
+    "en": "Safavid Empire",
+    "pt": "Império Safávida"
+  },
+  "peak": {
+    "year": 1629,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": 1501,
+    "precision": "Exact"
+  },
+  "end": {
+    "year": 1736,
+    "precision": "Exact"
+  },
+  "durationNotes": {
+    "en": "It starts in 1501, when the 14-year-old leader of a religious order took Tabriz and crowned himself shah. In 1722, Afghan invaders took the capital, and the dynasty survived only in name, controlled by military chiefs, until 1736, when one of them deposed the last shah, still a baby, and crowned himself. The map shows the peak, around 1629, after the conquests of Abbas I.",
+    "pt": "Começa em 1501, quando o líder de uma ordem religiosa, com 14 anos, tomou Tabriz e se coroou xá. Em 1722, invasores afegãos tomaram a capital, e a dinastia sobreviveu só no nome, controlada por chefes militares, até 1736, quando um deles depôs o último xá, ainda bebê, e se coroou. O mapa mostra o auge, por volta de 1629, depois das conquistas de Abbas I."
+  },
+  "area": {
+    "km2": 2814247,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Asia"
+  ],
+  "primaryContinents": [
+    "Asia"
+  ],
+  "capital": {
+    "en": "Tabriz, then Qazvin and, from 1598, Isfahan",
+    "pt": "Tabriz, depois Qazvin e, a partir de 1598, Isfahan"
+  },
+  "language": {
+    "en": "Persian (with Azerbaijani Turkish spoken at court and in the army)",
+    "pt": "Persa (com o turco azeri falado na corte e no exército)"
+  },
+  "religion": {
+    "en": "Twelver Shia Islam",
+    "pt": "Islamismo xiita duodecimano"
+  },
+  "religionNotes": {
+    "en": "The dynasty grew out of a Sufi order from the city of Ardabil, whose followers, Turkoman tribes who wore a red cap with twelve folds, one for each imam, saw the shah as an almost divine guide. After coming to power, the shahs brought Shia scholars from what are now Lebanon and Bahrain to form the clergy and organise the new official religion.",
+    "pt": "A dinastia nasceu de uma ordem sufi da cidade de Ardabil, cujos seguidores, tribos turcomanas que usavam um gorro vermelho com doze pregas, uma para cada imã, viam o xá como um guia quase divino. Depois de chegar ao poder, os xás trouxeram estudiosos xiitas do atual Líbano e do Bahrein para formar o clero e organizar a nova religião oficial."
+  },
+  "curiosities": [
+    {
+      "en": "Its capital became so rich that it was nicknamed \"half the world\". Its central square is one of the largest in the world and had polo goalposts, which are still there today.",
+      "pt": "Sua capital ficou tão rica que ganhou o apelido de \"metade do mundo\". A praça central é uma das maiores do mundo e tinha traves de polo, que estão lá até hoje.",
+      "details": {
+        "en": "Abbas I moved the capital to Isfahan in 1598 and rebuilt it around a huge square, Naqsh-e Jahan, about 560 metres long. Around it stood the Shah Mosque, the court's private mosque, the Ali Qapu palace and the entrance to the great bazaar, and in the middle polo was played, watched by the court from the palace balcony. European travellers of the time described a city of hundreds of thousands of people, and from that wealth came the Persian saying \"Isfahan is half the world\". The square has been a UNESCO World Heritage Site since 1979.",
+        "pt": "Abbas I mudou a capital para Isfahan em 1598 e a reconstruiu em torno de uma praça enorme, a Naqsh-e Jahan, com cerca de 560 metros de comprimento. Em volta dela ficavam a Mesquita do Xá, a mesquita particular da corte, o palácio de Ali Qapu e a entrada do grande bazar, e no centro se jogava polo, que a corte assistia da varanda do palácio. Viajantes europeus da época descreveram uma cidade de centenas de milhares de habitantes, e dessa riqueza nasceu o ditado persa \"Isfahan é metade do mundo\". A praça é Patrimônio Mundial da Unesco desde 1979."
+      }
+    },
+    {
+      "en": "A peace treaty signed in 1639 drew a border that, with few changes, still separates two countries in the Middle East.",
+      "pt": "Um tratado de paz assinado em 1639 traçou uma fronteira que, com poucas mudanças, ainda separa dois países do Oriente Médio.",
+      "details": {
+        "en": "In 1638, the Ottomans retook Baghdad, and the following year the two empires made peace at Zuhab, near today's town of Qasr-e Shirin. The Safavids kept Yerevan and gave up Mesopotamia, and the line drawn between them, adjusted by treaties in the 18th and 19th centuries, is the basis of today's border between Iran and Iraq and, in part, of the border with Turkey. The peace ended more than a century of wars between the two neighbours.",
+        "pt": "Em 1638, os otomanos retomaram Bagdá, e no ano seguinte os dois impérios assinaram a paz em Zuhab, perto da atual cidade de Qasr-e Shirin. Os safávidas ficaram com Yerevan e abriram mão da Mesopotâmia, e a linha traçada entre os dois, ajustada por tratados dos séculos XVIII e XIX, é a base da atual fronteira entre o Irã e o Iraque e, em parte, da fronteira com a Turquia. A paz encerrou mais de um século de guerras entre os dois vizinhos."
+      }
+    },
+    {
+      "en": "It imposed Shiism on a mostly Sunni population, which is why Iran is today the main Shia country in the world.",
+      "pt": "Impôs o xiismo a uma população de maioria sunita, e é por isso que o Irã é hoje o principal país xiita do mundo.",
+      "details": {
+        "en": "When Ismail I declared Twelver Shiism the official religion, in 1501, most Persians were Sunni. The conversion took more than a century and was partly forced: Sunnis who resisted could be persecuted or killed, and the first three caliphs began to be cursed in public. The change also set Iran apart from its Sunni neighbours, the Ottomans and the Uzbeks, and helped create a distinct identity. Today about 90% of Iranians are Shia, and Azerbaijan, which was part of the empire, also has a Shia majority.",
+        "pt": "Quando Ismail I declarou o xiismo duodecimano religião oficial, em 1501, a maior parte dos persas era sunita. A conversão levou mais de um século e foi feita em parte à força: os sunitas que resistiam podiam ser perseguidos ou mortos, e os três primeiros califas passaram a ser amaldiçoados em público. A mudança também separou o Irã dos vizinhos sunitas, otomanos e uzbeques, e ajudou a criar uma identidade própria. Hoje cerca de 90% dos iranianos são xiitas, e o Azerbaijão, que fazia parte do império, também tem maioria xiita."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Safavid_Iran",
+    "pt": "https://pt.wikipedia.org/wiki/Império_Safávida"
+  },
+  "aliases": [
+    "Safavids",
+    "Safávidas",
+    "Safavid Iran",
+    "Irã Safávida",
+    "Safavid Persia",
+    "Pérsia Safávida",
+    "Safavid Dynasty",
+    "Dinastia Safávida",
+    "Império Safavida",
+    "Safawid Empire"
+  ],
+  "summary": {
+    "en": "An empire founded in 1501 by Ismail I, who unified Iran under a local dynasty for the first time in centuries. It spent much of its history at war with two Sunni neighbours, the Ottomans to the west and the Uzbeks to the east. Its peak came under Abbas I, who reformed the army with slave soldiers from the Caucasus and with firearms, won back the lost lands and moved the capital. The silk trade, controlled by the crown, drew European and Armenian merchants. After him, the shahs came to live secluded in the palace, and the empire weakened until the Afghan invasion of 1722.",
+    "pt": "Império fundado em 1501 por Ismail I, que unificou o Irã sob uma dinastia local pela primeira vez em séculos. Passou boa parte da história em guerra com dois vizinhos sunitas, os otomanos a oeste e os uzbeques a leste. O auge veio com Abbas I, que reformou o exército com soldados-escravos vindos do Cáucaso e com armas de fogo, retomou as terras perdidas e mudou a capital. O comércio de seda, controlado pela coroa, atraiu mercadores europeus e armênios. Depois dele, os xás passaram a viver isolados no palácio, e o império foi enfraquecendo até a invasão afegã de 1722."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Safavid Dynasty",
+        "year": 1629
+      }
+    ]
+  }
+}

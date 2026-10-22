@@ -1,0 +1,104 @@
+{
+  "$schema": "../empire.schema.json",
+  "slug": "kingdom-of-aksum",
+  "name": {
+    "en": "Kingdom of Aksum",
+    "pt": "Reino de Axum"
+  },
+  "peak": {
+    "year": 530,
+    "precision": "Approximate"
+  },
+  "start": {
+    "year": -150,
+    "precision": "Century"
+  },
+  "end": {
+    "year": 960,
+    "precision": "Approximate"
+  },
+  "durationNotes": {
+    "en": "The start is uncertain: by around the 2nd century BC there was already a state in the region, and in the 1st century AD a Greek sailing guide already mentioned the city and its port on the Red Sea. The end is also poorly documented: trade declined from the 7th century on, and around 960 the capital was reportedly sacked by an enemy queen. The map shows the peak, around 530, when the kingdom also ruled the other side of the Red Sea, for a few years.",
+    "pt": "O início é incerto: por volta do século II a.C. já havia um Estado na região, e no século I d.C. um guia de navegação grego já citava a cidade e o seu porto no Mar Vermelho. O fim também é mal documentado: o comércio entrou em declínio a partir do século VII, e por volta de 960 a capital teria sido saqueada por uma rainha inimiga. O mapa mostra o auge, por volta de 530, quando o reino dominava também o outro lado do Mar Vermelho, por poucos anos."
+  },
+  "area": {
+    "km2": 385340,
+    "precision": "Approximate"
+  },
+  "mapAccuracy": "Approximate",
+  "continents": [
+    "Africa",
+    "Asia"
+  ],
+  "primaryContinents": [
+    "Africa"
+  ],
+  "capital": {
+    "en": "Aksum",
+    "pt": "Axum"
+  },
+  "language": {
+    "en": "Ge'ez (with Greek used on coins and inscriptions)",
+    "pt": "Gueês (com o grego usado em moedas e inscrições)"
+  },
+  "religion": {
+    "en": "Christianity, after a long polytheist period",
+    "pt": "Cristianismo, depois de um longo período politeísta"
+  },
+  "religionNotes": {
+    "en": "Until the 4th century, the kings worshipped gods that came from southern Arabia, such as Mahrem, god of war and protector of the monarchy. Around 330, King Ezana converted to Christianity, influenced by a young Syrian who had arrived at court as a captive and was later consecrated bishop in Alexandria. It was one of the first states to adopt the new faith, and the pagan symbol of the disc and crescent moon on the coins gave way to the cross.",
+    "pt": "Até o século IV, os reis cultuavam deuses vindos do sul da Arábia, como Mahrem, deus da guerra e protetor da realeza. Por volta de 330, o rei Ezana se converteu ao cristianismo, influenciado por um jovem sírio que tinha chegado à corte como cativo e depois foi consagrado bispo em Alexandria. Foi um dos primeiros Estados a adotar a nova fé, e o símbolo pagão do disco e da lua crescente nas moedas deu lugar à cruz."
+  },
+  "curiosities": [
+    {
+      "en": "In the 3rd century, the Persian prophet Mani listed the four great kingdoms of the world: Rome, Persia, China and this one.",
+      "pt": "No século III, o profeta persa Mani listou os quatro grandes reinos do mundo: Roma, a Pérsia, a China e este reino.",
+      "details": {
+        "en": "The passage is in the Kephalaia, a collection of Mani's teachings preserved in Coptic in Egypt. It shows how the kingdom was seen from Persia: a power that controlled the passage between the Red Sea and the Indian Ocean. In the 6th century, the Byzantine emperor Justinian sent ambassadors to its king asking him to buy Indian silk directly and resell it to the Byzantines, so as to stop enriching the Persians, but the plan didn't work.",
+        "pt": "A passagem está nos Kephalaia, uma coletânea dos ensinamentos de Mani preservada em copta, no Egito. Ela mostra como o reino era visto da Pérsia: uma potência que controlava a passagem entre o Mar Vermelho e o Oceano Índico. No século VI, o imperador bizantino Justiniano mandou embaixadores ao rei pedindo que comprasse seda diretamente da Índia e a revendesse aos bizantinos, para deixar de enriquecer os persas, mas o plano não deu certo."
+      }
+    },
+    {
+      "en": "In 615, followers of Muhammad persecuted in Mecca took refuge with the Christian king of this kingdom, who refused to hand them over.",
+      "pt": "Em 615, seguidores de Maomé perseguidos em Meca se refugiaram com o rei cristão deste reino, que se recusou a entregá-los.",
+      "details": {
+        "en": "The first group had about fifteen people, and others followed, reaching more than eighty. The leaders of Mecca sent envoys with gifts to demand their return, but, according to Islamic tradition, the king heard the refugees recite the passage of the Quran about Mary and Jesus, was moved and let them stay. The episode is remembered as the first Hijra, years before Muhammad's own flight to Medina, in 622.",
+        "pt": "O primeiro grupo tinha cerca de quinze pessoas, e outros vieram depois, chegando a mais de oitenta. Os líderes de Meca mandaram enviados com presentes para exigir a devolução, mas, segundo a tradição islâmica, o rei ouviu os refugiados recitarem o trecho do Alcorão sobre Maria e Jesus, se emocionou e os deixou ficar. O episódio é lembrado como a primeira Hégira, anos antes da fuga do próprio Maomé para Medina, em 622."
+      }
+    },
+    {
+      "en": "According to local tradition, the Ark of the Covenant is kept in a chapel in its old capital, guarded by a single monk, the only one allowed to see it.",
+      "pt": "Segundo a tradição local, a Arca da Aliança está guardada numa capela da sua antiga capital, vigiada por um único monge, o único que pode vê-la.",
+      "details": {
+        "en": "The Kebra Nagast, an Ethiopian book from the 14th century, tells that Menelik, son of King Solomon and the Queen of Sheba, brought the Ark from Jerusalem to Ethiopia. The guardian monk is chosen for life and never leaves the chapel grounds, next to the Church of Our Lady Mary of Zion, so no one else can confirm what is there. Every Ethiopian Orthodox church keeps a replica of the tablets, which is carried in procession on feast days.",
+        "pt": "O Kebra Nagast, um livro etíope do século XIV, conta que Menelik, filho do rei Salomão e da rainha de Sabá, trouxe a Arca de Jerusalém para a Etiópia. O monge guardião é escolhido para a vida toda e nunca sai do terreno da capela, ao lado da Igreja de Nossa Senhora Maria de Sião, por isso ninguém mais pode confirmar o que há lá dentro. Toda igreja ortodoxa etíope guarda uma réplica das tábuas, que sai em procissão nos dias de festa."
+      }
+    }
+  ],
+  "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Kingdom_of_Aksum",
+    "pt": "https://pt.wikipedia.org/wiki/Império_de_Axum"
+  },
+  "aliases": [
+    "Aksum",
+    "Axum",
+    "Aksumite Empire",
+    "Axumite Empire",
+    "Império de Axum",
+    "Império Axumita",
+    "Reino Axumita",
+    "Kingdom of Axum"
+  ],
+  "summary": {
+    "en": "A kingdom in northeastern Africa, in what is now northern Ethiopia and Eritrea, which grew rich from trade between the Roman Empire and India through the port of Adulis, on the Red Sea. It exported ivory, gold, incense and enslaved people, and minted its own coins in gold, silver and bronze. In the 4th century it attacked Meroë, in today's Sudan, and in the 6th century it crossed the sea and conquered Yemen, to protect the Christians there from a king who persecuted them. With the Arab expansion in the 7th century, the Red Sea routes changed hands, and the kingdom lost strength and withdrew inland. Its Christian traditions and its script survived in the Ethiopian kingdoms that came after it.",
+    "pt": "Reino do nordeste da África, no atual norte da Etiópia e na Eritreia, que enriqueceu com o comércio entre o Império Romano e a Índia pelo porto de Adulis, no Mar Vermelho. Exportava marfim, ouro, incenso e escravizados, e cunhava as próprias moedas em ouro, prata e bronze. No século IV, chegou a atacar Meroé, no atual Sudão, e no século VI cruzou o mar e conquistou o Iêmen, para proteger os cristãos de lá de um rei que os perseguia. Com a expansão árabe no século VII, as rotas do Mar Vermelho mudaram de mãos, e o reino foi perdendo força e se afastando para o interior. Suas tradições cristãs e sua escrita sobreviveram nos reinos etíopes que vieram depois."
+  },
+  "map": {
+    "parts": [
+      {
+        "polity": "Kingdom of Axum",
+        "year": 534
+      }
+    ]
+  }
+}

@@ -16,6 +16,51 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    version: "1.3.0",
+    date: "2026-10-22",
+    empires: [
+      { en: "Fatimid Caliphate", pt: "Califado Fatímida" },
+      { en: "Qin Dynasty", pt: "Dinastia Qin" },
+      { en: "Song Dynasty", pt: "Dinastia Song" },
+      { en: "Sui Dynasty", pt: "Dinastia Sui" },
+      { en: "Zhou Dynasty", pt: "Dinastia Zhou" },
+      { en: "Ethiopian Empire", pt: "Império Etíope" },
+      { en: "Neo-Assyrian Empire", pt: "Império Neoassírio" },
+      { en: "Safavid Empire", pt: "Império Safávida" },
+      { en: "Songhai Empire", pt: "Império Songai" },
+      { en: "First Mexican Empire", pt: "Primeiro Império Mexicano" },
+      { en: "Kingdom of Aksum", pt: "Reino de Axum" },
+    ],
+    features: [
+      {
+        en: "New logo: a bronze map pin with a ruby, now also on the browser tab and in link previews.",
+        pt: "Logo nova: um alfinete de mapa de bronze com um rubi, agora também na aba do navegador e na prévia dos links.",
+      },
+      {
+        en: "Maps now reach the coast: borders that stopped short of the sea are filled out to today's coastline.",
+        pt: "Os mapas agora chegam até a costa: fronteiras que paravam antes do mar foram completadas até o litoral atual.",
+      },
+      {
+        en: "An empire split about evenly between two continents shows both as main continents: the Ottoman, Russian and Macedonian empires, the Soviet Union and the Golden Horde are now in Europe and Asia.",
+        pt: "Um império dividido quase por igual entre dois continentes mostra os dois como principais: os impérios Otomano, Russo e Macedônico, a União Soviética e a Horda Dourada agora ficam na Europa e na Ásia.",
+      },
+    ],
+    fixes: [
+      {
+        en: "A Roman Empire clue now makes clear that Julius Caesar ruled the Republic before the empire.",
+        pt: "Uma dica do Império Romano agora deixa claro que Júlio César governou a República, antes do império.",
+      },
+      {
+        en: "Historical corrections in clues and texts of Denmark–Norway, the Second Portuguese Empire, the Holy Roman Empire and the Abbasid Caliphate.",
+        pt: "Correções históricas em dicas e textos de Dinamarca-Noruega, Segundo Império Português, Sacro Império Romano-Germânico e Califado Abássida.",
+      },
+      {
+        en: "New clues where an old one repeated what the empire's text already said: Third Portuguese Empire, Maratha Empire, First French Colonial Empire, Greco-Bactrian Kingdom, Spanish Empire, Austria-Hungary, Western Roman Empire and Parthian Empire.",
+        pt: "Dicas novas onde a antiga repetia o que o texto do império já dizia: Terceiro Império Português, Império Marata, Primeiro Império Colonial Francês, Reino Greco-Bactriano, Império Espanhol, Império Austro-Húngaro, Império Romano do Ocidente e Império Parta.",
+      },
+    ],
+  },
+  {
     version: "1.2.1",
     date: "2026-10-19",
     empires: [],
