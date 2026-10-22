@@ -29,7 +29,9 @@
   "continents": [
     "NorthAmerica"
   ],
-  "primaryContinent": "NorthAmerica",
+  "primaryContinents": [
+    "NorthAmerica"
+  ],
   "capital": {
     "en": "Tenochtitlan",
     "pt": "Tenochtitlan"

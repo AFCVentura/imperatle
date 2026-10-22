@@ -29,7 +29,9 @@
   "continents": [
     "Asia"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Delhi (Daulatabad from 1327 to 1335 and Agra from 1506)",
     "pt": "Délhi (Daulatabad de 1327 a 1335 e Agra a partir de 1506)"

@@ -16,6 +16,7 @@ public class EmpireContentException(IReadOnlyList<string> errors)
 public static partial class EmpireContentLoader
 {
     public const int CuriosityCount = 3;
+    public const int MaxPrimaryContinents = 2;
 
     private static readonly JsonSerializerOptions JsonOptions = new(JsonSerializerDefaults.Web)
     {
@@ -183,9 +184,17 @@ public static partial class EmpireContentLoader
         {
             errors.Add("continents has duplicates");
         }
-        if (!empire.Continents.Contains(empire.PrimaryContinent))
+        if (empire.PrimaryContinents.Count is < 1 or > MaxPrimaryContinents)
         {
-            errors.Add("primaryContinent must be one of continents");
+            errors.Add($"primaryContinents must list 1 or {MaxPrimaryContinents} continents");
+        }
+        if (empire.PrimaryContinents.Distinct().Count() != empire.PrimaryContinents.Count)
+        {
+            errors.Add("primaryContinents has duplicates");
+        }
+        if (!empire.PrimaryContinents.All(empire.Continents.Contains))
+        {
+            errors.Add("primaryContinents must be among continents");
         }
 
         if (empire.Curiosities.Count != CuriosityCount)

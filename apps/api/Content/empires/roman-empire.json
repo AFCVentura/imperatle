@@ -31,7 +31,9 @@
     "Africa",
     "Asia"
   ],
-  "primaryContinent": "Europe",
+  "primaryContinents": [
+    "Europe"
+  ],
   "capital": {
     "en": "Rome",
     "pt": "Roma"
@@ -54,11 +56,11 @@
       }
     },
     {
-      "en": "Two months of our calendar are named after two of its rulers.",
-      "pt": "Dois meses do nosso calendário homenageiam dois de seus governantes.",
+      "en": "Two months of our calendar honour its first ruler and the last dictator of the regime that came before it.",
+      "pt": "Dois meses do nosso calendário homenageiam seu primeiro governante e o último ditador do regime anterior.",
       "details": {
-        "en": "July honours Julius Caesar, born in that month, the dictator who paved the way for the empire, and August honours Augustus, the first emperor. They used to be called Quintilis and Sextilis, the fifth and sixth months of the old Roman calendar, which began in March. The Julian calendar, created by Caesar in 46 BCE, is the basis of the one we use today.",
-        "pt": "Julho homenageia Júlio César, nascido nesse mês, o ditador que abriu caminho para o império, e agosto homenageia Augusto, o primeiro imperador. Antes, os dois meses se chamavam Quintilis e Sextilis, o quinto e o sexto do antigo calendário romano, que começava em março. O calendário juliano, criado por César em 46 a.C., é a base do que usamos hoje."
+        "en": "July honours Julius Caesar, born in that month, who was named dictator for life of the Republic and murdered in 44 BCE; the office of dictator was abolished soon after. August honours his adopted heir Augustus, the first emperor. They used to be called Quintilis and Sextilis, the fifth and sixth months of the old Roman calendar, which began in March. The Julian calendar, created by Caesar in 46 BCE, is the basis of the one we use today.",
+        "pt": "Julho homenageia Júlio César, nascido nesse mês, que foi nomeado ditador vitalício da República e assassinado em 44 a.C.; o cargo de ditador foi abolido logo depois. Agosto homenageia seu herdeiro adotivo, Augusto, o primeiro imperador. Antes, os dois meses se chamavam Quintilis e Sextilis, o quinto e o sexto do antigo calendário romano, que começava em março. O calendário juliano, criado por César em 46 a.C., é a base do que usamos hoje."
       }
     },
     {

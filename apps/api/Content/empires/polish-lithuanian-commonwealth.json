@@ -29,7 +29,9 @@
   "continents": [
     "Europe"
   ],
-  "primaryContinent": "Europe",
+  "primaryContinents": [
+    "Europe"
+  ],
   "capital": {
     "en": "Kraków, later Warsaw (the court moved in 1596)",
     "pt": "Cracóvia, depois Varsóvia (a corte se mudou em 1596)"

@@ -18,8 +18,8 @@
     "precision": "Exact"
   },
   "durationNotes": {
-    "en": "It starts around 618, when the founder took the throne and completed the union of the clans of the plateau, and ends in 842, when the emperor's assassination led to a dispute between heirs that split the territory. The peak shown is 800, when it already controlled the Hexi Corridor, taken from the Tang Dynasty. The map leaves out Khotan and the cities of the Tarim Basin, where local rulers stayed in power under supervision, as well as the lands further north, which changed hands several times in the wars against the Uyghurs.",
-    "pt": "Começa por volta de 618, quando o fundador assumiu o trono e completou a união dos clãs do planalto, e termina em 842, quando o assassinato do imperador levou a uma disputa entre herdeiros que dividiu o território. O auge escolhido é 800, quando já controlava o corredor de Hexi, tomado da Dinastia Tang. O mapa não inclui Khotan e as cidades da Bacia do Tarim, onde governantes locais continuaram no poder sob supervisão, nem as terras mais ao norte, que trocaram de mãos várias vezes nas guerras contra os uigures."
+    "en": "It starts around 618, when the founder took the throne and completed the union of the clans of the plateau, and ends in 842, when the emperor's assassination led to a dispute between heirs that split the territory. The peak shown is 800, when it already controlled the Hexi Corridor, taken from China. The map leaves out Khotan and the cities of the Tarim Basin, where local rulers stayed in power under supervision, as well as the lands further north, which changed hands several times in the wars against the Uyghurs.",
+    "pt": "Começa por volta de 618, quando o fundador assumiu o trono e completou a união dos clãs do planalto, e termina em 842, quando o assassinato do imperador levou a uma disputa entre herdeiros que dividiu o território. O auge escolhido é 800, quando já controlava o corredor de Hexi, tomado da China. O mapa não inclui Khotan e as cidades da Bacia do Tarim, onde governantes locais continuaram no poder sob supervisão, nem as terras mais ao norte, que trocaram de mãos várias vezes nas guerras contra os uigures."
   },
   "area": {
     "km2": 2700000,
@@ -29,7 +29,9 @@
   "continents": [
     "Asia"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Lhasa (although the court spent much of its time in travelling camps)",
     "pt": "Lhasa (embora a corte vivesse boa parte do tempo em acampamentos itinerantes)"

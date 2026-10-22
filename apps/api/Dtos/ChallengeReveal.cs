@@ -9,7 +9,7 @@ public record ChallengeReveal(
     BroadEra? BroadEra,
     BorderConfidence? MapBorderConfidence,
     List<Continent>? Continents,
-    Continent? PrimaryContinent,
+    List<Continent>? PrimaryContinents,
     string? CapitalEn,
     string? CapitalPt,
     string? LanguageEn,

@@ -66,7 +66,8 @@ export interface ChallengeReveal {
   broadEra: number | null;
   mapBorderConfidence: number | null;
   continents: number[] | null;
-  primaryContinent: number | null;
+  // One, or two when the territory was split about evenly between them.
+  primaryContinents: number[] | null;
   capitalEn: string | null;
   capitalPt: string | null;
   languageEn: string | null;
@@ -97,7 +98,7 @@ export const EMPTY_REVEAL: ChallengeReveal = {
   broadEra: null,
   mapBorderConfidence: null,
   continents: null,
-  primaryContinent: null,
+  primaryContinents: null,
   capitalEn: null,
   capitalPt: null,
   languageEn: null,
@@ -128,7 +129,7 @@ export interface EmpireAnswer {
   broadEra: number;
   mapBorderConfidence: number;
   continents: number[];
-  primaryContinent: number;
+  primaryContinents: number[];
   capitalEn: string;
   capitalPt: string;
   languageEn: string;

@@ -29,7 +29,9 @@
   "continents": [
     "Asia"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Chang'an (today's Xi'an), with Luoyang as a secondary capital",
     "pt": "Chang'an (atual Xi'an), com Luoyang como capital secundária"

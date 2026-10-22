@@ -22,7 +22,7 @@
     "pt": "Começa em 395, quando o império foi dividido em duas metades e esta passou a ter imperador próprio; muitas fontes preferem 330, ano da inauguração da capital. Termina em 1453, com a queda da capital."
   },
   "area": {
-    "km2": 2624967,
+    "km2": 2647330,
     "precision": "Approximate"
   },
   "mapAccuracy": "Approximate",
@@ -31,7 +31,9 @@
     "Europe",
     "Africa"
   ],
-  "primaryContinent": "Europe",
+  "primaryContinents": [
+    "Europe"
+  ],
   "capital": {
     "en": "Constantinople",
     "pt": "Constantinopla"

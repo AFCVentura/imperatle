@@ -29,7 +29,9 @@
   "continents": [
     "SouthAmerica"
   ],
-  "primaryContinent": "SouthAmerica",
+  "primaryContinents": [
+    "SouthAmerica"
+  ],
   "capital": {
     "en": "Cusco",
     "pt": "Cusco"

@@ -30,7 +30,9 @@
     "Europe",
     "Asia"
   ],
-  "primaryContinent": "Europe",
+  "primaryContinents": [
+    "Europe"
+  ],
   "capital": {
     "en": "No fixed capital (itinerant court; the main one was on the Pannonian plain)",
     "pt": "Sem capital fixa (corte itinerante; a principal ficava na planície da Panônia)"

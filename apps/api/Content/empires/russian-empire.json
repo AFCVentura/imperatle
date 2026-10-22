@@ -31,7 +31,10 @@
     "Europe",
     "NorthAmerica"
   ],
-  "primaryContinent": "Europe",
+  "primaryContinents": [
+    "Europe",
+    "Asia"
+  ],
   "capital": {
     "en": "Saint Petersburg",
     "pt": "São Petersburgo"

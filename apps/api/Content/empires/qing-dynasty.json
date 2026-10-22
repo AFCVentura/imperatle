@@ -22,14 +22,16 @@
     "pt": "Começa em 1636, quando a dinastia adotou o nome, ainda governando só terras ao norte da Grande Muralha. Muitas fontes preferem começar em 1644, quando ela tomou a capital do país e passou a governar o resto do território. Termina em 1912, com a abdicação do último imperador."
   },
   "area": {
-    "km2": 12452245,
+    "km2": 12456420,
     "precision": "Approximate"
   },
   "mapAccuracy": "Approximate",
   "continents": [
     "Asia"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Beijing",
     "pt": "Pequim"

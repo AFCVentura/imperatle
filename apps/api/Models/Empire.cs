@@ -27,7 +27,8 @@ public class Empire
     public BorderConfidence MapBorderConfidence { get; set; }
 
     public List<Continent> Continents { get; set; } = [];
-    public Continent PrimaryContinent { get; set; }
+    // One, or two when the territory was split about evenly between them.
+    public List<Continent> PrimaryContinents { get; set; } = [];
 
     public string CapitalEn { get; set; } = string.Empty;
     public string CapitalPt { get; set; } = string.Empty;

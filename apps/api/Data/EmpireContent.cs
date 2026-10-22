@@ -18,7 +18,9 @@ public record EmpireContent(
     AreaValue Area,
     BorderConfidence MapAccuracy,
     List<Continent> Continents,
-    Continent PrimaryContinent,
+    // Where most of the territory was: one continent, or two when it was
+    // split about evenly between them (e.g. the Ottomans, in Europe and Asia).
+    List<Continent> PrimaryContinents,
     LocalizedText Capital,
     LocalizedText Language,
     LocalizedText Religion,

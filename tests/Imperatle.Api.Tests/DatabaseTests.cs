@@ -27,7 +27,7 @@ public class DatabaseTests
         Area: new(1000, AreaPrecision.Exact),
         MapAccuracy: BorderConfidence.Precise,
         Continents: [Continent.Europe],
-        PrimaryContinent: Continent.Europe,
+        PrimaryContinents: [Continent.Europe],
         Capital: new(capital, capital),
         Language: new("L", "L"),
         Religion: new("R", "R"),

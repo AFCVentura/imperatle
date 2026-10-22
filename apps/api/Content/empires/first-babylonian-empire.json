@@ -22,14 +22,16 @@
     "pt": "As datas seguem a cronologia média, a mais usada; outras cronologias deslocam tudo em até cerca de 60 anos. Começa por volta de 1894 a.C., com a fundação da dinastia na cidade, que continuou uma pequena cidade-estado até seu rei mais famoso conquistar os vizinhos a partir de 1763 a.C. Termina em 1595 a.C., quando a capital foi saqueada por invasores vindos da Anatólia."
   },
   "area": {
-    "km2": 225055,
+    "km2": 225440,
     "precision": "Approximate"
   },
   "mapAccuracy": "Speculative",
   "continents": [
     "Asia"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Babylon",
     "pt": "Babilônia"

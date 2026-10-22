@@ -9,7 +9,7 @@ public class RevealBuilderTests
     {
         ReferenceYear = 200,
         Continents = [Continent.Asia],
-        PrimaryContinent = Continent.Asia,
+        PrimaryContinents = [Continent.Asia],
         CapitalEn = "Capital",
         LanguageEn = "Language",
         ReligionEn = "Religion",

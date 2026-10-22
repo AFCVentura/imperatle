@@ -29,7 +29,9 @@
   "continents": [
     "Africa"
   ],
-  "primaryContinent": "Africa",
+  "primaryContinents": [
+    "Africa"
+  ],
   "capital": {
     "en": "Memphis",
     "pt": "Mênfis"

@@ -39,7 +39,8 @@ export type EmpireDraft = {
   area: { km2: number; precision: (typeof AREA_PRECISIONS)[number] };
   mapAccuracy: (typeof MAP_ACCURACIES)[number];
   continents: Continent[];
-  primaryContinent: Continent;
+  // One, or two when the territory was split about evenly between them.
+  primaryContinents: Continent[];
   capital: Text;
   language: Text;
   religion: Text;
@@ -57,6 +58,7 @@ export type EmpireDraft = {
 export type Curiosity = Text & { details?: Text };
 
 export const CURIOSITY_COUNT = 3;
+export const MAX_PRIMARY_CONTINENTS = 2;
 
 // An optional text with both languages empty counts as not filled in.
 export const isBlank = (t?: Text) => !t || (!t.en.trim() && !t.pt.trim());
@@ -95,7 +97,9 @@ export function validateDraft(draft: EmpireDraft, others: { slug: string; name: 
   if (draft.continents.length === 0) errors.push("marque pelo menos um continente");
   if (new Set(draft.continents).size !== draft.continents.length) errors.push("continentes repetidos");
   if (draft.continents.some((c) => !CONTINENTS.includes(c))) errors.push("continente desconhecido");
-  if (!draft.continents.includes(draft.primaryContinent)) errors.push("o continente principal tem que estar entre os marcados");
+  if (draft.primaryContinents.length < 1 || draft.primaryContinents.length > MAX_PRIMARY_CONTINENTS)
+    errors.push(`marque 1 ou ${MAX_PRIMARY_CONTINENTS} continentes principais`);
+  if (!draft.primaryContinents.every((c) => draft.continents.includes(c))) errors.push("os continentes principais têm que estar entre os marcados");
 
   if (draft.curiosities.length !== CURIOSITY_COUNT) errors.push(`são exatamente ${CURIOSITY_COUNT} dicas`);
   draft.curiosities.forEach((c, i) => {
@@ -160,7 +164,7 @@ export function toContentJson(draft: EmpireDraft): string {
     area: rest.area,
     mapAccuracy: rest.mapAccuracy,
     continents: rest.continents,
-    primaryContinent: rest.primaryContinent,
+    primaryContinents: rest.primaryContinents,
     capital: rest.capital,
     language: rest.language,
     religion: rest.religion,

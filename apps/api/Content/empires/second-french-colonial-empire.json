@@ -34,7 +34,9 @@
     "NorthAmerica",
     "Oceania"
   ],
-  "primaryContinent": "Europe",
+  "primaryContinents": [
+    "Europe"
+  ],
   "capital": {
     "en": "Paris",
     "pt": "Paris"

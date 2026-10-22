@@ -30,7 +30,9 @@
     "Asia",
     "Oceania"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Tokyo",
     "pt": "Tóquio"

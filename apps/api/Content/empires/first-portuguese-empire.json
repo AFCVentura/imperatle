@@ -32,7 +32,9 @@
     "Asia",
     "Africa"
   ],
-  "primaryContinent": "Europe",
+  "primaryContinents": [
+    "Europe"
+  ],
   "capital": {
     "en": "Lisbon",
     "pt": "Lisboa"

@@ -18,7 +18,7 @@
     "precision": "Exact"
   },
   "area": {
-    "km2": 3666192,
+    "km2": 3718896,
     "precision": "Approximate"
   },
   "mapAccuracy": "Precise",
@@ -27,7 +27,10 @@
     "Africa",
     "Europe"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Europe",
+    "Asia"
+  ],
   "capital": {
     "en": "Constantinople",
     "pt": "Constantinopla"
@@ -53,8 +56,8 @@
       "en": "That same city had been the capital of a millennium-old empire, which it brought to an end by conquering it, one of the events used to mark the end of the Middle Ages.",
       "pt": "Essa mesma cidade tinha sido a capital de um império milenar, que ele encerrou ao conquistá-la, um dos marcos usados para o fim da Idade Média.",
       "details": {
-        "en": "In 1453 Sultan Mehmed II took Constantinople and ended the Eastern Roman Empire, which had existed for more than a thousand years. Many historians use the date, along with Europeans reaching the Americas in 1492, to mark the end of the Middle Ages. The basilica of Hagia Sophia became a mosque, and the city became the new Ottoman capital.",
-        "pt": "Em 1453, o sultão Mehmed II tomou Constantinopla e acabou com o Império Romano Oriental, que existia havia mais de mil anos. Muitos historiadores usam essa data, junto com a chegada dos europeus à América, em 1492, para marcar o fim da Idade Média. A basílica de Santa Sofia virou mesquita, e a cidade se tornou a nova capital otomana."
+        "en": "In 1453 Sultan Mehmed II took Constantinople and ended the Byzantine Empire, which had existed for more than a thousand years. Many historians use the date, along with Europeans reaching the Americas in 1492, to mark the end of the Middle Ages. The basilica of Hagia Sophia became a mosque, and the city became the new Ottoman capital.",
+        "pt": "Em 1453, o sultão Mehmed II tomou Constantinopla e acabou com o Império Bizantino, que existia havia mais de mil anos. Muitos historiadores usam essa data, junto com a chegada dos europeus à América, em 1492, para marcar o fim da Idade Média. A basílica de Santa Sofia virou mesquita, e a cidade se tornou a nova capital otomana."
       }
     },
     {

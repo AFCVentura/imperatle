@@ -30,7 +30,9 @@
     "Asia",
     "Europe"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Isfahan (earlier, Nishapur and Rey; later, Merv and Hamadan)",
     "pt": "Isfahan (antes, Nishapur e Rey; depois, Merv e Hamadã)"

@@ -22,14 +22,16 @@
     "pt": "Começa com uma batalha vencida pelo fundador, por volta de 1235. A partir do século XV perdeu a maior parte das terras e sobreviveu como um pequeno reino até cerca de 1670, quando sua capital foi saqueada."
   },
   "area": {
-    "km2": 1113811,
+    "km2": 1115236,
     "precision": "Approximate"
   },
   "mapAccuracy": "Speculative",
   "continents": [
     "Africa"
   ],
-  "primaryContinent": "Africa",
+  "primaryContinents": [
+    "Africa"
+  ],
   "capital": {
     "en": "Niani",
     "pt": "Niani"

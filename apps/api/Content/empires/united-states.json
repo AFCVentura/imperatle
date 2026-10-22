@@ -19,7 +19,7 @@
     "pt": "Começa em 1776, com a declaração de independência (reconhecida em 1783; a constituição atual é de 1789), e ainda existe. O auge mostrado é antes da independência das Filipinas, em 1946: depois da Segunda Guerra o território parecia maior, mas incluía regiões sob ocupação militar."
   },
   "area": {
-    "km2": 9637940,
+    "km2": 9655898,
     "precision": "Exact"
   },
   "mapAccuracy": "Precise",
@@ -28,7 +28,9 @@
     "Asia",
     "Oceania"
   ],
-  "primaryContinent": "NorthAmerica",
+  "primaryContinents": [
+    "NorthAmerica"
+  ],
   "capital": {
     "en": "Washington D.C.",
     "pt": "Washington D.C."

@@ -22,14 +22,16 @@
     "pt": "Começa em 1370, quando o fundador tomou o poder na Ásia Central, e termina em 1507, com a queda de sua última capital. Após a morte do fundador, em 1405, os herdeiros brigaram entre si e o império encolheu para sua metade leste."
   },
   "area": {
-    "km2": 5127949,
+    "km2": 5149962,
     "precision": "Approximate"
   },
   "mapAccuracy": "Approximate",
   "continents": [
     "Asia"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Samarkand, later Herat",
     "pt": "Samarcanda, depois Herat"

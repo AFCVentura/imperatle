@@ -30,7 +30,9 @@
     "Europe",
     "Asia"
   ],
-  "primaryContinent": "Europe",
+  "primaryContinents": [
+    "Europe"
+  ],
   "capital": {
     "en": "Vienna and Budapest (one for each half of the empire)",
     "pt": "Viena e Budapeste (uma para cada metade do império)"
@@ -57,11 +59,11 @@
       }
     },
     {
-      "en": "Its two halves had their own parliaments and governments, sharing only the monarch, the army, foreign policy and the common finances.",
-      "pt": "Suas duas metades tinham parlamentos e governos próprios, dividindo só o monarca, o exército, a política externa e as finanças comuns.",
+      "en": "A single monarch ruled for almost its entire existence, and died in the middle of the war that would destroy it.",
+      "pt": "Um único monarca governou durante quase toda a sua existência, e morreu no meio da guerra que o destruiria.",
       "details": {
-        "en": "The 1867 Compromise turned the realm into a dual monarchy: each half had its own constitution, parliament and prime minister. Only three joint ministries existed, for foreign affairs, war and the finances that paid for them. The customs union and each half's share of the costs were renegotiated every ten years, often after tense disputes.",
-        "pt": "O Compromisso de 1867 transformou o reino numa monarquia dual: cada metade tinha constituição, parlamento e primeiro-ministro próprios. Só existiam três ministérios comuns, o das relações exteriores, o da guerra e o das finanças que os pagava. A união aduaneira e a parte de cada metade nos gastos eram renegociadas a cada dez anos, muitas vezes depois de disputas tensas."
+        "en": "Franz Joseph became emperor of Austria in 1848, at 18, and was crowned king of Hungary in 1867, the year of the compromise. He reigned until his death, on 21 November 1916, at 86: 68 years in all, one of the longest reigns in European history. His great-nephew Charles I ruled for only two years before the collapse.",
+        "pt": "Francisco José virou imperador da Áustria em 1848, aos 18 anos, e foi coroado rei da Hungria em 1867, o ano do compromisso. Reinou até morrer, em 21 de novembro de 1916, aos 86 anos: 68 anos no total, um dos reinados mais longos da história europeia. Seu sobrinho-neto Carlos I governou só dois anos antes do colapso."
       }
     },
     {

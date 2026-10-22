@@ -22,7 +22,7 @@
     "pt": "Começa em 750, quando a família derrubou a dinastia anterior, e termina em 1258, quando a capital foi destruída por invasores vindos da estepe. A partir do século X os califas perderam quase todo o poder político, e um ramo da família manteve o título, sem poder real, em outra cidade até 1517."
   },
   "area": {
-    "km2": 8234982,
+    "km2": 8270834,
     "precision": "Approximate"
   },
   "mapAccuracy": "Approximate",
@@ -30,7 +30,9 @@
     "Asia",
     "Africa"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Baghdad",
     "pt": "Bagdá"
@@ -93,8 +95,8 @@
     "Iraque"
   ],
   "summary": {
-    "en": "The second great dynasty of caliphs in Islam, which took power from the Umayyads in 750 after a revolt that began in eastern Iran. In 762 it founded Baghdad, which became one of the largest cities in the world and the centre of a golden age of science, philosophy and the translation of Greek, Persian and Indian works. From the 9th century on, governors and regional dynasties took real power, and the caliph became mainly a religious figure. It fell in 1258, when the Mongols sacked Baghdad and killed the last caliph.",
-    "pt": "Segunda grande dinastia de califas do Islã, que tomou o poder dos omíadas em 750, depois de uma revolta que começou no leste do Irã. Em 762 fundou Bagdá, que virou uma das maiores cidades do mundo e o centro de uma era de ouro da ciência, da filosofia e da tradução de obras gregas, persas e indianas. A partir do século IX, governadores e dinastias regionais passaram a mandar de fato, e o califa virou uma figura sobretudo religiosa. Caiu em 1258, quando os mongóis saquearam Bagdá e mataram o último califa."
+    "en": "The second great dynasty of caliphs in Islam, which took power from the Umayyads in 750 after a revolt that began in eastern Iran. In 762 it founded Baghdad, which became one of the largest cities in the world and the centre of a golden age of science, philosophy and the translation of Greek, Persian and Indian works. From the 9th century on, governors and regional dynasties gained autonomy, and in the 10th century the caliph became mainly a religious figure. It fell in 1258, when the Mongols sacked Baghdad and killed the last caliph.",
+    "pt": "Segunda grande dinastia de califas do Islã, que tomou o poder dos omíadas em 750, depois de uma revolta que começou no leste do Irã. Em 762 fundou Bagdá, que virou uma das maiores cidades do mundo e o centro de uma era de ouro da ciência, da filosofia e da tradução de obras gregas, persas e indianas. A partir do século IX, governadores e dinastias regionais ganharam autonomia, e no século X o califa virou uma figura sobretudo religiosa. Caiu em 1258, quando os mongóis saquearam Bagdá e mataram o último califa."
   },
   "map": {
     "parts": [

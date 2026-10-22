@@ -22,7 +22,7 @@
     "pt": "As datas seguem a cronologia mais aceita e podem variar algumas décadas. Começa com a expulsão de governantes estrangeiros do norte do país e termina quando o poder se dividiu entre dois centros."
   },
   "area": {
-    "km2": 703078,
+    "km2": 710664,
     "precision": "Approximate"
   },
   "mapAccuracy": "Speculative",
@@ -30,7 +30,9 @@
     "Asia",
     "Africa"
   ],
-  "primaryContinent": "Africa",
+  "primaryContinents": [
+    "Africa"
+  ],
   "capital": {
     "en": "Thebes",
     "pt": "Tebas"

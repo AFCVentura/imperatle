@@ -22,7 +22,7 @@
     "pt": "Começa por volta de 1663, quando a perda das principais fortalezas no sul da Ásia deslocou o centro do império para a sua grande colônia na América do Sul, e termina em 1822, com a independência dessa colônia, reconhecida em 1825. O auge escolhido é 1820, depois de tratados que ampliaram muito as fronteiras sul-americanas em direção ao interior. As fases anterior, voltada ao comércio na Ásia, e posterior, voltada à ocupação da África, são tratadas aqui como impérios separados."
   },
   "area": {
-    "km2": 8186270,
+    "km2": 8218649,
     "precision": "Approximate"
   },
   "mapAccuracy": "Approximate",
@@ -32,7 +32,9 @@
     "Africa",
     "Asia"
   ],
-  "primaryContinent": "Europe",
+  "primaryContinents": [
+    "Europe"
+  ],
   "capital": {
     "en": "Lisbon (Rio de Janeiro from 1808 to 1821)",
     "pt": "Lisboa (Rio de Janeiro de 1808 a 1821)"
@@ -59,8 +61,8 @@
       }
     },
     {
-      "en": "It was the empire that carried the most enslaved Africans across the Atlantic, close to half of the total.",
-      "pt": "Foi o império que mais transportou africanos escravizados pelo Atlântico, perto de metade do total.",
+      "en": "Its American colony was the largest destination of enslaved Africans carried across the Atlantic.",
+      "pt": "Sua colônia americana foi o maior destino de africanos escravizados levados pelo Atlântico.",
       "details": {
         "en": "Between the 15th and the 19th centuries, about 12.5 million Africans were forced onto ships bound for the Americas. Portuguese and Brazilian ships carried about 5.8 million of them, close to half, most of them to Brazil, the country that received the most enslaved people in the world. The trade to Brazil was only effectively banned in 1850.",
         "pt": "Entre os séculos XV e XIX, cerca de 12,5 milhões de africanos foram embarcados à força para as Américas. Navios portugueses e brasileiros levaram cerca de 5,8 milhões deles, perto de metade, a maioria para o Brasil, o país que mais recebeu pessoas escravizadas no mundo. O tráfico para o Brasil só foi proibido de fato em 1850."

@@ -22,7 +22,7 @@
     "pt": "A tradição situa sua fundação em 814 a.C., por colonos de uma cidade fenícia. Tornou-se uma potência independente a partir do século VII a.C. e termina em 146 a.C., quando sua capital foi destruída."
   },
   "area": {
-    "km2": 440591,
+    "km2": 458998,
     "precision": "Approximate"
   },
   "mapAccuracy": "Speculative",
@@ -30,7 +30,9 @@
     "Europe",
     "Africa"
   ],
-  "primaryContinent": "Africa",
+  "primaryContinents": [
+    "Africa"
+  ],
   "capital": {
     "en": "Carthage",
     "pt": "Cartago"

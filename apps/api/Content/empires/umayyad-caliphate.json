@@ -27,7 +27,9 @@
     "Asia",
     "Europe"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Damascus",
     "pt": "Damasco"

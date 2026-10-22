@@ -22,7 +22,7 @@
     "pt": "Começa em 632, logo depois da morte do fundador da religião, e termina em 661, com o assassinato do quarto califa. Seus governantes eram escolhidos entre os companheiros do Profeta, e não por herança."
   },
   "area": {
-    "km2": 7042927,
+    "km2": 7066036,
     "precision": "Approximate"
   },
   "mapAccuracy": "Approximate",
@@ -30,7 +30,9 @@
     "Asia",
     "Africa"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Medina, later Kufa",
     "pt": "Medina, depois Kufa"

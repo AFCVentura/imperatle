@@ -29,7 +29,9 @@
   "continents": [
     "Europe"
   ],
-  "primaryContinent": "Europe",
+  "primaryContinents": [
+    "Europe"
+  ],
   "capital": {
     "en": "Aachen",
     "pt": "Aachen"

@@ -11,7 +11,7 @@ const valid = (): EmpireDraft => ({
   area: { km2: 1_000_000, precision: "Approximate" },
   mapAccuracy: "Approximate",
   continents: ["Europe", "Asia"],
-  primaryContinent: "Europe",
+  primaryContinents: ["Europe"],
   capital: { en: "Capital", pt: "Capital" },
   language: { en: "Language", pt: "Língua" },
   religion: { en: "Religion", pt: "Religião" },
@@ -32,7 +32,8 @@ describe("validateDraft", () => {
     [{ start: { year: 400, precision: "Exact" } }, "início não pode ser depois"],
     [{ peak: { year: 500, precision: "Exact" } }, "auge tem que estar entre"],
     [{ continents: [] }, "pelo menos um continente"],
-    [{ primaryContinent: "Africa" }, "continente principal"],
+    [{ primaryContinents: ["Africa"] }, "continentes principais têm"],
+    [{ primaryContinents: [] }, "continentes principais"],
     [{ curiosities: [{ en: "One.", pt: "Um." }] }, "exatamente 3"],
     [{ religion: { en: "Old faith — new", pt: "Antiga" } }, "travessão"],
     [{ durationNotes: { en: "Only one phase", pt: "" } }, "nota da duração (pt): vazio"],
@@ -60,7 +61,7 @@ describe("toContentJson", () => {
     const json = JSON.parse(toContentJson(valid()));
     expect(Object.keys(json)).toEqual([
       "$schema", "slug", "name", "peak", "start", "end", "area", "mapAccuracy", "continents",
-      "primaryContinent", "capital", "language", "religion", "curiosities", "map",
+      "primaryContinents", "capital", "language", "religion", "curiosities", "map",
     ]);
   });
 

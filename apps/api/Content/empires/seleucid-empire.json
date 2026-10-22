@@ -22,14 +22,16 @@
     "pt": "Começa em 312 a.C., quando seu fundador retomou a Babilônia, ano que virou o início de um calendário. O fim usado aqui é 63 a.C., quando o que restava do reino foi anexado por Roma."
   },
   "area": {
-    "km2": 2787950,
+    "km2": 2797160,
     "precision": "Approximate"
   },
   "mapAccuracy": "Approximate",
   "continents": [
     "Asia"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Antioch (at first, a new city on the Tigris)",
     "pt": "Antioquia (no início, uma nova cidade às margens do Tigre)"

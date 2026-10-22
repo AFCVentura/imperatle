@@ -29,7 +29,9 @@
   "continents": [
     "Asia"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Thanjavur (Gangaikonda Cholapuram from 1025)",
     "pt": "Thanjavur (Gangaikonda Cholapuram a partir de 1025)"

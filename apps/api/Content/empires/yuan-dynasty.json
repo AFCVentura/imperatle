@@ -29,7 +29,9 @@
   "continents": [
     "Asia"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Dadu (today's Beijing), with Xanadu as the summer capital",
     "pt": "Dadu (atual Pequim), com Xanadu como capital de verão"
@@ -89,7 +91,7 @@
   ],
   "summary": {
     "en": "The dynasty founded by Kublai Khan, grandson of Genghis Khan, who in 1271 adopted the Chinese dynastic name Yuan and in 1279 completed the conquest of the Southern Song Dynasty, uniting all of China under a government of foreign origin. With its capital at Dadu, today's Beijing, it also ruled Mongolia, Tibet and Manchuria, and it was the most powerful of the parts into which the Mongol Empire had split. It encouraged trade and received travellers from all over Eurasia. In the 14th century, famines, floods of the Yellow River, inflation and disputes at court led to revolts, and in 1368 the founder of the Ming Dynasty drove the court back to the steppe.",
-    "pt": "Dinastia fundada por Kublai Khan, neto de Gêngis Khan, que em 1271 adotou o nome dinástico chinês Yuan e em 1279 completou a conquista da Dinastia Song do Sul, unindo toda a China sob um governo de origem estrangeira. Com capital em Dadu, a atual Pequim, governava também a Mongólia, o Tibete e a Manchúria, e era a mais poderosa das partes em que o Império Mongol tinha se dividido. Estimulou o comércio e recebeu viajantes de toda a Eurásia. No século XIV, fomes, enchentes do Rio Amarelo, inflação e disputas na corte levaram a revoltas, e em 1368 o fundador da Dinastia Ming expulsou a corte de volta para a estepe."
+    "pt": "Dinastia fundada por Kublai Khan, neto de Gengis Khan, que em 1271 adotou o nome dinástico chinês Yuan e em 1279 completou a conquista da Dinastia Song do Sul, unindo toda a China sob um governo de origem estrangeira. Com capital em Dadu, a atual Pequim, governava também a Mongólia, o Tibete e a Manchúria, e era a mais poderosa das partes em que o Império Mongol tinha se dividido. Estimulou o comércio e recebeu viajantes de toda a Eurásia. No século XIV, fomes, enchentes do Rio Amarelo, inflação e disputas na corte levaram a revoltas, e em 1368 o fundador da Dinastia Ming expulsou a corte de volta para a estepe."
   },
   "map": {
     "parts": [

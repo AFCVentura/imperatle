@@ -22,14 +22,16 @@
     "pt": "Começa em 1526, com a vitória que deu ao fundador o controle do norte da Índia, e termina em 1857, quando o último imperador foi deposto e exilado depois de uma grande revolta. O governo foi interrompido de 1540 a 1555, e depois de 1707 os imperadores foram perdendo o controle das províncias."
   },
   "area": {
-    "km2": 3739261,
+    "km2": 3741423,
     "precision": "Approximate"
   },
   "mapAccuracy": "Approximate",
   "continents": [
     "Asia"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Agra, later Delhi",
     "pt": "Agra, depois Délhi"
@@ -48,7 +50,7 @@
   },
   "curiosities": [
     {
-      "en": "Around 1700, it is estimated to have produced about a quarter of the world's economic output",
+      "en": "Around 1700, it is estimated to have produced about a quarter of the world's economic output.",
       "pt": "Por volta de 1700, estima-se que produzia cerca de um quarto da riqueza do mundo.",
       "details": {
         "en": "Estimates by the economic historian Angus Maddison put Mughal India at about 24% of world output around 1700, more than all of Western Europe. The wealth came from farming, from cotton and silk cloth sold all over the world and from a very efficient land tax.",

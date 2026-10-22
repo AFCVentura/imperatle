@@ -18,8 +18,8 @@
     "precision": "Approximate"
   },
   "durationNotes": {
-    "en": "It starts around 256 BC, when the Greek governor of the region, appointed by the Seleucid Empire, began to act independently, and ends around 120 BC, with the conquest by nomadic peoples from the north. The dates are uncertain because much of its history is known only from coins. The peak shown is 170 BC, after the conquest of lands in northern India, which soon afterwards broke away as kingdoms ruled by rival kings, the Indo-Greeks.",
-    "pt": "Começa por volta de 256 a.C., quando o governador grego da região, nomeado pelo Império Selêucida, passou a agir de forma independente, e termina por volta de 120 a.C., com a conquista por povos nômades vindos do norte. As datas são incertas porque boa parte da história é conhecida só pelas moedas. O auge escolhido é 170 a.C., depois da conquista de terras no norte da Índia, que pouco depois se separaram como reinos governados por reis rivais, os indo-gregos."
+    "en": "It starts around 256 BC, when the Greek governor of the region, appointed by the Hellenistic kingdom that ruled it, began to act independently, and ends around 120 BC, with the conquest by nomadic peoples from the north. The dates are uncertain because much of its history is known only from coins. The peak shown is 170 BC, after the conquest of lands in northern India, which soon afterwards broke away as kingdoms ruled by rival kings, the Indo-Greeks.",
+    "pt": "Começa por volta de 256 a.C., quando o governador grego da região, nomeado pelo reino helenístico que a dominava, passou a agir de forma independente, e termina por volta de 120 a.C., com a conquista por povos nômades vindos do norte. As datas são incertas porque boa parte da história é conhecida só pelas moedas. O auge escolhido é 170 a.C., depois da conquista de terras no norte da Índia, que pouco depois se separaram como reinos governados por reis rivais, os indo-gregos."
   },
   "area": {
     "km2": 1360000,
@@ -29,7 +29,9 @@
   "continents": [
     "Asia"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Balkh",
     "pt": "Balkh"
@@ -64,11 +66,11 @@
       }
     },
     {
-      "en": "It was founded by Greeks who stayed in Central Asia after the conquests of Alexander the Great.",
-      "pt": "Foi fundado por gregos que ficaram na Ásia Central depois das conquistas de Alexandre, o Grande.",
+      "en": "In one of its cities, in today's Afghanistan, a stone was found with advice copied from the sanctuary of Delphi, in Greece, the same one of \"Know thyself\".",
+      "pt": "Numa de suas cidades, no atual Afeganistão, foi encontrada uma pedra com conselhos copiados do santuário de Delfos, na Grécia, o mesmo do \"Conhece-te a ti mesmo\".",
       "details": {
-        "en": "After Alexander's death, the region passed to the Seleucid Empire, which sent Greek settlers to found cities. Around 256 BC, the governor Diodotus broke with the Seleucids, and the region became an independent kingdom, ruled by Greeks thousands of kilometres from Greece.",
-        "pt": "Depois da morte de Alexandre, a região passou para o Império Selêucida, que enviou colonos gregos para fundar cidades. Por volta de 256 a.C., o governador Diodoto rompeu com os selêucidas, e a região virou um reino independente, governado por gregos a milhares de quilômetros da Grécia."
+        "en": "In the 3rd century BC, a Greek named Clearchus copied the maxims of Delphi and had them carved at Ai-Khanoum, on the Amu Darya, in the tomb-shrine of the city's founder. Only the base survives, with the last five: \"As a child, be well-behaved; as a youth, self-controlled; in middle age, just; in old age, wise; at death, without sorrow.\" The city was excavated by French archaeologists from 1964 onwards.",
+        "pt": "No século III a.C., um grego chamado Clearco copiou as máximas de Delfos e as mandou gravar em Ai-Khanoum, às margens do Amu Darya, no santuário-túmulo do fundador da cidade. Só sobrou a base, com as cinco últimas: \"Na infância, sê disciplinado; na juventude, controla-te; na idade adulta, sê justo; na velhice, sê sábio; na morte, não sofras.\" A cidade foi escavada por arqueólogos franceses a partir de 1964."
       }
     }
   ],

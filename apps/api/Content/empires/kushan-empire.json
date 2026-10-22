@@ -29,7 +29,9 @@
   "continents": [
     "Asia"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Purushapura (modern Peshawar), as well as Mathura and Kapisa",
     "pt": "Purushapura (atual Peshawar), além de Mathura e Kapisa"

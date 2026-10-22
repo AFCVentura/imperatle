@@ -116,8 +116,9 @@ namespace Imperatle.Api.Migrations
                     b.Property<int>("PeakAreaKm2")
                         .HasColumnType("integer");
 
-                    b.Property<int>("PrimaryContinent")
-                        .HasColumnType("integer");
+                    b.PrimitiveCollection<int[]>("PrimaryContinents")
+                        .IsRequired()
+                        .HasColumnType("integer[]");
 
                     b.Property<int>("ReferenceYear")
                         .HasColumnType("integer");

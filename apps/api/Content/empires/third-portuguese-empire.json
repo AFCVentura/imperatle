@@ -31,7 +31,9 @@
     "Europe",
     "Asia"
   ],
-  "primaryContinent": "Europe",
+  "primaryContinents": [
+    "Europe"
+  ],
   "capital": {
     "en": "Lisbon",
     "pt": "Lisboa"
@@ -66,11 +68,11 @@
       }
     },
     {
-      "en": "Its last territory was the last European colony in Asia.",
-      "pt": "Seu último território foi a última colônia europeia na Ásia.",
+      "en": "A player born in one of its African colonies was the top scorer of the 1966 World Cup, playing for the home country's team.",
+      "pt": "Um jogador nascido em uma de suas colônias africanas foi o artilheiro da Copa do Mundo de 1966, jogando pela seleção da metrópole.",
       "details": {
-        "en": "Macau, occupied by the Portuguese since the 1550s, was handed back to China on 20 December 1999, two years after Hong Kong. Like Hong Kong, it became a special administrative region, and Portuguese is still an official language there.",
-        "pt": "Macau, ocupada pelos portugueses desde a década de 1550, foi devolvida à China em 20 de dezembro de 1999, dois anos depois de Hong Kong. Como Hong Kong, virou uma região administrativa especial, e o português continua sendo língua oficial ali."
+        "en": "Eusébio, born in 1942 in Lourenço Marques (today Maputo), in Mozambique, scored 9 goals at the 1966 World Cup, in England, where Portugal finished third. Since 1951 the regime had called the colonies overseas provinces, part of Portugal itself, and several players from Africa played for the national team.",
+        "pt": "Eusébio, nascido em 1942 em Lourenço Marques (hoje Maputo), em Moçambique, marcou 9 gols na Copa do Mundo de 1966, na Inglaterra, em que Portugal ficou em terceiro. Desde 1951 o regime chamava as colônias de províncias ultramarinas, parte do próprio Portugal, e vários jogadores vindos da África defenderam a seleção."
       }
     }
   ],

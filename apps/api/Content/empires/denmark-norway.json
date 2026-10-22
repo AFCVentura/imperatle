@@ -32,7 +32,9 @@
     "Asia",
     "Africa"
   ],
-  "primaryContinent": "Europe",
+  "primaryContinents": [
+    "Europe"
+  ],
   "capital": {
     "en": "Copenhagen",
     "pt": "Copenhague"
@@ -59,8 +61,8 @@
       }
     },
     {
-      "en": "It sold its Caribbean islands to the United States during the First World War.",
-      "pt": "Vendeu suas ilhas no Caribe aos Estados Unidos durante a Primeira Guerra Mundial.",
+      "en": "Its Caribbean islands stayed Danish for more than a century after its end, until they were sold to the United States in 1917.",
+      "pt": "Suas ilhas no Caribe continuaram dinamarquesas por mais de um século depois do seu fim, até serem vendidas aos Estados Unidos em 1917.",
       "details": {
         "en": "In 1917, Denmark sold the Danish West Indies, St. Thomas, St. John and St. Croix, to the United States for 25 million dollars in gold. The Americans feared that Germany would use the islands as a submarine base, and they became the US Virgin Islands.",
         "pt": "Em 1917, a Dinamarca vendeu as Índias Ocidentais Dinamarquesas, St. Thomas, St. John e St. Croix, aos Estados Unidos por 25 milhões de dólares em ouro. Os americanos temiam que a Alemanha usasse as ilhas como base de submarinos, e elas viraram as Ilhas Virgens Americanas."

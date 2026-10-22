@@ -29,7 +29,9 @@
   "continents": [
     "Asia"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Ctesiphon (earlier, Nisa and Hecatompylos)",
     "pt": "Ctesifonte (antes, Nisa e Hecatômpilo)"
@@ -64,8 +66,8 @@
       }
     },
     {
-      "en": "It was overthrown by a subordinate king from the south, who founded the dynasty that would rule Iran until the arrival of the Arabs.",
-      "pt": "Foi derrubado por um rei subordinado do sul, que fundou a dinastia que governaria o Irã até a chegada dos árabes.",
+      "en": "It was succeeded by the last great Persian dynasty before the arrival of Islam.",
+      "pt": "Foi sucedido pela última grande dinastia persa antes da chegada do islã.",
       "details": {
         "en": "Ardashir, king of Persis, defeated and killed Artabanus IV at the Battle of Hormozgan, in AD 224, and founded the Sasanian Empire, which lasted until the Muslim conquest, in the 7th century.",
         "pt": "Ardaxir, rei da Pérsida, derrotou e matou Artabano IV na Batalha de Hormozgan, em 224 d.C., e fundou o Império Sassânida, que durou até a conquista muçulmana, no século VII."

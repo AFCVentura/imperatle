@@ -22,14 +22,16 @@
     "pt": "Começa em 202 a.C., quando o fundador se proclamou imperador (algumas fontes usam 206 a.C., quando ele se tornou rei). Foi interrompida de 9 a 23 d.C. por um usurpador que fundou a própria dinastia, por isso é dividida em duas fases, com capitais diferentes. Termina em 220, com a abdicação do último imperador."
   },
   "area": {
-    "km2": 4534131,
+    "km2": 4537401,
     "precision": "Approximate"
   },
   "mapAccuracy": "Approximate",
   "continents": [
     "Asia"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Chang'an, later Luoyang",
     "pt": "Chang'an, depois Luoyang"

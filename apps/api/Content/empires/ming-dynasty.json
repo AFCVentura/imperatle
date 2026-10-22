@@ -22,14 +22,16 @@
     "pt": "Começa em 1368, quando um líder rebelde expulsou a dinastia estrangeira que governava o país e se proclamou imperador. Termina em 1644, quando rebeldes tomaram a capital e o último imperador tirou a própria vida. Cortes leais resistiram no sul por mais algumas décadas."
   },
   "area": {
-    "km2": 6218876,
+    "km2": 6222928,
     "precision": "Approximate"
   },
   "mapAccuracy": "Approximate",
   "continents": [
     "Asia"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Nanjing, later Beijing",
     "pt": "Nanquim, depois Pequim"

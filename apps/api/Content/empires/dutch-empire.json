@@ -33,7 +33,9 @@
     "SouthAmerica",
     "NorthAmerica"
   ],
-  "primaryContinent": "Europe",
+  "primaryContinents": [
+    "Europe"
+  ],
   "capital": {
     "en": "Amsterdam",
     "pt": "Amsterdã"

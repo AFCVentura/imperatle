@@ -22,7 +22,7 @@
     "pt": "Começa em 305 a.C., quando seu fundador, que governava o Egito desde 323 a.C., assumiu o título de rei; 323 a.C. também é aceito. Termina em 30 a.C., com a conquista romana."
   },
   "area": {
-    "km2": 770018,
+    "km2": 785478,
     "precision": "Approximate"
   },
   "mapAccuracy": "Approximate",
@@ -30,7 +30,9 @@
     "Africa",
     "Asia"
   ],
-  "primaryContinent": "Africa",
+  "primaryContinents": [
+    "Africa"
+  ],
   "capital": {
     "en": "Alexandria",
     "pt": "Alexandria"

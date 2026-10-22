@@ -22,14 +22,16 @@
     "pt": "Começa em 802, quando um rei se proclamou soberano universal e declarou independência de Java. O fim usado aqui é 1431, quando um reino vizinho saqueou a capital e ela foi abandonada; um reino menor continuou por séculos."
   },
   "area": {
-    "km2": 937531,
+    "km2": 939380,
     "precision": "Approximate"
   },
   "mapAccuracy": "Speculative",
   "continents": [
     "Asia"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Yasodharapura (Angkor)",
     "pt": "Yasodharapura (Angkor)"

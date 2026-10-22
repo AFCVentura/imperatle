@@ -31,7 +31,10 @@
     "Europe",
     "Africa"
   ],
-  "primaryContinent": "Europe",
+  "primaryContinents": [
+    "Europe",
+    "Asia"
+  ],
   "capital": {
     "en": "Pella, later Babylon",
     "pt": "Pela, depois Babilônia"

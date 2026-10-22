@@ -30,7 +30,9 @@
     "Asia",
     "Europe"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Maragheh, later Tabriz and Soltaniyeh",
     "pt": "Maragheh, depois Tabriz e Soltaniyeh"

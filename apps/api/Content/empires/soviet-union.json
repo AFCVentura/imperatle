@@ -30,7 +30,10 @@
     "Europe",
     "Asia"
   ],
-  "primaryContinent": "Europe",
+  "primaryContinents": [
+    "Europe",
+    "Asia"
+  ],
   "capital": {
     "en": "Moscow",
     "pt": "Moscou"

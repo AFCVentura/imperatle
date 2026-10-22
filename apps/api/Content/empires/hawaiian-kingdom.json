@@ -29,7 +29,9 @@
   "continents": [
     "Oceania"
   ],
-  "primaryContinent": "Oceania",
+  "primaryContinents": [
+    "Oceania"
+  ],
   "capital": {
     "en": "Honolulu (earlier, Kailua and Lahaina)",
     "pt": "Honolulu (antes, Kailua e Lahaina)"

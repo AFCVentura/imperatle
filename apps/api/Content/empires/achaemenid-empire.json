@@ -27,7 +27,9 @@
     "Africa",
     "Europe"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Several, including Persepolis, Susa and Pasargadae",
     "pt": "Várias, incluindo Persépolis, Susa e Pasárgada"

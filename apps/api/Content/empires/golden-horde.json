@@ -30,7 +30,10 @@
     "Asia",
     "Europe"
   ],
-  "primaryContinent": "Europe",
+  "primaryContinents": [
+    "Europe",
+    "Asia"
+  ],
   "capital": {
     "en": "Sarai Batu, later Sarai Berke",
     "pt": "Sarai Batu, depois Sarai Berke"

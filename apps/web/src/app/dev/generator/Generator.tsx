@@ -54,7 +54,7 @@ const emptyDraft = (): EmpireDraft => ({
   area: { km2: 0, precision: "Approximate" },
   mapAccuracy: "Approximate",
   continents: [],
-  primaryContinent: "Asia",
+  primaryContinents: ["Asia"],
   capital: emptyText(),
   language: emptyText(),
   religion: emptyText(),
@@ -197,7 +197,7 @@ export function Generator() {
       end: keep("end") ? draft.end : { ...(draft.end ?? emptyDraft().end!), year: auto.end },
       area: keep("area") ? draft.area : { ...draft.area, km2: auto.area },
       continents: keep("continents") ? draft.continents : auto.continents,
-      primaryContinent: keep("continents") ? draft.primaryContinent : (auto.primary ?? draft.primaryContinent),
+      primaryContinents: keep("continents") ? draft.primaryContinents : auto.primary ? [auto.primary] : draft.primaryContinents,
       wikipedia: keep("wikipedia") || !auto.wikipedia ? draft.wikipedia : auto.wikipedia,
       map: {
         parts: parts.map((p) => {
@@ -706,7 +706,7 @@ function EmpireForm({
         </Field>
       </div>
 
-      <Field label={`Continentes (o marcado com ● é o principal)${autoMark("continents")}`}>
+      <Field label={`Continentes (a segunda caixa marca o principal; dois quando o território se divide por igual)${autoMark("continents")}`}>
         <div className="flex flex-wrap gap-x-4 gap-y-1">
           {CONTINENTS.map((c) => (
             <span key={c} className="flex items-center gap-1">
@@ -715,17 +715,34 @@ function EmpireForm({
                 checked={draft.continents.includes(c)}
                 onChange={(e) =>
                   edit(
-                    (d) => ({ ...d, continents: e.target.checked ? [...d.continents, c] : d.continents.filter((x) => x !== c) }),
+                    (d) =>
+                      e.target.checked
+                        ? { ...d, continents: [...d.continents, c] }
+                        : {
+                            ...d,
+                            continents: d.continents.filter((x) => x !== c),
+                            primaryContinents: d.primaryContinents.filter((x) => x !== c),
+                          },
                     "continents",
                   )
                 }
               />
               <input
-                type="radio"
-                name="primary"
+                type="checkbox"
                 title="principal"
-                checked={draft.primaryContinent === c}
-                onChange={() => edit((d) => ({ ...d, primaryContinent: c }), "continents")}
+                className="rounded-full"
+                checked={draft.primaryContinents.includes(c)}
+                onChange={(e) =>
+                  edit(
+                    (d) => ({
+                      ...d,
+                      primaryContinents: e.target.checked
+                        ? [...d.primaryContinents, c]
+                        : d.primaryContinents.filter((x) => x !== c),
+                    }),
+                    "continents",
+                  )
+                }
               />
               {CONTINENT_PT[c]}
               {share(c) && <span className="text-muted">({Math.round(share(c)!.share * 100)}%)</span>}

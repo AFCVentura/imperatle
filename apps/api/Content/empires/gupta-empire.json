@@ -29,7 +29,9 @@
   "continents": [
     "Asia"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Pataliputra (Ujjain as a second capital)",
     "pt": "Pataliputra (Ujjain como segunda capital)"

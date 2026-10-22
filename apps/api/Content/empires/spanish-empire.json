@@ -22,7 +22,7 @@
     "pt": "Começa em 1492, com a primeira expedição ultramarina, e termina em 1976, com a saída do último território colonial na África. Quase todas as colônias americanas se tornaram independentes entre 1810 e 1825."
   },
   "area": {
-    "km2": 11535775,
+    "km2": 11571271,
     "precision": "Approximate"
   },
   "mapAccuracy": "Approximate",
@@ -32,7 +32,9 @@
     "Europe",
     "Asia"
   ],
-  "primaryContinent": "Europe",
+  "primaryContinents": [
+    "Europe"
+  ],
   "capital": {
     "en": "Madrid",
     "pt": "Madri"
@@ -67,11 +69,11 @@
       }
     },
     {
-      "en": "It funded the 1492 voyage that reached the Americas.",
-      "pt": "Financiou a viagem de 1492 que chegou à América.",
+      "en": "An Asian country is still named after one of its kings.",
+      "pt": "Um país asiático leva até hoje o nome de um de seus reis.",
       "details": {
-        "en": "Christopher Columbus, a Genoese navigator, persuaded Queen Isabella of Castile and King Ferdinand of Aragon to fund a voyage to reach Asia by sailing west. On 12 October 1492 he landed in the Bahamas. He died in 1506 believing he had reached the Indies, which is why the peoples of the Americas were called \"Indians\".",
-        "pt": "Cristóvão Colombo, um navegador genovês, convenceu a rainha Isabel de Castela e o rei Fernando de Aragão a financiar uma viagem para chegar à Ásia navegando para o oeste. Em 12 de outubro de 1492, desembarcou nas Bahamas. Morreu em 1506 acreditando ter chegado às Índias, e por isso os povos da América foram chamados de \"índios\"."
+        "en": "In 1543, the explorer Ruy López de Villalobos named the islands after Prince Philip, who reigned as Philip II from 1556 to 1598. Spain colonised the Philippines from 1565 and ruled them until 1898, when they passed to the United States, and the country kept the name after independence, in 1946.",
+        "pt": "Em 1543, o explorador Ruy López de Villalobos batizou as ilhas em homenagem ao príncipe Filipe, que reinou como Filipe II de 1556 a 1598. A Espanha colonizou as Filipinas a partir de 1565 e as governou até 1898, quando passaram aos Estados Unidos, e o país manteve o nome depois da independência, em 1946."
       }
     }
   ],

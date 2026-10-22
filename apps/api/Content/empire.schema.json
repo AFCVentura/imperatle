@@ -13,7 +13,7 @@
     "area",
     "mapAccuracy",
     "continents",
-    "primaryContinent",
+    "primaryContinents",
     "capital",
     "language",
     "religion",
@@ -56,7 +56,14 @@
       "uniqueItems": true,
       "items": { "$ref": "#/$defs/continent" }
     },
-    "primaryContinent": { "$ref": "#/$defs/continent", "description": "Where most of the territory was. Must be one of continents." },
+    "primaryContinents": {
+      "description": "Where most of the territory was: one continent, or two when it was split about evenly between them. Must be among continents.",
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 2,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/continent" }
+    },
     "capital": { "$ref": "#/$defs/text" },
     "language": { "$ref": "#/$defs/text", "description": "Main language of the government and the elite." },
     "religion": { "$ref": "#/$defs/text", "description": "Official religion, or that of the ruling elite." },

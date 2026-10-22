@@ -29,7 +29,9 @@
   "continents": [
     "Asia"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Raigad, later Satara and Pune",
     "pt": "Raigad, depois Satara e Pune"
@@ -56,11 +58,11 @@
       }
     },
     {
-      "en": "In 1761, it suffered a defeat in one of the largest battles of the 18th century, in which tens of thousands of soldiers died in a single day.",
-      "pt": "Sofreu, em 1761, uma derrota numa das maiores batalhas do século XVIII, em que dezenas de milhares de soldados morreram num só dia.",
+      "en": "One of its admirals faced the British, Dutch and Portuguese fleets for decades, and they never managed to defeat him.",
+      "pt": "Um de seus almirantes enfrentou por décadas as frotas britânica, holandesa e portuguesa, que nunca conseguiram derrotá-lo.",
       "details": {
-        "en": "This was the Third Battle of Panipat, against the Afghan Ahmad Shah Durrani. It opened the way for the British in northern India.",
-        "pt": "É a Terceira Batalha de Panipat, contra o afegão Ahmad Shah Durrani. Ela abriu caminho para os britânicos no norte da Índia."
+        "en": "Kanhoji Angre commanded the Maratha fleet from around 1698 until his death, in 1729, from fortified bases on the Konkan coast such as Kolaba and Vijaydurg. A joint British and Portuguese attack on Kolaba, in 1721, and a Dutch attack on Vijaydurg, in 1724, both failed.",
+        "pt": "Kanhoji Angre comandou a frota marata de cerca de 1698 até a morte, em 1729, a partir de bases fortificadas no litoral do Konkan, como Kolaba e Vijaydurg. Um ataque conjunto de britânicos e portugueses a Kolaba, em 1721, e um ataque holandês a Vijaydurg, em 1724, fracassaram."
       }
     },
     {

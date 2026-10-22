@@ -30,7 +30,9 @@
     "Europe",
     "Africa"
   ],
-  "primaryContinent": "Europe",
+  "primaryContinents": [
+    "Europe"
+  ],
   "capital": {
     "en": "Milan, later Ravenna",
     "pt": "Milão, depois Ravena"
@@ -57,11 +59,11 @@
       }
     },
     {
-      "en": "It arose from the division of a gigantic empire between two brothers, each with his own half.",
-      "pt": "Surgiu da divisão de um império gigantesco entre dois irmãos, cada um com sua própria metade.",
+      "en": "A people who sacked its most famous city gave rise to a word that now means senseless destruction.",
+      "pt": "Um povo que saqueou sua cidade mais famosa deu origem a uma palavra que hoje significa destruição gratuita.",
       "details": {
-        "en": "Theodosius I left the West to Honorius and the East to Arcadius. The other half lasted almost a thousand years longer, until 1453.",
-        "pt": "Teodósio I deixou o Ocidente para Honório e o Oriente para Arcádio. A outra metade durou quase mil anos a mais, até 1453."
+        "en": "In 455, the Vandals of King Genseric, who had taken the province of Africa, sailed from Carthage and plundered Rome for two weeks, carrying off treasures and captives, among them the widow and daughters of Emperor Valentinian III. In 1794, the French bishop Henri Grégoire coined the word \"vandalism\" to condemn the destruction of art during the French Revolution.",
+        "pt": "Em 455, os vândalos do rei Genserico, que tinham tomado a província da África, partiram de Cartago e saquearam Roma por duas semanas, levando tesouros e prisioneiros, entre eles a viúva e as filhas do imperador Valentiniano III. Em 1794, o bispo francês Henri Grégoire criou a palavra \"vandalismo\" para condenar a destruição de obras de arte durante a Revolução Francesa."
       }
     },
     {

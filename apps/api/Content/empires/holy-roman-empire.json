@@ -29,10 +29,12 @@
   "continents": [
     "Europe"
   ],
-  "primaryContinent": "Europe",
+  "primaryContinents": [
+    "Europe"
+  ],
   "capital": {
-    "en": "No fixed capital (travelling court; Aachen for coronations)",
-    "pt": "Sem capital fixa (corte itinerante; Aachen para as coroações)"
+    "en": "No fixed capital (travelling court; Aachen for the king's coronation)",
+    "pt": "Sem capital fixa (corte itinerante; Aachen para a coroação do rei)"
   },
   "language": {
     "en": "Latin (and German, along with many local languages)",

@@ -30,7 +30,9 @@
     "Asia",
     "Africa"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Ctesiphon",
     "pt": "Ctesifonte"

@@ -22,14 +22,16 @@
     "pt": "Começa em 1804, quando o governante foi proclamado imperador, e termina em 1815. Já tinha caído uma vez em 1814, mas o governante voltou do exílio e retomou o poder por cerca de cem dias."
   },
   "area": {
-    "km2": 868342,
+    "km2": 882590,
     "precision": "Approximate"
   },
   "mapAccuracy": "Precise",
   "continents": [
     "Europe"
   ],
-  "primaryContinent": "Europe",
+  "primaryContinents": [
+    "Europe"
+  ],
   "capital": {
     "en": "Paris",
     "pt": "Paris"

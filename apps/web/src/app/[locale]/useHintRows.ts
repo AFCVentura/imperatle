@@ -44,20 +44,21 @@ export function useHintRows(reveal: ChallengeReveal): HintRowData[] {
     return isBce ? t("year.bce", { year: absoluteYear }) : t("year.ce", { year: absoluteYear });
   }
 
-  // Primary continent first and in bold, then the rest in their content order.
+  // Primary continents first and in bold, then the rest in their content order.
   function formatContinents(): ReactNode {
-    const { continents, primaryContinent: primary } = reveal;
+    const { continents } = reveal;
     if (!continents || continents.length === 0) return null;
 
-    const ordered =
-      primary !== null && continents.includes(primary) ? [primary, ...continents.filter((c) => c !== primary)] : continents;
+    // Missing from progress saved before an empire could have two.
+    const primary = (reveal.primaryContinents ?? []).filter((c) => continents.includes(c));
+    const ordered = [...primary, ...continents.filter((c) => !primary.includes(c))];
     return ordered.map((c, i) => {
       const name = t(`enums.continent.${continentFromApi(c)}`);
       return createElement(
         Fragment,
         { key: c },
         i > 0 ? ", " : null,
-        c === primary ? createElement("strong", { className: "font-bold" }, name) : name,
+        primary.includes(c) ? createElement("strong", { className: "font-bold" }, name) : name,
       );
     });
   }

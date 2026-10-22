@@ -22,7 +22,7 @@
     "pt": "Começa em 1534, quando um navegador tomou posse em nome do rei das terras do golfo de um grande rio da América do Norte, e termina em 1814, com o fim das guerras em que foram perdidas quase todas as colônias restantes. A maior parte das terras do continente foi entregue aos rivais em 1763, e o que restava do vale do grande rio do sul foi vendido em 1803. O auge escolhido é 1712, antes de um tratado que cedeu terras no nordeste do continente. O mapa mostra o território reivindicado, em grande parte habitado e controlado por povos indígenas, e exclui os reinos aliados na Índia. As colônias conquistadas a partir de 1830 são tratadas aqui como outro império."
   },
   "area": {
-    "km2": 6248951,
+    "km2": 6253006,
     "precision": "Approximate"
   },
   "mapAccuracy": "Approximate",
@@ -33,7 +33,9 @@
     "SouthAmerica",
     "Asia"
   ],
-  "primaryContinent": "Europe",
+  "primaryContinents": [
+    "Europe"
+  ],
   "capital": {
     "en": "Paris (Versailles from 1682 to 1789)",
     "pt": "Paris (Versalhes de 1682 a 1789)"
@@ -68,11 +70,11 @@
       }
     },
     {
-      "en": "It sold a huge territory to a newly formed country, which doubled in size with the purchase.",
-      "pt": "Vendeu um território enorme a um país recém-formado, que dobrou de tamanho com a compra.",
+      "en": "Its settlers gave rise to a Canadian province where French is still the only official language.",
+      "pt": "Seus colonos deram origem a uma província canadense onde o francês é até hoje a única língua oficial.",
       "details": {
-        "en": "In 1803, Napoleon sold Louisiana to the United States for 15 million dollars. The territory, of more than 2 million km², stretched from the Gulf of Mexico to today's border with Canada, and all or part of 15 American states were carved out of it.",
-        "pt": "Em 1803, Napoleão vendeu a Louisiana aos Estados Unidos por 15 milhões de dólares. O território, de mais de 2 milhões de km², ia do golfo do México até a atual fronteira com o Canadá, e dele saíram, no todo ou em parte, 15 estados americanos."
+        "en": "When Britain took Canada, in 1763, New France had about 70,000 settlers of French origin. The Quebec Act of 1774 kept French civil law and freedom for the Catholic Church, and their descendants kept the language. In 1974, Quebec made French its only official language, and the Charter of the French Language, of 1977, reinforced its use.",
+        "pt": "Quando a Grã-Bretanha tomou o Canadá, em 1763, a Nova França tinha cerca de 70 mil colonos de origem francesa. O Ato de Quebec, de 1774, manteve o direito civil francês e a liberdade da Igreja Católica, e os descendentes deles conservaram a língua. Em 1974, o Quebec tornou o francês sua única língua oficial, e a Carta da Língua Francesa, de 1977, reforçou o seu uso."
       }
     }
   ],

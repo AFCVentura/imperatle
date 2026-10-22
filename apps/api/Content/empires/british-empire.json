@@ -34,7 +34,9 @@
     "SouthAmerica",
     "Oceania"
   ],
-  "primaryContinent": "Europe",
+  "primaryContinents": [
+    "Europe"
+  ],
   "capital": {
     "en": "London",
     "pt": "Londres"

@@ -32,7 +32,9 @@
     "Oceania",
     "Asia"
   ],
-  "primaryContinent": "Europe",
+  "primaryContinents": [
+    "Europe"
+  ],
   "capital": {
     "en": "Berlin",
     "pt": "Berlim"

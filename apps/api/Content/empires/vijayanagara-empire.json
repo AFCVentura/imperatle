@@ -29,7 +29,9 @@
   "continents": [
     "Asia"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Vijayanagara (modern Hampi), later Penukonda and Chandragiri",
     "pt": "Vijayanagara (atual Hampi), depois Penukonda e Chandragiri"

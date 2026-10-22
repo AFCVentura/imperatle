@@ -30,7 +30,9 @@
     "Asia",
     "Europe"
   ],
-  "primaryContinent": "Asia",
+  "primaryContinents": [
+    "Asia"
+  ],
   "capital": {
     "en": "Ötüken (itinerant court)",
     "pt": "Ötüken (corte itinerante)"

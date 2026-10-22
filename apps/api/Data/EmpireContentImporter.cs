@@ -59,7 +59,7 @@ public static class EmpireContentImporter
         e.AreaPrecision = c.Area.Precision;
         e.MapBorderConfidence = c.MapAccuracy;
         e.Continents = [.. c.Continents];
-        e.PrimaryContinent = c.PrimaryContinent;
+        e.PrimaryContinents = [.. c.PrimaryContinents];
         e.CapitalEn = c.Capital.En;
         e.CapitalPt = c.Capital.Pt;
         e.LanguageEn = c.Language.En;
