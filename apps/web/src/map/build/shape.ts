@@ -1,6 +1,7 @@
 import type { Geometry, MultiPolygon, Position } from "geojson";
 import { geoArea } from "d3-geo";
 import polygonClipping, { type Geom, type Polygon as ClipPolygon } from "polygon-clipping";
+import buffer from "@turf/buffer";
 
 // Builds an empire's map shape, shared by scripts/maps/build-shapes.mjs, the
 // empire generator and (later) the public generator's server. Relative imports
@@ -141,15 +142,122 @@ export function mergeParts(parts: Rings[][], removed: Rings[][] = []): Rings[] {
   return snap(result as unknown as Rings[]);
 }
 
+// Cliopatria draws coastlines coarser than the game's land, so a polity often
+// stops a few km short of the sea and the clipped shape loses its coast. The
+// coast fill gives the empire the land that is near both the empire and the
+// sea and that no other polity of the time holds (neighbours: the other
+// Cliopatria polities at the same years). Land a neighbour is closer to stays
+// out, so trading posts and small kingdoms on the coast keep their place.
+export type CoastFill = { neighbours: Rings[]; km: number };
+
+// How far a polity may fall short of the coast and still get it: Cliopatria's
+// coastlines miss the game's by up to about this much.
+export const COAST_FILL_KM = 20;
+
+// Polygons grown (km > 0) or shrunk (km < 0) by about km, each on its own
+// local projection; a polygon that shrinks away is dropped. Slivers left by
+// the clipping go first: buffering a degenerate polygon gives back only part
+// of it.
+function buffered(polygons: Rings[], km: number): Rings[] {
+  if (Math.abs(km) < 0.01) return polygons;
+  return polygons.filter((rings) => areaOnPlaneKm2(rings) > 0.01).flatMap((rings) => {
+    const result = buffer({ type: "Polygon", coordinates: rings }, km, { units: "kilometers", steps: 4 });
+    return result ? polygonsOf(result.geometry) : [];
+  });
+}
+
+// polygon-clipping still fails now and then on the buffers' many near-parallel
+// edges; snapping coarser (down to about 10 m) and trying again gets past it.
+function robust(op: (...g: Geom[]) => unknown, ...inputs: Rings[][]): Rings[] {
+  for (const decimals of [7, 5, 4]) {
+    const f = 10 ** decimals;
+    const snapped = inputs.map((p) => p.map((rings) => rings.map((ring) => ring.map(([x, y]) => [Math.round(x * f) / f, Math.round(y * f) / f]))));
+    try {
+      return snap(op(...(snapped.map(asClip) as Geom[])) as Rings[]);
+    } catch (e) {
+      if (decimals === 4) throw e;
+    }
+  }
+  return [];
+}
+
+const union = (polygons: Rings[]): Rings[] => (polygons.length === 0 ? [] : robust(polygonClipping.union, polygons));
+const within = (a: Rings[], b: Rings[]): Rings[] => (a.length === 0 || b.length === 0 ? [] : robust(polygonClipping.intersection, a, b));
+function minus(a: Rings[], ...b: Rings[][]): Rings[] {
+  const cuts = b.filter((p) => p.length > 0);
+  return a.length === 0 || cuts.length === 0 ? a : robust(polygonClipping.difference, a, ...cuts);
+}
+
+// The land to add along the coasts of merged (the empire's parts minus the
+// removed areas, sea included).
+//
+// A point is filled when it lies on a short way from the empire to the sea:
+// its distance to the empire plus its distance to the sea, going round the
+// empire, is at most km. The gap between a polity and the coast passes; land
+// behind a polity that already reaches the sea doesn't. Both distances are
+// taken in steps of km / COAST_STEPS.
+function coastFill(merged: Rings[], nearbyLand: Rings[], removed: Rings[], { neighbours, km }: CoastFill): Rings[] {
+  // A small polygon (a trading post) reaches at most a quarter of its width,
+  // so it doesn't spread far along the coast.
+  const limits = merged.map((p) => Math.min(km, Math.sqrt(areaOnPlaneKm2(p)) / 4));
+  const grow = (distance: number) => union(merged.flatMap((p, i) => buffered([p], Math.min(distance, limits[i]))));
+  const reach = grow(km);
+  const box = reach.map(boxOf).reduce(mergeBoxes);
+  const near = neighbours.filter((p) => overlaps(boxOf(p), box));
+  const step = km / COAST_STEPS;
+  // The sea near the reach (only the sea within km of it counts), then the
+  // land it reaches step by step without crossing the empire: seaReach[k] is
+  // the land within k steps of the sea. The sea is the zone minus the whole
+  // land, not minus the land cut by the zone: their edges would run together
+  // and leave slivers.
+  const zone = union(buffered(reach, km));
+  const land = within(nearbyLand, zone);
+  let front = minus(zone, nearbyLand, merged);
+  const seaReach: Rings[][] = [[]];
+  for (let k = 1; k <= COAST_STEPS; k++) {
+    front = within(minus(union(buffered(front, step)), merged), zone);
+    seaReach.push(within(land, front));
+  }
+  const pieces = Array.from({ length: COAST_STEPS }, (_, i) => {
+    const fromEmpire = (i + 1) * step;
+    // What a neighbour reaches as soon as the empire does stays with it, so
+    // a coast shared with a nearby kingdom is split between the two.
+    return within(minus(grow(fromEmpire), union(buffered(near, fromEmpire))), seaReach[COAST_STEPS - i]);
+  });
+  return minus(union(pieces.flat()), merged, removed);
+}
+
+const COAST_STEPS = 4;
+
+// Area of a polygon from its longitudes/latitudes, close enough for sizes of
+// a few km.
+function areaOnPlaneKm2(rings: Rings): number {
+  const lat = (boxOf(rings)[1] + boxOf(rings)[3]) / 2;
+  const kmPerDegree = 111.195;
+  return rings.reduce((sum, ring, i) => {
+    let a = 0;
+    for (let j = 0, k = ring.length - 1; j < ring.length; k = j++) a += (ring[k][0] + ring[j][0]) * (ring[k][1] - ring[j][1]);
+    return sum + (i === 0 ? 1 : -1) * Math.abs(a / 2);
+  }, 0) * kmPerDegree ** 2 * Math.cos((lat * Math.PI) / 180);
+}
+
 // The merged parts clipped by the land (the game's coastline), tidied and
-// wound for d3: the shape the game draws.
-export function buildShape(parts: Rings[][], land: Rings[], removed: Rings[][] = []): MultiPolygon {
+// wound for d3: the shape the game draws. With a coast fill, the land between
+// the parts and the sea comes too.
+export function buildShape(parts: Rings[][], land: Rings[], removed: Rings[][] = [], coast?: CoastFill): MultiPolygon {
   const cut = cutFor(parts);
   const merged = mergeCut(parts, removed, cut);
   if (merged.length === 0) return { type: "MultiPolygon", coordinates: [] };
   const box = merged.map(boxOf).reduce(mergeBoxes);
-  const nearbyLand = landAt(land, cut).filter((p) => overlaps(boxOf(p), box));
-  const clipped = polygonClipping.intersection(asClip(merged) as Geom, asClip(nearbyLand) as Geom) as unknown as Rings[];
+  const slack = coast ? 1 : 0; // degrees around the empire the fill may reach
+  const nearbyLand = landAt(land, cut).filter((p) => overlaps(boxOf(p), [box[0] - slack, box[1] - slack, box[2] + slack, box[3] + slack]));
+  let clipped = polygonClipping.intersection(asClip(merged) as Geom, asClip(nearbyLand) as Geom) as unknown as Rings[];
+  if (coast && coast.km > 0) {
+    const neighbours = cut === null ? coast.neighbours : cutAt(coast.neighbours, cut);
+    const cuts = removed.flatMap((p) => (cut === null ? p : cutAt(p, cut)));
+    const fill = coastFill(merged, nearbyLand, cuts, { neighbours, km: coast.km });
+    if (fill.length > 0) clipped = union([...snap(clipped), ...fill]);
+  }
   return { type: "MultiPolygon", coordinates: clipped.map(tidy).filter((r) => r.length > 0).map(forD3) };
 }
 

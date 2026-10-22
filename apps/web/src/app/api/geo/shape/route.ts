@@ -1,15 +1,16 @@
 import { NextResponse } from "next/server";
 import { jsonError, notInProduction } from "@/lib/devOnly";
 import { continentShares } from "@/map/build/continents";
-import { partPolygons, worldLand, type PartRef } from "@/map/build/localData";
-import { areaKm2, buildShape, rawShape } from "@/map/build/shape";
+import { neighbourPolygons, partPolygons, worldLand, type PartRef } from "@/map/build/localData";
+import { areaKm2, buildShape, COAST_FILL_KM, mergeParts, rawShape } from "@/map/build/shape";
 
 export type ShapeRequest = { parts: PartRef[] };
 
 // POST /api/geo/shape { parts: [{ id, year } | { country, box? } | { draw, ring }] }: the
-// parts merged, minus the areas drawn to remove, and clipped by the game's land
-// (what the game draws), the unclipped version to compare, its area and how it
-// splits across continents.
+// parts merged, minus the areas drawn to remove, clipped by the game's land and
+// with the coast filled where the polities fall short of it (what the game
+// draws), the unclipped version to compare, its area and how it splits across
+// continents.
 export async function POST(request: Request) {
   const blocked = notInProduction();
   if (blocked) return blocked;
@@ -20,7 +21,8 @@ export async function POST(request: Request) {
   try {
     const { polygons, removed, datasetAreaKm2 } = partPolygons(body.parts);
     const { land, continents } = worldLand();
-    const shape = buildShape(polygons, land, removed);
+    const neighbours = neighbourPolygons(body.parts, mergeParts(polygons));
+    const shape = buildShape(polygons, land, removed, { neighbours, km: COAST_FILL_KM });
     return NextResponse.json({
       shape,
       raw: rawShape(polygons, removed),

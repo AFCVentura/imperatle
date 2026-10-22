@@ -6,7 +6,7 @@ import type { GeometryCollection, Topology } from "topojson-specification";
 import polygonClipping, { type Geom } from "polygon-clipping";
 import { continentLand, type ContinentLand, type CountryLand } from "./continents.ts";
 import type { Box } from "./empireDraft.ts";
-import { drawnPolygons, polygonsOf, type Rings } from "./shape.ts";
+import { boxOf, drawnPolygons, polygonsOf, type Rings } from "./shape.ts";
 
 // The empire generator's data, read from the local Cliopatria index
 // (scripts/maps/index-cliopatria.mjs) and the game's world map. Server side
@@ -108,8 +108,7 @@ export function partPolygons(parts: PartRef[]): { polygons: Rings[][]; removed: 
     }
     const { id, year } = part;
     if (!/^p\d{4}$/.test(id)) throw new Error(`unknown polity ${id}`);
-    const records = JSON.parse(readFileSync(path.join(CLIOPATRIA, "polities", `${id}.json`), "utf8")) as PolityRecord[];
-    const hits = records.filter((r) => r.from <= year && year <= r.to);
+    const hits = recordsOf(id).filter((r) => r.from <= year && year <= r.to);
     if (hits.length === 0) throw new Error(`${getPolity(id)?.name ?? id} has no record for ${year}`);
     datasetAreaKm2 += hits.reduce((sum, r) => sum + r.areaKm2, 0);
     return hits.flatMap((r) => polygonsOf(r.geometry));
@@ -117,7 +116,45 @@ export function partPolygons(parts: PartRef[]): { polygons: Rings[][]; removed: 
   return { polygons, removed, datasetAreaKm2 };
 }
 
-type WorldTopology = Topology<{ countries: GeometryCollection<{ continent: string }> }>;
+// Each polity's records, read once (the coast fill reads many of them).
+const records = new Map<string, PolityRecord[]>();
+function recordsOf(id: string): PolityRecord[] {
+  let found = records.get(id);
+  if (!found) {
+    found = JSON.parse(readFileSync(path.join(CLIOPATRIA, "polities", `${id}.json`), "utf8")) as PolityRecord[];
+    records.set(id, found);
+  }
+  return found;
+}
+
+// Area on the plane of longitude/latitude, enough to compare nearby polygons.
+const planarArea = (polygons: Rings[]) =>
+  polygons.reduce((sum, rings) => sum + rings.reduce((s, ring, i) => {
+    let a = 0;
+    for (let j = 0, k = ring.length - 1; j < ring.length; k = j++) a += (ring[k][0] + ring[j][0]) * (ring[k][1] - ring[j][1]);
+    return s + (i === 0 ? 1 : -1) * Math.abs(a / 2);
+  }, 0), 0);
+
+// The other polities at the years of the polity parts, for the coast fill:
+// every Cliopatria record covering one of those years near the empire, except
+// the parts' own polities and those mostly inside the empire (duplicates and
+// subdivisions of it, not neighbours).
+export function neighbourPolygons(parts: PartRef[], empire: Rings[]): Rings[] {
+  const own = parts.flatMap((p) => ("id" in p ? [p] : []));
+  if (own.length === 0 || empire.length === 0) return [];
+  const ownIds = new Set(own.map((p) => p.id));
+  const years = [...new Set(own.map((p) => p.year))];
+  const [w, s, e, n] = empire.map(boxOf).reduce((a, b) => [Math.min(a[0], b[0]), Math.min(a[1], b[1]), Math.max(a[2], b[2]), Math.max(a[3], b[3])]);
+  const near = ([x0, y0, x1, y1]: number[]) => x0 <= e + 2 && w - 2 <= x1 && y0 <= n + 2 && s - 2 <= y1;
+  const mostlyInside = (p: Rings) =>
+    planarArea(polygonClipping.intersection([p] as unknown as Geom, empire as unknown as Geom) as unknown as Rings[]) > planarArea([p]) / 2;
+  return loadIndex()
+    .filter((p) => !ownIds.has(p.id) && p.ranges.some(([from, to]) => years.some((y) => from <= y && y <= to)))
+    .flatMap((p) => recordsOf(p.id).filter((r) => years.some((y) => r.from <= y && y <= r.to)).flatMap((r) => polygonsOf(r.geometry)))
+    .filter((p) => near(boxOf(p)) && !mostlyInside(p));
+}
+
+type WorldTopology =Topology<{ countries: GeometryCollection<{ continent: string }> }>;
 
 let world: { land: Rings[]; continents: ContinentLand; countries: Map<string, MultiPolygon> } | null = null;
 
