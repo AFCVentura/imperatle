@@ -21,7 +21,13 @@ Em cima dos merges (commits próprios da integração):
 - O menu mostra o selo "Apoiadores" pelo `isSupporter` real do `/me`.
 - No `SupportDialog`, quem já é apoiador não chega ao checkout por nenhum caminho: além de não ver o botão, o `/me` é consultado de novo logo antes de abrir a Paddle.
 - Espaço reservado para anúncio (`AdSlot`, logo abaixo do conteúdo da página): hoje não mostra nada para ninguém (`ADS_ENABLED = false` em `apps/web/src/lib/ads.ts`) e nunca vai mostrar para apoiador.
-- Uma migration só, `LaunchAccountsSupportPerks`, gerada do modelo final (as três migrations dos agentes foram apagadas). Testada num Postgres 17 de verdade.
+- Uma migration só, `LaunchAccountsSupportPerks`, gerada do modelo final (as três migrations dos agentes foram apagadas). Testada num Postgres 17 de verdade, de novo depois das correções do QA (banco novo do zero).
+- Correções depois do QA (branch `feat/launch-qa`):
+  - **Treino só depois do jogo do dia** (M2): todos os endpoints de `/practice` respondem 409 `daily_not_finished` até o jogo do dia acabar (ganho ou perdido), pela mesma regra de dono do jogo do dia (o 403 de quem não apoia vem antes). Depois disso o treino pode sortear qualquer império, inclusive o do dia. A página de treino mostra "Primeiro, o desafio de hoje" com o botão para o jogo, e o fim do jogo do dia tem "Ir pro treino" para apoiadores.
+  - **Palpites ao mesmo tempo** (B4): a linha do jogo (`PlayerChallengeProgress`) e a rodada de treino (`PracticeSession`) usam o `xmin` do Postgres como token de concorrência. Um palpite que perde a corrida (ou dois primeiros palpites criando a mesma linha) é refeito a partir de uma leitura nova, até 6 vezes; depois disso a API responde 409 `guess_conflict` em vez de 500.
+  - **Logout de verdade no servidor** (I1): cada login cria uma linha em `UserSessions` e o id dela vai no cookie; cada pedido confere a linha (uma busca pela chave, sem cache, então vale na hora em todas as réplicas). Sair revoga a sessão deste navegador; "Sair de todos os aparelhos" (`POST /auth/logout?all=true`) revoga todas; excluir a conta apaga todas. Cookie sem id de sessão é recusado.
+  - **Compartilhar jogo anterior**: o texto usa a chave `Share.archiveTitle` ("Treino #N" / "Practice #N" por enquanto) em vez de "Imperatle #N"; o compartilhamento do jogo do dia não mudou.
+  - Tudo isso está dentro da migration única `LaunchAccountsSupportPerks` (tabela `UserSessions` e o mapeamento do `xmin`, que não gera SQL).
 - Next.js 16.4.0 para 16.4.4 (e `eslint-config-next` igual), num commit separado (`chore(web): upgrade next to 16.4.4 for a security fix`) para dar para reverter sozinho.
 
 ## Como rodar localmente com apoiador de mentira
@@ -53,7 +59,7 @@ Observação: com `Dev:IsSupporter` e **sem** login, as páginas de arquivo e tr
 - **Vercel Hobby não permite uso comercial.** Com venda (mesmo que pela Paddle), o site precisa ir para o plano Pro ou sair da Vercel (ex.: Azure Static Web Apps, Cloudflare Pages, ou um container junto da API). Decidir antes de ligar a venda.
 - **Revisão jurídica**: política de privacidade, termos e reembolso foram escritos pelos agentes (pt e en), não por advogado. A Paddle também exige termos e política de reembolso publicados para aprovar a conta.
 - **Faixas de dificuldade do treino**: revisar `apps/api/Content/practice-difficulty.json` (quais impérios são fácil, médio e difícil; os que não estão na lista caem numa faixa pela área máxima). O conteúdo é escolha sua.
-- **Banco de produção**: a migration roda sozinha na subida da API. Ela cria tabelas novas e duas colunas em `PlayerChallengeProgress` (as linhas antigas ficam com a lista de palpites vazia). Vale um backup do Neon antes do primeiro deploy.
+- **Banco de produção**: a migration roda sozinha na subida da API. Ela cria tabelas novas (inclusive `UserSessions`) e duas colunas em `PlayerChallengeProgress` (as linhas antigas ficam com a lista de palpites vazia). Vale um backup do Neon antes do primeiro deploy.
 - **Changelog**: ao publicar, adicionar a versão em `apps/web/src/lib/changelog.ts`.
 
 ## Decisões que ficaram com você
@@ -69,5 +75,6 @@ Observação: com `Dev:IsSupporter` e **sem** login, as páginas de arquivo e tr
 - Segundo aparelho: logado em dois navegadores, jogar metade num e abrir o outro; o tabuleiro tem que vir com os mesmos palpites, pistas e mapa.
 - Checkout sandbox da Paddle com webhook chegando (túnel), apoio ligando sem recarregar a página, reembolso desligando, e o diálogo nunca reabrindo o checkout para quem já é apoiador.
 - Arquivo e treino: telas bloqueadas para não apoiador, todas as opções do treino, jogo passado não mexendo nas estatísticas.
+- Treino só depois do jogo do dia (painel "Primeiro, o desafio de hoje"), e "Sair de todos os aparelhos" com dois navegadores logados.
 - Layout em celular (menu com selo, diálogos de conta e apoio, páginas novas) e os dois idiomas.
 - Conferir que nenhum texto visível tem travessão longo.

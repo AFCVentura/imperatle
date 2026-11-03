@@ -5,8 +5,9 @@ Branch `feat/launch-qa` (saiu da `feat/launch`), 3 de novembro de 2026. Nada foi
 ## Resumo
 
 - A superfície nova está bem feita no geral: login sem open redirect, logout e exclusão protegidos contra CSRF, webhook da Paddle com assinatura, janela de tempo, idempotência e checagem do preço, checagem de apoiador no servidor em todos os 8 endpoints de arquivo e treino, e a resposta nunca sai antes do fim da rodada.
-- Achei **1 problema médio que já corrigi** (limites por IP viravam globais em produção), **1 médio que é decisão sua** (dá para descobrir a resposta do dia pelo treino, por eliminação) e alguns baixos. Os que eram bug claro estão corrigidos, cada um no seu commit e com teste.
-- Todos os testes passam: 205 testes da API, 84 do site, lint, typecheck, build e os 34 testes de ponta a ponta (Playwright).
+- Achei **2 problemas médios, os dois corrigidos** (limites por IP viravam globais em produção; dava para descobrir a resposta do dia pelo treino, por eliminação) e alguns baixos. Os que eram bug claro estão corrigidos, cada um no seu commit e com teste.
+- Depois da sua decisão, também foram corrigidos o M2 (treino só depois do jogo do dia), o B4 (palpites ao mesmo tempo) e o I1 (logout agora encerra a sessão no servidor), e o compartilhamento de jogo anterior ganhou título próprio.
+- Todos os testes passam: 220 testes da API (3 deles contra um Postgres de verdade), 90 do site, lint, typecheck, build e os 35 testes de ponta a ponta (Playwright).
 
 ## Achados, do mais grave ao menos grave
 
@@ -18,7 +19,7 @@ Branch `feat/launch-qa` (saiu da `feat/launch`), 3 de novembro de 2026. Nada foi
 - Impacto: o limite do feedback (5 mensagens a cada 10 minutos por IP) virava 5 mensagens a cada 10 minutos **para o site inteiro**. O limite de palpites também cai no IP no primeiro palpite de cada visitante (antes do cookie existir): 20 primeiros palpites por minuto para todos juntos, ou seja, erro 429 para jogadores de verdade num pico.
 - Correção: lê de novo o IP do cliente pelo `X-Forwarded-For`, só o último salto (o que a própria entrada do Azure acrescenta), então ninguém escolhe o próprio IP mandando o cabeçalho. Testes em `ProxyHeadersTests`.
 
-**M2. Um apoiador consegue descobrir a resposta do dia pelo modo treino, por eliminação.** Não corrigido: decisão sua.
+**M2. Um apoiador conseguia descobrir a resposta do dia pelo modo treino, por eliminação.** Corrigido em `27e70a4` (API) e `76687bd` (site), com a opção 1.
 - Onde: `apps/api/Controllers/PracticeController.cs` (`Start` tira o império do dia do sorteio).
 - O que é: o treino nunca sorteia o império do dia (o que é certo: senão ele apareceria direto). Mas a contagem do filtro mostra quantos impérios ele tem, e o sorteio evita repetir os 10 últimos. Com um filtro pequeno (por exemplo Fácil + Ásia, ou Médio + Idade Média + Ásia), o apoiador joga rodadas até ver todos os impérios do filtro; o que nunca aparece é o do dia. Com 2 impérios no filtro, se um deles é o do dia, "Jogar de novo" traz sempre o mesmo. Custa algumas rodadas (cada uma com 3 tentativas para revelar o nome).
 - Impacto: só apoiadores, só estraga o jogo de quem quer trapacear, e não mexe no placar de ninguém. Mas o "Imperatle de hoje" pode aparecer em fórum antes da hora.
@@ -26,6 +27,7 @@ Branch `feat/launch-qa` (saiu da `feat/launch`), 3 de novembro de 2026. Nada foi
   1. **Recomendo:** o treino só abre depois que a pessoa terminou o jogo do dia (o servidor confere; a tela de treino diz "termine o desafio de hoje primeiro"). Fecha o vazamento sem mudar mais nada.
   2. Aceitar como está (é trabalhoso e só para apoiador).
   3. Deixar o império do dia entrar no sorteio: pior, porque aí ele aparece direto no treino.
+- Correção (opção 1, decidida por você): o treino só abre depois que o jogo do dia acabou (ganho ou perdido). O servidor confere com a mesma regra de dono do jogo do dia (`AccountService.ProgressOf`): os 5 endpoints de `/practice` respondem 409 com `{"code":"daily_not_finished"}` até lá (quem não apoia continua recebendo 403 antes). Rodada de treino de ontem salva no navegador também espera. Depois do jogo do dia, o sorteio pode trazer qualquer império, inclusive o do dia (o mínimo de 2 impérios por filtro ficou, para "Jogar de novo" não repetir sempre o mesmo). No site, a página de treino mostra "Primeiro, o desafio de hoje" com o botão "Jogar o desafio de hoje", e o fim do jogo do dia mostra "Ir pro treino" para apoiadores. Os textos do diálogo de apoio e do painel bloqueado dizem "depois do desafio do dia". O jogo anterior (arquivo) ficou como estava: a resposta de um dia passado não é a de hoje. Testes: xUnit (`PracticeTests`, `LaunchIntegrationTests`), Vitest (`api.test.ts`) e e2e (treino espera o jogo do dia e abre pelo fim do jogo; depois dele o império do dia aparece no treino).
 
 ### Baixo
 
@@ -42,11 +44,12 @@ Branch `feat/launch-qa` (saiu da `feat/launch`), 3 de novembro de 2026. Nada foi
 **B3. O treino tinha dois nomes em português.** Corrigido em `dd7918c`.
 - Menu, página e painel bloqueado diziam "Treino"; o diálogo de apoio e os termos diziam "modo prática". Agora é "modo treino" em todo lugar. O teste novo também garante que nenhuma mensagem tem travessão longo.
 
-**B4. Palpites mandados ao mesmo tempo passam do limite de tentativas.** Não corrigido.
+**B4. Palpites mandados ao mesmo tempo passavam do limite de tentativas.** Corrigido em `2967ae5`.
 - Onde: os três `Guess` (`ChallengesController`, `ArchiveController`, `PracticeController`).
 - O que é: conferi na API local: 12 palpites disparados juntos com o mesmo cookie, 10 aceitos, e o contador foi de 1 para 7. Cada pedido lê o contador, soma 1 e grava; os simultâneos se sobrescrevem. Quem faz isso ganha mais comparações (maior/menor) do que as 7 tentativas.
 - Impacto: baixo. Um jogador anônimo já pode recomeçar com outro cookie quando quiser. Para quem tem conta, dá para inflar acertos e sequência nas estatísticas. O limite de 20 palpites por minuto segura um pouco.
-- Correção sugerida: token de concorrência na linha (`xmin` do Postgres via EF Core) e repetir o palpite em caso de conflito. Mexe no modelo e na migration, por isso deixei para a integração decidir.
+- Correção: `PlayerChallengeProgress` (jogo do dia e arquivo) e `PracticeSession` usam o `xmin` do Postgres como token de concorrência (`IsRowVersion`, mapeado na migration `LaunchAccountsSupportPerks`, sem SQL novo). Quando dois palpites leem o mesmo contador, o segundo a gravar é recusado e refeito a partir de uma leitura nova (`GuessConcurrency`, até 6 tentativas com uma pequena espera aleatória), que confere o limite de novo e vê o jogo já terminado como terminado. Dois primeiros palpites criando a mesma linha (índice único) seguem o mesmo caminho em vez de dar 500. Se mesmo assim não der, a API responde 409 `guess_conflict`. Regra final: nunca mais palpites contados do que o limite, e a lista de palpites sempre igual ao contador.
+- Prova: a mesma conta da QA, 12 palpites errados ao mesmo tempo com o mesmo cookie na API local (3 rodadas): **7 contados, 5 responderam "jogo já terminado", 0 erros**, contador 7 e 7 palpites guardados em cada rodada (antes: 10 aceitos). Teste automatizado contra Postgres de verdade (`GuessConcurrencyPostgresTests`, ligado pela variável `IMPERATLE_TEST_POSTGRES`): jogo do dia 12 em paralelo dá 7 contados e contador 7; 4 primeiros palpites em paralelo criam uma linha só com 4; treino de 3 tentativas com 10 em paralelo dá 3.
 
 **B5. Duas cópias da API subindo juntas num banco vazio quebraram a migration.** Não corrigido.
 - Onde: `apps/api/Program.cs` (o comentário diz que o EF Core trava o banco durante a migration).
@@ -58,7 +61,7 @@ Branch `feat/launch-qa` (saiu da `feat/launch`), 3 de novembro de 2026. Nada foi
 
 ### Informativos
 
-- **I1. Logout não invalida o cookie no servidor.** O cookie de login é autossuficiente (vale 180 dias). Se alguém copiar o cookie, ele continua valendo depois do logout, até a conta ser excluída. Normal para esse porte; se quiser fechar, dá para guardar um "carimbo de segurança" no `User` e trocar no logout.
+- **I1. Logout não invalidava o cookie no servidor.** Corrigido em `21e4301` (API) e `68653f5` (site). Antes, o cookie de login era autossuficiente (vale 180 dias) e uma cópia dele continuava valendo depois do logout. Agora cada login cria uma sessão no banco (`UserSessions`) e o id dela vai no cookie; cada pedido confere essa sessão (uma busca pela chave, sem cache, então o logout vale na hora em todas as réplicas). "Sair" encerra a sessão deste navegador; o novo botão "Sair de todos os aparelhos" (`POST /auth/logout?all=true`, com a mesma proteção de `Origin`) encerra todas; excluir a conta apaga todas. Escolhi uma tabela de sessões em vez de um contador de versão no usuário porque o "Sair" normal tem que encerrar só esta sessão. Testes num TestServer com o cookie de verdade: cookie repetido depois do logout é recusado, "todos os aparelhos" derruba as outras sessões, conta excluída é recusada, cookie sem sessão é recusado, pedidos normais seguem funcionando.
 - **I2. Compra dupla.** O diálogo não deixa quem já apoia comprar de novo, mas se acontecer (duas abas), só a primeira transação fica registrada. Reembolsar a primeira tira o apoio mesmo com a segunda paga. Raro; no caso, reembolse a segunda.
 - **I3. Sessão expirada no mesmo navegador.** Se o login expira sem logout, quem joga deslogado naquele navegador continua jogando nas linhas da conta (mesmo id anônimo). Raro e só no próprio navegador da pessoa.
 - **I4. Chaves de proteção de dados no banco.** As chaves que assinam o cookie de login ficam na tabela `DataProtectionKeys`. Quem tiver acesso ao banco consegue forjar login. Guardar a connection string como secret (já é).
@@ -75,19 +78,19 @@ Branch `feat/launch-qa` (saiu da `feat/launch`), 3 de novembro de 2026. Nada foi
 - **Dono dos dados (`AccountService.ProgressOf`):** nenhuma rota recebe id de jogador; tudo sai dos cookies. Rodada de treino de outra pessoa responde 404 (mesmo com o id certo, testado no e2e). Datas do arquivo só leem e gravam as linhas do próprio jogador.
 - **Webhook da Paddle:** assinatura HMAC com comparação em tempo constante, janela de 5 minutos, eventos repetidos ignorados pelo id (inclusive dois ao mesmo tempo), só libera com o preço do Apoiador, só revoga com reembolso total aprovado ou chargeback, corpo limitado a 256 KB, segredo vazio recusa tudo.
 - **Checagem de apoiador:** `GET /archive`, `GET /archive/{data}`, `POST /archive/{data}/guess`, `GET /practice/pool`, `POST /practice`, `GET /practice/{id}`, `GET /practice/{id}/map`, `POST /practice/{id}/guess`: todos 403 para quem não apoia (e2e).
-- **Segredo da resposta:** `/challenges/today` e `/challenges/today/progress` nunca trazem a resposta no meio da rodada; mapa de data futura é 404; arquivo recusa hoje e o futuro; treino não devolve o império até o fim; com dicas desligadas o treino não manda dica nenhuma. A única brecha é a eliminação do M2.
+- **Segredo da resposta:** `/challenges/today` e `/challenges/today/progress` nunca trazem a resposta no meio da rodada; mapa de data futura é 404; arquivo recusa hoje e o futuro; treino não devolve o império até o fim; com dicas desligadas o treino não manda dica nenhuma. A brecha da eliminação (M2) foi fechada: o treino só abre depois do jogo do dia.
 - **`Dev:IsSupporter`:** só é registrado com `IsDevelopment()`; os botões DEV respondem 404 fora de Development.
 - **Segredos no repositório:** nenhum (procurei chaves do Google, Paddle e Resend no código e no histórico da branch).
 
 ## Testes de ponta a ponta
 
-Rodar: `cd apps/web && npm run e2e` (fica fora do `npm test`). Precisa do Docker com o `imperatle-postgres-1` de pé e das portas 5104, 5105 e 3004 livres. O script cria o banco `imperatle_qa` se não existir (recusa `imperatle`, `imperatle_dev` e `imperatle_launch`), publica a API em `apps/web/e2e/.api`, sobe duas cópias dela (5104 normal; 5105 com `Dev:IsSupporter`), faz o build de produção do site na 3004 e grava 3 dias passados no arquivo.
+Rodar: `cd apps/web && npm run e2e` (fica fora do `npm test`). Precisa do Docker com o `imperatle-postgres-1` de pé e das portas 5104, 5105 e 3004 livres. O script cria o banco `imperatle_qa` (ou o da variável `E2E_DB`) se não existir (recusa `imperatle`, `imperatle_dev` e `imperatle_launch`), publica a API em `apps/web/e2e/.api`, sobe duas cópias dela (5104 normal; 5105 com `Dev:IsSupporter`), faz o build de produção do site na 3004 e grava 3 dias passados no arquivo.
 
-O que cobre (34 testes, Chromium):
+O que cobre (35 testes, Chromium):
 
 - **Jogo do dia sem conta:** vitória do começo ao fim; derrota em 7 tentativas com a resposta só no fim; recarregar mantém o tabuleiro; segundo "aparelho" (outro navegador com o mesmo cookie e sem nada salvo) reconstrói o tabuleiro com os palpites reais e termina a rodada que o primeiro vê; o progresso do dia nunca traz a resposta.
 - **Quem não apoia:** selo "Apoiadores" no menu, painel bloqueado em `/archive` e `/practice` com o botão abrindo o diálogo de apoio, e 403 nos 8 endpoints.
-- **Apoiador:** dia do arquivo jogável (erro, acerto, aviso de "jogo anterior" no fim, "Won, 2/7" na lista, jogo de hoje intacto); arquivo recusa hoje e o futuro; treino com 3 tentativas, sem dicas e só contorno, depois "Jogar de novo" com as mesmas opções; treino com dicas e mapa completo, retomado depois de recarregar; 45 rodadas num filtro que contém o império do dia sem ele aparecer (comparando o mapa); rodada de outra pessoa é 404.
+- **Apoiador:** dia do arquivo jogável (erro, acerto, aviso de "jogo anterior" no fim, "Won, 2/7" na lista, jogo de hoje intacto); arquivo recusa hoje e o futuro; treino com 3 tentativas, sem dicas e só contorno, depois "Jogar de novo" com as mesmas opções; treino com dicas e mapa completo, retomado depois de recarregar; treino fechado até o fim do jogo do dia (409 nos 5 endpoints, painel "Today's challenge first", e "Go to practice" no fim do jogo), e depois dele o império do dia aparecendo no treino (comparando o mapa); rodada de outra pessoa é 404.
 - **Idiomas:** troca pt/en em `/archive` e `/practice`, diálogo em português.
 - **Conta e apoio (com `/me` simulado na rede):** deslogado (botão do Google, apoio pede login), login sem Google configurado volta com a mensagem de erro, login recusa outros sites, logout e exclusão recusam outra origem, logado (nome, e-mail, sair, excluir, sem aviso de apoiador), logado sem apoio (botão de compra, Paddle bloqueada mostra o erro do checkout em vez de travar), apoiador (sem selo, sem checkout, selo "Apoiador" na conta, aviso de perder o apoio ao excluir).
 - **Celular, 390 px:** sem rolagem horizontal em início, menu, arquivo (bloqueado, lista, dia), treino (bloqueado, opções, rodada) e nos diálogos de conta e apoio, nos dois idiomas.
@@ -102,6 +105,7 @@ Em `docs/launch/qa-screens/`, celular de 390 px, em inglês (`en-`) e português
 - `menu-locked`: menu com o selo "Apoiadores"
 - `archive-locked`, `practice-locked`: painéis bloqueados
 - `archive-list`, `archive-day`: arquivo como apoiador
+- `practice-daily-first`: treino antes de terminar o jogo do dia
 - `practice-setup`, `practice-round`: treino como apoiador
 - `account-signed-out`, `account-signed-in`: diálogo da conta
 - `support-signed-out`, `support-buy`, `support-supporter`: diálogo de apoio nos três estados
@@ -115,12 +119,11 @@ Pronto do lado do código:
 - [x] Testes da API, do site e e2e passando
 - [x] Sem dependência vulnerável em produção
 - [x] Sem segredo no repositório
-- [x] Correções M1, B1, B2, B3 nesta branch (juntar na `feat/launch`)
+- [x] Correções M1, M2, B1, B2, B3, B4 e I1 nesta branch (juntar na `feat/launch`)
+- [x] Compartilhar jogo anterior com título próprio (`Share.archiveTitle`, "Treino #N" por enquanto; dá para trocar o nome só nessa chave)
 
 Antes de ligar:
 
-- [ ] Decidir o M2 (treino só depois do jogo do dia, ou aceitar)
-- [ ] Decidir se o B4 (palpites simultâneos) entra agora ou depois
 - [ ] Google OAuth configurado e um login real testado em produção (ou num ambiente igual)
 - [ ] Paddle sandbox: compra, webhook chegando, apoio ligando sem recarregar, reembolso desligando
 - [ ] Variáveis no Azure e na Vercel (lista no `STATUS.md`), com `Auth__CookieDomain=imperatle.com` e a API em `api.imperatle.com`
@@ -131,4 +134,4 @@ Antes de ligar:
 - [ ] Teste rápido no celular de verdade (Safari no iPhone e Chrome no Android): login, jogo, arquivo, treino
 - [ ] Versão nova em `apps/web/src/lib/changelog.ts`
 
-Com os itens acima feitos, **pode lançar**. Nenhum achado aberto impede o lançamento; o M2 é o único que eu resolveria antes, porque é barato.
+Com os itens acima feitos, **pode lançar**. Nenhum achado aberto impede o lançamento.
