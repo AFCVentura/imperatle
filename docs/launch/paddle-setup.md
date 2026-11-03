@@ -32,39 +32,39 @@ A Paddle é a **merchant of record**: ela é quem vende de fato, cobra, recolhe 
      - Brasil: `BRL 14.90`
      - Índia: `INR 199`
      - México: `MXN 59`
-     - Zona do euro: `EUR 4.99`; Reino Unido: `GBP 3.99`
+     - Zona do euro: um override só com os 21 países do euro marcados, `EUR 4.99`; Reino Unido: `GBP 3.99`
    - O site mostra o preço certo para cada visitante sozinho: ele pergunta à Paddle (price preview) e a Paddle descobre o país pelo IP.
 3. Copie o **price id** (começa com `pri_`). Ele vai em duas variáveis (ver seção 3).
 
 ### 1.2 Token do navegador (client-side token)
 
-1. **Developer tools > Authentication > Client-side tokens > New client-side token**.
+1. **Settings > Authentication**, aba **Client-side tokens**, **New client-side token** (sandbox: <https://sandbox-vendors.paddle.com/settings/authentication>, live: <https://vendors.paddle.com/settings/authentication>).
 2. Nome: `imperatle-web`. Copie o valor (começa com `test_` no sandbox).
 3. Esse token é público por natureza (vai no JavaScript do site); não é segredo.
 
 ### 1.3 Link padrão do checkout
 
-1. **Checkout > Checkout settings > Default payment link**: coloque `https://imperatle.com/en`.
+1. **Default payment link** (em **Settings**, na parte de **Checkout**): coloque `https://imperatle.com/en`.
 2. A Paddle exige esse campo preenchido antes de abrir qualquer checkout.
 
 ### 1.4 Webhook (notificação de compra e reembolso)
 
-1. **Developer tools > Notifications > New destination**.
+1. **Events > Notifications > New destination**.
    - Tipo: **Webhook**.
    - URL: `https://<endereço-da-api>/webhooks/paddle` (o endereço público da API no Azure Container Apps, o mesmo que o site usa em `NEXT_PUBLIC_API_URL`).
    - API version: a mais recente.
    - Eventos (marque só estes três):
      - `transaction.completed`: compra concluída, libera o Apoio.
      - `adjustment.created` e `adjustment.updated`: reembolso ou chargeback; quando é total e aprovado, tira o Apoio.
-2. Salve e abra o destino criado: copie a **Secret key** (começa com `pdl_ntfset_`). Essa sim é segredo.
+2. Ao salvar, copie a **Secret key** (começa com `pdl_ntfset_`) **na hora**: segundo a documentação da Paddle ela não pode ser vista de novo depois. Essa sim é segredo. Se perder, apague o destino e crie outro.
 
 ### 1.5 Testar a compra no sandbox
 
 - Cartão de teste: `4242 4242 4242 4242`, qualquer validade futura, CVC `100`.
 - A Paddle precisa alcançar a API pela internet. Em produção isso já acontece; para testar com a API rodando no seu computador, use um túnel (por exemplo `cloudflared tunnel --url http://localhost:5055`) e cadastre a URL do túnel num destino de teste.
-- **Developer tools > Simulations** manda eventos de exemplo para o destino, bom para conferir a assinatura. O evento simulado não traz um `userId` seu, então a API responde 200 mas não marca ninguém (fica registrado no log como usuário não encontrado).
+- **Events > Simulations** (ou onde o painel mostrar as simulações) manda eventos de exemplo para o destino, bom para conferir a assinatura. O evento simulado não traz um `userId` seu, então a API responde 200 mas não marca ninguém (fica registrado no log como usuário não encontrado).
 - Reembolso no sandbox: **Transactions >** a transação **> Refund**. No sandbox a Paddle aprova os reembolsos sozinha a cada ~10 minutos; depois disso o Apoio some da conta.
-- Em **Developer tools > Notifications > (destino) > Logs** dá para ver cada entrega, a resposta da API e reenviar um evento.
+- Em **Events > Notifications > (destino) > Logs** dá para ver cada entrega, a resposta da API e reenviar um evento.
 
 ---
 
