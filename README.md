@@ -44,6 +44,14 @@ npm run dev                          # http://localhost:3000
 
 The web app reads the API address from `NEXT_PUBLIC_API_URL` (`apps/web/.env.local`, e.g. `http://localhost:5055`).
 
+## Configuration
+
+| Setting | Where | What it does |
+|---|---|---|
+| `Dev:IsSupporter` (`Dev__IsSupporter`) | API, Development only | `true` makes every player a supporter, to try the supporter perks (past games, practice) before accounts and payments are set up. Ignored outside Development. |
+
+Practice mode's difficulty tiers live in [`apps/api/Content/practice-difficulty.json`](apps/api/Content/practice-difficulty.json): slugs listed per tier (easy, medium, hard), and empires not listed get a tier from their peak area (`thresholdsKm2`). Restart the API after editing it.
+
 ## Tests
 
 - **API** (`tests/Imperatle.Api.Tests`, xUnit v3): scheduler rotation, content validation (including every shipped empire file and map), clue unlocking, size and duration comparisons, statistics, and the content import. Run with `dotnet test --solution apps/api/Imperatle.Api.sln`.

@@ -19,6 +19,14 @@ builder.Services.AddOpenApi();
 builder.Services.AddDbContext<ImperatleDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// Who is playing. Temporary stub until the accounts branch brings the real
+// implementation (see Services/DevCurrentPlayer.cs).
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<ICurrentPlayer, DevCurrentPlayer>();
+
+// Practice mode's difficulty tiers (Content/practice-difficulty.json).
+builder.Services.AddSingleton(PracticeDifficultyTiers.LoadFromFile(PracticeDifficultyTiers.DefaultPath));
+
 builder.Services.AddHttpClient<FeedbackEmailService>(client =>
 {
     client.BaseAddress = new Uri("https://api.resend.com/");
