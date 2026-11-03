@@ -1,6 +1,8 @@
 # Tests the API and the web app on every push and pull request to main. On main
 # (or a manual run), once both pass, the API image is published and deployed to
-# Azure Container Apps. The web app is deployed by Vercel's Git integration.
+# Azure Container Apps. The web app is deployed by Vercel's Git integration
+# until the "Deploy web to Azure" job is turned on (AZURE_DEPLOY_WEB, see
+# docs/launch/front-container-apps.md); then it runs as a second Container App.
 name: CI/CD
 
 on:
@@ -22,6 +24,9 @@ env:
   RESOURCE_GROUP: rg-imperatle
   CONTAINER_APP: imperatle-api
   API_URL: https://api.imperatle.com
+  WEB_IMAGE: ghcr.io/afcventura/imperatle-web
+  WEB_CONTAINER_APP: imperatle-web
+  WEB_URL: https://imperatle.com
 
 jobs:
   api:
@@ -173,3 +178,116 @@ jobs:
             --retry 5 --retry-delay 10 --retry-all-errors --max-time 30 \
             --write-out "HTTP %{http_code} in %{time_total}s\n" \
             "$API_URL/health"
+
+  deploy-web:
+    name: Deploy web to Azure
+    needs: [api, web, deploy-api]
+    # Off until the web Container App exists: set the repository variable
+    # AZURE_DEPLOY_WEB to "true". Runs after the API deploy (or when that one
+    # is off and skipped), so a new page never talks to an older API; never
+    # after a failed API deploy.
+    if: >-
+      always()
+      && github.event_name != 'pull_request'
+      && vars.AZURE_DEPLOY_WEB == 'true'
+      && needs.api.result == 'success'
+      && needs.web.result == 'success'
+      && (needs.deploy-api.result == 'success' || needs.deploy-api.result == 'skipped')
+    runs-on: ubuntu-latest
+    # Same OIDC subject as the API job (no "environment:"), so the same
+    # federated credential works.
+    permissions:
+      contents: read
+      packages: write # push the image to GHCR
+      id-token: write # OIDC token for Azure, instead of a stored password
+    concurrency:
+      group: deploy-web
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: docker/setup-buildx-action@v4
+
+      - uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # NEXT_PUBLIC_* are inlined by "next build", so they go in as build
+      # arguments from repository variables (all public by design, hence
+      # variables and not secrets). Changing one needs a new run.
+      - name: Build and push the image
+        uses: docker/build-push-action@v7
+        with:
+          context: apps/web
+          push: true
+          build-args: |
+            NEXT_PUBLIC_API_URL=${{ env.API_URL }}
+            NEXT_PUBLIC_SITE_URL=${{ env.WEB_URL }}
+            NEXT_PUBLIC_PADDLE_CLIENT_TOKEN=${{ vars.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN }}
+            NEXT_PUBLIC_PADDLE_SUPPORTER_PRICE_ID=${{ vars.NEXT_PUBLIC_PADDLE_SUPPORTER_PRICE_ID }}
+            NEXT_PUBLIC_PADDLE_ENVIRONMENT=${{ vars.NEXT_PUBLIC_PADDLE_ENVIRONMENT || 'sandbox' }}
+          tags: |
+            ${{ env.WEB_IMAGE }}:${{ github.sha }}
+            ${{ env.WEB_IMAGE }}:latest
+          cache-from: type=gha,scope=web
+          cache-to: type=gha,mode=max,scope=web
+
+      - name: Azure login (OIDC)
+        uses: azure/login@v3
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Update the Container App
+        run: |
+          az config set extension.use_dynamic_install=yes_without_prompt
+          az containerapp ingress update \
+            --name "$WEB_CONTAINER_APP" \
+            --resource-group "$RESOURCE_GROUP" \
+            --target-port 8080
+          az containerapp update \
+            --name "$WEB_CONTAINER_APP" \
+            --resource-group "$RESOURCE_GROUP" \
+            --image "$WEB_IMAGE:${{ github.sha }}"
+
+      # Same check as the API: "update" returns before the revision is up.
+      - name: Wait for the new revision to be healthy
+        run: |
+          revision=$(az containerapp show --name "$WEB_CONTAINER_APP" --resource-group "$RESOURCE_GROUP" \
+            --query properties.latestRevisionName --output tsv)
+          echo "New revision: $revision"
+
+          for attempt in $(seq 1 30); do
+            read -r provisioning running health <<< "$(az containerapp revision show \
+              --name "$WEB_CONTAINER_APP" --resource-group "$RESOURCE_GROUP" --revision "$revision" \
+              --query "[properties.provisioningState, properties.runningState, properties.healthState]" --output tsv | tr '\n' ' ')"
+            echo "[$attempt/30] provisioning=$provisioning running=$running health=$health"
+
+            if [ "$provisioning" = "Failed" ] || [ "$running" = "Failed" ]; then
+              echo "::error::Revision $revision failed. See the logs under Container App > Revisions and replicas."
+              exit 1
+            fi
+            if [ "$provisioning" = "Provisioned" ] && [ "$health" = "Healthy" ] && [[ "$running" == Running* ]]; then
+              echo "Revision $revision is up and healthy."
+              exit 0
+            fi
+            sleep 10
+          done
+
+          echo "::error::Revision $revision wasn't healthy after 5 minutes (last: provisioning=$provisioning running=$running health=$health)."
+          exit 1
+
+      # From the outside, through the real domain: "/" (which redirects to a
+      # language, hence --location), both languages, and the health route.
+      # Retries cover a cold start of the web and of the API behind it.
+      - name: Smoke test
+        run: |
+          for path in / /pt /en /api/health; do
+            curl --fail --silent --show-error --location --output /dev/null \
+              --retry 5 --retry-delay 10 --retry-all-errors --max-time 30 \
+              --write-out "$path: HTTP %{http_code} in %{time_total}s\n" \
+              "$WEB_URL$path"
+          done
