@@ -1,0 +1,13 @@
+# Only what the build needs goes into the Docker context.
+node_modules
+.next
+out
+coverage
+dev-data
+.env*
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+npm-debug.log*
+Dockerfile
+.dockerignore
