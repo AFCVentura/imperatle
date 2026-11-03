@@ -228,6 +228,29 @@ export interface ArchiveChallenge {
   correct: boolean;
   reveal: ChallengeReveal | null;
   answer: EmpireAnswer | null;
+  guesses: PlayedGuess[];
+}
+
+// A guess already made in a round, as the server stored it (so another
+// device can rebuild the board). Comparison is null for the correct guess.
+export interface PlayedGuess {
+  empireId: number;
+  nameEn: string;
+  namePt: string;
+  correct: boolean;
+  comparison: GuessComparison | null;
+}
+
+// GET /challenges/today/progress: the player's own game today (the account's
+// when signed in).
+export interface ChallengeProgress {
+  date: string;
+  attemptsUsed: number;
+  completed: boolean;
+  correct: boolean;
+  guesses: PlayedGuess[];
+  reveal: ChallengeReveal | null;
+  answer: EmpireAnswer | null;
 }
 
 export const PRACTICE_DIFFICULTIES = ["Any", "Easy", "Medium", "Hard"] as const;

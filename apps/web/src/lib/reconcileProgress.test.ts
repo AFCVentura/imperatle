@@ -46,4 +46,29 @@ describe("reconcileProgress", () => {
     const finished = { ...local, gameOver: true };
     expect(reconcileProgress("2026-11-01", finished, server({ attemptsUsed: 2, completed: true, answer }), "?")?.answer).toBe(answer);
   });
+
+  const played = (empireId: number, correct: boolean) => ({
+    empireId,
+    nameEn: `Empire ${empireId}`,
+    namePt: `Império ${empireId}`,
+    correct,
+    comparison: correct ? null : { area: 2, duration: 0 },
+  });
+
+  it("rebuilds with the real guesses when the server stored them", () => {
+    const rebuilt = reconcileProgress("2026-11-01", null, server({ attemptsUsed: 2, guesses: [played(4, false), played(5, false)] }), "?");
+    expect(rebuilt?.guesses.map((g) => g.empireId)).toEqual([4, 5]);
+    expect(rebuilt?.guesses[0]).toMatchObject({ nameEn: "Empire 4", areaComparison: "Bigger", durationComparison: "Smaller" });
+  });
+
+  it("replaces placeholder rows once the server has the guesses", () => {
+    const placeholders: GameProgress = { ...local, guesses: local.guesses.map((g) => ({ ...g, empireId: 0 })) };
+    const fixed = reconcileProgress("2026-11-01", placeholders, server({ attemptsUsed: 2, guesses: [played(4, false), played(5, false)] }), "?");
+    expect(fixed?.guesses.map((g) => g.empireId)).toEqual([4, 5]);
+  });
+
+  it("falls back to placeholders when the stored guesses don't cover every attempt", () => {
+    const rebuilt = reconcileProgress("2026-11-01", null, server({ attemptsUsed: 3, guesses: [played(4, false)] }), "?");
+    expect(rebuilt?.guesses.map((g) => g.nameEn)).toEqual(["?", "?", "?"]);
+  });
 });

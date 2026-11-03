@@ -3,13 +3,14 @@
 import type { MultiPolygon } from "geojson";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
-import { getMapShape, submitGuess } from "@/lib/api";
+import { getMapShape, getTodayProgress, submitGuess } from "@/lib/api";
 import { EmpireMap } from "@/map/EmpireMap";
 import type { MapLocale, MapStage } from "@/map/geo";
 import { mapStageForMode, type MapMode } from "@/map/stage";
 import { openStats } from "@/lib/dialogs";
 import { loadGameProgress, saveGameProgress, type GameProgress, type GuessHistoryEntry } from "@/lib/gameStorage";
 import { pickLocalized } from "@/lib/pickLocalized";
+import { reconcileProgress } from "@/lib/reconcileProgress";
 import {
   comparisonFromApi,
   EMPTY_REVEAL,
@@ -86,7 +87,50 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
     ),
   };
 
-  return <PlayBoard session={session} empires={empires} initial={loadGameProgress(challenge.date)} />;
+  return <DailyBoard session={session} empires={empires} />;
+}
+
+// The daily board starts from this browser's saved copy, then checks it
+// against the server, which keeps the guesses: signed in on a second device
+// (or after the browser storage was cleared) the board is rebuilt with the
+// real guesses instead of starting over. Skipped once a guess has been sent
+// from this board, so a late answer can't roll it back.
+function DailyBoard({ session, empires }: { session: PlaySession; empires: EmpireSummary[] }) {
+  const t = useTranslations("Game");
+  const unknownGuess = t("unknownGuess");
+  const { key: date } = session;
+  const [board, setBoard] = useState(() => ({ initial: loadGameProgress(date), version: 0 }));
+  const touched = useRef(false);
+
+  useEffect(() => {
+    let current = true;
+    getTodayProgress().then(
+      (server) => {
+        if (!current || touched.current || server.date !== date) return;
+        setBoard((prev) => {
+          const next = reconcileProgress(date, prev.initial, server, unknownGuess);
+          if (next === prev.initial) return prev;
+          if (next) saveGameProgress(next);
+          return { initial: next, version: prev.version + 1 };
+        });
+      },
+      // API unreachable: the saved copy is all there is, as before.
+      () => {},
+    );
+    return () => {
+      current = false;
+    };
+  }, [date, unknownGuess]);
+
+  const tracked: PlaySession = {
+    ...session,
+    submit: (empireId) => {
+      touched.current = true;
+      return session.submit(empireId);
+    },
+  };
+
+  return <PlayBoard key={board.version} session={tracked} empires={empires} initial={board.initial} />;
 }
 
 // The board itself. Reads no storage: callers pass the saved progress, and

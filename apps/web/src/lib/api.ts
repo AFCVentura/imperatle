@@ -2,6 +2,7 @@ import type { MultiPolygon } from "geojson";
 import type {
   ArchiveChallenge,
   ArchiveList,
+  ChallengeProgress,
   ChallengeReveal,
   EmpireSummary,
   GuessComparison,
@@ -47,7 +48,16 @@ export async function submitGuess(empireId: number): Promise<GuessResponse> {
   return res.json();
 }
 
-// The player's own history (identified by the anonymous cookie) plus
+// The player's own game today as the server has it, guesses included: the
+// account's when signed in, so a second device shows the same board.
+export async function getTodayProgress(): Promise<ChallengeProgress> {
+  const res = await fetch(`${API_URL}/challenges/today/progress`, { cache: "no-store", credentials: "include" });
+  if (!res.ok) throw new Error(`Failed to load today's progress: ${res.status}`);
+  return res.json();
+}
+
+// The player's own history (the account's when signed in, otherwise this
+// browser's anonymous cookie) plus
 // everyone's results for today.
 export async function getStats(): Promise<StatsResponse> {
   const res = await fetch(`${API_URL}/stats`, { cache: "no-store", credentials: "include" });

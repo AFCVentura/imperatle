@@ -28,7 +28,7 @@ const privacy: Record<Locale, LegalDocument> = {
         heading: "What is collected",
         items: [
           "A random identifier stored in a cookie (imperatle_aid) the first time you guess. It isn't linked to your name, e-mail or device; it only lets the server count your attempts and keep your statistics.",
-          "Your games: the date, how many attempts you used and whether you got it right, linked to that identifier.",
+          "Your games: the date, the empires you guessed, how many attempts you used and whether you got it right (and, for supporters, past games and practice rounds), linked to that identifier.",
           "Only if you sign in with Google: your name, e-mail address and Google account identifier, plus a login cookie (imperatle_session). Your games are then linked to your account, so your statistics follow you on every device. The game never sees your Google password.",
           "Your progress of the day, saved in your own browser (local storage) so the board survives a page reload. It never leaves your device.",
           "Feedback you send: the message, its type, the site language and, only if you fill it in, your e-mail address.",
@@ -89,7 +89,7 @@ const privacy: Record<Locale, LegalDocument> = {
         heading: "O que é coletado",
         items: [
           "Um identificador aleatório guardado num cookie (imperatle_aid) no seu primeiro palpite. Ele não está ligado ao seu nome, e-mail ou aparelho; só serve para o servidor contar suas tentativas e guardar suas estatísticas.",
-          "Seus jogos: a data, quantas tentativas você usou e se acertou, ligados a esse identificador.",
+          "Seus jogos: a data, os impérios dos seus palpites, quantas tentativas você usou e se acertou (e, para apoiadores, os jogos passados e as rodadas de treino), ligados a esse identificador.",
           "Só se você entrar com o Google: seu nome, seu e-mail e o identificador da sua conta Google, mais um cookie de login (imperatle_session). Seus jogos passam a ficar ligados à sua conta, e suas estatísticas te acompanham em qualquer aparelho. O jogo nunca vê sua senha do Google.",
           "Seu progresso do dia, salvo no seu próprio navegador (armazenamento local) para o tabuleiro sobreviver a um recarregamento da página. Ele não sai do seu aparelho.",
           "O feedback que você envia: a mensagem, o tipo, o idioma do site e, só se você preencher, seu e-mail.",
