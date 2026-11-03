@@ -12,6 +12,7 @@ public class ImperatleDbContext(DbContextOptions<ImperatleDbContext> options) : 
     public DbSet<PlayerChallengeProgress> PlayerChallengeProgress => Set<PlayerChallengeProgress>();
     public DbSet<Feedback> Feedback => Set<Feedback>();
     public DbSet<User> Users => Set<User>();
+    public DbSet<UserSession> UserSessions => Set<UserSession>();
     public DbSet<ProcessedWebhookEvent> ProcessedWebhookEvents => Set<ProcessedWebhookEvent>();
     public DbSet<PracticeSession> PracticeSessions => Set<PracticeSession>();
 
@@ -61,6 +62,17 @@ public class ImperatleDbContext(DbContextOptions<ImperatleDbContext> options) : 
             .WithMany()
             .HasForeignKey(p => p.UserId)
             .OnDelete(DeleteBehavior.Cascade);
+
+        // Login sessions: looked up by id on every signed-in request, revoked
+        // all at once by user, deleted with the account.
+        modelBuilder.Entity<UserSession>(session =>
+        {
+            session.HasIndex(s => s.UserId);
+            session.HasOne<User>()
+                .WithMany()
+                .HasForeignKey(s => s.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+        });
 
         modelBuilder.Entity<PracticeSession>(session =>
         {

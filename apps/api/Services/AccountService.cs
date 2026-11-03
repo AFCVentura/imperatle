@@ -102,6 +102,7 @@ public static class AccountService
 
         db.PlayerChallengeProgress.RemoveRange(db.PlayerChallengeProgress.Where(p => p.UserId == userId));
         db.PracticeSessions.RemoveRange(db.PracticeSessions.Where(s => s.UserId == userId));
+        db.UserSessions.RemoveRange(db.UserSessions.Where(s => s.UserId == userId));
         db.Users.Remove(user);
         await db.SaveChangesAsync(ct);
         return true;

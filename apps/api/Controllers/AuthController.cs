@@ -75,19 +75,27 @@ public class AuthController(
             AnonymousIdentity.Issue(Request, Response);
         }
 
-        var identity = new ClaimsIdentity([new Claim(AuthConstants.UserIdClaim, user.Id.ToString())], AuthConstants.SessionScheme);
-        await HttpContext.SignInAsync(
-            AuthConstants.SessionScheme,
-            new ClaimsPrincipal(identity),
-            new AuthenticationProperties { IsPersistent = true });
+        await UserSessions.SignInAsync(HttpContext, db, user.Id, ct);
 
         return Redirect(returnUrl);
     }
 
+    // Ends this browser's session on the server too, so a copy of the cookie
+    // stops working. With ?all=true every session of the account ends ("sign
+    // out of all devices").
     [HttpPost("logout")]
     [RequireAllowedOrigin]
-    public async Task<IActionResult> Logout()
+    public async Task<IActionResult> Logout([FromQuery] bool all, CancellationToken ct)
     {
+        if (all && player.UserId is Guid userId)
+        {
+            await UserSessions.RevokeAllAsync(db, userId, ct);
+        }
+        else if (UserSessions.GetSessionId(User) is Guid sessionId)
+        {
+            await UserSessions.RevokeAsync(db, sessionId, ct);
+        }
+
         await HttpContext.SignOutAsync(AuthConstants.SessionScheme);
         // A fresh anonymous id: the next person on this browser starts clean
         // instead of continuing this account's game of the day.

@@ -453,6 +453,31 @@ namespace Imperatle.Api.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("Imperatle.Api.Models.UserSession", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("LastSeenUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("RevokedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserSessions");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.DataProtection.EntityFrameworkCore.DataProtectionKey", b =>
                 {
                     b.Property<int>("Id")
@@ -524,6 +549,15 @@ namespace Imperatle.Api.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Empire");
+                });
+
+            modelBuilder.Entity("Imperatle.Api.Models.UserSession", b =>
+                {
+                    b.HasOne("Imperatle.Api.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Imperatle.Api.Models.Empire", b =>

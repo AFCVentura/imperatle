@@ -19,5 +19,8 @@ public static class AuthConstants
     // Our own User.Id inside the login cookie.
     public const string UserIdClaim = "imperatle:uid";
 
+    // The server-side session (UserSession.Id) the login cookie belongs to.
+    public const string SessionIdClaim = "imperatle:sid";
+
     public const string ReturnUrlItem = "returnUrl";
 }
