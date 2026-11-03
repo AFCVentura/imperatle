@@ -15,6 +15,7 @@ import { FeedbackDialog } from "./FeedbackDialog";
 import { StatsDialog } from "./StatsDialog";
 import { AccountDialog } from "./AccountDialog";
 import { SupportDialog } from "./SupportDialog";
+import { AdSlot } from "./AdSlot";
 import { SITE_URL } from "@/lib/site";
 import "../globals.css";
 
@@ -97,6 +98,8 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <Header />
           <main className="flex flex-1 flex-col">{children}</main>
+          {/* Reserved ad place: renders nothing today, never for supporters. */}
+          <AdSlot placement="footer" />
           <Footer challengeNumber={challengeNumber} />
           <HowToPlayDialog attemptsAllowed={attemptsAllowed} />
           <StatsDialog />
