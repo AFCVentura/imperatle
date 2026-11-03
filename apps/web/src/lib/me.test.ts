@@ -96,6 +96,19 @@ describe("the shared /me store", () => {
     expect(getMeSnapshot()).toEqual(SIGNED_OUT);
   });
 
+  it("signs out of all devices through ?all=true", async () => {
+    respond(200, signedIn);
+    await refreshMe();
+    respond(204);
+
+    expect(await logout({ allDevices: true })).toBe(true);
+
+    const [url, init] = fetchMock.mock.calls[1];
+    expect(url).toMatch(/\/auth\/logout\?all=true$/);
+    expect(init).toMatchObject({ method: "POST", credentials: "include" });
+    expect(getMeSnapshot()).toEqual(SIGNED_OUT);
+  });
+
   it("forgets this browser's copies of the account's games on logout and deletion, not on failure", async () => {
     const store = new Map<string, string>();
     const localStorage = {

@@ -125,14 +125,24 @@ export function AccountDialog() {
             >
               {t("delete")}
             </button>
-            <button
-              type="button"
-              onClick={() => run(logout)}
-              disabled={busy}
-              className={`${buttonClass} bg-accent text-accent-foreground hover:bg-accent/85`}
-            >
-              {t("signOut")}
-            </button>
+            <div className="flex flex-wrap items-center justify-end gap-2">
+              <button
+                type="button"
+                onClick={() => run(() => logout({ allDevices: true }))}
+                disabled={busy}
+                className={`${buttonClass} border border-line hover:bg-surface`}
+              >
+                {t("signOutAll")}
+              </button>
+              <button
+                type="button"
+                onClick={() => run(() => logout())}
+                disabled={busy}
+                className={`${buttonClass} bg-accent text-accent-foreground hover:bg-accent/85`}
+              >
+                {t("signOut")}
+              </button>
+            </div>
           </div>
         </>
       )}

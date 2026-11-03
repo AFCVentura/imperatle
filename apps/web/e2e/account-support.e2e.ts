@@ -40,6 +40,7 @@ test.describe("account and support dialogs", () => {
     for (const origin of [undefined, "https://evil.example"]) {
       const headers = origin ? { Origin: origin } : undefined;
       expect((await request.post(`${API_URL}/auth/logout`, { headers })).status()).toBe(403);
+      expect((await request.post(`${API_URL}/auth/logout?all=true`, { headers })).status()).toBe(403);
       expect((await request.delete(`${API_URL}/me`, { headers })).status()).toBe(403);
     }
   });
@@ -55,7 +56,8 @@ test.describe("account and support dialogs", () => {
 
     const dialog = page.getByRole("dialog", { name: "Your account" });
     await expect(dialog).toContainText("ana@example.com");
-    await expect(dialog.getByRole("button", { name: "Sign out" })).toBeVisible();
+    await expect(dialog.getByRole("button", { name: "Sign out", exact: true })).toBeVisible();
+    await expect(dialog.getByRole("button", { name: "Sign out of all devices" })).toBeVisible();
     await dialog.getByRole("button", { name: "Delete account" }).click();
     await expect(dialog.getByText("Delete the account?")).toBeVisible();
     await expect(dialog.getByText("You also lose your supporter perks.")).toHaveCount(0);

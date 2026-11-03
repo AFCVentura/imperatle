@@ -97,8 +97,11 @@ function forgetLocalGames() {
   savePracticeRound(null);
 }
 
-export async function logout(): Promise<boolean> {
-  const res = await fetch(`${API_URL}/auth/logout`, { method: "POST", credentials: "include" }).catch(() => null);
+// Ends the session on the server too (a copy of the cookie stops working).
+// `allDevices` ends every session of the account, on every browser.
+export async function logout(options: { allDevices?: boolean } = {}): Promise<boolean> {
+  const path = options.allDevices ? "/auth/logout?all=true" : "/auth/logout";
+  const res = await fetch(`${API_URL}${path}`, { method: "POST", credentials: "include" }).catch(() => null);
   if (!res?.ok) return false;
   forgetLocalGames();
   set(SIGNED_OUT);

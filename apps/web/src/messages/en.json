@@ -297,6 +297,7 @@
     "signedInAs": "Signed in as",
     "supporter": "Supporter",
     "signOut": "Sign out",
+    "signOutAll": "Sign out of all devices",
     "delete": "Delete account",
     "confirmTitle": "Delete the account?",
     "confirmText": "This erases your account and every game linked to it. It can't be undone.",
