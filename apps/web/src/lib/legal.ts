@@ -20,15 +20,16 @@ type Locale = "en" | "pt";
 const privacy: Record<Locale, LegalDocument> = {
   en: {
     title: "Privacy Policy",
-    updated: "Last updated: October 7, 2026",
+    updated: "Last updated: November 3, 2026",
     intro:
-      "Imperatle is a free daily game made by one person, Ventura, a developer based in Brazil, who is responsible for the data described here. The game collects as little as it can: you don't need an account, and nothing here is used for advertising or sold.",
+      "Imperatle is a free daily game made by one person, Ventura, a developer based in Brazil, who is responsible for the data described here. The game collects as little as it can: an account is optional, and nothing here is used for advertising or sold.",
     sections: [
       {
         heading: "What is collected",
         items: [
           "A random identifier stored in a cookie (imperatle_aid) the first time you guess. It isn't linked to your name, e-mail or device; it only lets the server count your attempts and keep your statistics.",
           "Your games: the date, how many attempts you used and whether you got it right, linked to that identifier.",
+          "Only if you sign in with Google: your name, e-mail address and Google account identifier, plus a login cookie (imperatle_session). Your games are then linked to your account, so your statistics follow you on every device. The game never sees your Google password.",
           "Your progress of the day, saved in your own browser (local storage) so the board survives a page reload. It never leaves your device.",
           "Feedback you send: the message, its type, the site language and, only if you fill it in, your e-mail address.",
           "Your IP address, used for a few minutes to limit how many guesses and messages can be sent in a row. It isn't stored by the game, although the hosting providers below may keep it in their technical logs.",
@@ -46,6 +47,7 @@ const privacy: Record<Locale, LegalDocument> = {
         paragraphs: ["The game relies on these providers, each under its own privacy terms:"],
         items: [
           "Vercel (website hosting and page analytics), United States.",
+          "Google (sign-in, only if you use it), United States.",
           "Microsoft Azure (game server).",
           "Neon (database).",
           "Resend (forwards feedback messages by e-mail), United States.",
@@ -54,13 +56,13 @@ const privacy: Record<Locale, LegalDocument> = {
       {
         heading: "How long it is kept",
         paragraphs: [
-          "Game records are kept while the game exists, since they make up your statistics and the daily results. Feedback is kept for as long as it's needed to handle it. The cookie expires one year after it is created.",
+          "Game records are kept while the game exists, since they make up your statistics and the daily results. Feedback is kept for as long as it's needed to handle it. The cookie expires one year after it is created. An account is kept until you delete it.",
         ],
       },
       {
         heading: "Your rights",
         paragraphs: [
-          "Under Brazil's LGPD and, where it applies, the European GDPR, you can ask to access, correct or delete your data, or object to its use. Send the request through the Feedback form in the menu. Deleting your browser's cookies and site data also cuts the link between you and your game history.",
+          "Under Brazil's LGPD and, where it applies, the European GDPR, you can ask to access, correct or delete your data, or object to its use. Send the request through the Feedback form in the menu. If you have an account, you can delete it and every game linked to it at any time from the menu. Deleting your browser's cookies and site data also cuts the link between you and your game history.",
         ],
       },
       {
@@ -70,22 +72,23 @@ const privacy: Record<Locale, LegalDocument> = {
       {
         heading: "Changes",
         paragraphs: [
-          "This policy will change when new features arrive (accounts and support, for example). The date at the top shows the latest version.",
+          "This policy will change when new features arrive (support, for example). The date at the top shows the latest version.",
         ],
       },
     ],
   },
   pt: {
     title: "Política de Privacidade",
-    updated: "Atualizada em 7 de outubro de 2026",
+    updated: "Atualizada em 3 de novembro de 2026",
     intro:
-      "O Imperatle é um jogo diário e gratuito, feito por uma pessoa só: Ventura, desenvolvedor no Brasil, que é o responsável pelos dados descritos aqui. O jogo coleta o mínimo possível: não precisa de conta, e nada aqui é usado para publicidade ou vendido.",
+      "O Imperatle é um jogo diário e gratuito, feito por uma pessoa só: Ventura, desenvolvedor no Brasil, que é o responsável pelos dados descritos aqui. O jogo coleta o mínimo possível: a conta é opcional, e nada aqui é usado para publicidade ou vendido.",
     sections: [
       {
         heading: "O que é coletado",
         items: [
           "Um identificador aleatório guardado num cookie (imperatle_aid) no seu primeiro palpite. Ele não está ligado ao seu nome, e-mail ou aparelho; só serve para o servidor contar suas tentativas e guardar suas estatísticas.",
           "Seus jogos: a data, quantas tentativas você usou e se acertou, ligados a esse identificador.",
+          "Só se você entrar com o Google: seu nome, seu e-mail e o identificador da sua conta Google, mais um cookie de login (imperatle_session). Seus jogos passam a ficar ligados à sua conta, e suas estatísticas te acompanham em qualquer aparelho. O jogo nunca vê sua senha do Google.",
           "Seu progresso do dia, salvo no seu próprio navegador (armazenamento local) para o tabuleiro sobreviver a um recarregamento da página. Ele não sai do seu aparelho.",
           "O feedback que você envia: a mensagem, o tipo, o idioma do site e, só se você preencher, seu e-mail.",
           "Seu endereço IP, usado por alguns minutos para limitar quantos palpites e mensagens podem ser enviados seguidos. O jogo não o guarda, mas os provedores de hospedagem abaixo podem mantê-lo nos registros técnicos deles.",
@@ -103,6 +106,7 @@ const privacy: Record<Locale, LegalDocument> = {
         paragraphs: ["O jogo depende destes provedores, cada um com seus próprios termos de privacidade:"],
         items: [
           "Vercel (hospedagem do site e contagem de visitas), Estados Unidos.",
+          "Google (login, só se você usar), Estados Unidos.",
           "Microsoft Azure (servidor do jogo).",
           "Neon (banco de dados).",
           "Resend (encaminha as mensagens de feedback por e-mail), Estados Unidos.",
@@ -111,13 +115,13 @@ const privacy: Record<Locale, LegalDocument> = {
       {
         heading: "Por quanto tempo",
         paragraphs: [
-          "Os registros de jogo ficam guardados enquanto o jogo existir, porque formam suas estatísticas e os resultados de cada dia. O feedback fica guardado pelo tempo necessário para tratá-lo. O cookie expira um ano depois de ser criado.",
+          "Os registros de jogo ficam guardados enquanto o jogo existir, porque formam suas estatísticas e os resultados de cada dia. O feedback fica guardado pelo tempo necessário para tratá-lo. O cookie expira um ano depois de ser criado. A conta fica guardada até você excluí-la.",
         ],
       },
       {
         heading: "Seus direitos",
         paragraphs: [
-          "Pela LGPD e, quando se aplicar, pelo GDPR europeu, você pode pedir acesso, correção ou exclusão dos seus dados, ou se opor ao uso deles. Faça o pedido pelo formulário de Feedback no menu. Apagar os cookies e os dados do site no seu navegador também desfaz a ligação entre você e seu histórico de jogos.",
+          "Pela LGPD e, quando se aplicar, pelo GDPR europeu, você pode pedir acesso, correção ou exclusão dos seus dados, ou se opor ao uso deles. Faça o pedido pelo formulário de Feedback no menu. Se você tem conta, pode excluí-la a qualquer momento pelo menu, junto com todos os jogos ligados a ela. Apagar os cookies e os dados do site no seu navegador também desfaz a ligação entre você e seu histórico de jogos.",
         ],
       },
       {
@@ -127,7 +131,7 @@ const privacy: Record<Locale, LegalDocument> = {
       {
         heading: "Mudanças",
         paragraphs: [
-          "Esta política vai mudar quando chegarem recursos novos (contas e apoio, por exemplo). A data no topo mostra a versão mais recente.",
+          "Esta política vai mudar quando chegarem recursos novos (apoio, por exemplo). A data no topo mostra a versão mais recente.",
         ],
       },
     ],
