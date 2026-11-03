@@ -1,4 +1,5 @@
 using Imperatle.Api.Data;
+using Imperatle.Api.Game;
 using Imperatle.Api.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -41,11 +42,21 @@ public static class AccountService
     public static async Task<int> ClaimAnonymousProgressAsync(
         ImperatleDbContext db, Guid anonymousId, Guid userId, CancellationToken ct = default)
     {
+        // Practice rounds played signed out follow the player too.
+        var practice = await db.PracticeSessions
+            .Where(s => s.AnonymousId == anonymousId && s.UserId == null)
+            .ToListAsync(ct);
+        foreach (var session in practice)
+        {
+            session.UserId = userId;
+        }
+
         var anonymousRows = await db.PlayerChallengeProgress
             .Where(p => p.AnonymousId == anonymousId && p.UserId == null)
             .ToListAsync(ct);
         if (anonymousRows.Count == 0)
         {
+            await db.SaveChangesAsync(ct);
             return 0;
         }
 
@@ -81,10 +92,33 @@ public static class AccountService
         }
 
         db.PlayerChallengeProgress.RemoveRange(db.PlayerChallengeProgress.Where(p => p.UserId == userId));
+        db.PracticeSessions.RemoveRange(db.PracticeSessions.Where(s => s.UserId == userId));
         db.Users.Remove(user);
         await db.SaveChangesAsync(ct);
         return true;
     }
+
+    // Every daily-game row that is this player's: signed in, the account's
+    // rows (wherever they were played) plus this browser's rows not yet tagged
+    // to any account; signed out, this browser's rows. The daily game, the
+    // stats, the archive and the dev tools all read through this, so they
+    // always agree on whose games they are.
+    public static IQueryable<PlayerChallengeProgress> ProgressOf(ImperatleDbContext db, Guid? anonymousId, Guid? userId)
+    {
+        if (userId is Guid user)
+        {
+            return anonymousId is Guid browser
+                ? db.PlayerChallengeProgress.Where(p => p.UserId == user || (p.AnonymousId == browser && p.UserId == null))
+                : db.PlayerChallengeProgress.Where(p => p.UserId == user);
+        }
+
+        return anonymousId is Guid id
+            ? db.PlayerChallengeProgress.Where(p => p.AnonymousId == id)
+            : db.PlayerChallengeProgress.Where(_ => false);
+    }
+
+    public static IQueryable<PlayerChallengeProgress> ProgressOf(ImperatleDbContext db, ICurrentPlayer player) =>
+        ProgressOf(db, player.AnonymousId, player.UserId);
 
     // The player's game for a day: the account's when signed in (wherever it
     // was played), otherwise this browser's. A signed-in player's untagged
@@ -92,29 +126,17 @@ public static class AccountService
     public static async Task<PlayerChallengeProgress?> FindProgressAsync(
         ImperatleDbContext db, ICurrentPlayer player, DateOnly date, CancellationToken ct = default)
     {
-        var anonymousId = player.AnonymousId;
+        var rows = await ProgressOf(db, player).Where(p => p.Date == date).ToListAsync(ct);
+        var chosen = ArchiveRules.Preferred(rows);
 
-        if (player.UserId is not Guid userId)
+        // Only when the account has no row of its own that day (Preferred puts
+        // the account's first), so the one-row-per-account-per-day index holds.
+        if (chosen is not null && chosen.UserId is null && player.UserId is Guid userId)
         {
-            return await db.PlayerChallengeProgress
-                .FirstOrDefaultAsync(p => p.AnonymousId == anonymousId && p.Date == date, ct);
+            chosen.UserId = userId;
         }
 
-        var own = await db.PlayerChallengeProgress
-            .FirstOrDefaultAsync(p => p.UserId == userId && p.Date == date, ct);
-        if (own is not null)
-        {
-            return own;
-        }
-
-        var browser = await db.PlayerChallengeProgress
-            .FirstOrDefaultAsync(p => p.AnonymousId == anonymousId && p.Date == date && p.UserId == null, ct);
-        if (browser is not null)
-        {
-            browser.UserId = userId;
-        }
-
-        return browser;
+        return chosen;
     }
 
     private static string Truncate(string value, int max) => value.Length <= max ? value : value[..max];

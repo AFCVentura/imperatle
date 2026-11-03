@@ -38,7 +38,7 @@ public class ArchiveController(ImperatleDbContext db, ICurrentPlayer player) : C
             .Select(c => c.Date)
             .ToListAsync(ct);
 
-        var progressByDate = (await MyProgress()
+        var progressByDate = (await AccountService.ProgressOf(db, player)
                 .AsNoTracking()
                 .Where(p => p.Date < today)
                 .ToListAsync(ct))
@@ -98,7 +98,7 @@ public class ArchiveController(ImperatleDbContext db, ICurrentPlayer player) : C
             return BadRequest();
         }
 
-        var progress = await FindProgressAsync(date, ct, tracking: true);
+        var progress = await AccountService.FindProgressAsync(db, player, date, ct);
         if (progress is null)
         {
             progress = new PlayerChallengeProgress
@@ -120,6 +120,7 @@ public class ArchiveController(ImperatleDbContext db, ICurrentPlayer player) : C
         // later from here: the result no longer counts as played on its day.
         progress.FromArchive = true;
         progress.AttemptsUsed++;
+        progress.GuessedSlugs = [.. progress.GuessedSlugs, guessedEmpire.Slug];
         var attemptNumber = progress.AttemptsUsed;
 
         var correct = request.EmpireId == challenge.EmpireId;
@@ -154,21 +155,11 @@ public class ArchiveController(ImperatleDbContext db, ICurrentPlayer player) : C
             .FirstOrDefaultAsync(c => c.Date == date, ct);
     }
 
-    // The account's rows as well as this browser's, once logged in.
-    private IQueryable<PlayerChallengeProgress> MyProgress()
-    {
-        var anonymousId = player.AnonymousId;
-        return player.UserId is { } userId
-            ? db.PlayerChallengeProgress.Where(p => p.UserId == userId || p.AnonymousId == anonymousId)
-            : db.PlayerChallengeProgress.Where(p => p.AnonymousId == anonymousId);
-    }
-
-    private async Task<PlayerChallengeProgress?> FindProgressAsync(DateOnly date, CancellationToken ct, bool tracking = false)
-    {
-        var query = MyProgress().Where(p => p.Date == date);
-        var rows = await (tracking ? query : query.AsNoTracking()).ToListAsync(ct);
-        return ArchiveRules.Preferred(rows);
-    }
+    private async Task<PlayerChallengeProgress?> FindProgressAsync(DateOnly date, CancellationToken ct) =>
+        ArchiveRules.Preferred(await AccountService.ProgressOf(db, player)
+            .AsNoTracking()
+            .Where(p => p.Date == date)
+            .ToListAsync(ct));
 
     private async Task<ArchiveChallengeResponse> BuildResponseAsync(DailyChallenge challenge, PlayerChallengeProgress? progress, CancellationToken ct)
     {
@@ -186,6 +177,7 @@ public class ArchiveController(ImperatleDbContext db, ICurrentPlayer player) : C
             completed,
             progress?.Correct ?? false,
             !completed && attemptsUsed > 0 ? RevealBuilder.BuildReveal(empire, attemptsUsed) : null,
-            completed ? RevealBuilder.BuildAnswer(empire) : null);
+            completed ? RevealBuilder.BuildAnswer(empire) : null,
+            progress is null ? [] : await PlayedGuesses.BuildAsync(db, progress.GuessedSlugs, empire, ct));
     }
 }

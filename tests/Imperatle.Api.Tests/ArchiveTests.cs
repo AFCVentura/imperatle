@@ -199,7 +199,7 @@ public class ArchiveTests
 
         var context = new DefaultHttpContext();
         context.Request.Headers.Cookie = $"{ChallengesController.AnonymousCookieName}={anonymousId}";
-        var controller = new StatsController(db) { ControllerContext = new ControllerContext { HttpContext = context } };
+        var controller = new StatsController(db, new FakePlayer(false, anonymousId)) { ControllerContext = new ControllerContext { HttpContext = context } };
 
         var stats = await controller.Get();
         Assert.Equal(2, stats.Me.Played);

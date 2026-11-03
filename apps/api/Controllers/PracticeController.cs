@@ -204,11 +204,13 @@ public class PracticeController(
         return (PracticeRules.Eligible(candidates, options, tiers, excludedId: null), todayEmpireId);
     }
 
+    // Same ownership rule as the daily game (AccountService.ProgressOf): the
+    // account's rounds plus this browser's untagged ones once signed in.
     private IQueryable<PracticeSession> MySessions()
     {
         var anonymousId = player.AnonymousId;
         return player.UserId is { } userId
-            ? db.PracticeSessions.Where(s => s.UserId == userId || s.AnonymousId == anonymousId)
+            ? db.PracticeSessions.Where(s => s.UserId == userId || (s.AnonymousId == anonymousId && s.UserId == null))
             : db.PracticeSessions.Where(s => s.AnonymousId == anonymousId);
     }
 

@@ -17,7 +17,8 @@ public record ArchiveListResponse(DateOnly Today, int AttemptsAllowed, List<Arch
 public record ArchiveDay(DateOnly Date, int ChallengeNumber, ArchiveStatus Status, int AttemptsUsed);
 
 // One past day, with the player's server-side progress on it: the clues
-// unlocked so far mid-round, the full answer only once it's over.
+// unlocked so far mid-round, the full answer only once it's over, and the
+// guesses made so far (to rebuild the board on another device).
 public record ArchiveChallengeResponse(
     DateOnly Date,
     int ChallengeNumber,
@@ -27,4 +28,5 @@ public record ArchiveChallengeResponse(
     bool Completed,
     bool Correct,
     ChallengeReveal? Reveal,
-    EmpireAnswer? Answer);
+    EmpireAnswer? Answer,
+    List<PlayedGuess> Guesses);

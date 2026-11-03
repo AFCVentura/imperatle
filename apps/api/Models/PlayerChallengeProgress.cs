@@ -23,6 +23,11 @@ public class PlayerChallengeProgress
     public bool Correct { get; set; }
     public DateTime? CompletedAtUtc { get; set; }
 
+    // The empires guessed so far, in order (slugs). The attempt count above
+    // stays the authority; this only lets a second device, or a browser with
+    // cleared storage, rebuild the board with the real guesses.
+    public List<string> GuessedSlugs { get; set; } = [];
+
     // True once a guess for this date came from the archive (a supporter
     // playing a past day). Such games keep their result for the archive but
     // stay out of the daily statistics and streaks, which only count games
