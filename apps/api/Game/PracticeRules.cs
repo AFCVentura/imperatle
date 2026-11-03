@@ -13,11 +13,13 @@ public static class PracticeRules
     // the filters leave nothing else.
     public const int RecentRoundsHeldBack = 10;
 
-    // Options must match at least this many empires. Today's daily empire is
-    // skipped when drawing a round, and with two or more there is always
-    // another one left: whether a combination can start never depends on
-    // what today's empire is.
+    // Options must match at least this many empires: with a single one,
+    // every round would be the same empire.
     public const int MinPoolSize = 2;
+
+    // The 409 code every practice endpoint answers until today's daily game
+    // is over (see PracticeController).
+    public const string DailyNotFinished = "daily_not_finished";
 
     // What a practice round may be drawn from: one active empire with a map.
     public record Candidate(int Id, string Slug, long PeakAreaKm2, int ReferenceYear, IReadOnlyCollection<Continent> PrimaryContinents);
@@ -29,15 +31,13 @@ public static class PracticeRules
         && (options.Era is null || Enum.IsDefined(options.Era.Value))
         && (options.Continent is null || Enum.IsDefined(options.Continent.Value));
 
-    // The ids matching the options, minus `excludedId` when given.
+    // The ids matching the options.
     public static List<int> Eligible(
         IEnumerable<Candidate> candidates,
         PracticeOptions options,
-        PracticeDifficultyTiers tiers,
-        int? excludedId)
+        PracticeDifficultyTiers tiers)
     {
         return candidates
-            .Where(c => c.Id != excludedId)
             .Where(c => options.Difficulty == PracticeDifficulty.Any || tiers.TierFor(c.Slug, c.PeakAreaKm2) == options.Difficulty)
             .Where(c => options.Era is null || RevealBuilder.ComputeBroadEra(c.ReferenceYear) == options.Era)
             .Where(c => options.Continent is null || c.PrimaryContinents.Contains(options.Continent.Value))

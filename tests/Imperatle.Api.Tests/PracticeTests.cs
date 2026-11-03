@@ -102,13 +102,12 @@ public class PracticeTests
             new(4, "small", 100, -500, [Continent.Africa]),
         };
 
-        Assert.Equal([1, 2, 3, 4], PracticeRules.Eligible(candidates, new PracticeOptions(), Tiers, null));
-        Assert.Equal([1, 3], PracticeRules.Eligible(candidates, new PracticeOptions(PracticeDifficulty.Easy), Tiers, null));
-        Assert.Equal([2, 4], PracticeRules.Eligible(candidates, new PracticeOptions(PracticeDifficulty.Hard), Tiers, null));
-        Assert.Equal([1, 2, 4], PracticeRules.Eligible(candidates, new PracticeOptions(Era: BroadEra.Antiquity), Tiers, null));
-        Assert.Equal([3], PracticeRules.Eligible(candidates, new PracticeOptions(Era: BroadEra.Modern), Tiers, null));
-        Assert.Equal([1, 3], PracticeRules.Eligible(candidates, new PracticeOptions(Continent: Continent.Europe), Tiers, null));
-        Assert.Equal([3], PracticeRules.Eligible(candidates, new PracticeOptions(Continent: Continent.Europe), Tiers, excludedId: 1));
+        Assert.Equal([1, 2, 3, 4], PracticeRules.Eligible(candidates, new PracticeOptions(), Tiers));
+        Assert.Equal([1, 3], PracticeRules.Eligible(candidates, new PracticeOptions(PracticeDifficulty.Easy), Tiers));
+        Assert.Equal([2, 4], PracticeRules.Eligible(candidates, new PracticeOptions(PracticeDifficulty.Hard), Tiers));
+        Assert.Equal([1, 2, 4], PracticeRules.Eligible(candidates, new PracticeOptions(Era: BroadEra.Antiquity), Tiers));
+        Assert.Equal([3], PracticeRules.Eligible(candidates, new PracticeOptions(Era: BroadEra.Modern), Tiers));
+        Assert.Equal([1, 3], PracticeRules.Eligible(candidates, new PracticeOptions(Continent: Continent.Europe), Tiers));
     }
 
     [Fact]
@@ -130,6 +129,7 @@ public class PracticeTests
         var db = NewDb();
         var empires = await SeedAsync(db, Enumerable.Range(0, empireCount).Select(i => Empire($"e{i}")).ToArray());
         var player = new FakePlayer(supporter: true);
+        await FinishTodayAsync(db, player);
         return (new PracticeController(db, player, Tiers).WithHttpContext(), player, empires, db);
     }
 
@@ -239,19 +239,101 @@ public class PracticeTests
         Assert.True(won.GameOver);
     }
 
+    // Once today's game is over its answer is no secret any more, so every
+    // empire can be drawn, today's included.
     [Fact]
-    public async Task Todays_daily_empire_is_never_drawn()
+    public async Task Todays_daily_empire_can_be_drawn_once_the_daily_game_is_over()
     {
         var (controller, _, _, db) = await SetupAsync(empireCount: 3);
         await using var _ = db;
         var today = await ChallengeScheduler.EnsureForDateAsync(db, GameClock.Today());
 
-        for (var i = 0; i < 40; i++)
+        for (var i = 0; i < 60; i++)
         {
             Started(await controller.Start(new PracticeOptions(), Ct));
         }
 
-        Assert.DoesNotContain(today.EmpireId, await db.PracticeSessions.Select(s => s.EmpireId).ToListAsync(Ct));
+        Assert.Contains(today.EmpireId, await db.PracticeSessions.Select(s => s.EmpireId).ToListAsync(Ct));
+    }
+
+    private static void AssertDailyNotFinished(IActionResult result)
+    {
+        var conflict = Assert.IsType<ConflictObjectResult>(result);
+        Assert.Equal(PracticeRules.DailyNotFinished, Assert.IsType<ErrorResponse>(conflict.Value).Code);
+    }
+
+    // Before today's game is over, practice could show today's empire (or
+    // leave it out, which gives it away by elimination): every endpoint
+    // answers 409, a resumed round too. Non-supporters still get 403 first.
+    [Fact]
+    public async Task Every_endpoint_waits_for_todays_game_to_be_over()
+    {
+        var db = NewDb();
+        await using var _ = db;
+        var empires = await SeedAsync(db, Empire("e0"), Empire("e1"), Empire("e2"));
+        var today = await ChallengeScheduler.EnsureForDateAsync(db, GameClock.Today());
+        var player = new FakePlayer(supporter: true);
+        var controller = new PracticeController(db, player, Tiers).WithHttpContext();
+        var daily = new ChallengesController(db, new TestEnvironment()).WithHttpContext();
+        var wrong = empires.Values.First(e => e.Id != today.EmpireId);
+
+        // A round from yesterday (or before a reset) still on the device.
+        var old = new PracticeSession
+        {
+            Id = Guid.NewGuid(),
+            AnonymousId = player.AnonymousId,
+            EmpireId = wrong.Id,
+            AttemptsAllowed = 7,
+            HintsEnabled = true,
+            CreatedAtUtc = DateTime.UtcNow,
+        };
+        db.PracticeSessions.Add(old);
+        await db.SaveChangesAsync(Ct);
+
+        async Task AllRefused()
+        {
+            AssertDailyNotFinished(await controller.Pool(new PracticeOptions(), Ct));
+            AssertDailyNotFinished(await controller.Start(new PracticeOptions(), Ct));
+            AssertDailyNotFinished(await controller.Get(old.Id, Ct));
+            AssertDailyNotFinished(await controller.GetMap(old.Id, Ct));
+            AssertDailyNotFinished(await controller.Guess(old.Id, new GuessRequest(wrong.Id), Ct));
+        }
+
+        // Not played yet, then halfway through.
+        await AllRefused();
+        await daily.Guess(new GuessRequest(wrong.Id), player);
+        await AllRefused();
+        Assert.Equal(0, (await db.PracticeSessions.SingleAsync(Ct)).AttemptsUsed);
+
+        player.Supporter = false;
+        Assert.Equal(403, Assert.IsType<StatusCodeResult>(await controller.Pool(new PracticeOptions(), Ct)).StatusCode);
+        player.Supporter = true;
+
+        // Lost on the last attempt: open.
+        for (var i = 1; i < GameRules.AttemptsAllowed; i++)
+        {
+            await daily.Guess(new GuessRequest(wrong.Id), player);
+        }
+        Assert.IsType<OkObjectResult>(await controller.Pool(new PracticeOptions(), Ct));
+        Started(await controller.Get(old.Id, Ct));
+        Started(await controller.Start(new PracticeOptions(), Ct));
+    }
+
+    [Fact]
+    public async Task Winning_today_opens_practice_and_signed_in_it_is_the_accounts_game()
+    {
+        var db = NewDb();
+        await using var _ = db;
+        await SeedAsync(db, Empire("e0"), Empire("e1"));
+        var today = await ChallengeScheduler.EnsureForDateAsync(db, GameClock.Today());
+        var userId = Guid.NewGuid();
+        var laptop = new FakePlayer(supporter: true, userId: userId);
+        var phone = new FakePlayer(supporter: true, userId: userId);
+        var onPhone = new PracticeController(db, phone, Tiers).WithHttpContext();
+
+        AssertDailyNotFinished(await onPhone.Pool(new PracticeOptions(), Ct));
+        await new ChallengesController(db, new TestEnvironment()).WithHttpContext().Guess(new GuessRequest(today.EmpireId), laptop);
+        Assert.IsType<OkObjectResult>(await onPhone.Pool(new PracticeOptions(), Ct));
     }
 
     [Fact]
@@ -266,7 +348,10 @@ public class PracticeTests
             await controller.Guess(session.Id, new GuessRequest(empires["e0"].Id), Ct);
         }
 
-        Assert.Empty(db.PlayerChallengeProgress);
+        // Still the one finished daily row from the setup, as it was.
+        var daily = await db.PlayerChallengeProgress.SingleAsync(Ct);
+        Assert.Equal(1, daily.AttemptsUsed);
+        Assert.Empty(daily.GuessedSlugs);
     }
 
     [Fact]
@@ -276,7 +361,9 @@ public class PracticeTests
         await using var _ = db;
         var session = Started(await controller.Start(new PracticeOptions(), Ct));
 
-        var stranger = new PracticeController(db, new FakePlayer(supporter: true), Tiers).WithHttpContext();
+        var strangerPlayer = new FakePlayer(supporter: true);
+        await FinishTodayAsync(db, strangerPlayer);
+        var stranger = new PracticeController(db, strangerPlayer, Tiers).WithHttpContext();
         Assert.IsType<NotFoundResult>(await stranger.Get(session.Id, Ct));
         Assert.IsType<NotFoundResult>(await stranger.GetMap(session.Id, Ct));
         Assert.IsType<NotFoundResult>(await stranger.Guess(session.Id, new GuessRequest(empires["e0"].Id), Ct));
@@ -285,4 +372,14 @@ public class PracticeTests
         Assert.Equal(Shape, map.Content);
         Assert.StartsWith("private", controller.Response.Headers.CacheControl.ToString());
     }
+}
+
+internal sealed class TestEnvironment : Microsoft.AspNetCore.Hosting.IWebHostEnvironment
+{
+    public string EnvironmentName { get; set; } = "Production";
+    public string ApplicationName { get; set; } = "Imperatle.Api";
+    public string WebRootPath { get; set; } = "";
+    public Microsoft.Extensions.FileProviders.IFileProvider WebRootFileProvider { get; set; } = new Microsoft.Extensions.FileProviders.NullFileProvider();
+    public string ContentRootPath { get; set; } = "";
+    public Microsoft.Extensions.FileProviders.IFileProvider ContentRootFileProvider { get; set; } = new Microsoft.Extensions.FileProviders.NullFileProvider();
 }

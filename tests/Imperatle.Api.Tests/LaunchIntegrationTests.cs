@@ -200,7 +200,9 @@ public class LaunchIntegrationTests
     {
         var databaseName = Guid.NewGuid().ToString();
         var root = new InMemoryDatabaseRoot();
-        await using (var seed = new ImperatleDbContext(new DbContextOptionsBuilder<ImperatleDbContext>().UseInMemoryDatabase(databaseName, root).Options))
+        var player = new FakePlayer(true);
+        ImperatleDbContext OpenDb() => new(new DbContextOptionsBuilder<ImperatleDbContext>().UseInMemoryDatabase(databaseName, root).Options);
+        await using (var seed = OpenDb())
         {
             await SeedAsync(seed,
                 Empire("old-europe", peakYear: 100, continent: Continent.Europe),
@@ -212,12 +214,21 @@ public class LaunchIntegrationTests
         builder.WebHost.UseTestServer();
         builder.Services.AddControllers().AddApplicationPart(typeof(PracticeController).Assembly);
         builder.Services.AddDbContext<ImperatleDbContext>(o => o.UseInMemoryDatabase(databaseName, root));
-        builder.Services.AddScoped<ICurrentPlayer>(_ => new FakePlayer(true));
+        builder.Services.AddScoped<ICurrentPlayer>(_ => player);
         builder.Services.AddSingleton(new PracticeDifficultyTiers());
         await using var app = builder.Build();
         app.MapControllers();
         await app.StartAsync(Ct);
         var client = app.GetTestClient();
+
+        // Until today's game is over: 409 with the code the web app reads.
+        var waiting = await client.GetAsync("/practice/pool", Ct);
+        Assert.Equal(HttpStatusCode.Conflict, waiting.StatusCode);
+        Assert.Equal("""{"code":"daily_not_finished"}""", await waiting.Content.ReadAsStringAsync(Ct));
+        await using (var played = OpenDb())
+        {
+            await FinishTodayAsync(played, player);
+        }
 
         async Task<int> Count(string query)
         {

@@ -14,6 +14,10 @@ namespace Imperatle.Api.Controllers;
 // only ever holds its id, so the empire stays on the server until the round
 // ends, and attempts are counted here as in the daily game. Rounds never
 // touch PlayerChallengeProgress, so the daily stats and streak can't move.
+//
+// Practice opens only once today's daily game is over (won or lost): any
+// empire can be drawn, today's included, and before the daily game ends that
+// would be a way to see today's answer, or to find it by elimination.
 [ApiController]
 [Route("practice")]
 public class PracticeController(
@@ -21,14 +25,13 @@ public class PracticeController(
     ICurrentPlayer player,
     PracticeDifficultyTiers tiers) : ControllerBase
 {
-    // How many empires the options leave. Counted without holding back
-    // today's daily empire, so toggling filters can't hint at what it is.
+    // How many empires the options leave.
     [HttpGet("pool")]
     public async Task<IActionResult> Pool([FromQuery] PracticeOptions options, CancellationToken ct)
     {
-        if (!await player.IsSupporterAsync(ct))
+        if (await RefuseAsync(ct) is { } refused)
         {
-            return StatusCode(StatusCodes.Status403Forbidden);
+            return refused;
         }
 
         if (!PracticeRules.IsValid(options))
@@ -36,7 +39,7 @@ public class PracticeController(
             return BadRequest();
         }
 
-        var (pool, _) = await PoolAsync(options, ct);
+        var pool = await PoolAsync(options, ct);
         return Ok(new PracticePoolResponse(pool.Count));
     }
 
@@ -44,9 +47,9 @@ public class PracticeController(
     [EnableRateLimiting("guess")]
     public async Task<IActionResult> Start([FromBody] PracticeOptions options, CancellationToken ct)
     {
-        if (!await player.IsSupporterAsync(ct))
+        if (await RefuseAsync(ct) is { } refused)
         {
-            return StatusCode(StatusCodes.Status403Forbidden);
+            return refused;
         }
 
         if (!PracticeRules.IsValid(options))
@@ -54,12 +57,11 @@ public class PracticeController(
             return BadRequest();
         }
 
-        var (pool, todayEmpireId) = await PoolAsync(options, ct);
+        var pool = await PoolAsync(options, ct);
         if (pool.Count < PracticeRules.MinPoolSize)
         {
             return UnprocessableEntity();
         }
-        var eligible = pool.Where(id => id != todayEmpireId).ToList();
 
         var recent = await MySessions()
             .OrderByDescending(s => s.CreatedAtUtc)
@@ -72,7 +74,7 @@ public class PracticeController(
             Id = Guid.NewGuid(),
             AnonymousId = player.AnonymousId,
             UserId = player.UserId,
-            EmpireId = PracticeRules.Pick(eligible, recent, Random.Shared),
+            EmpireId = PracticeRules.Pick(pool, recent, Random.Shared),
             Difficulty = options.Difficulty,
             Era = options.Era,
             Continent = options.Continent,
@@ -91,9 +93,9 @@ public class PracticeController(
     [HttpGet("{id:guid}")]
     public async Task<IActionResult> Get(Guid id, CancellationToken ct)
     {
-        if (!await player.IsSupporterAsync(ct))
+        if (await RefuseAsync(ct) is { } refused)
         {
-            return StatusCode(StatusCodes.Status403Forbidden);
+            return refused;
         }
 
         var session = await FindAsync(id, ct);
@@ -118,9 +120,9 @@ public class PracticeController(
     [HttpGet("{id:guid}/map")]
     public async Task<IActionResult> GetMap(Guid id, CancellationToken ct)
     {
-        if (!await player.IsSupporterAsync(ct))
+        if (await RefuseAsync(ct) is { } refused)
         {
-            return StatusCode(StatusCodes.Status403Forbidden);
+            return refused;
         }
 
         var shape = await MySessions()
@@ -140,9 +142,9 @@ public class PracticeController(
     [EnableRateLimiting("guess")]
     public async Task<IActionResult> Guess(Guid id, [FromBody] GuessRequest request, CancellationToken ct)
     {
-        if (!await player.IsSupporterAsync(ct))
+        if (await RefuseAsync(ct) is { } refused)
         {
-            return StatusCode(StatusCodes.Status403Forbidden);
+            return refused;
         }
 
         var session = await FindAsync(id, ct, tracking: true);
@@ -183,9 +185,8 @@ public class PracticeController(
             : Ok(new GuessResponse(false, false, PracticeRules.RevealFor(session, session.Empire, attemptNumber), null, comparison));
     }
 
-    // The empires matching the options, and today's daily empire, which a
-    // round must skip: practice can't be a way to learn today's answer.
-    private async Task<(List<int> Pool, int? TodayEmpireId)> PoolAsync(PracticeOptions options, CancellationToken ct)
+    // The empires matching the options.
+    private async Task<List<int>> PoolAsync(PracticeOptions options, CancellationToken ct)
     {
         // About a hundred rows: filtering in memory keeps the tier rule in
         // one place (PracticeRules) instead of translating it to SQL.
@@ -196,12 +197,25 @@ public class PracticeController(
                 .ToListAsync(ct))
             .Select(e => new PracticeRules.Candidate(e.Id, e.Slug, e.PeakAreaKm2, e.ReferenceYear, e.PrimaryContinents));
 
-        var todayEmpireId = await db.DailyChallenges
-            .Where(c => c.Date == GameClock.Today())
-            .Select(c => (int?)c.EmpireId)
-            .FirstOrDefaultAsync(ct);
+        return PracticeRules.Eligible(candidates, options, tiers);
+    }
 
-        return (PracticeRules.Eligible(candidates, options, tiers, excludedId: null), todayEmpireId);
+    // Every endpoint, in this order: 403 for non-supporters, then 409
+    // "daily_not_finished" while today's daily game is still being played
+    // (the same game the daily board shows: AccountService.ProgressOf).
+    private async Task<IActionResult?> RefuseAsync(CancellationToken ct)
+    {
+        if (!await player.IsSupporterAsync(ct))
+        {
+            return StatusCode(StatusCodes.Status403Forbidden);
+        }
+
+        if (!await AccountService.HasFinishedAsync(db, player, GameClock.Today(), ct))
+        {
+            return Conflict(new ErrorResponse(PracticeRules.DailyNotFinished));
+        }
+
+        return null;
     }
 
     // Same ownership rule as the daily game (AccountService.ProgressOf): the

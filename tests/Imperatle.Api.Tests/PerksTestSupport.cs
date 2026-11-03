@@ -1,4 +1,5 @@
 using Imperatle.Api.Data;
+using Imperatle.Api.Game;
 using Imperatle.Api.Models;
 using Imperatle.Api.Services;
 using Microsoft.AspNetCore.Http;
@@ -51,6 +52,26 @@ internal static class PerksTestSupport
     {
         controller.ControllerContext = new ControllerContext { HttpContext = new DefaultHttpContext() };
         return controller;
+    }
+
+    // Today's daily game, over for this player (won, or lost on the last
+    // attempt): what practice waits for.
+    public static async Task FinishTodayAsync(ImperatleDbContext db, ICurrentPlayer player, bool won = true)
+    {
+        var today = GameClock.Today();
+        var challenge = await ChallengeScheduler.EnsureForDateAsync(db, today);
+        db.PlayerChallengeProgress.Add(new PlayerChallengeProgress
+        {
+            AnonymousId = player.AnonymousId,
+            UserId = player.UserId,
+            Date = today,
+            EmpireId = challenge.EmpireId,
+            AttemptsUsed = won ? 1 : GameRules.AttemptsAllowed,
+            Completed = true,
+            Correct = won,
+            CompletedAtUtc = DateTime.UtcNow,
+        });
+        await db.SaveChangesAsync();
     }
 
     public static async Task WrongGuessesAsync(Func<int, Task<IActionResult>> guess, int empireId, int count)

@@ -129,6 +129,15 @@ public static class AccountService
     public static IQueryable<PlayerChallengeProgress> ProgressOf(ImperatleDbContext db, ICurrentPlayer player) =>
         ProgressOf(db, player.AnonymousId, player.UserId);
 
+    // True once this player's game for the day is over, won or lost. Reads
+    // the same row the daily game plays on (ProgressOf, then Preferred).
+    public static async Task<bool> HasFinishedAsync(
+        ImperatleDbContext db, ICurrentPlayer player, DateOnly date, CancellationToken ct = default)
+    {
+        var rows = await ProgressOf(db, player).AsNoTracking().Where(p => p.Date == date).ToListAsync(ct);
+        return ArchiveRules.Preferred(rows)?.Completed ?? false;
+    }
+
     // The player's game for a day: the account's when signed in (wherever it
     // was played), otherwise this browser's. A signed-in player's untagged
     // browser row (played before the login, on this browser) is taken over.
