@@ -2,6 +2,7 @@ using System.Threading.RateLimiting;
 using Imperatle.Api.Auth;
 using Imperatle.Api.Data;
 using Imperatle.Api.Game;
+using Imperatle.Api.Payments;
 using Imperatle.Api.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.DataProtection;
@@ -28,6 +29,11 @@ builder.Services.AddHttpClient<FeedbackEmailService>(client =>
     client.BaseAddress = new Uri("https://api.resend.com/");
     client.Timeout = TimeSpan.FromSeconds(10);
 });
+
+// Paddle (Supporter purchase): webhook secret and price id, see README "Configuration".
+builder.Services.Configure<PaddleOptions>(builder.Configuration.GetSection(PaddleOptions.SectionName));
+builder.Services.AddScoped<PaddleWebhookProcessor>();
+builder.Services.AddSingleton(TimeProvider.System);
 
 // Comma-separated so an environment can replace the whole list with one
 // setting (Cors__AllowedOrigins); JSON arrays merge by index across files.

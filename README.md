@@ -47,7 +47,7 @@ The web app reads the API address from `NEXT_PUBLIC_API_URL` (`apps/web/.env.loc
 
 ## Configuration
 
-The API reads its settings from `appsettings*.json` and environment variables (`Section__Key`, e.g. `Auth__Google__ClientId`). Secrets go in environment variables, never in the repository.
+The API reads its settings from `appsettings*.json` and environment variables (`Section__Key`, e.g. `Auth__Google__ClientId`); the web app reads `NEXT_PUBLIC_*` variables at build time (`apps/web/.env.local` locally, the Vercel project settings in production). Secrets go in environment variables, never in the repository.
 
 | Setting (environment variable) | What it is |
 |---|---|
@@ -68,10 +68,28 @@ The web app reads `NEXT_PUBLIC_API_URL`.
 
 Step by step, in Portuguese: [docs/launch/google-oauth-setup.md](docs/launch/google-oauth-setup.md). The login cookie is encrypted with ASP.NET Core Data Protection keys stored in the database (`DataProtectionKeys` table), so logins survive deploys and work across replicas.
 
+### Paddle (Supporter purchase)
+
+The one-time "Supporter (lifetime)" purchase uses [Paddle Billing](https://developer.paddle.com) as merchant of record. Step-by-step account setup, in Portuguese: [docs/launch/paddle-setup.md](docs/launch/paddle-setup.md).
+
+| Variable | Where | What |
+|---|---|---|
+| `Paddle__WebhookSecret` | API (secret) | Secret key of the notification destination (Paddle > Developer tools > Notifications). Empty = every webhook is rejected. |
+| `Paddle__SupporterPriceId` | API | The Supporter price id (`pri_...`). Only a completed transaction containing this price grants Supporter. |
+| `Paddle__Environment` | API | `sandbox` (default) or `production`. Informative; the secret already belongs to one environment. |
+| `Paddle__WebhookToleranceSeconds` | API | How old a signed webhook may be before it's refused as stale. Default `300`. |
+| `NEXT_PUBLIC_PADDLE_CLIENT_TOKEN` | Web | Client-side token (`test_...` in sandbox, `live_...` in production), Paddle > Developer tools > Authentication. Public by design. |
+| `NEXT_PUBLIC_PADDLE_SUPPORTER_PRICE_ID` | Web | The same `pri_...` as `Paddle__SupporterPriceId`. |
+| `NEXT_PUBLIC_PADDLE_ENVIRONMENT` | Web | `sandbox` (default) or `production`. Must match the token. |
+
+Without the two web variables the Supporter dialog shows "not available yet" instead of the button.
+
+How it fits together: the browser opens Paddle's overlay checkout with `customData.userId` (buying requires being signed in); Paddle then calls `POST /webhooks/paddle`, which checks the `Paddle-Signature` HMAC over the raw body, refuses stale timestamps, records each event id so retries are applied once, sets `SupporterSinceUtc` on `transaction.completed` and clears it on an approved full refund or chargeback (`adjustment.created` / `adjustment.updated`).
+
 ## Tests
 
-- **API** (`tests/Imperatle.Api.Tests`, xUnit v3): scheduler rotation, content validation (including every shipped empire file and map), clue unlocking, size and duration comparisons, statistics, the content import, and accounts (moving anonymous games into an account, `/me`, account deletion, login redirect and origin checks). Run with `dotnet test --solution apps/api/Imperatle.Api.sln`.
-- **Web** (`apps/web`, Vitest): share text, number and year formatting, empire name search, the `/me` client. Run with `npm test`.
+- **API** (`tests/Imperatle.Api.Tests`, xUnit v3): scheduler rotation, content validation (including every shipped empire file and map), clue unlocking, size and duration comparisons, statistics, the content import, accounts (moving anonymous games into an account, `/me`, account deletion, login redirect and origin checks), and the Paddle webhook (signature, stale and replayed events, grant and refund). Run with `dotnet test --solution apps/api/Imperatle.Api.sln`.
+- **Web** (`apps/web`, Vitest): share text, number and year formatting, empire name search, the `/me` client, the Supporter purchase flow. Run with `npm test`.
 
 CI runs both, plus lint, type checking and a production build, on every push and pull request. CodeQL scans C#, TypeScript and the workflows, and Dependabot keeps dependencies current.
 

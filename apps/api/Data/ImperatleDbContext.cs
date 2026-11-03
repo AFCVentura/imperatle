@@ -12,6 +12,7 @@ public class ImperatleDbContext(DbContextOptions<ImperatleDbContext> options) : 
     public DbSet<PlayerChallengeProgress> PlayerChallengeProgress => Set<PlayerChallengeProgress>();
     public DbSet<Feedback> Feedback => Set<Feedback>();
     public DbSet<User> Users => Set<User>();
+    public DbSet<ProcessedWebhookEvent> ProcessedWebhookEvents => Set<ProcessedWebhookEvent>();
 
     // ASP.NET Core Data Protection keys (they encrypt the login cookie), kept
     // in the database so every replica and every deploy can read the same
@@ -54,21 +55,33 @@ public class ImperatleDbContext(DbContextOptions<ImperatleDbContext> options) : 
             .HasForeignKey(p => p.UserId)
             .OnDelete(DeleteBehavior.Cascade);
 
-        modelBuilder.Entity<User>(user =>
-        {
-            user.HasIndex(u => u.GoogleSubject).IsUnique();
-            user.Property(u => u.GoogleSubject).HasMaxLength(255);
-            user.Property(u => u.Email).HasMaxLength(254);
-            user.Property(u => u.DisplayName).HasMaxLength(200);
-            user.Property(u => u.PaddleTransactionId).HasMaxLength(100);
-        });
-
         modelBuilder.Entity<Feedback>(feedback =>
         {
             feedback.Property(f => f.Category).HasConversion<string>().HasMaxLength(20);
             feedback.Property(f => f.Message).HasMaxLength(2000);
             feedback.Property(f => f.Email).HasMaxLength(254);
             feedback.Property(f => f.Locale).HasMaxLength(10);
+        });
+
+        modelBuilder.Entity<User>(user =>
+        {
+            user.HasIndex(u => u.GoogleSubject).IsUnique();
+            user.Property(u => u.GoogleSubject).HasMaxLength(255);
+            user.Property(u => u.Email).HasMaxLength(254);
+            user.Property(u => u.DisplayName).HasMaxLength(200);
+            user.Property(u => u.PaddleTransactionId).HasMaxLength(64);
+            // Refund webhooks look the user up by the transaction they paid with.
+            user.HasIndex(u => u.PaddleTransactionId);
+        });
+
+        modelBuilder.Entity<ProcessedWebhookEvent>(evt =>
+        {
+            evt.HasKey(e => e.Id);
+            evt.Property(e => e.Id).HasMaxLength(64);
+            evt.Property(e => e.EventType).HasMaxLength(64);
+            evt.Property(e => e.TransactionId).HasMaxLength(64);
+            evt.Property(e => e.Outcome).HasMaxLength(32);
+            evt.HasIndex(e => e.TransactionId);
         });
     }
 }

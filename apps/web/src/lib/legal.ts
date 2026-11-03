@@ -34,6 +34,7 @@ const privacy: Record<Locale, LegalDocument> = {
           "Feedback you send: the message, its type, the site language and, only if you fill it in, your e-mail address.",
           "Your IP address, used for a few minutes to limit how many guesses and messages can be sent in a row. It isn't stored by the game, although the hosting providers below may keep it in their technical logs.",
           "Page views, counted by Vercel Web Analytics without cookies and without identifying you.",
+          "If you buy Supporter: the payment is handled entirely by Paddle, so your card or other payment details never reach the game. The game only receives the transaction id and the fact that the purchase was completed or refunded, linked to your account.",
         ],
       },
       {
@@ -51,6 +52,7 @@ const privacy: Record<Locale, LegalDocument> = {
           "Microsoft Azure (game server).",
           "Neon (database).",
           "Resend (forwards feedback messages by e-mail), United States.",
+          "Paddle (payment processor and merchant of record for the Supporter purchase), United Kingdom. Paddle is the seller of that purchase and handles your payment and billing data as an independent controller, under its own privacy policy at paddle.com/legal.",
         ],
       },
       {
@@ -72,7 +74,7 @@ const privacy: Record<Locale, LegalDocument> = {
       {
         heading: "Changes",
         paragraphs: [
-          "This policy will change when new features arrive (support, for example). The date at the top shows the latest version.",
+          "This policy will change when new features arrive. The date at the top shows the latest version.",
         ],
       },
     ],
@@ -93,6 +95,7 @@ const privacy: Record<Locale, LegalDocument> = {
           "O feedback que você envia: a mensagem, o tipo, o idioma do site e, só se você preencher, seu e-mail.",
           "Seu endereço IP, usado por alguns minutos para limitar quantos palpites e mensagens podem ser enviados seguidos. O jogo não o guarda, mas os provedores de hospedagem abaixo podem mantê-lo nos registros técnicos deles.",
           "Visitas às páginas, contadas pelo Vercel Web Analytics sem cookies e sem identificar você.",
+          "Se você comprar o Apoio: o pagamento é feito todo pela Paddle, então os dados do seu cartão ou de outro meio de pagamento nunca chegam ao jogo. O jogo recebe só o identificador da transação e a informação de que a compra foi concluída ou reembolsada, ligados à sua conta.",
         ],
       },
       {
@@ -110,6 +113,7 @@ const privacy: Record<Locale, LegalDocument> = {
           "Microsoft Azure (servidor do jogo).",
           "Neon (banco de dados).",
           "Resend (encaminha as mensagens de feedback por e-mail), Estados Unidos.",
+          "Paddle (processadora de pagamentos e responsável pela venda, o merchant of record, do Apoio), Reino Unido. A Paddle é quem vende essa compra e trata seus dados de pagamento e cobrança como controladora independente, pela política de privacidade dela em paddle.com/legal.",
         ],
       },
       {
@@ -131,7 +135,7 @@ const privacy: Record<Locale, LegalDocument> = {
       {
         heading: "Mudanças",
         paragraphs: [
-          "Esta política vai mudar quando chegarem recursos novos (apoio, por exemplo). A data no topo mostra a versão mais recente.",
+          "Esta política vai mudar quando chegarem recursos novos. A data no topo mostra a versão mais recente.",
         ],
       },
     ],
@@ -141,14 +145,14 @@ const privacy: Record<Locale, LegalDocument> = {
 const terms: Record<Locale, LegalDocument> = {
   en: {
     title: "Terms of Use",
-    updated: "Last updated: October 7, 2026",
+    updated: "Last updated: November 3, 2026",
     intro:
       "These terms apply to anyone who plays Imperatle at imperatle.com. By playing, you agree to them. The game is made and run by Ventura, a developer based in Brazil.",
     sections: [
       {
         heading: "The game",
         paragraphs: [
-          "Imperatle is free to play. It's offered as it is: it may change, be unavailable at times or have mistakes, and features may be added or removed.",
+          "Imperatle is free to play. It's offered as it is: it may change, be unavailable at times or have mistakes, and features may be added or removed. The daily game stays free.",
         ],
       },
       {
@@ -172,9 +176,11 @@ const terms: Record<Locale, LegalDocument> = {
         ],
       },
       {
-        heading: "Paid features",
+        heading: "Supporter purchase",
         paragraphs: [
-          "Support for the project is planned as an optional subscription. When it's available, it will come with its own conditions (price, renewal, cancellation and refunds), shown before any payment.",
+          "Supporter is an optional one-time purchase (not a subscription) that adds extra features, such as past games and practice mode, to the account it was bought with, for as long as the game runs. The price is shown in your currency before you pay.",
+          "Our order process is conducted by our online reseller Paddle.com. Paddle.com is the Merchant of Record for all our orders. Paddle provides all customer service inquiries and handles returns. Paddle's Buyer Terms (paddle.com/legal/checkout-buyer-terms) also apply to the purchase.",
+          "Refunds follow the Refund Policy, linked at the bottom of every page. A refunded or charged-back purchase removes the Supporter features from the account.",
         ],
       },
       {
@@ -193,14 +199,14 @@ const terms: Record<Locale, LegalDocument> = {
   },
   pt: {
     title: "Termos de Uso",
-    updated: "Atualizados em 7 de outubro de 2026",
+    updated: "Atualizados em 3 de novembro de 2026",
     intro:
       "Estes termos valem para quem joga o Imperatle em imperatle.com. Ao jogar, você concorda com eles. O jogo é feito e mantido por Ventura, desenvolvedor no Brasil.",
     sections: [
       {
         heading: "O jogo",
         paragraphs: [
-          "O Imperatle é gratuito. Ele é oferecido como está: pode mudar, ficar fora do ar às vezes ou ter erros, e recursos podem ser adicionados ou removidos.",
+          "O Imperatle é gratuito. Ele é oferecido como está: pode mudar, ficar fora do ar às vezes ou ter erros, e recursos podem ser adicionados ou removidos. O jogo diário continua gratuito.",
         ],
       },
       {
@@ -224,9 +230,11 @@ const terms: Record<Locale, LegalDocument> = {
         ],
       },
       {
-        heading: "Recursos pagos",
+        heading: "Compra do Apoio",
         paragraphs: [
-          "O apoio ao projeto está planejado como uma assinatura opcional. Quando estiver disponível, terá condições próprias (preço, renovação, cancelamento e reembolso), mostradas antes de qualquer pagamento.",
+          "O Apoio é uma compra opcional e única (não é assinatura) que libera recursos extras, como jogos anteriores e modo prática, na conta usada na compra, enquanto o jogo existir. O preço aparece na sua moeda antes do pagamento.",
+          "A venda é feita pela nossa revendedora online Paddle.com. A Paddle.com é a responsável pela venda (Merchant of Record) de todos os nossos pedidos: ela atende as dúvidas sobre a compra e cuida das devoluções. Os Termos do Comprador da Paddle (paddle.com/legal/checkout-buyer-terms) também valem para a compra.",
+          "Os reembolsos seguem a Política de Reembolso, com link no rodapé de todas as páginas. Uma compra reembolsada ou contestada (chargeback) tira os recursos do Apoio da conta.",
         ],
       },
       {
@@ -245,7 +253,88 @@ const terms: Record<Locale, LegalDocument> = {
   },
 };
 
-export const LEGAL = { privacy, terms };
+const refunds: Record<Locale, LegalDocument> = {
+  en: {
+    title: "Refund Policy",
+    updated: "Last updated: November 3, 2026",
+    intro:
+      "This policy covers the Supporter purchase on Imperatle. The purchase is sold by Paddle.com, our online reseller and Merchant of Record: Paddle is the seller you pay, it processes the payment, issues the receipt and handles refunds.",
+    sections: [
+      {
+        heading: "What you buy",
+        paragraphs: [
+          "Supporter is a one-time payment, not a subscription: nothing renews and nothing is charged again. It unlocks the Supporter features on the account you were signed in with, for as long as the game runs.",
+        ],
+      },
+      {
+        heading: "Refunds within 14 days",
+        paragraphs: [
+          "You can ask for a full refund within 14 days of the purchase, for any reason. This includes the legal right of withdrawal you may have where you live, such as the 7 days of Brazil's Consumer Defense Code (art. 49).",
+        ],
+      },
+      {
+        heading: "After 14 days",
+        paragraphs: [
+          "Later requests are looked at case by case, for example a duplicate charge or a Supporter feature that stopped working and couldn't be fixed. Your statutory consumer rights are never affected.",
+        ],
+      },
+      {
+        heading: "How to ask",
+        items: [
+          "Look up your order at paddle.net with the e-mail you used to buy, or reply to the receipt e-mail Paddle sent you.",
+          "Or write through the Feedback form in the menu, with the e-mail you used to buy.",
+        ],
+      },
+      {
+        heading: "After a refund",
+        paragraphs: [
+          "The money goes back to the original payment method; how long it takes to show up depends on your bank or card issuer. The Supporter features are removed from the account. A chargeback (a payment disputed with your bank) has the same effect. Your game history and statistics stay as they are.",
+        ],
+      },
+    ],
+  },
+  pt: {
+    title: "Política de Reembolso",
+    updated: "Atualizada em 3 de novembro de 2026",
+    intro:
+      "Esta política vale para a compra do Apoio no Imperatle. A compra é vendida pela Paddle.com, nossa revendedora online e responsável pela venda (Merchant of Record): a Paddle é quem recebe o pagamento, emite o recibo e cuida dos reembolsos.",
+    sections: [
+      {
+        heading: "O que você compra",
+        paragraphs: [
+          "O Apoio é um pagamento único, não uma assinatura: nada renova e nada é cobrado de novo. Ele libera os recursos de apoiador na conta em que você estava conectado, enquanto o jogo existir.",
+        ],
+      },
+      {
+        heading: "Reembolso em até 14 dias",
+        paragraphs: [
+          "Você pode pedir o reembolso integral em até 14 dias depois da compra, por qualquer motivo. Isso inclui o direito de arrependimento que você tenha onde mora, como os 7 dias do Código de Defesa do Consumidor (art. 49).",
+        ],
+      },
+      {
+        heading: "Depois de 14 dias",
+        paragraphs: [
+          "Pedidos depois disso são avaliados caso a caso, por exemplo uma cobrança duplicada ou um recurso do Apoio que parou de funcionar e não teve conserto. Seus direitos de consumidor previstos em lei nunca são afetados.",
+        ],
+      },
+      {
+        heading: "Como pedir",
+        items: [
+          "Encontre seu pedido em paddle.net com o e-mail usado na compra, ou responda o e-mail de recibo que a Paddle enviou.",
+          "Ou escreva pelo formulário de Feedback no menu, informando o e-mail usado na compra.",
+        ],
+      },
+      {
+        heading: "Depois do reembolso",
+        paragraphs: [
+          "O dinheiro volta para o mesmo meio de pagamento; o prazo para aparecer depende do seu banco ou da operadora do cartão. Os recursos do Apoio saem da conta. Um chargeback (pagamento contestado no banco) tem o mesmo efeito. Seu histórico de jogos e suas estatísticas continuam como estão.",
+        ],
+      },
+    ],
+  },
+};
+
+export const LEGAL = { privacy, terms, refunds };
 export type LegalKind = keyof typeof LEGAL;
 
 export function getLegalDocument(kind: LegalKind, locale: string): LegalDocument {

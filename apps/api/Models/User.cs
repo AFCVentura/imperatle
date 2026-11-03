@@ -13,7 +13,8 @@ public class User
     public string DisplayName { get; set; } = "";
     public DateTime CreatedAtUtc { get; set; }
 
-    // Null = not a supporter. Set by the Paddle webhook.
+    // Lifetime Supporter: set by the Paddle webhook when the purchase completes,
+    // cleared again by a full refund or chargeback. Null = not a supporter.
     public DateTime? SupporterSinceUtc { get; set; }
     public string? PaddleTransactionId { get; set; }
 }

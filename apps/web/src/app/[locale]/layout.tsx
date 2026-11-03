@@ -13,8 +13,8 @@ import { AboutDialog } from "./AboutDialog";
 import { ChangelogDialog } from "./ChangelogDialog";
 import { FeedbackDialog } from "./FeedbackDialog";
 import { StatsDialog } from "./StatsDialog";
-import { ComingSoonDialog } from "./ComingSoonDialog";
 import { AccountDialog } from "./AccountDialog";
+import { SupportDialog } from "./SupportDialog";
 import { SITE_URL } from "@/lib/site";
 import "../globals.css";
 
@@ -100,8 +100,8 @@ export default async function LocaleLayout({
           <Footer challengeNumber={challengeNumber} />
           <HowToPlayDialog attemptsAllowed={attemptsAllowed} />
           <StatsDialog />
-          <ComingSoonDialog />
           <AccountDialog />
+          <SupportDialog />
           <FeedbackDialog />
           <AboutDialog />
           <ChangelogDialog />
