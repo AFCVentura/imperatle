@@ -25,7 +25,8 @@
     "privacy": "Privacidade",
     "terms": "Termos",
     "version": "Versão {version}",
-    "changelog": "Ver o que mudou em cada versão"
+    "changelog": "Ver o que mudou em cada versão",
+    "refunds": "Reembolso"
   },
   "Game": {
     "attempts": "Tentativas: {used}/{total}",
@@ -178,34 +179,6 @@
   "ComingSoon": {
     "badge": "Em breve",
     "ok": "Entendi",
-    "support": {
-      "title": "Apoiar o projeto",
-      "intro": "O Imperatle é um projeto independente, feito por uma pessoa só. Quem apoia ajuda a pagar os servidores e a pesquisa histórica por trás de cada mapa.",
-      "perksTitle": "Quem apoiar vai ter",
-      "perks": {
-        "noAds": {
-          "title": "Sem anúncios",
-          "text": "o jogo limpo, do jeito que está agora."
-        },
-        "practice": {
-          "title": "Modo prática",
-          "text": "jogar à vontade, sem contar nas estatísticas."
-        },
-        "archive": {
-          "title": "Jogos anteriores",
-          "text": "jogar os desafios dos dias que passaram."
-        },
-        "creator": {
-          "title": "Criador de impérios",
-          "text": "montar o seu próprio império no mapa."
-        },
-        "request": {
-          "title": "Pedir um mapa",
-          "text": "sugerir um império ou outra potência pro jogo."
-        }
-      },
-      "note": "O apoio ainda não está disponível. Quando estiver, vai ser uma assinatura barata, mensal ou anual, e você cria sua conta ali mesmo. Dá pra cancelar quando quiser."
-    },
     "account": {
       "title": "Criar conta",
       "intro": "Você não precisa de conta pra jogar. Por enquanto, seu progresso e suas estatísticas ficam salvos neste navegador.",
@@ -225,6 +198,47 @@
         }
       },
       "note": "As contas ainda não estão disponíveis. Elas chegam junto com o apoio ao projeto."
+    }
+  },
+  "Support": {
+    "title": "Apoiar o projeto",
+    "intro": "O Imperatle é um projeto independente, feito por uma pessoa só. Quem apoia paga uma vez e ajuda a pagar os servidores e a pesquisa histórica por trás de cada mapa.",
+    "perksTitle": "Quem apoia ganha",
+    "perks": {
+      "archive": {
+        "title": "Jogos anteriores",
+        "text": "jogar os desafios dos dias que passaram."
+      },
+      "practice": {
+        "title": "Modo prática",
+        "text": "jogar à vontade, sem contar nas estatísticas."
+      },
+      "noAds": {
+        "title": "Sem anúncios",
+        "text": "se um dia o jogo tiver anúncios, quem apoia não vai ver."
+      },
+      "solo": {
+        "title": "Um desenvolvedor só",
+        "text": "seu apoio mantém os impérios novos e os recursos chegando."
+      }
+    },
+    "oneTime": "pagamento único, para sempre",
+    "oneTimeNoPrice": "Pagamento único, para sempre. O preço na sua moeda aparece no pagamento.",
+    "buy": "Quero apoiar",
+    "opening": "Abrindo o pagamento…",
+    "login": "Entrar com Google para continuar",
+    "loginNote": "A compra fica ligada à sua conta, então as vantagens valem em qualquer aparelho.",
+    "checkoutError": "O pagamento não carregou. Confira sua conexão ou o bloqueador de anúncios e tente de novo.",
+    "alreadySupporter": "Você apoia o Imperatle. Obrigado!",
+    "unavailable": "O apoio ainda não está disponível. Volte em breve.",
+    "merchant": "Os pagamentos são processados pela Paddle, revendedora e responsável pela venda (merchant of record).",
+    "refundLink": "Política de reembolso",
+    "close": "Fechar",
+    "thanks": {
+      "title": "Obrigado!",
+      "confirmed": "Suas vantagens de apoiador já estão ativas nesta conta.",
+      "pending": "Seu pagamento foi aprovado. As vantagens aparecem na sua conta em até um minuto; se não aparecerem, recarregue a página.",
+      "receipt": "A Paddle manda o recibo para o seu e-mail."
     }
   },
   "Feedback": {

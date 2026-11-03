@@ -25,7 +25,8 @@
     "privacy": "Privacy",
     "terms": "Terms",
     "version": "Version {version}",
-    "changelog": "See what changed in each version"
+    "changelog": "See what changed in each version",
+    "refunds": "Refunds"
   },
   "Game": {
     "attempts": "Attempts: {used}/{total}",
@@ -178,34 +179,6 @@
   "ComingSoon": {
     "badge": "Coming soon",
     "ok": "Got it",
-    "support": {
-      "title": "Support the project",
-      "intro": "Imperatle is an independent project, made by one person. Supporters help pay for the servers and the historical research behind each map.",
-      "perksTitle": "Supporters will get",
-      "perks": {
-        "noAds": {
-          "title": "No ads",
-          "text": "the game as clean as it is now."
-        },
-        "practice": {
-          "title": "Practice mode",
-          "text": "play as much as you like, without affecting your stats."
-        },
-        "archive": {
-          "title": "Past games",
-          "text": "play the challenges from previous days."
-        },
-        "creator": {
-          "title": "Empire creator",
-          "text": "build your own empire on the map."
-        },
-        "request": {
-          "title": "Request a map",
-          "text": "suggest an empire or other power for the game."
-        }
-      },
-      "note": "Support isn't available yet. When it is, it'll be a cheap subscription, monthly or yearly, and you'll create your account right there. Cancel anytime."
-    },
     "account": {
       "title": "Create account",
       "intro": "You don't need an account to play. For now, your progress and stats are saved in this browser.",
@@ -225,6 +198,47 @@
         }
       },
       "note": "Accounts aren't available yet. They'll arrive together with support for the project."
+    }
+  },
+  "Support": {
+    "title": "Support the project",
+    "intro": "Imperatle is an independent project, made by one person. A Supporter pays once and helps cover the servers and the historical research behind each map.",
+    "perksTitle": "Supporters get",
+    "perks": {
+      "archive": {
+        "title": "Past games",
+        "text": "play the challenges from previous days."
+      },
+      "practice": {
+        "title": "Practice mode",
+        "text": "play as much as you like, without affecting your stats."
+      },
+      "noAds": {
+        "title": "No ads",
+        "text": "if the game ever shows ads, supporters won't see them."
+      },
+      "solo": {
+        "title": "A solo developer",
+        "text": "your support keeps new empires and features coming."
+      }
+    },
+    "oneTime": "one-time payment, for life",
+    "oneTimeNoPrice": "One-time payment, for life. The price in your currency shows at checkout.",
+    "buy": "Become a supporter",
+    "opening": "Opening checkout…",
+    "login": "Sign in with Google to continue",
+    "loginNote": "The purchase is tied to your account, so the perks follow you on any device.",
+    "checkoutError": "The checkout couldn't load. Check your connection or ad blocker and try again.",
+    "alreadySupporter": "You're a supporter. Thank you!",
+    "unavailable": "Support isn't available yet. Check back soon.",
+    "merchant": "Payments are processed by Paddle, the reseller and merchant of record for this purchase.",
+    "refundLink": "Refund policy",
+    "close": "Close",
+    "thanks": {
+      "title": "Thank you!",
+      "confirmed": "Your Supporter perks are active on this account.",
+      "pending": "Your payment went through. The perks show up on your account in a minute; if they don't, reload the page.",
+      "receipt": "Paddle sends the receipt to your e-mail."
     }
   },
   "Feedback": {

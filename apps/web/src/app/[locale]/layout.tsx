@@ -14,6 +14,7 @@ import { ChangelogDialog } from "./ChangelogDialog";
 import { FeedbackDialog } from "./FeedbackDialog";
 import { StatsDialog } from "./StatsDialog";
 import { ComingSoonDialog } from "./ComingSoonDialog";
+import { SupportDialog } from "./SupportDialog";
 import { SITE_URL } from "@/lib/site";
 import "../globals.css";
 
@@ -100,6 +101,7 @@ export default async function LocaleLayout({
           <HowToPlayDialog attemptsAllowed={attemptsAllowed} />
           <StatsDialog />
           <ComingSoonDialog />
+          <SupportDialog />
           <FeedbackDialog />
           <AboutDialog />
           <ChangelogDialog />
