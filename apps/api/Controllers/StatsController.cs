@@ -1,6 +1,8 @@
 using Imperatle.Api.Data;
 using Imperatle.Api.Dtos;
 using Imperatle.Api.Game;
+using Imperatle.Api.Models;
+using Imperatle.Api.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 

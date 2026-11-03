@@ -2,6 +2,7 @@ using Imperatle.Api.Data;
 using Imperatle.Api.Dtos;
 using Imperatle.Api.Game;
 using Imperatle.Api.Models;
+using Imperatle.Api.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
@@ -12,9 +13,8 @@ namespace Imperatle.Api.Controllers;
 [Route("challenges")]
 public class ChallengesController(ImperatleDbContext db, IWebHostEnvironment env) : ControllerBase
 {
-    // Anonymous identity cookie -- a random id, not tied to any account yet.
-    // Long-lived so a browser keeps its history across days without an account.
-    public const string AnonymousCookieName = "imperatle_aid";
+    // Anonymous identity cookie, see AnonymousIdentity.
+    public const string AnonymousCookieName = AnonymousIdentity.CookieName;
 
     [HttpGet("today")]
     public async Task<IActionResult> GetToday()
@@ -56,7 +56,7 @@ public class ChallengesController(ImperatleDbContext db, IWebHostEnvironment env
 
     [HttpPost("today/guess")]
     [EnableRateLimiting("guess")]
-    public async Task<IActionResult> Guess([FromBody] GuessRequest request)
+    public async Task<IActionResult> Guess([FromBody] GuessRequest request, [FromServices] ICurrentPlayer player)
     {
         var today = GameClock.Today();
 
@@ -72,16 +72,16 @@ public class ChallengesController(ImperatleDbContext db, IWebHostEnvironment env
             return BadRequest();
         }
 
-        var anonymousId = GetOrCreateAnonymousId(Request, Response);
-
-        var progress = await db.PlayerChallengeProgress
-            .FirstOrDefaultAsync(p => p.AnonymousId == anonymousId && p.Date == today);
+        // Signed in, the attempts are the account's, shared by every device;
+        // otherwise this browser's.
+        var progress = await AccountService.FindProgressAsync(db, player, today);
 
         if (progress is null)
         {
             progress = new PlayerChallengeProgress
             {
-                AnonymousId = anonymousId,
+                AnonymousId = player.AnonymousId,
+                UserId = player.UserId,
                 Date = today,
                 EmpireId = challenge.EmpireId,
             };
@@ -152,21 +152,6 @@ public class ChallengesController(ImperatleDbContext db, IWebHostEnvironment env
     }
 
     // Static so the dev tools (DevController) can identify the player the same way.
-    internal static Guid GetOrCreateAnonymousId(HttpRequest request, HttpResponse response)
-    {
-        if (Guid.TryParse(request.Cookies[AnonymousCookieName], out var existing))
-        {
-            return existing;
-        }
-
-        var id = Guid.NewGuid();
-        response.Cookies.Append(AnonymousCookieName, id.ToString(), new CookieOptions
-        {
-            HttpOnly = true,
-            Secure = request.IsHttps,
-            SameSite = SameSiteMode.Lax,
-            Expires = DateTimeOffset.UtcNow.AddYears(1),
-        });
-        return id;
-    }
+    internal static Guid GetOrCreateAnonymousId(HttpRequest request, HttpResponse response) =>
+        AnonymousIdentity.GetOrCreate(request, response);
 }

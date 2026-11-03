@@ -2,9 +2,10 @@ namespace Imperatle.Api.Models;
 
 // One row per anonymous player per day -- the server-authoritative record of
 // how many attempts that browser has actually spent on today's challenge.
-// UserId is left for when account login (Google OAuth, decided but not yet
-// built) lands: creating an account re-tags existing rows from AnonymousId to
-// UserId instead of copying data between two separate systems.
+// UserId is set when the player is signed in; logging in re-tags this
+// browser's earlier rows from AnonymousId to UserId (see
+// AccountService.ClaimAnonymousProgressAsync) instead of copying data between
+// two separate systems.
 public class PlayerChallengeProgress
 {
     public int Id { get; set; }
