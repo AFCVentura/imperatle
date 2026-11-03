@@ -86,6 +86,14 @@ Without the two web variables the Supporter dialog shows "not available yet" ins
 
 How it fits together: the browser opens Paddle's overlay checkout with `customData.userId` (buying requires being signed in); Paddle then calls `POST /webhooks/paddle`, which checks the `Paddle-Signature` HMAC over the raw body, refuses stale timestamps, records each event id so retries are applied once, sets `SupporterSinceUtc` on `transaction.completed` and clears it on an approved full refund or chargeback (`adjustment.created` / `adjustment.updated`).
 
+### Development and practice mode
+
+| Setting | Where | What it does |
+|---|---|---|
+| `Dev:IsSupporter` (`Dev__IsSupporter`) | API, Development only | `true` makes every player a supporter (signed in or not), to try the supporter perks (past games, practice) without Google or Paddle. Applied as a Development-only wrapper around the real current player (`DevSupporterCurrentPlayer`); ignored outside Development. |
+
+Practice mode's difficulty tiers live in [`apps/api/Content/practice-difficulty.json`](apps/api/Content/practice-difficulty.json): slugs listed per tier (easy, medium, hard), and empires not listed get a tier from their peak area (`thresholdsKm2`). Restart the API after editing it.
+
 ## Tests
 
 - **API** (`tests/Imperatle.Api.Tests`, xUnit v3): scheduler rotation, content validation (including every shipped empire file and map), clue unlocking, size and duration comparisons, statistics, the content import, accounts (moving anonymous games into an account, `/me`, account deletion, login redirect and origin checks), and the Paddle webhook (signature, stale and replayed events, grant and refund). Run with `dotnet test --solution apps/api/Imperatle.Api.sln`.

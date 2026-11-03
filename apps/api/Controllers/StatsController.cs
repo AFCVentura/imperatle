@@ -13,7 +13,8 @@ namespace Imperatle.Api.Controllers;
 public class StatsController(ImperatleDbContext db) : ControllerBase
 {
     // The player's own history (by the anonymous cookie set on their first
-    // guess) plus everyone's results for today's challenge.
+    // guess) plus everyone's results for today's challenge. Past days played
+    // from the archive don't count: stats and streaks are about the daily game.
     [HttpGet]
     public async Task<StatsResponse> Get()
     {
@@ -22,13 +23,13 @@ public class StatsController(ImperatleDbContext db) : ControllerBase
         var mine = Guid.TryParse(Request.Cookies[ChallengesController.AnonymousCookieName], out var anonymousId)
             ? await db.PlayerChallengeProgress
                 .AsNoTracking()
-                .Where(p => p.AnonymousId == anonymousId && p.Completed)
+                .Where(p => p.AnonymousId == anonymousId && p.Completed && !p.FromArchive)
                 .ToListAsync()
             : [];
 
         var everyoneToday = await db.PlayerChallengeProgress
             .AsNoTracking()
-            .Where(p => p.Date == today && p.Completed)
+            .Where(p => p.Date == today && p.Completed && !p.FromArchive)
             .ToListAsync();
 
         var challengeNumber = await ChallengeScheduler.NumberForAsync(db, today);

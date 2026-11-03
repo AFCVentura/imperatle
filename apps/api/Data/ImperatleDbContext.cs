@@ -13,6 +13,7 @@ public class ImperatleDbContext(DbContextOptions<ImperatleDbContext> options) : 
     public DbSet<Feedback> Feedback => Set<Feedback>();
     public DbSet<User> Users => Set<User>();
     public DbSet<ProcessedWebhookEvent> ProcessedWebhookEvents => Set<ProcessedWebhookEvent>();
+    public DbSet<PracticeSession> PracticeSessions => Set<PracticeSession>();
 
     // ASP.NET Core Data Protection keys (they encrypt the login cookie), kept
     // in the database so every replica and every deploy can read the same
@@ -54,6 +55,22 @@ public class ImperatleDbContext(DbContextOptions<ImperatleDbContext> options) : 
             .WithMany()
             .HasForeignKey(p => p.UserId)
             .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<PracticeSession>(session =>
+        {
+            session.Property(s => s.Difficulty).HasConversion<string>().HasMaxLength(20);
+            session.Property(s => s.MapMode).HasConversion<string>().HasMaxLength(20);
+            session.Property(s => s.Era).HasConversion<string>().HasMaxLength(20);
+            session.Property(s => s.Continent).HasConversion<string>().HasMaxLength(20);
+            // Recent rounds of a player, to avoid repeating an empire too soon.
+            session.HasIndex(s => new { s.AnonymousId, s.CreatedAtUtc });
+            session.HasIndex(s => new { s.UserId, s.CreatedAtUtc });
+            // Deleting an account deletes its practice rounds too (LGPD/GDPR).
+            session.HasOne<User>()
+                .WithMany()
+                .HasForeignKey(s => s.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+        });
 
         modelBuilder.Entity<Feedback>(feedback =>
         {

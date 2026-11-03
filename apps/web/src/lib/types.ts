@@ -198,3 +198,73 @@ export interface StatsResponse {
   me: PlayerStats;
   today: CommunityStats;
 }
+
+// --- Supporter perks (apps/api/Dtos/ArchiveDtos.cs, PracticeDtos.cs) ---
+
+export type ArchiveStatus = "NotPlayed" | "InProgress" | "Won" | "Lost";
+
+export interface ArchiveDay {
+  date: string;
+  challengeNumber: number;
+  status: ArchiveStatus;
+  attemptsUsed: number;
+}
+
+export interface ArchiveList {
+  today: string;
+  attemptsAllowed: number;
+  // Newest first, only days before today.
+  days: ArchiveDay[];
+}
+
+// One past day with the player's progress on it (kept by the server).
+export interface ArchiveChallenge {
+  date: string;
+  challengeNumber: number;
+  attemptsAllowed: number;
+  hasMap: boolean;
+  attemptsUsed: number;
+  completed: boolean;
+  correct: boolean;
+  reveal: ChallengeReveal | null;
+  answer: EmpireAnswer | null;
+}
+
+export const PRACTICE_DIFFICULTIES = ["Any", "Easy", "Medium", "Hard"] as const;
+export type PracticeDifficulty = (typeof PRACTICE_DIFFICULTIES)[number];
+
+export const PRACTICE_MAP_MODES = ["Progressive", "Full", "Outline"] as const;
+export type PracticeMapMode = (typeof PRACTICE_MAP_MODES)[number];
+
+export const PRACTICE_ATTEMPTS = [3, 5, 7, 10] as const;
+
+// Era and continent are indexes into BROAD_ERAS and CONTINENTS (null = any),
+// like every other game enum; difficulty and map travel as names.
+export interface PracticeOptions {
+  difficulty: PracticeDifficulty;
+  attempts: number;
+  hints: boolean;
+  map: PracticeMapMode;
+  era: number | null;
+  continent: number | null;
+}
+
+export const DEFAULT_PRACTICE_OPTIONS: PracticeOptions = {
+  difficulty: "Any",
+  attempts: 7,
+  hints: true,
+  map: "Progressive",
+  era: null,
+  continent: null,
+};
+
+export interface PracticeSession {
+  id: string;
+  options: PracticeOptions;
+  hasMap: boolean;
+  attemptsUsed: number;
+  completed: boolean;
+  correct: boolean;
+  reveal: ChallengeReveal | null;
+  answer: EmpireAnswer | null;
+}

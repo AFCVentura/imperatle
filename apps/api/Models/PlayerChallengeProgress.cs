@@ -22,4 +22,10 @@ public class PlayerChallengeProgress
     public bool Completed { get; set; }
     public bool Correct { get; set; }
     public DateTime? CompletedAtUtc { get; set; }
+
+    // True once a guess for this date came from the archive (a supporter
+    // playing a past day). Such games keep their result for the archive but
+    // stay out of the daily statistics and streaks, which only count games
+    // played on their own day.
+    public bool FromArchive { get; set; }
 }
