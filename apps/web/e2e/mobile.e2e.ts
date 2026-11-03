@@ -1,5 +1,5 @@
 import type { Page } from "@playwright/test";
-import { SCREENS_DIR, blockPaddle, expect, expectNoHorizontalScroll, mockMe, routeToSupporterApi, test } from "./fixtures";
+import { SCREENS_DIR, blockPaddle, expect, expectNoHorizontalScroll, finishToday, mockMe, routeToSupporterApi, test } from "./fixtures";
 
 // iPhone-sized viewport (390 px): no horizontal scroll anywhere new, and a
 // screenshot of each screen for the owner (docs/launch/qa-screens).
@@ -53,6 +53,10 @@ test.describe("phone, 390px", () => {
       await expect(page.getByRole("combobox")).toBeVisible();
       await shot(page, `${locale}-archive-day`);
 
+      await page.goto(`/${locale}/practice`);
+      await expect(page.getByRole("heading", { level: 2 })).toBeVisible();
+      await shot(page, `${locale}-practice-daily-first`);
+      await finishToday(page.request);
       await page.goto(`/${locale}/practice`);
       await expect(page.locator('[role=group]').first()).toBeVisible();
       await shot(page, `${locale}-practice-setup`);

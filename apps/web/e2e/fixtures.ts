@@ -81,6 +81,16 @@ export async function getEmpires(request: APIRequestContext): Promise<EmpireSumm
   return (await request.get(`${API_URL}/empires`)).json();
 }
 
+// Wins today's daily game for whoever owns the request's cookies (a page's
+// `page.request` shares the browser's): practice only opens after that.
+export async function finishToday(api: APIRequestContext) {
+  const empires = await getEmpires(api);
+  const today = empires.find((e) => e.nameEn === TODAY_NAME_EN)!;
+  const res = await api.post(`${SUPPORTER_API_URL}/challenges/today/guess`, { data: { empireId: today.id } });
+  expect(res.status()).toBe(200);
+  expect((await res.json()).gameOver).toBe(true);
+}
+
 function escapeRegExp(s: string) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }

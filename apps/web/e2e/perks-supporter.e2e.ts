@@ -1,7 +1,6 @@
 import { randomUUID } from "node:crypto";
-import type { APIRequestContext } from "@playwright/test";
 import { SUPPORTER_API_URL } from "./env.mjs";
-import { ARCHIVE_DAYS, TODAY_NAME_EN, addDays, expect, getEmpires, guess, routeToSupporterApi, test } from "./fixtures";
+import { ARCHIVE_DAYS, TODAY_NAME_EN, addDays, expect, finishToday, getEmpires, guess, mockMe, routeToSupporterApi, test } from "./fixtures";
 
 const ARCHIVE_GUESS = /\/archive\/[\d-]+\/guess$/;
 const PRACTICE_GUESS = /\/practice\/[0-9a-f-]+\/guess$/;
@@ -51,6 +50,7 @@ test.describe("perks, supporter", () => {
 
   test("practice: 3 attempts, no clues, outline map, then play again", async ({ page, request }) => {
     const empires = await getEmpires(request);
+    await finishToday(page.request);
     await page.goto("/en/practice");
     await expect(page.getByRole("button", { name: "Start", exact: true })).toBeEnabled();
 
@@ -91,6 +91,7 @@ test.describe("perks, supporter", () => {
 
   test("practice with clues on and the full map, resumed after a reload", async ({ page, request }) => {
     const empires = await getEmpires(request);
+    await finishToday(page.request);
     await page.goto("/en/practice");
     await page.getByRole("group", { name: "Attempts" }).getByRole("button", { name: "7", exact: true }).click();
     await page.getByRole("group", { name: "Clues" }).getByRole("button", { name: "On" }).click();
@@ -110,36 +111,61 @@ test.describe("perks, supporter", () => {
     await expect(page.getByText(empires[0].nameEn).first()).toBeVisible();
   });
 
-  test("practice never draws today's empire", async ({ playwright }) => {
-    const todayMap = async (api: APIRequestContext) => {
-      const today = (await (await api.get(`${SUPPORTER_API_URL}/challenges/today`)).json()).date as string;
-      return (await api.get(`${SUPPORTER_API_URL}/challenges/${today}/map`)).text();
-    };
-
-    // Easy + Asia holds today's empire (Mongol) among a few others: if it
-    // could be drawn, some of these rounds would show its map.
-    const options = { difficulty: "Easy", attempts: 3, hints: true, map: "Progressive", era: null, continent: 1 };
-    let rounds = 0;
-    for (let player = 0; player < 3; player++) {
-      // A new player every 15 rounds keeps under the start rate limit.
-      const api = await playwright.request.newContext({ extraHTTPHeaders: { Cookie: `imperatle_aid=${randomUUID()}` } });
-      const target = await todayMap(api);
-      for (let i = 0; i < 15; i++) {
-        const res = await api.post(`${SUPPORTER_API_URL}/practice`, { data: options });
-        expect(res.status()).toBe(200);
-        const { id } = await res.json();
-        const map = await (await api.get(`${SUPPORTER_API_URL}/practice/${id}/map`)).text();
-        expect(map).not.toBe(target);
-        rounds++;
-      }
-      await api.dispose();
+  test("practice waits for today's game, then opens from its end screen", async ({ page }) => {
+    // Every endpoint answers 409 until the daily game is over (before the
+    // 404 of a made-up round id).
+    const someId = randomUUID();
+    for (const res of await Promise.all([
+      page.request.get(`${SUPPORTER_API_URL}/practice/pool`),
+      page.request.post(`${SUPPORTER_API_URL}/practice`, { data: {} }),
+      page.request.get(`${SUPPORTER_API_URL}/practice/${someId}`),
+      page.request.get(`${SUPPORTER_API_URL}/practice/${someId}/map`),
+      page.request.post(`${SUPPORTER_API_URL}/practice/${someId}/guess`, { data: { empireId: 1 } }),
+    ])) {
+      expect(res.status()).toBe(409);
+      expect(await res.json()).toEqual({ code: "daily_not_finished" });
     }
-    expect(rounds).toBe(45);
+
+    await mockMe(page, { isSupporter: true });
+    await page.goto("/en/practice");
+    await expect(page.getByRole("heading", { name: "Today's challenge first" })).toBeVisible();
+    await expect(page.getByRole("button", { name: "Start", exact: true })).toHaveCount(0);
+    await page.getByRole("link", { name: "Play today's challenge" }).click();
+    await expect(page).toHaveURL(/\/en$/);
+
+    const won = await guess(page, TODAY_NAME_EN);
+    expect(won.gameOver).toBe(true);
+    await page.keyboard.press("Escape"); // the stats dialog opens at the end
+    await page.getByRole("link", { name: "Go to practice" }).click();
+    await expect(page).toHaveURL(/\/en\/practice$/);
+    await expect(page.getByRole("button", { name: "Start", exact: true })).toBeEnabled();
+  });
+
+  test("once today's game is over, practice can draw today's empire", async ({ playwright }) => {
+    const api = await playwright.request.newContext({ extraHTTPHeaders: { Cookie: `imperatle_aid=${randomUUID()}` } });
+    const today = (await (await api.get(`${SUPPORTER_API_URL}/challenges/today`)).json()).date as string;
+    const target = await (await api.get(`${SUPPORTER_API_URL}/challenges/${today}/map`)).text();
+    await finishToday(api);
+
+    // Easy + Asia holds today's empire (Mongol) among a few others. Rounds
+    // skip the last 10 empires played, so 15 rounds go through all of them.
+    const options = { difficulty: "Easy", attempts: 3, hints: true, map: "Progressive", era: null, continent: 1 };
+    let seen = false;
+    for (let i = 0; i < 15 && !seen; i++) {
+      const res = await api.post(`${SUPPORTER_API_URL}/practice`, { data: options });
+      expect(res.status()).toBe(200);
+      const { id } = await res.json();
+      seen = (await (await api.get(`${SUPPORTER_API_URL}/practice/${id}/map`)).text()) === target;
+    }
+    expect(seen).toBe(true);
+    await api.dispose();
   });
 
   test("another player's practice round is a 404", async ({ playwright }) => {
     const owner = await playwright.request.newContext({ extraHTTPHeaders: { Cookie: `imperatle_aid=${randomUUID()}` } });
     const intruder = await playwright.request.newContext({ extraHTTPHeaders: { Cookie: `imperatle_aid=${randomUUID()}` } });
+    await finishToday(owner);
+    await finishToday(intruder);
     const { id } = await (await owner.post(`${SUPPORTER_API_URL}/practice`, { data: {} })).json();
     expect((await intruder.get(`${SUPPORTER_API_URL}/practice/${id}`)).status()).toBe(404);
     expect((await intruder.get(`${SUPPORTER_API_URL}/practice/${id}/map`)).status()).toBe(404);
