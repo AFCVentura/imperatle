@@ -156,15 +156,8 @@ builder.Services.AddRateLimiter(options =>
             }));
 });
 
-// Azure Container Apps ends TLS at its ingress and forwards plain HTTP; this
-// restores the https scheme so the Google redirect URI and Secure cookies are
-// right. Only the scheme is taken from the proxy.
-builder.Services.Configure<ForwardedHeadersOptions>(options =>
-{
-    options.ForwardedHeaders = ForwardedHeaders.XForwardedProto;
-    options.KnownIPNetworks.Clear();
-    options.KnownProxies.Clear();
-});
+// Scheme and client IP from the Azure Container Apps ingress, see ProxyHeaders.
+builder.Services.Configure<ForwardedHeadersOptions>(ProxyHeaders.Configure);
 
 var app = builder.Build();
 
