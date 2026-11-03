@@ -47,7 +47,7 @@ The web app reads the API address from `NEXT_PUBLIC_API_URL` (`apps/web/.env.loc
 
 ## Configuration
 
-The API reads its settings from `appsettings*.json` and environment variables (`Section__Key`, e.g. `Auth__Google__ClientId`); the web app reads `NEXT_PUBLIC_*` variables at build time (`apps/web/.env.local` locally, the Vercel project settings in production). Secrets go in environment variables, never in the repository.
+The API reads its settings from `appsettings*.json` and environment variables (`Section__Key`, e.g. `Auth__Google__ClientId`); the web app reads `NEXT_PUBLIC_*` variables at build time (`apps/web/.env.local` locally, the Vercel project settings while it runs on Vercel, and Docker build arguments fed from GitHub repository variables for the Azure container). Secrets go in environment variables, never in the repository.
 
 | Setting (environment variable) | What it is |
 |---|---|
@@ -59,7 +59,16 @@ The API reads its settings from `appsettings*.json` and environment variables (`
 | `Resend__ApiKey`, `Resend__From`, `Feedback__NotifyEmail` | E-mail forwarding of feedback messages (optional). |
 | `Database__MigrateOnStartup` | `false` to apply migrations by hand instead of on startup. |
 
-The web app reads `NEXT_PUBLIC_API_URL`.
+The web app reads `NEXT_PUBLIC_API_URL` and `NEXT_PUBLIC_SITE_URL` (public address used in share links and hreflang, default `https://imperatle.com`).
+
+**Web container (Azure Container Apps).** `apps/web/Dockerfile` builds the standalone Next.js server (Node 24 LTS, non-root, port 8080, health route `GET /api/health`). Every `NEXT_PUBLIC_*` value is a build argument, since Next.js inlines them into the bundle; the image needs no runtime variables. In CI they come from these repository variables (Settings > Secrets and variables > Actions > Variables):
+
+| Repository variable | What |
+|---|---|
+| `AZURE_DEPLOY_WEB` | `true` turns on the "Deploy web to Azure" job. Off (unset) by default. |
+| `NEXT_PUBLIC_PADDLE_CLIENT_TOKEN`, `NEXT_PUBLIC_PADDLE_SUPPORTER_PRICE_ID`, `NEXT_PUBLIC_PADDLE_ENVIRONMENT` | Passed as build arguments (see Paddle below). |
+
+`NEXT_PUBLIC_API_URL` and `NEXT_PUBLIC_SITE_URL` are fixed in the workflow (`API_URL`, `WEB_URL`). Vercel Web Analytics only renders on Vercel (`VERCEL=1`); the container has no analytics until a provider is chosen. Moving the site, step by step, in Portuguese: [docs/launch/front-container-apps.md](docs/launch/front-container-apps.md).
 
 **Google sign-in.** Create an OAuth client of type "Web application" in Google Cloud and register these authorized redirect URIs (the path is fixed, `/signin-google`):
 
@@ -105,4 +114,4 @@ CI runs both, plus lint, type checking and a production build, on every push and
 
 ## Deployment
 
-On `main`, after the checks pass, the API image is pushed to GitHub Container Registry and deployed to Azure Container Apps (OIDC login, no stored passwords), then the workflow waits for the new revision to be healthy and smoke-tests the domain. Database migrations and the content import run when the API starts. The web app deploys through Vercel's Git integration.
+On `main`, after the checks pass, the API image is pushed to GitHub Container Registry and deployed to Azure Container Apps (OIDC login, no stored passwords), then the workflow waits for the new revision to be healthy and smoke-tests the domain. Database migrations and the content import run when the API starts. The web app deploys through Vercel's Git integration for now; a second job, "Deploy web to Azure", builds `apps/web/Dockerfile` and deploys it as its own Container App in the same environment the same way (after the API job, so a new page never meets an older API). It stays off until the repository variable `AZURE_DEPLOY_WEB` is `true`.
