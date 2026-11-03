@@ -139,7 +139,8 @@
     "readOnWikipedia": "Read on Wikipedia",
     "cluesOff": "Clues off",
     "noNewClues": "No new clues",
-    "unknownGuess": "Guess made on another device"
+    "unknownGuess": "Guess made on another device",
+    "goToPractice": "Go to practice"
   },
   "HowToPlay": {
     "title": "How to play",
@@ -194,7 +195,7 @@
       },
       "practice": {
         "title": "Practice mode",
-        "text": "play as much as you like, without affecting your stats."
+        "text": "after the daily challenge, play as much as you like, without affecting your stats."
       },
       "noAds": {
         "title": "No ads",
@@ -307,7 +308,7 @@
   "Perks": {
     "lockedTitle": "For supporters",
     "lockedArchive": "Past games are a supporter perk: play every previous day's challenge, with the same rules as the daily game.",
-    "lockedPractice": "Practice mode is a supporter perk: as many rounds as you like, with your own settings, without touching your stats.",
+    "lockedPractice": "Practice mode is a supporter perk: after the daily challenge, as many rounds as you like, with your own settings, without touching your stats.",
     "becomeSupporter": "Become a supporter",
     "backToGame": "Back to today's game",
     "loading": "Loading…",
@@ -371,6 +372,9 @@
     "playAgain": "Play again",
     "changeSettings": "Change settings",
     "endNote": "Practice round: your stats and streak are unchanged.",
-    "attemptsShort": "{count} attempts"
+    "attemptsShort": "{count} attempts",
+    "dailyFirstTitle": "Today's challenge first",
+    "dailyFirstText": "Finish today's challenge to unlock practice. That way practice never gives away today's answer.",
+    "dailyFirstButton": "Play today's challenge"
   }
 }

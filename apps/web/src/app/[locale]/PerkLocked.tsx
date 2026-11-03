@@ -31,6 +31,30 @@ export function PerkLocked({ perk }: { perk: "archive" | "practice" }) {
   );
 }
 
+// What a supporter sees on the practice page before today's daily game is
+// over. Also decided by the API (409 "daily_not_finished"): practice can draw
+// any empire, today's included.
+export function PracticeNeedsDaily() {
+  const t = useTranslations("Practice");
+
+  return (
+    <div className="flex w-full max-w-md flex-col items-center gap-3 rounded-2xl border border-line bg-surface px-5 py-6 text-center">
+      <svg viewBox="0 0 24 24" className="size-8 text-highlight" fill="none" stroke="currentColor" strokeWidth={1.8} aria-hidden>
+        <circle cx="12" cy="12" r="8" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l2.5 2.5" />
+      </svg>
+      <h2 className="font-display text-lg">{t("dailyFirstTitle")}</h2>
+      <p className="text-sm leading-relaxed">{t("dailyFirstText")}</p>
+      <Link
+        href="/"
+        className="rounded-full bg-accent px-6 py-1.5 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/85"
+      >
+        {t("dailyFirstButton")}
+      </Link>
+    </div>
+  );
+}
+
 export function PerkMessage({ children }: { children: React.ReactNode }) {
   return <p className="py-8 text-center text-sm text-muted">{children}</p>;
 }

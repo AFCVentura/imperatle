@@ -2,7 +2,15 @@
 
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
-import { getPracticeMap, getPracticePool, getPracticeSession, PerkLockedError, startPractice, submitPracticeGuess } from "@/lib/api";
+import {
+  DailyNotFinishedError,
+  getPracticeMap,
+  getPracticePool,
+  getPracticeSession,
+  PerkLockedError,
+  startPractice,
+  submitPracticeGuess,
+} from "@/lib/api";
 import type { GameProgress } from "@/lib/gameStorage";
 import { loadPracticeOptions, loadPracticeRound, savePracticeOptions, savePracticeRound } from "@/lib/practiceStorage";
 import { reconcileProgress } from "@/lib/reconcileProgress";
@@ -17,18 +25,20 @@ import {
   type PracticeSession,
 } from "@/lib/types";
 import { PlayBoard, type PlaySession } from "../GameBoard";
-import { PerkLocked, PerkMessage } from "../PerkLocked";
+import { PerkLocked, PerkMessage, PracticeNeedsDaily } from "../PerkLocked";
 
 type View =
   | { status: "loading" }
   | { status: "locked" }
+  | { status: "dailyFirst" }
   | { status: "error" }
   | { status: "setup" }
   | { status: "playing"; round: PracticeSession; initial: GameProgress | null };
 
 // Practice mode: pick the options, play a random empire, play again. The
 // round lives on the server (it holds the empire); this page only keeps the
-// round id and a display copy, so a reload resumes where it was.
+// round id and a display copy, so a reload resumes where it was. It opens
+// only once today's daily game is over (the API answers 409 until then).
 export function PracticeClient({ empires }: { empires: EmpireSummary[] }) {
   const t = useTranslations("Practice");
   const tGame = useTranslations("Game");
@@ -44,7 +54,7 @@ export function PracticeClient({ empires }: { empires: EmpireSummary[] }) {
   useEffect(() => {
     let current = true;
     const saved = loadPracticeRound();
-    const onError = (e: unknown) => current && setView({ status: e instanceof PerkLockedError ? "locked" : "error" });
+    const onError = (e: unknown) => current && setView({ status: refusal(e) ?? "error" });
 
     if (saved) {
       getPracticeSession(saved.id).then(
@@ -57,7 +67,9 @@ export function PracticeClient({ empires }: { empires: EmpireSummary[] }) {
           }),
         (e) => {
           if (!current) return;
-          if (e instanceof PerkLockedError) return setView({ status: "locked" });
+          const refused = refusal(e);
+          // Kept: once today's game is over the same round resumes.
+          if (refused) return setView({ status: refused });
           // Gone or not this player's any more: start over.
           savePracticeRound(null);
           setView({ status: "setup" });
@@ -86,7 +98,8 @@ export function PracticeClient({ empires }: { empires: EmpireSummary[] }) {
       savePracticeRound({ id: round.id, progress: null });
       setView({ status: "playing", round, initial: null });
     } catch (e) {
-      if (e instanceof PerkLockedError) setView({ status: "locked" });
+      const refused = refusal(e);
+      if (refused) setView({ status: refused });
       else setStartFailed("error");
     } finally {
       setStarting(false);
@@ -101,6 +114,7 @@ export function PracticeClient({ empires }: { empires: EmpireSummary[] }) {
 
   if (view.status === "loading") return <PerkMessage>{tPerks("loading")}</PerkMessage>;
   if (view.status === "locked") return <PerkLocked perk="practice" />;
+  if (view.status === "dailyFirst") return <PracticeNeedsDaily />;
   if (view.status === "error") return <p className="py-8 text-center text-sm text-danger">{tPerks("loadError")}</p>;
 
   if (view.status === "setup") {
@@ -157,6 +171,14 @@ export function PracticeClient({ empires }: { empires: EmpireSummary[] }) {
       <PlayBoard key={round.id} session={session} empires={empires} initial={initial} />
     </>
   );
+}
+
+// The two ways the API turns a player away: not a supporter (403), or a
+// supporter whose daily game isn't over yet (409).
+function refusal(e: unknown): "locked" | "dailyFirst" | null {
+  if (e instanceof PerkLockedError) return "locked";
+  if (e instanceof DailyNotFinishedError) return "dailyFirst";
+  return null;
 }
 
 function OptionsSummary({ options }: { options: PracticeOptions }) {

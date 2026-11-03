@@ -8,6 +8,8 @@ import { EmpireMap } from "@/map/EmpireMap";
 import type { MapLocale, MapStage } from "@/map/geo";
 import { mapStageForMode, type MapMode } from "@/map/stage";
 import { openStats } from "@/lib/dialogs";
+import { Link } from "@/i18n/navigation";
+import { useMe } from "@/lib/me";
 import { loadGameProgress, saveGameProgress, type GameProgress, type GuessHistoryEntry } from "@/lib/gameStorage";
 import { pickLocalized } from "@/lib/pickLocalized";
 import { reconcileProgress } from "@/lib/reconcileProgress";
@@ -62,6 +64,7 @@ const noSubscription = () => () => {};
 export function GameBoard({ challenge, empires }: GameBoardProps) {
   const t = useTranslations("Game");
   const hydrated = useSyncExternalStore(noSubscription, () => true, () => false);
+  const me = useMe();
   if (!hydrated) return null;
 
   const session: PlaySession = {
@@ -83,6 +86,12 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
         >
           {t("viewStats")}
         </button>
+        {/* Practice opens once today's game is over (the API decides). */}
+        {me?.user?.isSupporter && (
+          <Link href="/practice" className="rounded-full border border-line px-4 py-1.5 text-sm font-medium hover:bg-background">
+            {t("goToPractice")}
+          </Link>
+        )}
       </>
     ),
   };

@@ -135,6 +135,14 @@ export class PerkLockedError extends Error {
   }
 }
 
+// Practice only opens once today's daily game is over (409
+// "daily_not_finished"): before that it could show today's empire.
+export class DailyNotFinishedError extends Error {
+  constructor() {
+    super("Finish today's challenge first");
+  }
+}
+
 export class ApiStatusError extends Error {
   constructor(
     path: string,
@@ -152,6 +160,10 @@ async function perkFetch<T>(path: string, init?: RequestInit): Promise<T> {
     headers: init?.body ? { "Content-Type": "application/json" } : undefined,
   });
   if (res.status === 403) throw new PerkLockedError();
+  if (res.status === 409) {
+    const body = (await res.json().catch(() => null)) as { code?: string } | null;
+    if (body?.code === "daily_not_finished") throw new DailyNotFinishedError();
+  }
   if (!res.ok) throw new ApiStatusError(path, res.status);
   return res.json() as Promise<T>;
 }

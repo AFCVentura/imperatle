@@ -139,7 +139,8 @@
     "readOnWikipedia": "Ler na Wikipedia",
     "cluesOff": "Dicas desligadas",
     "noNewClues": "Sem novas dicas",
-    "unknownGuess": "Palpite feito em outro aparelho"
+    "unknownGuess": "Palpite feito em outro aparelho",
+    "goToPractice": "Ir pro treino"
   },
   "HowToPlay": {
     "title": "Como jogar",
@@ -194,7 +195,7 @@
       },
       "practice": {
         "title": "Modo treino",
-        "text": "jogar à vontade, sem contar nas estatísticas."
+        "text": "depois do desafio do dia, jogar à vontade, sem contar nas estatísticas."
       },
       "noAds": {
         "title": "Sem anúncios",
@@ -307,7 +308,7 @@
   "Perks": {
     "lockedTitle": "Para apoiadores",
     "lockedArchive": "Os jogos anteriores são um benefício de quem apoia: jogue o desafio de qualquer dia que já passou, com as mesmas regras do jogo diário.",
-    "lockedPractice": "O modo treino é um benefício de quem apoia: quantas rodadas quiser, do seu jeito, sem mexer nas suas estatísticas.",
+    "lockedPractice": "O modo treino é um benefício de quem apoia: depois do desafio do dia, quantas rodadas quiser, do seu jeito, sem mexer nas suas estatísticas.",
     "becomeSupporter": "Quero apoiar",
     "backToGame": "Voltar ao jogo de hoje",
     "loading": "Carregando…",
@@ -371,6 +372,9 @@
     "playAgain": "Jogar de novo",
     "changeSettings": "Mudar opções",
     "endNote": "Rodada de treino: suas estatísticas e sua sequência continuam iguais.",
-    "attemptsShort": "{count} tentativas"
+    "attemptsShort": "{count} tentativas",
+    "dailyFirstTitle": "Primeiro, o desafio de hoje",
+    "dailyFirstText": "Termine o desafio de hoje pra liberar o treino. Assim o treino nunca entrega a resposta do dia.",
+    "dailyFirstButton": "Jogar o desafio de hoje"
   }
 }
