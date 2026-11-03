@@ -9,7 +9,8 @@
     "menuLabel": "Menu",
     "closeLabel": "Fechar menu",
     "menu": {
-      "createAccount": "Criar conta",
+      "signIn": "Entrar",
+      "account": "Minha conta",
       "statistics": "Estatísticas",
       "howToPlay": "Como jogar",
       "support": "Apoiar o projeto",
@@ -205,26 +206,6 @@
         }
       },
       "note": "O apoio ainda não está disponível. Quando estiver, vai ser uma assinatura barata, mensal ou anual, e você cria sua conta ali mesmo. Dá pra cancelar quando quiser."
-    },
-    "account": {
-      "title": "Criar conta",
-      "intro": "Você não precisa de conta pra jogar. Por enquanto, seu progresso e suas estatísticas ficam salvos neste navegador.",
-      "perksTitle": "Com uma conta, você vai ter",
-      "perks": {
-        "sync": {
-          "title": "Estatísticas em qualquer lugar",
-          "text": "seu histórico e suas sequências no celular e no computador."
-        },
-        "google": {
-          "title": "Login com Google",
-          "text": "sem senha nova pra decorar."
-        },
-        "safe": {
-          "title": "Progresso guardado",
-          "text": "limpar o navegador não apaga sua sequência."
-        }
-      },
-      "note": "As contas ainda não estão disponíveis. Elas chegam junto com o apoio ao projeto."
     }
   },
   "Feedback": {
@@ -272,5 +253,39 @@
     "empires": "{count, plural, one {# mapa novo} other {# mapas novos}}",
     "features": "Novidades",
     "fixes": "Ajustes"
+  },
+  "Account": {
+    "title": "Sua conta",
+    "signInTitle": "Entrar",
+    "intro": "Você não precisa de conta pra jogar. Sem conta, seu progresso e suas estatísticas ficam só neste navegador.",
+    "perksTitle": "Com uma conta, você tem",
+    "perks": {
+      "sync": {
+        "title": "Estatísticas em qualquer lugar",
+        "text": "seu histórico e suas sequências no celular e no computador."
+      },
+      "safe": {
+        "title": "Progresso guardado",
+        "text": "limpar o navegador não apaga sua sequência."
+      },
+      "merge": {
+        "title": "Nada se perde",
+        "text": "o que você já jogou neste navegador vai junto pra conta."
+      }
+    },
+    "google": "Entrar com Google",
+    "privacy": "Guardamos só seu nome e seu e-mail. Dá pra excluir a conta quando quiser.",
+    "loginError": "Não deu pra entrar com o Google. Tente de novo.",
+    "loading": "Carregando…",
+    "signedInAs": "Conectado como",
+    "supporter": "Apoiador",
+    "signOut": "Sair",
+    "delete": "Excluir conta",
+    "confirmTitle": "Excluir a conta?",
+    "confirmText": "Isso apaga sua conta e todos os jogos ligados a ela. Não dá pra desfazer.",
+    "confirmSupporter": "Você também perde os benefícios de apoiador.",
+    "confirmDelete": "Excluir para sempre",
+    "cancel": "Cancelar",
+    "error": "Algo deu errado. Tente de novo."
   }
 }

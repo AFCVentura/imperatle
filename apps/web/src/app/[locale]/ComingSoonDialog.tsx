@@ -7,11 +7,10 @@ import { AppDialog } from "./AppDialog";
 
 const PERKS: Record<ComingSoonFeature, readonly string[]> = {
   support: ["noAds", "practice", "archive", "creator", "request"],
-  account: ["sync", "google", "safe"],
 };
 
-// One dialog for every menu item whose feature isn't built yet (support,
-// accounts): what it will be, what it will give, and a clear "coming soon".
+// One dialog for every menu item whose feature isn't built yet (support):
+// what it will be, what it will give, and a clear "coming soon".
 // When support ships, the account is created inside that flow.
 export function ComingSoonDialog() {
   const t = useTranslations("ComingSoon");

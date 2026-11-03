@@ -26,6 +26,7 @@ How it works:
 - **Daily schedule.** Every active empire appears once per cycle, in random order, with no repeats across a cycle boundary.
 - **Statistics.** Win rate, streaks and attempt distribution per player, plus how everyone did on today's challenge.
 - **Feedback.** A form with a honeypot and a per-IP rate limit, stored in the database and forwarded by e-mail (Resend).
+- **Optional accounts.** Sign in with Google, handled by the API (external login plus an HttpOnly, SameSite=Lax cookie). On every login the browser's anonymous games move to the account; if both have the same day, the account's game wins. Signed in, attempts and statistics follow the account on every device, and the account can be deleted with all its games from the menu.
 
 ## Running locally
 
@@ -44,10 +45,33 @@ npm run dev                          # http://localhost:3000
 
 The web app reads the API address from `NEXT_PUBLIC_API_URL` (`apps/web/.env.local`, e.g. `http://localhost:5055`).
 
+## Configuration
+
+The API reads its settings from `appsettings*.json` and environment variables (`Section__Key`, e.g. `Auth__Google__ClientId`). Secrets go in environment variables, never in the repository.
+
+| Setting (environment variable) | What it is |
+|---|---|
+| `ConnectionStrings__DefaultConnection` | PostgreSQL connection string. |
+| `Cors__AllowedOrigins` | Comma-separated web app origins (e.g. `https://imperatle.com,https://www.imperatle.com`). Also the only places the login may return to, and the only origins allowed to call logout and account deletion. |
+| `Auth__Google__ClientId` | Google OAuth client id. Without it (and the secret) the API runs without login, and the sign-in button returns with an error message. |
+| `Auth__Google__ClientSecret` | Google OAuth client secret. |
+| `Auth__CookieDomain` | Domain of the login cookie. `imperatle.com` in production, so `imperatle.com` and `api.imperatle.com` share it; empty locally (the cookie stays on the API host, which is enough on `localhost`). |
+| `Resend__ApiKey`, `Resend__From`, `Feedback__NotifyEmail` | E-mail forwarding of feedback messages (optional). |
+| `Database__MigrateOnStartup` | `false` to apply migrations by hand instead of on startup. |
+
+The web app reads `NEXT_PUBLIC_API_URL`.
+
+**Google sign-in.** Create an OAuth client of type "Web application" in Google Cloud and register these authorized redirect URIs (the path is fixed, `/signin-google`):
+
+- local: `http://localhost:5055/signin-google` (and the port of any other API you run, e.g. `http://localhost:5101/signin-google`)
+- production: `https://api.imperatle.com/signin-google`
+
+Step by step, in Portuguese: [docs/launch/google-oauth-setup.md](docs/launch/google-oauth-setup.md). The login cookie is encrypted with ASP.NET Core Data Protection keys stored in the database (`DataProtectionKeys` table), so logins survive deploys and work across replicas.
+
 ## Tests
 
-- **API** (`tests/Imperatle.Api.Tests`, xUnit v3): scheduler rotation, content validation (including every shipped empire file and map), clue unlocking, size and duration comparisons, statistics, and the content import. Run with `dotnet test --solution apps/api/Imperatle.Api.sln`.
-- **Web** (`apps/web`, Vitest): share text, number and year formatting, empire name search. Run with `npm test`.
+- **API** (`tests/Imperatle.Api.Tests`, xUnit v3): scheduler rotation, content validation (including every shipped empire file and map), clue unlocking, size and duration comparisons, statistics, the content import, and accounts (moving anonymous games into an account, `/me`, account deletion, login redirect and origin checks). Run with `dotnet test --solution apps/api/Imperatle.Api.sln`.
+- **Web** (`apps/web`, Vitest): share text, number and year formatting, empire name search, the `/me` client. Run with `npm test`.
 
 CI runs both, plus lint, type checking and a production build, on every push and pull request. CodeQL scans C#, TypeScript and the workflows, and Dependabot keeps dependencies current.
 

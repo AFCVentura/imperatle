@@ -1,14 +1,18 @@
 using System.Threading.RateLimiting;
+using Imperatle.Api.Auth;
 using Imperatle.Api.Data;
 using Imperatle.Api.Game;
 using Imperatle.Api.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 const string FrontendCorsPolicy = "FrontendCorsPolicy";
-const string AnonymousCookieName = "imperatle_aid";
+const string AnonymousCookieName = AnonymousIdentity.CookieName;
 
 // Add services to the container.
 
@@ -33,6 +37,62 @@ if (allowedOrigins.Length == 0)
 {
     throw new InvalidOperationException("Cors:AllowedOrigins is not configured.");
 }
+
+builder.Services.AddSingleton(new AllowedOrigins(allowedOrigins));
+
+// Accounts (optional, Google only). The login cookie is HttpOnly, Secure and
+// SameSite=Lax; with Auth:CookieDomain set (e.g. "imperatle.com") the web app
+// and the API share it, otherwise it stays on the API host.
+var cookieDomain = builder.Configuration["Auth:CookieDomain"];
+var cookieSecurePolicy = builder.Environment.IsDevelopment() ? CookieSecurePolicy.SameAsRequest : CookieSecurePolicy.Always;
+
+builder.Services.AddDataProtection()
+    .SetApplicationName("Imperatle")
+    .PersistKeysToDbContext<ImperatleDbContext>();
+
+var authentication = builder.Services.AddAuthentication(AuthConstants.SessionScheme)
+    .AddCookie(AuthConstants.SessionScheme, options =>
+    {
+        options.Cookie.Name = AuthConstants.SessionCookieName;
+        options.Cookie.HttpOnly = true;
+        options.Cookie.SameSite = SameSiteMode.Lax;
+        options.Cookie.SecurePolicy = cookieSecurePolicy;
+        options.Cookie.Domain = string.IsNullOrWhiteSpace(cookieDomain) ? null : cookieDomain;
+        options.ExpireTimeSpan = TimeSpan.FromDays(180);
+        options.SlidingExpiration = true;
+        options.Events.OnValidatePrincipal = AuthEvents.ValidatePrincipalAsync;
+        options.Events.OnRedirectToLogin = context => AuthEvents.StatusInsteadOfRedirect(context, StatusCodes.Status401Unauthorized);
+        options.Events.OnRedirectToAccessDenied = context => AuthEvents.StatusInsteadOfRedirect(context, StatusCodes.Status403Forbidden);
+    })
+    .AddCookie(AuthConstants.ExternalScheme, options =>
+    {
+        options.Cookie.Name = AuthConstants.ExternalCookieName;
+        options.Cookie.HttpOnly = true;
+        options.Cookie.SameSite = SameSiteMode.Lax;
+        options.Cookie.SecurePolicy = cookieSecurePolicy;
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+    });
+
+// Without a client id/secret (CI, a fresh clone) the API runs without the
+// Google scheme and the login endpoint answers with ?login=error.
+var googleClientId = builder.Configuration["Auth:Google:ClientId"];
+var googleClientSecret = builder.Configuration["Auth:Google:ClientSecret"];
+if (!string.IsNullOrWhiteSpace(googleClientId) && !string.IsNullOrWhiteSpace(googleClientSecret))
+{
+    authentication.AddGoogle(AuthConstants.GoogleScheme, options =>
+    {
+        options.ClientId = googleClientId;
+        options.ClientSecret = googleClientSecret;
+        options.SignInScheme = AuthConstants.ExternalScheme;
+        options.CallbackPath = "/signin-google";
+        // Google returns with a top-level GET, which Lax cookies survive.
+        options.CorrelationCookie.SameSite = SameSiteMode.Lax;
+        options.CorrelationCookie.SecurePolicy = cookieSecurePolicy;
+    });
+}
+
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<ICurrentPlayer, HttpCurrentPlayer>();
 
 builder.Services.AddCors(options =>
 {
@@ -77,7 +137,19 @@ builder.Services.AddRateLimiter(options =>
             }));
 });
 
+// Azure Container Apps ends TLS at its ingress and forwards plain HTTP; this
+// restores the https scheme so the Google redirect URI and Secure cookies are
+// right. Only the scheme is taken from the proxy.
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders = ForwardedHeaders.XForwardedProto;
+    options.KnownIPNetworks.Clear();
+    options.KnownProxies.Clear();
+});
+
 var app = builder.Build();
+
+app.UseForwardedHeaders();
 
 // Brings the schema up to date before serving anything. EF Core locks the
 // database while migrating, so replicas starting together don't race.
@@ -125,6 +197,7 @@ app.UseCors(FrontendCorsPolicy);
 
 app.UseRateLimiter();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
