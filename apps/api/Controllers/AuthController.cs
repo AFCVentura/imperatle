@@ -70,6 +70,10 @@ public class AuthController(
             ct);
 
         await AccountService.ClaimAnonymousProgressAsync(db, player.AnonymousId, user.Id, ct);
+        if (await AccountService.BrowserHasOtherAccountAsync(db, player.AnonymousId, user.Id, ct))
+        {
+            AnonymousIdentity.Issue(Request, Response);
+        }
 
         var identity = new ClaimsIdentity([new Claim(AuthConstants.UserIdClaim, user.Id.ToString())], AuthConstants.SessionScheme);
         await HttpContext.SignInAsync(

@@ -82,6 +82,15 @@ public static class AccountService
         return anonymousRows.Count;
     }
 
+    // True when this browser's anonymous id still carries games of a
+    // different account (its login cookie expired or was dropped without a
+    // logout, which is what issues a fresh id). Signing in as someone else on
+    // that id would hit the one-row-per-browser-per-day index on the first
+    // day both played, so the login gives the browser a fresh id instead.
+    public static Task<bool> BrowserHasOtherAccountAsync(
+        ImperatleDbContext db, Guid anonymousId, Guid userId, CancellationToken ct = default) =>
+        db.PlayerChallengeProgress.AnyAsync(p => p.AnonymousId == anonymousId && p.UserId != null && p.UserId != userId, ct);
+
     // LGPD/GDPR: the account and every game tied to it.
     public static async Task<bool> DeleteAccountAsync(ImperatleDbContext db, Guid userId, CancellationToken ct = default)
     {

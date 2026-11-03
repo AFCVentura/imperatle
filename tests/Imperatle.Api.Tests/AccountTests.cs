@@ -126,6 +126,46 @@ public class AccountTests
         Assert.Equal(2, await db.PlayerChallengeProgress.CountAsync(p => p.UserId == first.Id, Ct));
     }
 
+    // The login cookie of account A expired on a shared browser (no logout,
+    // so the anonymous id stayed) and B signs in there. A's rows keep that
+    // anonymous id; B playing the same day would need a second row for it,
+    // which the unique (AnonymousId, Date) index refuses with a 500.
+    [Fact]
+    public async Task A_browser_holding_another_account_games_is_flagged_for_a_fresh_id()
+    {
+        await using var db = NewDb();
+        var a = await AddUserAsync(db, "google-a");
+        var b = await AddUserAsync(db, "google-b");
+        var browser = Guid.NewGuid();
+        db.PlayerChallengeProgress.Add(Row(browser, Day3, a.Id));
+        db.PlayerChallengeProgress.Add(Row(browser, Day2));
+        await db.SaveChangesAsync(Ct);
+
+        await AccountService.ClaimAnonymousProgressAsync(db, browser, b.Id, Ct);
+
+        Assert.True(await AccountService.BrowserHasOtherAccountAsync(db, browser, b.Id, Ct));
+        // B's game for Day3 isn't found on this browser, so a guess would add
+        // a second (browser, Day3) row: exactly what the fresh id avoids.
+        var asB = new FakePlayer(browser, b.Id);
+        Assert.Null(await AccountService.FindProgressAsync(db, asB, Day3, Ct));
+    }
+
+    [Fact]
+    public async Task A_browser_with_only_its_own_account_games_keeps_its_id()
+    {
+        await using var db = NewDb();
+        var a = await AddUserAsync(db, "google-a");
+        var browser = Guid.NewGuid();
+        db.PlayerChallengeProgress.Add(Row(browser, Day3, a.Id));
+        db.PlayerChallengeProgress.Add(Row(browser, Day2));
+        await db.SaveChangesAsync(Ct);
+
+        await AccountService.ClaimAnonymousProgressAsync(db, browser, a.Id, Ct);
+
+        Assert.False(await AccountService.BrowserHasOtherAccountAsync(db, browser, a.Id, Ct));
+        Assert.False(await AccountService.BrowserHasOtherAccountAsync(db, Guid.NewGuid(), a.Id, Ct));
+    }
+
     [Fact]
     public async Task A_missing_google_name_falls_back_to_the_email()
     {
