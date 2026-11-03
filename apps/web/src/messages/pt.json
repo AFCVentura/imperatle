@@ -380,5 +380,11 @@
   },
   "Share": {
     "archiveTitle": "Treino #{number}"
+  },
+  "Checkout": {
+    "title": "Pagamento",
+    "opening": "Abrindo a janela de pagamento...",
+    "unavailable": "A janela de pagamento não carregou. Confira a conexão ou desligue bloqueadores neste site e recarregue a página.",
+    "back": "Voltar ao jogo"
   }
 }

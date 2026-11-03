@@ -1,3 +1,4 @@
+using Imperatle.Api.Controllers;
 using Imperatle.Api.Data;
 using Imperatle.Api.Services;
 using Microsoft.AspNetCore.Authentication;
@@ -25,6 +26,39 @@ public static class AuthEvents
             context.RejectPrincipal();
             await context.HttpContext.SignOutAsync(AuthConstants.SessionScheme);
         }
+    }
+
+    // Anything that goes wrong on the way back from Google (bad client secret,
+    // expired state, a lost correlation cookie, Google being down) sends the
+    // player back to the page they came from with ?login=error, where the web
+    // app explains it, instead of a bare 500. The reason goes to the log.
+    public static Task GoogleRemoteFailureAsync(RemoteFailureContext context)
+    {
+        var logger = context.HttpContext.RequestServices.GetRequiredService<ILoggerFactory>()
+            .CreateLogger("Imperatle.Auth");
+        logger.LogWarning(context.Failure, "Google login failed: {Reason}", context.Failure?.Message);
+
+        context.Response.Redirect(AuthController.WithLoginError(ReturnUrlOf(context.HttpContext, context.Properties)));
+        context.HandleResponse();
+        return Task.CompletedTask;
+    }
+
+    // The player pressed "Cancel" on Google's screen: back to where they were,
+    // with no error message, since nothing went wrong.
+    public static Task GoogleAccessDeniedAsync(AccessDeniedContext context)
+    {
+        context.Response.Redirect(ReturnUrlOf(context.HttpContext, context.Properties));
+        context.HandleResponse();
+        return Task.CompletedTask;
+    }
+
+    private static string ReturnUrlOf(HttpContext httpContext, AuthenticationProperties? properties)
+    {
+        var origins = httpContext.RequestServices.GetRequiredService<AllowedOrigins>();
+        return properties?.Items.TryGetValue(AuthConstants.ReturnUrlItem, out var stored) == true
+            && origins.IsAllowedReturnUrl(stored)
+                ? stored!
+                : origins.Default;
     }
 
     // An API answers 401/403, it doesn't redirect to a login page.

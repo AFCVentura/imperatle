@@ -16,6 +16,18 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    version: "1.4.1",
+    date: "2026-11-03",
+    empires: [],
+    features: [],
+    fixes: [
+      {
+        en: "If signing in with Google fails, you now come back to the game with a message instead of an error page. Cancelling on Google's screen just takes you back.",
+        pt: "Se a entrada com o Google falhar, você agora volta para o jogo com um aviso, em vez de uma página de erro. Cancelar na tela do Google só te traz de volta.",
+      },
+    ],
+  },
+  {
     version: "1.4.0",
     date: "2026-11-03",
     empires: [],

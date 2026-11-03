@@ -97,6 +97,8 @@ if (!string.IsNullOrWhiteSpace(googleClientId) && !string.IsNullOrWhiteSpace(goo
         // Google returns with a top-level GET, which Lax cookies survive.
         options.CorrelationCookie.SameSite = SameSiteMode.Lax;
         options.CorrelationCookie.SecurePolicy = cookieSecurePolicy;
+        options.Events.OnRemoteFailure = AuthEvents.GoogleRemoteFailureAsync;
+        options.Events.OnAccessDenied = AuthEvents.GoogleAccessDeniedAsync;
     });
 }
 

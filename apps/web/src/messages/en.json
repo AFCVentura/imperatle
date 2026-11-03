@@ -380,5 +380,11 @@
   },
   "Share": {
     "archiveTitle": "Practice #{number}"
+  },
+  "Checkout": {
+    "title": "Payment",
+    "opening": "Opening the payment window...",
+    "unavailable": "The payment window could not load. Check your connection or turn off blockers for this site, then reload the page.",
+    "back": "Back to the game"
   }
 }
