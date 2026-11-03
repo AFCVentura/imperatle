@@ -92,12 +92,14 @@ How it fits together: the browser opens Paddle's overlay checkout with `customDa
 |---|---|---|
 | `Dev:IsSupporter` (`Dev__IsSupporter`) | API, Development only | `true` makes every player a supporter (signed in or not), to try the supporter perks (past games, practice) without Google or Paddle. Applied as a Development-only wrapper around the real current player (`DevSupporterCurrentPlayer`); ignored outside Development. |
 
+The ad slot (`apps/web/src/app/[locale]/AdSlot.tsx`, under the page content) is a reserved place only: it renders nothing while `ADS_ENABLED` in `apps/web/src/lib/ads.ts` is `false`, and never for supporters.
+
 Practice mode's difficulty tiers live in [`apps/api/Content/practice-difficulty.json`](apps/api/Content/practice-difficulty.json): slugs listed per tier (easy, medium, hard), and empires not listed get a tier from their peak area (`thresholdsKm2`). Restart the API after editing it.
 
 ## Tests
 
-- **API** (`tests/Imperatle.Api.Tests`, xUnit v3): scheduler rotation, content validation (including every shipped empire file and map), clue unlocking, size and duration comparisons, statistics, the content import, accounts (moving anonymous games into an account, `/me`, account deletion, login redirect and origin checks), and the Paddle webhook (signature, stale and replayed events, grant and refund). Run with `dotnet test --solution apps/api/Imperatle.Api.sln`.
-- **Web** (`apps/web`, Vitest): share text, number and year formatting, empire name search, the `/me` client, the Supporter purchase flow. Run with `npm test`.
+- **API** (`tests/Imperatle.Api.Tests`, xUnit v3): scheduler rotation, content validation (including every shipped empire file and map), clue unlocking, size and duration comparisons, statistics, the content import, accounts (moving anonymous games into an account, `/me`, account deletion, login redirect and origin checks), the Paddle webhook (signature, stale and replayed events, grant and refund), the archive and practice perks, and the launch integration (one owner rule for the daily game, stats, archive and practice, stored guesses rebuilt on a second device, the practice pool read from the query string through the real MVC pipeline). Run with `dotnet test --solution apps/api/Imperatle.Api.sln`.
+- **Web** (`apps/web`, Vitest): share text, number and year formatting, empire name search, the `/me` client, the Supporter purchase flow, rebuilding a board from the server's progress, the ad slot rule. Run with `npm test`.
 
 CI runs both, plus lint, type checking and a production build, on every push and pull request. CodeQL scans C#, TypeScript and the workflows, and Dependabot keeps dependencies current.
 
