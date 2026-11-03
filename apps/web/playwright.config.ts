@@ -2,8 +2,8 @@ import { defineConfig, devices } from "@playwright/test";
 import { API_URL, CONNECTION_STRING, SUPPORTER_API_URL, WEB_URL } from "./e2e/env.mjs";
 
 // End-to-end suite (`npm run e2e`, not part of `npm test`). Needs Docker with
-// the imperatle-postgres-1 container up; see e2e/README section in
-// docs/launch/QA-REPORT.md.
+// the imperatle-postgres-1 container up and ports 5104, 5105 and 3004 free;
+// it uses its own database (imperatle_qa). See docs/launch/QA-REPORT.md.
 const apiEnv = (port: number, supporter: boolean) => ({
   ASPNETCORE_ENVIRONMENT: "Development",
   ASPNETCORE_URLS: `http://localhost:${port}`,
