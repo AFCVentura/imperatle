@@ -279,6 +279,13 @@ namespace Imperatle.Api.Migrations
                     b.Property<int>("EmpireId")
                         .HasColumnType("integer");
 
+                    b.Property<bool>("FromArchive")
+                        .HasColumnType("boolean");
+
+                    b.PrimitiveCollection<List<string>>("GuessedSlugs")
+                        .IsRequired()
+                        .HasColumnType("text[]");
+
                     b.Property<Guid?>("UserId")
                         .HasColumnType("uuid");
 
@@ -296,6 +303,101 @@ namespace Imperatle.Api.Migrations
                         .HasFilter("\"UserId\" IS NOT NULL");
 
                     b.ToTable("PlayerChallengeProgress");
+                });
+
+            modelBuilder.Entity("Imperatle.Api.Models.PracticeSession", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("AnonymousId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("AttemptsAllowed")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("AttemptsUsed")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("Completed")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime?>("CompletedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Continent")
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<bool>("Correct")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Difficulty")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<int>("EmpireId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Era")
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<bool>("HintsEnabled")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("MapMode")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmpireId");
+
+                    b.HasIndex("AnonymousId", "CreatedAtUtc");
+
+                    b.HasIndex("UserId", "CreatedAtUtc");
+
+                    b.ToTable("PracticeSessions");
+                });
+
+            modelBuilder.Entity("Imperatle.Api.Models.ProcessedWebhookEvent", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasMaxLength(64)
+                        .HasColumnType("character varying(64)");
+
+                    b.Property<string>("EventType")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("character varying(64)");
+
+                    b.Property<string>("Outcome")
+                        .IsRequired()
+                        .HasMaxLength(32)
+                        .HasColumnType("character varying(32)");
+
+                    b.Property<DateTime>("ProcessedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("TransactionId")
+                        .HasMaxLength(64)
+                        .HasColumnType("character varying(64)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TransactionId");
+
+                    b.ToTable("ProcessedWebhookEvents");
                 });
 
             modelBuilder.Entity("Imperatle.Api.Models.User", b =>
@@ -323,8 +425,8 @@ namespace Imperatle.Api.Migrations
                         .HasColumnType("character varying(255)");
 
                     b.Property<string>("PaddleTransactionId")
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
+                        .HasMaxLength(64)
+                        .HasColumnType("character varying(64)");
 
                     b.Property<DateTime?>("SupporterSinceUtc")
                         .HasColumnType("timestamp with time zone");
@@ -333,6 +435,8 @@ namespace Imperatle.Api.Migrations
 
                     b.HasIndex("GoogleSubject")
                         .IsUnique();
+
+                    b.HasIndex("PaddleTransactionId");
 
                     b.ToTable("Users");
                 });
@@ -379,6 +483,22 @@ namespace Imperatle.Api.Migrations
                 });
 
             modelBuilder.Entity("Imperatle.Api.Models.PlayerChallengeProgress", b =>
+                {
+                    b.HasOne("Imperatle.Api.Models.Empire", "Empire")
+                        .WithMany()
+                        .HasForeignKey("EmpireId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Imperatle.Api.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("Empire");
+                });
+
+            modelBuilder.Entity("Imperatle.Api.Models.PracticeSession", b =>
                 {
                     b.HasOne("Imperatle.Api.Models.Empire", "Empire")
                         .WithMany()
