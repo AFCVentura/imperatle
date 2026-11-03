@@ -25,6 +25,9 @@ export async function Footer({ challengeNumber }: FooterProps) {
         <Link href="/terms" className="underline-offset-2 hover:text-foreground hover:underline">
           {t("terms")}
         </Link>
+        <Link href="/refunds" className="underline-offset-2 hover:text-foreground hover:underline">
+          {t("refunds")}
+        </Link>
       </nav>
     </footer>
   );
