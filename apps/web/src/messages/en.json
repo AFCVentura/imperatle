@@ -9,7 +9,8 @@
     "menuLabel": "Menu",
     "closeLabel": "Close menu",
     "menu": {
-      "createAccount": "Create account",
+      "signIn": "Sign in",
+      "account": "My account",
       "statistics": "Statistics",
       "howToPlay": "How to play",
       "support": "Support the project",
@@ -205,26 +206,6 @@
         }
       },
       "note": "Support isn't available yet. When it is, it'll be a cheap subscription, monthly or yearly, and you'll create your account right there. Cancel anytime."
-    },
-    "account": {
-      "title": "Create account",
-      "intro": "You don't need an account to play. For now, your progress and stats are saved in this browser.",
-      "perksTitle": "With an account, you'll get",
-      "perks": {
-        "sync": {
-          "title": "Stats everywhere",
-          "text": "your history and streaks on your phone and your computer."
-        },
-        "google": {
-          "title": "Sign in with Google",
-          "text": "no new password to remember."
-        },
-        "safe": {
-          "title": "Progress kept safe",
-          "text": "clearing the browser won't erase your streak."
-        }
-      },
-      "note": "Accounts aren't available yet. They'll arrive together with support for the project."
     }
   },
   "Feedback": {
@@ -272,5 +253,39 @@
     "empires": "{count, plural, one {# new map} other {# new maps}}",
     "features": "New",
     "fixes": "Adjustments"
+  },
+  "Account": {
+    "title": "Your account",
+    "signInTitle": "Sign in",
+    "intro": "You don't need an account to play. Without one, your progress and stats stay in this browser only.",
+    "perksTitle": "With an account, you get",
+    "perks": {
+      "sync": {
+        "title": "Stats everywhere",
+        "text": "your history and streaks on your phone and your computer."
+      },
+      "safe": {
+        "title": "Progress kept safe",
+        "text": "clearing the browser won't erase your streak."
+      },
+      "merge": {
+        "title": "Nothing lost",
+        "text": "what you've already played in this browser moves to the account."
+      }
+    },
+    "google": "Sign in with Google",
+    "privacy": "We only keep your name and e-mail. You can delete the account anytime.",
+    "loginError": "Couldn't sign in with Google. Please try again.",
+    "loading": "Loading…",
+    "signedInAs": "Signed in as",
+    "supporter": "Supporter",
+    "signOut": "Sign out",
+    "delete": "Delete account",
+    "confirmTitle": "Delete the account?",
+    "confirmText": "This erases your account and every game linked to it. It can't be undone.",
+    "confirmSupporter": "You also lose your supporter perks.",
+    "confirmDelete": "Delete forever",
+    "cancel": "Cancel",
+    "error": "Something went wrong. Please try again."
   }
 }
