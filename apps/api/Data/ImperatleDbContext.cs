@@ -10,6 +10,8 @@ public class ImperatleDbContext(DbContextOptions<ImperatleDbContext> options) : 
     public DbSet<DailyChallenge> DailyChallenges => Set<DailyChallenge>();
     public DbSet<PlayerChallengeProgress> PlayerChallengeProgress => Set<PlayerChallengeProgress>();
     public DbSet<Feedback> Feedback => Set<Feedback>();
+    public DbSet<User> Users => Set<User>();
+    public DbSet<ProcessedWebhookEvent> ProcessedWebhookEvents => Set<ProcessedWebhookEvent>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -40,6 +42,27 @@ public class ImperatleDbContext(DbContextOptions<ImperatleDbContext> options) : 
             feedback.Property(f => f.Message).HasMaxLength(2000);
             feedback.Property(f => f.Email).HasMaxLength(254);
             feedback.Property(f => f.Locale).HasMaxLength(10);
+        });
+
+        modelBuilder.Entity<User>(user =>
+        {
+            user.HasIndex(u => u.GoogleSubject).IsUnique();
+            user.Property(u => u.GoogleSubject).HasMaxLength(255);
+            user.Property(u => u.Email).HasMaxLength(254);
+            user.Property(u => u.DisplayName).HasMaxLength(200);
+            user.Property(u => u.PaddleTransactionId).HasMaxLength(64);
+            // Refund webhooks look the user up by the transaction they paid with.
+            user.HasIndex(u => u.PaddleTransactionId);
+        });
+
+        modelBuilder.Entity<ProcessedWebhookEvent>(evt =>
+        {
+            evt.HasKey(e => e.Id);
+            evt.Property(e => e.Id).HasMaxLength(64);
+            evt.Property(e => e.EventType).HasMaxLength(64);
+            evt.Property(e => e.TransactionId).HasMaxLength(64);
+            evt.Property(e => e.Outcome).HasMaxLength(32);
+            evt.HasIndex(e => e.TransactionId);
         });
     }
 }
