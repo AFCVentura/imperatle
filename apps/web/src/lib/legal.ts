@@ -22,7 +22,7 @@ const privacy: Record<Locale, LegalDocument> = {
     title: "Privacy Policy",
     updated: "Last updated: November 3, 2026",
     intro:
-      "Imperatle is a free daily game made by one person, Ventura, a developer based in Brazil, who is responsible for the data described here. The game collects as little as it can: an account is optional, and nothing here is used for advertising or sold.",
+      "Imperatle is a free daily game made by one person, João Vitor Ventura, a developer based in Brazil, who is responsible for the data described here. The game collects as little as it can: an account is optional, and nothing here is used for advertising or sold.",
     sections: [
       {
         heading: "What is collected",
@@ -83,7 +83,7 @@ const privacy: Record<Locale, LegalDocument> = {
     title: "Política de Privacidade",
     updated: "Atualizada em 3 de novembro de 2026",
     intro:
-      "O Imperatle é um jogo diário e gratuito, feito por uma pessoa só: Ventura, desenvolvedor no Brasil, que é o responsável pelos dados descritos aqui. O jogo coleta o mínimo possível: a conta é opcional, e nada aqui é usado para publicidade ou vendido.",
+      "O Imperatle é um jogo diário e gratuito, feito por uma pessoa só: João Vitor Ventura, desenvolvedor no Brasil, que é o responsável pelos dados descritos aqui. O jogo coleta o mínimo possível: a conta é opcional, e nada aqui é usado para publicidade ou vendido.",
     sections: [
       {
         heading: "O que é coletado",
@@ -147,7 +147,7 @@ const terms: Record<Locale, LegalDocument> = {
     title: "Terms of Use",
     updated: "Last updated: November 3, 2026",
     intro:
-      "These terms apply to anyone who plays Imperatle at imperatle.com. By playing, you agree to them. The game is made and run by Ventura, a developer based in Brazil.",
+      "These terms apply to anyone who plays Imperatle at imperatle.com. By playing, you agree to them. The game is made and run by João Vitor Ventura, a developer based in Brazil.",
     sections: [
       {
         heading: "The game",
@@ -201,7 +201,7 @@ const terms: Record<Locale, LegalDocument> = {
     title: "Termos de Uso",
     updated: "Atualizados em 3 de novembro de 2026",
     intro:
-      "Estes termos valem para quem joga o Imperatle em imperatle.com. Ao jogar, você concorda com eles. O jogo é feito e mantido por Ventura, desenvolvedor no Brasil.",
+      "Estes termos valem para quem joga o Imperatle em imperatle.com. Ao jogar, você concorda com eles. O jogo é feito e mantido por João Vitor Ventura, desenvolvedor no Brasil.",
     sections: [
       {
         heading: "O jogo",
