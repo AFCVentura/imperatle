@@ -232,7 +232,7 @@ const terms: Record<Locale, LegalDocument> = {
       {
         heading: "Compra do Apoio",
         paragraphs: [
-          "O Apoio é uma compra opcional e única (não é assinatura) que libera recursos extras, como jogos anteriores e modo prática, na conta usada na compra, enquanto o jogo existir. O preço aparece na sua moeda antes do pagamento.",
+          "O Apoio é uma compra opcional e única (não é assinatura) que libera recursos extras, como jogos anteriores e modo treino, na conta usada na compra, enquanto o jogo existir. O preço aparece na sua moeda antes do pagamento.",
           "A venda é feita pela nossa revendedora online Paddle.com. A Paddle.com é a responsável pela venda (Merchant of Record) de todos os nossos pedidos: ela atende as dúvidas sobre a compra e cuida das devoluções. Os Termos do Comprador da Paddle (paddle.com/legal/checkout-buyer-terms) também valem para a compra.",
           "Os reembolsos seguem a Política de Reembolso, com link no rodapé de todas as páginas. Uma compra reembolsada ou contestada (chargeback) tira os recursos do Apoio da conta.",
         ],
