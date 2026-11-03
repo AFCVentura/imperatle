@@ -16,6 +16,31 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    version: "1.4.0",
+    date: "2026-11-03",
+    empires: [],
+    features: [
+      {
+        en: "Optional Google account: your statistics and today's game follow you on any device. Playing without an account works as before.",
+        pt: "Conta opcional com o Google: suas estatísticas e o jogo do dia te acompanham em qualquer aparelho. Jogar sem conta continua igual.",
+      },
+      {
+        en: "When you sign in, the games you already played in this browser move to your account.",
+        pt: "Ao entrar, os jogos que você já fez neste navegador passam para a sua conta.",
+      },
+      {
+        en: 'In "My account" you can sign out, sign out of all devices, or delete your account and all its data.',
+        pt: 'Em "Minha conta" dá pra sair, sair de todos os aparelhos ou apagar a conta e todos os dados.',
+      },
+    ],
+    fixes: [
+      {
+        en: "Starting the game on one device and continuing on another now shows the guesses already made.",
+        pt: "Começar o jogo em um aparelho e continuar em outro agora mostra os palpites já feitos.",
+      },
+    ],
+  },
+  {
     version: "1.3.0",
     date: "2026-10-22",
     empires: [
