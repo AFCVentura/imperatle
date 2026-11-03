@@ -32,6 +32,18 @@ public class PracticeTests
         Assert.Equal(valid, PracticeRules.IsValid(new PracticeOptions(Attempts: attempts)));
     }
 
+    // The web app sends difficulty and map by name, era and continent as
+    // numbers like every other game enum; anything left out takes its default.
+    [Fact]
+    public void Options_read_from_the_web_apps_json()
+    {
+        var web = new JsonSerializerOptions(JsonSerializerDefaults.Web);
+        Assert.Equal(
+            new PracticeOptions(PracticeDifficulty.Hard, 5, false, PracticeMapMode.Outline, BroadEra.MiddleAges, null),
+            JsonSerializer.Deserialize<PracticeOptions>("""{"difficulty":"Hard","attempts":5,"hints":false,"map":"Outline","era":1,"continent":null}""", web));
+        Assert.Equal(new PracticeOptions(), JsonSerializer.Deserialize<PracticeOptions>("{}", web));
+    }
+
     [Fact]
     public void Unknown_enum_values_are_rejected()
     {
