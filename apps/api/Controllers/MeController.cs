@@ -22,9 +22,14 @@ public class MeController(ImperatleDbContext db, ICurrentPlayer player) : Contro
             ? await db.Users.AsNoTracking().FirstOrDefaultAsync(u => u.Id == userId, ct)
             : null;
 
-        return user is null
-            ? new MeResponse(false, null)
-            : new MeResponse(true, new MeUser(user.Id, user.DisplayName, user.Email, user.SupporterSinceUtc is not null));
+        if (user is null)
+        {
+            return new MeResponse(false, null);
+        }
+
+        // The purchase itself, or the Development-only Dev:IsSupporter override.
+        var isSupporter = user.SupporterSinceUtc is not null || await player.IsSupporterAsync(ct);
+        return new MeResponse(true, new MeUser(user.Id, user.DisplayName, user.Email, isSupporter));
     }
 
     // LGPD/GDPR: deletes the account and all its games, then signs out.

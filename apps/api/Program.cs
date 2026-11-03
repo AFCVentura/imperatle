@@ -101,7 +101,17 @@ if (!string.IsNullOrWhiteSpace(googleClientId) && !string.IsNullOrWhiteSpace(goo
 }
 
 builder.Services.AddHttpContextAccessor();
-builder.Services.AddScoped<ICurrentPlayer, HttpCurrentPlayer>();
+builder.Services.AddScoped<HttpCurrentPlayer>();
+// Dev:IsSupporter=true (Development only) turns every player into a supporter
+// to try the perks locally; anywhere else the flag is ignored.
+if (builder.Environment.IsDevelopment() && builder.Configuration.GetValue("Dev:IsSupporter", false))
+{
+    builder.Services.AddScoped<ICurrentPlayer, DevSupporterCurrentPlayer>();
+}
+else
+{
+    builder.Services.AddScoped<ICurrentPlayer>(sp => sp.GetRequiredService<HttpCurrentPlayer>());
+}
 
 builder.Services.AddCors(options =>
 {
