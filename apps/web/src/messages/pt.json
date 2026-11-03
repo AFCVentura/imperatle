@@ -14,7 +14,10 @@
       "howToPlay": "Como jogar",
       "support": "Apoiar o projeto",
       "feedback": "Feedback",
-      "about": "Sobre"
+      "about": "Sobre",
+      "archive": "Jogos anteriores",
+      "practice": "Treino",
+      "supportersBadge": "Apoiadores"
     },
     "language": "Idioma"
   },
@@ -131,7 +134,10 @@
     "mapStageContinents": "Continentes",
     "mapStageCountries": "Países",
     "mapStagesLabel": "Detalhe do mapa",
-    "readOnWikipedia": "Ler na Wikipedia"
+    "readOnWikipedia": "Ler na Wikipedia",
+    "cluesOff": "Dicas desligadas",
+    "noNewClues": "Sem novas dicas",
+    "unknownGuess": "Palpite feito em outro aparelho"
   },
   "HowToPlay": {
     "title": "Como jogar",
@@ -272,5 +278,74 @@
     "empires": "{count, plural, one {# mapa novo} other {# mapas novos}}",
     "features": "Novidades",
     "fixes": "Ajustes"
+  },
+  "Perks": {
+    "lockedTitle": "Para apoiadores",
+    "lockedArchive": "Os jogos anteriores são um benefício de quem apoia: jogue o desafio de qualquer dia que já passou, com as mesmas regras do jogo diário.",
+    "lockedPractice": "O modo treino é um benefício de quem apoia: quantas rodadas quiser, do seu jeito, sem mexer nas suas estatísticas.",
+    "becomeSupporter": "Quero apoiar",
+    "backToGame": "Voltar ao jogo de hoje",
+    "loading": "Carregando…",
+    "loadError": "Não deu pra carregar esta página. Tente de novo daqui a pouco."
+  },
+  "Archive": {
+    "title": "Jogos anteriores",
+    "intro": "O desafio de cada dia que já passou, com as mesmas regras do jogo diário. Os resultados daqui não contam nas estatísticas nem na sequência do jogo diário.",
+    "summary": "{played} de {total} jogados, {won} com acerto",
+    "filters": {
+      "all": "Todos",
+      "notPlayed": "Não jogados",
+      "played": "Jogados"
+    },
+    "filtersLabel": "Mostrar",
+    "empty": "Ainda não há jogos anteriores. Volte amanhã!",
+    "emptyFilter": "Nada aqui com este filtro.",
+    "status": {
+      "NotPlayed": "Jogar",
+      "InProgress": "Em andamento, {used}/{total}",
+      "Won": "Acertou, {used}/{total}",
+      "Lost": "Não acertou"
+    },
+    "dayTitle": "Desafio #{number}",
+    "back": "Jogos anteriores",
+    "notFound": "Este dia não está nos jogos anteriores.",
+    "endNote": "Jogo anterior: suas estatísticas e sua sequência do jogo diário continuam iguais.",
+    "playToday": "Jogar o desafio de hoje"
+  },
+  "Practice": {
+    "title": "Treino",
+    "intro": "Um império sorteado a cada rodada, do seu jeito. As rodadas de treino não contam nas estatísticas nem na sequência.",
+    "difficulty": "Dificuldade",
+    "difficultyOptions": {
+      "Any": "Qualquer",
+      "Easy": "Fácil",
+      "Medium": "Média",
+      "Hard": "Difícil"
+    },
+    "difficultyInfo": "Fácil: os impérios mais conhecidos. Difícil: os que confundem até quem gosta de história.",
+    "attempts": "Tentativas",
+    "hints": "Dicas",
+    "hintsOn": "Ligadas",
+    "hintsOff": "Desligadas",
+    "hintsInfo": "Desligadas: cada erro só diz se é maior ou menor e se durou mais ou menos. Todas as dicas aparecem no fim.",
+    "map": "Mapa",
+    "mapOptions": {
+      "Progressive": "Aos poucos",
+      "Full": "Completo desde o início",
+      "Outline": "Só o contorno"
+    },
+    "mapInfo": "Aos poucos: continentes depois do 2º erro e países depois do 6º, como no jogo diário.",
+    "era": "Época",
+    "continent": "Continente principal",
+    "any": "Qualquer",
+    "pool": "{count, plural, one {# império possível} other {# impérios possíveis}}",
+    "poolTooSmall": "Poucos impérios com esses filtros. Afrouxe algum.",
+    "start": "Começar",
+    "starting": "Começando…",
+    "startError": "Não deu pra começar a rodada. Tente de novo.",
+    "playAgain": "Jogar de novo",
+    "changeSettings": "Mudar opções",
+    "endNote": "Rodada de treino: suas estatísticas e sua sequência continuam iguais.",
+    "attemptsShort": "{count} tentativas"
   }
 }

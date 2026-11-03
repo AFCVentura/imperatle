@@ -14,7 +14,10 @@
       "howToPlay": "How to play",
       "support": "Support the project",
       "feedback": "Feedback",
-      "about": "About"
+      "about": "About",
+      "archive": "Past games",
+      "practice": "Practice",
+      "supportersBadge": "Supporters"
     },
     "language": "Language"
   },
@@ -131,7 +134,10 @@
     "mapStageContinents": "Continents",
     "mapStageCountries": "Countries",
     "mapStagesLabel": "Map detail",
-    "readOnWikipedia": "Read on Wikipedia"
+    "readOnWikipedia": "Read on Wikipedia",
+    "cluesOff": "Clues off",
+    "noNewClues": "No new clues",
+    "unknownGuess": "Guess made on another device"
   },
   "HowToPlay": {
     "title": "How to play",
@@ -272,5 +278,74 @@
     "empires": "{count, plural, one {# new map} other {# new maps}}",
     "features": "New",
     "fixes": "Adjustments"
+  },
+  "Perks": {
+    "lockedTitle": "For supporters",
+    "lockedArchive": "Past games are a supporter perk: play every previous day's challenge, with the same rules as the daily game.",
+    "lockedPractice": "Practice mode is a supporter perk: as many rounds as you like, with your own settings, without touching your stats.",
+    "becomeSupporter": "Become a supporter",
+    "backToGame": "Back to today's game",
+    "loading": "Loading…",
+    "loadError": "Couldn't load this page. Try again in a moment."
+  },
+  "Archive": {
+    "title": "Past games",
+    "intro": "Every previous day's challenge, with the same rules as the daily game. Results here don't count toward your daily stats or streak.",
+    "summary": "{played} of {total} played, {won} won",
+    "filters": {
+      "all": "All",
+      "notPlayed": "Not played",
+      "played": "Played"
+    },
+    "filtersLabel": "Show",
+    "empty": "No past games yet. Come back tomorrow!",
+    "emptyFilter": "Nothing here with this filter.",
+    "status": {
+      "NotPlayed": "Play",
+      "InProgress": "In progress, {used}/{total}",
+      "Won": "Won, {used}/{total}",
+      "Lost": "Lost"
+    },
+    "dayTitle": "Challenge #{number}",
+    "back": "Past games",
+    "notFound": "This day isn't in the archive.",
+    "endNote": "Past game: your daily stats and streak are unchanged.",
+    "playToday": "Play today's challenge"
+  },
+  "Practice": {
+    "title": "Practice",
+    "intro": "A random empire every round, with your own settings. Practice rounds don't count toward your stats or streak.",
+    "difficulty": "Difficulty",
+    "difficultyOptions": {
+      "Any": "Any",
+      "Easy": "Easy",
+      "Medium": "Medium",
+      "Hard": "Hard"
+    },
+    "difficultyInfo": "Easy: the best-known empires. Hard: the ones even history fans mix up.",
+    "attempts": "Attempts",
+    "hints": "Clues",
+    "hintsOn": "On",
+    "hintsOff": "Off",
+    "hintsInfo": "Off: wrong guesses only say bigger or smaller and longer or shorter. All clues show up at the end.",
+    "map": "Map",
+    "mapOptions": {
+      "Progressive": "Step by step",
+      "Full": "Full from the start",
+      "Outline": "Outline only"
+    },
+    "mapInfo": "Step by step: continents after the 2nd wrong guess, countries after the 6th, like the daily game.",
+    "era": "Era",
+    "continent": "Main continent",
+    "any": "Any",
+    "pool": "{count, plural, one {# empire matches} other {# empires match}}",
+    "poolTooSmall": "Too few empires match. Loosen a filter.",
+    "start": "Start",
+    "starting": "Starting…",
+    "startError": "Couldn't start a round. Try again.",
+    "playAgain": "Play again",
+    "changeSettings": "Change settings",
+    "endNote": "Practice round: your stats and streak are unchanged.",
+    "attemptsShort": "{count} attempts"
   }
 }
