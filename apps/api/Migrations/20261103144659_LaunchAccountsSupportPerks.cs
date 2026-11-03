@@ -28,6 +28,17 @@ namespace Imperatle.Api.Migrations
                 // Games played before this release have no stored guesses.
                 defaultValueSql: "'{}'::text[]");
 
+            // xmin is a Postgres system column every row already has: Npgsql
+            // only maps it (row version for optimistic concurrency) and emits
+            // no SQL for this column.
+            migrationBuilder.AddColumn<uint>(
+                name: "xmin",
+                table: "PlayerChallengeProgress",
+                type: "xid",
+                rowVersion: true,
+                nullable: false,
+                defaultValue: 0u);
+
             migrationBuilder.CreateTable(
                 name: "DataProtectionKeys",
                 columns: table => new
@@ -92,7 +103,8 @@ namespace Imperatle.Api.Migrations
                     Completed = table.Column<bool>(type: "boolean", nullable: false),
                     Correct = table.Column<bool>(type: "boolean", nullable: false),
                     CreatedAtUtc = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    CompletedAtUtc = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
+                    CompletedAtUtc = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    xmin = table.Column<uint>(type: "xid", rowVersion: true, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -187,6 +199,10 @@ namespace Imperatle.Api.Migrations
 
             migrationBuilder.DropColumn(
                 name: "GuessedSlugs",
+                table: "PlayerChallengeProgress");
+
+            migrationBuilder.DropColumn(
+                name: "xmin",
                 table: "PlayerChallengeProgress");
         }
     }

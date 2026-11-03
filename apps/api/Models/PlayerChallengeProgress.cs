@@ -33,4 +33,9 @@ public class PlayerChallengeProgress
     // stay out of the daily statistics and streaks, which only count games
     // played on their own day.
     public bool FromArchive { get; set; }
+
+    // Postgres' xmin system column, as the concurrency token: two guesses
+    // sent at once both read the same counter, and the second save is
+    // refused instead of overwriting the first (see GuessConcurrency).
+    public uint Version { get; set; }
 }

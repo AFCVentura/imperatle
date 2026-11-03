@@ -39,6 +39,12 @@ public class ImperatleDbContext(DbContextOptions<ImperatleDbContext> options) : 
             .HasIndex(p => new { p.AnonymousId, p.Date })
             .IsUnique();
 
+        // Optimistic concurrency on the attempt counter: Npgsql maps a uint
+        // row version to xmin, which Postgres changes on every update.
+        modelBuilder.Entity<PlayerChallengeProgress>()
+            .Property(p => p.Version)
+            .IsRowVersion();
+
         // Community stats read every finished game of a given day.
         modelBuilder.Entity<PlayerChallengeProgress>()
             .HasIndex(p => p.Date);
@@ -59,6 +65,7 @@ public class ImperatleDbContext(DbContextOptions<ImperatleDbContext> options) : 
         modelBuilder.Entity<PracticeSession>(session =>
         {
             session.Property(s => s.Difficulty).HasConversion<string>().HasMaxLength(20);
+            session.Property(s => s.Version).IsRowVersion();
             session.Property(s => s.MapMode).HasConversion<string>().HasMaxLength(20);
             session.Property(s => s.Era).HasConversion<string>().HasMaxLength(20);
             session.Property(s => s.Continent).HasConversion<string>().HasMaxLength(20);

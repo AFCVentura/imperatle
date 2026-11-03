@@ -98,47 +98,51 @@ public class ArchiveController(ImperatleDbContext db, ICurrentPlayer player) : C
             return BadRequest();
         }
 
-        var progress = await AccountService.FindProgressAsync(db, player, date, ct);
-        if (progress is null)
+        // Played again from a fresh read if a simultaneous guess saved first.
+        return await GuessConcurrency.RunAsync(db, async () =>
         {
-            progress = new PlayerChallengeProgress
+            var progress = await AccountService.FindProgressAsync(db, player, date, ct);
+            if (progress is null)
             {
-                AnonymousId = player.AnonymousId,
-                UserId = player.UserId,
-                Date = date,
-                EmpireId = challenge.EmpireId,
-            };
-            db.PlayerChallengeProgress.Add(progress);
-        }
+                progress = new PlayerChallengeProgress
+                {
+                    AnonymousId = player.AnonymousId,
+                    UserId = player.UserId,
+                    Date = date,
+                    EmpireId = challenge.EmpireId,
+                };
+                db.PlayerChallengeProgress.Add(progress);
+            }
 
-        if (progress.Completed)
-        {
-            return Ok(new GuessResponse(progress.Correct, true, null, RevealBuilder.BuildAnswer(challenge.Empire), null));
-        }
+            if (progress.Completed)
+            {
+                return Ok(new GuessResponse(progress.Correct, true, null, RevealBuilder.BuildAnswer(challenge.Empire), null));
+            }
 
-        // Also when the day was started as the daily game and is finished
-        // later from here: the result no longer counts as played on its day.
-        progress.FromArchive = true;
-        progress.AttemptsUsed++;
-        progress.GuessedSlugs = [.. progress.GuessedSlugs, guessedEmpire.Slug];
-        var attemptNumber = progress.AttemptsUsed;
+            // Also when the day was started as the daily game and is finished
+            // later from here: the result no longer counts as played on its day.
+            progress.FromArchive = true;
+            progress.AttemptsUsed++;
+            progress.GuessedSlugs = [.. progress.GuessedSlugs, guessedEmpire.Slug];
+            var attemptNumber = progress.AttemptsUsed;
 
-        var correct = request.EmpireId == challenge.EmpireId;
-        var gameOver = correct || attemptNumber >= GameRules.AttemptsAllowed;
-        var comparison = correct ? null : RevealBuilder.BuildComparison(guessedEmpire, challenge.Empire);
+            var correct = request.EmpireId == challenge.EmpireId;
+            var gameOver = correct || attemptNumber >= GameRules.AttemptsAllowed;
+            var comparison = correct ? null : RevealBuilder.BuildComparison(guessedEmpire, challenge.Empire);
 
-        if (gameOver)
-        {
-            progress.Completed = true;
-            progress.Correct = correct;
-            progress.CompletedAtUtc = DateTime.UtcNow;
-        }
+            if (gameOver)
+            {
+                progress.Completed = true;
+                progress.Correct = correct;
+                progress.CompletedAtUtc = DateTime.UtcNow;
+            }
 
-        await db.SaveChangesAsync(ct);
+            await db.SaveChangesAsync(ct);
 
-        return gameOver
-            ? Ok(new GuessResponse(correct, true, null, RevealBuilder.BuildAnswer(challenge.Empire), comparison))
-            : Ok(new GuessResponse(false, false, RevealBuilder.BuildReveal(challenge.Empire, attemptNumber), null, comparison));
+            return gameOver
+                ? Ok(new GuessResponse(correct, true, null, RevealBuilder.BuildAnswer(challenge.Empire), comparison))
+                : Ok(new GuessResponse(false, false, RevealBuilder.BuildReveal(challenge.Empire, attemptNumber), null, comparison));
+        }, ct);
     }
 
     // Null for today, a future date or a day nothing was scheduled.

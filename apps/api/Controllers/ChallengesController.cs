@@ -101,55 +101,59 @@ public class ChallengesController(ImperatleDbContext db, IWebHostEnvironment env
             return BadRequest();
         }
 
-        // Signed in, the attempts are the account's, shared by every device;
-        // otherwise this browser's.
-        var progress = await AccountService.FindProgressAsync(db, player, today);
-
-        if (progress is null)
+        // Played again from a fresh read if a simultaneous guess saved first.
+        return await GuessConcurrency.RunAsync(db, async () =>
         {
-            progress = new PlayerChallengeProgress
+            // Signed in, the attempts are the account's, shared by every device;
+            // otherwise this browser's.
+            var progress = await AccountService.FindProgressAsync(db, player, today);
+
+            if (progress is null)
             {
-                AnonymousId = player.AnonymousId,
-                UserId = player.UserId,
-                Date = today,
-                EmpireId = challenge.EmpireId,
-            };
-            db.PlayerChallengeProgress.Add(progress);
-        }
+                progress = new PlayerChallengeProgress
+                {
+                    AnonymousId = player.AnonymousId,
+                    UserId = player.UserId,
+                    Date = today,
+                    EmpireId = challenge.EmpireId,
+                };
+                db.PlayerChallengeProgress.Add(progress);
+            }
 
-        // Already finished today, server-side -- replaying the request (e.g. a
-        // direct API call after the real game ended) can't buy more attempts.
-        if (progress.Completed)
-        {
-            return Ok(new GuessResponse(progress.Correct, true, null, RevealBuilder.BuildAnswer(challenge.Empire), null));
-        }
+            // Already finished today, server-side -- replaying the request (e.g. a
+            // direct API call after the real game ended) can't buy more attempts.
+            if (progress.Completed)
+            {
+                return Ok(new GuessResponse(progress.Correct, true, null, RevealBuilder.BuildAnswer(challenge.Empire), null));
+            }
 
-        // The server counts attempts itself; the client's own guess history is
-        // just a display convenience and is never trusted for game logic.
-        progress.AttemptsUsed++;
-        progress.GuessedSlugs = [.. progress.GuessedSlugs, guessedEmpire.Slug];
-        var attemptNumber = progress.AttemptsUsed;
+            // The server counts attempts itself; the client's own guess history is
+            // just a display convenience and is never trusted for game logic.
+            progress.AttemptsUsed++;
+            progress.GuessedSlugs = [.. progress.GuessedSlugs, guessedEmpire.Slug];
+            var attemptNumber = progress.AttemptsUsed;
 
-        var correct = request.EmpireId == challenge.EmpireId;
-        var attemptsExhausted = attemptNumber >= GameRules.AttemptsAllowed;
-        var gameOver = correct || attemptsExhausted;
-        var comparison = correct ? null : RevealBuilder.BuildComparison(guessedEmpire, challenge.Empire);
+            var correct = request.EmpireId == challenge.EmpireId;
+            var attemptsExhausted = attemptNumber >= GameRules.AttemptsAllowed;
+            var gameOver = correct || attemptsExhausted;
+            var comparison = correct ? null : RevealBuilder.BuildComparison(guessedEmpire, challenge.Empire);
 
-        if (gameOver)
-        {
-            progress.Completed = true;
-            progress.Correct = correct;
-            progress.CompletedAtUtc = DateTime.UtcNow;
-        }
+            if (gameOver)
+            {
+                progress.Completed = true;
+                progress.Correct = correct;
+                progress.CompletedAtUtc = DateTime.UtcNow;
+            }
 
-        await db.SaveChangesAsync();
+            await db.SaveChangesAsync();
 
-        if (gameOver)
-        {
-            return Ok(new GuessResponse(correct, true, null, RevealBuilder.BuildAnswer(challenge.Empire), comparison));
-        }
+            if (gameOver)
+            {
+                return Ok(new GuessResponse(correct, true, null, RevealBuilder.BuildAnswer(challenge.Empire), comparison));
+            }
 
-        return Ok(new GuessResponse(false, false, RevealBuilder.BuildReveal(challenge.Empire, attemptNumber), null, comparison));
+            return Ok(new GuessResponse(false, false, RevealBuilder.BuildReveal(challenge.Empire, attemptNumber), null, comparison));
+        });
     }
 
     // Dev-only: lets the debug button in the UI replay today's challenge

@@ -147,42 +147,46 @@ public class PracticeController(
             return refused;
         }
 
-        var session = await FindAsync(id, ct, tracking: true);
-        if (session is null)
+        // Played again from a fresh read if a simultaneous guess saved first.
+        return await GuessConcurrency.RunAsync(db, async () =>
         {
-            return NotFound();
-        }
+            var session = await FindAsync(id, ct, tracking: true);
+            if (session is null)
+            {
+                return NotFound();
+            }
 
-        var guessedEmpire = await db.Empires.FindAsync([request.EmpireId], ct);
-        if (guessedEmpire is null || !guessedEmpire.Active)
-        {
-            return BadRequest();
-        }
+            var guessedEmpire = await db.Empires.FindAsync([request.EmpireId], ct);
+            if (guessedEmpire is null || !guessedEmpire.Active)
+            {
+                return BadRequest();
+            }
 
-        if (session.Completed)
-        {
-            return Ok(new GuessResponse(session.Correct, true, null, RevealBuilder.BuildAnswer(session.Empire), null));
-        }
+            if (session.Completed)
+            {
+                return Ok(new GuessResponse(session.Correct, true, null, RevealBuilder.BuildAnswer(session.Empire), null));
+            }
 
-        session.AttemptsUsed++;
-        var attemptNumber = session.AttemptsUsed;
+            session.AttemptsUsed++;
+            var attemptNumber = session.AttemptsUsed;
 
-        var correct = request.EmpireId == session.EmpireId;
-        var gameOver = correct || attemptNumber >= session.AttemptsAllowed;
-        var comparison = correct ? null : RevealBuilder.BuildComparison(guessedEmpire, session.Empire);
+            var correct = request.EmpireId == session.EmpireId;
+            var gameOver = correct || attemptNumber >= session.AttemptsAllowed;
+            var comparison = correct ? null : RevealBuilder.BuildComparison(guessedEmpire, session.Empire);
 
-        if (gameOver)
-        {
-            session.Completed = true;
-            session.Correct = correct;
-            session.CompletedAtUtc = DateTime.UtcNow;
-        }
+            if (gameOver)
+            {
+                session.Completed = true;
+                session.Correct = correct;
+                session.CompletedAtUtc = DateTime.UtcNow;
+            }
 
-        await db.SaveChangesAsync(ct);
+            await db.SaveChangesAsync(ct);
 
-        return gameOver
-            ? Ok(new GuessResponse(correct, true, null, RevealBuilder.BuildAnswer(session.Empire), comparison))
-            : Ok(new GuessResponse(false, false, PracticeRules.RevealFor(session, session.Empire, attemptNumber), null, comparison));
+            return gameOver
+                ? Ok(new GuessResponse(correct, true, null, RevealBuilder.BuildAnswer(session.Empire), comparison))
+                : Ok(new GuessResponse(false, false, PracticeRules.RevealFor(session, session.Empire, attemptNumber), null, comparison));
+        }, ct);
     }
 
     // The empires matching the options.

@@ -26,4 +26,7 @@ public class PracticeSession
     public bool Correct { get; set; }
     public DateTime CreatedAtUtc { get; set; }
     public DateTime? CompletedAtUtc { get; set; }
+
+    // Postgres' xmin, as the concurrency token (see PlayerChallengeProgress).
+    public uint Version { get; set; }
 }
