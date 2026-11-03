@@ -13,8 +13,11 @@ import { AboutDialog } from "./AboutDialog";
 import { ChangelogDialog } from "./ChangelogDialog";
 import { FeedbackDialog } from "./FeedbackDialog";
 import { StatsDialog } from "./StatsDialog";
-import { ComingSoonDialog } from "./ComingSoonDialog";
+import { AccountDialog } from "./AccountDialog";
+import { SupportDialog } from "./SupportDialog";
+import { AdSlot } from "./AdSlot";
 import { SITE_URL } from "@/lib/site";
+import { vercelAnalyticsEnabled } from "@/lib/analytics";
 import "../globals.css";
 
 // Display and body fonts (see globals.css).
@@ -96,16 +99,20 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <Header />
           <main className="flex flex-1 flex-col">{children}</main>
+          {/* Reserved ad place: renders nothing today, never for supporters. */}
+          <AdSlot placement="footer" />
           <Footer challengeNumber={challengeNumber} />
           <HowToPlayDialog attemptsAllowed={attemptsAllowed} />
           <StatsDialog />
-          <ComingSoonDialog />
+          <AccountDialog />
+          <SupportDialog />
           <FeedbackDialog />
           <AboutDialog />
           <ChangelogDialog />
         </NextIntlClientProvider>
-        {/* Cookieless page views (no consent banner needed); only reports on Vercel. */}
-        <Analytics />
+        {/* Cookieless page views (no consent banner needed). Only on Vercel: off it
+            (the Azure container) there is no analytics until a provider is chosen. */}
+        {vercelAnalyticsEnabled() && <Analytics />}
       </body>
     </html>
   );

@@ -41,8 +41,8 @@ export function saveGameProgress(progress: GameProgress): void {
   }
 }
 
-// Dev-only debug tool: wipes every day's saved progress, not just today's,
-// since it's only ever called from the reset button next to the brand.
+// Wipes every day's saved progress, not just today's: used by the dev reset
+// button and on logout or account deletion (see lib/me.ts).
 export function clearAllGameProgress(): void {
   try {
     const keysToRemove: string[] = [];

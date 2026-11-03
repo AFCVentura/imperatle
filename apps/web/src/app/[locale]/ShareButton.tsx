@@ -9,14 +9,18 @@ interface ShareButtonProps {
   guesses: GuessHistoryEntry[];
   challengeNumber: number;
   attemptsAllowed: number;
+  // A past game (archive): shared under Share.archiveTitle, not "Imperatle #N".
+  archive?: boolean;
 }
 
-export function ShareButton({ guesses, challengeNumber, attemptsAllowed }: ShareButtonProps) {
+export function ShareButton({ guesses, challengeNumber, attemptsAllowed, archive = false }: ShareButtonProps) {
   const t = useTranslations("Stats");
+  const tShare = useTranslations("Share");
   const [feedback, setFeedback] = useState<"copied" | "failed" | null>(null);
 
   async function handleShare() {
-    const outcome = await shareResult(buildShareText(guesses, challengeNumber, attemptsAllowed));
+    const title = archive ? tShare("archiveTitle", { number: challengeNumber }) : undefined;
+    const outcome = await shareResult(buildShareText(guesses, challengeNumber, attemptsAllowed, title));
     if (outcome === "shared") return;
     setFeedback(outcome);
     window.setTimeout(() => setFeedback(null), 2000);

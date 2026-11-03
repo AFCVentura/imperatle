@@ -279,8 +279,21 @@ namespace Imperatle.Api.Migrations
                     b.Property<int>("EmpireId")
                         .HasColumnType("integer");
 
+                    b.Property<bool>("FromArchive")
+                        .HasColumnType("boolean");
+
+                    b.PrimitiveCollection<List<string>>("GuessedSlugs")
+                        .IsRequired()
+                        .HasColumnType("text[]");
+
                     b.Property<Guid?>("UserId")
                         .HasColumnType("uuid");
+
+                    b.Property<uint>("Version")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("xid")
+                        .HasColumnName("xmin");
 
                     b.HasKey("Id");
 
@@ -291,7 +304,197 @@ namespace Imperatle.Api.Migrations
                     b.HasIndex("AnonymousId", "Date")
                         .IsUnique();
 
+                    b.HasIndex("UserId", "Date")
+                        .IsUnique()
+                        .HasFilter("\"UserId\" IS NOT NULL");
+
                     b.ToTable("PlayerChallengeProgress");
+                });
+
+            modelBuilder.Entity("Imperatle.Api.Models.PracticeSession", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("AnonymousId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("AttemptsAllowed")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("AttemptsUsed")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("Completed")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime?>("CompletedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Continent")
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<bool>("Correct")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Difficulty")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<int>("EmpireId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Era")
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<bool>("HintsEnabled")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("MapMode")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<uint>("Version")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("xid")
+                        .HasColumnName("xmin");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmpireId");
+
+                    b.HasIndex("AnonymousId", "CreatedAtUtc");
+
+                    b.HasIndex("UserId", "CreatedAtUtc");
+
+                    b.ToTable("PracticeSessions");
+                });
+
+            modelBuilder.Entity("Imperatle.Api.Models.ProcessedWebhookEvent", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasMaxLength(64)
+                        .HasColumnType("character varying(64)");
+
+                    b.Property<string>("EventType")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("character varying(64)");
+
+                    b.Property<string>("Outcome")
+                        .IsRequired()
+                        .HasMaxLength(32)
+                        .HasColumnType("character varying(32)");
+
+                    b.Property<DateTime>("ProcessedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("TransactionId")
+                        .HasMaxLength(64)
+                        .HasColumnType("character varying(64)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TransactionId");
+
+                    b.ToTable("ProcessedWebhookEvents");
+                });
+
+            modelBuilder.Entity("Imperatle.Api.Models.User", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("DisplayName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(254)
+                        .HasColumnType("character varying(254)");
+
+                    b.Property<string>("GoogleSubject")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)");
+
+                    b.Property<string>("PaddleTransactionId")
+                        .HasMaxLength(64)
+                        .HasColumnType("character varying(64)");
+
+                    b.Property<DateTime?>("SupporterSinceUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GoogleSubject")
+                        .IsUnique();
+
+                    b.HasIndex("PaddleTransactionId");
+
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Imperatle.Api.Models.UserSession", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("LastSeenUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("RevokedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserSessions");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.DataProtection.EntityFrameworkCore.DataProtectionKey", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("FriendlyName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Xml")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DataProtectionKeys");
                 });
 
             modelBuilder.Entity("Imperatle.Api.Models.DailyChallenge", b =>
@@ -324,7 +527,37 @@ namespace Imperatle.Api.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Imperatle.Api.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.Navigation("Empire");
+                });
+
+            modelBuilder.Entity("Imperatle.Api.Models.PracticeSession", b =>
+                {
+                    b.HasOne("Imperatle.Api.Models.Empire", "Empire")
+                        .WithMany()
+                        .HasForeignKey("EmpireId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Imperatle.Api.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("Empire");
+                });
+
+            modelBuilder.Entity("Imperatle.Api.Models.UserSession", b =>
+                {
+                    b.HasOne("Imperatle.Api.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Imperatle.Api.Models.Empire", b =>

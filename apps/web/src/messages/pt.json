@@ -9,12 +9,16 @@
     "menuLabel": "Menu",
     "closeLabel": "Fechar menu",
     "menu": {
-      "createAccount": "Criar conta",
+      "signIn": "Entrar",
+      "account": "Minha conta",
       "statistics": "Estatísticas",
       "howToPlay": "Como jogar",
       "support": "Apoiar o projeto",
       "feedback": "Feedback",
-      "about": "Sobre"
+      "about": "Sobre",
+      "archive": "Jogos anteriores",
+      "practice": "Treino",
+      "supportersBadge": "Apoiadores"
     },
     "language": "Idioma"
   },
@@ -25,7 +29,8 @@
     "privacy": "Privacidade",
     "terms": "Termos",
     "version": "Versão {version}",
-    "changelog": "Ver o que mudou em cada versão"
+    "changelog": "Ver o que mudou em cada versão",
+    "refunds": "Reembolso"
   },
   "Game": {
     "attempts": "Tentativas: {used}/{total}",
@@ -131,7 +136,11 @@
     "mapStageContinents": "Continentes",
     "mapStageCountries": "Países",
     "mapStagesLabel": "Detalhe do mapa",
-    "readOnWikipedia": "Ler na Wikipedia"
+    "readOnWikipedia": "Ler na Wikipedia",
+    "cluesOff": "Dicas desligadas",
+    "noNewClues": "Sem novas dicas",
+    "unknownGuess": "Palpite feito em outro aparelho",
+    "goToPractice": "Ir pro treino"
   },
   "HowToPlay": {
     "title": "Como jogar",
@@ -175,56 +184,45 @@
   "Common": {
     "close": "Fechar"
   },
-  "ComingSoon": {
-    "badge": "Em breve",
-    "ok": "Entendi",
-    "support": {
-      "title": "Apoiar o projeto",
-      "intro": "O Imperatle é um projeto independente, feito por uma pessoa só. Quem apoia ajuda a pagar os servidores e a pesquisa histórica por trás de cada mapa.",
-      "perksTitle": "Quem apoiar vai ter",
-      "perks": {
-        "noAds": {
-          "title": "Sem anúncios",
-          "text": "o jogo limpo, do jeito que está agora."
-        },
-        "practice": {
-          "title": "Modo prática",
-          "text": "jogar à vontade, sem contar nas estatísticas."
-        },
-        "archive": {
-          "title": "Jogos anteriores",
-          "text": "jogar os desafios dos dias que passaram."
-        },
-        "creator": {
-          "title": "Criador de impérios",
-          "text": "montar o seu próprio império no mapa."
-        },
-        "request": {
-          "title": "Pedir um mapa",
-          "text": "sugerir um império ou outra potência pro jogo."
-        }
+  "Support": {
+    "title": "Apoiar o projeto",
+    "intro": "O Imperatle é um projeto independente, feito por uma pessoa só. Quem apoia paga uma vez e ajuda a pagar os servidores e a pesquisa histórica por trás de cada mapa.",
+    "perksTitle": "Quem apoia ganha",
+    "perks": {
+      "archive": {
+        "title": "Jogos anteriores",
+        "text": "jogar os desafios dos dias que passaram."
       },
-      "note": "O apoio ainda não está disponível. Quando estiver, vai ser uma assinatura barata, mensal ou anual, e você cria sua conta ali mesmo. Dá pra cancelar quando quiser."
+      "practice": {
+        "title": "Modo treino",
+        "text": "depois do desafio do dia, jogar à vontade, sem contar nas estatísticas."
+      },
+      "noAds": {
+        "title": "Sem anúncios",
+        "text": "se um dia o jogo tiver anúncios, quem apoia não vai ver."
+      },
+      "solo": {
+        "title": "Um desenvolvedor só",
+        "text": "seu apoio mantém os impérios novos e os recursos chegando."
+      }
     },
-    "account": {
-      "title": "Criar conta",
-      "intro": "Você não precisa de conta pra jogar. Por enquanto, seu progresso e suas estatísticas ficam salvos neste navegador.",
-      "perksTitle": "Com uma conta, você vai ter",
-      "perks": {
-        "sync": {
-          "title": "Estatísticas em qualquer lugar",
-          "text": "seu histórico e suas sequências no celular e no computador."
-        },
-        "google": {
-          "title": "Login com Google",
-          "text": "sem senha nova pra decorar."
-        },
-        "safe": {
-          "title": "Progresso guardado",
-          "text": "limpar o navegador não apaga sua sequência."
-        }
-      },
-      "note": "As contas ainda não estão disponíveis. Elas chegam junto com o apoio ao projeto."
+    "oneTime": "pagamento único, para sempre",
+    "oneTimeNoPrice": "Pagamento único, para sempre. O preço na sua moeda aparece no pagamento.",
+    "buy": "Quero apoiar",
+    "opening": "Abrindo o pagamento…",
+    "login": "Entrar com Google para continuar",
+    "loginNote": "A compra fica ligada à sua conta, então as vantagens valem em qualquer aparelho.",
+    "checkoutError": "O pagamento não carregou. Confira sua conexão ou o bloqueador de anúncios e tente de novo.",
+    "alreadySupporter": "Você apoia o Imperatle. Obrigado!",
+    "unavailable": "O apoio ainda não está disponível. Volte em breve.",
+    "merchant": "Os pagamentos são processados pela Paddle, revendedora e responsável pela venda (merchant of record).",
+    "refundLink": "Política de reembolso",
+    "close": "Fechar",
+    "thanks": {
+      "title": "Obrigado!",
+      "confirmed": "Suas vantagens de apoiador já estão ativas nesta conta.",
+      "pending": "Seu pagamento foi aprovado. As vantagens aparecem na sua conta em até um minuto; se não aparecerem, recarregue a página.",
+      "receipt": "A Paddle manda o recibo para o seu e-mail."
     }
   },
   "Feedback": {
@@ -272,5 +270,115 @@
     "empires": "{count, plural, one {# mapa novo} other {# mapas novos}}",
     "features": "Novidades",
     "fixes": "Ajustes"
+  },
+  "Account": {
+    "title": "Sua conta",
+    "signInTitle": "Entrar",
+    "intro": "Você não precisa de conta pra jogar. Sem conta, seu progresso e suas estatísticas ficam só neste navegador.",
+    "perksTitle": "Com uma conta, você tem",
+    "perks": {
+      "sync": {
+        "title": "Estatísticas em qualquer lugar",
+        "text": "seu histórico e suas sequências no celular e no computador."
+      },
+      "safe": {
+        "title": "Progresso guardado",
+        "text": "limpar o navegador não apaga sua sequência."
+      },
+      "merge": {
+        "title": "Nada se perde",
+        "text": "o que você já jogou neste navegador vai junto pra conta."
+      }
+    },
+    "google": "Entrar com Google",
+    "privacy": "Guardamos só seu nome e seu e-mail. Dá pra excluir a conta quando quiser.",
+    "loginError": "Não deu pra entrar com o Google. Tente de novo.",
+    "loading": "Carregando…",
+    "signedInAs": "Conectado como",
+    "supporter": "Apoiador",
+    "signOut": "Sair",
+    "signOutAll": "Sair de todos os aparelhos",
+    "delete": "Excluir conta",
+    "confirmTitle": "Excluir a conta?",
+    "confirmText": "Isso apaga sua conta e todos os jogos ligados a ela. Não dá pra desfazer.",
+    "confirmSupporter": "Você também perde os benefícios de apoiador.",
+    "confirmDelete": "Excluir para sempre",
+    "cancel": "Cancelar",
+    "error": "Algo deu errado. Tente de novo."
+  },
+  "Perks": {
+    "lockedTitle": "Para apoiadores",
+    "lockedArchive": "Os jogos anteriores são um benefício de quem apoia: jogue o desafio de qualquer dia que já passou, com as mesmas regras do jogo diário.",
+    "lockedPractice": "O modo treino é um benefício de quem apoia: depois do desafio do dia, quantas rodadas quiser, do seu jeito, sem mexer nas suas estatísticas.",
+    "becomeSupporter": "Quero apoiar",
+    "backToGame": "Voltar ao jogo de hoje",
+    "loading": "Carregando…",
+    "loadError": "Não deu pra carregar esta página. Tente de novo daqui a pouco."
+  },
+  "Archive": {
+    "title": "Jogos anteriores",
+    "intro": "O desafio de cada dia que já passou, com as mesmas regras do jogo diário. Os resultados daqui não contam nas estatísticas nem na sequência do jogo diário.",
+    "summary": "{played} de {total} jogados, {won} com acerto",
+    "filters": {
+      "all": "Todos",
+      "notPlayed": "Não jogados",
+      "played": "Jogados"
+    },
+    "filtersLabel": "Mostrar",
+    "empty": "Ainda não há jogos anteriores. Volte amanhã!",
+    "emptyFilter": "Nada aqui com este filtro.",
+    "status": {
+      "NotPlayed": "Jogar",
+      "InProgress": "Em andamento, {used}/{total}",
+      "Won": "Acertou, {used}/{total}",
+      "Lost": "Não acertou"
+    },
+    "dayTitle": "Desafio #{number}",
+    "back": "Jogos anteriores",
+    "notFound": "Este dia não está nos jogos anteriores.",
+    "endNote": "Jogo anterior: suas estatísticas e sua sequência do jogo diário continuam iguais.",
+    "playToday": "Jogar o desafio de hoje"
+  },
+  "Practice": {
+    "title": "Treino",
+    "intro": "Um império sorteado a cada rodada, do seu jeito. As rodadas de treino não contam nas estatísticas nem na sequência.",
+    "difficulty": "Dificuldade",
+    "difficultyOptions": {
+      "Any": "Qualquer",
+      "Easy": "Fácil",
+      "Medium": "Média",
+      "Hard": "Difícil"
+    },
+    "difficultyInfo": "Fácil: os impérios mais conhecidos. Difícil: os que confundem até quem gosta de história.",
+    "attempts": "Tentativas",
+    "hints": "Dicas",
+    "hintsOn": "Ligadas",
+    "hintsOff": "Desligadas",
+    "hintsInfo": "Desligadas: cada erro só diz se é maior ou menor e se durou mais ou menos. Todas as dicas aparecem no fim.",
+    "map": "Mapa",
+    "mapOptions": {
+      "Progressive": "Aos poucos",
+      "Full": "Completo desde o início",
+      "Outline": "Só o contorno"
+    },
+    "mapInfo": "Aos poucos: continentes depois do 2º erro e países depois do 6º, como no jogo diário.",
+    "era": "Época",
+    "continent": "Continente principal",
+    "any": "Qualquer",
+    "pool": "{count, plural, one {# império possível} other {# impérios possíveis}}",
+    "poolTooSmall": "Poucos impérios com esses filtros. Afrouxe algum.",
+    "start": "Começar",
+    "starting": "Começando…",
+    "startError": "Não deu pra começar a rodada. Tente de novo.",
+    "playAgain": "Jogar de novo",
+    "changeSettings": "Mudar opções",
+    "endNote": "Rodada de treino: suas estatísticas e sua sequência continuam iguais.",
+    "attemptsShort": "{count} tentativas",
+    "dailyFirstTitle": "Primeiro, o desafio de hoje",
+    "dailyFirstText": "Termine o desafio de hoje pra liberar o treino. Assim o treino nunca entrega a resposta do dia.",
+    "dailyFirstButton": "Jogar o desafio de hoje"
+  },
+  "Share": {
+    "archiveTitle": "Treino #{number}"
   }
 }

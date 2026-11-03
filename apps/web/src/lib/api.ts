@@ -1,5 +1,17 @@
 import type { MultiPolygon } from "geojson";
-import type { ChallengeReveal, EmpireSummary, GuessComparison, GuessResponse, StatsResponse, TodayChallenge } from "./types";
+import type {
+  ArchiveChallenge,
+  ArchiveList,
+  ChallengeProgress,
+  ChallengeReveal,
+  EmpireSummary,
+  GuessComparison,
+  GuessResponse,
+  PracticeOptions,
+  PracticeSession,
+  StatsResponse,
+  TodayChallenge,
+} from "./types";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
@@ -36,7 +48,16 @@ export async function submitGuess(empireId: number): Promise<GuessResponse> {
   return res.json();
 }
 
-// The player's own history (identified by the anonymous cookie) plus
+// The player's own game today as the server has it, guesses included: the
+// account's when signed in, so a second device shows the same board.
+export async function getTodayProgress(): Promise<ChallengeProgress> {
+  const res = await fetch(`${API_URL}/challenges/today/progress`, { cache: "no-store", credentials: "include" });
+  if (!res.ok) throw new Error(`Failed to load today's progress: ${res.status}`);
+  return res.json();
+}
+
+// The player's own history (the account's when signed in, otherwise this
+// browser's anonymous cookie) plus
 // everyone's results for today.
 export async function getStats(): Promise<StatsResponse> {
   const res = await fetch(`${API_URL}/stats`, { cache: "no-store", credentials: "include" });
@@ -104,3 +125,84 @@ export async function devNextWithGuesses(): Promise<DevPreview> {
   if (!res.ok) throw new Error(`Failed to load the next empire: ${res.status}`);
   return res.json();
 }
+
+// --- Supporter perks. Every call carries the cookies: the API decides who is
+// a supporter, and answers 403 to everyone else. ---
+
+export class PerkLockedError extends Error {
+  constructor() {
+    super("Supporters only");
+  }
+}
+
+// Practice only opens once today's daily game is over (409
+// "daily_not_finished"): before that it could show today's empire.
+export class DailyNotFinishedError extends Error {
+  constructor() {
+    super("Finish today's challenge first");
+  }
+}
+
+export class ApiStatusError extends Error {
+  constructor(
+    path: string,
+    readonly status: number,
+  ) {
+    super(`${path}: ${status}`);
+  }
+}
+
+async function perkFetch<T>(path: string, init?: RequestInit): Promise<T> {
+  const res = await fetch(`${API_URL}${path}`, {
+    cache: "no-store",
+    credentials: "include",
+    ...init,
+    headers: init?.body ? { "Content-Type": "application/json" } : undefined,
+  });
+  if (res.status === 403) throw new PerkLockedError();
+  if (res.status === 409) {
+    const body = (await res.json().catch(() => null)) as { code?: string } | null;
+    if (body?.code === "daily_not_finished") throw new DailyNotFinishedError();
+  }
+  if (!res.ok) throw new ApiStatusError(path, res.status);
+  return res.json() as Promise<T>;
+}
+
+export const getArchive = () => perkFetch<ArchiveList>("/archive");
+
+export const getArchiveChallenge = (date: string) => perkFetch<ArchiveChallenge>(`/archive/${date}`);
+
+export const submitArchiveGuess = (date: string, empireId: number) =>
+  perkFetch<GuessResponse>(`/archive/${date}/guess`, { method: "POST", body: JSON.stringify({ empireId }) });
+
+function practiceQuery(options: PracticeOptions): string {
+  const params = new URLSearchParams({
+    difficulty: options.difficulty,
+    attempts: String(options.attempts),
+    hints: String(options.hints),
+    map: options.map,
+  });
+  if (options.era !== null) params.set("era", String(options.era));
+  if (options.continent !== null) params.set("continent", String(options.continent));
+  return params.toString();
+}
+
+export const getPracticePool = (options: PracticeOptions) =>
+  perkFetch<{ count: number }>(`/practice/pool?${practiceQuery(options)}`).then((r) => r.count);
+
+// Null when the options match too few empires to start a round.
+export async function startPractice(options: PracticeOptions): Promise<PracticeSession | null> {
+  try {
+    return await perkFetch<PracticeSession>("/practice", { method: "POST", body: JSON.stringify(options) });
+  } catch (e) {
+    if (e instanceof ApiStatusError && e.status === 422) return null;
+    throw e;
+  }
+}
+
+export const getPracticeSession = (id: string) => perkFetch<PracticeSession>(`/practice/${id}`);
+
+export const getPracticeMap = (id: string) => perkFetch<MultiPolygon>(`/practice/${id}/map`);
+
+export const submitPracticeGuess = (id: string, empireId: number) =>
+  perkFetch<GuessResponse>(`/practice/${id}/guess`, { method: "POST", body: JSON.stringify({ empireId }) });

@@ -2,6 +2,7 @@ using Imperatle.Api.Data;
 using Imperatle.Api.Dtos;
 using Imperatle.Api.Game;
 using Imperatle.Api.Models;
+using Imperatle.Api.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -53,6 +54,7 @@ public class DevController(ImperatleDbContext db, IWebHostEnvironment env) : Con
         var next = empires[(currentIndex + 1) % empires.Count];
 
         await DevSeeder.ForceTodayAsync(db, next.Slug);
+        var player = HttpContext.RequestServices.GetRequiredService<ICurrentPlayer>();
         await RemoveOwnProgressAsync();
 
         // Leave the last attempt free so the round is still playable.
@@ -64,10 +66,12 @@ public class DevController(ImperatleDbContext db, IWebHostEnvironment env) : Con
 
         db.PlayerChallengeProgress.Add(new PlayerChallengeProgress
         {
-            AnonymousId = ChallengesController.GetOrCreateAnonymousId(Request, Response),
+            AnonymousId = player.AnonymousId,
+            UserId = player.UserId,
             Date = today,
             EmpireId = next.Id,
             AttemptsUsed = wrongGuesses.Count,
+            GuessedSlugs = [.. wrongGuesses.Select(g => g.Slug)],
         });
         await db.SaveChangesAsync();
 
@@ -79,17 +83,13 @@ public class DevController(ImperatleDbContext db, IWebHostEnvironment env) : Con
 
     private async Task RemoveOwnProgressAsync()
     {
-        if (!Guid.TryParse(Request.Cookies[ChallengesController.AnonymousCookieName], out var anonymousId))
-        {
-            return;
-        }
-
+        // The same rows the game reads: the account's when signed in.
+        var player = HttpContext.RequestServices.GetRequiredService<ICurrentPlayer>();
         var today = GameClock.Today();
-        var progress = await db.PlayerChallengeProgress
-            .FirstOrDefaultAsync(p => p.AnonymousId == anonymousId && p.Date == today);
-        if (progress is not null)
+        var rows = await AccountService.ProgressOf(db, player).Where(p => p.Date == today).ToListAsync();
+        if (rows.Count > 0)
         {
-            db.PlayerChallengeProgress.Remove(progress);
+            db.PlayerChallengeProgress.RemoveRange(rows);
             await db.SaveChangesAsync();
         }
     }

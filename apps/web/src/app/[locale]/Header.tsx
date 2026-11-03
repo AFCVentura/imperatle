@@ -8,12 +8,25 @@ import { devForceToday, devNextWithGuesses, resetTodayChallenge } from "@/lib/ap
 import { clearAllGameProgress, saveGameProgress } from "@/lib/gameStorage";
 import { comparisonFromApi } from "@/lib/types";
 import { openAbout, openAccount, openFeedback, openHowToPlay, openStats, openSupport } from "@/lib/dialogs";
+import { useMe } from "@/lib/me";
 import { LocaleSwitcher } from "./LocaleSwitcher";
+
+// Supporter perks: pages rather than dialogs.
+const PERK_LINKS = [
+  { href: "/archive", key: "archive" },
+  { href: "/practice", key: "practice" },
+] as const;
 
 export function Header() {
   const t = useTranslations("Header");
   const [open, setOpen] = useState(false);
   const [resetting, setResetting] = useState(false);
+  const me = useMe();
+  const user = me?.authenticated ? me.user : null;
+  // From the real /me (shared store, refreshed after login, purchase and
+  // logout). Only a hint in the menu: the perk pages ask the API, which has
+  // the final say, and their locked state leads to the support dialog.
+  const lockPerks = me !== null && !user?.isSupporter;
 
   // Shared by the DEV buttons: run the action, then reload into a fresh
   // round. Local progress is cleared first; an action may save its own.
@@ -65,8 +78,9 @@ export function Header() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [open]);
 
-  const menuItems = [
-    { label: t("menu.createAccount"), open: openAccount },
+  // The account entry shows who is signed in, under "My account".
+  const menuItems: { label: string; detail?: string; open: () => void }[] = [
+    user ? { label: t("menu.account"), detail: user.displayName, open: openAccount } : { label: t("menu.signIn"), open: openAccount },
     { label: t("menu.statistics"), open: openStats },
     { label: t("menu.howToPlay"), open: openHowToPlay },
     { label: t("menu.support"), open: openSupport },
@@ -162,7 +176,27 @@ export function Header() {
                 </svg>
               </button>
             </div>
-            {menuItems.map(({ label, open: openDialog }) => (
+            {PERK_LINKS.map(({ href, key }) => (
+              <Link
+                key={href}
+                href={href}
+                onClick={() => setOpen(false)}
+                className="flex items-center justify-between gap-2 rounded-md px-3 py-2 text-left text-sm hover:bg-surface"
+              >
+                {t(`menu.${key}`)}
+                {lockPerks && (
+                  <span className="flex items-center gap-1 rounded-full border border-highlight/60 px-2 py-px font-display text-[0.625rem] tracking-wide text-highlight">
+                    <svg viewBox="0 0 24 24" className="size-3" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden>
+                      <rect x="5" y="11" width="14" height="9" rx="2" />
+                      <path strokeLinecap="round" d="M8 11V8a4 4 0 0 1 8 0v3" />
+                    </svg>
+                    {t("menu.supportersBadge")}
+                  </span>
+                )}
+              </Link>
+            ))}
+            <div className="my-1 border-t border-line" />
+            {menuItems.map(({ label, detail, open: openDialog }) => (
               <button
                 key={label}
                 type="button"
@@ -170,9 +204,10 @@ export function Header() {
                   setOpen(false);
                   openDialog();
                 }}
-                className="rounded-md px-3 py-2 text-left text-sm hover:bg-surface"
+                className="flex flex-col rounded-md px-3 py-2 text-left text-sm hover:bg-surface"
               >
                 {label}
+                {detail && <span className="truncate text-xs text-muted">{detail}</span>}
               </button>
             ))}
             <div className="mt-auto border-t border-line pt-4">

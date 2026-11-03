@@ -42,3 +42,8 @@ next-env.d.ts
 
 # empire generator: local Cliopatria index (scripts/maps/index-cliopatria.mjs)
 /dev-data
+
+# e2e (npm run e2e): published API copy and Playwright output
+/e2e/.api
+/test-results
+/playwright-report
