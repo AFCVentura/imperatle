@@ -376,5 +376,8 @@
     "dailyFirstTitle": "Primeiro, o desafio de hoje",
     "dailyFirstText": "Termine o desafio de hoje pra liberar o treino. Assim o treino nunca entrega a resposta do dia.",
     "dailyFirstButton": "Jogar o desafio de hoje"
+  },
+  "Share": {
+    "archiveTitle": "Treino #{number}"
   }
 }

@@ -376,5 +376,8 @@
     "dailyFirstTitle": "Today's challenge first",
     "dailyFirstText": "Finish today's challenge to unlock practice. That way practice never gives away today's answer.",
     "dailyFirstButton": "Play today's challenge"
+  },
+  "Share": {
+    "archiveTitle": "Practice #{number}"
   }
 }

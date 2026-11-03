@@ -85,7 +85,7 @@ export function ArchiveDayGame({ date, empires }: { date: string; empires: Empir
     endNote: t("endNote"),
     endActions: (guesses) => (
       <>
-        <ShareButton guesses={guesses} challengeNumber={challenge.challengeNumber} attemptsAllowed={challenge.attemptsAllowed} />
+        <ShareButton guesses={guesses} challengeNumber={challenge.challengeNumber} attemptsAllowed={challenge.attemptsAllowed} archive />
         <Link href="/archive" className="rounded-full border border-line px-4 py-1.5 text-sm font-medium hover:bg-background">
           {t("back")}
         </Link>

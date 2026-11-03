@@ -10,8 +10,15 @@ const ARROW: Record<ComparisonResult, string> = {
 
 // Spoiler-free result for social media: one line per guess (✅/❌ plus the
 // area 🗺️ and duration ⏳ arrows), and the link back to the game -- that
-// link is the whole point, it's how the game spreads.
-export function buildShareText(guesses: GuessHistoryEntry[], challengeNumber: number, attemptsAllowed: number): string {
+// link is the whole point, it's how the game spreads. `title` replaces the
+// daily "Imperatle #N": a past game is shared under its own, translated
+// title, so it can't pass for that day's daily result.
+export function buildShareText(
+  guesses: GuessHistoryEntry[],
+  challengeNumber: number,
+  attemptsAllowed: number,
+  title = `Imperatle #${challengeNumber}`,
+): string {
   const won = guesses.some((g) => g.correct);
   const score = won ? `${guesses.length}/${attemptsAllowed}` : `X/${attemptsAllowed}`;
   const lines = guesses.map((g) => {
@@ -20,7 +27,7 @@ export function buildShareText(guesses: GuessHistoryEntry[], challengeNumber: nu
     const duration = g.durationComparison ? ` ⏳${ARROW[g.durationComparison]}` : "";
     return `❌${area}${duration}`;
   });
-  return [`Imperatle #${challengeNumber} 🏛️ ${score}`, "", ...lines, "", SITE_URL].join("\n");
+  return [`${title} 🏛️ ${score}`, "", ...lines, "", SITE_URL].join("\n");
 }
 
 // Phones get the native share sheet (straight to WhatsApp, X, etc.);
