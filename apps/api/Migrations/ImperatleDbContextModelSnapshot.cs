@@ -279,6 +279,9 @@ namespace Imperatle.Api.Migrations
                     b.Property<int>("EmpireId")
                         .HasColumnType("integer");
 
+                    b.Property<bool>("FromArchive")
+                        .HasColumnType("boolean");
+
                     b.Property<Guid?>("UserId")
                         .HasColumnType("uuid");
 
@@ -292,6 +295,71 @@ namespace Imperatle.Api.Migrations
                         .IsUnique();
 
                     b.ToTable("PlayerChallengeProgress");
+                });
+
+            modelBuilder.Entity("Imperatle.Api.Models.PracticeSession", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("AnonymousId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("AttemptsAllowed")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("AttemptsUsed")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("Completed")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime?>("CompletedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Continent")
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<bool>("Correct")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Difficulty")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<int>("EmpireId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Era")
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<bool>("HintsEnabled")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("MapMode")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmpireId");
+
+                    b.HasIndex("AnonymousId", "CreatedAtUtc");
+
+                    b.HasIndex("UserId", "CreatedAtUtc");
+
+                    b.ToTable("PracticeSessions");
                 });
 
             modelBuilder.Entity("Imperatle.Api.Models.DailyChallenge", b =>
@@ -317,6 +385,17 @@ namespace Imperatle.Api.Migrations
                 });
 
             modelBuilder.Entity("Imperatle.Api.Models.PlayerChallengeProgress", b =>
+                {
+                    b.HasOne("Imperatle.Api.Models.Empire", "Empire")
+                        .WithMany()
+                        .HasForeignKey("EmpireId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Empire");
+                });
+
+            modelBuilder.Entity("Imperatle.Api.Models.PracticeSession", b =>
                 {
                     b.HasOne("Imperatle.Api.Models.Empire", "Empire")
                         .WithMany()
