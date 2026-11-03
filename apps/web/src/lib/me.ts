@@ -1,4 +1,6 @@
 import { useEffect, useSyncExternalStore } from "react";
+import { clearAllGameProgress } from "./gameStorage";
+import { savePracticeRound } from "./practiceStorage";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
@@ -85,9 +87,20 @@ export function useMe(): MeResponse | null {
   return me;
 }
 
+// The browser's display copies of the account's games (today's board, the
+// practice round in progress). After logout or deletion the API hands this
+// browser a fresh anonymous id, so those copies belong to someone else now:
+// on a shared computer the next person shouldn't see them, even for the
+// moment before the server's empty round replaces them.
+function forgetLocalGames() {
+  clearAllGameProgress();
+  savePracticeRound(null);
+}
+
 export async function logout(): Promise<boolean> {
   const res = await fetch(`${API_URL}/auth/logout`, { method: "POST", credentials: "include" }).catch(() => null);
   if (!res?.ok) return false;
+  forgetLocalGames();
   set(SIGNED_OUT);
   return true;
 }
@@ -96,6 +109,7 @@ export async function logout(): Promise<boolean> {
 export async function deleteAccount(): Promise<boolean> {
   const res = await fetch(`${API_URL}/me`, { method: "DELETE", credentials: "include" }).catch(() => null);
   if (!res?.ok) return false;
+  forgetLocalGames();
   set(SIGNED_OUT);
   return true;
 }

@@ -96,6 +96,40 @@ describe("the shared /me store", () => {
     expect(getMeSnapshot()).toEqual(SIGNED_OUT);
   });
 
+  it("forgets this browser's copies of the account's games on logout and deletion, not on failure", async () => {
+    const store = new Map<string, string>();
+    const localStorage = {
+      get length() {
+        return store.size;
+      },
+      key: (i: number) => [...store.keys()][i] ?? null,
+      getItem: (k: string) => store.get(k) ?? null,
+      setItem: (k: string, v: string) => void store.set(k, v),
+      removeItem: (k: string) => void store.delete(k),
+    };
+    vi.stubGlobal("window", { localStorage });
+    const fill = () => {
+      store.set("imperatle:progress:2026-11-03", "{}");
+      store.set("imperatle:practice:round", "{}");
+      store.set("imperatle:practice:options", "{}");
+    };
+
+    fill();
+    respond(500);
+    expect(await logout()).toBe(false);
+    expect(store.size).toBe(3);
+
+    respond(204);
+    expect(await logout()).toBe(true);
+    // The practice options are a preference, not a game: they stay.
+    expect([...store.keys()]).toEqual(["imperatle:practice:options"]);
+
+    fill();
+    respond(204);
+    expect(await deleteAccount()).toBe(true);
+    expect([...store.keys()]).toEqual(["imperatle:practice:options"]);
+  });
+
   it("keeps the user when deletion fails, and drops it when it works", async () => {
     respond(200, signedIn);
     await refreshMe();
