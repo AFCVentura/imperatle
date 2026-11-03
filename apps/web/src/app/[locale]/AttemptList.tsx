@@ -14,6 +14,8 @@ interface AttemptListProps {
   attemptsAllowed: number;
   hintRows: HintRowData[];
   gameOver: boolean;
+  // Practice option: wrong guesses unlock no clues.
+  hintsOff?: boolean;
 }
 
 const COMPARISON_ARROW: Record<ComparisonResult, string> = {
@@ -25,12 +27,13 @@ const COMPARISON_ARROW: Record<ComparisonResult, string> = {
 // One entry per attempt, newest on top, each a pill holding the guess and
 // the clues about the map's empire that this wrong guess unlocked. Unused slots come last, each saying which
 // clues it would unlock, so the whole board is still visible upfront.
-export function AttemptList({ guesses, attemptsAllowed, hintRows, gameOver }: AttemptListProps) {
+export function AttemptList({ guesses, attemptsAllowed, hintRows, gameOver, hintsOff = false }: AttemptListProps) {
   const t = useTranslations("Game");
   const locale = useLocale();
 
   // The last attempt unlocks no new clues (there are fewer clue rows than
-  // attempts), so its slot just says it's the last one.
+  // attempts), so its slot just says it's the last one. A practice round can
+  // have more attempts than clue rows, or clues turned off.
   const emptySlots = gameOver
     ? []
     : Array.from({ length: Math.max(0, attemptsAllowed - guesses.length) }, (_, i) => {
@@ -103,7 +106,13 @@ export function AttemptList({ guesses, attemptsAllowed, hintRows, gameOver }: At
               <span className="flex w-7 shrink-0 items-center justify-center text-muted/60">{number}</span>
               <span className="min-w-0 flex-1 px-1">
                 <MarqueeText className="text-muted/70">
-                  {row ? t("unlocksLabel", { fields: hintRowNames(row, locale) }) : t("lastAttempt")}
+                  {row
+                    ? t("unlocksLabel", { fields: hintRowNames(row, locale) })
+                    : number === attemptsAllowed
+                      ? t("lastAttempt")
+                      : hintsOff
+                        ? t("cluesOff")
+                        : t("noNewClues")}
                 </MarqueeText>
               </span>
             </div>
