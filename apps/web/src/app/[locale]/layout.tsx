@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/next";
 import { Cinzel, Spectral } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
@@ -17,7 +16,7 @@ import { AccountDialog } from "./AccountDialog";
 import { SupportDialog } from "./SupportDialog";
 import { AdSlot } from "./AdSlot";
 import { SITE_URL } from "@/lib/site";
-import { vercelAnalyticsEnabled } from "@/lib/analytics";
+import { cloudflareBeacon } from "@/lib/analytics";
 import "../globals.css";
 
 // Display and body fonts (see globals.css).
@@ -90,6 +89,10 @@ export default async function LocaleLayout({
     challengeNumber = null;
   }
 
+  // Read as a literal process.env.NEXT_PUBLIC_* so "next build" inlines it:
+  // the container only has it at build time, not at run time.
+  const beacon = cloudflareBeacon(process.env.NEXT_PUBLIC_CF_ANALYTICS_TOKEN);
+
   return (
     <html
       lang={locale}
@@ -110,9 +113,10 @@ export default async function LocaleLayout({
           <AboutDialog />
           <ChangelogDialog />
         </NextIntlClientProvider>
-        {/* Cookieless page views (no consent banner needed). Only on Vercel: off it
-            (the Azure container) there is no analytics until a provider is chosen. */}
-        {vercelAnalyticsEnabled() && <Analytics />}
+        {/* Cookieless page views (Cloudflare Web Analytics, no consent banner
+            needed), only when the token was set at build time. The beacon
+            follows client-side navigation on its own. */}
+        {beacon && <script defer src={beacon.src} data-cf-beacon={beacon.config} />}
       </body>
     </html>
   );

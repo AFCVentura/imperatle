@@ -67,8 +67,9 @@ The web app reads `NEXT_PUBLIC_API_URL` and `NEXT_PUBLIC_SITE_URL` (public addre
 |---|---|
 | `AZURE_DEPLOY_WEB` | `true` turns on the "Deploy web to Azure" job. Off (unset) by default. |
 | `NEXT_PUBLIC_PADDLE_CLIENT_TOKEN`, `NEXT_PUBLIC_PADDLE_SUPPORTER_PRICE_ID`, `NEXT_PUBLIC_PADDLE_ENVIRONMENT` | Passed as build arguments (see Paddle below). |
+| `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` | Cloudflare Web Analytics site token (public). Unset, the page renders no analytics script. |
 
-`NEXT_PUBLIC_API_URL` and `NEXT_PUBLIC_SITE_URL` are fixed in the workflow (`API_URL`, `WEB_URL`). Vercel Web Analytics only renders on Vercel (`VERCEL=1`); the container has no analytics until a provider is chosen. Moving the site, step by step, in Portuguese: [docs/launch/front-container-apps.md](docs/launch/front-container-apps.md).
+`NEXT_PUBLIC_API_URL` and `NEXT_PUBLIC_SITE_URL` are fixed in the workflow (`API_URL`, `WEB_URL`). Page views are counted by Cloudflare Web Analytics (cookieless beacon), only when `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` is set at build time. Moving the site, step by step, in Portuguese: [docs/launch/front-container-apps.md](docs/launch/front-container-apps.md).
 
 **Google sign-in.** Create an OAuth client of type "Web application" in Google Cloud and register these authorized redirect URIs (the path is fixed, `/signin-google`):
 
