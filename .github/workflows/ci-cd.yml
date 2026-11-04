@@ -281,14 +281,24 @@ jobs:
           echo "::error::Revision $revision wasn't healthy after 5 minutes (last: provisioning=$provisioning running=$running health=$health)."
           exit 1
 
-      # From the outside, through the real domain: "/" (which redirects to a
-      # language, hence --location), both languages, and the health route.
-      # Retries cover a cold start of the web and of the API behind it.
+      # From the outside: "/" (which redirects to a language, hence
+      # --location), both languages, and the health route. First on the
+      # Container App's own address, so the new revision is tested even while
+      # the domain still points to Vercel (before the DNS switch); then through
+      # the real domain. Retries cover a cold start of the web and of the API
+      # behind it.
       - name: Smoke test
         run: |
-          for path in / /pt /en /api/health; do
-            curl --fail --silent --show-error --location --output /dev/null \
-              --retry 5 --retry-delay 10 --retry-all-errors --max-time 30 \
-              --write-out "$path: HTTP %{http_code} in %{time_total}s\n" \
-              "$WEB_URL$path"
+          fqdn=$(az containerapp show --name "$WEB_CONTAINER_APP" --resource-group "$RESOURCE_GROUP" \
+            --query properties.configuration.ingress.fqdn --output tsv)
+          for base in "https://$fqdn" "$WEB_URL"; do
+            for path in / /pt /en /api/health; do
+              curl --fail --silent --show-error --location --output /dev/null \
+                --retry 5 --retry-delay 10 --retry-all-errors --max-time 30 \
+                --write-out "$base$path: HTTP %{http_code} in %{time_total}s\n" \
+                "$base$path"
+            done
           done
+          if curl --silent --head --max-time 30 "$WEB_URL/api/health" | grep -qi '^server: *vercel'; then
+            echo "::warning::$WEB_URL is still served by Vercel: the DNS doesn't point to the Container App yet."
+          fi
