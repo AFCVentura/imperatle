@@ -55,8 +55,8 @@ Observação: com `Dev:IsSupporter` e **sem** login, as páginas de arquivo e tr
 - **Google OAuth**: criar o cliente OAuth "Aplicativo da Web" no Google Cloud, cadastrar `https://api.imperatle.com/signin-google` (e `http://localhost:5055/signin-google` para testar), preencher a tela de consentimento. Passo a passo em `docs/launch/google-oauth-setup.md`.
 - **Paddle**: conta sandbox (e depois a de produção, que passa por verificação da Paddle), produto "Apoiador (vitalício)" com preço único de cerca de US$ 4,99 e preços por país, destino de webhook para `https://api.imperatle.com/webhooks/paddle`, client-side token. Passo a passo em `docs/launch/paddle-setup.md`.
 - **Variáveis no Azure (API)**: `Auth__Google__ClientId`, `Auth__Google__ClientSecret` (secret), `Auth__CookieDomain=imperatle.com`, `Paddle__WebhookSecret` (secret), `Paddle__SupporterPriceId`, `Paddle__Environment`. Conferir que `Cors__AllowedOrigins` tem `https://imperatle.com,https://www.imperatle.com`. A API precisa estar num subdomínio do site (ex.: `api.imperatle.com`) para o cookie de login valer nos dois.
-- **Variáveis na Vercel (site)**: `NEXT_PUBLIC_PADDLE_CLIENT_TOKEN`, `NEXT_PUBLIC_PADDLE_SUPPORTER_PRICE_ID`, `NEXT_PUBLIC_PADDLE_ENVIRONMENT`. Elas entram no build: mudar e fazer novo deploy.
-- **Vercel Hobby não permite uso comercial.** Decidido: o site vai para um segundo Container App, no mesmo ambiente da API. Imagem, job de deploy (desligado até `AZURE_DEPLOY_WEB = true`) e passo a passo prontos na branch `feat/front-container`: ver `docs/launch/front-container-apps.md`.
+- **Variáveis do site**: `NEXT_PUBLIC_PADDLE_CLIENT_TOKEN`, `NEXT_PUBLIC_PADDLE_SUPPORTER_PRICE_ID`, `NEXT_PUBLIC_PADDLE_ENVIRONMENT` e `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` (Cloudflare Web Analytics). Na Vercel enquanto o site estiver lá; no Azure, variáveis do repositório no GitHub. Elas entram no build: mudar e fazer novo deploy.
+- **Vercel Hobby não permite uso comercial.** Decidido: o site vai para um segundo Container App, no mesmo ambiente da API. Imagem, job de deploy (desligado até `AZURE_DEPLOY_WEB = true`) e passo a passo prontos; analytics trocado pela Cloudflare e textos legais já falando em Azure (branch `feat/front-azure`). Checklist com o Azure CLI: `docs/launch/front-container-apps.md`.
 - **Revisão jurídica**: política de privacidade, termos e reembolso foram escritos pelos agentes (pt e en), não por advogado. A Paddle também exige termos e política de reembolso publicados para aprovar a conta.
 - **Faixas de dificuldade do treino**: revisar `apps/api/Content/practice-difficulty.json` (quais impérios são fácil, médio e difícil; os que não estão na lista caem numa faixa pela área máxima). O conteúdo é escolha sua.
 - **Banco de produção**: a migration roda sozinha na subida da API. Ela cria tabelas novas (inclusive `UserSessions`) e duas colunas em `PlayerChallengeProgress` (as linhas antigas ficam com a lista de palpites vazia). Vale um backup do Neon antes do primeiro deploy.
@@ -65,7 +65,7 @@ Observação: com `Dev:IsSupporter` e **sem** login, as páginas de arquivo e tr
 ## Decisões que ficaram com você
 
 - Manter ou não o `Dev:IsSupporter` (é só de Development; dá para apagar o `DevSupporterCurrentPlayer` sem afetar produção).
-- Onde hospedar o site por causa da regra da Vercel Hobby.
+- ~~Onde hospedar o site~~: decidido, Azure Container Apps (ver acima).
 - Preço final e preços por país (configurados na Paddle, não no código).
 - Se o modo treino também deve guardar os palpites no servidor (hoje só jogo do dia e arquivo guardam; o treino recupera a rodada pelo id salvo no navegador).
 
