@@ -16,6 +16,10 @@ public static class UserSessions
 {
     public static readonly TimeSpan TouchInterval = TimeSpan.FromDays(1);
 
+    // How long the login cookie lives after the last request that renewed it
+    // (sliding expiration, set in Program.cs).
+    public static readonly TimeSpan CookieLifetime = TimeSpan.FromDays(180);
+
     // Creates the session row and the login cookie that points at it.
     public static async Task SignInAsync(HttpContext http, ImperatleDbContext db, Guid userId, CancellationToken ct = default)
     {

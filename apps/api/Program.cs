@@ -38,6 +38,10 @@ builder.Services.Configure<PaddleOptions>(builder.Configuration.GetSection(Paddl
 builder.Services.AddScoped<PaddleWebhookProcessor>();
 builder.Services.AddSingleton(TimeProvider.System);
 
+// Daily deletion of old practice rounds and dead login sessions (DataCleanup).
+builder.Services.Configure<CleanupOptions>(builder.Configuration.GetSection(CleanupOptions.SectionName));
+builder.Services.AddHostedService<DataCleanupService>();
+
 // Comma-separated so an environment can replace the whole list with one
 // setting (Cors__AllowedOrigins); JSON arrays merge by index across files.
 var allowedOrigins = (builder.Configuration["Cors:AllowedOrigins"] ?? "")
@@ -67,7 +71,7 @@ var authentication = builder.Services.AddAuthentication(AuthConstants.SessionSch
         options.Cookie.SameSite = SameSiteMode.Lax;
         options.Cookie.SecurePolicy = cookieSecurePolicy;
         options.Cookie.Domain = string.IsNullOrWhiteSpace(cookieDomain) ? null : cookieDomain;
-        options.ExpireTimeSpan = TimeSpan.FromDays(180);
+        options.ExpireTimeSpan = UserSessions.CookieLifetime;
         options.SlidingExpiration = true;
         options.Events.OnValidatePrincipal = AuthEvents.ValidatePrincipalAsync;
         options.Events.OnRedirectToLogin = context => AuthEvents.StatusInsteadOfRedirect(context, StatusCodes.Status401Unauthorized);
