@@ -16,6 +16,7 @@ namespace Imperatle.Api.Tests;
 //   Host=localhost;Port=5432;Database=imperatle_fixes;Username=imperatle;Password=imperatle
 // The database is migrated and its rows are left in place: each run plays as
 // a fresh anonymous player, so it can share a database with the e2e suite.
+[Collection(PostgresCollection.Name)]
 public class GuessConcurrencyPostgresTests
 {
     public const string ConnectionVariable = "IMPERATLE_TEST_POSTGRES";
@@ -156,4 +157,10 @@ public class GuessConcurrencyPostgresTests
         Assert.True(session.Completed);
         Assert.Equal(3, results.Count(Counted));
     }
+}
+
+// Test classes that use the IMPERATLE_TEST_POSTGRES database run one at a time.
+public static class PostgresCollection
+{
+    public const string Name = "Postgres";
 }
