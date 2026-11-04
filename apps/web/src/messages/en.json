@@ -379,7 +379,7 @@
     "dailyFirstButton": "Play today's challenge"
   },
   "Share": {
-    "archiveTitle": "Practice #{number}"
+    "archiveTitle": "Archive #{number}"
   },
   "Checkout": {
     "title": "Payment",

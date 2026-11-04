@@ -30,9 +30,9 @@ describe("buildShareText", () => {
 
   it("shares a past game under its own title, never as that day's daily result", () => {
     const guesses = [wrong("Bigger", "Smaller"), right];
-    const text = buildShareText(guesses, 12, 7, "Treino #12");
+    const text = buildShareText(guesses, 12, 7, "Arquivo #12");
 
-    expect(text.split("\n")[0]).toBe("Treino #12 🏛️ 2/7");
+    expect(text.split("\n")[0]).toBe("Arquivo #12 🏛️ 2/7");
     expect(text).not.toContain("Imperatle #");
     // Everything but the title is the daily share's.
     expect(text.split("\n").slice(1)).toEqual(buildShareText(guesses, 12, 7).split("\n").slice(1));
@@ -40,11 +40,13 @@ describe("buildShareText", () => {
 
   it("takes the archive title from Share.archiveTitle in both languages", () => {
     for (const [messages, expected] of [
-      [pt, "Treino #12"],
-      [en, "Practice #12"],
+      [pt, "Arquivo #12"],
+      [en, "Archive #12"],
     ] as const) {
       const title = messages.Share.archiveTitle.replace("{number}", "12");
       expect(buildShareText([right], 12, 7, title).split("\n")[0]).toBe(`${expected} 🏛️ 1/7`);
+      // A past game is not a Practice round: the share must not borrow that mode's name.
+      expect(title).not.toContain(messages.Practice.title);
     }
   });
 

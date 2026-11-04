@@ -379,7 +379,7 @@
     "dailyFirstButton": "Jogar o desafio de hoje"
   },
   "Share": {
-    "archiveTitle": "Treino #{number}"
+    "archiveTitle": "Arquivo #{number}"
   },
   "Checkout": {
     "title": "Pagamento",
