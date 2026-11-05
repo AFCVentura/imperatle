@@ -16,6 +16,22 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    version: "1.4.2",
+    date: "2026-11-04",
+    empires: [],
+    features: [],
+    fixes: [
+      {
+        en: "The site moved to a new home, and visits are now counted without any cookies. The Privacy page lists the new providers.",
+        pt: "O site mudou de hospedagem e as visitas agora são contadas sem nenhum cookie. A página de Privacidade lista os novos fornecedores.",
+      },
+      {
+        en: "The Terms, Privacy and Refund pages now have a contact email: contato@imperatle.com.",
+        pt: "As páginas de Termos, Privacidade e Reembolso agora têm um e-mail de contato: contato@imperatle.com.",
+      },
+    ],
+  },
+  {
     version: "1.4.1",
     date: "2026-11-03",
     empires: [],

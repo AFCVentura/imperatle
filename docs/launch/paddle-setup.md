@@ -93,15 +93,15 @@ A Paddle é a **merchant of record**: ela é quem vende de fato, cobra, recolhe 
 | `Paddle__WebhookSecret` | API (Azure Container Apps, como **secret**) | Secret key do destino de webhook (`pdl_ntfset_...`) |
 | `Paddle__SupporterPriceId` | API | Price id (`pri_...`) |
 | `Paddle__Environment` | API | `sandbox` ou `production` |
-| `NEXT_PUBLIC_PADDLE_CLIENT_TOKEN` | Site (Vercel) | Client-side token (`test_...` ou `live_...`) |
-| `NEXT_PUBLIC_PADDLE_SUPPORTER_PRICE_ID` | Site (Vercel) | O mesmo price id |
-| `NEXT_PUBLIC_PADDLE_ENVIRONMENT` | Site (Vercel) | `sandbox` ou `production` (tem que bater com o token) |
+| `NEXT_PUBLIC_PADDLE_CLIENT_TOKEN` | Site (variável do repositório no GitHub; na Vercel enquanto o site estiver lá) | Client-side token (`test_...` ou `live_...`) |
+| `NEXT_PUBLIC_PADDLE_SUPPORTER_PRICE_ID` | Site (idem) | O mesmo price id |
+| `NEXT_PUBLIC_PADDLE_ENVIRONMENT` | Site (idem) | `sandbox` ou `production` (tem que bater com o token) |
 
 Opcional: `Paddle__WebhookToleranceSeconds` (padrão 300) é quanto tempo um webhook assinado pode ter antes de ser recusado como velho.
 
 Observações:
 
-- As variáveis `NEXT_PUBLIC_*` entram no site na hora do build: depois de mudar na Vercel, faça um novo deploy.
+- As variáveis `NEXT_PUBLIC_*` entram no site na hora do build: depois de mudar, faça um novo deploy (no Azure, rodar o workflow de novo; ver `docs/launch/front-container-apps.md`).
 - Sem `NEXT_PUBLIC_PADDLE_CLIENT_TOKEN` e `NEXT_PUBLIC_PADDLE_SUPPORTER_PRICE_ID`, o diálogo mostra "ainda não está disponível" no lugar do botão. Dá para subir o código antes de ligar a venda.
 - Localmente: `apps/web/.env.local` para as do site e `dotnet user-secrets` (ou variáveis de ambiente) para as da API.
 

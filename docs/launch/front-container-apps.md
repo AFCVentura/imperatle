@@ -1,8 +1,8 @@
 # Site (Next.js) no Azure Container Apps
 
-Atualizado em 3 de novembro de 2026. Nada disto foi publicado: a imagem, o job de deploy e este passo a passo estão prontos, mas nada muda na Vercel nem no Azure até você seguir os passos abaixo e ligar a variável `AZURE_DEPLOY_WEB`.
+Atualizado em 4 de novembro de 2026. O código está pronto (branch `feat/front-azure`): imagem Docker, job de deploy, analytics da Cloudflare e textos legais já falando em Azure. **Nada foi publicado**: nada muda na Vercel nem no Azure até alguém seguir o checklist abaixo e ligar a variável `AZURE_DEPLOY_WEB`.
 
-**Por quê:** o plano Hobby da Vercel não permite uso comercial, e com a venda do Apoio o site passa a ser comercial. O Pro custa US$ 20 por mês. A ideia é rodar o site como um segundo Container App, no mesmo ambiente da API, e ficar dentro (ou bem perto) da cota grátis mensal.
+**Por quê:** o plano Hobby da Vercel não permite uso comercial, e com a venda do Apoio pela Paddle o site passa a ser comercial. O Pro custa US$ 20 por mês. O site vai rodar como um segundo Container App, no mesmo ambiente da API, com réplica mínima 1 (uns US$ 5 por mês, ver "Custos").
 
 ## Resumo do que já está pronto no código
 
@@ -12,40 +12,259 @@ Atualizado em 3 de novembro de 2026. Nada disto foi publicado: a imagem, o job d
 | `images: { unoptimized: true }` | `apps/web/next.config.ts` | O site não usa `next/image`. Desligado, o `/_next/image` não fica aberto para alguém fazer o servidor redimensionar imagens, e a imagem Docker não precisa do `sharp` (uns 19 MB). |
 | `Dockerfile` e `.dockerignore` | `apps/web/` | Imagem de produção em três etapas, Node 24.22.2 (LTS) em Alpine 3.24 fixados, usuário sem root (`node`), porta 8080 igual à da API, `HEALTHCHECK`. |
 | `GET /api/health` | `apps/web/src/app/api/health/route.ts` | Responde `{"status":"ok"}` sem chamar a API. Serve para as sondas (probes) do Container Apps e para o teste de fumaça. |
-| Analytics só na Vercel | `apps/web/src/lib/analytics.ts` | O `<Analytics />` da Vercel só aparece quando o site roda na Vercel (`VERCEL=1`). No container não há analytics nenhum até você escolher um (ver "Analytics"). |
-| Job "Deploy web to Azure" | `.github/workflows/ci-cd.yml` | Igual ao da API: imagem no GHCR, login OIDC, `az containerapp update`, espera a revisão ficar saudável, teste de fumaça em `/`, `/pt`, `/en` e `/api/health`. Só roda com `AZURE_DEPLOY_WEB = true`. |
+| Cloudflare Web Analytics | `apps/web/src/lib/analytics.ts` e `layout.tsx` | Script da Cloudflare (sem cookies) só quando `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` existe no build. Sem o token, nada é renderizado (desenvolvimento local, CI). O `@vercel/analytics` foi removido. |
+| Textos legais | `apps/web/src/lib/legal.ts` | Privacidade: Azure hospeda o site e o servidor do jogo, Cloudflare conta as visitas sem cookies, Vercel não aparece mais. Contato `contato@imperatle.com` em privacidade, termos e reembolso. Datas em 4/11/2026. |
+| Job "Deploy web to Azure" | `.github/workflows/ci-cd.yml` | Igual ao da API: imagem no GHCR, login OIDC, `az containerapp update`, espera a revisão ficar saudável, teste de fumaça em `/`, `/pt`, `/en` e `/api/health`, primeiro no endereço próprio do Container App e depois no domínio (com aviso se o domínio ainda estiver na Vercel). Só roda com `AZURE_DEPLOY_WEB = true`. |
 | Dependabot da imagem | `.github/dependabot.yml` | Abre PR quando sair Node novo para a imagem do site. |
 
-Medido localmente (Docker Desktop): imagem de **64 MB comprimida** (67.257.194 bytes, o que o registro guarda e o Azure baixa), **178 MB descomprimida** (o Node em si é a maior parte; o app ocupa 25 MB). O container sobe em menos de 1 segundo e usa uns **71 MiB de memória** servindo páginas.
+Medido localmente (Docker Desktop): imagem de **64 MB comprimida** (o que o registro guarda e o Azure baixa), **178 MB descomprimida**. O container sobe em menos de 1 segundo e usa uns **71 MiB de memória** servindo páginas.
 
 ### O que continua como hoje
 
-- **Páginas de desenvolvimento.** `/dev/maps`, `/dev/generator`, `/api/geo/*` e `/api/dev/*` respondem 404 em produção, do mesmo jeito que na Vercel: elas conferem `NODE_ENV === "production"`, e a imagem roda com `NODE_ENV=production`. As páginas `/dev/*` já saem do build como 404 estático. O índice local do Cliopatria (`dev-data/`) fica fora da imagem, e os arquivos de conteúdo da API (`apps/api/Content`) nunca entram (estão fora da pasta do site).
+- **Páginas de desenvolvimento.** `/dev/maps`, `/dev/generator`, `/api/geo/*` e `/api/dev/*` respondem 404 em produção: elas conferem `NODE_ENV === "production"`, e a imagem roda com `NODE_ENV=production`. O índice local do Cliopatria (`dev-data/`) fica fora da imagem, e os arquivos de conteúdo da API (`apps/api/Content`) nunca entram.
 - **Variáveis `NEXT_PUBLIC_*`.** Elas são escritas dentro do JavaScript no momento do build. Por isso, no container elas são **argumentos de build** (`--build-arg`), não variáveis de ambiente do Container App. Mudar uma = gerar imagem nova (basta rodar o workflow de novo).
-- **Cabeçalhos e redirecionamentos.** O site não tem `headers()` nem `redirects()` próprios da Vercel. O redirecionamento de `/` para `/pt` ou `/en` é do `next-intl` (no `proxy.ts`) e funciona igual no container (testado, `Location: /en` relativo).
+- **Cabeçalhos e redirecionamentos.** O site não tem `headers()` nem `redirects()` próprios, nem Content-Security-Policy. O redirecionamento de `/` para `/pt` ou `/en` é do `next-intl` (no `proxy.ts`) e funciona igual no container. Se um dia entrar uma CSP, ela precisa liberar `script-src https://static.cloudflareinsights.com` e `connect-src https://cloudflareinsights.com` (para onde o script manda as visitas), além do que a Paddle pede.
 
 ## O que era específico da Vercel
 
-1. **`@vercel/analytics`**: só funciona na Vercel (carrega `/_vercel/insights/script.js`, que nenhum outro servidor tem). Agora só é renderizado na Vercel. O pacote continua instalado para a volta à Vercel funcionar sem mexer em código.
+1. **`@vercel/analytics`**: removido, trocado pelo Cloudflare Web Analytics (funciona em qualquer servidor).
 2. **Otimização de imagem**: a Vercel otimiza `next/image` na borda. O site não usa `next/image`, então foi só desligar.
-3. **Deploy pelo Git da Vercel**: substituído pelo job novo do GitHub Actions.
-4. **Variáveis do projeto na Vercel** (`NEXT_PUBLIC_API_URL`, `NEXT_PUBLIC_PADDLE_*`, `NEXT_PUBLIC_SITE_URL`): passam a ser **variáveis do repositório** no GitHub (ver tabela abaixo).
-5. **Texto da política de privacidade**: `apps/web/src/lib/legal.ts` cita "Vercel (hospedagem do site e contagem de visitas)" e "Vercel Web Analytics". Isso **não foi mudado**, porque enquanto o site estiver na Vercel o texto está certo. No dia da troca, mudar (pt e en) e atualizar a data no topo:
-   - Item "Visitas às páginas, contadas pelo Vercel Web Analytics...": apagar (ou trocar pelo provedor novo, se escolher um).
-   - "Vercel (hospedagem do site e contagem de visitas), Estados Unidos." vira: o item "Microsoft Azure (servidor do jogo)." passa a ser "Microsoft Azure (site e servidor do jogo)." e o item da Vercel sai.
+3. **Deploy pelo Git da Vercel**: substituído pelo job "Deploy web to Azure" do GitHub Actions.
+4. **Variáveis do projeto na Vercel** (`NEXT_PUBLIC_PADDLE_*` e, se quiser, a do analytics): passam a ser **variáveis do repositório** no GitHub (ver o passo 6 do checklist). `NEXT_PUBLIC_API_URL` e `NEXT_PUBLIC_SITE_URL` já estão fixos no workflow.
+5. **Texto da política de privacidade**: já atualizado nesta branch (ver tabela acima).
 
-## Analytics
+Ficaram de propósito (não atrapalham e ajudam numa volta para a Vercel): `_vercel` na lista de exclusões do `matcher` do `proxy.ts` (é o padrão do `next-intl`; fora da Vercel nenhuma rota começa assim) e `.vercel` no `.gitignore` e no `.dockerignore` (pasta local do CLI da Vercel). Não existe `vercel.json` no repositório.
 
-No container não há contagem de visitas. Nenhum provedor foi escolhido de propósito: a decisão é sua. Opções:
+**Atenção ao mesclar no `main`:** enquanto a Vercel estiver ligada ao Git, ela publica o `main` de novo. A partir do merge desta branch, o site na Vercel fica sem contagem de visitas (o `@vercel/analytics` saiu; a Cloudflare só aparece se o token também estiver nas variáveis da Vercel) e a política de privacidade já diz "Azure". Por isso o ideal é **mesclar no mesmo dia da troca de DNS**, seguindo o checklist até o fim.
 
-| Opção | Custo | Cookies / banner | Observação |
-|---|---|---|---|
-| **Cloudflare Web Analytics** | Grátis | Sem cookies, sem banner | Precisa só de um `<script>` com um token. Não exige o DNS na Cloudflare. Bem simples, poucos relatórios. |
-| **Umami** (Cloud ou auto-hospedado) | Cloud tem plano grátis com limite; auto-hospedado = mais um container e um banco | Sem cookies, sem banner | Código aberto. Dava para rodar no mesmo ambiente do Container Apps, mas aí é mais uma coisa para manter. |
-| **Plausible** | Pago (a partir de uns US$ 9 por mês), ou auto-hospedado | Sem cookies, sem banner | O mais polido dos "sem cookies". |
-| **Azure Application Insights** (SDK de navegador) | Cota grátis de ingestão no Log Analytics, depois por GB | **Usa cookies** (`ai_user`, `ai_session`) por padrão: pela LGPD/GDPR isso pede banner de consentimento, a não ser que você desligue os cookies na configuração do SDK | Bom para erros e desempenho (inclusive da API), pesado para só contar visitas. |
+## Analytics: Cloudflare Web Analytics
 
-Para um jogo diário e simples, a recomendação mais leve é Cloudflare Web Analytics ou Umami: nenhum dos dois precisa de banner, e a política de privacidade continua dizendo "sem cookies e sem identificar você" (só troca o nome do provedor). Para ligar qualquer um, o lugar é o mesmo: `apps/web/src/lib/analytics.ts` e o `layout.tsx` (onde hoje fica o `<Analytics />`), com o token entrando como `NEXT_PUBLIC_*` (argumento de build).
+Escolhido: grátis, sem cookies (sem banner de consentimento), e funciona sem o DNS do domínio estar na Cloudflare. A política de privacidade já cita a Cloudflare.
+
+Como o token chega ao site: Cloudflare > variável do repositório `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` > argumento de build no job > `next build` escreve o token no JavaScript > o layout renderiza `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"..."}'>`. O token não é segredo (qualquer visitante vê no HTML), por isso é **variável**, não secret. Sem a variável, o site sobe normalmente, só que sem contagem.
+
+Os números aparecem no painel da Cloudflare (Analytics & Logs > Web Analytics) alguns minutos depois das primeiras visitas. Bloqueadores de anúncio barram esse script em parte das visitas; é esperado.
+
+## Checklist de migração (Azure CLI)
+
+Comandos para o PowerShell com o Azure CLI logado (`az login`) na assinatura certa (`az account show`). Troque o que estiver entre `<>`. Os nomes `rg-imperatle`, `imperatle-api` e `imperatle-web` são os que o workflow usa (`RESOURCE_GROUP`, `CONTAINER_APP`, `WEB_CONTAINER_APP`); não mude um sem mudar o outro.
+
+### 0. Antes de começar (um dia antes)
+
+- [ ] Descobrir onde está o DNS: `nslookup -type=NS imperatle.com`. Se aparecer `vercel-dns.com`, os registros são editados na Vercel (Domains), e **o domínio não pode ser apagado da conta da Vercel** no fim, só desligado do projeto. Se aparecer `cloudflare.com`, ver os cuidados do passo 9.
+- [ ] Anotar (print) **todos os registros DNS atuais** de `imperatle.com` e `www.imperatle.com`. É para eles que se volta num rollback.
+- [ ] Baixar o TTL desses registros para 300 segundos (5 minutos), para a troca e uma eventual volta se espalharem rápido.
+- [ ] Conferir se existe registro CAA: `nslookup -type=CAA imperatle.com`. Se existir, adicionar `0 issue "digicert.com"`, senão o certificado do Azure não sai.
+- [ ] Não desconectar a Vercel. Ela fica no ar até o fim, como plano B.
+
+### 1. Token do Cloudflare Web Analytics
+
+- [ ] Cloudflare (conta grátis serve) > Analytics & Logs > **Web Analytics** > Add a site > hostname `imperatle.com`.
+- [ ] Como o DNS não está (ou não precisa estar) na Cloudflare, ela mostra o trecho de JavaScript para colar à mão. **Não cole o trecho em lugar nenhum**: copie só o valor de `"token"` de dentro dele (uma sequência de letras e números).
+- [ ] Guardar o token para o passo 6.
+
+### 2. Preparar o CLI e descobrir o ambiente da API
+
+```
+az extension add --name containerapp --upgrade
+$RG = "rg-imperatle"
+$ENVID = az containerapp show -n imperatle-api -g $RG --query properties.managedEnvironmentId -o tsv
+$ENVNAME = ($ENVID -split "/")[-1]
+$ENVNAME
+```
+
+- [ ] `$ENVNAME` mostrou o nome do ambiente (não ficou vazio).
+
+### 3. Criar o Container App do site (réplica mínima 1)
+
+Ele nasce com uma imagem de exemplo da Microsoft (porta 80). O primeiro deploy do GitHub Actions troca a porta para 8080 e a imagem para a do site, igual faz com a API.
+
+```
+az containerapp create `
+  -n imperatle-web -g $RG --environment $ENVNAME `
+  --image mcr.microsoft.com/k8se/quickstart:latest `
+  --ingress external --target-port 80 `
+  --cpu 0.25 --memory 0.5Gi `
+  --min-replicas 1 --max-replicas 2
+```
+
+- `--ingress external`: aberto para a internet, HTTPS feito pelo Azure (HTTP é redirecionado).
+- `--min-replicas 1`: a página abre na hora, sem partida a frio (ver "Partida a frio"). `--max-replicas 2` evita que um pico (ou um ataque) multiplique a conta.
+- **Nenhuma variável de ambiente em tempo de execução**: tudo o que o site precisa entra no build (passo 6). `PORT=8080`, `HOSTNAME=0.0.0.0` e `NODE_ENV=production` já vêm da imagem.
+
+- [ ] `az containerapp show -n imperatle-web -g $RG --query properties.provisioningState -o tsv` responde `Succeeded`.
+
+### 4. Deixar o Azure baixar a imagem do GHCR
+
+Ver como a API faz hoje:
+
+```
+az containerapp registry list -n imperatle-api -g $RG -o table
+```
+
+- [ ] **Se aparecer `ghcr.io` com usuário e senha** (um token do GitHub): configurar o mesmo no site. O token precisa do escopo `read:packages`; ele é digitado direto no terminal, nunca salvo em arquivo do repositório.
+  ```
+  az containerapp registry set -n imperatle-web -g $RG --server ghcr.io --username <USUARIO_GITHUB> --password <TOKEN_COM_READ_PACKAGES>
+  ```
+- [ ] **Se não aparecer nada** (o pacote `imperatle-api` é público): o pacote `imperatle-web` nasce **privado** no primeiro push, e o primeiro deploy falha no passo "Wait for the new revision" porque o Azure não consegue baixar. Aí: GitHub > perfil > Packages > `imperatle-web` > Package settings > Change visibility > Public, e rodar o workflow de novo. A imagem não tem segredo nenhum (só os `NEXT_PUBLIC_*`, que já são públicos no navegador).
+
+### 5. Permissão do deploy (OIDC)
+
+Os segredos `AZURE_CLIENT_ID`, `AZURE_TENANT_ID` e `AZURE_SUBSCRIPTION_ID` são os mesmos da API. A identidade precisa poder atualizar o app novo. Conferir onde está o papel dela:
+
+```
+$APPID = "<AZURE_CLIENT_ID>"
+az role assignment list --assignee $APPID --all -o table
+```
+
+- [ ] Se o escopo for o grupo `rg-imperatle` (ou a assinatura), nada a fazer.
+- [ ] Se for só o `imperatle-api`, dar o mesmo papel no site:
+  ```
+  $WEBID = az containerapp show -n imperatle-web -g $RG --query id -o tsv
+  az role assignment create --assignee $APPID --role Contributor --scope $WEBID
+  ```
+
+### 6. Variáveis do repositório no GitHub
+
+GitHub > repositório > Settings > Secrets and variables > Actions > aba **Variables** (não "Secrets": são valores públicos). Ou pelo `gh`:
+
+```
+gh variable set NEXT_PUBLIC_CF_ANALYTICS_TOKEN --body "<TOKEN_DO_PASSO_1>"
+gh variable set NEXT_PUBLIC_PADDLE_CLIENT_TOKEN --body "<CLIENT_SIDE_TOKEN>"
+gh variable set NEXT_PUBLIC_PADDLE_SUPPORTER_PRICE_ID --body "<pri_...>"
+gh variable set NEXT_PUBLIC_PADDLE_ENVIRONMENT --body "<sandbox ou production>"
+```
+
+Argumentos de build que o job passa para a imagem:
+
+| Argumento de build | De onde vem | Observação |
+|---|---|---|
+| `NEXT_PUBLIC_API_URL` | fixo no workflow (`API_URL`) | `https://api.imperatle.com` |
+| `NEXT_PUBLIC_SITE_URL` | fixo no workflow (`WEB_URL`) | `https://imperatle.com` |
+| `NEXT_PUBLIC_PADDLE_CLIENT_TOKEN` | variável do repositório | `test_...` no sandbox, `live_...` em produção |
+| `NEXT_PUBLIC_PADDLE_SUPPORTER_PRICE_ID` | variável do repositório | o `pri_...` do Apoio (do mesmo ambiente do token) |
+| `NEXT_PUBLIC_PADDLE_ENVIRONMENT` | variável do repositório | `sandbox` se vazia; `production` tem que bater com um token `live_...` |
+| `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` | variável do repositório | vazia = site sem contagem de visitas |
+
+- [ ] As quatro variáveis criadas (`gh variable list` confere). Usar **os mesmos valores Paddle que estão hoje no projeto da Vercel** (Vercel > projeto > Settings > Environment Variables), para o checkout continuar igual.
+
+### 7. Primeiro deploy
+
+- [ ] Esta branch mesclada no `main` (ver "Atenção ao mesclar no `main`" acima).
+- [ ] `gh variable set AZURE_DEPLOY_WEB --body true` (é a chave que liga o job).
+- [ ] Rodar: `gh workflow run ci-cd.yml --ref main` (ou Actions > CI/CD > Run workflow) e acompanhar com `gh run watch`.
+- [ ] "Wait for the new revision to be healthy" verde. O "Smoke test" testa primeiro o endereço próprio do app (Azure de verdade) e depois `https://imperatle.com`, que ainda é a Vercel: o aviso "is still served by Vercel" é esperado até o passo 9.
+- [ ] Abrir o site novo antes do domínio:
+  ```
+  az containerapp show -n imperatle-web -g $RG --query properties.configuration.ingress.fqdn -o tsv
+  ```
+  `https://<esse-endereco>/pt` e `/en` abrem com o jogo. **Login e compra não funcionam nesse endereço** (o cookie de login é de `imperatle.com` e o CORS da API só aceita `imperatle.com`); é esperado.
+
+### 8. Sondas de saúde
+
+Sem isso, o Azure só confere se a porta 8080 aceita conexão. Com elas, confere se o servidor responde de verdade em `/api/health`. Fazer **depois** do primeiro deploy (na imagem de exemplo essa rota não existe). Salvar como `web-probes.yaml` (fora do repositório, por exemplo na pasta temporária):
+
+```yaml
+properties:
+  template:
+    containers:
+      - name: imperatle-web
+        probes:
+          - type: Liveness
+            httpGet: { path: /api/health, port: 8080 }
+            periodSeconds: 30
+            failureThreshold: 3
+          - type: Readiness
+            httpGet: { path: /api/health, port: 8080 }
+            periodSeconds: 10
+            failureThreshold: 3
+          - type: Startup
+            httpGet: { path: /api/health, port: 8080 }
+            periodSeconds: 2
+            failureThreshold: 15
+```
+
+```
+az containerapp show -n imperatle-web -g $RG --query "properties.template.containers[0].name" -o tsv   # tem que ser imperatle-web
+az containerapp update -n imperatle-web -g $RG --yaml web-probes.yaml
+```
+
+- [ ] A revisão nova ficou `Healthy` (`az containerapp revision list -n imperatle-web -g $RG -o table`). Os próximos deploys (`az containerapp update --image`) mantêm as sondas.
+
+### 9. Domínio `imperatle.com` + `www` e certificado grátis
+
+Pegar os valores:
+
+```
+az containerapp env show -n $ENVNAME -g $RG --query properties.staticIp -o tsv                     # IP do ambiente (para o domínio raiz)
+az containerapp show -n imperatle-web -g $RG --query properties.customDomainVerificationId -o tsv   # código de verificação
+az containerapp show -n imperatle-web -g $RG --query properties.configuration.ingress.fqdn -o tsv   # endereço gerado (para o www)
+```
+
+- [ ] No provedor de DNS (passo 0), **trocar** os registros da Vercel por estes:
+
+| Tipo | Nome | Valor |
+|---|---|---|
+| A | `@` (imperatle.com) | o `staticIp` do ambiente |
+| TXT | `asuid` | o código de verificação |
+| CNAME | `www` | o endereço gerado (`imperatle-web.<algo>.azurecontainerapps.io`) |
+| TXT | `asuid.www` | o mesmo código de verificação |
+
+Cuidados:
+
+- Domínio raiz não pode ter CNAME pelo padrão do DNS; por isso o Azure pede **A + TXT** e valida o certificado por **HTTP** (a DigiCert acessa o site). Apagar os registros A antigos da Vercel do `@` (por exemplo `76.76.21.21`), senão parte das visitas continua indo para lá. Se houver **AAAA** no `@`, apagar: o Container Apps não tem IPv6 de entrada.
+- O registro `api` (da API) **não muda**.
+- **DNS na Cloudflare**: os quatro registros acima ficam **"DNS only" (nuvem cinza)**, não "Proxied". Com o proxy ligado, a emissão e a renovação automática do certificado falham. Use o A no `@`, não o "CNAME flattening".
+- O Web Analytics da Cloudflare não depende de nada disso: funciona com o DNS em qualquer lugar.
+
+- [ ] DNS propagado: `nslookup imperatle.com`, `nslookup www.imperatle.com` e `nslookup -type=TXT asuid.imperatle.com` mostram os valores novos.
+- [ ] Ligar os domínios e emitir os certificados gerenciados:
+
+```
+az containerapp hostname add  --hostname imperatle.com -g $RG -n imperatle-web
+az containerapp hostname bind --hostname imperatle.com -g $RG -n imperatle-web --environment $ENVNAME --validation-method HTTP
+
+az containerapp hostname add  --hostname www.imperatle.com -g $RG -n imperatle-web
+az containerapp hostname bind --hostname www.imperatle.com -g $RG -n imperatle-web --environment $ENVNAME --validation-method CNAME
+
+az containerapp hostname list -g $RG -n imperatle-web -o table
+```
+
+- [ ] Os dois aparecem com o certificado ligado (`SniEnabled`; no portal, "Secured"). Pode levar alguns minutos.
+
+Diferença para a Vercel: lá o `www` provavelmente redireciona para `imperatle.com`. Aqui os dois endereços mostram o site (canonical e hreflang já apontam para `imperatle.com`, então o Google entende). O CORS da API já aceita os dois. Se quiser o redirecionamento, dá para adicionar depois no `proxy.ts`.
+
+### 10. Conferir
+
+- [ ] `https://imperatle.com/pt` e `/en` abrem com o cadeado; `curl -sI https://imperatle.com/api/health` **não** mostra `server: Vercel`.
+- [ ] Login com Google, logout, compra no sandbox (o cookie de login volta a funcionar porque o site está de novo em `imperatle.com`).
+- [ ] Rodar o workflow mais uma vez: o teste de fumaça passa nos dois endereços e sem o aviso da Vercel.
+- [ ] No navegador (aba Network), aparece `beacon.min.js` e um envio para `cloudflareinsights.com`; no painel da Cloudflare, as visitas aparecem em alguns minutos.
+- [ ] Alerta de orçamento no Azure (Gerenciamento de Custos > Orçamentos), por exemplo US$ 10 por mês para API mais site.
+- [ ] Nova versão em `apps/web/src/lib/changelog.ts`, se for o caso.
+
+### 11. Desligar a Vercel (depois de uns dias tudo bem)
+
+- [ ] Vercel > projeto > Settings > Git > **Disconnect** (para de publicar a cada push).
+- [ ] Settings > Domains: remover `imperatle.com` e `www.imperatle.com` **do projeto**. Se o DNS estiver na Vercel (passo 0), não apagar o domínio da conta: os registros DNS moram lá.
+- [ ] Manter o projeto parado (não custa nada) para uma volta rápida, ou apagar.
+- [ ] No README, a linha "Hosting" passa a dizer "Azure Container Apps (web and API)", e o comentário do topo do `ci-cd.yml` deixa de citar a Vercel.
+
+## Como voltar para a Vercel se algo quebrar
+
+Enquanto a Vercel não for desconectada (passo 11), ela continua publicando cada push do `main`, então está sempre atualizada.
+
+1. No DNS, voltar os registros anotados no passo 0 (o A do `@` e o CNAME do `www` da Vercel). Com TTL de 5 minutos, em poucos minutos o tráfego volta.
+2. Os TXT `asuid` podem ficar (não atrapalham).
+3. `gh variable set AZURE_DEPLOY_WEB --body false` se não quiser mais deploys no Azure.
+4. Nada no código precisa mudar: o `output: "standalone"` é ignorado pela Vercel. Para ter contagem de visitas lá também, pôr `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` nas variáveis do projeto da Vercel e publicar de novo. (A política de privacidade vai dizer "Azure" durante a volta; se ela durar, ajustar o texto em `legal.ts`.)
+5. Para parar de pagar o app do Azure sem apagar: `az containerapp update -n imperatle-web -g $RG --min-replicas 0`. Para apagar: `az containerapp delete -n imperatle-web -g $RG`.
+
+Se o problema for só uma versão nova do site, não precisa sair do Azure: rodar o workflow de novo num commit anterior, ou apontar para a imagem boa (cada deploy tem a tag do commit):
+
+```
+az containerapp update -n imperatle-web -g $RG --image ghcr.io/afcventura/imperatle-web:<HASH_DO_COMMIT_BOM>
+```
 
 ## Custos
 
@@ -104,192 +323,6 @@ Sugestão para o lançamento: **site com mínimo 1 e API como está hoje**. Dá 
 az containerapp update -n imperatle-web -g rg-imperatle --min-replicas 0
 ```
 
-## Passo a passo
-
-Os comandos abaixo são para o PowerShell com o Azure CLI logado (`az login`). Troque o que estiver entre `<>`. Os nomes `rg-imperatle` e `imperatle-api` são os que o workflow já usa.
-
-### 0. Antes de começar
-
-- Anote (print) **todos os registros DNS atuais** de `imperatle.com` e `www.imperatle.com`. É isso que você volta se precisar desfazer.
-- Um dia antes, baixe o TTL desses registros para 300 segundos (5 minutos). Assim a troca e uma eventual volta se espalham rápido.
-- Não desconecte a Vercel ainda. Ela fica no ar até o fim, como plano B.
-
-### 1. Descobrir o ambiente da API
-
-```
-$RG = "rg-imperatle"
-$ENVID = az containerapp show -n imperatle-api -g $RG --query properties.managedEnvironmentId -o tsv
-$ENVNAME = ($ENVID -split "/")[-1]
-$ENVNAME
-```
-
-### 2. Criar o Container App do site
-
-Ele nasce com uma imagem de exemplo da Microsoft (na porta 80). O primeiro deploy do GitHub Actions troca a porta para 8080 e a imagem para a do site, igual faz com a API.
-
-```
-az containerapp create `
-  -n imperatle-web -g $RG --environment $ENVNAME `
-  --image mcr.microsoft.com/k8se/quickstart:latest `
-  --ingress external --target-port 80 `
-  --cpu 0.25 --memory 0.5Gi `
-  --min-replicas 1 --max-replicas 2
-```
-
-- `--ingress external`: aberto para a internet, HTTPS feito pelo Azure (HTTP é redirecionado).
-- `--min-replicas 1` ou `0`: ver "Custos" e "Partida a frio". `--max-replicas 2` evita que um pico (ou um ataque) multiplique a conta.
-- Nenhuma variável de ambiente é necessária em tempo de execução: tudo o que o site precisa entra no build.
-
-### 3. Deixar o Azure baixar a imagem do GHCR
-
-Veja como a API faz hoje:
-
-```
-az containerapp registry list -n imperatle-api -g $RG -o table
-```
-
-- **Se aparecer `ghcr.io` com usuário e senha** (um token do GitHub): configure o mesmo no site. O token precisa do escopo `read:packages`.
-  ```
-  az containerapp registry set -n imperatle-web -g $RG --server ghcr.io --username <SEU_USUARIO_GITHUB> --password <TOKEN_COM_READ_PACKAGES>
-  ```
-- **Se não aparecer nada** (o pacote `imperatle-api` é público): o pacote `imperatle-web` nasce **privado** no primeiro push. O primeiro deploy vai falhar no passo "Wait for the new revision" porque o Azure não consegue baixar. Aí: GitHub > seu perfil > Packages > `imperatle-web` > Package settings > Change visibility > Public, e rode o workflow de novo (Actions > CI/CD > Run workflow). A imagem não tem segredo nenhum (só os `NEXT_PUBLIC_*`, que já são públicos no navegador).
-
-### 4. Variáveis no GitHub
-
-Em Settings > Secrets and variables > Actions > **Variables** (não "Secrets": são valores públicos):
-
-| Variável | Valor |
-|---|---|
-| `NEXT_PUBLIC_PADDLE_CLIENT_TOKEN` | o client-side token da Paddle (`test_...` no sandbox) |
-| `NEXT_PUBLIC_PADDLE_SUPPORTER_PRICE_ID` | o `pri_...` do Apoio |
-| `NEXT_PUBLIC_PADDLE_ENVIRONMENT` | `sandbox` (ou `production`) |
-| `AZURE_DEPLOY_WEB` | `true` (só no fim deste passo; é a chave que liga o job) |
-
-`NEXT_PUBLIC_API_URL` (`https://api.imperatle.com`) e `NEXT_PUBLIC_SITE_URL` (`https://imperatle.com`) já estão fixos no workflow (`API_URL` e `WEB_URL`). Os segredos `AZURE_CLIENT_ID`, `AZURE_TENANT_ID` e `AZURE_SUBSCRIPTION_ID` são os mesmos da API. A identidade usada pelo OIDC precisa poder atualizar o app novo: se ela tem papel de Colaborador (Contributor) no grupo `rg-imperatle`, já pode; se o papel foi dado só no `imperatle-api`, dê também no `imperatle-web`:
-
-```
-$APPID = "<AZURE_CLIENT_ID>"
-$WEBID = az containerapp show -n imperatle-web -g $RG --query id -o tsv
-az role assignment create --assignee $APPID --role Contributor --scope $WEBID
-```
-
-Mude `AZURE_DEPLOY_WEB` para `true` e rode o workflow (Actions > CI/CD > Run workflow, branch `main`). O teste de fumaça usa `https://imperatle.com`, que ainda aponta para a Vercel neste momento: ele passa (testa a Vercel), mas o que importa aqui é o passo "Wait for the new revision to be healthy" ficar verde. Para ver o site novo antes do domínio:
-
-```
-az containerapp show -n imperatle-web -g $RG --query properties.configuration.ingress.fqdn -o tsv
-```
-
-Abra `https://<esse-endereco>/pt` e `/en`. O jogo carrega, mas **login e compra não funcionam nesse endereço** (o cookie de login é de `imperatle.com` e o CORS da API só aceita `imperatle.com`). Isso é esperado; eles voltam a funcionar quando o domínio apontar para cá.
-
-### 5. Sondas de saúde (opcional, recomendado)
-
-Sem configurar, o Azure só confere se a porta 8080 aceita conexão. Para ele conferir se o servidor responde de verdade, use a rota `/api/health`. Salve como `web-probes.yaml`:
-
-```yaml
-properties:
-  template:
-    containers:
-      - name: imperatle-web
-        probes:
-          - type: Liveness
-            httpGet: { path: /api/health, port: 8080 }
-            periodSeconds: 30
-            failureThreshold: 3
-          - type: Readiness
-            httpGet: { path: /api/health, port: 8080 }
-            periodSeconds: 10
-            failureThreshold: 3
-          - type: Startup
-            httpGet: { path: /api/health, port: 8080 }
-            periodSeconds: 2
-            failureThreshold: 15
-```
-
-```
-az containerapp show -n imperatle-web -g $RG --query "properties.template.containers[0].name" -o tsv   # confira o nome do container
-az containerapp update -n imperatle-web -g $RG --yaml web-probes.yaml
-```
-
-Se o nome do container não for `imperatle-web`, troque no YAML. Faça isso **depois** do primeiro deploy (com a imagem de exemplo, `/api/health` não existe).
-
-### 6. Domínio `imperatle.com` e certificado grátis
-
-Pegue os valores:
-
-```
-az containerapp env show -n $ENVNAME -g $RG --query properties.staticIp -o tsv                     # IP do ambiente (para o domínio raiz)
-az containerapp show -n imperatle-web -g $RG --query properties.customDomainVerificationId -o tsv   # código de verificação
-az containerapp show -n imperatle-web -g $RG --query properties.configuration.ingress.fqdn -o tsv   # endereço gerado (para o www)
-```
-
-No seu provedor de DNS, **troque** os registros da Vercel por estes:
-
-| Tipo | Nome | Valor |
-|---|---|---|
-| A | `@` (imperatle.com) | o `staticIp` do ambiente |
-| TXT | `asuid` | o código de verificação |
-| CNAME | `www` | o endereço gerado (`imperatle-web.<algo>.azurecontainerapps.io`) |
-| TXT | `asuid.www` | o mesmo código de verificação |
-
-Cuidados com o domínio raiz (apex):
-
-- Domínio raiz não pode ter CNAME pelo padrão do DNS; por isso o Azure pede **A + TXT** e valida o certificado por **HTTP** (a DigiCert acessa o site). Apague os registros A/AAAA antigos da Vercel do `@` (por exemplo `76.76.21.21`), senão parte das visitas continua indo para lá. Se houver registro **AAAA** no `@`, apague: o Container Apps não tem IPv6 de entrada.
-- O registro `api` (da API) **não muda**.
-- **Se o DNS estiver na Cloudflare**: os quatro registros acima ficam **"DNS only" (nuvem cinza)**, não "Proxied" (laranja). Com o proxy ligado, a validação do certificado e a renovação automática falham (a Microsoft diz que CNAME intermediário de Cloudflare bloqueia a emissão). O "CNAME flattening" da Cloudflare deixaria pôr um CNAME no `@` apontando para o endereço gerado, mas a Microsoft exige o A para o domínio raiz; use o A. Proxy da Cloudflare na frente só depois, com certificado próprio (é outro projeto).
-- **Se existir registro CAA** no domínio, adicione `0 issue "digicert.com"`, senão o certificado não sai.
-- Para emitir (e renovar) o certificado, o app precisa estar ligado e acessível. Com mínimo 0 funciona (a visita da DigiCert acorda o app), mas se der tempo esgotado, ponha mínimo 1 durante a emissão.
-
-Depois que o DNS propagar (confira com `nslookup imperatle.com` e `nslookup -type=TXT asuid.imperatle.com`):
-
-```
-az containerapp hostname add  --hostname imperatle.com -g $RG -n imperatle-web
-az containerapp hostname bind --hostname imperatle.com -g $RG -n imperatle-web --environment $ENVNAME --validation-method HTTP
-
-az containerapp hostname add  --hostname www.imperatle.com -g $RG -n imperatle-web
-az containerapp hostname bind --hostname www.imperatle.com -g $RG -n imperatle-web --environment $ENVNAME --validation-method CNAME
-
-az containerapp hostname list -g $RG -n imperatle-web -o table
-```
-
-Pode levar alguns minutos. Pronto quando os dois aparecem com o certificado ligado (no portal: "Secured").
-
-Diferença para a Vercel: lá o `www` provavelmente redireciona para `imperatle.com`. Aqui os dois endereços mostram o site (as tags canonical e hreflang já apontam para `imperatle.com`, então o Google entende). O CORS da API já aceita os dois. Se quiser o redirecionamento, dá para adicionar depois no `proxy.ts`.
-
-### 7. Conferir
-
-- `https://imperatle.com/pt` e `/en` abrem, com o cadeado.
-- Login com Google, logout, compra no sandbox (o cookie de login volta a funcionar porque o site está de novo em `imperatle.com`).
-- Rode o workflow uma vez mais: o teste de fumaça agora testa o Azure de verdade.
-- Atualize o texto da política de privacidade (ver "O que era específico da Vercel", item 5) e a versão em `apps/web/src/lib/changelog.ts`.
-
-### 8. Desligar a Vercel
-
-Só depois de uns dias tudo bem:
-
-- Vercel > projeto > Settings > Git > **Disconnect** (para de fazer deploy a cada push).
-- Settings > Domains: remova `imperatle.com` e `www.imperatle.com` do projeto.
-- Pode manter o projeto parado (não custa nada) para uma volta rápida, ou apagar.
-- No README, a linha "Hosting" passa a dizer "Azure Container Apps (web and API)". O comentário do topo do `ci-cd.yml` também.
-
-## Como voltar para a Vercel se algo quebrar
-
-Enquanto a Vercel não for desconectada, ela continua fazendo deploy de cada push, então está sempre atualizada.
-
-1. No DNS, volte os registros que você anotou no passo 0 (o A do `@` e o CNAME do `www` da Vercel). Com TTL de 5 minutos, em poucos minutos o tráfego volta.
-2. Os TXT `asuid` podem ficar (não atrapalham).
-3. Mude `AZURE_DEPLOY_WEB` para `false` se não quiser mais deploys no Azure.
-4. Nada no código precisa mudar: na Vercel o analytics volta sozinho (`VERCEL=1`), e o `output: "standalone"` é ignorado por ela.
-5. Para parar de pagar o app do Azure sem apagar: `az containerapp update -n imperatle-web -g $RG --min-replicas 0`. Para apagar: `az containerapp delete -n imperatle-web -g $RG`.
-
-Se o problema for só uma versão nova do site, não precisa sair do Azure: volte para a revisão anterior.
-
-```
-az containerapp revision list -n imperatle-web -g $RG -o table
-az containerapp ingress traffic set -n imperatle-web -g $RG --revision-weight <REVISAO_ANTERIOR>=100
-```
-
-(Isso só funciona com o modo de várias revisões; no modo de uma revisão, que é o padrão, rode o workflow de novo num commit anterior, ou `az containerapp update -n imperatle-web -g $RG --image ghcr.io/afcventura/imperatle-web:<HASH_DO_COMMIT_BOM>`.)
-
 ## Testar a imagem no seu computador
 
 Na pasta `apps/web`, com a API rodando em `http://localhost:5055`:
@@ -300,6 +333,8 @@ docker run --rm -p 8088:8080 imperatle-web
 ```
 
 Abra `http://localhost:8088/pt`. (Para a API aceitar conexões vindas do Docker, rode-a ouvindo em todas as interfaces: `$env:ASPNETCORE_URLS = "http://0.0.0.0:5055"`. O navegador não resolve `host.docker.internal`, então partes que o navegador busca direto na API não carregam nesse teste; as páginas montadas no servidor, sim.)
+
+Os outros `NEXT_PUBLIC_*` entram do mesmo jeito (`--build-arg NEXT_PUBLIC_PADDLE_CLIENT_TOKEN=...`). Deixe `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` de fora nos testes locais, para não contar visitas de teste no painel da Cloudflare.
 
 ## Para depois: Cloudflare Workers
 

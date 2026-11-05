@@ -20,7 +20,7 @@ type Locale = "en" | "pt";
 const privacy: Record<Locale, LegalDocument> = {
   en: {
     title: "Privacy Policy",
-    updated: "Last updated: November 3, 2026",
+    updated: "Last updated: November 4, 2026",
     intro:
       "Imperatle is a free daily game made by one person, João Vitor Ventura, a developer based in Brazil, who is responsible for the data described here. The game collects as little as it can: an account is optional, and nothing here is used for advertising or sold.",
     sections: [
@@ -33,7 +33,7 @@ const privacy: Record<Locale, LegalDocument> = {
           "Your progress of the day, saved in your own browser (local storage) so the board survives a page reload. It never leaves your device.",
           "Feedback you send: the message, its type, the site language and, only if you fill it in, your e-mail address.",
           "Your IP address, used for a few minutes to limit how many guesses and messages can be sent in a row. It isn't stored by the game, although the hosting providers below may keep it in their technical logs.",
-          "Page views, counted by Vercel Web Analytics without cookies and without identifying you.",
+          "Page views, counted by Cloudflare Web Analytics without cookies and without identifying you.",
           "If you buy Supporter: the payment is handled entirely by Paddle, so your card or other payment details never reach the game. The game only receives the transaction id and the fact that the purchase was completed or refunded, linked to your account.",
         ],
       },
@@ -47,9 +47,9 @@ const privacy: Record<Locale, LegalDocument> = {
         heading: "Who else handles the data",
         paragraphs: ["The game relies on these providers, each under its own privacy terms:"],
         items: [
-          "Vercel (website hosting and page analytics), United States.",
+          "Microsoft Azure (hosting of the website and the game server).",
+          "Cloudflare (page view counts, without cookies), United States.",
           "Google (sign-in, only if you use it), United States.",
-          "Microsoft Azure (game server).",
           "Neon (database).",
           "Resend (forwards feedback messages by e-mail), United States.",
           "Paddle (payment processor and merchant of record for the Supporter purchase), United Kingdom. Paddle is the seller of that purchase and handles your payment and billing data as an independent controller, under its own privacy policy at paddle.com/legal.",
@@ -64,7 +64,7 @@ const privacy: Record<Locale, LegalDocument> = {
       {
         heading: "Your rights",
         paragraphs: [
-          "Under Brazil's LGPD and, where it applies, the European GDPR, you can ask to access, correct or delete your data, or object to its use. Send the request through the Feedback form in the menu. If you have an account, you can delete it and every game linked to it at any time from the menu. Deleting your browser's cookies and site data also cuts the link between you and your game history.",
+          "Under Brazil's LGPD and, where it applies, the European GDPR, you can ask to access, correct or delete your data, or object to its use. Send the request to contato@imperatle.com or through the Feedback form in the menu. If you have an account, you can delete it and every game linked to it at any time from the menu. Deleting your browser's cookies and site data also cuts the link between you and your game history.",
         ],
       },
       {
@@ -81,7 +81,7 @@ const privacy: Record<Locale, LegalDocument> = {
   },
   pt: {
     title: "Política de Privacidade",
-    updated: "Atualizada em 3 de novembro de 2026",
+    updated: "Atualizada em 4 de novembro de 2026",
     intro:
       "O Imperatle é um jogo diário e gratuito, feito por uma pessoa só: João Vitor Ventura, desenvolvedor no Brasil, que é o responsável pelos dados descritos aqui. O jogo coleta o mínimo possível: a conta é opcional, e nada aqui é usado para publicidade ou vendido.",
     sections: [
@@ -94,7 +94,7 @@ const privacy: Record<Locale, LegalDocument> = {
           "Seu progresso do dia, salvo no seu próprio navegador (armazenamento local) para o tabuleiro sobreviver a um recarregamento da página. Ele não sai do seu aparelho.",
           "O feedback que você envia: a mensagem, o tipo, o idioma do site e, só se você preencher, seu e-mail.",
           "Seu endereço IP, usado por alguns minutos para limitar quantos palpites e mensagens podem ser enviados seguidos. O jogo não o guarda, mas os provedores de hospedagem abaixo podem mantê-lo nos registros técnicos deles.",
-          "Visitas às páginas, contadas pelo Vercel Web Analytics sem cookies e sem identificar você.",
+          "Visitas às páginas, contadas pelo Cloudflare Web Analytics sem cookies e sem identificar você.",
           "Se você comprar o Apoio: o pagamento é feito todo pela Paddle, então os dados do seu cartão ou de outro meio de pagamento nunca chegam ao jogo. O jogo recebe só o identificador da transação e a informação de que a compra foi concluída ou reembolsada, ligados à sua conta.",
         ],
       },
@@ -108,9 +108,9 @@ const privacy: Record<Locale, LegalDocument> = {
         heading: "Quem mais trata os dados",
         paragraphs: ["O jogo depende destes provedores, cada um com seus próprios termos de privacidade:"],
         items: [
-          "Vercel (hospedagem do site e contagem de visitas), Estados Unidos.",
+          "Microsoft Azure (hospedagem do site e do servidor do jogo).",
+          "Cloudflare (contagem de visitas, sem cookies), Estados Unidos.",
           "Google (login, só se você usar), Estados Unidos.",
-          "Microsoft Azure (servidor do jogo).",
           "Neon (banco de dados).",
           "Resend (encaminha as mensagens de feedback por e-mail), Estados Unidos.",
           "Paddle (processadora de pagamentos e responsável pela venda, o merchant of record, do Apoio), Reino Unido. A Paddle é quem vende essa compra e trata seus dados de pagamento e cobrança como controladora independente, pela política de privacidade dela em paddle.com/legal.",
@@ -125,7 +125,7 @@ const privacy: Record<Locale, LegalDocument> = {
       {
         heading: "Seus direitos",
         paragraphs: [
-          "Pela LGPD e, quando se aplicar, pelo GDPR europeu, você pode pedir acesso, correção ou exclusão dos seus dados, ou se opor ao uso deles. Faça o pedido pelo formulário de Feedback no menu. Se você tem conta, pode excluí-la a qualquer momento pelo menu, junto com todos os jogos ligados a ela. Apagar os cookies e os dados do site no seu navegador também desfaz a ligação entre você e seu histórico de jogos.",
+          "Pela LGPD e, quando se aplicar, pelo GDPR europeu, você pode pedir acesso, correção ou exclusão dos seus dados, ou se opor ao uso deles. Faça o pedido por e-mail para contato@imperatle.com ou pelo formulário de Feedback no menu. Se você tem conta, pode excluí-la a qualquer momento pelo menu, junto com todos os jogos ligados a ela. Apagar os cookies e os dados do site no seu navegador também desfaz a ligação entre você e seu histórico de jogos.",
         ],
       },
       {
@@ -145,7 +145,7 @@ const privacy: Record<Locale, LegalDocument> = {
 const terms: Record<Locale, LegalDocument> = {
   en: {
     title: "Terms of Use",
-    updated: "Last updated: November 3, 2026",
+    updated: "Last updated: November 4, 2026",
     intro:
       "These terms apply to anyone who plays Imperatle at imperatle.com. By playing, you agree to them. The game is made and run by João Vitor Ventura, a developer based in Brazil.",
     sections: [
@@ -192,14 +192,14 @@ const terms: Record<Locale, LegalDocument> = {
       {
         heading: "Law and changes",
         paragraphs: [
-          "These terms are governed by Brazilian law, without taking away the rights consumers have where they live. They may be updated; the date at the top shows the latest version. Questions go through the Feedback form.",
+          "These terms are governed by Brazilian law, without taking away the rights consumers have where they live. They may be updated; the date at the top shows the latest version. Questions go to contato@imperatle.com or through the Feedback form.",
         ],
       },
     ],
   },
   pt: {
     title: "Termos de Uso",
-    updated: "Atualizados em 3 de novembro de 2026",
+    updated: "Atualizados em 4 de novembro de 2026",
     intro:
       "Estes termos valem para quem joga o Imperatle em imperatle.com. Ao jogar, você concorda com eles. O jogo é feito e mantido por João Vitor Ventura, desenvolvedor no Brasil.",
     sections: [
@@ -246,7 +246,7 @@ const terms: Record<Locale, LegalDocument> = {
       {
         heading: "Lei e mudanças",
         paragraphs: [
-          "Estes termos seguem a lei brasileira, sem tirar os direitos que o consumidor tem onde mora. Eles podem ser atualizados; a data no topo mostra a versão mais recente. Dúvidas vão pelo formulário de Feedback.",
+          "Estes termos seguem a lei brasileira, sem tirar os direitos que o consumidor tem onde mora. Eles podem ser atualizados; a data no topo mostra a versão mais recente. Dúvidas vão para contato@imperatle.com ou pelo formulário de Feedback.",
         ],
       },
     ],
@@ -256,7 +256,7 @@ const terms: Record<Locale, LegalDocument> = {
 const refunds: Record<Locale, LegalDocument> = {
   en: {
     title: "Refund Policy",
-    updated: "Last updated: November 3, 2026",
+    updated: "Last updated: November 4, 2026",
     intro:
       "This policy covers the Supporter purchase on Imperatle. The purchase is sold by Paddle.com, our online reseller and Merchant of Record: Paddle is the seller you pay, it processes the payment, issues the receipt and handles refunds.",
     sections: [
@@ -282,7 +282,7 @@ const refunds: Record<Locale, LegalDocument> = {
         heading: "How to ask",
         items: [
           "Look up your order at paddle.net with the e-mail you used to buy, or reply to the receipt e-mail Paddle sent you.",
-          "Or write through the Feedback form in the menu, with the e-mail you used to buy.",
+          "Or write to contato@imperatle.com, or through the Feedback form in the menu, with the e-mail you used to buy.",
         ],
       },
       {
@@ -295,7 +295,7 @@ const refunds: Record<Locale, LegalDocument> = {
   },
   pt: {
     title: "Política de Reembolso",
-    updated: "Atualizada em 3 de novembro de 2026",
+    updated: "Atualizada em 4 de novembro de 2026",
     intro:
       "Esta política vale para a compra do Apoio no Imperatle. A compra é vendida pela Paddle.com, nossa revendedora online e responsável pela venda (Merchant of Record): a Paddle é quem recebe o pagamento, emite o recibo e cuida dos reembolsos.",
     sections: [
@@ -321,7 +321,7 @@ const refunds: Record<Locale, LegalDocument> = {
         heading: "Como pedir",
         items: [
           "Encontre seu pedido em paddle.net com o e-mail usado na compra, ou responda o e-mail de recibo que a Paddle enviou.",
-          "Ou escreva pelo formulário de Feedback no menu, informando o e-mail usado na compra.",
+          "Ou escreva para contato@imperatle.com, ou pelo formulário de Feedback no menu, informando o e-mail usado na compra.",
         ],
       },
       {
