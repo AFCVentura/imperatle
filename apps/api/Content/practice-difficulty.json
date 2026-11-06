@@ -24,7 +24,14 @@
     "holy-roman-empire",
     "empire-of-brazil",
     "qing-dynasty",
-    "mughal-empire"
+    "mughal-empire",
+    "first-french-colonial-empire",
+    "second-french-colonial-empire",
+    "italian-empire",
+    "second-portuguese-empire",
+    "third-portuguese-empire",
+    "dutch-empire",
+    "denmark-norway"
   ],
   "medium": [
     "achaemenid-empire",
@@ -51,15 +58,13 @@
     "mali-empire",
     "khmer-empire",
     "polish-lithuanian-commonwealth",
-    "italian-empire",
-    "dutch-empire",
-    "second-french-colonial-empire",
-    "second-portuguese-empire",
     "first-mexican-empire",
     "ethiopian-empire",
     "safavid-empire",
     "hawaiian-kingdom",
-    "qin-dynasty"
+    "qin-dynasty",
+    "first-portuguese-empire",
+    "belgian-colonial-empire"
   ],
   "hard": [
     "first-turkic-khaganate",
@@ -68,11 +73,6 @@
     "kushan-empire",
     "tibetan-empire",
     "delhi-sultanate",
-    "denmark-norway",
-    "belgian-colonial-empire",
-    "first-portuguese-empire",
-    "third-portuguese-empire",
-    "first-french-colonial-empire",
     "zhou-dynasty",
     "sui-dynasty",
     "song-dynasty",
