@@ -21,6 +21,11 @@ updates:
     groups:
       npm:
         update-types: [minor, patch]
+    ignore:
+      # @types/node follows the Node major the site runs on (24, see the web
+      # Dockerfile and ci-cd.yml), so its majors are bumped by hand with Node.
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: github-actions
     directory: /
