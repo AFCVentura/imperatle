@@ -20,7 +20,7 @@ type Locale = "en" | "pt";
 const privacy: Record<Locale, LegalDocument> = {
   en: {
     title: "Privacy Policy",
-    updated: "Last updated: November 4, 2026",
+    updated: "Last updated: November 6, 2026",
     intro:
       "Imperatle is a free daily game made by one person, João Vitor Ventura, a developer based in Brazil, who is responsible for the data described here. The game collects as little as it can: an account is optional, and nothing here is used for advertising or sold.",
     sections: [
@@ -32,6 +32,7 @@ const privacy: Record<Locale, LegalDocument> = {
           "Only if you sign in with Google: your name, e-mail address and Google account identifier, plus a login cookie (imperatle_session). Your games are then linked to your account, so your statistics follow you on every device. The game never sees your Google password.",
           "Your progress of the day, saved in your own browser (local storage) so the board survives a page reload. It never leaves your device.",
           "Feedback you send: the message, its type, the site language and, only if you fill it in, your e-mail address.",
+          "E-mails you send to contato@imperatle.com: the message and your e-mail address, forwarded to the author's inbox.",
           "Your IP address, used for a few minutes to limit how many guesses and messages can be sent in a row. It isn't stored by the game, although the hosting providers below may keep it in their technical logs.",
           "Page views, counted by Cloudflare Web Analytics without cookies and without identifying you.",
           "If you buy Supporter: the payment is handled entirely by Paddle, so your card or other payment details never reach the game. The game only receives the transaction id and the fact that the purchase was completed or refunded, linked to your account.",
@@ -40,31 +41,39 @@ const privacy: Record<Locale, LegalDocument> = {
       {
         heading: "Why",
         paragraphs: [
-          "To run the game (count attempts fairly, show your statistics and everyone's results of the day), to protect it against abuse, to read and answer feedback, and to understand how many people play. The legal basis is the legitimate interest in providing and securing the game, and your consent for the optional e-mail in the feedback form.",
+          "To run the game (count attempts fairly, show your statistics and everyone's results of the day), to protect it against abuse, to read and answer feedback and e-mails, and to understand how many people play.",
+          "The legal bases are: performing what you asked for (Art. 7, V of the LGPD) for your account, your games linked to it and the Supporter purchase; the legitimate interest in providing and securing the game (Art. 7, IX) for the anonymous identifier, the limits by IP address and the page view counts; and your consent (Art. 7, I) for the optional e-mail in the feedback form, which you can withdraw at any time.",
         ],
       },
       {
         heading: "Who else handles the data",
         paragraphs: ["The game relies on these providers, each under its own privacy terms:"],
         items: [
-          "Microsoft Azure (hosting of the website and the game server).",
-          "Cloudflare (page view counts, without cookies), United States.",
-          "Google (sign-in, only if you use it), United States.",
-          "Neon (database).",
+          "Microsoft Azure (hosting of the website and the game server), United States.",
+          "Cloudflare (page view counts, without cookies, and forwarding of e-mails sent to contato@imperatle.com), United States.",
+          "Google (sign-in, only if you use it, and the inbox that receives e-mails sent to contato@imperatle.com), United States.",
+          "Neon (database), United States.",
           "Resend (forwards feedback messages by e-mail), United States.",
           "Paddle (payment processor and merchant of record for the Supporter purchase), United Kingdom. Paddle is the seller of that purchase and handles your payment and billing data as an independent controller, under its own privacy policy at paddle.com/legal.",
         ],
       },
       {
+        heading: "Data stored outside Brazil",
+        paragraphs: [
+          "Most of these providers store data in the United States and the United Kingdom. Sending it there is necessary to provide the game you chose to play and the services you ask for in it (Art. 33, IX of the LGPD), and each provider protects it under its own security and privacy terms.",
+        ],
+      },
+      {
         heading: "How long it is kept",
         paragraphs: [
-          "Game records are kept while the game exists, since they make up your statistics and the daily results. Feedback is kept for as long as it's needed to handle it. The cookie expires one year after it is created. An account is kept until you delete it.",
+          "Records of daily games are kept while the game exists, since they make up your statistics and the daily results. Practice rounds are deleted automatically 30 days after they start. A login session is deleted once it expires, or 7 days after you sign out. Feedback and e-mails are kept for as long as it's needed to handle them. The cookie expires one year after it is created. An account is kept until you delete it.",
         ],
       },
       {
         heading: "Your rights",
         paragraphs: [
-          "Under Brazil's LGPD and, where it applies, the European GDPR, you can ask to access, correct or delete your data, or object to its use. Send the request to contato@imperatle.com or through the Feedback form in the menu. If you have an account, you can delete it and every game linked to it at any time from the menu. Deleting your browser's cookies and site data also cuts the link between you and your game history.",
+          "Under Brazil's LGPD and, where it applies, the European GDPR, you can ask to confirm whether your data is processed, to access, correct, delete or receive a copy of it to take to another service (portability), to know with whom it is shared, to withdraw your consent, or to object to its use. Send the request to contato@imperatle.com or through the Feedback form in the menu; it will be answered within 15 days.",
+          "If you have an account, you can delete it and every game linked to it at any time from the menu. Deleting your browser's cookies and site data also cuts the link between you and your game history. You can also file a complaint with Brazil's data protection authority, the ANPD (gov.br/anpd).",
         ],
       },
       {
@@ -81,7 +90,7 @@ const privacy: Record<Locale, LegalDocument> = {
   },
   pt: {
     title: "Política de Privacidade",
-    updated: "Atualizada em 4 de novembro de 2026",
+    updated: "Atualizada em 6 de novembro de 2026",
     intro:
       "O Imperatle é um jogo diário e gratuito, feito por uma pessoa só: João Vitor Ventura, desenvolvedor no Brasil, que é o responsável pelos dados descritos aqui. O jogo coleta o mínimo possível: a conta é opcional, e nada aqui é usado para publicidade ou vendido.",
     sections: [
@@ -93,6 +102,7 @@ const privacy: Record<Locale, LegalDocument> = {
           "Só se você entrar com o Google: seu nome, seu e-mail e o identificador da sua conta Google, mais um cookie de login (imperatle_session). Seus jogos passam a ficar ligados à sua conta, e suas estatísticas te acompanham em qualquer aparelho. O jogo nunca vê sua senha do Google.",
           "Seu progresso do dia, salvo no seu próprio navegador (armazenamento local) para o tabuleiro sobreviver a um recarregamento da página. Ele não sai do seu aparelho.",
           "O feedback que você envia: a mensagem, o tipo, o idioma do site e, só se você preencher, seu e-mail.",
+          "Os e-mails que você manda para contato@imperatle.com: a mensagem e o seu endereço de e-mail, encaminhados para a caixa de entrada do autor.",
           "Seu endereço IP, usado por alguns minutos para limitar quantos palpites e mensagens podem ser enviados seguidos. O jogo não o guarda, mas os provedores de hospedagem abaixo podem mantê-lo nos registros técnicos deles.",
           "Visitas às páginas, contadas pelo Cloudflare Web Analytics sem cookies e sem identificar você.",
           "Se você comprar o Apoio: o pagamento é feito todo pela Paddle, então os dados do seu cartão ou de outro meio de pagamento nunca chegam ao jogo. O jogo recebe só o identificador da transação e a informação de que a compra foi concluída ou reembolsada, ligados à sua conta.",
@@ -101,31 +111,39 @@ const privacy: Record<Locale, LegalDocument> = {
       {
         heading: "Para quê",
         paragraphs: [
-          "Para o jogo funcionar (contar as tentativas de forma justa, mostrar suas estatísticas e o resultado de todos no dia), para protegê-lo contra abuso, para ler e responder o feedback e para saber quantas pessoas jogam. A base legal é o legítimo interesse em oferecer e proteger o jogo, e o seu consentimento no caso do e-mail opcional do formulário de feedback.",
+          "Para o jogo funcionar (contar as tentativas de forma justa, mostrar suas estatísticas e o resultado de todos no dia), para protegê-lo contra abuso, para ler e responder o feedback e os e-mails e para saber quantas pessoas jogam.",
+          "As bases legais são: a execução do que você pediu (art. 7º, V da LGPD) para a sua conta, os jogos ligados a ela e a compra do Apoio; o legítimo interesse em oferecer e proteger o jogo (art. 7º, IX) para o identificador anônimo, os limites por endereço IP e a contagem de visitas; e o seu consentimento (art. 7º, I) para o e-mail opcional do formulário de feedback, que você pode retirar a qualquer momento.",
         ],
       },
       {
         heading: "Quem mais trata os dados",
         paragraphs: ["O jogo depende destes provedores, cada um com seus próprios termos de privacidade:"],
         items: [
-          "Microsoft Azure (hospedagem do site e do servidor do jogo).",
-          "Cloudflare (contagem de visitas, sem cookies), Estados Unidos.",
-          "Google (login, só se você usar), Estados Unidos.",
-          "Neon (banco de dados).",
+          "Microsoft Azure (hospedagem do site e do servidor do jogo), Estados Unidos.",
+          "Cloudflare (contagem de visitas, sem cookies, e encaminhamento dos e-mails enviados para contato@imperatle.com), Estados Unidos.",
+          "Google (login, só se você usar, e a caixa de entrada que recebe os e-mails enviados para contato@imperatle.com), Estados Unidos.",
+          "Neon (banco de dados), Estados Unidos.",
           "Resend (encaminha as mensagens de feedback por e-mail), Estados Unidos.",
           "Paddle (processadora de pagamentos e responsável pela venda, o merchant of record, do Apoio), Reino Unido. A Paddle é quem vende essa compra e trata seus dados de pagamento e cobrança como controladora independente, pela política de privacidade dela em paddle.com/legal.",
         ],
       },
       {
+        heading: "Dados guardados fora do Brasil",
+        paragraphs: [
+          "A maior parte desses provedores guarda os dados nos Estados Unidos e no Reino Unido. Esse envio é necessário para oferecer o jogo que você escolheu jogar e os serviços que você pede nele (art. 33, IX da LGPD), e cada provedor protege os dados pelos próprios termos de segurança e privacidade.",
+        ],
+      },
+      {
         heading: "Por quanto tempo",
         paragraphs: [
-          "Os registros de jogo ficam guardados enquanto o jogo existir, porque formam suas estatísticas e os resultados de cada dia. O feedback fica guardado pelo tempo necessário para tratá-lo. O cookie expira um ano depois de ser criado. A conta fica guardada até você excluí-la.",
+          "Os registros dos jogos diários ficam guardados enquanto o jogo existir, porque formam suas estatísticas e os resultados de cada dia. As rodadas de treino são apagadas sozinhas 30 dias depois de começarem. Uma sessão de login é apagada quando expira, ou 7 dias depois que você sai da conta. O feedback e os e-mails ficam guardados pelo tempo necessário para tratá-los. O cookie expira um ano depois de ser criado. A conta fica guardada até você excluí-la.",
         ],
       },
       {
         heading: "Seus direitos",
         paragraphs: [
-          "Pela LGPD e, quando se aplicar, pelo GDPR europeu, você pode pedir acesso, correção ou exclusão dos seus dados, ou se opor ao uso deles. Faça o pedido por e-mail para contato@imperatle.com ou pelo formulário de Feedback no menu. Se você tem conta, pode excluí-la a qualquer momento pelo menu, junto com todos os jogos ligados a ela. Apagar os cookies e os dados do site no seu navegador também desfaz a ligação entre você e seu histórico de jogos.",
+          "Pela LGPD e, quando se aplicar, pelo GDPR europeu, você pode pedir a confirmação de que seus dados são tratados, o acesso, a correção, a exclusão ou uma cópia deles para levar a outro serviço (portabilidade), saber com quem eles são compartilhados, retirar o seu consentimento ou se opor ao uso deles. Faça o pedido por e-mail para contato@imperatle.com ou pelo formulário de Feedback no menu; a resposta vem em até 15 dias.",
+          "Se você tem conta, pode excluí-la a qualquer momento pelo menu, junto com todos os jogos ligados a ela. Apagar os cookies e os dados do site no seu navegador também desfaz a ligação entre você e seu histórico de jogos. Você também pode reclamar na autoridade de proteção de dados, a ANPD (gov.br/anpd).",
         ],
       },
       {

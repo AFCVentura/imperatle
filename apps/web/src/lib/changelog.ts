@@ -16,6 +16,18 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    version: "1.4.3",
+    date: "2026-11-06",
+    empires: [],
+    features: [],
+    fixes: [
+      {
+        en: "The Privacy Policy is clearer: where each provider stores data, the legal basis for each use, how long practice rounds and login sessions are kept, and every right you have, including complaining to the ANPD.",
+        pt: "A Política de Privacidade ficou mais clara: onde cada provedor guarda os dados, a base legal de cada uso, por quanto tempo ficam os treinos e as sessões de login e todos os seus direitos, inclusive reclamar na ANPD.",
+      },
+    ],
+  },
+  {
     version: "1.4.2",
     date: "2026-11-04",
     empires: [],
