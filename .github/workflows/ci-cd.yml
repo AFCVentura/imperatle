@@ -1,8 +1,8 @@
 # Tests the API and the web app on every push and pull request to main. On main
 # (or a manual run), once both pass, the API image is published and deployed to
-# Azure Container Apps. The web app is deployed by Vercel's Git integration
-# until the "Deploy web to Azure" job is turned on (AZURE_DEPLOY_WEB, see
-# docs/launch/front-container-apps.md); then it runs as a second Container App.
+# Azure Container Apps. The "Deploy web to Azure" job then deploys the web app
+# as a second Container App in the same environment (runs while the repository
+# variable AZURE_DEPLOY_WEB is true; see docs/launch/front-container-apps.md).
 name: CI/CD
 
 on:

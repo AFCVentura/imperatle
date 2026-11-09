@@ -17,7 +17,7 @@ Available in English and Portuguese.
 |---|---|
 | Web (`apps/web`) | Next.js 16 (App Router), React 19, Tailwind CSS 4, next-intl |
 | API (`apps/api`) | ASP.NET Core 10, EF Core 10, PostgreSQL |
-| Hosting | Vercel (web), Azure Container Apps (API), Neon (database) |
+| Hosting | Azure Container Apps (web and API), Neon (database), Cloudflare (DNS, email routing, analytics) |
 
 How it works:
 
@@ -47,7 +47,7 @@ The web app reads the API address from `NEXT_PUBLIC_API_URL` (`apps/web/.env.loc
 
 ## Configuration
 
-The API reads its settings from `appsettings*.json` and environment variables (`Section__Key`, e.g. `Auth__Google__ClientId`); the web app reads `NEXT_PUBLIC_*` variables at build time (`apps/web/.env.local` locally, the Vercel project settings while it runs on Vercel, and Docker build arguments fed from GitHub repository variables for the Azure container). Secrets go in environment variables, never in the repository.
+The API reads its settings from `appsettings*.json` and environment variables (`Section__Key`, e.g. `Auth__Google__ClientId`); the web app reads `NEXT_PUBLIC_*` variables at build time (`apps/web/.env.local` locally, and Docker build arguments fed from GitHub repository variables for the Azure container). Secrets go in environment variables, never in the repository.
 
 | Setting (environment variable) | What it is |
 |---|---|
@@ -115,4 +115,4 @@ CI runs both, plus lint, type checking and a production build, on every push and
 
 ## Deployment
 
-On `main`, after the checks pass, the API image is pushed to GitHub Container Registry and deployed to Azure Container Apps (OIDC login, no stored passwords), then the workflow waits for the new revision to be healthy and smoke-tests the domain. Database migrations and the content import run when the API starts. The web app deploys through Vercel's Git integration for now; a second job, "Deploy web to Azure", builds `apps/web/Dockerfile` and deploys it as its own Container App in the same environment the same way (after the API job, so a new page never meets an older API). It stays off until the repository variable `AZURE_DEPLOY_WEB` is `true`.
+On `main`, after the checks pass, the API image is pushed to GitHub Container Registry and deployed to Azure Container Apps (OIDC login, no stored passwords), then the workflow waits for the new revision to be healthy and smoke-tests the domain. Database migrations and the content import run when the API starts. A second job, "Deploy web to Azure", builds `apps/web/Dockerfile` and deploys the web app as its own Container App in the same environment the same way (after the API job, so a new page never meets an older API). It runs while the repository variable `AZURE_DEPLOY_WEB` is `true`.
