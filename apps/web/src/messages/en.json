@@ -212,17 +212,17 @@
     "opening": "Opening checkout…",
     "login": "Sign in with Google to continue",
     "loginNote": "The purchase is tied to your account, so the perks follow you on any device.",
-    "checkoutError": "The checkout couldn't load. Check your connection or ad blocker and try again.",
+    "checkoutError": "The checkout couldn't open. Check your connection and try again.",
     "alreadySupporter": "You're a supporter. Thank you!",
     "unavailable": "Support isn't available yet. Check back soon.",
-    "merchant": "Payments are processed by Paddle, the reseller and merchant of record for this purchase.",
+    "merchant": "Payments are processed securely by Stripe. Your card details never reach Imperatle.",
     "refundLink": "Refund policy",
     "close": "Close",
     "thanks": {
       "title": "Thank you!",
       "confirmed": "Your Supporter perks are active on this account.",
       "pending": "Your payment went through. The perks show up on your account in a minute; if they don't, reload the page.",
-      "receipt": "Paddle sends the receipt to your e-mail."
+      "receipt": "The receipt goes to your e-mail."
     }
   },
   "Feedback": {
@@ -380,11 +380,5 @@
   },
   "Share": {
     "archiveTitle": "Archive #{number}"
-  },
-  "Checkout": {
-    "title": "Payment",
-    "opening": "Opening the payment window...",
-    "unavailable": "The payment window could not load. Check your connection or turn off blockers for this site, then reload the page.",
-    "back": "Back to the game"
   }
 }

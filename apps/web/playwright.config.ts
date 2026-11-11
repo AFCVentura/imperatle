@@ -11,10 +11,13 @@ const apiEnv = (port: number, supporter: boolean) => ({
   Cors__AllowedOrigins: WEB_URL,
   Dev__IsSupporter: supporter ? "true" : "false",
   Dev__ForceTodayEmpireSlug: "mongol-empire",
-  // No Google or Paddle: login answers ?login=error, the webhook refuses everything.
+  // No Google or Stripe: login answers ?login=error, the webhook refuses
+  // everything, and the purchase is mocked by the tests (fixtures.mockSupport).
   Auth__Google__ClientId: "",
   Auth__Google__ClientSecret: "",
-  Paddle__WebhookSecret: "",
+  Stripe__SecretKey: "",
+  Stripe__WebhookSecret: "",
+  Stripe__SupporterPriceId: "",
 });
 
 export default defineConfig({
@@ -50,16 +53,11 @@ export default defineConfig({
       timeout: 180_000,
     },
     {
-      // A production build: no DEV buttons, real caching. A fake Paddle
-      // client token so the support dialog shows the "buy" path; Paddle.js
-      // itself is blocked in the tests.
+      // A production build: no DEV buttons, real caching.
       command: "npx next build && npx next start -p 3004",
       url: WEB_URL,
       env: {
         NEXT_PUBLIC_API_URL: API_URL,
-        NEXT_PUBLIC_PADDLE_CLIENT_TOKEN: "test_e2e_fake_token",
-        NEXT_PUBLIC_PADDLE_SUPPORTER_PRICE_ID: "pri_e2e_fake",
-        NEXT_PUBLIC_PADDLE_ENVIRONMENT: "sandbox",
       },
       reuseExistingServer: false,
       timeout: 600_000,

@@ -13,8 +13,9 @@ public class User
     public string DisplayName { get; set; } = "";
     public DateTime CreatedAtUtc { get; set; }
 
-    // Lifetime Supporter: set by the Paddle webhook when the purchase completes,
-    // cleared again by a full refund or chargeback. Null = not a supporter.
+    // Lifetime Supporter: set by the Stripe webhook when the purchase completes,
+    // cleared again by a full refund or a lost dispute. Null = not a supporter.
     public DateTime? SupporterSinceUtc { get; set; }
-    public string? PaddleTransactionId { get; set; }
+    // The Stripe payment intent ("pi_...") of that purchase, to match refunds.
+    public string? SupporterPaymentId { get; set; }
 }

@@ -212,17 +212,17 @@
     "opening": "Abrindo o pagamento…",
     "login": "Entrar com Google para continuar",
     "loginNote": "A compra fica ligada à sua conta, então as vantagens valem em qualquer aparelho.",
-    "checkoutError": "O pagamento não carregou. Confira sua conexão ou o bloqueador de anúncios e tente de novo.",
+    "checkoutError": "O pagamento não abriu. Confira sua conexão e tente de novo.",
     "alreadySupporter": "Você apoia o Imperatle. Obrigado!",
     "unavailable": "O apoio ainda não está disponível. Volte em breve.",
-    "merchant": "Os pagamentos são processados pela Paddle, revendedora e responsável pela venda (merchant of record).",
+    "merchant": "Os pagamentos são processados com segurança pela Stripe. Os dados do seu cartão nunca chegam ao Imperatle.",
     "refundLink": "Política de reembolso",
     "close": "Fechar",
     "thanks": {
       "title": "Obrigado!",
       "confirmed": "Suas vantagens de apoiador já estão ativas nesta conta.",
       "pending": "Seu pagamento foi aprovado. As vantagens aparecem na sua conta em até um minuto; se não aparecerem, recarregue a página.",
-      "receipt": "A Paddle manda o recibo para o seu e-mail."
+      "receipt": "O recibo vai para o seu e-mail."
     }
   },
   "Feedback": {
@@ -380,11 +380,5 @@
   },
   "Share": {
     "archiveTitle": "Arquivo #{number}"
-  },
-  "Checkout": {
-    "title": "Pagamento",
-    "opening": "Abrindo a janela de pagamento...",
-    "unavailable": "A janela de pagamento não carregou. Confira a conexão ou desligue bloqueadores neste site e recarregue a página.",
-    "back": "Voltar ao jogo"
   }
 }

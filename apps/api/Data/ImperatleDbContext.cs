@@ -105,9 +105,9 @@ public class ImperatleDbContext(DbContextOptions<ImperatleDbContext> options) : 
             user.Property(u => u.GoogleSubject).HasMaxLength(255);
             user.Property(u => u.Email).HasMaxLength(254);
             user.Property(u => u.DisplayName).HasMaxLength(200);
-            user.Property(u => u.PaddleTransactionId).HasMaxLength(64);
+            user.Property(u => u.SupporterPaymentId).HasMaxLength(64);
             // Refund webhooks look the user up by the transaction they paid with.
-            user.HasIndex(u => u.PaddleTransactionId);
+            user.HasIndex(u => u.SupporterPaymentId);
         });
 
         modelBuilder.Entity<ProcessedWebhookEvent>(evt =>

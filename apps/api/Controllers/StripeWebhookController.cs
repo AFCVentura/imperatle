@@ -5,18 +5,19 @@ using Microsoft.Extensions.Options;
 
 namespace Imperatle.Api.Controllers;
 
-// Paddle calls this server to server (no browser, so no CORS involved) after a
-// purchase or a refund. No rate limit policy: Paddle retries on failure, and a
-// request without a valid signature is turned away before the database.
+// Stripe calls this server to server (no browser, so no CORS involved) after a
+// purchase, a refund or a dispute. No rate limit policy: Stripe retries on
+// failure, and a request without a valid signature is turned away before the
+// database.
 [ApiController]
-[Route("webhooks/paddle")]
-public class PaddleWebhookController(
-    PaddleWebhookProcessor processor,
-    IOptions<PaddleOptions> options,
+[Route("webhooks/stripe")]
+public class StripeWebhookController(
+    StripeWebhookProcessor processor,
+    IOptions<StripeOptions> options,
     TimeProvider clock,
-    ILogger<PaddleWebhookController> logger) : ControllerBase
+    ILogger<StripeWebhookController> logger) : ControllerBase
 {
-    // Paddle events are a few KB; anything far bigger isn't from Paddle.
+    // Stripe events are a few KB; anything far bigger isn't from Stripe.
     private const int MaxBodyBytes = 256 * 1024;
 
     [HttpPost]
@@ -30,19 +31,19 @@ public class PaddleWebhookController(
         var rawBody = buffer.ToArray();
 
         var settings = options.Value;
-        var check = PaddleSignature.Verify(
-            Request.Headers[PaddleSignature.HeaderName],
+        var check = StripeSignature.Verify(
+            Request.Headers[StripeSignature.HeaderName],
             rawBody,
             settings.WebhookSecret,
             clock.GetUtcNow(),
             TimeSpan.FromSeconds(settings.WebhookToleranceSeconds));
-        if (check != PaddleSignature.Result.Valid)
+        if (check != StripeSignature.Result.Valid)
         {
-            logger.LogWarning("Paddle webhook rejected: signature {Result}", check);
+            logger.LogWarning("Stripe webhook rejected: signature {Result}", check);
             return Unauthorized();
         }
 
         var outcome = await processor.ProcessAsync(Encoding.UTF8.GetString(rawBody), ct);
-        return outcome == PaddleWebhookOutcome.Invalid ? BadRequest() : Ok();
+        return outcome == StripeWebhookOutcome.Invalid ? BadRequest() : Ok();
     }
 }

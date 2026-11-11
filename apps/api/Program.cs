@@ -33,9 +33,11 @@ builder.Services.AddHttpClient<FeedbackEmailService>(client =>
     client.Timeout = TimeSpan.FromSeconds(10);
 });
 
-// Paddle (Supporter purchase): webhook secret and price id, see README "Configuration".
-builder.Services.Configure<PaddleOptions>(builder.Configuration.GetSection(PaddleOptions.SectionName));
-builder.Services.AddScoped<PaddleWebhookProcessor>();
+// Stripe (Supporter purchase): secret key, webhook secret and price id, see README "Configuration".
+builder.Services.Configure<StripeOptions>(builder.Configuration.GetSection(StripeOptions.SectionName));
+builder.Services.AddScoped<StripeWebhookProcessor>();
+builder.Services.AddMemoryCache();
+builder.Services.AddScoped<ISupporterCheckout, StripeSupporterCheckout>();
 builder.Services.AddSingleton(TimeProvider.System);
 
 // Daily deletion of old practice rounds and dead login sessions (DataCleanup).
@@ -158,6 +160,17 @@ builder.Services.AddRateLimiter(options =>
             {
                 Window = TimeSpan.FromMinutes(10),
                 PermitLimit = 5,
+                QueueLimit = 0,
+            }));
+
+    // Opening the Stripe checkout: a person clicks "buy" a handful of times at most.
+    options.AddPolicy("checkout", httpContext =>
+        RateLimitPartition.GetFixedWindowLimiter(
+            httpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown",
+            _ => new FixedWindowRateLimiterOptions
+            {
+                Window = TimeSpan.FromMinutes(10),
+                PermitLimit = 10,
                 QueueLimit = 0,
             }));
 });

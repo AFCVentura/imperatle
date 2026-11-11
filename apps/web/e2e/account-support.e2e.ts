@@ -1,16 +1,16 @@
 import { API_URL } from "./env.mjs";
-import { blockPaddle, expect, mockMe, test } from "./fixtures";
+import { mockSupport, expect, mockMe, test } from "./fixtures";
 
 async function openFromMenu(page: import("@playwright/test").Page, item: RegExp) {
   await page.getByRole("button", { name: "Menu" }).click();
   await page.locator("nav").getByRole("button", { name: item }).click();
 }
 
-// Google and Paddle can't run here, so /me is answered by the test: signed
+// Google and Stripe can't run here, so /me is answered by the test: signed
 // out, signed in, signed in as a supporter.
 test.describe("account and support dialogs", () => {
   test.beforeEach(async ({ page }) => {
-    await blockPaddle(page);
+    await mockSupport(page);
   });
 
   test("signed out: sign in dialog and the Google button", async ({ page }) => {
@@ -70,12 +70,12 @@ test.describe("account and support dialogs", () => {
     await openFromMenu(page, /^Support the project/);
     const dialog = page.getByRole("dialog", { name: "Support the project" });
     await expect(dialog.getByRole("button", { name: "Become a supporter" })).toBeVisible();
-    await expect(dialog.getByText("Payments are processed by Paddle")).toBeVisible();
-    // Paddle.js is blocked: the price falls back to the no-price note and the
-    // checkout reports that it couldn't load, instead of hanging.
-    await expect(dialog.getByText("One-time payment, for life. The price in your currency shows at checkout.")).toBeVisible();
+    await expect(dialog.getByText("Payments are processed securely by Stripe")).toBeVisible();
+    // The mocked price shows; the mocked API fails to open the checkout, and
+    // the dialog says so instead of hanging.
+    await expect(dialog.getByText("one-time payment, for life")).toBeVisible();
     await dialog.getByRole("button", { name: "Become a supporter" }).click();
-    await expect(dialog.getByText(/The checkout couldn't load/)).toBeVisible();
+    await expect(dialog.getByText(/The checkout couldn't open/)).toBeVisible();
   });
 
   test("signed out: support dialog asks to sign in first", async ({ page }) => {

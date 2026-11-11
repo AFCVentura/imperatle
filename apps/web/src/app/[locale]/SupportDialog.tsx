@@ -1,119 +1,97 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { useEffect, useRef, useState, type MouseEvent } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { SUPPORT_EVENT, openSupport } from "@/lib/dialogs";
 import { googleLoginUrl, refreshMe, useMe } from "@/lib/me";
-import { PADDLE_CONFIG, formattedSupporterPrice, getPaddle, onPaddleEvent } from "@/lib/paddle";
-import { supportReturnUrl, supportView, waitForSupporter, withoutSupportReturn } from "@/lib/supportFlow";
+import { fetchSupportPrice, formatPrice, guessCurrency, startCheckout } from "@/lib/supportCheckout";
+import { readSupportReturn, supportReturnUrl, supportView, waitForSupporter } from "@/lib/supportFlow";
 import { AppDialog } from "./AppDialog";
 
 const PERKS = ["archive", "practice", "noAds", "solo"] as const;
 
-// idle: the normal view; opening: loading Paddle.js; thanks: Paddle reported
-// the payment and /me is being asked until the webhook lands.
+// idle: the normal view; opening: asking the API for the Stripe checkout;
+// thanks: back from a payment, /me is asked until the webhook lands.
 type Purchase = "idle" | "opening" | "error" | "thanks";
 
-// The Supporter (lifetime) purchase: perks, the price as Paddle shows it in
-// the visitor's country, and the overlay checkout. Buying needs an account,
-// because the purchase is tied to the user id sent to Paddle as customData.
+// The Supporter (lifetime) purchase: perks, the price in the visitor's
+// currency, and the button to Stripe's hosted checkout. Buying needs an
+// account, because the API ties the Stripe session to the user id.
 export function SupportDialog() {
   const t = useTranslations("Support");
   const locale = useLocale();
   const me = useMe();
   const [purchase, setPurchase] = useState<Purchase>("idle");
   const [confirmed, setConfirmed] = useState(false);
+  const [available, setAvailable] = useState<boolean | null>(null);
   const [price, setPrice] = useState<string | null>(null);
-  const [priceFailed, setPriceFailed] = useState(false);
   const priceRequested = useRef(false);
-  const completed = useRef(false);
-  // Set when the dialog reopens right after a payment, to show the thanks once.
-  const showThanks = useRef(false);
+  // Set when the page loads back from Stripe, so the dialog opens on the thanks.
+  const backFromPayment = useRef(false);
 
-  const view = supportView(me, PADDLE_CONFIG !== null);
+  const view = supportView(me, available);
 
-  // Back from the Google login with ?support=1: reopen this dialog.
+  // Back from the Google login (?support=1) or from Stripe (?support=thanks):
+  // reopen this dialog, on the thank-you after a payment.
   useEffect(() => {
-    const clean = withoutSupportReturn(window.location.href);
-    if (clean === null) return;
-    window.history.replaceState(window.history.state, "", clean);
+    const back = readSupportReturn(window.location.href);
+    if (back === null) return;
+    window.history.replaceState(window.history.state, "", back.clean);
+    backFromPayment.current = back.thanks;
     openSupport();
   }, []);
 
-  // Paddle's checkout runs above the page: when it reports the payment, close
-  // it and come back here with the thank-you state.
-  useEffect(
-    () =>
-      onPaddleEvent((event) => {
-        if (event.name !== "checkout.completed" || completed.current) return;
-        completed.current = true;
-        setPurchase("thanks");
-        showThanks.current = true;
-        window.Paddle?.Checkout.close();
-        openSupport();
-        void waitForSupporter(refreshMe).then(setConfirmed);
-      }),
-    [],
-  );
+  // The browser's Back button from Stripe can restore this page from its
+  // cache, still on "opening": let the button work again.
+  useEffect(() => {
+    const restored = (e: PageTransitionEvent) => {
+      if (e.persisted) setPurchase((p) => (p === "opening" ? "idle" : p));
+    };
+    window.addEventListener("pageshow", restored);
+    return () => window.removeEventListener("pageshow", restored);
+  }, []);
 
   async function loadPrice() {
-    if (!PADDLE_CONFIG || priceRequested.current) return;
+    if (priceRequested.current) return;
     priceRequested.current = true;
-    const paddle = await getPaddle(PADDLE_CONFIG);
-    try {
-      // No address: Paddle finds the visitor's country from the IP, so the
-      // per-country price and local currency show up.
-      const preview = await paddle?.PricePreview({ items: [{ priceId: PADDLE_CONFIG.priceId, quantity: 1 }] });
-      const formatted = formattedSupporterPrice(preview);
-      setPrice(formatted);
-      setPriceFailed(formatted === null);
-    } catch {
-      // Shown without the amount; Paddle's checkout still shows it before paying.
-      setPriceFailed(true);
-      priceRequested.current = false;
-    }
+    const result = await fetchSupportPrice();
+    setAvailable(result.available);
+    setPrice(formatPrice(result, guessCurrency(result, Intl.DateTimeFormat().resolvedOptions().timeZone), locale));
+    // An API hiccup shouldn't hide the purchase for the rest of the visit.
+    if (!result.available) priceRequested.current = false;
   }
 
   function handleOpen() {
-    if (showThanks.current) showThanks.current = false;
-    else setPurchase("idle");
-    void refreshMe();
+    if (backFromPayment.current) {
+      backFromPayment.current = false;
+      setPurchase("thanks");
+      void waitForSupporter(refreshMe).then(setConfirmed);
+    } else {
+      setPurchase("idle");
+      void refreshMe();
+    }
     void loadPrice();
   }
 
-  async function buy(e: MouseEvent<HTMLButtonElement>) {
-    const user = me?.user;
-    // Only the "buy" view has this button, but a supporter must never reach
-    // the checkout through any path (a stale /me, a double click): the
-    // account is checked again right before Paddle opens.
-    if (!PADDLE_CONFIG || !user || view !== "buy" || purchase === "opening") return;
-    const dialog = e.currentTarget.closest("dialog");
+  async function buy() {
+    // Only the "buy" view has this button; the API checks again that this
+    // account isn't a supporter before creating any checkout.
+    if (view !== "buy" || purchase === "opening") return;
     setPurchase("opening");
-    const fresh = await refreshMe();
-    if (supportView(fresh, true) !== "buy" || fresh.user?.id !== user.id) {
-      setPurchase("idle");
+    const start = await startCheckout(locale);
+    if (start.kind === "redirect") {
+      // Stays on "opening" while the browser leaves for Stripe.
+      window.location.assign(start.url);
       return;
     }
-    const paddle = await getPaddle(PADDLE_CONFIG);
-    if (!paddle) {
+    if (start.kind === "error") {
       setPurchase("error");
       return;
     }
-    completed.current = false;
-    // A modal <dialog> sits above everything, Paddle's overlay included.
-    dialog?.close();
+    // Already a supporter, or signed out meanwhile: /me updates the view.
     setPurchase("idle");
-    paddle.Checkout.open({
-      items: [{ priceId: PADDLE_CONFIG.priceId, quantity: 1 }],
-      customData: { userId: user.id },
-      customer: user.email ? { email: user.email } : undefined,
-      settings: {
-        displayMode: "overlay",
-        locale: locale === "pt" ? "pt" : "en",
-        theme: window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light",
-      },
-    });
+    void refreshMe();
   }
 
   function login() {
@@ -160,10 +138,9 @@ export function SupportDialog() {
 
           {(view === "buy" || view === "login") && (
             <div className="flex flex-col items-center gap-2 text-center">
-              {price !== null || !priceFailed ? (
+              {price !== null ? (
                 <p>
-                  <span className="font-display text-2xl">{price ?? "…"}</span>{" "}
-                  <span className="text-muted">{t("oneTime")}</span>
+                  <span className="font-display text-2xl">{price}</span> <span className="text-muted">{t("oneTime")}</span>
                 </p>
               ) : (
                 <p className="text-muted">{t("oneTimeNoPrice")}</p>

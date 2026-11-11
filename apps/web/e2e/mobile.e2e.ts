@@ -1,5 +1,5 @@
 import type { Page } from "@playwright/test";
-import { SCREENS_DIR, blockPaddle, expect, expectNoHorizontalScroll, finishToday, mockMe, routeToSupporterApi, test } from "./fixtures";
+import { SCREENS_DIR, mockSupport, expect, expectNoHorizontalScroll, finishToday, mockMe, routeToSupporterApi, test } from "./fixtures";
 
 // iPhone-sized viewport (390 px): no horizontal scroll anywhere new, and a
 // screenshot of each screen for the owner (docs/launch/qa-screens).
@@ -20,7 +20,7 @@ async function openFromMenu(page: Page, item: RegExp) {
 
 test.describe("phone, 390px", () => {
   test.beforeEach(async ({ page }) => {
-    await blockPaddle(page);
+    await mockSupport(page);
   });
 
   for (const locale of ["en", "pt"] as const) {

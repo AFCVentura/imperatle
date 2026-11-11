@@ -20,7 +20,7 @@ type Locale = "en" | "pt";
 const privacy: Record<Locale, LegalDocument> = {
   en: {
     title: "Privacy Policy",
-    updated: "Last updated: November 6, 2026",
+    updated: "Last updated: November 10, 2026",
     intro:
       "Imperatle is a free daily game made by one person, João Vitor Ventura, a developer based in Brazil, who is responsible for the data described here. The game collects as little as it can: an account is optional, and nothing here is used for advertising or sold.",
     sections: [
@@ -35,7 +35,7 @@ const privacy: Record<Locale, LegalDocument> = {
           "E-mails you send to contato@imperatle.com: the message and your e-mail address, forwarded to the author's inbox.",
           "Your IP address, used for a few minutes to limit how many guesses and messages can be sent in a row. It isn't stored by the game, although the hosting providers below may keep it in their technical logs.",
           "Page views, counted by Cloudflare Web Analytics without cookies and without identifying you.",
-          "If you buy Supporter: the payment is handled entirely by Paddle, so your card or other payment details never reach the game. The game only receives the transaction id and the fact that the purchase was completed or refunded, linked to your account.",
+          "If you buy Supporter: the payment is handled by Stripe, so your card or other payment details never reach the game. The game only receives the payment identifier and whether the purchase was completed, refunded or disputed, linked to your account. Stripe keeps the payment and billing data it needs for the purchase, the receipt and its anti-fraud and legal obligations.",
         ],
       },
       {
@@ -54,13 +54,13 @@ const privacy: Record<Locale, LegalDocument> = {
           "Google (sign-in, only if you use it, and the inbox that receives e-mails sent to contato@imperatle.com), United States.",
           "Neon (database), United States.",
           "Resend (forwards feedback messages by e-mail), United States.",
-          "Paddle (payment processor and merchant of record for the Supporter purchase), United Kingdom. Paddle is the seller of that purchase and handles your payment and billing data as an independent controller, under its own privacy policy at paddle.com/legal.",
+          "Stripe (payment processing for the Supporter purchase), United States. Stripe handles your payment and billing data, partly as an independent controller (for example to prevent fraud and meet its legal obligations), under its own privacy policy at stripe.com/privacy.",
         ],
       },
       {
         heading: "Data stored outside Brazil",
         paragraphs: [
-          "Most of these providers store data in the United States and the United Kingdom. Sending it there is necessary to provide the game you chose to play and the services you ask for in it (Art. 33, IX of the LGPD), and each provider protects it under its own security and privacy terms.",
+          "These providers store data in the United States. Sending it there is necessary to provide the game you chose to play and the services you ask for in it (Art. 33, IX of the LGPD), and each provider protects it under its own security and privacy terms.",
         ],
       },
       {
@@ -90,7 +90,7 @@ const privacy: Record<Locale, LegalDocument> = {
   },
   pt: {
     title: "Política de Privacidade",
-    updated: "Atualizada em 6 de novembro de 2026",
+    updated: "Atualizada em 10 de novembro de 2026",
     intro:
       "O Imperatle é um jogo diário e gratuito, feito por uma pessoa só: João Vitor Ventura, desenvolvedor no Brasil, que é o responsável pelos dados descritos aqui. O jogo coleta o mínimo possível: a conta é opcional, e nada aqui é usado para publicidade ou vendido.",
     sections: [
@@ -105,7 +105,7 @@ const privacy: Record<Locale, LegalDocument> = {
           "Os e-mails que você manda para contato@imperatle.com: a mensagem e o seu endereço de e-mail, encaminhados para a caixa de entrada do autor.",
           "Seu endereço IP, usado por alguns minutos para limitar quantos palpites e mensagens podem ser enviados seguidos. O jogo não o guarda, mas os provedores de hospedagem abaixo podem mantê-lo nos registros técnicos deles.",
           "Visitas às páginas, contadas pelo Cloudflare Web Analytics sem cookies e sem identificar você.",
-          "Se você comprar o Apoio: o pagamento é feito todo pela Paddle, então os dados do seu cartão ou de outro meio de pagamento nunca chegam ao jogo. O jogo recebe só o identificador da transação e a informação de que a compra foi concluída ou reembolsada, ligados à sua conta.",
+          "Se você comprar o Apoio: o pagamento é feito pela Stripe, então os dados do seu cartão ou de outro meio de pagamento nunca chegam ao jogo. O jogo recebe só o identificador do pagamento e a informação de que a compra foi concluída, reembolsada ou contestada, ligados à sua conta. A Stripe guarda os dados de pagamento e cobrança de que precisa para a compra, o recibo e as obrigações antifraude e legais dela.",
         ],
       },
       {
@@ -124,13 +124,13 @@ const privacy: Record<Locale, LegalDocument> = {
           "Google (login, só se você usar, e a caixa de entrada que recebe os e-mails enviados para contato@imperatle.com), Estados Unidos.",
           "Neon (banco de dados), Estados Unidos.",
           "Resend (encaminha as mensagens de feedback por e-mail), Estados Unidos.",
-          "Paddle (processadora de pagamentos e responsável pela venda, o merchant of record, do Apoio), Reino Unido. A Paddle é quem vende essa compra e trata seus dados de pagamento e cobrança como controladora independente, pela política de privacidade dela em paddle.com/legal.",
+          "Stripe (processamento do pagamento do Apoio), Estados Unidos. A Stripe trata seus dados de pagamento e cobrança, em parte como controladora independente (por exemplo para evitar fraudes e cumprir as obrigações legais dela), pela política de privacidade dela em stripe.com/privacy.",
         ],
       },
       {
         heading: "Dados guardados fora do Brasil",
         paragraphs: [
-          "A maior parte desses provedores guarda os dados nos Estados Unidos e no Reino Unido. Esse envio é necessário para oferecer o jogo que você escolheu jogar e os serviços que você pede nele (art. 33, IX da LGPD), e cada provedor protege os dados pelos próprios termos de segurança e privacidade.",
+          "Esses provedores guardam os dados nos Estados Unidos. Esse envio é necessário para oferecer o jogo que você escolheu jogar e os serviços que você pede nele (art. 33, IX da LGPD), e cada provedor protege os dados pelos próprios termos de segurança e privacidade.",
         ],
       },
       {
@@ -163,7 +163,7 @@ const privacy: Record<Locale, LegalDocument> = {
 const terms: Record<Locale, LegalDocument> = {
   en: {
     title: "Terms of Use",
-    updated: "Last updated: November 4, 2026",
+    updated: "Last updated: November 10, 2026",
     intro:
       "These terms apply to anyone who plays Imperatle at imperatle.com. By playing, you agree to them. The game is made and run by João Vitor Ventura, a developer based in Brazil.",
     sections: [
@@ -196,8 +196,8 @@ const terms: Record<Locale, LegalDocument> = {
       {
         heading: "Supporter purchase",
         paragraphs: [
-          "Supporter is an optional one-time purchase (not a subscription) that adds extra features, such as past games and practice mode, to the account it was bought with, for as long as the game runs. The price is shown in your currency before you pay.",
-          "Our order process is conducted by our online reseller Paddle.com. Paddle.com is the Merchant of Record for all our orders. Paddle provides all customer service inquiries and handles returns. Paddle's Buyer Terms (paddle.com/legal/checkout-buyer-terms) also apply to the purchase.",
+          "Supporter is an optional one-time purchase (not a subscription) that adds extra features, such as past games and practice mode, to the account it was bought with, for as long as the game runs. The final price and currency are shown before you pay.",
+          "The purchase is sold by the author, João Vitor Ventura, and the payment is processed by Stripe. Questions about a purchase go to contato@imperatle.com.",
           "Refunds follow the Refund Policy, linked at the bottom of every page. A refunded or charged-back purchase removes the Supporter features from the account.",
         ],
       },
@@ -217,7 +217,7 @@ const terms: Record<Locale, LegalDocument> = {
   },
   pt: {
     title: "Termos de Uso",
-    updated: "Atualizados em 4 de novembro de 2026",
+    updated: "Atualizados em 10 de novembro de 2026",
     intro:
       "Estes termos valem para quem joga o Imperatle em imperatle.com. Ao jogar, você concorda com eles. O jogo é feito e mantido por João Vitor Ventura, desenvolvedor no Brasil.",
     sections: [
@@ -250,8 +250,8 @@ const terms: Record<Locale, LegalDocument> = {
       {
         heading: "Compra do Apoio",
         paragraphs: [
-          "O Apoio é uma compra opcional e única (não é assinatura) que libera recursos extras, como jogos anteriores e modo treino, na conta usada na compra, enquanto o jogo existir. O preço aparece na sua moeda antes do pagamento.",
-          "A venda é feita pela nossa revendedora online Paddle.com. A Paddle.com é a responsável pela venda (Merchant of Record) de todos os nossos pedidos: ela atende as dúvidas sobre a compra e cuida das devoluções. Os Termos do Comprador da Paddle (paddle.com/legal/checkout-buyer-terms) também valem para a compra.",
+          "O Apoio é uma compra opcional e única (não é assinatura) que libera recursos extras, como jogos anteriores e modo treino, na conta usada na compra, enquanto o jogo existir. O preço final e a moeda aparecem antes do pagamento.",
+          "A compra é vendida pelo autor, João Vitor Ventura, e o pagamento é processado pela Stripe. Dúvidas sobre uma compra vão para contato@imperatle.com.",
           "Os reembolsos seguem a Política de Reembolso, com link no rodapé de todas as páginas. Uma compra reembolsada ou contestada (chargeback) tira os recursos do Apoio da conta.",
         ],
       },
@@ -274,9 +274,9 @@ const terms: Record<Locale, LegalDocument> = {
 const refunds: Record<Locale, LegalDocument> = {
   en: {
     title: "Refund Policy",
-    updated: "Last updated: November 4, 2026",
+    updated: "Last updated: November 10, 2026",
     intro:
-      "This policy covers the Supporter purchase on Imperatle. The purchase is sold by Paddle.com, our online reseller and Merchant of Record: Paddle is the seller you pay, it processes the payment, issues the receipt and handles refunds.",
+      "This policy covers the Supporter purchase on Imperatle. The purchase is sold by the author, João Vitor Ventura, and the payment is processed by Stripe, which also sends the receipt. Refunds are made by the author through Stripe.",
     sections: [
       {
         heading: "What you buy",
@@ -299,8 +299,8 @@ const refunds: Record<Locale, LegalDocument> = {
       {
         heading: "How to ask",
         items: [
-          "Look up your order at paddle.net with the e-mail you used to buy, or reply to the receipt e-mail Paddle sent you.",
-          "Or write to contato@imperatle.com, or through the Feedback form in the menu, with the e-mail you used to buy.",
+          "Write to contato@imperatle.com with the e-mail you used to buy.",
+          "Or use the Feedback form in the menu, with the e-mail you used to buy.",
         ],
       },
       {
@@ -313,9 +313,9 @@ const refunds: Record<Locale, LegalDocument> = {
   },
   pt: {
     title: "Política de Reembolso",
-    updated: "Atualizada em 4 de novembro de 2026",
+    updated: "Atualizada em 10 de novembro de 2026",
     intro:
-      "Esta política vale para a compra do Apoio no Imperatle. A compra é vendida pela Paddle.com, nossa revendedora online e responsável pela venda (Merchant of Record): a Paddle é quem recebe o pagamento, emite o recibo e cuida dos reembolsos.",
+      "Esta política vale para a compra do Apoio no Imperatle. A compra é vendida pelo autor, João Vitor Ventura, e o pagamento é processado pela Stripe, que também envia o recibo. Os reembolsos são feitos pelo autor, pela Stripe.",
     sections: [
       {
         heading: "O que você compra",
@@ -338,8 +338,8 @@ const refunds: Record<Locale, LegalDocument> = {
       {
         heading: "Como pedir",
         items: [
-          "Encontre seu pedido em paddle.net com o e-mail usado na compra, ou responda o e-mail de recibo que a Paddle enviou.",
-          "Ou escreva para contato@imperatle.com, ou pelo formulário de Feedback no menu, informando o e-mail usado na compra.",
+          "Escreva para contato@imperatle.com informando o e-mail usado na compra.",
+          "Ou use o formulário de Feedback no menu, informando o e-mail usado na compra.",
         ],
       },
       {

@@ -40,9 +40,27 @@ export async function routeToSupporterApi(page: Page | BrowserContext) {
   await page.route(`${API_URL}/**`, (route) => route.continue({ url: route.request().url().replace(API_URL, SUPPORTER_API_URL) }));
 }
 
-// Paddle.js never loads in the tests (no real client token).
-export async function blockPaddle(page: Page | BrowserContext) {
-  await page.route(/paddle\.com/, (route) => route.abort());
+const CORS = { "Access-Control-Allow-Origin": "http://localhost:3004", "Access-Control-Allow-Credentials": "true" };
+
+// Stripe can't run here: the price is answered by the test (so the dialog
+// shows the "buy" path), and opening the checkout fails like a Stripe outage.
+export async function mockSupport(page: Page | BrowserContext) {
+  await page.route(`${API_URL}/support/price`, (route) =>
+    route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      headers: CORS,
+      body: JSON.stringify({ available: true, defaultCurrency: "usd", amounts: { usd: 499, brl: 990, eur: 499 } }),
+    }),
+  );
+  await page.route(`${API_URL}/support/checkout`, (route) =>
+    route.request().method() === "OPTIONS"
+      ? route.fulfill({
+          status: 204,
+          headers: { ...CORS, "Access-Control-Allow-Methods": "POST", "Access-Control-Allow-Headers": "content-type" },
+        })
+      : route.fulfill({ status: 502, headers: CORS }),
+  );
 }
 
 export interface MeUserMock {

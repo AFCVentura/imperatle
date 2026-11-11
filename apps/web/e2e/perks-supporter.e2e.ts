@@ -6,7 +6,7 @@ const ARCHIVE_GUESS = /\/archive\/[\d-]+\/guess$/;
 const PRACTICE_GUESS = /\/practice\/[0-9a-f-]+\/guess$/;
 
 // Supporter perks, through the Dev:IsSupporter copy of the API (the real
-// supporter check, Paddle, can't run here).
+// supporter check, Stripe, can't run here).
 test.describe("perks, supporter", () => {
   test.beforeEach(async ({ page }) => {
     await routeToSupporterApi(page);

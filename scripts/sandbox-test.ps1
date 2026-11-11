@@ -1,9 +1,10 @@
 <#
 .SYNOPSIS
-  Starts everything needed for a Paddle SANDBOX purchase test on this PC:
+  Starts everything needed for a Stripe TEST MODE purchase test on this PC:
   Postgres (docker compose), the API (http://localhost:5055), the web app
-  (http://localhost:3000) and a Cloudflare quick tunnel to the API, then
-  prints the tunnel URL to register in the Paddle sandbox dashboard.
+  (http://localhost:3000) and "stripe listen", which forwards the test
+  account's webhook events to the local API (no tunnel, nothing to register
+  in the Stripe dashboard).
 
   Step by step guide: docs/launch/sandbox-purchase-test.md
 
@@ -12,22 +13,26 @@
   powershell -ExecutionPolicy Bypass -File scripts\sandbox-test.ps1 -Stop
 
 .NOTES
-  Secrets are read from files in $SecretsDir and never printed:
-    paddle_sandbox_tunnel_secret.txt  secret key of the tunnel notification destination (sandbox)
-    google_client_secret.txt          Google OAuth client secret (for the local login)
-  The client token and the price id below are public sandbox values.
+  Secrets are read from files and never printed:
+    $StripeKeyFile, line 1                       Stripe TEST secret key (sk_test_...)
+    $SecretsDir\google_client_secret.txt         Google OAuth client secret (for the local login)
+  The price id below is a public test mode value.
 #>
 [CmdletBinding()]
 param(
     [switch]$Stop,
     [string]$SecretsDir = 'C:\secrets\imperatle',
-    [string]$ClientToken = 'test_c9c21a5a71900db74b134bc6aa4',
-    [string]$PriceId = 'pri_01m6h7q44g7qj2jh2b75h3ap5w',
+    [string]$StripeKeyFile = 'C:\secrets\stripe-imperatle-test.txt',
+    [string]$PriceId = 'price_1UaM8fIFWEpVTgv82PSgNYo7',
     [string]$GoogleClientId = '373010422141-j2an0fgj0cfdkpj3g5iddelc1htr6696.apps.googleusercontent.com',
     [string]$Database = 'imperatle_sandbox'
 )
 
-$ErrorActionPreference = 'Stop'
+# Not 'Stop': in Windows PowerShell 5.1 any stderr line from a native program
+# (docker's "WARNING: No blkio...", docker compose progress, stripe CLI) becomes
+# a terminating error under 'Stop'. Every native call below checks
+# $LASTEXITCODE (or its output) and calls Fail instead.
+$ErrorActionPreference = 'Continue'
 
 $RepoRoot = Split-Path -Parent $PSScriptRoot
 $ApiDir = Join-Path $RepoRoot 'apps\api'
@@ -37,8 +42,6 @@ $ComposeFile = Join-Path $RepoRoot 'docker-compose.yml'
 # volume are reused (no second container fighting for port 5432).
 $ComposeProject = 'imperatle'
 $StateFile = Join-Path $env:TEMP 'imperatle-sandbox-test.pids'
-$TunnelLog = Join-Path $env:TEMP 'imperatle-sandbox-tunnel.log'
-$TunnelMetrics = '127.0.0.1:20241'
 $ApiUrl = 'http://localhost:5055'
 $WebUrl = 'http://localhost:3000'
 
@@ -50,25 +53,19 @@ if ($Stop) {
     if (-not (Test-Path $StateFile)) { Write-Host 'Nada para parar (arquivo de PIDs nao existe).'; exit 0 }
     foreach ($id in Get-Content $StateFile) {
         if ($id -match '^\d+$') {
-            # /T takes the children too (dotnet and node run under the window's PowerShell).
+            # /T takes the children too (dotnet, node and stripe run under the window's PowerShell).
             & taskkill.exe /T /F /PID $id 2>$null | Out-Null
         }
     }
     Remove-Item $StateFile -Force
-    Write-Host 'API, site e tunel parados. O Postgres continua rodando (docker compose -p imperatle stop para parar).'
-    Write-Host 'Lembrete: apague o destino do tunel na Paddle sandbox (Developer tools > Notifications).'
+    Write-Host 'API, site e stripe listen parados. O Postgres continua rodando (docker compose -p imperatle stop para parar).'
     exit 0
 }
 
 # ---------------------------------------------------------------- prerequisites
 Write-Step 'Conferindo programas'
-$cloudflared = (Get-Command cloudflared -ErrorAction SilentlyContinue).Source
-if (-not $cloudflared) {
-    foreach ($candidate in @("${env:ProgramFiles(x86)}\cloudflared\cloudflared.exe", "$env:ProgramFiles\cloudflared\cloudflared.exe")) {
-        if (Test-Path $candidate) { $cloudflared = $candidate; break }
-    }
-}
-if (-not $cloudflared) { Fail 'cloudflared nao encontrado. Instale com: winget install --id Cloudflare.cloudflared (e abra um terminal novo).' }
+$stripe = (Get-Command stripe -ErrorAction SilentlyContinue).Source
+if (-not $stripe) { Fail 'Stripe CLI nao encontrada. Instale com: winget install --id Stripe.StripeCli (e abra um terminal novo).' }
 foreach ($tool in 'docker', 'dotnet', 'node', 'npm') {
     if (-not (Get-Command $tool -ErrorAction SilentlyContinue)) { Fail "$tool nao encontrado no PATH." }
 }
@@ -83,34 +80,27 @@ foreach ($port in 5055, 3000) {
     if (Test-Port $port) { Fail "A porta $port ja esta em uso. Feche a API/site que ja estao rodando (ou rode este script com -Stop) e tente de novo." }
 }
 
-# ---------------------------------------------------------------- secrets and sandbox guard
-Write-Step "Lendo segredos de $SecretsDir (os valores nao sao mostrados)"
-function Read-SecretFile([string]$name) {
-    $path = Join-Path $SecretsDir $name
+# ---------------------------------------------------------------- secrets and test mode guard
+Write-Step 'Lendo segredos (os valores nao sao mostrados)'
+function Read-SecretLine([string]$path, [int]$line = 1) {
     if (-not (Test-Path -LiteralPath $path)) { Fail "Arquivo nao encontrado: $path" }
-    $value = (Get-Content -Raw -LiteralPath $path)
-    if ($null -eq $value) { $value = '' }
+    $lines = @(Get-Content -LiteralPath $path)
+    $value = if ($lines.Count -ge $line) { "$($lines[$line - 1])" } else { '' }
     $value = $value.Trim().Trim([char]0xFEFF).Trim()
-    if (-not $value) { Fail "Arquivo vazio: $path" }
+    if (-not $value) { Fail "Linha $line vazia em: $path" }
     return $value
 }
 
-$webhookSecret = Read-SecretFile 'paddle_sandbox_tunnel_secret.txt'
-$googleSecret = Read-SecretFile 'google_client_secret.txt'
+$stripeKey = Read-SecretLine $StripeKeyFile 1
+$googleSecret = Read-SecretLine (Join-Path $SecretsDir 'google_client_secret.txt') 1
 
-# Only sandbox values. A live value here would let the test card grant real perks.
-if (-not $ClientToken.StartsWith('test_')) { Fail 'O client token precisa ser do sandbox (comecar com test_). Recusado.' }
-if (-not $PriceId.StartsWith('pri_')) { Fail 'O price id precisa comecar com pri_.' }
-foreach ($pair in @(@('client token', $ClientToken), @('price id', $PriceId), @('webhook secret', $webhookSecret))) {
-    if ($pair[1] -match 'live_') { Fail "O $($pair[0]) parece ser da conta LIVE. Este teste e so sandbox. Recusado." }
-}
-if (-not $webhookSecret.StartsWith('pdl_ntfset_')) {
-    Write-Host 'Aviso: o webhook secret nao comeca com pdl_ntfset_. Confira se copiou a Secret key do destino certo.' -ForegroundColor Yellow
-}
-$liveFile = Join-Path $SecretsDir 'paddle_key_live.txt'
-if ((Test-Path -LiteralPath $liveFile) -and ("$(Get-Content -Raw -LiteralPath $liveFile)".Trim() -eq $webhookSecret)) {
-    Fail 'paddle_sandbox_tunnel_secret.txt tem o mesmo valor de paddle_key_live.txt. Recusado.'
-}
+# Only test mode. A live key here would charge real cards.
+if (-not $stripeKey.StartsWith('sk_test_')) { Fail "A linha 1 de $StripeKeyFile precisa ser a chave secreta de TESTE (sk_test_...). Recusado." }
+if (-not $PriceId.StartsWith('price_')) { Fail 'O price id precisa comecar com price_.' }
+
+Write-Step 'Pegando o segredo de assinatura do stripe listen'
+$webhookSecret = "$(& $stripe listen --api-key $stripeKey --print-secret 2>$null)".Trim()
+if (-not $webhookSecret.StartsWith('whsec_')) { Fail 'O stripe listen nao devolveu um segredo whsec_. Rode "stripe listen --api-key <chave> --print-secret" para ver o erro.' }
 
 # ---------------------------------------------------------------- Postgres
 Write-Step "Subindo o Postgres (docker compose, projeto $ComposeProject)"
@@ -137,85 +127,59 @@ if ("$exists".Trim() -ne '1') {
 $names = @(
     'ConnectionStrings__DefaultConnection', 'Dev__IsSupporter', 'Auth__CookieDomain',
     'Auth__Google__ClientId', 'Auth__Google__ClientSecret',
-    'Paddle__Environment', 'Paddle__WebhookSecret', 'Paddle__SupporterPriceId',
-    'NEXT_PUBLIC_API_URL', 'NEXT_PUBLIC_PADDLE_CLIENT_TOKEN',
-    'NEXT_PUBLIC_PADDLE_SUPPORTER_PRICE_ID', 'NEXT_PUBLIC_PADDLE_ENVIRONMENT'
+    'Stripe__SecretKey', 'Stripe__WebhookSecret', 'Stripe__SupporterPriceId',
+    'NEXT_PUBLIC_API_URL', 'STRIPE_API_KEY'
 )
 # Child processes inherit this script's environment. Everything set here is
 # removed again in "finally", so nothing stays in the terminal session.
 $pids = @()
 try {
-    # API (exact keys read by Program.cs / PaddleOptions; "__" = ":" in .NET config).
+    # API (exact keys read by Program.cs / StripeOptions; "__" = ":" in .NET config).
     $env:ConnectionStrings__DefaultConnection = "Host=localhost;Port=5432;Database=$Database;Username=imperatle;Password=imperatle"
     $env:Dev__IsSupporter = 'false'          # real supporter check, not the dev shortcut
     $env:Auth__CookieDomain = ''              # cookie stays on localhost
     $env:Auth__Google__ClientId = $GoogleClientId
     $env:Auth__Google__ClientSecret = $googleSecret
-    $env:Paddle__Environment = 'sandbox'
-    $env:Paddle__WebhookSecret = $webhookSecret
-    $env:Paddle__SupporterPriceId = $PriceId
+    $env:Stripe__SecretKey = $stripeKey
+    $env:Stripe__WebhookSecret = $webhookSecret
+    $env:Stripe__SupporterPriceId = $PriceId
 
     Write-Step "Iniciando a API em $ApiUrl (janela nova; os logs do webhook aparecem nela)"
     $api = Start-Process powershell -PassThru -WorkingDirectory $ApiDir `
-        -ArgumentList '-NoExit', '-Command', "`$host.UI.RawUI.WindowTitle = 'Imperatle API (sandbox)'; dotnet run --launch-profile http"
+        -ArgumentList '-NoExit', '-Command', "`$host.UI.RawUI.WindowTitle = 'Imperatle API (Stripe teste)'; dotnet run --launch-profile http"
     $pids += $api.Id
 
-    # The web app and the tunnel don't need the server secrets.
-    foreach ($n in 'Auth__Google__ClientSecret', 'Paddle__WebhookSecret') { Remove-Item "Env:$n" -ErrorAction SilentlyContinue }
+    # The web app doesn't need any secret.
+    foreach ($n in 'Auth__Google__ClientSecret', 'Stripe__SecretKey', 'Stripe__WebhookSecret') { Remove-Item "Env:$n" -ErrorAction SilentlyContinue }
 
     # Web (process env wins over apps/web/.env.local in Next.js).
     $env:NEXT_PUBLIC_API_URL = $ApiUrl
-    $env:NEXT_PUBLIC_PADDLE_CLIENT_TOKEN = $ClientToken
-    $env:NEXT_PUBLIC_PADDLE_SUPPORTER_PRICE_ID = $PriceId
-    $env:NEXT_PUBLIC_PADDLE_ENVIRONMENT = 'sandbox'
-
-    $webCommand = "`$host.UI.RawUI.WindowTitle = 'Imperatle web (sandbox)'; npm run dev"
-    if (-not (Test-Path (Join-Path $WebDir 'node_modules'))) { $webCommand = "`$host.UI.RawUI.WindowTitle = 'Imperatle web (sandbox)'; npm ci; npm run dev" }
+    $webCommand = "`$host.UI.RawUI.WindowTitle = 'Imperatle web (Stripe teste)'; npm run dev"
+    if (-not (Test-Path (Join-Path $WebDir 'node_modules'))) { $webCommand = "`$host.UI.RawUI.WindowTitle = 'Imperatle web (Stripe teste)'; npm ci; npm run dev" }
     Write-Step "Iniciando o site em $WebUrl (janela nova)"
     $web = Start-Process powershell -PassThru -WorkingDirectory $WebDir -ArgumentList '-NoExit', '-Command', $webCommand
     $pids += $web.Id
+
+    # stripe listen reads the key from STRIPE_API_KEY, so it never shows in the window's command line.
+    $env:STRIPE_API_KEY = $stripeKey
+    Write-Step 'Abrindo o stripe listen (janela nova; cada evento aparece nela)'
+    $listen = Start-Process powershell -PassThru -WorkingDirectory $RepoRoot `
+        -ArgumentList '-NoExit', '-Command', "`$host.UI.RawUI.WindowTitle = 'stripe listen (teste)'; & '$stripe' listen --forward-to $ApiUrl/webhooks/stripe --events checkout.session.completed,checkout.session.async_payment_succeeded,checkout.session.async_payment_failed,charge.refunded,charge.dispute.closed"
+    $pids += $listen.Id
+    Set-Content -Path $StateFile -Value $pids
 
     Write-Step 'Esperando a API responder em /health'
     $apiUp = $false
     for ($i = 0; $i -lt 120; $i++) {
         try { Invoke-WebRequest "$ApiUrl/health" -UseBasicParsing -TimeoutSec 2 | Out-Null; $apiUp = $true; break } catch { Start-Sleep -Seconds 1 }
     }
-    if (-not $apiUp) { Write-Host 'Aviso: a API ainda nao respondeu. Veja a janela "Imperatle API (sandbox)".' -ForegroundColor Yellow }
-
-    Write-Step 'Abrindo o tunel do Cloudflare para a API'
-    if (Test-Path $TunnelLog) { Remove-Item $TunnelLog -Force }
-    $tunnel = Start-Process $cloudflared -PassThru -WindowStyle Minimized `
-        -ArgumentList 'tunnel', '--no-autoupdate', '--metrics', $TunnelMetrics, '--logfile', $TunnelLog, '--url', $ApiUrl
-    $pids += $tunnel.Id
-    Set-Content -Path $StateFile -Value $pids
-
-    $tunnelUrl = $null
-    for ($i = 0; $i -lt 60 -and -not $tunnelUrl; $i++) {
-        Start-Sleep -Seconds 1
-        try {
-            $info = Invoke-RestMethod "http://$TunnelMetrics/quicktunnel" -TimeoutSec 2
-            if ($info.hostname) { $tunnelUrl = "https://$($info.hostname)" }
-        } catch { }
-        if (-not $tunnelUrl -and (Test-Path $TunnelLog)) {
-            $match = Select-String -Path $TunnelLog -Pattern 'https://[a-z0-9-]+\.trycloudflare\.com' | Select-Object -First 1
-            if ($match) { $tunnelUrl = $match.Matches[0].Value }
-        }
-    }
+    if (-not $apiUp) { Write-Host 'Aviso: a API ainda nao respondeu. Veja a janela "Imperatle API (Stripe teste)".' -ForegroundColor Yellow }
 }
 finally {
     foreach ($n in $names) { Remove-Item "Env:$n" -ErrorAction SilentlyContinue }
 }
 
 Write-Host ''
-if (-not $tunnelUrl) {
-    Write-Host "Nao achei a URL do tunel. Veja o log: $TunnelLog" -ForegroundColor Yellow
-} else {
-    Write-Host 'Tudo no ar. Cole este endereco no destino de teste da Paddle sandbox:' -ForegroundColor Green
-    Write-Host ''
-    Write-Host "    $tunnelUrl/webhooks/paddle" -ForegroundColor Green
-    Write-Host ''
-    Write-Host "Teste rapido do tunel: $tunnelUrl/health (deve mostrar {""status"":""ok""})"
-}
-Write-Host "Site: $WebUrl   API: $ApiUrl   Banco: $Database"
+Write-Host "Tudo no ar. Site: $WebUrl   API: $ApiUrl   Banco: $Database" -ForegroundColor Green
+Write-Host 'Cartao de teste: 4242 4242 4242 4242, validade futura, qualquer CVC.'
 Write-Host 'Para parar tudo: powershell -ExecutionPolicy Bypass -File scripts\sandbox-test.ps1 -Stop'
-Write-Host 'Se reiniciar o tunel, a URL muda: atualize o destino na Paddle.'

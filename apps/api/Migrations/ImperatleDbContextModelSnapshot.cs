@@ -18,7 +18,7 @@ namespace Imperatle.Api.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "10.0.12")
+                .HasAnnotation("ProductVersion", "10.0.14")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -436,7 +436,7 @@ namespace Imperatle.Api.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("character varying(255)");
 
-                    b.Property<string>("PaddleTransactionId")
+                    b.Property<string>("SupporterPaymentId")
                         .HasMaxLength(64)
                         .HasColumnType("character varying(64)");
 
@@ -448,7 +448,7 @@ namespace Imperatle.Api.Migrations
                     b.HasIndex("GoogleSubject")
                         .IsUnique();
 
-                    b.HasIndex("PaddleTransactionId");
+                    b.HasIndex("SupporterPaymentId");
 
                     b.ToTable("Users");
                 });
