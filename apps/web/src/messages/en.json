@@ -44,18 +44,18 @@
     "answerWasLabel": "The answer was",
     "mapComingSoon": "Map coming soon",
     "mapAlt": "Map of today's answer at its greatest extent",
-    "guessHistoryTitle": "Guesses & Clues",
+    "guessHistoryTitle": "Guesses and clues",
     "submitError": "Something went wrong. Try again.",
     "playAgainTomorrow": "Come back tomorrow for a new map!",
     "correctGuessMark": "Correct!",
     "wrongGuessMark": "Wrong",
-    "remainingHintsLabel": "The other clues",
     "aboutEmpireTitle": "Historical context",
     "curiositiesExplainedTitle": "The curiosities, explained",
     "unlocksLabel": "Unlocks: {fields}",
     "guessColumns": {
       "area": "Area",
-      "duration": "Duration"
+      "era": "Era",
+      "distance": "Distance"
     },
     "fields": {
       "era": "Era",
@@ -70,7 +70,9 @@
       "curiosities": "Trivia",
       "curiosity": "Trivia",
       "unlockedAt": "Unlocked on attempt {n}",
-      "showNote": "Show note"
+      "showNote": "Show note",
+      "lifespan": "Period",
+      "notes": "Note"
     },
     "enums": {
       "broadEra": {
@@ -101,14 +103,19 @@
     "startPlaying": "Play",
     "comparisonInfo": {
       "area": {
-        "Bigger": "The answer was larger than this one at its peak.",
-        "Smaller": "The answer was smaller than this one at its peak.",
-        "Approximate": "Both were about the same size at their peak, within 10%."
+        "Bigger": "The answer was bigger than your guess, comparing both at their peak.",
+        "Smaller": "The answer was smaller than your guess, comparing both at their peak.",
+        "Approximate": "The answer and your guess were about the same size at their peak, within 10%."
       },
-      "duration": {
-        "Bigger": "The answer lasted longer than this one.",
-        "Smaller": "The answer didn't last as long as this one.",
-        "Approximate": "Both lasted about the same time, within 10%."
+      "era": {
+        "Bigger": "The answer is more recent: its peak came after your guess's peak.",
+        "Smaller": "The answer is older: its peak came before your guess's peak.",
+        "Approximate": "The answer and your guess are from the same era: each still existed at the other's peak, or their peaks were 25 years apart or less."
+      },
+      "distance": {
+        "info": "Where the answer lies from your guess. When the two are apart, you get the direction and the distance between their borders. When the territories overlap, you get how much they share, and the direction goes away once they mostly overlap.",
+        "here": "Here: the answer lies {direction} of your guess.",
+        "noMap": "No map to compare where these two are."
       }
     },
     "fieldInfo": {
@@ -141,22 +148,63 @@
     "cluesOff": "Clues off",
     "noNewClues": "No new clues",
     "unknownGuess": "Guess made on another device",
-    "goToPractice": "Go to practice"
+    "goToPractice": "Go to practice",
+    "proximity": {
+      "neighbours": "Neighbours",
+      "shared": "{percent} shared"
+    },
+    "directions": {
+      "N": "north",
+      "NE": "northeast",
+      "E": "east",
+      "SE": "southeast",
+      "S": "south",
+      "SW": "southwest",
+      "W": "west",
+      "NW": "northwest"
+    },
+    "clues": {
+      "map": "Map",
+      "era": "Era",
+      "mapContinents": "Map with the continents",
+      "mapCountries": "Map with the countries",
+      "curiosity": "Curiosity {n}"
+    },
+    "clueValues": {
+      "mapContinents": "The map now shows the continents",
+      "mapCountries": "The map now shows the countries"
+    },
+    "clueInfo": {
+      "mapContinents": "The map now shows the continents under the answer. You can go back to the outline with the picker right under the map.",
+      "mapCountries": "The map now shows today's countries under the answer. Tap a country to see its name.",
+      "curiosity": "A curiosity about the answer. The three go from the least to the most obvious."
+    },
+    "outline": {
+      "show": "Click to see this guess's outline on the map, dashed in brown. Where it crosses the answer, the colors mix.",
+      "hide": "Click to hide this guess's outline on the map.",
+      "chipShow": "Show guess",
+      "showLabel": "Show the guess's outline on the map",
+      "hideLabel": "Hide the guess's outline on the map"
+    },
+    "precisionChip": "Borders: {value} precision",
+    "sheetTitle": "Fact sheet",
+    "curiositiesTitle": "The curiosities"
   },
   "HowToPlay": {
     "title": "How to play",
     "close": "Close",
     "goal": "Find out which historical power is on the map, shown at the height of its expansion. You have {attempts} attempts.",
     "guess": "Type a name, pick it from the list and click Guess (or press Enter twice).",
-    "compare": "Each wrong guess compares your pick with the answer:",
+    "compare": "Each wrong guess compares your guess with the answer:",
     "wrong": "not this one",
-    "bigger": "the answer was larger in area, or lasted longer",
-    "smaller": "the answer was smaller in area, or didn't last as long",
-    "approximate": "both are about the same (within 10%)",
-    "hints": "Each miss also unlocks new clues about the answer, right under your guess.",
-    "inspect": "Hover or tap a clue, or the area and duration, to see what it means.",
+    "hints": "Each miss also unlocks a new clue, right under the guess: the era, the map with the continents, three curiosities and, last, the map with the countries.",
+    "inspect": "Hover or tap a clue, or the area, era and distance, to see what it means.",
     "daily": "A new map every day.",
-    "goalNoCount": "Find out which historical power is on the map, shown at the height of its expansion."
+    "goalNoCount": "Find out which historical power is on the map, shown at the height of its expansion.",
+    "areaLine": "Area: the answer was bigger at its peak (▼ smaller, ≈ about the same).",
+    "eraLine": "Era: the answer is more recent (▼ older, ≈ same era).",
+    "distanceLine": "Distance: the direction and kilometres to the answer, or how much the two territories share.",
+    "outline": "Click a guess's name to see its outline over the map."
   },
   "Stats": {
     "title": "Statistics",
@@ -355,7 +403,7 @@
     "hints": "Clues",
     "hintsOn": "On",
     "hintsOff": "Off",
-    "hintsInfo": "Off: wrong guesses only say bigger or smaller and longer or shorter. All clues show up at the end.",
+    "hintsInfo": "Off: each miss only shows area, era and distance. The fact sheet and the curiosities show up at the end.",
     "map": "Map",
     "mapOptions": {
       "Progressive": "Step by step",

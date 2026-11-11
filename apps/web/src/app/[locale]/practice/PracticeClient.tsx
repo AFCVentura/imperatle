@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "@/i18n/navigation";
 import {
   DailyNotFinishedError,
+  getPracticeGuessShape,
   getPracticeMap,
   getPracticePool,
   getPracticeSession,
@@ -171,6 +172,8 @@ export function PracticeClient({ empires, openSetup }: { empires: EmpireSummary[
     attemptsAllowed: roundOptions.attempts,
     hasMap: round.hasMap,
     loadShape: () => getPracticeMap(round.id),
+    loadGuessShape: (empireId) => getPracticeGuessShape(round.id, empireId),
+    mapBorderConfidence: round.mapBorderConfidence,
     submit: (empireId) => submitPracticeGuess(round.id, empireId),
     save: (progress) => savePracticeRound({ id: round.id, progress }),
     hints: roundOptions.hints,

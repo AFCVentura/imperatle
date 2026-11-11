@@ -24,7 +24,8 @@ public record PracticeSessionResponse(
     bool Completed,
     bool Correct,
     ChallengeReveal? Reveal,
-    EmpireAnswer? Answer);
+    EmpireAnswer? Answer,
+    BorderConfidence? MapBorderConfidence = null);
 
 // How many empires the options leave, so the setup screen can say so before
 // starting (and refuse an empty combination).

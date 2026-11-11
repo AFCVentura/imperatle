@@ -4,11 +4,15 @@ import type { MultiPolygon } from "geojson";
 import { geoCentroid, geoContains, geoGraticule10, geoOrthographic, geoPath } from "d3-geo";
 import { interpolate } from "d3-interpolate";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { loadWorld, readMapColors, visiblePieces, worldPieces, type CountryFeature, type MapStage, type World } from "./geo";
+import { GUESS_FILL_ALPHA, loadWorld, readMapColors, visiblePieces, worldPieces, type CountryFeature, type MapStage, type World } from "./geo";
 
 type Props = {
   world: World;
   empire: MultiPolygon;
+  // What the view centres on and frames (default: the empire).
+  frame?: MultiPolygon;
+  // A guessed empire's territory over the answer (see FlatMap).
+  guess?: MultiPolygon | null;
   stage: MapStage;
   width: number;
   height: number;
@@ -24,7 +28,7 @@ const graticule = geoGraticule10();
 
 // Globe you can spin: drag rotates, wheel/pinch zooms, a click names the
 // country under it. Drawn on canvas, since every rotation redraws the world.
-export function GlobeMap({ world, empire, stage, width, height, focusSignal, zoomSignal, selected, onCountry }: Props) {
+export function GlobeMap({ world, empire, frame, guess = null, stage, width, height, focusSignal, zoomSignal, selected, onCountry }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const viewRef = useRef<View>({ rotate: [0, 0], scale: 1 });
   const drawRef = useRef<() => void>(() => {});
@@ -61,15 +65,16 @@ export function GlobeMap({ world, empire, stage, width, height, focusSignal, zoo
   };
 
   const baseScale = (Math.min(width, height) / 2) * 0.92;
+  const anchor = frame ?? empire;
 
   // The empire framed in the middle of the visible hemisphere.
   const focus = useMemo<View>(() => {
-    const [lon, lat] = geoCentroid(empire);
+    const [lon, lat] = geoCentroid(anchor);
     const p = geoOrthographic()
       .rotate([-lon, -lat])
-      .fitExtent([[width * 0.1, height * 0.1], [width * 0.9, height * 0.9]], empire);
+      .fitExtent([[width * 0.1, height * 0.1], [width * 0.9, height * 0.9]], anchor);
     return { rotate: [-lon, -lat], scale: Math.max(baseScale, p.scale()) };
-  }, [empire, width, height, baseScale]);
+  }, [anchor, width, height, baseScale]);
 
   // Redraw function, rebuilt whenever what's drawn changes.
   useEffect(() => {
@@ -121,25 +126,33 @@ export function GlobeMap({ world, empire, stage, width, height, focusSignal, zoo
       ctx.fillStyle = colors.empire; ctx.fill();
       ctx.globalAlpha = 1;
       ctx.lineJoin = "round"; stroke(colors.empireLine, 1.2);
+      if (guess) {
+        ctx.beginPath(); path(guess);
+        ctx.globalAlpha = GUESS_FILL_ALPHA;
+        ctx.fillStyle = colors.guess; ctx.fill();
+        ctx.globalAlpha = 1;
+        ctx.beginPath(); path(guess);
+        ctx.setLineDash([4, 3]); stroke(colors.guessLine, 0.9); ctx.setLineDash([]);
+      }
       if (stageRef.current === 3 && selectedCountry) {
-        ctx.beginPath(); path(selectedCountry); stroke(getComputedStyle(canvas).color, 1.5);
+        ctx.beginPath(); path(selectedCountry); stroke(colors.selected, 2);
       }
     };
     drawRef.current();
-  }, [world, light, empire, width, height, stage, selected]);
+  }, [world, light, empire, guess, width, height, stage, selected]);
 
   // A new empire starts framed on it; a resize (fullscreen, rotating the
   // phone) keeps the view, with the zoom scaled to the new globe size.
   useEffect(() => {
     const shown = shownRef.current;
-    if (shown?.empire === empire && stageRef.current !== 1) {
+    if (shown?.empire === anchor && stageRef.current !== 1) {
       viewRef.current = { ...viewRef.current, scale: viewRef.current.scale * (baseScale / shown.baseScale) };
     } else {
       viewRef.current = { rotate: [...focus.rotate], scale: focus.scale };
     }
-    shownRef.current = { empire, baseScale };
+    shownRef.current = { empire: anchor, baseScale };
     drawRef.current();
-  }, [focus, empire, baseScale]);
+  }, [focus, anchor, baseScale]);
 
   // Animated fly back to the empire, only when the button is pressed (not when
   // a resize recomputes the focus).

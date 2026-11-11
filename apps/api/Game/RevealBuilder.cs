@@ -15,50 +15,72 @@ public static class RevealBuilder
         _ => BroadEra.Contemporary,
     };
 
-    // Cumulative reveal for the given wrong-guess count, per the hint-progression table.
+    // Cumulative reveal for the given wrong-guess count: one clue per wrong
+    // guess (GameRules.ClueOrder). The map's continents and countries come
+    // from the map stage (web: map/stage.ts), so here only the era and the
+    // curiosities. Capital, language, religion, dates and area wait for the
+    // answer's sheet at the end. The map's border confidence is known from
+    // the start (it's a caveat about the map, not a clue).
     public static ChallengeReveal BuildReveal(Empire empire, int attemptNumber)
     {
-        var hintCount = attemptNumber switch
-        {
-            >= 6 => 3,
-            >= 5 => 2,
-            >= 4 => 1,
-            _ => 0,
-        };
+        var hintCount = GameRules.CuriositiesAfter(attemptNumber);
 
         return new ChallengeReveal(
-            BroadEra: attemptNumber >= 1 ? ComputeBroadEra(empire.ReferenceYear) : null,
-            MapBorderConfidence: attemptNumber >= 1 ? empire.MapBorderConfidence : null,
-            Continents: attemptNumber >= 2 ? empire.Continents : null,
-            PrimaryContinents: attemptNumber >= 2 ? empire.PrimaryContinents : null,
-            CapitalEn: attemptNumber >= 3 ? empire.CapitalEn : null,
-            CapitalPt: attemptNumber >= 3 ? empire.CapitalPt : null,
-            LanguageEn: attemptNumber >= 4 ? empire.LanguageEn : null,
-            LanguagePt: attemptNumber >= 4 ? empire.LanguagePt : null,
+            BroadEra: attemptNumber >= GameRules.EraClueAt ? ComputeBroadEra(empire.ReferenceYear) : null,
+            MapBorderConfidence: empire.MapBorderConfidence,
+            Continents: null,
+            PrimaryContinents: null,
+            CapitalEn: null,
+            CapitalPt: null,
+            LanguageEn: null,
+            LanguagePt: null,
             Hints: hintCount > 0 ? empire.Hints.OrderBy(h => h.Order).Take(hintCount).Select(ToDto).ToList() : null,
-            ReferenceYear: attemptNumber >= 5 ? empire.ReferenceYear : null,
-            ReferenceYearPrecision: attemptNumber >= 5 ? empire.ReferenceYearPrecision : null,
-            StartYear: attemptNumber >= 6 ? empire.StartYear : null,
-            StartYearPrecision: attemptNumber >= 6 ? empire.StartYearPrecision : null,
-            EndYear: attemptNumber >= 6 ? empire.EndYear : null,
-            EndYearPrecision: attemptNumber >= 6 ? empire.EndYearPrecision : null,
-            Ongoing: attemptNumber >= 6 ? empire.EndYear is null : null,
-            DurationNotesEn: attemptNumber >= 6 ? empire.DurationNotesEn : null,
-            DurationNotesPt: attemptNumber >= 6 ? empire.DurationNotesPt : null,
-            PeakAreaKm2: attemptNumber >= 6 ? empire.PeakAreaKm2 : null,
-            AreaPrecision: attemptNumber >= 6 ? empire.AreaPrecision : null,
-            ReligionEn: attemptNumber >= 6 ? empire.ReligionEn : null,
-            ReligionPt: attemptNumber >= 6 ? empire.ReligionPt : null,
-            ReligionNotesEn: attemptNumber >= 6 ? empire.ReligionNotesEn : null,
-            ReligionNotesPt: attemptNumber >= 6 ? empire.ReligionNotesPt : null
+            ReferenceYear: null,
+            ReferenceYearPrecision: null,
+            StartYear: null,
+            StartYearPrecision: null,
+            EndYear: null,
+            EndYearPrecision: null,
+            Ongoing: null,
+            DurationNotesEn: null,
+            DurationNotesPt: null,
+            PeakAreaKm2: null,
+            AreaPrecision: null,
+            ReligionEn: null,
+            ReligionPt: null,
+            ReligionNotesEn: null,
+            ReligionNotesPt: null
         );
     }
 
-    // Per-guess directional feedback (shown immediately on the guess card,
-    // independent of the hint-stage table above).
-    public static GuessComparison BuildComparison(Empire guessedEmpire, Empire correctEmpire) => new(
-        Compare(guessedEmpire.PeakAreaKm2, correctEmpire.PeakAreaKm2, GameRules.AreaApproximateToleranceRatio),
-        Compare(DurationYears(guessedEmpire), DurationYears(correctEmpire), GameRules.DurationApproximateToleranceRatio));
+    // Per-guess feedback (shown right away on the guess, independent of the
+    // clue table above).
+    public static GuessComparison BuildComparison(Empire guessedEmpire, Empire correctEmpire)
+    {
+        var proximity = EmpireGeometry.Compare(guessedEmpire.Slug, guessedEmpire.MapShape, correctEmpire.Slug, correctEmpire.MapShape);
+        return new GuessComparison(
+            Compare(guessedEmpire.PeakAreaKm2, correctEmpire.PeakAreaKm2, GameRules.AreaApproximateToleranceRatio),
+            CompareEra(guessedEmpire, correctEmpire),
+            proximity?.Shared,
+            proximity?.DistanceKm,
+            proximity?.BearingDegrees);
+    }
+
+    // "Same era" when the two were contemporaries at their peaks (each one
+    // still existed in the other's peak year) or the peaks are close anyway;
+    // otherwise Bigger = the answer's peak came later (more recent).
+    public static ComparisonResult CompareEra(Empire guessed, Empire correct)
+    {
+        static bool Alive(Empire e, int year) => e.StartYear <= year && year <= (e.EndYear ?? int.MaxValue);
+
+        var contemporaries = Alive(guessed, correct.ReferenceYear) && Alive(correct, guessed.ReferenceYear);
+        if (contemporaries || Math.Abs(correct.ReferenceYear - guessed.ReferenceYear) <= GameRules.EraApproximateYears)
+        {
+            return ComparisonResult.Approximate;
+        }
+
+        return correct.ReferenceYear > guessed.ReferenceYear ? ComparisonResult.Bigger : ComparisonResult.Smaller;
+    }
 
     // An empire that still exists lasts until the current year.
     public static int DurationYears(Empire empire) => (empire.EndYear ?? DateTime.UtcNow.Year) - empire.StartYear;

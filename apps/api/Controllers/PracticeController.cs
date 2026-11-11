@@ -87,7 +87,8 @@ public class PracticeController(
         await db.SaveChangesAsync(ct);
 
         // Every candidate has a map (PoolAsync), so no need to load it.
-        return Ok(new PracticeSessionResponse(session.Id, OptionsOf(session), true, 0, false, false, null, null));
+        var confidence = await db.Empires.Where(e => e.Id == session.EmpireId).Select(e => e.MapBorderConfidence).FirstAsync(ct);
+        return Ok(new PracticeSessionResponse(session.Id, OptionsOf(session), true, 0, false, false, null, null, confidence));
     }
 
     [HttpGet("{id:guid}")]
@@ -112,7 +113,32 @@ public class PracticeController(
             session.Completed,
             session.Correct,
             session.Completed ? null : PracticeRules.RevealFor(session, session.Empire, session.AttemptsUsed),
-            session.Completed ? RevealBuilder.BuildAnswer(session.Empire) : null));
+            session.Completed ? RevealBuilder.BuildAnswer(session.Empire) : null,
+            session.Empire.MapBorderConfidence));
+    }
+
+    // A guessed empire's shape, outlined over the round's map: only one this
+    // player already guessed in this round (see ChallengesController.GetGuessMap).
+    [HttpGet("{id:guid}/guesses/{empireId:int}/map")]
+    public async Task<IActionResult> GetGuessMap(Guid id, int empireId, CancellationToken ct)
+    {
+        if (await RefuseAsync(ct) is { } refused)
+        {
+            return refused;
+        }
+
+        var empire = await db.Empires
+            .AsNoTracking()
+            .Where(e => e.Id == empireId)
+            .Select(e => new { e.Slug, e.MapShape })
+            .FirstOrDefaultAsync(ct);
+        if (empire?.MapShape is null || !await MySessions().AnyAsync(s => s.Id == id && s.GuessedSlugs.Contains(empire.Slug), ct))
+        {
+            return NotFound();
+        }
+
+        Response.Headers.CacheControl = "private, max-age=86400";
+        return Content(empire.MapShape, "application/json");
     }
 
     // The round's shape: coordinates only, like the daily map. Only to the
@@ -168,6 +194,7 @@ public class PracticeController(
             }
 
             session.AttemptsUsed++;
+            session.GuessedSlugs = [.. session.GuessedSlugs, guessedEmpire.Slug];
             var attemptNumber = session.AttemptsUsed;
 
             var correct = request.EmpireId == session.EmpireId;

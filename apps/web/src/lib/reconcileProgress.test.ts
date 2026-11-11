@@ -52,19 +52,28 @@ describe("reconcileProgress", () => {
     nameEn: `Empire ${empireId}`,
     namePt: `Império ${empireId}`,
     correct,
-    comparison: correct ? null : { area: 2, duration: 0 },
+    comparison: correct ? null : { area: 2, era: 0, shared: 0, distanceKm: 1200, bearingDegrees: 90 },
   });
 
   it("rebuilds with the real guesses when the server stored them", () => {
     const rebuilt = reconcileProgress("2026-11-01", null, server({ attemptsUsed: 2, guesses: [played(4, false), played(5, false)] }), "?");
     expect(rebuilt?.guesses.map((g) => g.empireId)).toEqual([4, 5]);
-    expect(rebuilt?.guesses[0]).toMatchObject({ nameEn: "Empire 4", areaComparison: "Bigger", durationComparison: "Smaller" });
+    expect(rebuilt?.guesses[0]).toMatchObject({ nameEn: "Empire 4", areaComparison: "Bigger", eraComparison: "Smaller" });
+    expect(rebuilt?.guesses[0].proximity).toEqual({ shared: 0, distanceKm: 1200, bearingDegrees: 90 });
   });
 
   it("replaces placeholder rows once the server has the guesses", () => {
     const placeholders: GameProgress = { ...local, guesses: local.guesses.map((g) => ({ ...g, empireId: 0 })) };
     const fixed = reconcileProgress("2026-11-01", placeholders, server({ attemptsUsed: 2, guesses: [played(4, false), played(5, false)] }), "?");
     expect(fixed?.guesses.map((g) => g.empireId)).toEqual([4, 5]);
+  });
+
+  // Saved before 1.5 (duration instead of era, no distance): rebuilt from
+  // the server so the new cells aren't empty.
+  it("refreshes guesses saved before they had an era", () => {
+    const old: GameProgress = { ...local, guesses: local.guesses.map((g) => ({ ...g, eraComparison: undefined })) };
+    const fixed = reconcileProgress("2026-11-01", old, server({ attemptsUsed: 2, guesses: [played(4, false), played(5, false)] }), "?");
+    expect(fixed?.guesses[0].eraComparison).toBe("Smaller");
   });
 
   it("falls back to placeholders when the stored guesses don't cover every attempt", () => {

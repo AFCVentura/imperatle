@@ -25,7 +25,35 @@ public class ChallengesController(ImperatleDbContext db, IWebHostEnvironment env
         var empire = await db.Empires.FindAsync(scheduled.EmpireId);
 
         var challengeNumber = await ChallengeScheduler.NumberForAsync(db, today);
-        return Ok(new TodayChallengeResponse(today, GameRules.AttemptsAllowed, challengeNumber, empire?.MapShape is not null));
+        return Ok(new TodayChallengeResponse(today, GameRules.AttemptsAllowed, challengeNumber, empire?.MapShape is not null, empire?.MapBorderConfidence));
+    }
+
+    // A guessed empire's shape, outlined over the answer. Only for an empire
+    // this player has already guessed on that day (daily game or archive):
+    // serving any empire's shape would let a script match the day's map
+    // against all of them.
+    [HttpGet("{date}/guesses/{empireId:int}/map")]
+    public async Task<IActionResult> GetGuessMap(DateOnly date, int empireId, [FromServices] ICurrentPlayer player, CancellationToken ct)
+    {
+        var empire = await db.Empires
+            .AsNoTracking()
+            .Where(e => e.Id == empireId)
+            .Select(e => new { e.Slug, e.MapShape })
+            .FirstOrDefaultAsync(ct);
+        if (empire?.MapShape is null)
+        {
+            return NotFound();
+        }
+
+        var guessed = await AccountService.ProgressOf(db, player)
+            .AnyAsync(p => p.Date == date && p.GuessedSlugs.Contains(empire.Slug), ct);
+        if (!guessed)
+        {
+            return NotFound();
+        }
+
+        Response.Headers.CacheControl = env.IsDevelopment() ? "no-store" : "private, max-age=86400";
+        return Content(empire.MapShape, "application/json");
     }
 
     // The empire's shape for a day's challenge: bare coordinates, no name. By

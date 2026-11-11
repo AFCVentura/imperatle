@@ -6,7 +6,7 @@ import { select } from "d3-selection";
 import "d3-transition";
 import { zoom, zoomIdentity, type ZoomBehavior, type ZoomTransform } from "d3-zoom";
 import { useEffect, useMemo, useRef } from "react";
-import { readMapColors, type CountryFeature, type MapStage, type World } from "./geo";
+import { GUESS_FILL_ALPHA, readMapColors, type CountryFeature, type MapStage, type World } from "./geo";
 
 // A ring of [longitude, latitude] points drawn by hand in the empire
 // generator, to add to the empire or cut out of it.
@@ -23,6 +23,9 @@ type Props = {
   // the wheel still zooms), and the areas already drawn, outlined.
   draw?: { mode: DrawMode; onDone: (ring: [number, number][]) => void } | null;
   overlays?: DrawnRing[];
+  // A guessed empire's territory, over the answer for comparison: a light
+  // tint (where the two overlap the colors mix) and a dashed outline.
+  guess?: MultiPolygon | null;
   stage: MapStage;
   width: number;
   height: number;
@@ -83,7 +86,7 @@ const roundDeg = (n: number) => Math.round(n * 1000) / 1000;
 //
 // Drawn on canvas: every shape is projected once into a Path2D, and each frame
 // only repaints them at the current zoom, so panning stays smooth and sharp.
-export function FlatMap({ world, empire, frame, draw = null, overlays, stage, width, height, focusSignal, zoomSignal, selected, onCountry }: Props) {
+export function FlatMap({ world, empire, frame, draw = null, overlays, guess = null, stage, width, height, focusSignal, zoomSignal, selected, onCountry }: Props) {
   const anchor = frame ?? empire;
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const zoomRef = useRef<ZoomBehavior<HTMLCanvasElement, unknown> | null>(null);
@@ -131,6 +134,7 @@ export function FlatMap({ world, empire, frame, draw = null, overlays, stage, wi
   }, [world, anchor, width, height]);
 
   const empireShape = useMemo(() => new Path2D(geo.path(empire) ?? ""), [geo, empire]);
+  const guessShape = useMemo(() => (guess ? new Path2D(geo.path(guess) ?? "") : null), [geo, guess]);
 
   // Drawn rings joined point to point on the map (straight lines, as traced),
   // not as spherical polygons, which a ring's winding could turn inside out.
@@ -162,7 +166,6 @@ export function FlatMap({ world, empire, frame, draw = null, overlays, stage, wi
     canvas.height = height * dpr;
     const ctx = canvas.getContext("2d")!;
     const colors = readMapColors(canvas);
-    const ink = getComputedStyle(canvas).color;
 
     drawRef.current = () => {
       const t = transformRef.current;
@@ -193,7 +196,16 @@ export function FlatMap({ world, empire, frame, draw = null, overlays, stage, wi
       fill(empireShape, colors.empire);
       ctx.globalAlpha = 1;
       stroke(empireShape, colors.empireLine, 1.2);
-      if (stage === 3 && selectedShape) stroke(selectedShape, ink, 1.5);
+      if (guessShape) {
+        ctx.globalAlpha = GUESS_FILL_ALPHA;
+        fill(guessShape, colors.guess);
+        ctx.globalAlpha = 1;
+        // Thinner than the answer's line, so the guess never outweighs it.
+        ctx.setLineDash([4 / t.k, 3 / t.k]);
+        stroke(guessShape, colors.guessLine, 0.9);
+        ctx.setLineDash([]);
+      }
+      if (stage === 3 && selectedShape) stroke(selectedShape, colors.selected, 2);
 
       ctx.setLineDash([6 / t.k, 4 / t.k]);
       for (const o of overlayShapes) stroke(o.path, DRAW_COLORS[o.mode], 1.5);
@@ -210,7 +222,7 @@ export function FlatMap({ world, empire, frame, draw = null, overlays, stage, wi
       }
     };
     schedule();
-  }, [geo, empireShape, overlayShapes, stage, selectedShape, width, height]);
+  }, [geo, empireShape, guessShape, overlayShapes, stage, selectedShape, width, height]);
 
   // Zoom behaviour, rebuilt with the geometry (new size or empire). After a
   // resize it puts back what the player was looking at.

@@ -9,7 +9,7 @@ const ARROW: Record<ComparisonResult, string> = {
 };
 
 // Spoiler-free result for social media: one line per guess (✅/❌ plus the
-// area 🗺️ and duration ⏳ arrows), and the link back to the game -- that
+// area 🗺️ and era ⏳ arrows), and the link back to the game -- that
 // link is the whole point, it's how the game spreads. `title` replaces the
 // daily "Imperatle #N": a past game is shared under its own, translated
 // title, so it can't pass for that day's daily result.
@@ -24,8 +24,8 @@ export function buildShareText(
   const lines = guesses.map((g) => {
     if (g.correct) return "✅";
     const area = g.areaComparison ? ` 🗺️${ARROW[g.areaComparison]}` : "";
-    const duration = g.durationComparison ? ` ⏳${ARROW[g.durationComparison]}` : "";
-    return `❌${area}${duration}`;
+    const era = g.eraComparison ? ` ⏳${ARROW[g.eraComparison]}` : "";
+    return `❌${area}${era}`;
   });
   return [`${title} 🏛️ ${score}`, "", ...lines, "", SITE_URL].join("\n");
 }

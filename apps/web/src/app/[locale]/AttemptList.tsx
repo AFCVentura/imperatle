@@ -1,21 +1,27 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { useTooltip } from "@/lib/useTooltip";
-import type { GuessHistoryEntry } from "@/lib/gameStorage";
+import type { ReactNode } from "react";
+import type { GuessHistoryEntry, GuessProximity } from "@/lib/gameStorage";
 import { pickLocalized } from "@/lib/pickLocalized";
 import type { ComparisonResult } from "@/lib/types";
-import { HintRow } from "./HintRow";
+import { useTooltip } from "@/lib/useTooltip";
+import { clueFor, type RevealedClues } from "@/lib/clues";
+import { activateOnKey, ClueRow, useClueName } from "./Clues";
+import { GuessSwatch } from "./MapChips";
 import { MarqueeText } from "./MarqueeText";
-import { hintRowNames, type HintRowData } from "./useHintRows";
 
 interface AttemptListProps {
   guesses: GuessHistoryEntry[];
   attemptsAllowed: number;
-  hintRows: HintRowData[];
+  revealed: RevealedClues;
   gameOver: boolean;
   // Practice option: wrong guesses unlock no clues.
   hintsOff?: boolean;
+  // The guess drawn over the map (index into guesses), or null; clicking a
+  // wrong guess's name picks it (or hides it, if it's the one drawn).
+  outlined?: number | null;
+  onOutline?: (index: number) => void;
 }
 
 const COMPARISON_ARROW: Record<ComparisonResult, string> = {
@@ -24,81 +30,49 @@ const COMPARISON_ARROW: Record<ComparisonResult, string> = {
   Approximate: "≈",
 };
 
-// One entry per attempt, newest on top, each a pill holding the guess and
-// the clues about the map's empire that this wrong guess unlocked. Unused slots come last, each saying which
-// clues it would unlock, so the whole board is still visible upfront.
-export function AttemptList({ guesses, attemptsAllowed, hintRows, gameOver, hintsOff = false }: AttemptListProps) {
+// One entry per attempt, newest on top. A wrong guess is a pill: its name
+// (click: outline it on the map), how the answer compares with it (area,
+// era, distance), and the one clue it unlocked. Unused slots come last, each
+// saying which clue it would unlock, so the whole board is visible upfront.
+export function AttemptList({ guesses, attemptsAllowed, revealed, gameOver, hintsOff = false, outlined = null, onOutline }: AttemptListProps) {
   const t = useTranslations("Game");
-  const locale = useLocale();
+  const clueName = useClueName();
 
-  // The last attempt unlocks no new clues (there are fewer clue rows than
-  // attempts), so its slot just says it's the last one. A practice round can
-  // have more attempts than clue rows, or clues turned off.
+  // Wrong guess n unlocks clue n; a correct guess unlocks nothing.
+  const wrongNumberOf = guesses.map((_, i) => guesses.slice(0, i + 1).filter((g) => !g.correct).length);
+  const wrongSoFar = guesses.filter((g) => !g.correct).length;
+
   const emptySlots = gameOver
     ? []
     : Array.from({ length: Math.max(0, attemptsAllowed - guesses.length) }, (_, i) => {
         const number = guesses.length + i + 1;
-        return { number, row: hintRows[number - 1] ?? null };
+        return { number, clue: hintsOff ? null : clueFor(wrongSoFar + i + 1) };
       });
 
   return (
     <div className="flex w-full select-none flex-col gap-2">
       {guesses
-        .map((guess, i) => ({ guess, number: i + 1 }))
+        .map((guess, i) => ({ guess, index: i }))
         .reverse()
-        .map(({ guess, number }) => {
-          const hintRow = guess.correct ? null : hintRows[number - 1];
-          return (
-            // One pill per attempt: the guess on top, and -- below a divider,
-            // since they're about the map's empire, not the guessed one --
-            // the clues this wrong guess unlocked.
-            <div
-              key={number}
-              className={`border text-xs ${hintRow ? "rounded-2xl" : "rounded-full"} ${
-                guess.correct ? "border-success/50 bg-success/15" : "border-line bg-surface"
-              }`}
-            >
-              <div className="flex h-8 items-stretch">
-                <span className="flex w-7 shrink-0 items-center justify-center text-muted/70">{number}</span>
-                {!guess.correct && (
-                  <span
-                    role="img"
-                    aria-label={t("wrongGuessMark")}
-                    className="flex shrink-0 items-center pr-1.5 text-sm font-bold text-danger"
-                  >
-                    ✕
-                  </span>
-                )}
-                <span className="min-w-0 flex-1 self-center px-1">
-                  <MarqueeText className="font-medium text-muted">{pickLocalized(guess.nameEn, guess.namePt, locale)}</MarqueeText>
-                </span>
-                {guess.correct && (
-                  <span className="shrink-0 self-center px-3 font-semibold text-success">
-                    {t("correctGuessMark")}
-                  </span>
-                )}
-                {!guess.correct && guess.areaComparison && guess.durationComparison && (
-                  <>
-                    <span className="w-px shrink-0 bg-line" />
-                    <ComparisonBadge kind="area" result={guess.areaComparison} />
-                    <span className="w-px shrink-0 bg-line" />
-                    <ComparisonBadge kind="duration" result={guess.durationComparison} />
-                  </>
-                )}
-              </div>
-
-              {hintRow && (
-                <div className="border-t border-line">
-                  <HintRow row={hintRow} />
-                </div>
-              )}
-            </div>
+        .map(({ guess, index }) => {
+          const clue = guess.correct || hintsOff ? null : clueFor(wrongNumberOf[index]);
+          return guess.correct ? (
+            <CorrectGuess key={index} guess={guess} number={index + 1} />
+          ) : (
+            <WrongGuess
+              key={index}
+              guess={guess}
+              number={index + 1}
+              outlined={outlined === index}
+              onOutline={onOutline ? () => onOutline(index) : undefined}
+              clue={clue ? <ClueRow clue={clue} revealed={revealed} /> : null}
+            />
           );
         })}
 
       {emptySlots.length > 0 && (
         <div className="flex flex-col gap-1">
-          {emptySlots.map(({ number, row }) => (
+          {emptySlots.map(({ number, clue }) => (
             <div
               key={number}
               className="flex h-7 items-center overflow-hidden rounded-full border border-dashed border-line text-xs"
@@ -106,8 +80,8 @@ export function AttemptList({ guesses, attemptsAllowed, hintRows, gameOver, hint
               <span className="flex w-7 shrink-0 items-center justify-center text-muted/60">{number}</span>
               <span className="min-w-0 flex-1 px-1">
                 <MarqueeText className="text-muted/70">
-                  {row
-                    ? t("unlocksLabel", { fields: hintRowNames(row, locale) })
+                  {clue
+                    ? t("unlocksLabel", { fields: clueName(clue) })
                     : number === attemptsAllowed
                       ? t("lastAttempt")
                       : hintsOff
@@ -123,34 +97,190 @@ export function AttemptList({ guesses, attemptsAllowed, hintRows, gameOver, hint
   );
 }
 
-// "▲ Area" / "▼ Duration" block of a wrong guess, with a tooltip saying what
-// the arrow means for this guess (hover after a short delay, or click/tap).
-function ComparisonBadge({ kind, result }: { kind: "area" | "duration"; result: ComparisonResult }) {
+function CorrectGuess({ guess, number }: { guess: GuessHistoryEntry; number: number }) {
   const t = useTranslations("Game");
+  const locale = useLocale();
+  return (
+    <div className="flex h-8 items-stretch rounded-full border border-success/50 bg-success/15 text-xs">
+      <span className="flex w-7 shrink-0 items-center justify-center text-muted/70">{number}</span>
+      <span className="min-w-0 flex-1 self-center px-1">
+        <MarqueeText className="font-medium text-muted">{pickLocalized(guess.nameEn, guess.namePt, locale)}</MarqueeText>
+      </span>
+      <span className="shrink-0 self-center px-3 font-semibold text-success">{t("correctGuessMark")}</span>
+    </div>
+  );
+}
+
+function WrongGuess({
+  guess,
+  number,
+  outlined,
+  onOutline,
+  clue,
+}: {
+  guess: GuessHistoryEntry;
+  number: number;
+  outlined: boolean;
+  onOutline?: () => void;
+  clue: ReactNode;
+}) {
+  const t = useTranslations("Game");
+  const locale = useLocale();
+  // Explains the click, on hover only: on a phone a tap just does it.
+  const { anchorProps, hide, tooltip } = useTooltip(t(outlined ? "outline.hide" : "outline.show"));
+  const outlineProps = onOutline
+    ? {
+        ...anchorProps,
+        role: "button",
+        tabIndex: 0,
+        "aria-pressed": outlined,
+        "aria-label": `${pickLocalized(guess.nameEn, guess.namePt, locale)}: ${t(outlined ? "outline.hideLabel" : "outline.showLabel")}`,
+        onClick: () => {
+          hide();
+          onOutline();
+        },
+        onKeyDown: activateOnKey(onOutline),
+      }
+    : {};
+
+  return (
+    <div className={`rounded-2xl border bg-surface text-xs transition-colors ${outlined ? "border-highlight" : "border-line"}`}>
+      <div
+        {...outlineProps}
+        className={`flex h-8 items-stretch rounded-t-2xl outline-none focus-visible:bg-background/60 ${
+          onOutline ? "cursor-pointer hover:bg-background/50" : ""
+        }`}
+      >
+        <span className="flex w-7 shrink-0 items-center justify-center text-muted/70">{number}</span>
+        <span role="img" aria-label={t("wrongGuessMark")} className="flex shrink-0 items-center pr-1.5 text-sm font-bold text-danger">
+          ✕
+        </span>
+        <span className="min-w-0 flex-1 self-center px-1">
+          <MarqueeText className="font-medium text-muted">
+            {outlined && <GuessSwatch className="mr-1.5 inline-block align-[-1px]" />}
+            {pickLocalized(guess.nameEn, guess.namePt, locale)}
+          </MarqueeText>
+        </span>
+        {tooltip}
+      </div>
+      <div className="flex h-7 items-stretch border-t border-line">
+        <ComparisonBadge kind="area" result={guess.areaComparison ?? null} />
+        <span className="w-px shrink-0 bg-line" />
+        <ComparisonBadge kind="era" result={guess.eraComparison ?? null} />
+        <span className="w-px shrink-0 bg-line" />
+        <ProximityBadge proximity={guess.proximity ?? null} />
+      </div>
+      {clue && <div className="border-t border-line">{clue}</div>}
+    </div>
+  );
+}
+
+// Shared look of the three comparison cells: the whole cell opens its
+// explanation (hover, click or tap).
+function Badge({ title, info, children }: { title: string; info: ReactNode; children: ReactNode }) {
   const { anchorProps, toggle, tooltip } = useTooltip(
     <>
-      <span className="mb-0.5 block font-display font-semibold">{t(`guessColumns.${kind}`)}</span>
-      {t(`comparisonInfo.${kind}.${result}`)}
+      <span className="mb-0.5 block font-display font-semibold">{title}</span>
+      {info}
     </>,
   );
-
   return (
     <span
       {...anchorProps}
       role="button"
       tabIndex={0}
       onPointerUp={toggle}
-      onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          toggle();
-        }
-      }}
-      className="flex w-[5.5rem] shrink-0 cursor-default items-center justify-center gap-1 px-1 font-medium text-foreground"
+      onKeyDown={activateOnKey(toggle)}
+      className="flex min-w-0 flex-1 cursor-default items-center justify-center gap-1 px-1 font-medium text-foreground outline-none focus-visible:bg-background/60"
     >
-      <span aria-hidden>{COMPARISON_ARROW[result]}</span>
-      {t(`guessColumns.${kind}`)}
+      {children}
       {tooltip}
     </span>
+  );
+}
+
+// "▲ Area" / "≈ Era". Null for guesses saved before the era existed.
+function ComparisonBadge({ kind, result }: { kind: "area" | "era"; result: ComparisonResult | null }) {
+  const t = useTranslations("Game");
+  return (
+    <Badge title={t(`guessColumns.${kind}`)} info={result ? t(`comparisonInfo.${kind}.${result}`) : t("comparisonInfo.distance.noMap")}>
+      <span aria-hidden>{result ? COMPARISON_ARROW[result] : "–"}</span>
+      {t(`guessColumns.${kind}`)}
+    </Badge>
+  );
+}
+
+// Below this share of the two territories together, the direction still
+// helps; from it on, the two mostly overlap and an arrow would mislead.
+export const SHARES_A_LOT = 0.2;
+// Borders closer than this read as "neighbours".
+export const NEIGHBOURS_KM = 50;
+
+const DIRECTIONS = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"] as const;
+
+// Where the answer is from the guess, in one cell:
+// - apart: arrow + distance between the borders (or "neighbours");
+// - sharing a little: arrow + how much they share;
+// - sharing a lot: only how much they share.
+export function proximityDisplay(p: GuessProximity) {
+  const showArrow = p.shared < SHARES_A_LOT;
+  const kind = p.shared > 0 ? "shared" : (p.distanceKm ?? 0) < NEIGHBOURS_KM ? "neighbours" : "distance";
+  const percent = p.shared * 100;
+  return {
+    showArrow,
+    kind,
+    percent: percent < 1 ? "<1%" : `${Math.round(percent)}%`,
+    // Rounded to tens: the borders are sampled, so the last digit means nothing.
+    km: Math.round((p.distanceKm ?? 0) / 10) * 10,
+    direction: DIRECTIONS[Math.round(p.bearingDegrees / 45) % 8],
+  } as const;
+}
+
+function ProximityBadge({ proximity }: { proximity: GuessProximity | null }) {
+  const t = useTranslations("Game");
+  const locale = useLocale();
+  const title = t("guessColumns.distance");
+
+  if (!proximity) {
+    return (
+      <Badge title={title} info={t("comparisonInfo.distance.noMap")}>
+        <span aria-hidden>–</span>
+        {title}
+      </Badge>
+    );
+  }
+
+  const d = proximityDisplay(proximity);
+  const text =
+    d.kind === "shared"
+      ? t("proximity.shared", { percent: d.percent })
+      : d.kind === "neighbours"
+        ? t("proximity.neighbours")
+        : `${d.km.toLocaleString(locale)} km`;
+
+  return (
+    <Badge
+      title={title}
+      info={
+        <>
+          {t("comparisonInfo.distance.info")}
+          {d.showArrow && <span className="mt-1 block">{t("comparisonInfo.distance.here", { direction: t(`directions.${d.direction}`) })}</span>}
+        </>
+      }
+    >
+      {d.showArrow ? (
+        // Points the exact way, not just the nearest of the 8 directions.
+        <svg viewBox="0 0 16 16" className="size-3.5 shrink-0" style={{ transform: `rotate(${proximity.bearingDegrees}deg)` }} aria-hidden>
+          <path d="M8 1.5 13 9H9.6v5.5H6.4V9H3z" fill="currentColor" />
+        </svg>
+      ) : (
+        // Two overlapping squares: the shared territory.
+        <svg viewBox="0 0 16 16" className="size-3.5 shrink-0" fill="none" stroke="currentColor" strokeWidth={1.4} aria-hidden>
+          <rect x="1.5" y="1.5" width="8.5" height="8.5" rx="1" />
+          <rect x="6" y="6" width="8.5" height="8.5" rx="1" strokeDasharray="2 1.5" />
+        </svg>
+      )}
+      <span className="truncate whitespace-nowrap">{text}</span>
+    </Badge>
   );
 }

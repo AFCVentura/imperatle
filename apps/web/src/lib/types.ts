@@ -40,6 +40,9 @@ export interface TodayChallenge {
   // Whether getMapShape(date) has a shape to draw; false while the empire has
   // no map yet.
   hasMap: boolean;
+  // How exact the map's borders are (BORDER_CONFIDENCES index), shown on the
+  // map from the start.
+  mapBorderConfidence?: number | null;
 }
 
 export interface EmpireSummary {
@@ -160,9 +163,16 @@ export interface EmpireAnswer {
   summaryPt?: string;
 }
 
+// How the answer compares with a wrong guess (COMPARISON_RESULTS indexes):
+// area at the peak, and era (Bigger = the answer is more recent). Shared
+// (0-1), distanceKm and bearingDegrees say where the answer is from the
+// guess; null when either has no map.
 export interface GuessComparison {
   area: number;
-  duration: number;
+  era: number;
+  shared?: number | null;
+  distanceKm?: number | null;
+  bearingDegrees?: number | null;
 }
 
 export interface GuessResponse {
@@ -229,6 +239,7 @@ export interface ArchiveChallenge {
   reveal: ChallengeReveal | null;
   answer: EmpireAnswer | null;
   guesses: PlayedGuess[];
+  mapBorderConfidence?: number | null;
 }
 
 // A guess already made in a round, as the server stored it (so another
@@ -293,4 +304,5 @@ export interface PracticeSession {
   correct: boolean;
   reveal: ChallengeReveal | null;
   answer: EmpireAnswer | null;
+  mapBorderConfidence?: number | null;
 }

@@ -354,6 +354,10 @@ namespace Imperatle.Api.Migrations
                         .IsRequired()
                         .HasColumnType("integer[]");
 
+                    b.PrimitiveCollection<List<string>>("GuessedSlugs")
+                        .IsRequired()
+                        .HasColumnType("text[]");
+
                     b.Property<bool>("HintsEnabled")
                         .HasColumnType("boolean");
 

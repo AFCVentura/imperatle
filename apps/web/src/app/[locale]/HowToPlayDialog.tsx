@@ -20,21 +20,24 @@ export function HowToPlayDialog({ attemptsAllowed }: { attemptsAllowed: number |
             <span className="inline-block w-5 font-semibold text-danger">✕</span>
             {t("wrong")}
           </li>
-          <li>
-            <span className="inline-block w-5 font-semibold">▲</span>
-            {t("bigger")}
+          <li className="flex">
+            <span className="w-5 shrink-0 font-semibold">▲</span>
+            {t("areaLine")}
           </li>
-          <li>
-            <span className="inline-block w-5 font-semibold">▼</span>
-            {t("smaller")}
+          <li className="flex">
+            <span className="w-5 shrink-0 font-semibold">▲</span>
+            {t("eraLine")}
           </li>
-          <li>
-            <span className="inline-block w-5 font-semibold">≈</span>
-            {t("approximate")}
+          <li className="flex">
+            <svg viewBox="0 0 16 16" className="mr-2 mt-px size-3 shrink-0 rotate-45" aria-hidden>
+              <path d="M8 1.5 13 9H9.6v5.5H6.4V9H3z" fill="currentColor" />
+            </svg>
+            {t("distanceLine")}
           </li>
         </ul>
       </div>
 
+      <p>{t("outline")}</p>
       <p>{t("hints")}</p>
       <p>{t("inspect")}</p>
       <p className="font-display text-muted">{t("daily")}</p>

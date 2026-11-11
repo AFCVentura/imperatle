@@ -1,4 +1,11 @@
-import type { ChallengeReveal, ComparisonResult, EmpireAnswer } from "./types";
+import { comparisonFromApi, type ChallengeReveal, type ComparisonResult, type EmpireAnswer, type GuessComparison } from "./types";
+
+// Where the answer is from a wrong guess (see GuessComparison).
+export interface GuessProximity {
+  shared: number;
+  distanceKm: number | null;
+  bearingDegrees: number;
+}
 
 export interface GuessHistoryEntry {
   empireId: number;
@@ -7,7 +14,22 @@ export interface GuessHistoryEntry {
   correct: boolean;
   // Null for a correct guess (no comparison shown -- it's an exact match).
   areaComparison: ComparisonResult | null;
-  durationComparison: ComparisonResult | null;
+  // Missing from rounds saved before 1.5 (they compared the duration).
+  eraComparison?: ComparisonResult | null;
+  // Null when either empire has no map; missing from rounds saved before 1.5.
+  proximity?: GuessProximity | null;
+}
+
+// The comparison fields of a guess entry, from what the API sent.
+export function comparisonFields(comparison: GuessComparison | null | undefined) {
+  return {
+    areaComparison: comparison ? comparisonFromApi(comparison.area) : null,
+    eraComparison: comparison ? comparisonFromApi(comparison.era) : null,
+    proximity:
+      comparison && comparison.shared != null && comparison.bearingDegrees != null
+        ? { shared: comparison.shared, distanceKm: comparison.distanceKm ?? null, bearingDegrees: comparison.bearingDegrees }
+        : null,
+  };
 }
 
 export interface GameProgress {

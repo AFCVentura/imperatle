@@ -4,12 +4,40 @@ import { useTranslations } from "next-intl";
 import NextLink from "next/link";
 import { useEffect, useState } from "react";
 import { Link } from "@/i18n/navigation";
-import { devForceToday, devNextWithGuesses, resetTodayChallenge } from "@/lib/api";
-import { clearAllGameProgress, saveGameProgress } from "@/lib/gameStorage";
-import { comparisonFromApi } from "@/lib/types";
+import { devForceToday, devNextWithGuesses, getEmpires, resetTodayChallenge } from "@/lib/api";
+import { clearAllGameProgress, comparisonFields, saveGameProgress } from "@/lib/gameStorage";
+import type { EmpireSummary } from "@/lib/types";
 import { openAbout, openAccount, openFeedback, openHowToPlay, openStats, openSupport } from "@/lib/dialogs";
 import { useMe } from "@/lib/me";
 import { LocaleSwitcher } from "./LocaleSwitcher";
+
+// Dev only: pins today's answer to any empire (fresh round, no guesses), to
+// try the comparisons with unusual answers (spread-out or tiny empires).
+function DevAnswerPicker({ disabled, className, onPick }: { disabled: boolean; className: string; onPick: (id: string) => void }) {
+  const [empires, setEmpires] = useState<EmpireSummary[] | null>(null);
+  return (
+    <select
+      aria-label="Debug: pick today's answer"
+      title="Debug: pick today's answer"
+      disabled={disabled}
+      value=""
+      onFocus={() => {
+        if (!empires) getEmpires().then(setEmpires, () => setEmpires([]));
+      }}
+      onChange={(e) => e.target.value && onPick(e.target.value)}
+      className={`${className} max-w-28 bg-transparent`}
+    >
+      <option value="">DEV resposta…</option>
+      {[...(empires ?? [])]
+        .sort((a, b) => a.namePt.localeCompare(b.namePt, "pt"))
+        .map((e) => (
+          <option key={e.id} value={String(e.id)} className="text-foreground">
+            {e.namePt}
+          </option>
+        ))}
+    </select>
+  );
+}
 
 // Supporter perks: pages rather than dialogs. Practice opens on its options
 // screen (?setup), with a way back to a round in progress.
@@ -58,8 +86,7 @@ export function Header() {
           nameEn: g.nameEn,
           namePt: g.namePt,
           correct: false,
-          areaComparison: comparisonFromApi(g.comparison.area),
-          durationComparison: comparisonFromApi(g.comparison.duration),
+          ...comparisonFields(g.comparison),
         })),
         reveal: preview.reveal,
         gameOver: false,
@@ -143,6 +170,11 @@ export function Header() {
             >
               DEV próximo
             </button>
+            <DevAnswerPicker
+              disabled={resetting}
+              className={debugButtonClass}
+              onPick={(id) => runDebugAction(() => devForceToday(id))}
+            />
           </>
         )}
       </div>

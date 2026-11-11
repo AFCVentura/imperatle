@@ -182,6 +182,7 @@ public class ArchiveController(ImperatleDbContext db, ICurrentPlayer player) : C
             progress?.Correct ?? false,
             !completed && attemptsUsed > 0 ? RevealBuilder.BuildReveal(empire, attemptsUsed) : null,
             completed ? RevealBuilder.BuildAnswer(empire) : null,
-            progress is null ? [] : await PlayedGuesses.BuildAsync(db, progress.GuessedSlugs, empire, ct));
+            progress is null ? [] : await PlayedGuesses.BuildAsync(db, progress.GuessedSlugs, empire, ct),
+            empire.MapBorderConfidence);
     }
 }

@@ -44,18 +44,18 @@
     "answerWasLabel": "A resposta era",
     "mapComingSoon": "Mapa em breve",
     "mapAlt": "Mapa da resposta de hoje na sua maior extensão",
-    "guessHistoryTitle": "Palpites e Dicas",
+    "guessHistoryTitle": "Palpites e dicas",
     "submitError": "Algo deu errado. Tente de novo.",
     "playAgainTomorrow": "Volte amanhã pra um novo mapa!",
     "correctGuessMark": "Acertou!",
     "wrongGuessMark": "Errado",
-    "remainingHintsLabel": "As outras dicas",
     "aboutEmpireTitle": "Contexto histórico",
     "curiositiesExplainedTitle": "As curiosidades, explicadas",
     "unlocksLabel": "Libera: {fields}",
     "guessColumns": {
       "area": "Área",
-      "duration": "Duração"
+      "era": "Época",
+      "distance": "Distância"
     },
     "fields": {
       "era": "Era",
@@ -70,7 +70,9 @@
       "curiosities": "Curiosidades",
       "curiosity": "Curiosidade",
       "unlockedAt": "Liberado na tentativa {n}",
-      "showNote": "Mostrar observação"
+      "showNote": "Mostrar observação",
+      "lifespan": "Período",
+      "notes": "Observação"
     },
     "enums": {
       "broadEra": {
@@ -101,14 +103,19 @@
     "startPlaying": "Jogar",
     "comparisonInfo": {
       "area": {
-        "Bigger": "A resposta foi maior que este no seu auge.",
-        "Smaller": "A resposta foi menor que este no seu auge.",
-        "Approximate": "Os dois tiveram tamanhos parecidos no auge, com até 10% de diferença."
+        "Bigger": "A resposta era maior que o seu palpite, comparando os dois no auge.",
+        "Smaller": "A resposta era menor que o seu palpite, comparando os dois no auge.",
+        "Approximate": "A resposta e o seu palpite tinham tamanhos parecidos no auge, com até 10% de diferença."
       },
-      "duration": {
-        "Bigger": "A resposta durou mais tempo que este.",
-        "Smaller": "A resposta durou menos tempo que este.",
-        "Approximate": "Os dois duraram mais ou menos o mesmo tempo, com até 10% de diferença."
+      "era": {
+        "Bigger": "A resposta é mais recente: o auge dela veio depois do auge do seu palpite.",
+        "Smaller": "A resposta é mais antiga: o auge dela veio antes do auge do seu palpite.",
+        "Approximate": "A resposta e o seu palpite são da mesma época: os dois existiam ao mesmo tempo no auge de cada um, ou os auges ficaram a até 25 anos de distância."
+      },
+      "distance": {
+        "info": "Onde fica a resposta em relação ao seu palpite. Quando os dois ficam longe, aparecem a direção e a distância entre as fronteiras. Quando os territórios se cruzam, aparece quanto eles têm em comum, e a direção some quando eles praticamente se sobrepõem.",
+        "here": "Aqui: a resposta fica {direction} do seu palpite.",
+        "noMap": "Sem mapa pra comparar a posição destes dois."
       }
     },
     "fieldInfo": {
@@ -141,7 +148,47 @@
     "cluesOff": "Dicas desligadas",
     "noNewClues": "Sem novas dicas",
     "unknownGuess": "Palpite feito em outro aparelho",
-    "goToPractice": "Ir pro treino"
+    "goToPractice": "Ir pro treino",
+    "proximity": {
+      "neighbours": "Vizinhos",
+      "shared": "{percent} em comum"
+    },
+    "directions": {
+      "N": "ao norte",
+      "NE": "a nordeste",
+      "E": "a leste",
+      "SE": "a sudeste",
+      "S": "ao sul",
+      "SW": "a sudoeste",
+      "W": "a oeste",
+      "NW": "a noroeste"
+    },
+    "clues": {
+      "map": "Mapa",
+      "era": "Era",
+      "mapContinents": "Mapa com os continentes",
+      "mapCountries": "Mapa com os países",
+      "curiosity": "Curiosidade {n}"
+    },
+    "clueValues": {
+      "mapContinents": "O mapa agora mostra os continentes",
+      "mapCountries": "O mapa agora mostra os países"
+    },
+    "clueInfo": {
+      "mapContinents": "O mapa agora mostra os continentes por baixo da resposta. Dá pra voltar ao contorno no seletor logo abaixo do mapa.",
+      "mapCountries": "O mapa agora mostra os países de hoje por baixo da resposta. Toque num país pra ver o nome dele.",
+      "curiosity": "Uma curiosidade sobre a resposta. As três vêm da menos para a mais óbvia."
+    },
+    "outline": {
+      "show": "Clique pra ver o contorno deste palpite no mapa, tracejado em marrom. Onde ele cruza a resposta, as cores se misturam.",
+      "hide": "Clique pra esconder o contorno deste palpite no mapa.",
+      "chipShow": "Mostrar palpite",
+      "showLabel": "Mostrar o contorno do palpite no mapa",
+      "hideLabel": "Esconder o contorno do palpite no mapa"
+    },
+    "precisionChip": "Fronteiras: precisão {value}",
+    "sheetTitle": "Ficha completa",
+    "curiositiesTitle": "As curiosidades"
   },
   "HowToPlay": {
     "title": "Como jogar",
@@ -150,13 +197,14 @@
     "guess": "Digite um nome, escolha na lista e clique em Adivinhar (ou aperte Enter duas vezes).",
     "compare": "Cada palpite errado compara o seu chute com a resposta:",
     "wrong": "não é esse",
-    "bigger": "o do mapa foi maior em área, ou durou mais",
-    "smaller": "o do mapa foi menor em área, ou durou menos",
-    "approximate": "os dois são parecidos (até 10% de diferença)",
-    "hints": "Cada erro também libera novas dicas sobre a resposta, logo abaixo do seu palpite.",
-    "inspect": "Passe o mouse ou toque numa dica, ou na área e duração, pra ver o que ela significa.",
+    "hints": "Cada erro também libera uma dica nova, logo abaixo do palpite: a era, o mapa com os continentes, três curiosidades e, por último, o mapa com os países.",
+    "inspect": "Passe o mouse ou toque numa dica, ou na área, época e distância, pra ver o que ela significa.",
     "daily": "Um mapa novo todo dia.",
-    "goalNoCount": "Descubra qual potência histórica aparece no mapa, retratada no auge da sua expansão."
+    "goalNoCount": "Descubra qual potência histórica aparece no mapa, retratada no auge da sua expansão.",
+    "areaLine": "Área: a resposta era maior no auge (▼ menor, ≈ parecida).",
+    "eraLine": "Época: a resposta é mais recente (▼ mais antiga, ≈ da mesma época).",
+    "distanceLine": "Distância: a direção e os quilômetros até a resposta, ou quanto os dois territórios têm em comum.",
+    "outline": "Clique no nome de um palpite pra ver o contorno dele sobre o mapa."
   },
   "Stats": {
     "title": "Estatísticas",
@@ -355,7 +403,7 @@
     "hints": "Dicas",
     "hintsOn": "Ligadas",
     "hintsOff": "Desligadas",
-    "hintsInfo": "Desligadas: cada erro só diz se é maior ou menor e se durou mais ou menos. Todas as dicas aparecem no fim.",
+    "hintsInfo": "Desligadas: cada erro só mostra área, época e distância. A ficha completa e as curiosidades aparecem no fim.",
     "map": "Mapa",
     "mapOptions": {
       "Progressive": "Aos poucos",

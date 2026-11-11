@@ -1,5 +1,5 @@
-import type { GameProgress, GuessHistoryEntry } from "./gameStorage";
-import { comparisonFromApi, type ChallengeReveal, type EmpireAnswer, type PlayedGuess } from "./types";
+import { comparisonFields, type GameProgress, type GuessHistoryEntry } from "./gameStorage";
+import type { ChallengeReveal, EmpireAnswer, PlayedGuess } from "./types";
 
 // What the server knows about a round (daily game, archive day or practice
 // round): it counts the attempts, and for the daily game and the archive it
@@ -14,6 +14,8 @@ export interface ServerRound {
 }
 
 const isPlaceholder = (g: GuessHistoryEntry) => g.empireId === 0;
+// Saved before 1.5: the guess has no era or distance yet.
+const isOutdated = (g: GuessHistoryEntry) => !g.correct && g.eraComparison === undefined;
 
 function fromServer(guesses: PlayedGuess[]): GuessHistoryEntry[] {
   return guesses.map((g) => ({
@@ -21,8 +23,7 @@ function fromServer(guesses: PlayedGuess[]): GuessHistoryEntry[] {
     nameEn: g.nameEn,
     namePt: g.namePt,
     correct: g.correct,
-    areaComparison: g.comparison ? comparisonFromApi(g.comparison.area) : null,
-    durationComparison: g.comparison ? comparisonFromApi(g.comparison.duration) : null,
+    ...comparisonFields(g.comparison),
   }));
 }
 
@@ -41,8 +42,10 @@ export function reconcileProgress(
   const serverGuesses = server.guesses?.length === server.attemptsUsed ? fromServer(server.guesses) : null;
 
   if (local && local.guesses.length === server.attemptsUsed && local.gameOver === server.completed) {
-    // Same round; only fill in what the browser's copy lacks.
-    const guesses = serverGuesses && local.guesses.some(isPlaceholder) ? serverGuesses : local.guesses;
+    // Same round; only fill in what the browser's copy lacks (placeholder
+    // rows, or guesses saved before they had an era and a distance).
+    const guesses =
+      serverGuesses && local.guesses.some((g) => isPlaceholder(g) || isOutdated(g)) ? serverGuesses : local.guesses;
     const answer = server.completed && !local.answer ? server.answer : local.answer;
     return guesses === local.guesses && answer === local.answer ? local : { ...local, guesses, answer };
   }
@@ -57,7 +60,8 @@ export function reconcileProgress(
       namePt: unknownGuessLabel,
       correct: server.correct && i === server.attemptsUsed - 1,
       areaComparison: null,
-      durationComparison: null,
+      eraComparison: null,
+      proximity: null,
     }));
   return { date: key, guesses, reveal: server.reveal, gameOver: server.completed, answer: server.answer };
 }

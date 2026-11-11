@@ -15,17 +15,21 @@ namespace Imperatle.Api.Controllers;
 [Route("dev")]
 public class DevController(ImperatleDbContext db, IWebHostEnvironment env) : ControllerBase
 {
-    // Pins today's challenge to one empire and wipes this player's progress,
-    // so the round starts clean (no clues revealed).
-    [HttpPost("today/force/{slug}")]
-    public async Task<IActionResult> ForceToday(string slug)
+    // Pins today's challenge to one empire (by slug, or by id for the header's
+    // answer picker, which only has the public list) and wipes this player's
+    // progress, so the round starts clean (no clues revealed).
+    [HttpPost("today/force/{slugOrId}")]
+    public async Task<IActionResult> ForceToday(string slugOrId)
     {
         if (!env.IsDevelopment())
         {
             return NotFound();
         }
 
-        if (!await db.Empires.AnyAsync(e => e.Slug == slug && e.Active))
+        var slug = int.TryParse(slugOrId, out var id)
+            ? await db.Empires.Where(e => e.Id == id && e.Active).Select(e => e.Slug).FirstOrDefaultAsync()
+            : await db.Empires.Where(e => e.Slug == slugOrId && e.Active).Select(e => e.Slug).FirstOrDefaultAsync();
+        if (slug is null)
         {
             return NotFound();
         }

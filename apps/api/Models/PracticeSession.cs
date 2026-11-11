@@ -23,6 +23,9 @@ public class PracticeSession
     public PracticeMapMode MapMode { get; set; }
 
     public int AttemptsUsed { get; set; }
+    // The empires guessed so far, in order (slugs), like the daily game's
+    // progress: only these shapes can be outlined over the round's map.
+    public List<string> GuessedSlugs { get; set; } = [];
     public bool Completed { get; set; }
     public bool Correct { get; set; }
     public DateTime CreatedAtUtc { get; set; }

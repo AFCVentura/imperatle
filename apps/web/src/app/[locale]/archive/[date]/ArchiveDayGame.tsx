@@ -3,7 +3,7 @@
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { Link } from "@/i18n/navigation";
-import { ApiStatusError, getArchiveChallenge, getMapShape, PerkLockedError, submitArchiveGuess } from "@/lib/api";
+import { ApiStatusError, getArchiveChallenge, getGuessShape, getMapShape, PerkLockedError, submitArchiveGuess } from "@/lib/api";
 import { loadGameProgress, saveGameProgress, type GameProgress } from "@/lib/gameStorage";
 import { reconcileProgress } from "@/lib/reconcileProgress";
 import type { ArchiveChallenge, EmpireSummary } from "@/lib/types";
@@ -80,6 +80,8 @@ export function ArchiveDayGame({ date, empires }: { date: string; empires: Empir
     attemptsAllowed: challenge.attemptsAllowed,
     hasMap: challenge.hasMap,
     loadShape: () => getMapShape(date),
+    loadGuessShape: (empireId) => getGuessShape(date, empireId),
+    mapBorderConfidence: challenge.mapBorderConfidence,
     submit: (empireId) => submitArchiveGuess(date, empireId),
     save: saveGameProgress,
     endNote: t("endNote"),

@@ -28,6 +28,12 @@
   --map-border: #c9a774;
   --map-empire: #9a2f28;
   --map-empire-line: #6f1d1b;
+  /* A guessed empire outlined over the answer, in the UI's rust and dark
+     brown. The map stays light in dark mode, so it doesn't change. */
+  --map-guess: #99582a;
+  --map-guess-line: #432818;
+  /* Outline of the country tapped on the map (stage 3). */
+  --map-selected: #432818;
   --chart-bar: #b07a3a;
   --chart-highlight: #9a2f28;
   --theme-font-display: var(--font-cinzel);

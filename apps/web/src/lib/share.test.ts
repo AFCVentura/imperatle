@@ -4,13 +4,13 @@ import en from "../messages/en.json";
 import pt from "../messages/pt.json";
 import { buildShareText } from "./share";
 
-const wrong = (area: GuessHistoryEntry["areaComparison"], duration: GuessHistoryEntry["durationComparison"]): GuessHistoryEntry => ({
+const wrong = (area: GuessHistoryEntry["areaComparison"], era: GuessHistoryEntry["areaComparison"]): GuessHistoryEntry => ({
   empireId: 1,
   nameEn: "Some Empire",
   namePt: "Algum Império",
   correct: false,
   areaComparison: area,
-  durationComparison: duration,
+  eraComparison: era,
 });
 
 const right: GuessHistoryEntry = { ...wrong(null, null), correct: true };

@@ -31,6 +31,14 @@ export async function getMapShape(date: string): Promise<MultiPolygon> {
   return res.json();
 }
 
+// A guessed empire's shape, outlined over a day's map (daily game or
+// archive). The API only serves an empire this player already guessed that day.
+export async function getGuessShape(date: string, empireId: number): Promise<MultiPolygon> {
+  const res = await fetch(`${API_URL}/challenges/${date}/guesses/${empireId}/map`, { credentials: "include" });
+  if (!res.ok) throw new Error(`Failed to load the guess's map: ${res.status}`);
+  return res.json();
+}
+
 export async function getEmpires(): Promise<EmpireSummary[]> {
   const res = await fetch(`${API_URL}/empires`, { cache: "no-store" });
   if (!res.ok) throw new Error(`Failed to load empires: ${res.status}`);
@@ -204,6 +212,9 @@ export async function startPractice(options: PracticeOptions): Promise<PracticeS
 export const getPracticeSession = (id: string) => perkFetch<PracticeSession>(`/practice/${id}`);
 
 export const getPracticeMap = (id: string) => perkFetch<MultiPolygon>(`/practice/${id}/map`);
+
+export const getPracticeGuessShape = (id: string, empireId: number) =>
+  perkFetch<MultiPolygon>(`/practice/${id}/guesses/${empireId}/map`);
 
 export const submitPracticeGuess = (id: string, empireId: number) =>
   perkFetch<GuessResponse>(`/practice/${id}/guess`, { method: "POST", body: JSON.stringify({ empireId }) });

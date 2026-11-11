@@ -31,6 +31,8 @@ type Props = {
   frameShape?: MultiPolygon;
   draw?: { mode: DrawMode; onDone: (ring: [number, number][]) => void } | null;
   overlays?: DrawnRing[];
+  // A guessed empire's territory, tinted and outlined over the answer.
+  guess?: MultiPolygon | null;
 };
 
 const MODE_KEY = "imperatle:mapMode";
@@ -51,7 +53,7 @@ type Label = { id: string; name: string; x: number; y: number; view: unknown[] }
 // The map card: flat map or globe (the player's choice, remembered), with
 // "focus" (fly back to the empire) and fullscreen. In fullscreen on a phone it
 // tries to turn to landscape, where the map has more room.
-export function EmpireMap({ empire, stage, locale, labels, className = "aspect-[4/3] w-full", frameShape, draw = null, overlays }: Props) {
+export function EmpireMap({ empire, stage, locale, labels, className = "aspect-[4/3] w-full", frameShape, draw = null, overlays, guess }: Props) {
   const frameRef = useRef<HTMLDivElement | null>(null);
   // Same element, as state: tooltips render inside it while it's fullscreen.
   const [frame, setFrame] = useState<HTMLDivElement | null>(null);
@@ -159,6 +161,7 @@ export function EmpireMap({ empire, stage, locale, labels, className = "aspect-[
             frame={frameShape}
             draw={draw}
             overlays={overlays}
+            guess={guess}
             stage={stage}
             width={size.width}
             height={size.height}
@@ -171,6 +174,8 @@ export function EmpireMap({ empire, stage, locale, labels, className = "aspect-[
           <GlobeMap
             world={world}
             empire={empire}
+            frame={frameShape}
+            guess={guess}
             stage={stage}
             width={size.width}
             height={size.height}

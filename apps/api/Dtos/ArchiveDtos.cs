@@ -29,4 +29,5 @@ public record ArchiveChallengeResponse(
     bool Correct,
     ChallengeReveal? Reveal,
     EmpireAnswer? Answer,
-    List<PlayedGuess> Guesses);
+    List<PlayedGuess> Guesses,
+    Models.BorderConfidence? MapBorderConfidence = null);

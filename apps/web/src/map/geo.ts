@@ -58,6 +58,10 @@ export function toWorld(topo: WorldTopology): World {
 
 export const countryName = (c: CountryFeature, locale: MapLocale) => c.properties[locale] ?? c.properties.en;
 
+// A guessed empire's tint over the map: light, so where it overlaps the
+// answer the answer's red only shifts a little toward brown.
+export const GUESS_FILL_ALPHA = 0.16;
+
 // Reads the theme's map tokens (globals.css) for the canvas, which can't use
 // CSS variables directly.
 export function readMapColors(el: Element) {
@@ -70,6 +74,11 @@ export function readMapColors(el: Element) {
     border: v("--map-border"),
     empire: v("--map-empire"),
     empireLine: v("--map-empire-line"),
+    guess: v("--map-guess"),
+    guessLine: v("--map-guess-line"),
+    // Fixed, not the text color: that one turns light in dark mode, the same
+    // as the map, and the outline disappeared.
+    selected: v("--map-selected"),
   };
 }
 

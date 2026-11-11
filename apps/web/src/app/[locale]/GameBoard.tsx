@@ -2,32 +2,31 @@
 
 import type { MultiPolygon } from "geojson";
 import { useLocale, useTranslations } from "next-intl";
-import { useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
-import { getMapShape, getTodayProgress, submitGuess } from "@/lib/api";
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
+import { getGuessShape, getMapShape, getTodayProgress, submitGuess } from "@/lib/api";
 import { EmpireMap } from "@/map/EmpireMap";
 import type { MapLocale, MapStage } from "@/map/geo";
 import { mapStageForMode, type MapMode } from "@/map/stage";
 import { openStats } from "@/lib/dialogs";
 import { Link } from "@/i18n/navigation";
 import { useMe } from "@/lib/me";
-import { loadGameProgress, saveGameProgress, type GameProgress, type GuessHistoryEntry } from "@/lib/gameStorage";
+import {
+  comparisonFields,
+  loadGameProgress,
+  saveGameProgress,
+  type GameProgress,
+  type GuessHistoryEntry,
+} from "@/lib/gameStorage";
 import { pickLocalized } from "@/lib/pickLocalized";
 import { reconcileProgress } from "@/lib/reconcileProgress";
-import {
-  comparisonFromApi,
-  EMPTY_REVEAL,
-  type ChallengeReveal,
-  type EmpireAnswer,
-  type EmpireSummary,
-  type GuessResponse,
-  type TodayChallenge,
-} from "@/lib/types";
+import type { ChallengeReveal, EmpireAnswer, EmpireSummary, GuessResponse, TodayChallenge } from "@/lib/types";
 import { EmpireAutocomplete } from "./EmpireAutocomplete";
 import { AttemptList } from "./AttemptList";
-import { HintRow } from "./HintRow";
+import type { RevealedClues } from "@/lib/clues";
+import { Accordion, CuriosityList, EmpireSheet } from "./EmpireSheet";
+import { OutlineChip, PrecisionChip } from "./MapChips";
 import { MapStagePicker } from "./MapStagePicker";
 import { ShareButton } from "./ShareButton";
-import { useHintRows } from "./useHintRows";
 
 // One round of the game, wherever it comes from: today's challenge, a past
 // day (archive) or a practice round. The board is the same; only where the
@@ -38,6 +37,12 @@ export interface PlaySession {
   attemptsAllowed: number;
   hasMap: boolean;
   loadShape: () => Promise<MultiPolygon>;
+  // A guessed empire's shape, to outline it over the map (only empires
+  // already guessed in this round).
+  loadGuessShape?: (empireId: number) => Promise<MultiPolygon>;
+  // How exact the map's borders are (BORDER_CONFIDENCES index), on the map
+  // from the start.
+  mapBorderConfidence?: number | null;
   submit: (empireId: number) => Promise<GuessResponse>;
   save: (progress: GameProgress) => void;
   // false = no clue rows until the round ends (practice option).
@@ -72,6 +77,8 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
     attemptsAllowed: challenge.attemptsAllowed,
     hasMap: challenge.hasMap,
     loadShape: () => getMapShape(challenge.date),
+    loadGuessShape: (empireId) => getGuessShape(challenge.date, empireId),
+    mapBorderConfidence: challenge.mapBorderConfidence,
     submit: submitGuess,
     save: saveGameProgress,
     openStatsOnEnd: true,
@@ -171,6 +178,12 @@ export function PlayBoard({
   const [stageOnArrival] = useState(() =>
     mapStageForMode(mapMode, initial?.guesses.filter((g) => !g.correct).length ?? 0, initial?.gameOver ?? false),
   );
+  // Guessed empires' shapes, by empire id, loaded when first outlined.
+  const [guessShapes, setGuessShapes] = useState<Record<number, MultiPolygon | "failed">>({});
+  // The outlined guess: the latest wrong one, unless the player picked
+  // another since the last guess (`at` = how many guesses there were then).
+  const [pickedOutline, setPickedOutline] = useState<{ index: number; at: number } | null>(null);
+  const [outlineOn, setOutlineOn] = useState(true);
 
   // The callbacks are rebuilt on every render of the caller; the round's key
   // is what decides when to load or save again.
@@ -196,6 +209,49 @@ export function PlayBoard({
     sessionRef.current.save({ date: key, guesses, reveal, gameOver, answer });
   }, [key, guesses, reveal, gameOver, answer]);
 
+  const lastWrongIndex = guesses.findLastIndex((g) => !g.correct);
+  const outlinedIndex = pickedOutline?.at === guesses.length ? pickedOutline.index : lastWrongIndex;
+  const outlinedGuess = outlinedIndex >= 0 && !guesses[outlinedIndex]?.correct ? guesses[outlinedIndex] : null;
+  // Placeholder rows (guesses made on another device before they were
+  // stored) have no empire to draw.
+  const outlinedEmpireId = outlinedGuess && outlinedGuess.empireId > 0 ? outlinedGuess.empireId : null;
+  const outlinedShape = outlinedEmpireId !== null ? guessShapes[outlinedEmpireId] : undefined;
+  const canOutline = hasMap && shape !== "failed" && !!session.loadGuessShape;
+
+  useEffect(() => {
+    const load = sessionRef.current.loadGuessShape;
+    if (!canOutline || !load || outlinedEmpireId === null || outlinedShape !== undefined) return;
+    let current = true;
+    load(outlinedEmpireId).then(
+      (s) => current && setGuessShapes((prev) => ({ ...prev, [outlinedEmpireId]: s })),
+      () => current && setGuessShapes((prev) => ({ ...prev, [outlinedEmpireId]: "failed" })),
+    );
+    return () => {
+      current = false;
+    };
+  }, [canOutline, outlinedEmpireId, outlinedShape]);
+
+  const guessShape = outlinedShape && outlinedShape !== "failed" ? outlinedShape : null;
+  // Framed on the answer and the outlined guess together, so the guess is in
+  // view. Hiding the outline keeps the frame, so the map doesn't move.
+  const frame = useMemo<MultiPolygon | undefined>(
+    () =>
+      guessShape && shape && shape !== "failed"
+        ? { type: "MultiPolygon", coordinates: [...shape.coordinates, ...guessShape.coordinates] }
+        : undefined,
+    [guessShape, shape],
+  );
+
+  function toggleOutline(index: number) {
+    // The outlined guess again: hide (or show) it; another one: show that one.
+    if (index === outlinedIndex) {
+      setOutlineOn((on) => !on);
+      return;
+    }
+    setPickedOutline({ index, at: guesses.length });
+    setOutlineOn(true);
+  }
+
   async function handleGuess() {
     if (selectedEmpireId === null || gameOver || submitting) return;
     const empire = empires.find((e) => e.id === selectedEmpireId);
@@ -213,11 +269,12 @@ export function PlayBoard({
           nameEn: empire.nameEn,
           namePt: empire.namePt,
           correct: result.correct,
-          areaComparison: result.comparison ? comparisonFromApi(result.comparison.area) : null,
-          durationComparison: result.comparison ? comparisonFromApi(result.comparison.duration) : null,
+          ...comparisonFields(result.comparison),
         },
       ]);
       if (result.reveal) setReveal(result.reveal);
+      // A new guess is outlined right away.
+      setOutlineOn(true);
       if (result.gameOver) {
         setGameOver(true);
         setAnswer(result.answer);
@@ -232,26 +289,15 @@ export function PlayBoard({
     }
   }
 
-  const hintRows = useHintRows(gameOver && answer ? answer : (reveal ?? EMPTY_REVEAL));
-  // With clues off, no row comes with a wrong guess: they all show up
-  // together under the answer once the round is over.
-  const attemptHintRows = hints ? hintRows : [];
+  const revealed: RevealedClues =
+    gameOver && answer
+      ? { broadEra: answer.broadEra, hints: answer.hints }
+      : { broadEra: reveal?.broadEra ?? null, hints: reveal?.hints ?? null };
+  const borderConfidence = session.mapBorderConfidence ?? reveal?.mapBorderConfidence ?? answer?.mapBorderConfidence ?? null;
 
   const lastGuess = guesses[guesses.length - 1];
-  // Rows not shown under a wrong guess -- after a correct guess, the clues
-  // the player never needed are shown with the answer.
   const wrongGuessCount = guesses.filter((g) => !g.correct).length;
-  const remainingHintRows = hints ? hintRows.slice(wrongGuessCount) : hintRows;
-
   const wikipediaUrl = answer ? pickLocalized(answer.wikipediaEn ?? "", answer.wikipediaPt ?? "", locale) : "";
-  const summary = answer ? pickLocalized(answer.summaryEn ?? "", answer.summaryPt ?? "", locale) : "";
-  // Only the curiosities that come with an explanation.
-  const explainedCuriosities = (answer?.hints ?? [])
-    .map((hint) => ({
-      text: pickLocalized(hint.textEn, hint.textPt, locale),
-      details: pickLocalized(hint.detailsEn ?? "", hint.detailsPt ?? "", locale),
-    }))
-    .filter((c) => c.details);
 
   // The map shows the most detailed level unlocked so far, unless the player
   // picked another one under it; a new unlock switches to it again.
@@ -261,31 +307,55 @@ export function PlayBoard({
   // An outline-only round has nothing to pick until it's over.
   const showStagePicker = mapMode !== "Outline" || gameOver;
 
+  const attemptList = (
+    <AttemptList
+      guesses={guesses}
+      attemptsAllowed={session.attemptsAllowed}
+      revealed={revealed}
+      gameOver={gameOver}
+      hintsOff={!hints}
+      outlined={canOutline && outlineOn && guessShape ? outlinedIndex : null}
+      onOutline={canOutline ? toggleOutline : undefined}
+    />
+  );
+
   return (
     // Phone-sized column on every screen, so the PC looks like the mobile layout.
     <div className="flex w-full max-w-md flex-col gap-6 md:gap-3">
       {hasMap && shape !== "failed" ? (
         <>
-          <div role="img" aria-label={t("mapAlt")}>
-            <EmpireMap
-              empire={shape}
-              stage={shownStage}
-              locale={locale as MapLocale}
-              labels={{
-                zoomIn: t("mapZoomIn"),
-                zoomOut: t("mapZoomOut"),
-                focus: t("mapFocus"),
-                fullscreen: t("mapFullscreen"),
-                exitFullscreen: t("mapExitFullscreen"),
-                loading: t("mapLoading"),
-                globe: t("mapGlobe"),
-                flat: t("mapFlat"),
-              }}
-              // Same height as the old map card: capped at 30% of the screen
-              // height, so the map never takes over short screens. Tablets
-              // have room for a taller one.
-              className="h-[calc(min(15rem,30dvh)+1.5rem)] w-full tablet:h-[calc(min(20rem,36dvh)+1.5rem)]"
-            />
+          <div className="relative">
+            <div role="img" aria-label={t("mapAlt")}>
+              <EmpireMap
+                empire={shape}
+                stage={shownStage}
+                locale={locale as MapLocale}
+                labels={{
+                  zoomIn: t("mapZoomIn"),
+                  zoomOut: t("mapZoomOut"),
+                  focus: t("mapFocus"),
+                  fullscreen: t("mapFullscreen"),
+                  exitFullscreen: t("mapExitFullscreen"),
+                  loading: t("mapLoading"),
+                  globe: t("mapGlobe"),
+                  flat: t("mapFlat"),
+                }}
+                guess={outlineOn ? guessShape : null}
+                frameShape={frame}
+                // Same height as the old map card: capped at 30% of the screen
+                // height, so the map never takes over short screens. Tablets
+                // have room for a taller one.
+                className="h-[calc(min(15rem,30dvh)+1.5rem)] w-full tablet:h-[calc(min(20rem,36dvh)+1.5rem)]"
+              />
+            </div>
+            {shape && borderConfidence !== null && <PrecisionChip confidence={borderConfidence} />}
+            {outlinedGuess && guessShape && (
+              <OutlineChip
+                name={pickLocalized(outlinedGuess.nameEn, outlinedGuess.namePt, locale)}
+                on={outlineOn}
+                onToggle={() => setOutlineOn((on) => !on)}
+              />
+            )}
           </div>
           {showStagePicker && (
             <MapStagePicker
@@ -328,34 +398,12 @@ export function PlayBoard({
 
       {error && <p className="text-sm text-danger">{t("submitError")}</p>}
 
-      <div>
-        <div className="mb-1.5 flex select-none items-baseline justify-between gap-3">
-          <h2 className="font-display text-base tracking-wide text-muted">{t("guessHistoryTitle")}</h2>
-          <p className="font-display text-sm text-muted">
-            {t("attempts", { used: guesses.length, total: session.attemptsAllowed })}
-          </p>
-        </div>
-        <AttemptList
-          guesses={guesses}
-          attemptsAllowed={session.attemptsAllowed}
-          hintRows={attemptHintRows}
-          gameOver={gameOver}
-          hintsOff={!hints}
-        />
-      </div>
-
       {gameOver && answer && (
         <div className="rounded-2xl border border-line bg-surface px-4 py-3">
           <h2 className="font-display text-xl">{lastGuess?.correct ? t("correctTitle") : t("gameOverTitle")}</h2>
           <p className="mt-1 text-sm">
             {t("answerWasLabel")}: <strong>{pickLocalized(answer.nameEn, answer.namePt, locale)}</strong>
           </p>
-          {summary && (
-            <div className="mt-3 border-t border-line pt-3">
-              <h3 className="font-display text-sm tracking-wide text-muted">{t("aboutEmpireTitle")}</h3>
-              <p className="mt-1 text-sm leading-relaxed">{summary}</p>
-            </div>
-          )}
           {session.endNote && <p className="mt-1 text-sm text-muted">{session.endNote}</p>}
           <div className="mt-3 flex flex-wrap items-center gap-2">
             {session.endActions?.(guesses)}
@@ -376,32 +424,31 @@ export function PlayBoard({
         </div>
       )}
 
-      {gameOver && answer && remainingHintRows.length > 0 && (
-        // Same look as an attempt's clue section: one pill, rows and cells
-        // split by dividers.
-        <div className="select-none">
-          <h2 className="mb-1.5 font-display text-base tracking-wide text-muted">
-            {t("remainingHintsLabel")}
-          </h2>
-          <div className="divide-y divide-line rounded-2xl border border-line bg-surface">
-            {remainingHintRows.map((row) => (
-              <HintRow key={row.attempt} row={row} />
-            ))}
-          </div>
-        </div>
-      )}
-
-      {gameOver && explainedCuriosities.length > 0 && (
+      {gameOver && answer ? (
+        // End of the round: the answer's sheet first, then the guesses and
+        // clues, then the curiosities with their explanations.
+        <>
+          <Accordion title={t("sheetTitle")} defaultOpen>
+            <EmpireSheet answer={answer} />
+          </Accordion>
+          <Accordion title={`${t("guessHistoryTitle")} (${guesses.length}/${session.attemptsAllowed})`}>
+            <div className="p-2">{attemptList}</div>
+          </Accordion>
+          {answer.hints.length > 0 && (
+            <Accordion title={t("curiositiesTitle")}>
+              <CuriosityList answer={answer} />
+            </Accordion>
+          )}
+        </>
+      ) : (
         <div>
-          <h2 className="mb-1.5 font-display text-base tracking-wide text-muted">{t("curiositiesExplainedTitle")}</h2>
-          <ul className="divide-y divide-line rounded-2xl border border-line bg-surface">
-            {explainedCuriosities.map((c, i) => (
-              <li key={i} className="px-4 py-3">
-                <p className="text-sm font-medium">{c.text}</p>
-                <p className="mt-1 text-sm leading-relaxed text-muted">{c.details}</p>
-              </li>
-            ))}
-          </ul>
+          <div className="mb-1.5 flex select-none items-baseline justify-between gap-3">
+            <h2 className="font-display text-base tracking-wide text-muted">{t("guessHistoryTitle")}</h2>
+            <p className="font-display text-sm text-muted">
+              {t("attempts", { used: guesses.length, total: session.attemptsAllowed })}
+            </p>
+          </div>
+          {attemptList}
         </div>
       )}
     </div>
