@@ -1,0 +1,443 @@
+{
+  "HomePage": {
+    "subtitle": "Adivina el imperio o la potencia histórica"
+  },
+  "Metadata": {
+    "description": "Adivina por el mapa imperios y otras potencias de la historia. Uno nuevo cada día."
+  },
+  "Header": {
+    "menuLabel": "Menú",
+    "closeLabel": "Cerrar menú",
+    "menu": {
+      "signIn": "Iniciar sesión",
+      "account": "Mi cuenta",
+      "statistics": "Estadísticas",
+      "howToPlay": "Cómo jugar",
+      "support": "Apoyar el proyecto",
+      "feedback": "Comentarios",
+      "about": "Acerca de",
+      "archive": "Partidas anteriores",
+      "practice": "Práctica",
+      "supportersBadge": "Mecenas"
+    },
+    "language": "Idioma"
+  },
+  "Footer": {
+    "copyright": "© {year} Imperatle",
+    "support": "Apoyar el proyecto",
+    "supporter": "Gracias por apoyar Imperatle.",
+    "challengeNumber": "Imperatle #{number}",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "version": "Versión {version}",
+    "changelog": "Ver qué cambió en cada versión",
+    "refunds": "Reembolsos"
+  },
+  "Game": {
+    "attempts": "Intentos: {used}/{total}",
+    "guessPlaceholder": "Escribe un nombre…",
+    "guessButton": "Adivinar",
+    "noChallengeToday": "Hoy no hay desafío. ¡Vuelve pronto!",
+    "loadError": "No se pudo cargar el desafío de hoy. Prueba a recargar la página.",
+    "correctTitle": "¡Correcto!",
+    "gameOverTitle": "Sin intentos",
+    "answerWasLabel": "La respuesta era",
+    "mapComingSoon": "Mapa próximamente",
+    "mapAlt": "Mapa de la respuesta de hoy en su máxima extensión",
+    "guessHistoryTitle": "Intentos y pistas",
+    "submitError": "Algo salió mal. Inténtalo de nuevo.",
+    "playAgainTomorrow": "¡Vuelve mañana para un nuevo mapa!",
+    "correctGuessMark": "¡Correcto!",
+    "wrongGuessMark": "Incorrecto",
+    "aboutEmpireTitle": "Contexto histórico",
+    "curiositiesExplainedTitle": "Las curiosidades, explicadas",
+    "unlocksLabel": "Desbloquea: {fields}",
+    "guessColumns": {
+      "area": "Área",
+      "era": "Época",
+      "distance": "Distancia"
+    },
+    "fields": {
+      "era": "Era",
+      "mapConfidence": "Precisión del mapa",
+      "continents": "Continente(s)",
+      "capital": "Capital",
+      "language": "Idioma",
+      "religion": "Religión",
+      "referenceYear": "Año de apogeo",
+      "period": "Duración",
+      "area": "Área en su apogeo",
+      "curiosities": "Curiosidades",
+      "curiosity": "Curiosidad",
+      "unlockedAt": "Desbloqueado en el intento {n}",
+      "showNote": "Ver nota",
+      "lifespan": "Período",
+      "notes": "Nota"
+    },
+    "enums": {
+      "broadEra": {
+        "Antiquity": "Antigüedad",
+        "MiddleAges": "Edad Media",
+        "Modern": "Edad Moderna",
+        "Contemporary": "Edad Contemporánea"
+      },
+      "borderConfidence": {
+        "Precise": "Alta",
+        "Approximate": "Media",
+        "Speculative": "Baja"
+      },
+      "continent": {
+        "Africa": "África",
+        "Asia": "Asia",
+        "Europe": "Europa",
+        "NorthAmerica": "América del Norte",
+        "SouthAmerica": "América del Sur",
+        "Oceania": "Oceanía"
+      }
+    },
+    "year": {
+      "bce": "{year} a. C.",
+      "ce": "{year} d. C.",
+      "present": "actualidad"
+    },
+    "startPlaying": "Jugar",
+    "comparisonInfo": {
+      "area": {
+        "Bigger": "La respuesta era más grande que tu intento, comparando ambos en su apogeo.",
+        "Smaller": "La respuesta era más pequeña que tu intento, comparando ambos en su apogeo.",
+        "Approximate": "La respuesta y tu intento tenían un tamaño parecido en su apogeo, con hasta un 10 % de diferencia."
+      },
+      "era": {
+        "Bigger": "La respuesta es más reciente: su apogeo llegó después del apogeo de tu intento.",
+        "Smaller": "La respuesta es más antigua: su apogeo llegó antes del apogeo de tu intento.",
+        "Approximate": "La respuesta y tu intento son de la misma época: cada uno seguía existiendo en el apogeo del otro, o sus apogeos estuvieron separados por 25 años o menos."
+      },
+      "distance": {
+        "info": "Dónde está la respuesta con respecto a tu intento. Cuando los dos están separados, ves la dirección y la distancia entre sus fronteras. Cuando los territorios se cruzan, ves cuánto comparten, y la dirección desaparece cuando prácticamente se superponen. Cuando uno está casi entero dentro del otro, ves Dentro del intento o Contiene el intento.",
+        "here": "Aquí: la respuesta está {direction} de tu intento.",
+        "noMap": "No hay mapa para comparar dónde están estos dos.",
+        "spreadAnswer": "La respuesta tiene territorios repartidos por lugares lejanos del mundo, así que ninguna flecha apuntaría de verdad hacia ella.",
+        "spreadGuess": "Tu intento tiene territorios repartidos por lugares lejanos del mundo, así que ninguna flecha saldría de verdad de él.",
+        "spreadBoth": "Los dos tienen territorios repartidos por lugares lejanos del mundo, así que ninguna flecha tendría sentido.",
+        "arrowFlat": "La flecha sigue el mapa plano.",
+        "arrowGlobe": "La flecha sigue el globo: es la ruta más corta, que en el mapa plano puede parecer otra dirección."
+      }
+    },
+    "fieldInfo": {
+      "era": "Gran período de la historia en el que tuvo lugar el apogeo. Es una división aproximada, creada a partir de la historia europea, y no siempre encaja bien en otras regiones del mundo.",
+      "mapConfidence": "Durante la mayor parte de la historia, las fronteras de reinos e imperios no eran líneas exactas. Muchos mapas son solo aproximaciones del área controlada, y algunos son reconstrucciones hechas con pocas pruebas.",
+      "continents": "Continentes en los que tenía territorio en su apogeo.",
+      "capital": "Algunos imperios cambiaron de capital con el tiempo, tuvieron más de una a la vez o no tuvieron una capital fija. Aquí aparece la capital más conocida o la ciudad principal.",
+      "language": "Lengua principal del gobierno y de la élite. Muchos imperios reunían a decenas de pueblos y lenguas.",
+      "referenceYear": "Año de la máxima extensión territorial, que es lo que muestra el mapa. No tiene en cuenta otros factores, como la estabilidad o la prosperidad.",
+      "period": "Desde su surgimiento hasta su fin. Los historiadores suelen debatir las fechas de inicio y fin, así que se usan las más aceptadas.",
+      "area": "La mayor área que llegó a controlar. Las estimaciones de área histórica varían mucho entre las fuentes, así que tómala como un orden de magnitud.",
+      "religion": "La religión oficial o la de la élite gobernante, no necesariamente la de la mayoría de la población.",
+      "curiosity": "Un dato llamativo sobre la respuesta. Suele ser la pista más reveladora."
+    },
+    "viewStats": "Ver estadísticas",
+    "lastAttempt": "Último intento",
+    "mapFocus": "Volver al mapa",
+    "mapFullscreen": "Pantalla completa",
+    "mapExitFullscreen": "Salir de pantalla completa",
+    "mapLoading": "Cargando mapa…",
+    "mapGlobe": "Ver como globo",
+    "mapFlat": "Ver como mapa plano",
+    "mapZoomIn": "Acercar",
+    "mapZoomOut": "Alejar",
+    "mapStageOutline": "Contorno",
+    "mapStageContinents": "Continentes",
+    "mapStageCountries": "Países",
+    "mapStagesLabel": "Detalle del mapa",
+    "readOnWikipedia": "Leer en Wikipedia",
+    "cluesOff": "Pistas desactivadas",
+    "noNewClues": "Sin pistas nuevas",
+    "unknownGuess": "Intento hecho en otro dispositivo",
+    "goToPractice": "Ir a la práctica",
+    "proximity": {
+      "neighbours": "Vecinos",
+      "shared": "{percent} en común",
+      "inside": "Dentro del intento",
+      "contains": "Contiene el intento",
+      "spread": "Disperso"
+    },
+    "directions": {
+      "N": "al norte",
+      "NE": "al noreste",
+      "E": "al este",
+      "SE": "al sureste",
+      "S": "al sur",
+      "SW": "al suroeste",
+      "W": "al oeste",
+      "NW": "al noroeste"
+    },
+    "clues": {
+      "map": "Mapa",
+      "era": "Era",
+      "mapContinents": "Mapa con los continentes",
+      "mapCountries": "Mapa con los países",
+      "curiosity": "Curiosidad {n}"
+    },
+    "clueValues": {
+      "mapContinents": "El mapa ahora muestra los continentes",
+      "mapCountries": "El mapa ahora muestra los países"
+    },
+    "clueInfo": {
+      "mapContinents": "El mapa ahora muestra los continentes debajo de la respuesta. Puedes volver al contorno con el selector que está justo debajo del mapa.",
+      "mapCountries": "El mapa ahora muestra los países actuales debajo de la respuesta. Toca un país para ver su nombre.",
+      "curiosity": "Una curiosidad sobre la respuesta. Las tres van de la menos a la más obvia."
+    },
+    "outline": {
+      "show": "Haz clic para ver el contorno de este intento en el mapa, con línea discontinua marrón. Donde se cruza con la respuesta, los colores se mezclan.",
+      "hide": "Haz clic para ocultar el contorno de este intento en el mapa.",
+      "chipShow": "Ver intento",
+      "showLabel": "Mostrar el contorno del intento en el mapa",
+      "hideLabel": "Ocultar el contorno del intento en el mapa"
+    },
+    "precisionChip": "Fronteras: precisión {value}",
+    "sheetTitle": "Ficha completa",
+    "curiositiesTitle": "Las curiosidades"
+  },
+  "HowToPlay": {
+    "title": "Cómo jugar",
+    "close": "Cerrar",
+    "goal": "Descubre qué potencia histórica aparece en el mapa, en el apogeo de su expansión. Tienes {attempts} intentos.",
+    "guess": "Escribe un nombre, elígelo en la lista y haz clic en Adivinar (o pulsa Enter dos veces).",
+    "compare": "Cada intento fallido se compara con la respuesta:",
+    "wrong": "no es este",
+    "hints": "Cada fallo también desbloquea una pista nueva, justo debajo del intento: la era, el mapa con los continentes, tres curiosidades y, por último, el mapa con los países.",
+    "inspect": "Pasa el ratón o toca una pista, o el área, la época y la distancia, para ver qué significa.",
+    "daily": "Un mapa nuevo cada día.",
+    "goalNoCount": "Descubre qué potencia histórica aparece en el mapa, en el apogeo de su expansión.",
+    "areaLine": "Área: la respuesta era más grande en su apogeo (▼ más pequeña, ≈ parecida).",
+    "eraLine": "Época: la respuesta es más reciente (▼ más antigua, ≈ de la misma época).",
+    "distanceLine": "Distancia: la dirección y los kilómetros hasta la respuesta, o cuánto comparten los dos territorios.",
+    "outline": "Haz clic en el nombre de un intento para ver su contorno sobre el mapa."
+  },
+  "Stats": {
+    "title": "Estadísticas",
+    "loading": "Cargando…",
+    "loadError": "No se pudieron cargar las estadísticas. Inténtalo de nuevo.",
+    "played": "Partidas",
+    "winRate": "Victorias",
+    "currentStreak": "Racha actual",
+    "maxStreak": "Mejor racha",
+    "myDistribution": "Tus intentos",
+    "noGamesYet": "Termina el desafío de hoy para empezar tus estadísticas.",
+    "barWin": "Acertaste en el intento {attempt}: {count, plural, one {# vez} other {# veces}}",
+    "barLoss": "No acertaste: {count, plural, one {# vez} other {# veces}}",
+    "todayTitle": "Hoy, en Imperatle #{number}",
+    "todaySummary": "{players, plural, one {# persona terminó} other {# personas terminaron}} · el {rate} % acertó",
+    "averageLine": "Media de quienes acertaron: {avg} intentos.",
+    "yourResult": "Tú: {attempts}.",
+    "yourResultLost": "No acertaste.",
+    "nobodyYet": "Nadie ha terminado todavía el desafío de hoy.",
+    "communityBarWin": "El {pct} % acertó en el intento {attempt} ({count, plural, one {# persona} other {# personas}})",
+    "communityBarLoss": "El {pct} % no acertó ({count, plural, one {# persona} other {# personas}})",
+    "share": "Compartir",
+    "copied": "¡Copiado!",
+    "shareFailed": "No se pudo copiar"
+  },
+  "Common": {
+    "close": "Cerrar"
+  },
+  "Support": {
+    "title": "Apoyar el proyecto",
+    "intro": "Imperatle es un proyecto independiente, hecho por una sola persona. Quien apoya paga una vez y ayuda a cubrir los servidores y la investigación histórica detrás de cada mapa.",
+    "perksTitle": "Quien apoya obtiene",
+    "perks": {
+      "archive": {
+        "title": "Partidas anteriores",
+        "text": "jugar los desafíos de los días que ya pasaron."
+      },
+      "practice": {
+        "title": "Modo práctica",
+        "text": "después del desafío del día, jugar todo lo que quieras, sin que cuente en tus estadísticas."
+      },
+      "noAds": {
+        "title": "Sin anuncios",
+        "text": "si algún día el juego tiene anuncios, quien apoya no los verá."
+      },
+      "solo": {
+        "title": "Un solo desarrollador",
+        "text": "tu apoyo hace que sigan llegando imperios y funciones nuevas."
+      }
+    },
+    "oneTime": "pago único, para siempre",
+    "oneTimeNoPrice": "Pago único, para siempre. El precio en tu moneda aparece al pagar.",
+    "buy": "Quiero apoyar",
+    "opening": "Abriendo el pago…",
+    "login": "Inicia sesión con Google para continuar",
+    "loginNote": "La compra queda vinculada a tu cuenta, así que las ventajas valen en cualquier dispositivo.",
+    "checkoutError": "No se pudo abrir el pago. Revisa tu conexión e inténtalo de nuevo.",
+    "alreadySupporter": "Gracias por apoyar Imperatle.",
+    "unavailable": "El apoyo todavía no está disponible. Vuelve pronto.",
+    "merchant": "Los pagos se procesan de forma segura con Stripe. Los datos de tu tarjeta nunca llegan a Imperatle.",
+    "refundLink": "Política de reembolsos",
+    "close": "Cerrar",
+    "thanks": {
+      "title": "¡Gracias!",
+      "confirmed": "Tus ventajas de mecenas ya están activas en esta cuenta.",
+      "pending": "Tu pago se aprobó. Las ventajas aparecen en tu cuenta en un minuto como máximo; si no aparecen, recarga la página.",
+      "receipt": "El recibo llega a tu correo electrónico."
+    }
+  },
+  "Feedback": {
+    "title": "Comentarios",
+    "intro": "¿Encontraste un error, tienes una idea o viste un dato histórico equivocado? Cuéntanoslo aquí.",
+    "categoryLabel": "Tipo de mensaje",
+    "categories": {
+      "Bug": "Error en el juego",
+      "Idea": "Idea",
+      "Content": "Dato histórico",
+      "Other": "Otro"
+    },
+    "placeholders": {
+      "Bug": "¿Qué pasó? ¿En qué pantalla y en qué dispositivo?",
+      "Idea": "¿Qué te gustaría ver en Imperatle?",
+      "Content": "¿Qué mapa y qué dato? Si tienes una fuente, inclúyela.",
+      "Other": "Escribe lo que quieras."
+    },
+    "messageLabel": "Mensaje",
+    "emailLabel": "Tu correo electrónico (opcional, solo si quieres respuesta)",
+    "emailPlaceholder": "tu@ejemplo.com",
+    "send": "Enviar",
+    "sending": "Enviando…",
+    "thanks": "¡Gracias! Tu mensaje llegó y se leerá.",
+    "done": "Cerrar",
+    "error": "No se pudo enviar. Inténtalo de nuevo en un rato.",
+    "tooMany": "Demasiados mensajes seguidos. Espera unos minutos e inténtalo de nuevo."
+  },
+  "About": {
+    "title": "Acerca de",
+    "what": "Imperatle es un juego diario de adivinanzas. Cada día aparece en el mapa un imperio u otra potencia de la historia, en el apogeo de su expansión, y tú intentas descubrir cuál es.",
+    "editorialTitle": "Una nota sobre los imperios",
+    "editorial": "El juego trata solo de extensión territorial y de hechos. Mostrar hasta dónde llegó un imperio no es celebrar la conquista: muchos crecieron a costa de guerras, colonización y el sufrimiento de otros pueblos.",
+    "sourcesTitle": "Fuentes y precisión",
+    "sources": "Las fronteras históricas están adaptadas de <clio>Cliopatria</clio> (Bennett et al., Seshat Global History Databank), con licencia <license>CC BY 4.0</license>, simplificadas y ajustadas a la costa actual. El mapa del mundo procede de <ne>Natural Earth</ne> (dominio público). Las fechas, áreas y fronteras históricas son aproximaciones, y las fuentes suelen discrepar.",
+    "mistakes": "¿Viste algún error?",
+    "mistakesLink": "Envíanos un comentario.",
+    "authorTitle": "Quién lo hizo",
+    "author": "Hecho por <link>Ventura</link>, desarrollador brasileño.",
+    "stack": "Next.js, ASP.NET Core y PostgreSQL."
+  },
+  "Changelog": {
+    "title": "Historial de versiones",
+    "version": "Versión {version}",
+    "empires": "{count, plural, one {# mapa nuevo} other {# mapas nuevos}}",
+    "features": "Novedades",
+    "fixes": "Ajustes"
+  },
+  "Account": {
+    "title": "Tu cuenta",
+    "signInTitle": "Iniciar sesión",
+    "intro": "No necesitas una cuenta para jugar. Sin cuenta, tu progreso y tus estadísticas se quedan solo en este navegador.",
+    "perksTitle": "Con una cuenta, tienes",
+    "perks": {
+      "sync": {
+        "title": "Estadísticas en todas partes",
+        "text": "tu historial y tus rachas en todos tus dispositivos."
+      },
+      "safe": {
+        "title": "Progreso a salvo",
+        "text": "borrar los datos del navegador no borra tu racha."
+      },
+      "merge": {
+        "title": "No se pierde nada",
+        "text": "lo que ya jugaste en este navegador pasa a la cuenta."
+      }
+    },
+    "google": "Iniciar sesión con Google",
+    "privacy": "Solo guardamos tu nombre y tu correo electrónico. Puedes eliminar la cuenta cuando quieras.",
+    "loginError": "No se pudo iniciar sesión con Google. Inténtalo de nuevo.",
+    "loading": "Cargando…",
+    "signedInAs": "Sesión iniciada como",
+    "supporter": "Mecenas",
+    "signOut": "Cerrar sesión",
+    "signOutAll": "Cerrar sesión en todos los dispositivos",
+    "delete": "Eliminar cuenta",
+    "confirmTitle": "¿Eliminar la cuenta?",
+    "confirmText": "Esto borra tu cuenta y todas las partidas vinculadas a ella. No se puede deshacer.",
+    "confirmSupporter": "También pierdes las ventajas de mecenas.",
+    "confirmDelete": "Eliminar para siempre",
+    "cancel": "Cancelar",
+    "error": "Algo salió mal. Inténtalo de nuevo."
+  },
+  "Perks": {
+    "lockedTitle": "Para mecenas",
+    "lockedArchive": "Las partidas anteriores son una ventaja para quien apoya: juega el desafío de cualquier día que ya pasó, con las mismas reglas del juego diario.",
+    "lockedPractice": "El modo práctica es una ventaja para quien apoya: después del desafío del día, todas las rondas que quieras, a tu manera, sin tocar tus estadísticas.",
+    "becomeSupporter": "Quiero apoyar",
+    "backToGame": "Volver al juego de hoy",
+    "loading": "Cargando…",
+    "loadError": "No se pudo cargar esta página. Inténtalo de nuevo en un rato."
+  },
+  "Archive": {
+    "title": "Partidas anteriores",
+    "intro": "El desafío de cada día que ya pasó, con las mismas reglas del juego diario. Los resultados de aquí no cuentan en las estadísticas ni en la racha del juego diario.",
+    "summary": "{played} de {total} jugadas, {won} acertadas",
+    "filters": {
+      "all": "Todas",
+      "notPlayed": "Sin jugar",
+      "played": "Jugadas"
+    },
+    "filtersLabel": "Mostrar",
+    "empty": "Todavía no hay partidas anteriores. ¡Vuelve mañana!",
+    "emptyFilter": "No hay nada con este filtro.",
+    "status": {
+      "NotPlayed": "Jugar",
+      "InProgress": "En curso, {used}/{total}",
+      "Won": "Acertada, {used}/{total}",
+      "Lost": "No acertada"
+    },
+    "dayTitle": "Desafío #{number}",
+    "back": "Partidas anteriores",
+    "notFound": "Este día no está en las partidas anteriores.",
+    "endNote": "Partida anterior: tus estadísticas y tu racha del juego diario no cambian.",
+    "playToday": "Jugar el desafío de hoy"
+  },
+  "Practice": {
+    "title": "Práctica",
+    "intro": "Un imperio al azar en cada ronda, a tu manera. Las rondas de práctica no cuentan en las estadísticas ni en la racha.",
+    "difficulty": "Dificultad",
+    "difficultyOptions": {
+      "Any": "Cualquiera",
+      "Easy": "Fácil",
+      "Medium": "Media",
+      "Hard": "Difícil"
+    },
+    "difficultyInfo": "Fácil: los imperios más conocidos. Difícil: los que confunden incluso a quien le gusta la historia.",
+    "attempts": "Intentos",
+    "hints": "Pistas",
+    "hintsOn": "Activadas",
+    "hintsOff": "Desactivadas",
+    "hintsInfo": "Desactivadas: cada fallo solo muestra área, época y distancia. La ficha completa y las curiosidades aparecen al final.",
+    "map": "Mapa",
+    "mapOptions": {
+      "Progressive": "Poco a poco",
+      "Full": "Completo desde el inicio",
+      "Outline": "Solo el contorno"
+    },
+    "mapInfo": "Poco a poco: continentes después del 2.º fallo y países después del 6.º, como en el juego diario.",
+    "era": "Época",
+    "continent": "Continente principal",
+    "any": "Cualquiera",
+    "pool": "{count, plural, one {# imperio posible} other {# imperios posibles}}",
+    "poolTooSmall": "Hay pocos imperios con estos filtros. Quita alguno.",
+    "start": "Empezar",
+    "starting": "Empezando…",
+    "startError": "No se pudo empezar la ronda. Inténtalo de nuevo.",
+    "playAgain": "Jugar otra vez",
+    "changeSettings": "Cambiar opciones",
+    "resume": "Volver a la ronda en curso",
+    "multiInfo": "Puedes marcar más de una.",
+    "endNote": "Ronda de práctica: tus estadísticas y tu racha no cambian.",
+    "attemptsShort": "{count} intentos",
+    "dailyFirstTitle": "Primero, el desafío de hoy",
+    "dailyFirstText": "Termina el desafío de hoy para desbloquear la práctica. Así la práctica nunca revela la respuesta del día.",
+    "dailyFirstButton": "Jugar el desafío de hoy"
+  },
+  "Share": {
+    "archiveTitle": "Archivo #{number}"
+  }
+}

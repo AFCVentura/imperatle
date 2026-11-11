@@ -1,4 +1,4 @@
-// Privacy policy and terms of use, in both languages. Kept as data (not in
+// Privacy policy, terms of use and refund policy, in every site language. Kept as data (not in
 // messages/*.json) because they're long-form documents with their own
 // structure, rendered by LegalPage.
 
@@ -15,7 +15,7 @@ export interface LegalDocument {
   sections: LegalSection[];
 }
 
-type Locale = "en" | "pt";
+type Locale = "en" | "pt" | "es";
 
 const privacy: Record<Locale, LegalDocument> = {
   en: {
@@ -158,6 +158,76 @@ const privacy: Record<Locale, LegalDocument> = {
       },
     ],
   },
+  es: {
+    title: "Política de Privacidad",
+    updated: "Última actualización: 10 de noviembre de 2026",
+    intro:
+      "Imperatle es un juego diario y gratuito, hecho por una sola persona: João Vitor Ventura, desarrollador en Brasil, que es el responsable de los datos descritos aquí. El juego recoge lo mínimo posible: la cuenta es opcional, y nada de esto se usa para publicidad ni se vende. Este texto es una traducción: en caso de duda, prevalece la versión en portugués.",
+    sections: [
+      {
+        heading: "Qué se recoge",
+        items: [
+          "Un identificador aleatorio guardado en una cookie (imperatle_aid) en tu primer intento. No está vinculado a tu nombre, correo electrónico ni dispositivo; solo sirve para que el servidor cuente tus intentos y guarde tus estadísticas.",
+          "Tus partidas: la fecha, los imperios de tus intentos, cuántos intentos usaste y si acertaste (y, para quien apoya, las partidas anteriores y las rondas de práctica), vinculados a ese identificador.",
+          "Solo si inicias sesión con Google: tu nombre, tu correo electrónico y el identificador de tu cuenta de Google, además de una cookie de inicio de sesión (imperatle_session). Tus partidas pasan a estar vinculadas a tu cuenta, y tus estadísticas te acompañan en cualquier dispositivo. El juego nunca ve tu contraseña de Google.",
+          "Tu progreso del día, guardado en tu propio navegador (almacenamiento local) para que el tablero sobreviva a una recarga de la página. No sale de tu dispositivo.",
+          "Los comentarios que envías: el mensaje, el tipo, el idioma del sitio y, solo si lo rellenas, tu correo electrónico.",
+          "Los correos que envías a contato@imperatle.com: el mensaje y tu dirección de correo electrónico, reenviados a la bandeja de entrada del autor.",
+          "Tu dirección IP, usada durante unos minutos para limitar cuántos intentos y mensajes se pueden enviar seguidos. El juego no la guarda, aunque los proveedores de alojamiento indicados abajo pueden conservarla en sus registros técnicos.",
+          "Las visitas a las páginas, contadas por Cloudflare Web Analytics sin cookies y sin identificarte.",
+          "Si compras el Apoyo: el pago lo gestiona Stripe, así que los datos de tu tarjeta o de otro medio de pago nunca llegan al juego. El juego solo recibe el identificador del pago y la información de si la compra se completó, se reembolsó o se impugnó, vinculados a tu cuenta. Stripe guarda los datos de pago y facturación que necesita para la compra, el recibo y sus obligaciones antifraude y legales.",
+        ],
+      },
+      {
+        heading: "Para qué",
+        paragraphs: [
+          "Para que el juego funcione (contar los intentos de forma justa, mostrar tus estadísticas y los resultados de todos en el día), para protegerlo contra abusos, para leer y responder los comentarios y los correos, y para saber cuántas personas juegan.",
+          "Las bases legales son: la ejecución de lo que pediste (art. 7, V de la LGPD) para tu cuenta, las partidas vinculadas a ella y la compra del Apoyo; el interés legítimo en ofrecer y proteger el juego (art. 7, IX) para el identificador anónimo, los límites por dirección IP y el recuento de visitas; y tu consentimiento (art. 7, I) para el correo electrónico opcional del formulario de comentarios, que puedes retirar en cualquier momento.",
+        ],
+      },
+      {
+        heading: "Quién más trata los datos",
+        paragraphs: ["El juego depende de estos proveedores, cada uno con sus propias condiciones de privacidad:"],
+        items: [
+          "Microsoft Azure (alojamiento del sitio y del servidor del juego), Estados Unidos.",
+          "Cloudflare (recuento de visitas, sin cookies, y reenvío de los correos enviados a contato@imperatle.com), Estados Unidos.",
+          "Google (inicio de sesión, solo si lo usas, y la bandeja de entrada que recibe los correos enviados a contato@imperatle.com), Estados Unidos.",
+          "Neon (base de datos), Estados Unidos.",
+          "Resend (reenvía por correo electrónico los mensajes de comentarios), Estados Unidos.",
+          "Stripe (procesamiento del pago del Apoyo), Estados Unidos. Stripe trata tus datos de pago y facturación, en parte como responsable independiente del tratamiento (por ejemplo, para evitar fraudes y cumplir sus obligaciones legales), según su propia política de privacidad en stripe.com/privacy.",
+        ],
+      },
+      {
+        heading: "Datos guardados fuera de Brasil",
+        paragraphs: [
+          "Estos proveedores guardan los datos en Estados Unidos. Ese envío es necesario para ofrecer el juego que elegiste jugar y los servicios que pides en él (art. 33, IX de la LGPD), y cada proveedor protege los datos según sus propias condiciones de seguridad y privacidad.",
+        ],
+      },
+      {
+        heading: "Durante cuánto tiempo",
+        paragraphs: [
+          "Los registros de las partidas diarias se guardan mientras exista el juego, porque forman tus estadísticas y los resultados de cada día. Las rondas de práctica se borran automáticamente 30 días después de empezar. Una sesión de inicio de sesión se borra cuando caduca, o 7 días después de que cierres la sesión. Los comentarios y los correos se guardan durante el tiempo necesario para tramitarlos. La cookie caduca un año después de crearse. La cuenta se guarda hasta que la elimines.",
+        ],
+      },
+      {
+        heading: "Tus derechos",
+        paragraphs: [
+          "Según la LGPD de Brasil y, cuando corresponda, el RGPD europeo, puedes pedir la confirmación de que tus datos se tratan, el acceso, la corrección, la eliminación o una copia de ellos para llevarla a otro servicio (portabilidad), saber con quién se comparten, retirar tu consentimiento u oponerte a su uso. Haz la solicitud por correo electrónico a contato@imperatle.com o con el formulario de Comentarios del menú; la respuesta llega en un plazo máximo de 15 días.",
+          "Si tienes cuenta, puedes eliminarla en cualquier momento desde el menú, junto con todas las partidas vinculadas a ella. Borrar las cookies y los datos del sitio en tu navegador también deshace el vínculo entre tú y tu historial de partidas. También puedes presentar una reclamación ante la autoridad brasileña de protección de datos, la ANPD (gov.br/anpd).",
+        ],
+      },
+      {
+        heading: "Menores",
+        paragraphs: ["El juego no está dirigido a menores de 13 años y no recoge sus datos a sabiendas."],
+      },
+      {
+        heading: "Cambios",
+        paragraphs: [
+          "Esta política cambiará cuando lleguen funciones nuevas. La fecha de arriba indica la versión más reciente.",
+        ],
+      },
+    ],
+  },
 };
 
 const terms: Record<Locale, LegalDocument> = {
@@ -269,6 +339,60 @@ const terms: Record<Locale, LegalDocument> = {
       },
     ],
   },
+  es: {
+    title: "Términos de Uso",
+    updated: "Última actualización: 10 de noviembre de 2026",
+    intro:
+      "Estos términos se aplican a quien juega a Imperatle en imperatle.com. Al jugar, los aceptas. El juego lo hace y lo mantiene João Vitor Ventura, desarrollador en Brasil. Este texto es una traducción: en caso de duda, prevalece la versión en portugués.",
+    sections: [
+      {
+        heading: "El juego",
+        paragraphs: [
+          "Imperatle es gratuito. Se ofrece tal como está: puede cambiar, no estar disponible en algunos momentos o tener errores, y se pueden añadir o quitar funciones. El juego diario sigue siendo gratuito.",
+        ],
+      },
+      {
+        heading: "Contenido histórico",
+        paragraphs: [
+          "Las fechas, áreas y fronteras de imperios y otras potencias históricas suelen ser objeto de debate, y las fuentes discrepan. El juego usa cifras ampliamente citadas y marca las aproximadas, pero no es una obra de referencia. Si encuentras un error, el formulario de Comentarios es la mejor forma de avisar.",
+        ],
+      },
+      {
+        heading: "Juego limpio",
+        items: [
+          "No uses scripts ni solicitudes automáticas contra el juego o su servidor.",
+          "No intentes eludir el límite de intentos ni las protecciones del sitio.",
+          "No envíes contenido abusivo o ilegal por el formulario de comentarios.",
+        ],
+      },
+      {
+        heading: "Propiedad intelectual",
+        paragraphs: [
+          "El código, el diseño y los textos del juego pertenecen a su autor. Las fronteras históricas están adaptadas de Cliopatria (Bennett et al., Seshat Global History Databank, CC BY 4.0) y el mapa del mundo procede de Natural Earth (dominio público); la pantalla Acerca de incluye los créditos.",
+        ],
+      },
+      {
+        heading: "Compra del Apoyo",
+        paragraphs: [
+          "El Apoyo es una compra opcional y única (no es una suscripción) que activa funciones adicionales, como las partidas anteriores y el modo práctica, en la cuenta usada en la compra, mientras exista el juego. El precio final y la moneda aparecen antes del pago.",
+          "La compra la vende el autor, João Vitor Ventura, y el pago lo procesa Stripe. Las dudas sobre una compra se envían a contato@imperatle.com.",
+          "Los reembolsos siguen la Política de Reembolsos, enlazada al pie de todas las páginas. Una compra reembolsada o impugnada (contracargo) quita de la cuenta las funciones del Apoyo.",
+        ],
+      },
+      {
+        heading: "Responsabilidad",
+        paragraphs: [
+          "En la medida en que la ley lo permita, el autor no responde por daños indirectos causados por el uso del juego o por su falta de disponibilidad.",
+        ],
+      },
+      {
+        heading: "Ley aplicable y cambios",
+        paragraphs: [
+          "Estos términos se rigen por la ley brasileña, sin quitar los derechos que el consumidor tiene donde vive. Pueden actualizarse; la fecha de arriba indica la versión más reciente. Las dudas se envían a contato@imperatle.com o por el formulario de Comentarios.",
+        ],
+      },
+    ],
+  },
 };
 
 const refunds: Record<Locale, LegalDocument> = {
@@ -350,11 +474,50 @@ const refunds: Record<Locale, LegalDocument> = {
       },
     ],
   },
+  es: {
+    title: "Política de Reembolsos",
+    updated: "Última actualización: 10 de noviembre de 2026",
+    intro:
+      "Esta política se aplica a la compra del Apoyo en Imperatle. La compra la vende el autor, João Vitor Ventura, y el pago lo procesa Stripe, que también envía el recibo. Los reembolsos los hace el autor, a través de Stripe. Este texto es una traducción: en caso de duda, prevalece la versión en portugués.",
+    sections: [
+      {
+        heading: "Qué compras",
+        paragraphs: [
+          "El Apoyo es un pago único, no una suscripción: nada se renueva y nada se vuelve a cobrar. Activa las funciones de mecenas en la cuenta con la que habías iniciado sesión, mientras exista el juego.",
+        ],
+      },
+      {
+        heading: "Reembolso en un plazo de 14 días",
+        paragraphs: [
+          "Puedes pedir el reembolso íntegro en un plazo de 14 días desde la compra, por cualquier motivo. Esto incluye el derecho de desistimiento que tengas donde vives, como los 7 días del Código de Defensa del Consumidor de Brasil (art. 49).",
+        ],
+      },
+      {
+        heading: "Después de 14 días",
+        paragraphs: [
+          "Las solicitudes posteriores se valoran caso por caso, por ejemplo un cobro duplicado o una función del Apoyo que dejó de funcionar y no se pudo arreglar. Tus derechos como consumidor previstos por la ley nunca se ven afectados.",
+        ],
+      },
+      {
+        heading: "Cómo pedirlo",
+        items: [
+          "Escribe a contato@imperatle.com indicando el correo electrónico que usaste en la compra.",
+          "O usa el formulario de Comentarios del menú, indicando el correo electrónico que usaste en la compra.",
+        ],
+      },
+      {
+        heading: "Después del reembolso",
+        paragraphs: [
+          "El dinero vuelve al mismo medio de pago; el plazo para que aparezca depende de tu banco o del emisor de la tarjeta. Las funciones del Apoyo se quitan de la cuenta. Un contracargo (un pago impugnado ante tu banco) tiene el mismo efecto. Tu historial de partidas y tus estadísticas se quedan como están.",
+        ],
+      },
+    ],
+  },
 };
 
 export const LEGAL = { privacy, terms, refunds };
 export type LegalKind = keyof typeof LEGAL;
 
 export function getLegalDocument(kind: LegalKind, locale: string): LegalDocument {
-  return LEGAL[kind][locale === "pt" ? "pt" : "en"];
+  return LEGAL[kind][locale === "pt" || locale === "es" ? locale : "en"];
 }
