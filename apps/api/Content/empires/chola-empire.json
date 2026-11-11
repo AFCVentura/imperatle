@@ -3,7 +3,8 @@
   "slug": "chola-empire",
   "name": {
     "en": "Chola Empire",
-    "pt": "Império Chola"
+    "pt": "Império Chola",
+    "es": "Imperio Chola"
   },
   "peak": {
     "year": 1030,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts around 848, when a local chief took a city in the delta of a great southern river and restored a very old dynasty that until then had been a vassal of other kingdoms, and ends in 1279, when the last king was defeated by a rival kingdom from the far south. The peak shown is around 1030, after the conquests in the south of the subcontinent and on a large neighbouring island. The map excludes an allied kingdom on the east coast ruled by a family linked to the dynasty by marriages, and the Southeast Asian cities attacked by a naval expedition, which were not occupied.",
-    "pt": "Começa por volta de 848, quando um chefe local tomou uma cidade do delta de um grande rio do sul e restaurou uma dinastia muito antiga, que até então era vassala de outros reinos, e termina em 1279, quando o último rei foi derrotado por um reino rival do extremo sul. O auge escolhido é por volta de 1030, depois das conquistas no sul do subcontinente e numa grande ilha vizinha. O mapa exclui um reino aliado da costa leste governado por uma família ligada à dinastia por casamentos, e as cidades do Sudeste Asiático atacadas por uma expedição naval, que não foram ocupadas."
+    "pt": "Começa por volta de 848, quando um chefe local tomou uma cidade do delta de um grande rio do sul e restaurou uma dinastia muito antiga, que até então era vassala de outros reinos, e termina em 1279, quando o último rei foi derrotado por um reino rival do extremo sul. O auge escolhido é por volta de 1030, depois das conquistas no sul do subcontinente e numa grande ilha vizinha. O mapa exclui um reino aliado da costa leste governado por uma família ligada à dinastia por casamentos, e as cidades do Sudeste Asiático atacadas por uma expedição naval, que não foram ocupadas.",
+    "es": "Comienza hacia 848, cuando un jefe local tomó una ciudad del delta de un gran río del sur y restauró una dinastía muy antigua que hasta entonces había sido vasalla de otros reinos, y termina en 1279, cuando el último rey fue derrotado por un reino rival del extremo sur. El apogeo elegido es hacia 1030, tras las conquistas en el sur del subcontinente y en una gran isla vecina. El mapa excluye un reino aliado de la costa este gobernado por una familia unida a la dinastía por matrimonios, y las ciudades del Sudeste Asiático atacadas por una expedición naval, que no fueron ocupadas."
   },
   "area": {
     "km2": 435000,
@@ -34,49 +36,60 @@
   ],
   "capital": {
     "en": "Thanjavur (Gangaikonda Cholapuram from 1025)",
-    "pt": "Thanjavur (Gangaikonda Cholapuram a partir de 1025)"
+    "pt": "Thanjavur (Gangaikonda Cholapuram a partir de 1025)",
+    "es": "Thanjavur (Gangaikonda Cholapuram desde 1025)"
   },
   "language": {
     "en": "Tamil (as well as Sanskrit)",
-    "pt": "Tâmil (além do sânscrito)"
+    "pt": "Tâmil (além do sânscrito)",
+    "es": "Tamil (además del sánscrito)"
   },
   "religion": {
     "en": "Shaivite Hinduism",
-    "pt": "Hinduísmo Xivaíta"
+    "pt": "Hinduísmo Xivaíta",
+    "es": "Hinduismo shivaísta"
   },
   "religionNotes": {
     "en": "The kings were devotees of Shiva and built huge stone temples, which also worked as banks, centres of learning and landowners. The worship of Vishnu and Buddhism remained present, and one of the kings even funded a Buddhist monastery built by a foreign ruler in a port of his territory.",
-    "pt": "Os reis eram devotos de Shiva e construíram templos enormes de pedra, que funcionavam também como bancos, centros de ensino e donos de terras. O culto a Vishnu e o budismo continuaram presentes, e um dos reis chegou a financiar um mosteiro budista construído por um soberano estrangeiro num porto do seu território."
+    "pt": "Os reis eram devotos de Shiva e construíram templos enormes de pedra, que funcionavam também como bancos, centros de ensino e donos de terras. O culto a Vishnu e o budismo continuaram presentes, e um dos reis chegou a financiar um mosteiro budista construído por um soberano estrangeiro num porto do seu território.",
+    "es": "Los reyes eran devotos de Shiva y construyeron enormes templos de piedra, que también funcionaban como bancos, centros de enseñanza y propietarios de tierras. El culto a Vishnu y el budismo siguieron presentes, y uno de los reyes llegó a financiar un monasterio budista construido por un soberano extranjero en un puerto de su territorio."
   },
   "curiosities": [
     {
       "en": "Its villages chose the members of the local assemblies by lot, drawing palm leaves with the candidates' names from a pot.",
       "pt": "Suas aldeias escolhiam os membros das assembleias locais por sorteio, tirando de um pote folhas de palmeira com os nomes dos candidatos.",
+      "es": "Sus aldeas elegían a los miembros de las asambleas locales por sorteo, sacando de una vasija hojas de palma con los nombres de los candidatos.",
       "details": {
         "en": "Inscriptions at Uttaramerur, from the 10th century, describe the \"kudavolai\" system, with rules on who could stand, such as owning land and a house and knowing the sacred texts, and on who was barred, such as those who had not rendered accounts.",
-        "pt": "Inscrições de Uttaramerur, do século X, descrevem o sistema \"kudavolai\", com regras sobre quem podia se candidatar, como ter terra, casa própria e conhecimento dos textos sagrados, e sobre quem ficava impedido, como quem não prestou contas."
+        "pt": "Inscrições de Uttaramerur, do século X, descrevem o sistema \"kudavolai\", com regras sobre quem podia se candidatar, como ter terra, casa própria e conhecimento dos textos sagrados, e sobre quem ficava impedido, como quem não prestou contas.",
+        "es": "Unas inscripciones de Uthiramerur, del siglo X, describen el sistema \"kudavolai\", con reglas sobre quién podía presentarse, como tener tierras, casa propia y conocimiento de los textos sagrados, y sobre quién quedaba excluido, como quien no había rendido cuentas."
       }
     },
     {
       "en": "One of its temples, more than a thousand years old, has at the top of its tower a stone of about 80 tonnes, and how it was raised is still debated.",
       "pt": "Um dos seus templos, com mais de mil anos, tem no topo da torre uma pedra de cerca de 80 toneladas, e até hoje se discute como ela foi erguida.",
+      "es": "Uno de sus templos, de más de mil años, tiene en lo alto de su torre una piedra de unas 80 toneladas, y aún se discute cómo se subió hasta allí.",
       "details": {
         "en": "The Brihadisvara Temple, in Thanjavur, was completed in 1010 by Rajaraja I. Its tower is about 66 metres high, and the temple is a World Heritage Site.",
-        "pt": "O templo de Brihadisvara, em Thanjavur, foi terminado em 1010 por Rajaraja I. A torre tem cerca de 66 metros, e o templo é Patrimônio da Humanidade."
+        "pt": "O templo de Brihadisvara, em Thanjavur, foi terminado em 1010 por Rajaraja I. A torre tem cerca de 66 metros, e o templo é Patrimônio da Humanidade.",
+        "es": "El templo de Brihadisvara, en Thanjavur, fue terminado en 1010 por Rajaraja I. Su torre mide unos 66 metros de altura, y el templo es Patrimonio de la Humanidad."
       }
     },
     {
       "en": "Its dynasty is one of the oldest in the world, mentioned from the 3rd century BC to the 13th century.",
       "pt": "Sua dinastia é uma das mais antigas do mundo, citada desde o século III a.C. até o século XIII.",
+      "es": "Su dinastía es una de las más antiguas del mundo, mencionada desde el siglo III a. C. hasta el siglo XIII.",
       "details": {
         "en": "The Cholas appear in the edicts of Ashoka and in early Tamil literature, and ruled, with interruptions, for more than 1,500 years.",
-        "pt": "Os Chola aparecem nos éditos de Ashoka e na literatura tâmil antiga, e governaram, com interrupções, por mais de 1.500 anos."
+        "pt": "Os Chola aparecem nos éditos de Ashoka e na literatura tâmil antiga, e governaram, com interrupções, por mais de 1.500 anos.",
+        "es": "Los Chola aparecen en los edictos de Ashoka y en la antigua literatura tamil, y gobernaron, con interrupciones, durante más de 1500 años."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Chola_dynasty",
-    "pt": "https://pt.wikipedia.org/wiki/Dinastia_Chola"
+    "pt": "https://pt.wikipedia.org/wiki/Dinastia_Chola",
+    "es": "https://es.wikipedia.org/wiki/Dinastía_Chola"
   },
   "aliases": [
     "Chola",
@@ -91,7 +104,8 @@
   ],
   "summary": {
     "en": "An empire of southern India ruled by the Chola Dynasty, of Tamil language, already mentioned in inscriptions of the 3rd century BC. After centuries as a vassal of other kingdoms, the dynasty was restored by Vijayalaya, who took Thanjavur around 848. Rajaraja I (985-1014) and his son Rajendra I (1014-1044) turned the kingdom into a great power: they conquered the whole far south of India, Sri Lanka and the Maldives, took an army as far as the Ganges and, around 1025, sent a naval expedition that sacked the ports of Srivijaya, in Sumatra and on the Malay Peninsula. The Cholas controlled the maritime trade between Arabia and China and sent embassies to the Song Dynasty. The period left monumental temples, such as the Brihadisvara in Thanjavur, and the famous bronze statues of Hindu deities. From the 12th century, the empire was weakened by wars with the Chalukyas, the Hoysalas and the Pandyas, until Rajendra III, the last king, was defeated by the Pandyas in 1279.",
-    "pt": "Império do sul da Índia governado pela Dinastia Chola, de língua tâmil, citada já em inscrições do século III a.C. Depois de séculos como vassala de outros reinos, a dinastia foi restaurada por Vijayalaya, que tomou Thanjavur por volta de 848. Rajaraja I (985-1014) e seu filho Rajendra I (1014-1044) transformaram o reino numa grande potência: conquistaram todo o extremo sul da Índia, o Sri Lanka e as Maldivas, levaram um exército até o Ganges e, por volta de 1025, mandaram uma expedição naval que saqueou os portos de Srivijaya, em Sumatra e na península Malaia. Os Chola controlavam o comércio marítimo entre a Arábia e a China e mandaram embaixadas à Dinastia Song. O período deixou templos monumentais, como o de Brihadisvara, em Thanjavur, e as famosas estátuas de bronze de divindades hindus. A partir do século XII, o império foi enfraquecido pelas guerras com os Chalukyas, os Hoysalas e os Pandyas, até que Rajendra III, o último rei, foi derrotado pelos Pandyas em 1279."
+    "pt": "Império do sul da Índia governado pela Dinastia Chola, de língua tâmil, citada já em inscrições do século III a.C. Depois de séculos como vassala de outros reinos, a dinastia foi restaurada por Vijayalaya, que tomou Thanjavur por volta de 848. Rajaraja I (985-1014) e seu filho Rajendra I (1014-1044) transformaram o reino numa grande potência: conquistaram todo o extremo sul da Índia, o Sri Lanka e as Maldivas, levaram um exército até o Ganges e, por volta de 1025, mandaram uma expedição naval que saqueou os portos de Srivijaya, em Sumatra e na península Malaia. Os Chola controlavam o comércio marítimo entre a Arábia e a China e mandaram embaixadas à Dinastia Song. O período deixou templos monumentais, como o de Brihadisvara, em Thanjavur, e as famosas estátuas de bronze de divindades hindus. A partir do século XII, o império foi enfraquecido pelas guerras com os Chalukyas, os Hoysalas e os Pandyas, até que Rajendra III, o último rei, foi derrotado pelos Pandyas em 1279.",
+    "es": "Un imperio del sur de la India gobernado por la dinastía Chola, de lengua tamil, mencionada ya en inscripciones del siglo III a. C. Tras siglos como vasalla de otros reinos, la dinastía fue restaurada por Vijayalaya, que tomó Thanjavur hacia 848. Rajaraja I (985-1014) y su hijo Rajendra I (1014-1044) convirtieron el reino en una gran potencia: conquistaron todo el extremo sur de la India, Sri Lanka y las Maldivas, llevaron un ejército hasta el Ganges y, hacia 1025, enviaron una expedición naval que saqueó los puertos de Srivijaya, en Sumatra y en la península de Malaca. Los Chola controlaban el comercio marítimo entre Arabia y China y enviaron embajadas a la dinastía Song. El periodo dejó templos monumentales, como el de Brihadisvara en Thanjavur, y las famosas estatuas de bronce de divinidades hindúes. Desde el siglo XII, el imperio se debilitó por las guerras con los Chalukya, los Hoysala y los Pandya, hasta que Rajendra III, el último rey, fue derrotado por los Pandya en 1279."
   },
   "map": {
     "parts": [

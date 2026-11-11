@@ -3,7 +3,8 @@
   "slug": "tang-dynasty",
   "name": {
     "en": "Tang Dynasty",
-    "pt": "Dinastia Tang"
+    "pt": "Dinastia Tang",
+    "es": "Dinastía Tang"
   },
   "peak": {
     "year": 742,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts in 618, when the founder proclaimed the dynasty after the fall of the Sui Dynasty, and ends in 907, when the last emperor was deposed by a general. Between 690 and 705, Empress Wu Zetian ruled under a dynasty of her own, the Zhou, but the original dynasty was restored afterwards. The map leaves out the protectorates in Central Asia, Mongolia and Korea, where local rulers kept power under Chinese supervision. Northern Vietnam is included because, despite being called a protectorate, it was divided into ordinary prefectures, governed like the rest of the territory.",
-    "pt": "Começa em 618, quando o fundador proclamou a dinastia após a queda da Dinastia Sui, e termina em 907, quando o último imperador foi deposto por um general. Entre 690 e 705, a imperatriz Wu Zetian governou sob uma dinastia própria, a Zhou, mas a dinastia original foi restaurada depois. O mapa não inclui os protetorados da Ásia Central, da Mongólia e da Coreia, onde governantes locais mantinham o poder sob supervisão chinesa. O norte do Vietnã aparece porque, apesar do nome de protetorado, era dividido em prefeituras comuns, governadas como o resto do território."
+    "pt": "Começa em 618, quando o fundador proclamou a dinastia após a queda da Dinastia Sui, e termina em 907, quando o último imperador foi deposto por um general. Entre 690 e 705, a imperatriz Wu Zetian governou sob uma dinastia própria, a Zhou, mas a dinastia original foi restaurada depois. O mapa não inclui os protetorados da Ásia Central, da Mongólia e da Coreia, onde governantes locais mantinham o poder sob supervisão chinesa. O norte do Vietnã aparece porque, apesar do nome de protetorado, era dividido em prefeituras comuns, governadas como o resto do território.",
+    "es": "Comienza en 618, cuando el fundador proclamó la dinastía tras la caída de la dinastía Sui, y termina en 907, cuando un general depuso al último emperador. Entre 690 y 705, la emperatriz Wu Zetian gobernó bajo una dinastía propia, la Zhou, pero después se restauró la dinastía original. El mapa no incluye los protectorados de Asia Central, Mongolia y Corea, donde los gobernantes locales conservaban el poder bajo supervisión china. El norte de Vietnam aparece porque, aunque se llamaba protectorado, estaba dividido en prefecturas comunes, gobernadas como el resto del territorio."
   },
   "area": {
     "km2": 3400000,
@@ -34,49 +36,60 @@
   ],
   "capital": {
     "en": "Chang'an (today's Xi'an), with Luoyang as a secondary capital",
-    "pt": "Chang'an (atual Xi'an), com Luoyang como capital secundária"
+    "pt": "Chang'an (atual Xi'an), com Luoyang como capital secundária",
+    "es": "Chang'an (actual Xi'an), con Luoyang como capital secundaria"
   },
   "language": {
     "en": "Middle Chinese (with Classical Chinese as the written language)",
-    "pt": "Chinês médio (com o chinês clássico como língua escrita)"
+    "pt": "Chinês médio (com o chinês clássico como língua escrita)",
+    "es": "Chino medio (con el chino clásico como lengua escrita)"
   },
   "religion": {
     "en": "Buddhism, Taoism and Confucianism",
-    "pt": "Budismo, taoísmo e confucionismo"
+    "pt": "Budismo, taoísmo e confucionismo",
+    "es": "Budismo, taoísmo y confucianismo"
   },
   "religionNotes": {
     "en": "The imperial family claimed descent from Laozi, the founder of Taoism, and favoured that religion, but Buddhism reached its height, with thousands of monasteries. In 845, an emperor closed most of them and seized their lands. Foreign religions, such as Nestorian Christianity, Manichaeism, Zoroastrianism and Islam, also had temples in the capital.",
-    "pt": "A família imperial dizia descender de Laozi, o fundador do taoísmo, e favorecia essa religião, mas o budismo viveu seu auge, com milhares de mosteiros. Em 845, um imperador fechou a maioria deles e confiscou suas terras. Religiões estrangeiras, como o cristianismo nestoriano, o maniqueísmo, o zoroastrismo e o islã, também tinham templos na capital."
+    "pt": "A família imperial dizia descender de Laozi, o fundador do taoísmo, e favorecia essa religião, mas o budismo viveu seu auge, com milhares de mosteiros. Em 845, um imperador fechou a maioria deles e confiscou suas terras. Religiões estrangeiras, como o cristianismo nestoriano, o maniqueísmo, o zoroastrismo e o islã, também tinham templos na capital.",
+    "es": "La familia imperial decía descender de Lao-Tse, el fundador del taoísmo, y favorecía esa religión, pero el budismo vivió su apogeo, con miles de monasterios. En 845, un emperador cerró la mayoría de ellos y confiscó sus tierras. Religiones extranjeras, como el cristianismo nestoriano, el maniqueísmo, el zoroastrismo y el islam, también tenían templos en la capital."
   },
   "curiosities": [
     {
       "en": "Alchemists in its territory, searching for the elixir of immortality, recorded the mixture that gave rise to gunpowder.",
       "pt": "Alquimistas do seu território, em busca do elixir da imortalidade, registraram a mistura que deu origem à pólvora.",
+      "es": "Unos alquimistas de su territorio, en busca del elixir de la inmortalidad, registraron la mezcla que dio origen a la pólvora.",
       "details": {
         "en": "Taoist monks experimented with substances such as saltpetre and sulphur trying to prolong life. A 9th-century text warns that certain mixtures caught fire and burned the hands, the face and even the house of whoever prepared them. It is the oldest known reference to gunpowder, which in the following centuries came to be used in weapons and fireworks.",
-        "pt": "Monges taoístas faziam experiências com substâncias como salitre e enxofre tentando prolongar a vida. Um texto do século IX alerta que certas misturas pegavam fogo e queimavam as mãos, o rosto e até a casa de quem as preparava. É a referência mais antiga conhecida à pólvora, que nos séculos seguintes passou a ser usada em armas e fogos de artifício."
+        "pt": "Monges taoístas faziam experiências com substâncias como salitre e enxofre tentando prolongar a vida. Um texto do século IX alerta que certas misturas pegavam fogo e queimavam as mãos, o rosto e até a casa de quem as preparava. É a referência mais antiga conhecida à pólvora, que nos séculos seguintes passou a ser usada em armas e fogos de artifício.",
+        "es": "Los monjes taoístas experimentaban con sustancias como el salitre y el azufre para intentar prolongar la vida. Un texto del siglo IX advierte que ciertas mezclas se inflamaban y quemaban las manos, la cara e incluso la casa de quien las preparaba. Es la referencia más antigua conocida a la pólvora, que en los siglos siguientes empezó a usarse en armas y fuegos artificiales."
       }
     },
     {
       "en": "Its era is considered the golden age of Chinese poetry, with poets such as Li Bai and Du Fu.",
       "pt": "Sua época é considerada a idade de ouro da poesia chinesa, com poetas como Li Bai e Du Fu.",
+      "es": "Su época se considera la edad de oro de la poesía china, con poetas como Li Bai y Du Fu.",
       "details": {
         "en": "Writing poetry was part of the education of any cultivated person, and it was even required in the civil service examinations. Li Bai was famous for his poems about wine, the moon and nature, and Du Fu for his verses about war and the suffering of the people. An anthology compiled in the 18th century gathered about 49,000 poems by more than 2,000 authors of the period.",
-        "pt": "Escrever poesia fazia parte da formação de qualquer pessoa culta, e chegou a ser cobrado nos exames para o serviço público. Li Bai era famoso pelos poemas sobre vinho, lua e natureza, e Du Fu pelos versos sobre a guerra e o sofrimento do povo. Uma coletânea feita no século XVIII reuniu cerca de 49 mil poemas de mais de 2 mil autores do período."
+        "pt": "Escrever poesia fazia parte da formação de qualquer pessoa culta, e chegou a ser cobrado nos exames para o serviço público. Li Bai era famoso pelos poemas sobre vinho, lua e natureza, e Du Fu pelos versos sobre a guerra e o sofrimento do povo. Uma coletânea feita no século XVIII reuniu cerca de 49 mil poemas de mais de 2 mil autores do período.",
+        "es": "Escribir poesía formaba parte de la educación de cualquier persona culta, y llegó a exigirse en los exámenes para la administración pública. Li Bai era famoso por sus poemas sobre el vino, la luna y la naturaleza, y Du Fu por sus versos sobre la guerra y el sufrimiento del pueblo. Una antología compilada en el siglo XVIII reunió unos 49 000 poemas de más de 2000 autores del período."
       }
     },
     {
       "en": "To this day, Chinese people living outside China use the name of this dynasty to refer to themselves and their neighbourhoods.",
       "pt": "Até hoje, chineses que vivem fora da China usam o nome desta dinastia para falar de si mesmos e dos seus bairros.",
+      "es": "Todavía hoy, los chinos que viven fuera de China usan el nombre de esta dinastía para referirse a sí mismos y a sus barrios.",
       "details": {
         "en": "In many Chinese communities abroad, especially those of Cantonese origin, people commonly call themselves the \"Tang people\", and Chinatowns are called \"streets of the Tang people\". The dynasty became so associated with the height of Chinese civilization that its name became a synonym for Chinese, like that of the Han Dynasty, which gives its name to the majority ethnic group.",
-        "pt": "Em muitas comunidades chinesas no exterior, sobretudo as de origem cantonesa, é comum se chamar de \"povo Tang\", e as Chinatowns são chamadas de \"ruas do povo Tang\". A dinastia ficou tão associada ao auge da civilização chinesa que o nome dela virou sinônimo de chinês, assim como o da Dinastia Han, que dá nome à etnia majoritária."
+        "pt": "Em muitas comunidades chinesas no exterior, sobretudo as de origem cantonesa, é comum se chamar de \"povo Tang\", e as Chinatowns são chamadas de \"ruas do povo Tang\". A dinastia ficou tão associada ao auge da civilização chinesa que o nome dela virou sinônimo de chinês, assim como o da Dinastia Han, que dá nome à etnia majoritária.",
+        "es": "En muchas comunidades chinas del extranjero, sobre todo las de origen cantonés, es habitual llamarse \"pueblo Tang\", y a los barrios chinos se les llama \"calles del pueblo Tang\". La dinastía quedó tan asociada al apogeo de la civilización china que su nombre se convirtió en sinónimo de chino, como el de la dinastía Han, que da nombre a la etnia mayoritaria."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Tang_dynasty",
-    "pt": "https://pt.wikipedia.org/wiki/Dinastia_Tang"
+    "pt": "https://pt.wikipedia.org/wiki/Dinastia_Tang",
+    "es": "https://es.wikipedia.org/wiki/Dinastía_Tang"
   },
   "aliases": [
     "China",
@@ -87,11 +100,14 @@
     "Tang China",
     "China Tang",
     "Chinese Empire",
-    "Império Chinês"
+    "Império Chinês",
+    "Gran Tang",
+    "Imperio chino"
   ],
   "summary": {
     "en": "The dynasty founded in 618 by Li Yuan and his son Li Shimin, who reunified China after the fall of the Sui Dynasty. With its capital at Chang'an, then one of the largest cities in the world, it lived through an era of prosperity marked by trade on the Silk Road, the spread of Buddhism, the civil service examinations and a production of poetry considered the richest in Chinese history. It also extended its influence over Central Asia, Mongolia and Korea through protectorates. From 755, the rebellion of the general An Lushan shook the government, and the military governors of the provinces gained more and more autonomy. After new revolts in the late 9th century, the last emperor was deposed in 907, and China split into several rival states.",
-    "pt": "Dinastia fundada em 618 por Li Yuan e seu filho Li Shimin, que reunificaram a China depois da queda da Dinastia Sui. Com capital em Chang'an, então uma das maiores cidades do mundo, viveu uma era de prosperidade marcada pelo comércio na Rota da Seda, pela expansão do budismo, pelos exames para servidores públicos e por uma produção de poesia considerada a mais rica da história chinesa. Também estendeu sua influência pela Ásia Central, pela Mongólia e pela Coreia, por meio de protetorados. A partir de 755, a rebelião do general An Lushan abalou o governo, e os governadores militares das províncias ganharam cada vez mais autonomia. Depois de novas revoltas no fim do século IX, o último imperador foi deposto em 907, e a China se dividiu em vários estados rivais."
+    "pt": "Dinastia fundada em 618 por Li Yuan e seu filho Li Shimin, que reunificaram a China depois da queda da Dinastia Sui. Com capital em Chang'an, então uma das maiores cidades do mundo, viveu uma era de prosperidade marcada pelo comércio na Rota da Seda, pela expansão do budismo, pelos exames para servidores públicos e por uma produção de poesia considerada a mais rica da história chinesa. Também estendeu sua influência pela Ásia Central, pela Mongólia e pela Coreia, por meio de protetorados. A partir de 755, a rebelião do general An Lushan abalou o governo, e os governadores militares das províncias ganharam cada vez mais autonomia. Depois de novas revoltas no fim do século IX, o último imperador foi deposto em 907, e a China se dividiu em vários estados rivais.",
+    "es": "Dinastía fundada en 618 por Li Yuan y su hijo Li Shimin, que reunificaron China tras la caída de la dinastía Sui. Con capital en Chang'an, entonces una de las mayores ciudades del mundo, vivió una era de prosperidad marcada por el comercio en la Ruta de la Seda, la expansión del budismo, los exámenes para funcionarios y una producción poética considerada la más rica de la historia china. También extendió su influencia por Asia Central, Mongolia y Corea mediante protectorados. A partir de 755, la rebelión del general An Lushan sacudió al gobierno, y los gobernadores militares de las provincias ganaron cada vez más autonomía. Tras nuevas revueltas a finales del siglo IX, el último emperador fue depuesto en 907, y China se dividió en varios Estados rivales."
   },
   "map": {
     "parts": [

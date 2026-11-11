@@ -3,7 +3,8 @@
   "slug": "spanish-empire",
   "name": {
     "en": "Spanish Empire",
-    "pt": "Império Espanhol"
+    "pt": "Império Espanhol",
+    "es": "Imperio español"
   },
   "peak": {
     "year": 1806,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts in 1492, with the first overseas expedition, and ends in 1976, when it left its last colonial territory in Africa. Almost all of its American colonies became independent between 1810 and 1825.",
-    "pt": "Começa em 1492, com a primeira expedição ultramarina, e termina em 1976, com a saída do último território colonial na África. Quase todas as colônias americanas se tornaram independentes entre 1810 e 1825."
+    "pt": "Começa em 1492, com a primeira expedição ultramarina, e termina em 1976, com a saída do último território colonial na África. Quase todas as colônias americanas se tornaram independentes entre 1810 e 1825.",
+    "es": "Comienza en 1492, con la primera expedición de ultramar, y termina en 1976, cuando abandonó su último territorio colonial en África. Casi todas sus colonias americanas se independizaron entre 1810 y 1825."
   },
   "area": {
     "km2": 11571271,
@@ -38,49 +40,60 @@
   ],
   "capital": {
     "en": "Madrid",
-    "pt": "Madri"
+    "pt": "Madri",
+    "es": "Madrid"
   },
   "language": {
     "en": "Castilian",
-    "pt": "Castelhano"
+    "pt": "Castelhano",
+    "es": "Castellano"
   },
   "religion": {
     "en": "Catholicism",
-    "pt": "Catolicismo"
+    "pt": "Catolicismo",
+    "es": "Catolicismo"
   },
   "religionNotes": {
     "en": "The Inquisition watched over Catholic orthodoxy in the homeland and the colonies. Indigenous peoples were converted on a large scale, often blending older beliefs into the new faith.",
-    "pt": "A Inquisição vigiava a ortodoxia católica na metrópole e nas colônias. Os povos indígenas foram convertidos em massa, muitas vezes misturando crenças antigas à nova fé."
+    "pt": "A Inquisição vigiava a ortodoxia católica na metrópole e nas colônias. Os povos indígenas foram convertidos em massa, muitas vezes misturando crenças antigas à nova fé.",
+    "es": "La Inquisición vigilaba la ortodoxia católica en la metrópoli y en las colonias. Los pueblos indígenas fueron convertidos de forma masiva, y a menudo mezclaron creencias antiguas con la nueva fe."
   },
   "curiosities": [
     {
       "en": "A mountain of silver in the Andes, mined with forced Indigenous labour, fed the world economy for centuries.",
       "pt": "Uma montanha de prata nos Andes, explorada com trabalho forçado indígena, abasteceu a economia mundial por séculos.",
+      "es": "Una montaña de plata en los Andes, explotada con trabajo forzado indígena, abasteció a la economía mundial durante siglos.",
       "details": {
         "en": "The Cerro Rico of Potosí, in today's Bolivia, was found by the Spaniards in 1545. Its silver, mined by Indigenous people forced to work under the mita system in terrible conditions, supplied Europe and China for centuries. Potosí, more than 4,000 metres above sea level, had close to 160,000 people in the 17th century, more than many European capitals.",
-        "pt": "O Cerro Rico de Potosí, na atual Bolívia, foi descoberto pelos espanhóis em 1545. Sua prata, extraída por indígenas obrigados a trabalhar pelo sistema da mita, em condições terríveis, abasteceu a Europa e a China por séculos. Potosí, a mais de 4 mil metros de altitude, chegou a ter perto de 160 mil habitantes no século XVII, mais que muitas capitais europeias."
+        "pt": "O Cerro Rico de Potosí, na atual Bolívia, foi descoberto pelos espanhóis em 1545. Sua prata, extraída por indígenas obrigados a trabalhar pelo sistema da mita, em condições terríveis, abasteceu a Europa e a China por séculos. Potosí, a mais de 4 mil metros de altitude, chegou a ter perto de 160 mil habitantes no século XVII, mais que muitas capitais europeias.",
+        "es": "El Cerro Rico de Potosí, en la actual Bolivia, fue descubierto por los españoles en 1545. Su plata, extraída por indígenas obligados a trabajar bajo el sistema de la mita, en condiciones terribles, abasteció a Europa y a China durante siglos. Potosí, a más de 4000 metros de altitud, llegó a tener cerca de 160 000 habitantes en el siglo XVII, más que muchas capitales europeas."
       }
     },
     {
       "en": "It conquered two great American empires in less than 20 years, in the 16th century.",
       "pt": "Conquistou dois grandes impérios americanos em menos de 20 anos, no século XVI.",
+      "es": "Conquistó dos grandes imperios americanos en menos de 20 años, en el siglo XVI.",
       "details": {
         "en": "Hernán Cortés took Tenochtitlan, the Aztec capital, in 1521, and Francisco Pizarro captured the Inca emperor Atahualpa in 1532, executing him the next year. With only a few hundred Spaniards, they won thanks to thousands of Indigenous allies, steel weapons, horses and, above all, smallpox epidemics, which killed a large part of the population.",
-        "pt": "Hernán Cortés tomou Tenochtitlan, a capital asteca, em 1521, e Francisco Pizarro capturou o imperador inca Atahualpa em 1532, executando-o no ano seguinte. Com poucas centenas de espanhóis, venceram graças a milhares de aliados indígenas, armas de aço, cavalos e, sobretudo, às epidemias de varíola, que mataram grande parte da população."
+        "pt": "Hernán Cortés tomou Tenochtitlan, a capital asteca, em 1521, e Francisco Pizarro capturou o imperador inca Atahualpa em 1532, executando-o no ano seguinte. Com poucas centenas de espanhóis, venceram graças a milhares de aliados indígenas, armas de aço, cavalos e, sobretudo, às epidemias de varíola, que mataram grande parte da população.",
+        "es": "Hernán Cortés tomó Tenochtitlan, la capital azteca, en 1521, y Francisco Pizarro capturó al emperador inca Atahualpa en 1532 y lo ejecutó al año siguiente. Con solo unos cientos de españoles, vencieron gracias a miles de aliados indígenas, a las armas de acero, a los caballos y, sobre todo, a las epidemias de viruela, que mataron a gran parte de la población."
       }
     },
     {
       "en": "An Asian country is still named after one of its kings.",
       "pt": "Um país asiático leva até hoje o nome de um de seus reis.",
+      "es": "Un país asiático lleva todavía hoy el nombre de uno de sus reyes.",
       "details": {
         "en": "In 1543, the explorer Ruy López de Villalobos named the islands after Prince Philip, who reigned as Philip II from 1556 to 1598. Spain colonised the Philippines from 1565 and ruled them until 1898, when they passed to the United States, and the country kept the name after independence, in 1946.",
-        "pt": "Em 1543, o explorador Ruy López de Villalobos batizou as ilhas em homenagem ao príncipe Filipe, que reinou como Filipe II de 1556 a 1598. A Espanha colonizou as Filipinas a partir de 1565 e as governou até 1898, quando passaram aos Estados Unidos, e o país manteve o nome depois da independência, em 1946."
+        "pt": "Em 1543, o explorador Ruy López de Villalobos batizou as ilhas em homenagem ao príncipe Filipe, que reinou como Filipe II de 1556 a 1598. A Espanha colonizou as Filipinas a partir de 1565 e as governou até 1898, quando passaram aos Estados Unidos, e o país manteve o nome depois da independência, em 1946.",
+        "es": "En 1543, el explorador Ruy López de Villalobos bautizó las islas en honor del príncipe Felipe, que reinó como Felipe II de 1556 a 1598. España colonizó Filipinas a partir de 1565 y las gobernó hasta 1898, cuando pasaron a Estados Unidos, y el país conservó el nombre tras la independencia, en 1946."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Spanish_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Império_Espanhol"
+    "pt": "https://pt.wikipedia.org/wiki/Império_Espanhol",
+    "es": "https://es.wikipedia.org/wiki/Imperio_español"
   },
   "aliases": [
     "Spain",
@@ -93,11 +106,17 @@
     "Império Colonial Espanhol",
     "Imperio Español",
     "Castile",
-    "Castela"
+    "Castela",
+    "España",
+    "Monarquía española",
+    "Imperio colonial español",
+    "Castilla",
+    "Corona de Castilla"
   ],
   "summary": {
     "en": "The colonial empire that began with Christopher Columbus's voyage, funded by the Catholic Monarchs in 1492, and became one of the first global empires in history. In the 16th century the conquistadors overthrew the Aztecs and the Incas, and Spain came to rule most of the Americas, the Philippines and, for a time, parts of Italy and the Low Countries. American silver paid for wars in Europe and for trade with Asia. The American colonies became independent between 1810 and 1825, Cuba, Puerto Rico and the Philippines were lost in 1898, and the last colonies in Africa were given up in 1975 and 1976.",
-    "pt": "Império colonial que começou com a viagem de Cristóvão Colombo, financiada pelos Reis Católicos em 1492, e se tornou um dos primeiros impérios globais da história. No século XVI, os conquistadores derrubaram os astecas e os incas, e a Espanha passou a dominar a maior parte das Américas, as Filipinas e, por um tempo, partes da Itália e dos Países Baixos. A prata americana pagou guerras na Europa e o comércio com a Ásia. As colônias da América ficaram independentes entre 1810 e 1825, Cuba, Porto Rico e as Filipinas foram perdidas em 1898, e as últimas colônias na África foram deixadas em 1975 e 1976."
+    "pt": "Império colonial que começou com a viagem de Cristóvão Colombo, financiada pelos Reis Católicos em 1492, e se tornou um dos primeiros impérios globais da história. No século XVI, os conquistadores derrubaram os astecas e os incas, e a Espanha passou a dominar a maior parte das Américas, as Filipinas e, por um tempo, partes da Itália e dos Países Baixos. A prata americana pagou guerras na Europa e o comércio com a Ásia. As colônias da América ficaram independentes entre 1810 e 1825, Cuba, Porto Rico e as Filipinas foram perdidas em 1898, e as últimas colônias na África foram deixadas em 1975 e 1976.",
+    "es": "Imperio colonial que comenzó con el viaje de Cristóbal Colón, financiado por los Reyes Católicos en 1492, y se convirtió en uno de los primeros imperios globales de la historia. En el siglo XVI, los conquistadores derrocaron a los aztecas y a los incas, y España pasó a dominar la mayor parte de América, Filipinas y, durante un tiempo, partes de Italia y de los Países Bajos. La plata americana pagó guerras en Europa y el comercio con Asia. Las colonias americanas se independizaron entre 1810 y 1825, Cuba, Puerto Rico y Filipinas se perdieron en 1898, y las últimas colonias en África se abandonaron en 1975 y 1976."
   },
   "map": {
     "parts": [

@@ -3,7 +3,8 @@
   "slug": "western-roman-empire",
   "name": {
     "en": "Western Roman Empire",
-    "pt": "Império Romano do Ocidente"
+    "pt": "Império Romano do Ocidente",
+    "es": "Imperio romano de Occidente"
   },
   "peak": {
     "year": 395,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts in 395, with the death of the last emperor to rule the whole territory alone, when the division into two halves with their own emperors became permanent. It ends in 476, with the deposition of the last emperor by a Germanic military leader; some historians prefer 480, the year of death of the last emperor recognised by the other half. The peak shown is 395, since after that the territory only shrank, with the loss of Britain, Hispania, Gaul and Africa.",
-    "pt": "Começa em 395, com a morte do último imperador a governar sozinho todo o território, quando a divisão em duas metades com imperadores próprios se tornou permanente. Termina em 476, com a deposição do último imperador por um chefe militar germânico; alguns historiadores preferem 480, ano da morte do último imperador reconhecido pela outra metade. O auge escolhido é 395, já que depois disso o território só encolheu, com a perda da Britânia, da Hispânia, da Gália e da África."
+    "pt": "Começa em 395, com a morte do último imperador a governar sozinho todo o território, quando a divisão em duas metades com imperadores próprios se tornou permanente. Termina em 476, com a deposição do último imperador por um chefe militar germânico; alguns historiadores preferem 480, ano da morte do último imperador reconhecido pela outra metade. O auge escolhido é 395, já que depois disso o território só encolheu, com a perda da Britânia, da Hispânia, da Gália e da África.",
+    "es": "Comienza en 395, con la muerte del último emperador que gobernó solo todo el territorio, cuando la división en dos mitades con emperadores propios se volvió permanente. Termina en 476, con la deposición del último emperador a manos de un jefe militar germánico; algunos historiadores prefieren 480, año de la muerte del último emperador reconocido por la otra mitad. El apogeo elegido es 395, ya que después el territorio no hizo más que reducirse, con la pérdida de Britania, Hispania, la Galia y África."
   },
   "area": {
     "km2": 2100000,
@@ -35,60 +37,76 @@
   ],
   "capital": {
     "en": "Milan, later Ravenna",
-    "pt": "Milão, depois Ravena"
+    "pt": "Milão, depois Ravena",
+    "es": "Milán, después Rávena"
   },
   "language": {
     "en": "Latin",
-    "pt": "Latim"
+    "pt": "Latim",
+    "es": "Latín"
   },
   "religion": {
     "en": "Christianity",
-    "pt": "Cristianismo"
+    "pt": "Cristianismo",
+    "es": "Cristianismo"
   },
   "religionNotes": {
     "en": "Christianity had become the official religion shortly before, and pagan cults were banned by law at the end of the 4th century, but part of the aristocracy of the old capital remained faithful to the traditional gods for decades. Many of the Germanic peoples who served in the army or settled in the territory were Arian Christians, a current considered heretical by the official Church.",
-    "pt": "O cristianismo havia se tornado a religião oficial pouco antes, e os cultos pagãos foram proibidos por lei no fim do século IV, mas parte da aristocracia da antiga capital continuou fiel aos deuses tradicionais por décadas. Muitos dos povos germânicos que serviam no exército ou se instalaram no território eram cristãos arianos, uma corrente considerada herética pela Igreja oficial."
+    "pt": "O cristianismo havia se tornado a religião oficial pouco antes, e os cultos pagãos foram proibidos por lei no fim do século IV, mas parte da aristocracia da antiga capital continuou fiel aos deuses tradicionais por décadas. Muitos dos povos germânicos que serviam no exército ou se instalaram no território eram cristãos arianos, uma corrente considerada herética pela Igreja oficial.",
+    "es": "El cristianismo se había convertido en la religión oficial poco antes, y los cultos paganos se prohibieron por ley a finales del siglo IV, pero parte de la aristocracia de la antigua capital siguió fiel a los dioses tradicionales durante décadas. Muchos de los pueblos germánicos que servían en el ejército o se asentaron en el territorio eran cristianos arrianos, una corriente considerada herética por la Iglesia oficial."
   },
   "curiosities": [
     {
       "en": "Its last emperor bore the name of the legendary founder of its most famous city and that of the first emperor.",
       "pt": "Seu último imperador tinha o nome do fundador lendário de sua cidade mais famosa e o do primeiro imperador.",
+      "es": "Su último emperador llevaba el nombre del fundador legendario de su ciudad más famosa y el del primer emperador.",
       "details": {
         "en": "Romulus Augustus, still a teenager, was placed on the throne by his father, the general Orestes, in 475. Because he was young and had no real power, he was nicknamed Augustulus, \"little Augustus\". Odoacer deposed him in 476 but spared his life and sent him to live on a pension in southern Italy.",
-        "pt": "Rômulo Augusto, ainda adolescente, foi colocado no trono pelo pai, o general Orestes, em 475. Por ser jovem e sem poder real, ganhou o apelido de Augústulo, \"pequeno Augusto\". Odoacro o depôs em 476, mas poupou sua vida e o mandou viver com uma pensão no sul da Itália."
+        "pt": "Rômulo Augusto, ainda adolescente, foi colocado no trono pelo pai, o general Orestes, em 475. Por ser jovem e sem poder real, ganhou o apelido de Augústulo, \"pequeno Augusto\". Odoacro o depôs em 476, mas poupou sua vida e o mandou viver com uma pensão no sul da Itália.",
+        "es": "Rómulo Augusto, todavía adolescente, fue puesto en el trono por su padre, el general Orestes, en 475. Como era joven y no tenía poder real, recibió el apodo de Augústulo, \"pequeño Augusto\". Odoacro lo depuso en 476, pero le perdonó la vida y lo envió a vivir con una pensión en el sur de Italia."
       }
     },
     {
       "en": "A people who sacked its most famous city gave rise to a word that now means senseless destruction.",
       "pt": "Um povo que saqueou sua cidade mais famosa deu origem a uma palavra que hoje significa destruição gratuita.",
+      "es": "Un pueblo que saqueó su ciudad más famosa dio origen a una palabra que hoy significa destrucción gratuita.",
       "details": {
         "en": "In 455, the Vandals of King Genseric, who had taken the province of Africa, sailed from Carthage and plundered Rome for two weeks, carrying off treasures and captives, among them the widow and daughters of Emperor Valentinian III. In 1794, the French bishop Henri Grégoire coined the word \"vandalism\" to condemn the destruction of art during the French Revolution.",
-        "pt": "Em 455, os vândalos do rei Genserico, que tinham tomado a província da África, partiram de Cartago e saquearam Roma por duas semanas, levando tesouros e prisioneiros, entre eles a viúva e as filhas do imperador Valentiniano III. Em 1794, o bispo francês Henri Grégoire criou a palavra \"vandalismo\" para condenar a destruição de obras de arte durante a Revolução Francesa."
+        "pt": "Em 455, os vândalos do rei Genserico, que tinham tomado a província da África, partiram de Cartago e saquearam Roma por duas semanas, levando tesouros e prisioneiros, entre eles a viúva e as filhas do imperador Valentiniano III. Em 1794, o bispo francês Henri Grégoire criou a palavra \"vandalismo\" para condenar a destruição de obras de arte durante a Revolução Francesa.",
+        "es": "En 455, los vándalos del rey Genserico, que se habían apoderado de la provincia de África, zarparon de Cartago y saquearon Roma durante dos semanas, y se llevaron tesoros y prisioneros, entre ellos la viuda y las hijas del emperador Valentiniano III. En 1794, el obispo francés Henri Grégoire acuñó la palabra \"vandalismo\" para condenar la destrucción de obras de arte durante la Revolución francesa."
       }
     },
     {
       "en": "Its fall is traditionally used as the marker of the end of Antiquity and the beginning of the Middle Ages.",
       "pt": "Sua queda é tradicionalmente usada como marco do fim da Antiguidade e do início da Idade Média.",
+      "es": "Su caída se usa tradicionalmente como el hito que marca el fin de la Antigüedad y el comienzo de la Edad Media.",
       "details": {
         "en": "The deposition of the last emperor, in 476, became the textbook date for the transition between the two eras. Today historians see this change as gradual: city life, Latin and the Church carried on, now under Germanic kingdoms.",
-        "pt": "A deposição do último imperador, em 476, virou a data escolar de transição entre as duas eras. Hoje os historiadores veem essa passagem como gradual: a vida nas cidades, o latim e a Igreja continuaram, agora sob reinos germânicos."
+        "pt": "A deposição do último imperador, em 476, virou a data escolar de transição entre as duas eras. Hoje os historiadores veem essa passagem como gradual: a vida nas cidades, o latim e a Igreja continuaram, agora sob reinos germânicos.",
+        "es": "La deposición del último emperador, en 476, se convirtió en la fecha de los libros escolares para la transición entre las dos épocas. Hoy los historiadores ven ese paso como gradual: la vida urbana, el latín y la Iglesia continuaron, ahora bajo reinos germánicos."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Western_Roman_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Império_Romano_do_Ocidente"
+    "pt": "https://pt.wikipedia.org/wiki/Império_Romano_do_Ocidente",
+    "es": "https://es.wikipedia.org/wiki/Imperio_romano_de_Occidente"
   },
   "aliases": [
     "Império Romano Ocidental",
     "Western Empire",
     "Império do Ocidente",
     "Roma Ocidental",
-    "Hesperium Imperium"
+    "Hesperium Imperium",
+    "Imperio romano occidental",
+    "Imperio de Occidente",
+    "Imperio occidental",
+    "Roma occidental"
   ],
   "summary": {
     "en": "The western half of the Roman Empire, which permanently had its own emperor after the death of Theodosius I in 395, when the empire was divided between his sons Honorius and Arcadius. Ruled from Milan and later from Ravenna, throughout the 5th century it faced invasions and migrations of Germanic peoples and the Huns: Rome was sacked by the Visigoths in 410 and by the Vandals in 455, and provinces such as Britain, Hispania, Gaul and Africa were lost one by one. Real power passed more and more to generals of barbarian origin, who appointed and deposed emperors. In 476, the Germanic leader Odoacer deposed the young Romulus Augustus and sent the imperial insignia to Constantinople, a date traditionally used as the marker of the end of Antiquity.",
-    "pt": "Metade ocidental do Império Romano, que passou a ter imperador próprio de forma permanente após a morte de Teodósio I, em 395, quando o império foi dividido entre seus filhos Honório e Arcádio. Governada a partir de Milão e depois de Ravena, enfrentou ao longo do século V invasões e migrações de povos germânicos e dos hunos: Roma foi saqueada pelos visigodos em 410 e pelos vândalos em 455, e províncias como a Britânia, a Hispânia, a Gália e a África foram perdidas uma a uma. O poder real passou cada vez mais para generais de origem bárbara, que nomeavam e depunham imperadores. Em 476, o chefe germânico Odoacro depôs o jovem Rômulo Augusto e enviou as insígnias imperiais a Constantinopla, data tradicionalmente usada como marco do fim da Antiguidade."
+    "pt": "Metade ocidental do Império Romano, que passou a ter imperador próprio de forma permanente após a morte de Teodósio I, em 395, quando o império foi dividido entre seus filhos Honório e Arcádio. Governada a partir de Milão e depois de Ravena, enfrentou ao longo do século V invasões e migrações de povos germânicos e dos hunos: Roma foi saqueada pelos visigodos em 410 e pelos vândalos em 455, e províncias como a Britânia, a Hispânia, a Gália e a África foram perdidas uma a uma. O poder real passou cada vez mais para generais de origem bárbara, que nomeavam e depunham imperadores. Em 476, o chefe germânico Odoacro depôs o jovem Rômulo Augusto e enviou as insígnias imperiais a Constantinopla, data tradicionalmente usada como marco do fim da Antiguidade.",
+    "es": "Mitad occidental del Imperio romano, que pasó a tener de forma permanente su propio emperador tras la muerte de Teodosio I, en 395, cuando el imperio se dividió entre sus hijos Honorio y Arcadio. Gobernada desde Milán y después desde Rávena, a lo largo del siglo V se enfrentó a invasiones y migraciones de pueblos germánicos y de los hunos: Roma fue saqueada por los visigodos en 410 y por los vándalos en 455, y provincias como Britania, Hispania, la Galia y África se perdieron una tras otra. El poder real pasó cada vez más a generales de origen bárbaro, que nombraban y deponían emperadores. En 476, el jefe germánico Odoacro depuso al joven Rómulo Augústulo y envió las insignias imperiales a Constantinopla, fecha que se usa tradicionalmente como el hito del fin de la Antigüedad."
   },
   "map": {
     "parts": [

@@ -3,7 +3,8 @@
   "slug": "qin-dynasty",
   "name": {
     "en": "Qin Dynasty",
-    "pt": "Dinastia Qin"
+    "pt": "Dinastia Qin",
+    "es": "Dinastía Qin"
   },
   "peak": {
     "year": -210,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts in 221 BC, when the king of one of the rival states finished conquering the others and proclaimed himself emperor, and ends in 206 BC, when the last ruler surrendered to the rebels. The state had existed for centuries before the unification, but it is only counted as a dynasty from then on. Control over the far south and the southeast coast was recent and uncertain, and there the map follows the borders of the kingdoms that arose soon afterwards.",
-    "pt": "Começa em 221 a.C., quando o rei de um dos Estados rivais terminou de conquistar os outros e se proclamou imperador, e termina em 206 a.C., quando o último governante se rendeu aos rebeldes. O Estado já existia havia séculos antes da unificação, mas só é contado como dinastia a partir dela. O controle sobre o extremo sul e o litoral sudeste era recente e incerto, e o mapa segue ali as fronteiras dos reinos que surgiram logo depois."
+    "pt": "Começa em 221 a.C., quando o rei de um dos Estados rivais terminou de conquistar os outros e se proclamou imperador, e termina em 206 a.C., quando o último governante se rendeu aos rebeldes. O Estado já existia havia séculos antes da unificação, mas só é contado como dinastia a partir dela. O controle sobre o extremo sul e o litoral sudeste era recente e incerto, e o mapa segue ali as fronteiras dos reinos que surgiram logo depois.",
+    "es": "Comienza en el 221 a. C., cuando el rey de uno de los Estados rivales terminó de conquistar a los demás y se proclamó emperador, y termina en el 206 a. C., cuando el último gobernante se rindió a los rebeldes. El Estado ya existía desde hacía siglos antes de la unificación, pero solo se cuenta como dinastía a partir de ella. El control sobre el extremo sur y la costa sureste era reciente e incierto, y allí el mapa sigue las fronteras de los reinos que surgieron poco después."
   },
   "area": {
     "km2": 2819502,
@@ -34,49 +36,60 @@
   ],
   "capital": {
     "en": "Xianyang",
-    "pt": "Xianyang"
+    "pt": "Xianyang",
+    "es": "Xianyang"
   },
   "language": {
     "en": "Old Chinese",
-    "pt": "Chinês antigo"
+    "pt": "Chinês antigo",
+    "es": "Chino antiguo"
   },
   "religion": {
     "en": "Traditional Chinese religion",
-    "pt": "Religião tradicional chinesa"
+    "pt": "Religião tradicional chinesa",
+    "es": "Religión tradicional china"
   },
   "religionNotes": {
     "en": "The government followed Legalism, a doctrine of strict laws, with rewards and punishments, and persecuted other schools of thought. Religion was the traditional Chinese one, with the worship of Heaven, of ancestors and of the spirits of mountains and rivers, and the emperor made sacrifices on Mount Tai to announce the unification to Heaven.",
-    "pt": "O governo seguia o legalismo, uma doutrina de leis rígidas, com recompensas e punições, e perseguiu outras escolas de pensamento. A religião era a tradicional chinesa, com culto ao Céu, aos ancestrais e aos espíritos de montanhas e rios, e o imperador fez sacrifícios no monte Tai para anunciar ao Céu a unificação."
+    "pt": "O governo seguia o legalismo, uma doutrina de leis rígidas, com recompensas e punições, e perseguiu outras escolas de pensamento. A religião era a tradicional chinesa, com culto ao Céu, aos ancestrais e aos espíritos de montanhas e rios, e o imperador fez sacrifícios no monte Tai para anunciar ao Céu a unificação.",
+    "es": "El gobierno seguía el legalismo, una doctrina de leyes estrictas, con recompensas y castigos, y persiguió a otras escuelas de pensamiento. La religión era la tradicional china, con el culto al Cielo, a los antepasados y a los espíritus de montañas y ríos, y el emperador ofreció sacrificios en el monte Tai para anunciar la unificación al Cielo."
   },
   "curiosities": [
     {
       "en": "Its round coin with a square hole in the middle became the model for Chinese coins for more than 2,000 years.",
       "pt": "Sua moeda redonda com um furo quadrado no meio virou o modelo das moedas chinesas por mais de 2 mil anos.",
+      "es": "Su moneda redonda con un agujero cuadrado en el centro fue el modelo de las monedas chinas durante más de 2000 años.",
       "details": {
         "en": "Before the unification, each kingdom had its own money, some of it shaped like a spade or a knife. The new government imposed a single bronze coin, round with a square hole, which let people carry the coins threaded on a string. Later dynasties kept the shape until the early 20th century, and it was copied in Japan, Korea and Vietnam.",
-        "pt": "Antes da unificação, cada reino tinha seu próprio dinheiro, parte dele em forma de pá ou de faca. O novo governo impôs uma moeda única de bronze, redonda e com furo quadrado, o que permitia carregar as moedas enfiadas num cordão. As dinastias seguintes mantiveram o formato até o início do século XX, e ele foi copiado no Japão, na Coreia e no Vietnã."
+        "pt": "Antes da unificação, cada reino tinha seu próprio dinheiro, parte dele em forma de pá ou de faca. O novo governo impôs uma moeda única de bronze, redonda e com furo quadrado, o que permitia carregar as moedas enfiadas num cordão. As dinastias seguintes mantiveram o formato até o início do século XX, e ele foi copiado no Japão, na Coreia e no Vietnã.",
+        "es": "Antes de la unificación, cada reino tenía su propio dinero, parte de él con forma de pala o de cuchillo. El nuevo gobierno impuso una moneda única de bronce, redonda y con un agujero cuadrado, que permitía llevar las monedas ensartadas en un cordel. Las dinastías siguientes mantuvieron esa forma hasta comienzos del siglo XX, y se copió en Japón, Corea y Vietnam."
       }
     },
     {
       "en": "The first emperor's tomb is guarded by thousands of life-size terracotta soldiers, discovered in 1974 by farmers digging a well.",
       "pt": "O túmulo do primeiro imperador é guardado por milhares de soldados de terracota em tamanho real, descobertos em 1974 por camponeses que cavavam um poço.",
+      "es": "La tumba del primer emperador está custodiada por miles de soldados de terracota de tamaño natural, descubiertos en 1974 por unos campesinos que cavaban un pozo.",
       "details": {
         "en": "The pits found near Xi'an hold an estimated 8,000 soldiers, along with horses and chariots, arranged in battle formation. Each face is different, and the figures were originally painted in bright colours, which faded on contact with the air. The burial mound of the emperor himself, close by, has never been opened.",
-        "pt": "As covas encontradas perto de Xi'an guardam cerca de 8 mil soldados, além de cavalos e carros de guerra, em formação de batalha. Cada rosto é diferente, e as figuras eram pintadas com cores vivas, que desbotaram em contato com o ar. O monte funerário do próprio imperador, ali perto, nunca foi aberto."
+        "pt": "As covas encontradas perto de Xi'an guardam cerca de 8 mil soldados, além de cavalos e carros de guerra, em formação de batalha. Cada rosto é diferente, e as figuras eram pintadas com cores vivas, que desbotaram em contato com o ar. O monte funerário do próprio imperador, ali perto, nunca foi aberto.",
+        "es": "Se calcula que las fosas halladas cerca de Xi'an guardan unos 8000 soldados, además de caballos y carros de guerra, dispuestos en formación de batalla. Cada rostro es diferente, y las figuras estaban pintadas originalmente con colores vivos, que se desvanecieron al contacto con el aire. El túmulo funerario del propio emperador, muy cerca de allí, nunca se ha abierto."
       }
     },
     {
       "en": "The name \"China\", used in the West, probably comes from the name of this dynasty.",
       "pt": "O nome \"China\", usado no Ocidente, provavelmente vem do nome desta dinastia.",
+      "es": "El nombre \"China\", usado en Occidente, probablemente viene del nombre de esta dinastía.",
       "details": {
         "en": "Ancient Indian texts called the country \"Cina\", a word that passed into Persian and from there to the European languages. The most accepted explanation links it to this dynasty, pronounced \"Chin\", but some researchers point to other kingdoms of the region with similar names. In Chinese, the country is called Zhongguo, \"the Middle Kingdom\".",
-        "pt": "Textos antigos da Índia chamavam o país de \"Cina\", palavra que passou ao persa e dali às línguas europeias. A explicação mais aceita liga o nome a esta dinastia, pronunciada \"Chin\", mas alguns pesquisadores apontam outros reinos da região com nomes parecidos. Em chinês, o país se chama Zhongguo, \"o Reino do Meio\"."
+        "pt": "Textos antigos da Índia chamavam o país de \"Cina\", palavra que passou ao persa e dali às línguas europeias. A explicação mais aceita liga o nome a esta dinastia, pronunciada \"Chin\", mas alguns pesquisadores apontam outros reinos da região com nomes parecidos. Em chinês, o país se chama Zhongguo, \"o Reino do Meio\".",
+        "es": "Antiguos textos de la India llamaban al país \"Cina\", palabra que pasó al persa y de ahí a las lenguas europeas. La explicación más aceptada relaciona el nombre con esta dinastía, que se pronuncia \"Chin\", pero algunos investigadores señalan otros reinos de la región con nombres parecidos. En chino, el país se llama Zhongguo, \"el Reino del Medio\"."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Qin_dynasty",
-    "pt": "https://pt.wikipedia.org/wiki/Dinastia_Qin"
+    "pt": "https://pt.wikipedia.org/wiki/Dinastia_Qin",
+    "es": "https://es.wikipedia.org/wiki/Dinastía_Qin"
   },
   "aliases": [
     "China",
@@ -90,11 +103,14 @@
     "Qin China",
     "China Qin",
     "Chinese Empire",
-    "Império Chinês"
+    "Império Chinês",
+    "Gran Qin",
+    "Imperio chino"
   ],
   "summary": {
     "en": "The first dynasty to rule a unified China, founded in 221 BC by Ying Zheng, king of Qin, after he conquered the six rival kingdoms, taking the title of Qin Shi Huang, \"First Emperor\". He abolished the hereditary fiefs and divided the territory into commanderies run by officials appointed by the court, and standardised writing, weights and measures. He also built roads and canals, linked the northern walls and sent armies against the nomads and to the far south. The harsh laws and forced labour bred resentment, and after the emperor's death, in 210 BC, intrigue over the succession and revolts across the country brought the dynasty down in 206 BC. After a civil war, the Han Dynasty took its place.",
-    "pt": "Primeira dinastia a governar a China unificada, fundada em 221 a.C. por Ying Zheng, rei de Qin, depois de conquistar os seis reinos rivais, que adotou o título de Qin Shi Huang, \"Primeiro Imperador\". Ele aboliu os feudos hereditários, dividiu o território em comandarias administradas por funcionários nomeados pela corte e padronizou a escrita, os pesos e as medidas. Também abriu estradas e canais, ligou as muralhas do norte e enviou exércitos contra os nômades e ao extremo sul. As leis duras e o trabalho forçado geraram revolta, e depois da morte do imperador, em 210 a.C., intrigas na sucessão e rebeliões por todo o país derrubaram a dinastia em 206 a.C. Depois de uma guerra civil, a Dinastia Han tomou seu lugar."
+    "pt": "Primeira dinastia a governar a China unificada, fundada em 221 a.C. por Ying Zheng, rei de Qin, depois de conquistar os seis reinos rivais, que adotou o título de Qin Shi Huang, \"Primeiro Imperador\". Ele aboliu os feudos hereditários, dividiu o território em comandarias administradas por funcionários nomeados pela corte e padronizou a escrita, os pesos e as medidas. Também abriu estradas e canais, ligou as muralhas do norte e enviou exércitos contra os nômades e ao extremo sul. As leis duras e o trabalho forçado geraram revolta, e depois da morte do imperador, em 210 a.C., intrigas na sucessão e rebeliões por todo o país derrubaram a dinastia em 206 a.C. Depois de uma guerra civil, a Dinastia Han tomou seu lugar.",
+    "es": "La primera dinastía que gobernó una China unificada, fundada en el 221 a. C. por Ying Zheng, rey de Qin, que, tras conquistar los seis reinos rivales, adoptó el título de Qin Shi Huang, \"Primer Emperador\". Abolió los feudos hereditarios, dividió el territorio en comandancias administradas por funcionarios nombrados por la corte y unificó la escritura, los pesos y las medidas. También abrió caminos y canales, unió las murallas del norte y envió ejércitos contra los nómadas y hacia el extremo sur. Las leyes duras y el trabajo forzado causaron resentimiento, y tras la muerte del emperador, en el 210 a. C., las intrigas por la sucesión y las rebeliones en todo el país derribaron a la dinastía en el 206 a. C. Después de una guerra civil, la dinastía Han ocupó su lugar."
   },
   "map": {
     "parts": [

@@ -3,7 +3,8 @@
   "slug": "macedonian-empire",
   "name": {
     "en": "Macedonian Empire",
-    "pt": "Império Macedônico"
+    "pt": "Império Macedônico",
+    "es": "Imperio macedonio"
   },
   "peak": {
     "year": -323,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "Covers the reign that built the empire, from the conqueror's accession to his death. The Macedonian kingdom existed before, and after 323 BCE the territory was split among the generals, although formal unity lasted a few more years.",
-    "pt": "Cobre o reinado que construiu o império, da subida ao trono à morte do conquistador. O reino macedônio já existia antes, e depois de 323 a.C. o território foi dividido entre os generais, embora a unidade formal tenha durado mais alguns anos."
+    "pt": "Cobre o reinado que construiu o império, da subida ao trono à morte do conquistador. O reino macedônio já existia antes, e depois de 323 a.C. o território foi dividido entre os generais, embora a unidade formal tenha durado mais alguns anos.",
+    "es": "Abarca el reinado que construyó el imperio, desde la subida al trono del conquistador hasta su muerte. El reino macedonio ya existía antes, y después del 323 a. C. el territorio se repartió entre los generales, aunque la unidad formal duró algunos años más."
   },
   "area": {
     "km2": 5160000,
@@ -37,49 +39,60 @@
   ],
   "capital": {
     "en": "Pella, later Babylon",
-    "pt": "Pela, depois Babilônia"
+    "pt": "Pela, depois Babilônia",
+    "es": "Pela, después Babilonia"
   },
   "language": {
     "en": "Greek (Koine), with Aramaic and Persian in the administration",
-    "pt": "Grego (koiné), além do aramaico e do persa na administração"
+    "pt": "Grego (koiné), além do aramaico e do persa na administração",
+    "es": "Griego (koiné), además del arameo y el persa en la administración"
   },
   "religion": {
     "en": "Ancient Greek religion (polytheistic), tolerant of local cults",
-    "pt": "Religião grega antiga (politeísta), com tolerância aos cultos locais"
+    "pt": "Religião grega antiga (politeísta), com tolerância aos cultos locais",
+    "es": "Religión griega antigua (politeísta), tolerante con los cultos locales"
   },
   "religionNotes": {
     "en": "The monarch adopted religious customs of the conquered peoples and, in Egypt, was hailed as the son of a god.",
-    "pt": "O monarca adotou costumes religiosos dos povos conquistados e, no Egito, foi reconhecido como filho de um deus."
+    "pt": "O monarca adotou costumes religiosos dos povos conquistados e, no Egito, foi reconhecido como filho de um deus.",
+    "es": "El monarca adoptó costumbres religiosas de los pueblos conquistados y, en Egipto, fue reconocido como hijo de un dios."
   },
   "curiosities": [
     {
       "en": "After eight years of marching, its army refused to go any further on the banks of a river in India.",
       "pt": "Depois de oito anos de marcha, seu exército se recusou a seguir adiante às margens de um rio na Índia.",
+      "es": "Tras ocho años de marcha, su ejército se negó a seguir adelante a orillas de un río de la India.",
       "details": {
         "en": "In 326 BCE, after defeating King Porus by the Hydaspes river, the army reached the Hyphasis, today's Beas, in the Punjab. Worn out by eight years of campaigning, monsoon rains and battles, the soldiers refused to march on towards the Ganges valley. Alexander shut himself in his tent for three days but finally gave in and turned back west.",
-        "pt": "Em 326 a.C., depois de vencer o rei Poro às margens do rio Hidaspes, o exército chegou ao rio Hífase, o atual Beas, no Punjab. Cansados após oito anos de campanha, chuvas de monção e batalhas, os soldados se recusaram a seguir rumo ao vale do Ganges. Alexandre ficou três dias trancado na tenda, mas acabou cedendo e voltou para o oeste."
+        "pt": "Em 326 a.C., depois de vencer o rei Poro às margens do rio Hidaspes, o exército chegou ao rio Hífase, o atual Beas, no Punjab. Cansados após oito anos de campanha, chuvas de monção e batalhas, os soldados se recusaram a seguir rumo ao vale do Ganges. Alexandre ficou três dias trancado na tenda, mas acabou cedendo e voltou para o oeste.",
+        "es": "En el 326 a. C., después de vencer al rey Poro junto al río Hidaspes, el ejército llegó al río Hífasis, el actual Beas, en el Punyab. Agotados tras ocho años de campaña, lluvias monzónicas y batallas, los soldados se negaron a seguir hacia el valle del Ganges. Alejandro pasó tres días encerrado en su tienda, pero acabó cediendo y volvió hacia el oeste."
       }
     },
     {
       "en": "Its founder was a student of Aristotle and never lost a pitched battle.",
       "pt": "Seu fundador era aluno de Aristóteles e nunca perdeu uma batalha em campo aberto.",
+      "es": "Su fundador fue alumno de Aristóteles y nunca perdió una batalla campal.",
       "details": {
         "en": "Philip II hired Aristotle to teach Alexander between the ages of 13 and 16, at Mieza, in Macedon. As a general, Alexander won every major battle he fought, such as the Granicus, Issus, Gaugamela and the Hydaspes, often against much larger armies, and his campaigns are still studied in military academies.",
-        "pt": "Filipe II contratou Aristóteles para educar Alexandre entre os 13 e os 16 anos, em Mieza, na Macedônia. Como general, Alexandre venceu todas as grandes batalhas que travou, como Granico, Isso, Gaugamela e Hidaspes, muitas vezes contra exércitos bem maiores, e suas campanhas são estudadas até hoje em academias militares."
+        "pt": "Filipe II contratou Aristóteles para educar Alexandre entre os 13 e os 16 anos, em Mieza, na Macedônia. Como general, Alexandre venceu todas as grandes batalhas que travou, como Granico, Isso, Gaugamela e Hidaspes, muitas vezes contra exércitos bem maiores, e suas campanhas são estudadas até hoje em academias militares.",
+        "es": "Filipo II contrató a Aristóteles para educar a Alejandro entre los 13 y los 16 años, en Mieza, en Macedonia. Como general, Alejandro ganó todas las grandes batallas que libró, como las del Gránico, Issos, Gaugamela y el Hidaspes, muchas veces contra ejércitos mucho mayores, y sus campañas todavía se estudian en las academias militares."
       }
     },
     {
       "en": "A city it founded in Egypt would later have the most famous lighthouse and library of Antiquity.",
       "pt": "Uma cidade fundada por ele no Egito teria depois o farol e a biblioteca mais famosos da Antiguidade.",
+      "es": "Una ciudad que fundó en Egipto tendría después el faro y la biblioteca más famosos de la Antigüedad.",
       "details": {
         "en": "Alexander founded Alexandria in 331 BCE, on the Nile delta, and it became the capital of the Ptolemies, the dynasty of one of his generals. The lighthouse on the island of Pharos, more than 100 metres tall, was one of the Seven Wonders of the Ancient World, and the library, the largest of Antiquity, held tens of thousands of scrolls or more. The city still exists and is the second largest in Egypt.",
-        "pt": "Alexandre fundou Alexandria em 331 a.C., no delta do Nilo, e ela virou a capital dos Ptolomeus, a dinastia de um de seus generais. O farol da ilha de Faros, com mais de 100 metros, era uma das Sete Maravilhas do Mundo Antigo, e a biblioteca, a maior da Antiguidade, reunia dezenas de milhares de rolos ou mais. A cidade ainda existe e é a segunda maior do Egito."
+        "pt": "Alexandre fundou Alexandria em 331 a.C., no delta do Nilo, e ela virou a capital dos Ptolomeus, a dinastia de um de seus generais. O farol da ilha de Faros, com mais de 100 metros, era uma das Sete Maravilhas do Mundo Antigo, e a biblioteca, a maior da Antiguidade, reunia dezenas de milhares de rolos ou mais. A cidade ainda existe e é a segunda maior do Egito.",
+        "es": "Alejandro fundó Alejandría en el 331 a. C., en el delta del Nilo, y la ciudad se convirtió en la capital de los Ptolomeos, la dinastía de uno de sus generales. El faro de la isla de Faros, de más de 100 metros de altura, era una de las siete maravillas del mundo antiguo, y la biblioteca, la mayor de la Antigüedad, reunía decenas de miles de rollos o más. La ciudad todavía existe y es la segunda más grande de Egipto."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Alexander_the_Great",
-    "pt": "https://pt.wikipedia.org/wiki/Alexandre,_o_Grande"
+    "pt": "https://pt.wikipedia.org/wiki/Alexandre,_o_Grande",
+    "es": "https://es.wikipedia.org/wiki/Alejandro_Magno"
   },
   "aliases": [
     "Macedonia",
@@ -93,11 +106,14 @@
     "Argead Empire",
     "Império Argéada",
     "Greece",
-    "Grécia"
+    "Grécia",
+    "Alejandro Magno",
+    "Imperio de Alejandro"
   ],
   "summary": {
     "en": "The empire built by Alexander the Great, king of Macedon, in northern Greece, who inherited from his father, Philip II, a powerful army and control over the Greek cities. From 334 BCE, in little more than ten years, he conquered the Persian Empire, Egypt and lands as far as northwestern India, without losing a single major battle. He founded dozens of cities and spread the Greek language and culture across the East, opening the Hellenistic age. Alexander died in Babylon in 323 BCE, aged 32, and his generals split the empire into several kingdoms.",
-    "pt": "Império formado por Alexandre, o Grande, rei da Macedônia, no norte da Grécia, que herdou do pai, Filipe II, um exército poderoso e o domínio sobre as cidades gregas. A partir de 334 a.C., em pouco mais de dez anos, conquistou o Império Persa, o Egito e terras até o noroeste da Índia, sem perder nenhuma grande batalha. Fundou dezenas de cidades e espalhou a língua e a cultura gregas pelo Oriente, abrindo o período helenístico. Alexandre morreu na Babilônia em 323 a.C., aos 32 anos, e seus generais dividiram o império em vários reinos."
+    "pt": "Império formado por Alexandre, o Grande, rei da Macedônia, no norte da Grécia, que herdou do pai, Filipe II, um exército poderoso e o domínio sobre as cidades gregas. A partir de 334 a.C., em pouco mais de dez anos, conquistou o Império Persa, o Egito e terras até o noroeste da Índia, sem perder nenhuma grande batalha. Fundou dezenas de cidades e espalhou a língua e a cultura gregas pelo Oriente, abrindo o período helenístico. Alexandre morreu na Babilônia em 323 a.C., aos 32 anos, e seus generais dividiram o império em vários reinos.",
+    "es": "Imperio formado por Alejandro Magno, rey de Macedonia, en el norte de Grecia, que heredó de su padre, Filipo II, un ejército poderoso y el dominio sobre las ciudades griegas. A partir del 334 a. C., en poco más de diez años, conquistó el Imperio persa, Egipto y tierras hasta el noroeste de la India, sin perder ninguna gran batalla. Fundó decenas de ciudades y difundió la lengua y la cultura griegas por Oriente, lo que abrió el período helenístico. Alejandro murió en Babilonia en el 323 a. C., a los 32 años, y sus generales dividieron el imperio en varios reinos."
   },
   "map": {
     "parts": [

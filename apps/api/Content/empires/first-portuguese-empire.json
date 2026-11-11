@@ -3,7 +3,8 @@
   "slug": "first-portuguese-empire",
   "name": {
     "en": "First Portuguese Empire",
-    "pt": "Primeiro Império Português"
+    "pt": "Primeiro Império Português",
+    "es": "Primer Imperio portugués"
   },
   "peak": {
     "year": 1579,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts in 1415, with the capture of a North African port, and ends around 1663, when the loss of the main fortresses in South Asia to a rival power shifted the centre of the empire to South America. From 1580 to 1640, the crown was united with that of the neighbouring kingdom, so the peak shown is 1579, the last year before the union. The map shows only the fortresses, cities and captaincies under direct control and excludes protected or tributary kingdoms, such as the one on a large island in South Asia. The later phases, focused first on South America and then on Africa, are treated here as separate empires.",
-    "pt": "Começa em 1415, com a tomada de um porto no norte da África, e termina por volta de 1663, quando a perda das principais fortalezas no sul da Ásia para uma potência rival deslocou o centro do império para a América do Sul. De 1580 a 1640, a coroa ficou unida à do reino vizinho, e por isso o auge escolhido é 1579, último ano antes da união. O mapa mostra só as fortalezas, cidades e capitanias sob controle direto e exclui reinos protegidos ou que pagavam tributo, como o de uma grande ilha no sul da Ásia. As fases posteriores, voltadas primeiro à América do Sul e depois à África, são tratadas aqui como impérios separados."
+    "pt": "Começa em 1415, com a tomada de um porto no norte da África, e termina por volta de 1663, quando a perda das principais fortalezas no sul da Ásia para uma potência rival deslocou o centro do império para a América do Sul. De 1580 a 1640, a coroa ficou unida à do reino vizinho, e por isso o auge escolhido é 1579, último ano antes da união. O mapa mostra só as fortalezas, cidades e capitanias sob controle direto e exclui reinos protegidos ou que pagavam tributo, como o de uma grande ilha no sul da Ásia. As fases posteriores, voltadas primeiro à América do Sul e depois à África, são tratadas aqui como impérios separados.",
+    "es": "Comienza en 1415, con la toma de un puerto del norte de África, y termina hacia 1663, cuando la pérdida de las principales fortalezas del sur de Asia a manos de una potencia rival desplazó el centro del imperio a América del Sur. De 1580 a 1640, la corona estuvo unida a la del reino vecino, por eso el apogeo elegido es 1579, el último año antes de la unión. El mapa muestra solo las fortalezas, ciudades y capitanías bajo control directo y excluye los reinos protegidos o que pagaban tributo, como el de una gran isla del sur de Asia. Las fases posteriores, centradas primero en América del Sur y después en África, se tratan aquí como imperios aparte."
   },
   "area": {
     "km2": 494000,
@@ -38,49 +40,60 @@
   ],
   "capital": {
     "en": "Lisbon",
-    "pt": "Lisboa"
+    "pt": "Lisboa",
+    "es": "Lisboa"
   },
   "language": {
     "en": "Portuguese",
-    "pt": "Português"
+    "pt": "Português",
+    "es": "Portugués"
   },
   "religion": {
     "en": "Catholicism",
-    "pt": "Catolicismo"
+    "pt": "Catolicismo",
+    "es": "Catolicismo"
   },
   "religionNotes": {
     "en": "The Inquisition was set up in 1536 in the home country and in 1560 in Goa, where it persecuted mainly New Christians and converts accused of keeping Hindu practices. By a grant from the pope, the Crown controlled the appointment of bishops and the missions overseas, and the Jesuits took Catholicism as far as India, China and Japan.",
-    "pt": "A Inquisição foi instalada em 1536 na metrópole e em 1560 em Goa, onde perseguiu sobretudo cristãos-novos e convertidos acusados de manter práticas hindus. Por concessão do papa, a Coroa controlava a nomeação de bispos e as missões no ultramar, e os jesuítas levaram o catolicismo até a Índia, a China e o Japão."
+    "pt": "A Inquisição foi instalada em 1536 na metrópole e em 1560 em Goa, onde perseguiu sobretudo cristãos-novos e convertidos acusados de manter práticas hindus. Por concessão do papa, a Coroa controlava a nomeação de bispos e as missões no ultramar, e os jesuítas levaram o catolicismo até a Índia, a China e o Japão.",
+    "es": "La Inquisición se instaló en 1536 en la metrópoli y en 1560 en Goa, donde persiguió sobre todo a cristianos nuevos y a conversos acusados de mantener prácticas hindúes. Por concesión del papa, la Corona controlaba el nombramiento de obispos y las misiones de ultramar, y los jesuitas llevaron el catolicismo hasta la India, China y Japón."
   },
   "curiosities": [
     {
       "en": "Its sailors were the first Europeans to reach Japan, and left words in Japanese such as \"pan\", for bread.",
       "pt": "Seus navegadores foram os primeiros europeus a chegar ao Japão, e deixaram palavras no japonês como \"pan\", para pão.",
+      "es": "Sus navegantes fueron los primeros europeos en llegar a Japón, y dejaron en el japonés palabras como \"pan\", que allí también significa pan.",
       "details": {
         "en": "In 1543 Portuguese traders landed on the island of Tanegashima, in southern Japan, bringing the first firearms seen in the country. Jesuit missionaries and a busy trade between Japan, Macau and Europe soon followed. Words such as \"pan\" (bread), \"botan\" (button) and probably \"tempura\" entered Japanese at that time.",
-        "pt": "Em 1543, comerciantes portugueses chegaram à ilha de Tanegashima, no sul do Japão, levando as primeiras armas de fogo vistas no país. Logo vieram missionários jesuítas e um comércio intenso entre o Japão, Macau e a Europa. Palavras como \"pan\" (pão), \"botan\" (botão) e, provavelmente, \"tempura\" entraram no japonês nessa época."
+        "pt": "Em 1543, comerciantes portugueses chegaram à ilha de Tanegashima, no sul do Japão, levando as primeiras armas de fogo vistas no país. Logo vieram missionários jesuítas e um comércio intenso entre o Japão, Macau e a Europa. Palavras como \"pan\" (pão), \"botan\" (botão) e, provavelmente, \"tempura\" entraram no japonês nessa época.",
+        "es": "En 1543, unos comerciantes portugueses llegaron a la isla de Tanegashima, en el sur de Japón, con las primeras armas de fuego vistas en el país. Pronto llegaron misioneros jesuitas y un comercio intenso entre Japón, Macao y Europa. Palabras como \"pan\", \"botan\" (botón) y, probablemente, \"tempura\" entraron en el japonés en esa época."
       }
     },
     {
       "en": "Through a treaty, it divided the still unexplored lands of the world with the neighbouring kingdom, using a line drawn from pole to pole.",
       "pt": "Dividiu com o reino vizinho, por um tratado, as terras ainda não exploradas do mundo, com uma linha traçada de polo a polo.",
+      "es": "Se repartió con el reino vecino, mediante un tratado, las tierras del mundo aún sin explorar, con una línea trazada de polo a polo.",
       "details": {
         "en": "The Treaty of Tordesillas, of 1494, set a line 370 leagues west of Cape Verde. The lands to the east would belong to Portugal, and those to the west to Spain. It is because of it that Brazil speaks Portuguese.",
-        "pt": "O Tratado de Tordesilhas, de 1494, fixou uma linha a 370 léguas a oeste de Cabo Verde. As terras a leste ficariam com Portugal, e as a oeste, com a Espanha. É por causa dele que o Brasil fala português."
+        "pt": "O Tratado de Tordesilhas, de 1494, fixou uma linha a 370 léguas a oeste de Cabo Verde. As terras a leste ficariam com Portugal, e as a oeste, com a Espanha. É por causa dele que o Brasil fala português.",
+        "es": "El Tratado de Tordesillas, de 1494, fijó una línea a 370 leguas al oeste de Cabo Verde. Las tierras al este serían de Portugal, y las del oeste, de España. Por eso en Brasil se habla portugués."
       }
     },
     {
       "en": "In 1500, one of its fleets bound for India reached the coast of South America.",
       "pt": "Em 1500, uma de suas frotas a caminho da Índia chegou ao litoral da América do Sul.",
+      "es": "En 1500, una de sus flotas rumbo a la India llegó a la costa de América del Sur.",
       "details": {
         "en": "Pedro Álvares Cabral's fleet of 13 ships left Lisbon in March 1500 for India and swung far from the African coast to catch the winds of the South Atlantic. On 22 April it sighted the coast of Bahia, at a place the Portuguese named Porto Seguro. The fleet stayed only a few days and sailed on to India.",
-        "pt": "A frota de Pedro Álvares Cabral, com 13 navios, saiu de Lisboa em março de 1500 rumo à Índia e se afastou muito da costa africana para aproveitar os ventos do Atlântico Sul. Em 22 de abril, avistou o litoral da Bahia, num lugar que os portugueses batizaram de Porto Seguro. A frota ficou poucos dias e seguiu viagem para a Índia."
+        "pt": "A frota de Pedro Álvares Cabral, com 13 navios, saiu de Lisboa em março de 1500 rumo à Índia e se afastou muito da costa africana para aproveitar os ventos do Atlântico Sul. Em 22 de abril, avistou o litoral da Bahia, num lugar que os portugueses batizaram de Porto Seguro. A frota ficou poucos dias e seguiu viagem para a Índia.",
+        "es": "La flota de Pedro Álvares Cabral, con 13 barcos, salió de Lisboa en marzo de 1500 rumbo a la India y se alejó mucho de la costa africana para aprovechar los vientos del Atlántico Sur. El 22 de abril avistó la costa de Bahía, en un lugar que los portugueses llamaron Porto Seguro. La flota se quedó pocos días y siguió viaje hacia la India."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Portuguese_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Império_Português"
+    "pt": "https://pt.wikipedia.org/wiki/Império_Português",
+    "es": "https://es.wikipedia.org/wiki/Imperio_portugués"
   },
   "aliases": [
     "Portugal",
@@ -93,11 +106,14 @@
     "Lusitanian Empire",
     "Império Lusitano",
     "Estado da Índia",
-    "Portuguese State of India"
+    "Portuguese State of India",
+    "Estado de la India",
+    "India portuguesa"
   ],
   "summary": {
     "en": "The first phase of the Portuguese Empire, focused on maritime trade, which began with the capture of Ceuta, in North Africa, in 1415. Portuguese navigators explored the African coast, rounded the Cape of Good Hope with Bartolomeu Dias in 1488, reached India with Vasco da Gama in 1498 and Brazil with Pedro Álvares Cabral in 1500. Instead of conquering large territories, the empire relied on a network of fortresses and trading posts, from Goa and Malacca to Hormuz and Macau, to control the spice trade of the Indian Ocean. In 1580, after the death of King Sebastian in Morocco and the lack of heirs, the crown passed to the king of Spain, and the colonies became targets for Spain's enemies, above all the Dutch. Portugal regained its independence in 1640, but by around 1663 it had already lost most of its positions in Asia to them.",
-    "pt": "Primeira fase do Império Português, voltada ao comércio marítimo, que começou com a tomada de Ceuta, no norte da África, em 1415. Os navegadores portugueses exploraram a costa africana, contornaram o Cabo da Boa Esperança com Bartolomeu Dias em 1488, chegaram à Índia com Vasco da Gama em 1498 e ao Brasil com Pedro Álvares Cabral em 1500. Em vez de conquistar grandes territórios, o império se apoiava numa rede de fortalezas e feitorias, de Goa e Malaca a Ormuz e Macau, para controlar o comércio de especiarias do Oceano Índico. Em 1580, após a morte do rei D. Sebastião no Marrocos e a falta de herdeiros, a coroa passou ao rei da Espanha, e as colônias se tornaram alvo dos inimigos espanhóis, principalmente os neerlandeses. Portugal recuperou a independência em 1640, mas por volta de 1663 já tinha perdido para eles a maior parte das posições na Ásia."
+    "pt": "Primeira fase do Império Português, voltada ao comércio marítimo, que começou com a tomada de Ceuta, no norte da África, em 1415. Os navegadores portugueses exploraram a costa africana, contornaram o Cabo da Boa Esperança com Bartolomeu Dias em 1488, chegaram à Índia com Vasco da Gama em 1498 e ao Brasil com Pedro Álvares Cabral em 1500. Em vez de conquistar grandes territórios, o império se apoiava numa rede de fortalezas e feitorias, de Goa e Malaca a Ormuz e Macau, para controlar o comércio de especiarias do Oceano Índico. Em 1580, após a morte do rei D. Sebastião no Marrocos e a falta de herdeiros, a coroa passou ao rei da Espanha, e as colônias se tornaram alvo dos inimigos espanhóis, principalmente os neerlandeses. Portugal recuperou a independência em 1640, mas por volta de 1663 já tinha perdido para eles a maior parte das posições na Ásia.",
+    "es": "Primera fase del Imperio portugués, centrada en el comercio marítimo, que comenzó con la toma de Ceuta, en el norte de África, en 1415. Los navegantes portugueses exploraron la costa africana, doblaron el cabo de Buena Esperanza con Bartolomeu Dias en 1488, llegaron a la India con Vasco da Gama en 1498 y a Brasil con Pedro Álvares Cabral en 1500. En lugar de conquistar grandes territorios, el imperio se apoyaba en una red de fortalezas y factorías, de Goa y Malaca a Ormuz y Macao, para controlar el comercio de especias del océano Índico. En 1580, tras la muerte del rey Sebastián en Marruecos y la falta de herederos, la corona pasó al rey de España, y las colonias se convirtieron en blanco de los enemigos de España, sobre todo los neerlandeses. Portugal recuperó la independencia en 1640, pero hacia 1663 ya había perdido ante ellos la mayor parte de sus posiciones en Asia."
   },
   "map": {
     "parts": [

@@ -3,7 +3,8 @@
   "slug": "first-mexican-empire",
   "name": {
     "en": "First Mexican Empire",
-    "pt": "Primeiro Império Mexicano"
+    "pt": "Primeiro Império Mexicano",
+    "es": "Primer Imperio mexicano"
   },
   "peak": {
     "year": 1822,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts in 1821, when the rebel army entered the capital and independence was declared, under a provisional government; the emperor was only proclaimed in May 1822. It ends in March 1823, when he abdicated in the face of a military revolt. In the north, the map follows the border agreed with the United States in 1819, but much of that land belonged to independent Indigenous peoples, such as the Comanche and the Apache, and real control was limited to missions, forts and a few towns.",
-    "pt": "Começa em 1821, quando o exército rebelde entrou na capital e a independência foi declarada, sob um governo provisório; o imperador só foi proclamado em maio de 1822. Termina em março de 1823, quando ele abdicou diante de uma revolta militar. No norte, o mapa segue a fronteira acertada com os Estados Unidos em 1819, mas boa parte dessas terras era de povos indígenas independentes, como comanches e apaches, e o controle real se limitava a missões, fortes e poucas cidades."
+    "pt": "Começa em 1821, quando o exército rebelde entrou na capital e a independência foi declarada, sob um governo provisório; o imperador só foi proclamado em maio de 1822. Termina em março de 1823, quando ele abdicou diante de uma revolta militar. No norte, o mapa segue a fronteira acertada com os Estados Unidos em 1819, mas boa parte dessas terras era de povos indígenas independentes, como comanches e apaches, e o controle real se limitava a missões, fortes e poucas cidades.",
+    "es": "Comienza en 1821, cuando el ejército rebelde entró en la capital y se declaró la independencia, bajo un gobierno provisional; el emperador no fue proclamado hasta mayo de 1822. Termina en marzo de 1823, cuando abdicó ante una revuelta militar. En el norte, el mapa sigue la frontera acordada con los Estados Unidos en 1819, pero buena parte de esas tierras pertenecía a pueblos indígenas independientes, como los comanches y los apaches, y el control real se limitaba a misiones, fuertes y unas pocas poblaciones."
   },
   "area": {
     "km2": 4883041,
@@ -34,49 +36,60 @@
   ],
   "capital": {
     "en": "Mexico City",
-    "pt": "Cidade do México"
+    "pt": "Cidade do México",
+    "es": "Ciudad de México"
   },
   "language": {
     "en": "Spanish (with Nahuatl, Maya and other Indigenous languages spoken by much of the population)",
-    "pt": "Espanhol (com o náuatle, o maia e outras línguas indígenas faladas por grande parte da população)"
+    "pt": "Espanhol (com o náuatle, o maia e outras línguas indígenas faladas por grande parte da população)",
+    "es": "Español (con el náhuatl, el maya y otras lenguas indígenas habladas por gran parte de la población)"
   },
   "religion": {
     "en": "Catholicism",
-    "pt": "Catolicismo"
+    "pt": "Catolicismo",
+    "es": "Catolicismo"
   },
   "religionNotes": {
     "en": "Catholicism was the official religion and the only one allowed, and the defence of the Church was one of the conditions of the agreement that led to independence. The emperor was crowned in the capital's cathedral, in a ceremony inspired by Napoleon's.",
-    "pt": "O catolicismo era a religião oficial e a única permitida, e a defesa da Igreja foi uma das condições do acordo que levou à independência. O imperador foi coroado na catedral da capital, numa cerimônia inspirada na de Napoleão."
+    "pt": "O catolicismo era a religião oficial e a única permitida, e a defesa da Igreja foi uma das condições do acordo que levou à independência. O imperador foi coroado na catedral da capital, numa cerimônia inspirada na de Napoleão.",
+    "es": "El catolicismo era la religión oficial y la única permitida, y la defensa de la Iglesia fue una de las condiciones del acuerdo que llevó a la independencia. El emperador fue coronado en la catedral de la capital, en una ceremonia inspirada en la de Napoleón."
   },
   "curiosities": [
     {
       "en": "The agreement that led to independence offered the throne to the King of Spain himself, against whom the country had just fought.",
       "pt": "O acordo que levou à independência oferecia o trono ao próprio rei da Espanha, contra quem o país tinha acabado de lutar.",
+      "es": "El acuerdo que llevó a la independencia ofrecía el trono al propio rey de España, contra quien el país acababa de luchar.",
       "details": {
         "en": "The Plan of Iguala, in February 1821, and the Treaty of Córdoba, in August, offered the crown to Ferdinand VII or, if he refused, to a prince of his family. The idea was to break with Madrid while keeping the support of the conservative elites and the Church, who feared a republic. The Spanish government rejected the treaty and only recognised independence in 1836. With no European candidate, the treaty left the choice to the Mexican Congress, which opened the way for Iturbide.",
-        "pt": "O Plano de Iguala, em fevereiro de 1821, e o Tratado de Córdoba, em agosto, ofereciam a coroa a Fernando VII ou, se ele recusasse, a um príncipe da sua família. A ideia era romper com Madri sem perder o apoio das elites conservadoras e da Igreja, que temiam uma república. O governo espanhol rejeitou o tratado e só reconheceu a independência em 1836. Sem candidato europeu, o tratado deixava a escolha para o Congresso mexicano, o que abriu caminho para Iturbide."
+        "pt": "O Plano de Iguala, em fevereiro de 1821, e o Tratado de Córdoba, em agosto, ofereciam a coroa a Fernando VII ou, se ele recusasse, a um príncipe da sua família. A ideia era romper com Madri sem perder o apoio das elites conservadoras e da Igreja, que temiam uma república. O governo espanhol rejeitou o tratado e só reconheceu a independência em 1836. Sem candidato europeu, o tratado deixava a escolha para o Congresso mexicano, o que abriu caminho para Iturbide.",
+        "es": "El Plan de Iguala, de febrero de 1821, y los Tratados de Córdoba, de agosto, ofrecían la corona a Fernando VII o, si él la rechazaba, a un príncipe de su familia. La idea era romper con Madrid sin perder el apoyo de las élites conservadoras y de la Iglesia, que temían una república. El gobierno español rechazó el tratado y no reconoció la independencia hasta 1836. Sin candidato europeo, el tratado dejaba la elección en manos del Congreso mexicano, lo que abrió el camino a Iturbide."
       }
     },
     {
       "en": "After abdicating, the emperor went into exile in Europe and, when he came back a year later, he was shot a few days after landing.",
       "pt": "Depois de abdicar, o imperador foi para o exílio na Europa e, ao voltar, um ano depois, foi fuzilado poucos dias após desembarcar.",
+      "es": "Tras abdicar, el emperador se exilió en Europa y, al volver un año después, fue fusilado pocos días después de desembarcar.",
       "details": {
         "en": "Iturbide lived in Italy and then in England. In April 1824, Congress declared him a traitor and sentenced him to death if he set foot in the country again, but he didn't know it. In July he landed on the Gulf coast, offering to help against a feared Spanish attempt at reconquest, was arrested and was shot on 19 July 1824. In 1838 his remains were moved to the cathedral of Mexico City, where they still lie.",
-        "pt": "Iturbide viveu na Itália e depois na Inglaterra. Em abril de 1824, o Congresso o declarou traidor e condenado à morte se voltasse a pisar no país, mas ele não sabia disso. Em julho, desembarcou no litoral do Golfo oferecendo ajuda contra uma temida tentativa espanhola de reconquista, foi preso e acabou fuzilado em 19 de julho de 1824. Em 1838, seus restos foram levados para a catedral da Cidade do México, onde estão até hoje."
+        "pt": "Iturbide viveu na Itália e depois na Inglaterra. Em abril de 1824, o Congresso o declarou traidor e condenado à morte se voltasse a pisar no país, mas ele não sabia disso. Em julho, desembarcou no litoral do Golfo oferecendo ajuda contra uma temida tentativa espanhola de reconquista, foi preso e acabou fuzilado em 19 de julho de 1824. Em 1838, seus restos foram levados para a catedral da Cidade do México, onde estão até hoje.",
+        "es": "Iturbide vivió en Italia y luego en Inglaterra. En abril de 1824, el Congreso lo declaró traidor y condenado a muerte si volvía a pisar el país, pero él no lo sabía. En julio desembarcó en la costa del golfo ofreciendo ayuda contra un temido intento español de reconquista, fue arrestado y lo fusilaron el 19 de julio de 1824. En 1838 sus restos fueron trasladados a la catedral de la Ciudad de México, donde siguen hoy."
       }
     },
     {
       "en": "The green, white and red of the country's current flag come from the flag of the army that won independence in this period.",
       "pt": "O verde, o branco e o vermelho da bandeira atual do país vêm da bandeira do exército que conquistou a independência neste período.",
+      "es": "El verde, el blanco y el rojo de la bandera actual del país vienen de la bandera del ejército que consiguió la independencia en este período.",
       "details": {
         "en": "The Army of the Three Guarantees used a flag with diagonal stripes in white, green and red, one colour for each promise of the independence agreement: white for religion, green for independence and red for the union between those born in Europe and in America. In November 1821, the imperial flag put the colours in vertical stripes, with a crowned eagle in the centre. The republic removed the crown, and over time the colours were given other meanings, such as hope, unity and the blood of the heroes.",
-        "pt": "O Exército das Três Garantias usava uma bandeira com faixas diagonais branca, verde e vermelha, uma cor para cada promessa do acordo de independência: branco para a religião, verde para a independência e vermelho para a união entre os nascidos na Europa e na América. Em novembro de 1821, a bandeira imperial colocou as cores em faixas verticais, com uma águia coroada no centro. A república tirou a coroa, e com o tempo as cores ganharam outros significados, como esperança, unidade e o sangue dos heróis."
+        "pt": "O Exército das Três Garantias usava uma bandeira com faixas diagonais branca, verde e vermelha, uma cor para cada promessa do acordo de independência: branco para a religião, verde para a independência e vermelho para a união entre os nascidos na Europa e na América. Em novembro de 1821, a bandeira imperial colocou as cores em faixas verticais, com uma águia coroada no centro. A república tirou a coroa, e com o tempo as cores ganharam outros significados, como esperança, unidade e o sangue dos heróis.",
+        "es": "El Ejército Trigarante, o de las Tres Garantías, usaba una bandera con franjas diagonales blanca, verde y roja, un color por cada promesa del acuerdo de independencia: blanco para la religión, verde para la independencia y rojo para la unión entre los nacidos en Europa y en América. En noviembre de 1821, la bandera imperial puso los colores en franjas verticales, con un águila coronada en el centro. La república quitó la corona, y con el tiempo los colores recibieron otros significados, como la esperanza, la unidad y la sangre de los héroes."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/First_Mexican_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Primeiro_Império_Mexicano"
+    "pt": "https://pt.wikipedia.org/wiki/Primeiro_Império_Mexicano",
+    "es": "https://es.wikipedia.org/wiki/Primer_Imperio_mexicano"
   },
   "aliases": [
     "Mexico",
@@ -87,11 +100,13 @@
     "Império do México",
     "Imperio Mexicano",
     "Iturbide's Empire",
-    "Império de Iturbide"
+    "Império de Iturbide",
+    "Imperio de México"
   ],
   "summary": {
     "en": "A monarchy created in 1821, after more than ten years of war for independence from Spain. Agustín de Iturbide, an officer who had fought against the rebels, switched sides, allied himself with them and led the country to independence. In 1822, a demonstration of soldiers in the capital proclaimed Iturbide himself emperor, and Congress confirmed it. The provinces of Central America joined the empire, which came to stretch from today's California to Costa Rica. Short of money and in conflict with Congress, which he ended up dissolving, the emperor faced a military revolt and abdicated in 1823, less than a year after being crowned. The country became a federal republic the following year.",
-    "pt": "Monarquia criada em 1821, depois de mais de dez anos de guerra pela independência contra a Espanha. Agustín de Iturbide, um oficial que tinha combatido os rebeldes, mudou de lado, aliou-se a eles e levou o país à independência. Em 1822, uma manifestação de soldados na capital proclamou o próprio Iturbide imperador, e o Congresso confirmou. As províncias da América Central aderiram ao império, que chegou a ir da atual Califórnia à Costa Rica. Sem dinheiro e em conflito com o Congresso, que acabou dissolvendo, o imperador enfrentou uma revolta militar e abdicou em 1823, menos de um ano depois de coroado. O país virou uma república federal no ano seguinte."
+    "pt": "Monarquia criada em 1821, depois de mais de dez anos de guerra pela independência contra a Espanha. Agustín de Iturbide, um oficial que tinha combatido os rebeldes, mudou de lado, aliou-se a eles e levou o país à independência. Em 1822, uma manifestação de soldados na capital proclamou o próprio Iturbide imperador, e o Congresso confirmou. As províncias da América Central aderiram ao império, que chegou a ir da atual Califórnia à Costa Rica. Sem dinheiro e em conflito com o Congresso, que acabou dissolvendo, o imperador enfrentou uma revolta militar e abdicou em 1823, menos de um ano depois de coroado. O país virou uma república federal no ano seguinte.",
+    "es": "Monarquía creada en 1821, tras más de diez años de guerra por la independencia de España. Agustín de Iturbide, un oficial que había combatido a los rebeldes, cambió de bando, se alió con ellos y llevó al país a la independencia. En 1822, una manifestación de soldados en la capital proclamó emperador al propio Iturbide, y el Congreso lo confirmó. Las provincias de América Central se unieron al imperio, que llegó a extenderse desde la actual California hasta Costa Rica. Sin dinero y enfrentado al Congreso, que acabó disolviendo, el emperador hizo frente a una revuelta militar y abdicó en 1823, menos de un año después de ser coronado. El país se convirtió en una república federal al año siguiente."
   },
   "map": {
     "parts": [

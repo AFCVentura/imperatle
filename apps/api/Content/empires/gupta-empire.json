@@ -3,7 +3,8 @@
   "slug": "gupta-empire",
   "name": {
     "en": "Gupta Empire",
-    "pt": "Império Gupta"
+    "pt": "Império Gupta",
+    "es": "Imperio gupta"
   },
   "peak": {
     "year": 420,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts around 320, when the third king of the dynasty, married to a princess of a powerful clan, took the title of \"great king of kings\" and began a new era for counting the years, and ends around 550, after invasions from Central Asia and revolts by the governors had reduced the kingdom to a small region. The peak shown is around 420. The map excludes the kingdoms of the south and of the east coast that were defeated in a great military campaign but handed back to their kings in exchange for tribute.",
-    "pt": "Começa por volta de 320, quando o terceiro rei da dinastia, casado com uma princesa de um clã poderoso, assumiu o título de \"grande rei dos reis\" e iniciou uma nova era de contagem dos anos, e termina por volta de 550, depois que invasões vindas da Ásia Central e revoltas dos governadores reduziram o reino a uma pequena região. O auge escolhido é por volta de 420. O mapa exclui os reinos do sul e da costa leste que foram derrotados numa grande campanha militar, mas devolvidos aos seus reis em troca de tributo."
+    "pt": "Começa por volta de 320, quando o terceiro rei da dinastia, casado com uma princesa de um clã poderoso, assumiu o título de \"grande rei dos reis\" e iniciou uma nova era de contagem dos anos, e termina por volta de 550, depois que invasões vindas da Ásia Central e revoltas dos governadores reduziram o reino a uma pequena região. O auge escolhido é por volta de 420. O mapa exclui os reinos do sul e da costa leste que foram derrotados numa grande campanha militar, mas devolvidos aos seus reis em troca de tributo.",
+    "es": "Comienza hacia 320, cuando el tercer rey de la dinastía, casado con una princesa de un clan poderoso, tomó el título de \"gran rey de reyes\" e inició una nueva era para contar los años, y termina hacia 550, después de que las invasiones llegadas de Asia Central y las revueltas de los gobernadores redujeran el reino a una pequeña región. El apogeo elegido es hacia 420. El mapa excluye los reinos del sur y de la costa este que fueron derrotados en una gran campaña militar, pero devueltos a sus reyes a cambio de tributo."
   },
   "area": {
     "km2": 2230000,
@@ -34,49 +36,60 @@
   ],
   "capital": {
     "en": "Pataliputra (Ujjain as a second capital)",
-    "pt": "Pataliputra (Ujjain como segunda capital)"
+    "pt": "Pataliputra (Ujjain como segunda capital)",
+    "es": "Pataliputra (Ujjain como segunda capital)"
   },
   "language": {
     "en": "Sanskrit (as well as the Prakrits)",
-    "pt": "Sânscrito (além dos prácritos)"
+    "pt": "Sânscrito (além dos prácritos)",
+    "es": "Sánscrito (además de los prácritos)"
   },
   "religion": {
     "en": "Hinduism",
-    "pt": "Hinduísmo"
+    "pt": "Hinduísmo",
+    "es": "Hinduismo"
   },
   "religionNotes": {
     "en": "The kings presented themselves as devotees of Vishnu, and it was in this period that Hinduism took its classical form, with the great stone temples, the Puranas and the devotional worship of Vishnu and Shiva. Buddhism and Jainism remained protected, and one of the kings founded a great Buddhist monastery that became the most famous centre of learning in Asia.",
-    "pt": "Os reis se apresentavam como devotos de Vishnu, e foi nessa época que o hinduísmo ganhou a forma clássica, com os grandes templos de pedra, os Puranas e o culto devocional a Vishnu e Shiva. O budismo e o jainismo continuaram protegidos, e um dos reis fundou um grande mosteiro budista que se tornou o centro de estudos mais famoso da Ásia."
+    "pt": "Os reis se apresentavam como devotos de Vishnu, e foi nessa época que o hinduísmo ganhou a forma clássica, com os grandes templos de pedra, os Puranas e o culto devocional a Vishnu e Shiva. O budismo e o jainismo continuaram protegidos, e um dos reis fundou um grande mosteiro budista que se tornou o centro de estudos mais famoso da Ásia.",
+    "es": "Los reyes se presentaban como devotos de Vishnu, y fue en esta época cuando el hinduismo adquirió su forma clásica, con los grandes templos de piedra, los puranas y el culto devocional a Vishnu y Shiva. El budismo y el jainismo siguieron protegidos, y uno de los reyes fundó un gran monasterio budista que se convirtió en el centro de estudios más famoso de Asia."
   },
   "curiosities": [
     {
       "en": "An astronomer of its time proposed that the Earth spins on its own axis and calculated the value of pi to four decimal places.",
       "pt": "Um astrônomo da sua época propôs que a Terra gira em torno do próprio eixo e calculou o valor de pi com quatro casas decimais.",
+      "es": "Un astrónomo de su época propuso que la Tierra gira sobre su propio eje y calculó el valor de pi con cuatro decimales.",
       "details": {
         "en": "Aryabhata wrote the \"Aryabhatiya\" in 499, at the age of 23. India's first space satellite, launched in 1975, was named after him.",
-        "pt": "Aryabhata escreveu o \"Aryabhatiya\" em 499, aos 23 anos. O primeiro satélite espacial da Índia, lançado em 1975, recebeu o nome dele."
+        "pt": "Aryabhata escreveu o \"Aryabhatiya\" em 499, aos 23 anos. O primeiro satélite espacial da Índia, lançado em 1975, recebeu o nome dele.",
+        "es": "Aryabhata escribió el \"Aryabhatiya\" en 499, a los 23 años. El primer satélite espacial de la India, lanzado en 1975, lleva su nombre."
       }
     },
     {
       "en": "The game that gave rise to chess appeared in its territory, around the end of the dynasty.",
       "pt": "O jogo que deu origem ao xadrez surgiu no seu território, por volta do fim da dinastia.",
+      "es": "El juego que dio origen al ajedrez surgió en su territorio, hacia el final de la dinastía.",
       "details": {
         "en": "Chaturanga, with pieces representing the infantry, cavalry, elephants and chariots of the army, appears around the 6th century. It passed to Persia and then to the Arab world and Europe.",
-        "pt": "O chaturanga, com peças que representavam a infantaria, a cavalaria, os elefantes e os carros do exército, aparece por volta do século VI. Ele passou à Pérsia e depois ao mundo árabe e à Europa."
+        "pt": "O chaturanga, com peças que representavam a infantaria, a cavalaria, os elefantes e os carros do exército, aparece por volta do século VI. Ele passou à Pérsia e depois ao mundo árabe e à Europa.",
+        "es": "El chaturanga, con piezas que representaban la infantería, la caballería, los elefantes y los carros del ejército, aparece hacia el siglo VI. Pasó a Persia y después al mundo árabe y a Europa."
       }
     },
     {
       "en": "It was in its time that the positional decimal system took shape which, carried to Europe by the Arabs, gave rise to the numerals we use today.",
       "pt": "Foi na sua época que se consolidou o sistema decimal posicional que, levado pelos árabes à Europa, deu origem aos algarismos que usamos hoje.",
+      "es": "Fue en su época cuando se consolidó el sistema decimal posicional que, llevado a Europa por los árabes, dio origen a las cifras que usamos hoy.",
       "details": {
         "en": "The Indian system of ten digits with place value became established in this period and reached Europe through Arab mathematicians, which is why the numerals are called \"Hindu-Arabic\".",
-        "pt": "O sistema indiano de dez algarismos com valor posicional se firmou nesse período e chegou à Europa pelos matemáticos árabes, por isso os algarismos são chamados de \"indo-arábicos\"."
+        "pt": "O sistema indiano de dez algarismos com valor posicional se firmou nesse período e chegou à Europa pelos matemáticos árabes, por isso os algarismos são chamados de \"indo-arábicos\".",
+        "es": "El sistema indio de diez cifras con valor posicional se asentó en este período y llegó a Europa a través de los matemáticos árabes, por eso las cifras se llaman \"indoarábigas\"."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Gupta_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Império_Gupta"
+    "pt": "https://pt.wikipedia.org/wiki/Império_Gupta",
+    "es": "https://es.wikipedia.org/wiki/Imperio_gupta"
   },
   "aliases": [
     "Gupta",
@@ -91,7 +104,8 @@
   ],
   "summary": {
     "en": "An empire of northern India founded by Chandragupta I around 320, from Magadha, in the Ganges valley. His son Samudragupta conquered much of the north and led a great campaign in the south, where the defeated kings came to pay tribute. Chandragupta II defeated the Western Satraps and took the empire to the Arabian Sea, opening the ports of the trade with Rome and Southeast Asia. The period is considered the Golden Age of India: the poet Kalidasa wrote his works, the astronomer Aryabhata calculated the value of pi and proposed the rotation of the Earth, and the positional decimal system took the form that gave rise to the numerals used today. From the middle of the 5th century, the invasions of the Hephthalite Huns, from Central Asia, weakened the empire, and the provincial governors became independent, until the dynasty disappeared around 550.",
-    "pt": "Império do norte da Índia fundado por Chandragupta I por volta de 320, a partir de Magadha, no vale do Ganges. Seu filho Samudragupta conquistou boa parte do norte e fez uma grande campanha no sul, onde os reis derrotados passaram a pagar tributo. Chandragupta II derrotou os Sátrapas Ocidentais e levou o império até o mar Arábico, abrindo os portos do comércio com Roma e o Sudeste Asiático. O período é considerado a Idade de Ouro da Índia: o poeta Kalidasa escreveu suas obras, o astrônomo Aryabhata calculou o valor de pi e propôs a rotação da Terra, e o sistema decimal posicional ganhou a forma que deu origem aos algarismos usados hoje. A partir de meados do século V, as invasões dos hunos heftalitas, vindos da Ásia Central, enfraqueceram o império, e os governadores das províncias se tornaram independentes, até que a dinastia desapareceu por volta de 550."
+    "pt": "Império do norte da Índia fundado por Chandragupta I por volta de 320, a partir de Magadha, no vale do Ganges. Seu filho Samudragupta conquistou boa parte do norte e fez uma grande campanha no sul, onde os reis derrotados passaram a pagar tributo. Chandragupta II derrotou os Sátrapas Ocidentais e levou o império até o mar Arábico, abrindo os portos do comércio com Roma e o Sudeste Asiático. O período é considerado a Idade de Ouro da Índia: o poeta Kalidasa escreveu suas obras, o astrônomo Aryabhata calculou o valor de pi e propôs a rotação da Terra, e o sistema decimal posicional ganhou a forma que deu origem aos algarismos usados hoje. A partir de meados do século V, as invasões dos hunos heftalitas, vindos da Ásia Central, enfraqueceram o império, e os governadores das províncias se tornaram independentes, até que a dinastia desapareceu por volta de 550.",
+    "es": "Imperio del norte de la India fundado por Chandragupta I hacia 320, a partir de Magadha, en el valle del Ganges. Su hijo Samudragupta conquistó buena parte del norte y llevó a cabo una gran campaña en el sur, donde los reyes derrotados pasaron a pagar tributo. Chandragupta II derrotó a los sátrapas occidentales y llevó el imperio hasta el mar Arábigo, lo que abrió los puertos del comercio con Roma y el Sudeste Asiático. El período se considera la Edad de Oro de la India: el poeta Kalidasa escribió sus obras, el astrónomo Aryabhata calculó el valor de pi y propuso la rotación de la Tierra, y el sistema decimal posicional tomó la forma que dio origen a las cifras que se usan hoy. A partir de mediados del siglo V, las invasiones de los hunos heftalitas, llegados de Asia Central, debilitaron el imperio, y los gobernadores de las provincias se independizaron, hasta que la dinastía desapareció hacia 550."
   },
   "map": {
     "parts": [

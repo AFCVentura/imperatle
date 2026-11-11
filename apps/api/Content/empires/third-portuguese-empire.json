@@ -3,7 +3,8 @@
   "slug": "third-portuguese-empire",
   "name": {
     "en": "Third Portuguese Empire",
-    "pt": "Terceiro Império Português"
+    "pt": "Terceiro Império Português",
+    "es": "Tercer Imperio portugués"
   },
   "peak": {
     "year": 1920,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts in 1822, when the independence of the large colony in South America shifted the centre of the empire to Africa, and ends in 1999, with the handover of the last overseas territory to China. Most of the African colonies became independent in 1975, after a revolution in the home country. The peak shown is 1920, when the occupation of the African interior was complete; the borders stayed like this until 1961, when the territories in India were taken. The earlier phases, focused on trade in Asia and then on South America, are treated here as separate empires.",
-    "pt": "Começa em 1822, quando a independência da grande colônia na América do Sul deslocou o centro do império para a África, e termina em 1999, com a devolução do último território ultramarino à China. A maior parte das colônias africanas ficou independente em 1975, depois de uma revolução na metrópole. O auge escolhido é 1920, quando a ocupação do interior africano estava completa; as fronteiras ficaram assim até 1961, quando os territórios na Índia foram tomados. As fases anteriores, voltadas ao comércio na Ásia e depois à América do Sul, são tratadas aqui como impérios separados."
+    "pt": "Começa em 1822, quando a independência da grande colônia na América do Sul deslocou o centro do império para a África, e termina em 1999, com a devolução do último território ultramarino à China. A maior parte das colônias africanas ficou independente em 1975, depois de uma revolução na metrópole. O auge escolhido é 1920, quando a ocupação do interior africano estava completa; as fronteiras ficaram assim até 1961, quando os territórios na Índia foram tomados. As fases anteriores, voltadas ao comércio na Ásia e depois à América do Sul, são tratadas aqui como impérios separados.",
+    "es": "Comienza en 1822, cuando la independencia de la gran colonia de América del Sur desplazó el centro del imperio a África, y termina en 1999, con la devolución a China del último territorio de ultramar. La mayor parte de las colonias africanas se independizó en 1975, tras una revolución en la metrópoli. El apogeo elegido es 1920, cuando se completó la ocupación del interior africano; las fronteras se mantuvieron así hasta 1961, cuando le arrebataron los territorios de la India. Las fases anteriores, centradas en el comercio en Asia y después en América del Sur, se tratan aquí como imperios distintos."
   },
   "area": {
     "km2": 2170000,
@@ -37,49 +39,60 @@
   ],
   "capital": {
     "en": "Lisbon",
-    "pt": "Lisboa"
+    "pt": "Lisboa",
+    "es": "Lisboa"
   },
   "language": {
     "en": "Portuguese",
-    "pt": "Português"
+    "pt": "Português",
+    "es": "Portugués"
   },
   "religion": {
     "en": "Catholicism",
-    "pt": "Catolicismo"
+    "pt": "Catolicismo",
+    "es": "Catolicismo"
   },
   "religionNotes": {
     "en": "The republic set up in 1910 separated Church and State, but the authoritarian regime that came later brought the two back together through a concordat, in 1940, which handed Catholic missions much of the schooling in the colonies. In Africa, most of the population kept following traditional religions or, in northern Mozambique and in Guinea, Islam.",
-    "pt": "A república instalada em 1910 separou a Igreja do Estado, mas o regime autoritário que veio depois reaproximou os dois por meio de uma concordata, em 1940, que entregou às missões católicas boa parte do ensino nas colônias. Na África, a maioria da população continuou seguindo religiões tradicionais ou, no norte de Moçambique e na Guiné, o islamismo."
+    "pt": "A república instalada em 1910 separou a Igreja do Estado, mas o regime autoritário que veio depois reaproximou os dois por meio de uma concordata, em 1940, que entregou às missões católicas boa parte do ensino nas colônias. Na África, a maioria da população continuou seguindo religiões tradicionais ou, no norte de Moçambique e na Guiné, o islamismo.",
+    "es": "La república instaurada en 1910 separó la Iglesia del Estado, pero el régimen autoritario posterior volvió a acercarlos mediante un concordato, en 1940, que dejó en manos de las misiones católicas buena parte de la enseñanza en las colonias. En África, la mayoría de la población siguió practicando religiones tradicionales o, en el norte de Mozambique y en Guinea, el islam."
   },
   "curiosities": [
     {
       "en": "Its colonial wars lasted 13 years and came to consume almost half of the country's budget.",
       "pt": "Suas guerras coloniais duraram 13 anos e chegaram a consumir quase metade do orçamento do país.",
+      "es": "Sus guerras coloniales duraron 13 años y llegaron a consumir casi la mitad del presupuesto del país.",
       "details": {
         "en": "From 1961 to 1974, Portugal fought independence movements in Angola, Mozambique and Guinea, mobilising more than 800,000 soldiers. The strain of the war led the military itself to overthrow the regime in 1974.",
-        "pt": "De 1961 a 1974, Portugal combateu movimentos de independência em Angola, Moçambique e Guiné, mobilizando mais de 800 mil soldados. O desgaste da guerra levou os próprios militares a derrubar o regime em 1974."
+        "pt": "De 1961 a 1974, Portugal combateu movimentos de independência em Angola, Moçambique e Guiné, mobilizando mais de 800 mil soldados. O desgaste da guerra levou os próprios militares a derrubar o regime em 1974.",
+        "es": "De 1961 a 1974, Portugal combatió a los movimientos independentistas de Angola, Mozambique y Guinea, y movilizó a más de 800 000 soldados. El desgaste de la guerra llevó a los propios militares a derrocar al régimen en 1974."
       }
     },
     {
       "en": "Its end began with a revolution in the home country announced by a song on the radio, in which soldiers put flowers in their rifles.",
       "pt": "Seu fim começou com uma revolução na metrópole anunciada por uma canção no rádio, em que soldados puseram flores nos fuzis.",
+      "es": "Su final comenzó con una revolución en la metrópoli anunciada por una canción en la radio, en la que los soldados pusieron flores en sus fusiles.",
       "details": {
         "en": "On 25 April 1974, the song \"Grândola, Vila Morena\", by Zeca Afonso, played on the radio, was the signal for the military to overthrow the dictatorship. People handed carnations to the soldiers, and the new government negotiated the independence of the African colonies the following year.",
-        "pt": "Em 25 de abril de 1974, a música \"Grândola, Vila Morena\", de Zeca Afonso, tocada no rádio, foi o sinal para os militares derrubarem a ditadura. A população distribuiu cravos aos soldados, e o novo governo negociou a independência das colônias africanas no ano seguinte."
+        "pt": "Em 25 de abril de 1974, a música \"Grândola, Vila Morena\", de Zeca Afonso, tocada no rádio, foi o sinal para os militares derrubarem a ditadura. A população distribuiu cravos aos soldados, e o novo governo negociou a independência das colônias africanas no ano seguinte.",
+        "es": "El 25 de abril de 1974, la canción \"Grândola, Vila Morena\", de Zeca Afonso, emitida por la radio, fue la señal para que los militares derrocaran la dictadura. La gente repartió claveles entre los soldados, y el nuevo gobierno negoció la independencia de las colonias africanas al año siguiente."
       }
     },
     {
       "en": "A player born in one of its African colonies was the top scorer of the 1966 World Cup, playing for the home country's team.",
       "pt": "Um jogador nascido em uma de suas colônias africanas foi o artilheiro da Copa do Mundo de 1966, jogando pela seleção da metrópole.",
+      "es": "Un jugador nacido en una de sus colonias africanas fue el máximo goleador del Mundial de 1966, jugando con la selección de la metrópoli.",
       "details": {
         "en": "Eusébio, born in 1942 in Lourenço Marques (today Maputo), in Mozambique, scored 9 goals at the 1966 World Cup, in England, where Portugal finished third. Since 1951 the regime had called the colonies overseas provinces, part of Portugal itself, and several players from Africa played for the national team.",
-        "pt": "Eusébio, nascido em 1942 em Lourenço Marques (hoje Maputo), em Moçambique, marcou 9 gols na Copa do Mundo de 1966, na Inglaterra, em que Portugal ficou em terceiro. Desde 1951 o regime chamava as colônias de províncias ultramarinas, parte do próprio Portugal, e vários jogadores vindos da África defenderam a seleção."
+        "pt": "Eusébio, nascido em 1942 em Lourenço Marques (hoje Maputo), em Moçambique, marcou 9 gols na Copa do Mundo de 1966, na Inglaterra, em que Portugal ficou em terceiro. Desde 1951 o regime chamava as colônias de províncias ultramarinas, parte do próprio Portugal, e vários jogadores vindos da África defenderam a seleção.",
+        "es": "Eusébio, nacido en 1942 en Lourenço Marques (hoy Maputo), en Mozambique, marcó 9 goles en el Mundial de 1966, en Inglaterra, en el que Portugal terminó en tercer lugar. Desde 1951 el régimen llamaba a las colonias provincias de ultramar, parte del propio Portugal, y varios jugadores procedentes de África jugaron en la selección."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Portuguese_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Império_Português"
+    "pt": "https://pt.wikipedia.org/wiki/Império_Português",
+    "es": "https://es.wikipedia.org/wiki/Imperio_portugués"
   },
   "aliases": [
     "Portugal",
@@ -93,11 +106,14 @@
     "Império Lusitano",
     "Portuguese Africa",
     "África Portuguesa",
-    "Províncias Ultramarinas"
+    "Províncias Ultramarinas",
+    "Ultramar portugués",
+    "Provincias de ultramar"
   ],
   "summary": {
     "en": "The last phase of the Portuguese Empire, which began after the independence of Brazil, in 1822, and had Africa as its centre. Throughout the 19th century, Portugal still controlled little more than the coast of Angola and Mozambique, but with the race of the European powers for Africa it occupied the interior through military campaigns that only ended around 1915. The plan to join the two colonies from coast to coast was blocked by a British ultimatum in 1890. During the Estado Novo dictatorship, from 1933 to 1974, the colonies came to be called overseas provinces, and from 1961 the country faced long wars against the independence movements in Angola, Mozambique and Guinea. The Carnation Revolution, in 1974, ended the dictatorship and led to the independence of the African colonies in 1975. Macau, the last territory, was handed back to China in 1999.",
-    "pt": "Última fase do Império Português, que começou depois da independência do Brasil, em 1822, e teve a África como centro. Ao longo do século XIX, Portugal ainda controlava pouco mais que o litoral de Angola e Moçambique, mas, com a corrida das potências europeias pela África, ocupou o interior por meio de campanhas militares que só terminaram por volta de 1915. O projeto de unir as duas colônias de costa a costa foi barrado por um ultimato britânico em 1890. Durante a ditadura do Estado Novo, de 1933 a 1974, as colônias passaram a ser chamadas de províncias ultramarinas, e a partir de 1961 o país enfrentou longas guerras contra os movimentos de independência em Angola, Moçambique e Guiné. A Revolução dos Cravos, em 1974, encerrou a ditadura e levou à independência das colônias africanas em 1975. Macau, o último território, foi devolvida à China em 1999."
+    "pt": "Última fase do Império Português, que começou depois da independência do Brasil, em 1822, e teve a África como centro. Ao longo do século XIX, Portugal ainda controlava pouco mais que o litoral de Angola e Moçambique, mas, com a corrida das potências europeias pela África, ocupou o interior por meio de campanhas militares que só terminaram por volta de 1915. O projeto de unir as duas colônias de costa a costa foi barrado por um ultimato britânico em 1890. Durante a ditadura do Estado Novo, de 1933 a 1974, as colônias passaram a ser chamadas de províncias ultramarinas, e a partir de 1961 o país enfrentou longas guerras contra os movimentos de independência em Angola, Moçambique e Guiné. A Revolução dos Cravos, em 1974, encerrou a ditadura e levou à independência das colônias africanas em 1975. Macau, o último território, foi devolvida à China em 1999.",
+    "es": "Última fase del Imperio portugués, que comenzó tras la independencia de Brasil, en 1822, y tuvo a África como centro. Durante el siglo XIX, Portugal todavía controlaba poco más que la costa de Angola y Mozambique, pero, con la carrera de las potencias europeas por África, ocupó el interior mediante campañas militares que solo terminaron hacia 1915. El proyecto de unir las dos colonias de costa a costa fue frenado por un ultimátum británico en 1890. Durante la dictadura del Estado Novo, de 1933 a 1974, las colonias pasaron a llamarse provincias de ultramar, y a partir de 1961 el país libró largas guerras contra los movimientos independentistas de Angola, Mozambique y Guinea. La Revolución de los Claveles, en 1974, puso fin a la dictadura y llevó a la independencia de las colonias africanas en 1975. Macao, el último territorio, fue devuelto a China en 1999."
   },
   "map": {
     "parts": [

@@ -3,7 +3,8 @@
   "slug": "maratha-empire",
   "name": {
     "en": "Maratha Empire",
-    "pt": "Império Marata"
+    "pt": "Império Marata",
+    "es": "Imperio maratha"
   },
   "peak": {
     "year": 1760,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts in 1674, when a warrior leader from the western Deccan was crowned king, defying the Muslim empire that dominated the north, and ends in 1818, when the last head of government surrendered to a European trading company. From around 1720, power passed in practice to hereditary prime ministers, and the empire became a confederacy of great military chiefs. The peak shown is 1760, shortly before a catastrophic defeat suffered in 1761. The map includes the lands of these chiefs and the Deccan territories ceded by a neighbouring state that same year.",
-    "pt": "Começa em 1674, quando um líder guerreiro do oeste do Decão foi coroado rei, desafiando o império muçulmano que dominava o norte, e termina em 1818, quando o último chefe do governo se rendeu a uma companhia comercial europeia. A partir de cerca de 1720, o poder passou de fato a primeiros-ministros hereditários, e o império virou uma confederação de grandes chefes militares. O auge escolhido é 1760, pouco antes de uma derrota catastrófica sofrida em 1761. O mapa inclui as terras desses chefes e os territórios do Decão cedidos por um Estado vizinho naquele mesmo ano."
+    "pt": "Começa em 1674, quando um líder guerreiro do oeste do Decão foi coroado rei, desafiando o império muçulmano que dominava o norte, e termina em 1818, quando o último chefe do governo se rendeu a uma companhia comercial europeia. A partir de cerca de 1720, o poder passou de fato a primeiros-ministros hereditários, e o império virou uma confederação de grandes chefes militares. O auge escolhido é 1760, pouco antes de uma derrota catastrófica sofrida em 1761. O mapa inclui as terras desses chefes e os territórios do Decão cedidos por um Estado vizinho naquele mesmo ano.",
+    "es": "Comienza en 1674, cuando un líder guerrero del oeste del Decán fue coronado rey, desafiando al imperio musulmán que dominaba el norte, y termina en 1818, cuando el último jefe de gobierno se rindió ante una compañía comercial europea. A partir de alrededor de 1720, el poder pasó en la práctica a primeros ministros hereditarios, y el imperio se convirtió en una confederación de grandes jefes militares. El apogeo elegido es 1760, poco antes de la derrota catastrófica sufrida en 1761. El mapa incluye las tierras de esos jefes y los territorios del Decán cedidos por un Estado vecino ese mismo año."
   },
   "area": {
     "km2": 1140000,
@@ -34,49 +36,60 @@
   ],
   "capital": {
     "en": "Raigad, later Satara and Pune",
-    "pt": "Raigad, depois Satara e Pune"
+    "pt": "Raigad, depois Satara e Pune",
+    "es": "Raigad, después Satara y Pune"
   },
   "language": {
     "en": "Marathi (as well as Persian)",
-    "pt": "Marati (além do persa)"
+    "pt": "Marati (além do persa)",
+    "es": "Maratí (además del persa)"
   },
   "religion": {
     "en": "Hinduism",
-    "pt": "Hinduísmo"
+    "pt": "Hinduísmo",
+    "es": "Hinduismo"
   },
   "religionNotes": {
     "en": "The founder presented himself as a protector of Hindus and temples against the Muslim rulers, and his coronation followed traditional Vedic rituals. Even so, the empire had Muslims in the army and the administration, and the court used Persian in part of its records.",
-    "pt": "O fundador se apresentava como protetor dos hindus e dos templos diante dos governantes muçulmanos, e a coroação dele seguiu rituais védicos tradicionais. Mesmo assim, o império tinha muçulmanos no exército e na administração, e a corte usava o persa em parte da documentação."
+    "pt": "O fundador se apresentava como protetor dos hindus e dos templos diante dos governantes muçulmanos, e a coroação dele seguiu rituais védicos tradicionais. Mesmo assim, o império tinha muçulmanos no exército e na administração, e a corte usava o persa em parte da documentação.",
+    "es": "El fundador se presentaba como protector de los hindúes y de los templos frente a los gobernantes musulmanes, y su coronación siguió rituales védicos tradicionales. Aun así, el imperio tenía musulmanes en el ejército y en la administración, y la corte usaba el persa en parte de sus documentos."
   },
   "curiosities": [
     {
       "en": "The international airport and the main railway station of Mumbai are named after its founder.",
       "pt": "O aeroporto internacional e a principal estação de trem de Mumbai levam o nome do seu fundador.",
+      "es": "El aeropuerto internacional y la principal estación de tren de Bombay llevan el nombre de su fundador.",
       "details": {
         "en": "Chhatrapati Shivaji Maharaj International Airport and the Chhatrapati Shivaji Terminus station, formerly Victoria Terminus, a World Heritage Site.",
-        "pt": "O Aeroporto Internacional Chhatrapati Shivaji Maharaj e a estação Chhatrapati Shivaji Terminus, antiga Victoria Terminus, que é Patrimônio da Humanidade."
+        "pt": "O Aeroporto Internacional Chhatrapati Shivaji Maharaj e a estação Chhatrapati Shivaji Terminus, antiga Victoria Terminus, que é Patrimônio da Humanidade.",
+        "es": "El Aeropuerto Internacional Chhatrapati Shivaji Maharaj y la estación Chhatrapati Shivaji Terminus, antes Victoria Terminus, que es Patrimonio de la Humanidad."
       }
     },
     {
       "en": "One of its admirals faced the British, Dutch and Portuguese fleets for decades, and they never managed to defeat him.",
       "pt": "Um de seus almirantes enfrentou por décadas as frotas britânica, holandesa e portuguesa, que nunca conseguiram derrotá-lo.",
+      "es": "Uno de sus almirantes se enfrentó durante décadas a las flotas británica, neerlandesa y portuguesa, que nunca lograron derrotarlo.",
       "details": {
         "en": "Kanhoji Angre commanded the Maratha fleet from around 1698 until his death, in 1729, from fortified bases on the Konkan coast such as Kolaba and Vijaydurg. A joint British and Portuguese attack on Kolaba, in 1721, and a Dutch attack on Vijaydurg, in 1724, both failed.",
-        "pt": "Kanhoji Angre comandou a frota marata de cerca de 1698 até a morte, em 1729, a partir de bases fortificadas no litoral do Konkan, como Kolaba e Vijaydurg. Um ataque conjunto de britânicos e portugueses a Kolaba, em 1721, e um ataque holandês a Vijaydurg, em 1724, fracassaram."
+        "pt": "Kanhoji Angre comandou a frota marata de cerca de 1698 até a morte, em 1729, a partir de bases fortificadas no litoral do Konkan, como Kolaba e Vijaydurg. Um ataque conjunto de britânicos e portugueses a Kolaba, em 1721, e um ataque holandês a Vijaydurg, em 1724, fracassaram.",
+        "es": "Kanhoji Angria dirigió la flota maratha desde alrededor de 1698 hasta su muerte, en 1729, desde bases fortificadas en la costa del Konkan, como Kolaba y Vijaydurg. Un ataque conjunto de británicos y portugueses contra Kolaba, en 1721, y un ataque neerlandés contra Vijaydurg, en 1724, fracasaron."
       }
     },
     {
       "en": "It was defeated in three wars against the British East India Company, the last great obstacle before the company dominated India.",
       "pt": "Foi derrotado em três guerras contra a Companhia Britânica das Índias Orientais, o último grande obstáculo antes de ela dominar a Índia.",
+      "es": "Fue derrotado en tres guerras contra la Compañía Británica de las Indias Orientales, el último gran obstáculo antes de que la compañía dominara la India.",
       "details": {
         "en": "These were the Anglo-Maratha Wars, from 1775 to 1782, from 1803 to 1805 and from 1817 to 1818.",
-        "pt": "São as guerras Anglo-Maratas, de 1775 a 1782, de 1803 a 1805 e de 1817 a 1818."
+        "pt": "São as guerras Anglo-Maratas, de 1775 a 1782, de 1803 a 1805 e de 1817 a 1818.",
+        "es": "Son las guerras anglo-marathas, de 1775 a 1782, de 1803 a 1805 y de 1817 a 1818."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Maratha_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Império_Marata"
+    "pt": "https://pt.wikipedia.org/wiki/Império_Marata",
+    "es": "https://es.wikipedia.org/wiki/Imperio_maratha"
   },
   "aliases": [
     "Maratha",
@@ -91,11 +104,15 @@
     "Peshwa",
     "Peshwas",
     "India",
-    "Índia"
+    "Índia",
+    "Confederación maratha",
+    "Confederación marata",
+    "Reino maratha"
   ],
   "summary": {
     "en": "A Hindu empire of western India, founded by Shivaji, who fought against the Deccan sultanates and the Mughal Empire and was crowned king in 1674, at Raigad. After the death of Aurangzeb, in 1707, the Marathas advanced northwards, and from 1720 power passed to the Peshwas, hereditary prime ministers who ruled from Pune, while great chiefs such as the Scindias, the Holkars, the Bhonsles and the Gaekwads built their own domains within the confederacy. In 1758 Maratha armies reached Attock, on the Indus, but in 1761 they were crushed by the Afghan Ahmad Shah Durrani at the Third Battle of Panipat. The empire recovered and in 1771 again controlled Delhi, with the Mughal emperor under its protection. The three wars against the British East India Company, between 1775 and 1818, ended with the surrender of the last Peshwa, and the British came to dominate almost all of India.",
-    "pt": "Império hindu do oeste da Índia, fundado por Shivaji, que lutou contra os sultanatos do Decão e o Império Mogol e foi coroado rei em 1674, em Raigad. Depois da morte de Aurangzeb, em 1707, os maratas avançaram para o norte, e a partir de 1720 o poder passou aos Peshwas, primeiros-ministros hereditários que governavam de Pune, enquanto grandes chefes como os Scindia, os Holkar, os Bhonsle e os Gaekwad criavam seus próprios domínios dentro da confederação. Em 1758 os exércitos maratas chegaram a Attock, no rio Indo, mas em 1761 foram esmagados pelo afegão Ahmad Shah Durrani na Terceira Batalha de Panipat. O império se recuperou e, em 1771, voltou a controlar Délhi, com o imperador mogol sob sua proteção. As três guerras contra a Companhia Britânica das Índias Orientais, entre 1775 e 1818, terminaram com a rendição do último Peshwa, e os britânicos passaram a dominar quase toda a Índia."
+    "pt": "Império hindu do oeste da Índia, fundado por Shivaji, que lutou contra os sultanatos do Decão e o Império Mogol e foi coroado rei em 1674, em Raigad. Depois da morte de Aurangzeb, em 1707, os maratas avançaram para o norte, e a partir de 1720 o poder passou aos Peshwas, primeiros-ministros hereditários que governavam de Pune, enquanto grandes chefes como os Scindia, os Holkar, os Bhonsle e os Gaekwad criavam seus próprios domínios dentro da confederação. Em 1758 os exércitos maratas chegaram a Attock, no rio Indo, mas em 1761 foram esmagados pelo afegão Ahmad Shah Durrani na Terceira Batalha de Panipat. O império se recuperou e, em 1771, voltou a controlar Délhi, com o imperador mogol sob sua proteção. As três guerras contra a Companhia Britânica das Índias Orientais, entre 1775 e 1818, terminaram com a rendição do último Peshwa, e os britânicos passaram a dominar quase toda a Índia.",
+    "es": "Imperio hindú del oeste de la India, fundado por Shivaji, que luchó contra los sultanatos del Decán y el Imperio mogol y fue coronado rey en 1674, en Raigad. Tras la muerte de Aurangzeb, en 1707, los marathas avanzaron hacia el norte, y a partir de 1720 el poder pasó a los peshwas, primeros ministros hereditarios que gobernaban desde Pune, mientras grandes jefes como los Scindia, los Holkar, los Bhonsle y los Gaekwad creaban sus propios dominios dentro de la confederación. En 1758 los ejércitos marathas llegaron a Attock, junto al río Indo, pero en 1761 fueron aplastados por el afgano Ahmad Shah Durrani en la tercera batalla de Panipat. El imperio se recuperó y en 1771 volvió a controlar Delhi, con el emperador mogol bajo su protección. Las tres guerras contra la Compañía Británica de las Indias Orientales, entre 1775 y 1818, terminaron con la rendición del último peshwa, y los británicos pasaron a dominar casi toda la India."
   },
   "map": {
     "parts": [

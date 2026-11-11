@@ -3,7 +3,8 @@
   "slug": "austria-hungary",
   "name": {
     "en": "Austria-Hungary",
-    "pt": "Império Austro-Húngaro"
+    "pt": "Império Austro-Húngaro",
+    "es": "Imperio austrohúngaro"
   },
   "peak": {
     "year": 1914,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts with the 1867 agreement that split the territory into two halves under the same monarch, and ends with its dissolution at the end of World War I, in 1918. The peak shown is before the war: between 1916 and 1918 the territory looked larger, but it included regions under military occupation, not annexed.",
-    "pt": "Começa com o acordo de 1867 que dividiu o território em duas metades com o mesmo monarca, e termina com a dissolução no fim da Primeira Guerra, em 1918. O auge escolhido é o de antes da guerra: entre 1916 e 1918 o território parecia maior, mas incluía regiões ocupadas militarmente, não anexadas."
+    "pt": "Começa com o acordo de 1867 que dividiu o território em duas metades com o mesmo monarca, e termina com a dissolução no fim da Primeira Guerra, em 1918. O auge escolhido é o de antes da guerra: entre 1916 e 1918 o território parecia maior, mas incluía regiões ocupadas militarmente, não anexadas.",
+    "es": "Comienza con el acuerdo de 1867 que dividió el territorio en dos mitades bajo el mismo monarca y termina con su disolución al final de la Primera Guerra Mundial, en 1918. El apogeo elegido es el de antes de la guerra: entre 1916 y 1918 el territorio parecía mayor, pero incluía regiones bajo ocupación militar, no anexionadas."
   },
   "area": {
     "km2": 676000,
@@ -35,49 +37,60 @@
   ],
   "capital": {
     "en": "Vienna and Budapest (one for each half of the empire)",
-    "pt": "Viena e Budapeste (uma para cada metade do império)"
+    "pt": "Viena e Budapeste (uma para cada metade do império)",
+    "es": "Viena y Budapest (una para cada mitad del imperio)"
   },
   "language": {
     "en": "German and Hungarian (plus many regional languages)",
-    "pt": "Alemão e húngaro (além de muitas línguas regionais)"
+    "pt": "Alemão e húngaro (além de muitas línguas regionais)",
+    "es": "Alemán y húngaro (además de muchas lenguas regionales)"
   },
   "religion": {
     "en": "Catholicism",
-    "pt": "Catolicismo"
+    "pt": "Catolicismo",
+    "es": "Catolicismo"
   },
   "religionNotes": {
     "en": "The ruling dynasty was Catholic, and the Church carried great weight in the state. The empire also had large Protestant, Orthodox and Jewish populations, and a Muslim one in Bosnia.",
-    "pt": "A dinastia governante era católica, e a Igreja tinha grande peso no Estado. O império também tinha grandes populações protestantes, ortodoxas e judaicas, e uma muçulmana na Bósnia."
+    "pt": "A dinastia governante era católica, e a Igreja tinha grande peso no Estado. O império também tinha grandes populações protestantes, ortodoxas e judaicas, e uma muçulmana na Bósnia.",
+    "es": "La dinastía gobernante era católica, y la Iglesia tenía un gran peso en el Estado. El imperio también tenía grandes poblaciones protestantes, ortodoxas y judías, y una musulmana en Bosnia."
   },
   "curiosities": [
     {
       "en": "It held a small concession on Chinese territory, in the city of Tianjin.",
       "pt": "Mantinha uma pequena concessão em território chinês, na cidade de Tianjin.",
+      "es": "Tenía una pequeña concesión en territorio chino, en la ciudad de Tianjin.",
       "details": {
         "en": "It was one of the eight powers that put down the Boxer Rebellion in China, and in 1901 it received a riverside district of Tianjin, near Beijing. The concession had its own garrison, police and schools, and was administered by a consul. It was lost in 1917, when China entered World War I against it and took the area back.",
-        "pt": "Foi uma das oito potências que reprimiram a Revolta dos Boxers na China, e em 1901 recebeu um bairro às margens do rio em Tianjin, perto de Pequim. A concessão tinha guarnição, polícia e escolas próprias, e era administrada por um cônsul. Foi perdida em 1917, quando a China entrou na Primeira Guerra contra o império e retomou a área."
+        "pt": "Foi uma das oito potências que reprimiram a Revolta dos Boxers na China, e em 1901 recebeu um bairro às margens do rio em Tianjin, perto de Pequim. A concessão tinha guarnição, polícia e escolas próprias, e era administrada por um cônsul. Foi perdida em 1917, quando a China entrou na Primeira Guerra contra o império e retomou a área.",
+        "es": "Fue una de las ocho potencias que reprimieron el levantamiento de los bóxers en China, y en 1901 recibió un barrio a orillas del río en Tianjin, cerca de Pekín. La concesión tenía guarnición, policía y escuelas propias, y la administraba un cónsul. La perdió en 1917, cuando China entró en la Primera Guerra Mundial en su contra y recuperó la zona."
       }
     },
     {
       "en": "A single monarch ruled for almost its entire existence, and died in the middle of the war that would destroy it.",
       "pt": "Um único monarca governou durante quase toda a sua existência, e morreu no meio da guerra que o destruiria.",
+      "es": "Un solo monarca gobernó durante casi toda su existencia y murió en plena guerra, la misma que acabaría destruyéndolo.",
       "details": {
         "en": "Franz Joseph became emperor of Austria in 1848, at 18, and was crowned king of Hungary in 1867, the year of the compromise. He reigned until his death, on 21 November 1916, at 86: 68 years in all, one of the longest reigns in European history. His great-nephew Charles I ruled for only two years before the collapse.",
-        "pt": "Francisco José virou imperador da Áustria em 1848, aos 18 anos, e foi coroado rei da Hungria em 1867, o ano do compromisso. Reinou até morrer, em 21 de novembro de 1916, aos 86 anos: 68 anos no total, um dos reinados mais longos da história europeia. Seu sobrinho-neto Carlos I governou só dois anos antes do colapso."
+        "pt": "Francisco José virou imperador da Áustria em 1848, aos 18 anos, e foi coroado rei da Hungria em 1867, o ano do compromisso. Reinou até morrer, em 21 de novembro de 1916, aos 86 anos: 68 anos no total, um dos reinados mais longos da história europeia. Seu sobrinho-neto Carlos I governou só dois anos antes do colapso.",
+        "es": "Francisco José se convirtió en emperador de Austria en 1848, a los 18 años, y fue coronado rey de Hungría en 1867, el año del compromiso. Reinó hasta su muerte, el 21 de noviembre de 1916, a los 86 años: 68 años en total, uno de los reinados más largos de la historia europea. Su sobrino nieto Carlos I gobernó solo dos años antes del colapso."
       }
     },
     {
       "en": "The assassination of the heir to its throne in Sarajevo, in 1914, set off World War I.",
       "pt": "O assassinato do herdeiro do seu trono em Sarajevo, em 1914, desencadeou a Primeira Guerra Mundial.",
+      "es": "El asesinato del heredero de su trono en Sarajevo, en 1914, desencadenó la Primera Guerra Mundial.",
       "details": {
         "en": "On 28 June 1914, Archduke Franz Ferdinand and his wife Sophie were shot in Sarajevo by Gavrilo Princip, a young Bosnian Serb nationalist. The government in Vienna blamed Serbia and declared war on it a month later. The alliances between the powers then pulled in Germany, Russia, France and the United Kingdom within days.",
-        "pt": "Em 28 de junho de 1914, o arquiduque Francisco Ferdinando e sua esposa Sofia foram baleados em Sarajevo por Gavrilo Princip, um jovem nacionalista sérvio da Bósnia. O governo de Viena culpou a Sérvia e declarou guerra a ela um mês depois. As alianças entre as potências arrastaram em poucos dias a Alemanha, a Rússia, a França e o Reino Unido."
+        "pt": "Em 28 de junho de 1914, o arquiduque Francisco Ferdinando e sua esposa Sofia foram baleados em Sarajevo por Gavrilo Princip, um jovem nacionalista sérvio da Bósnia. O governo de Viena culpou a Sérvia e declarou guerra a ela um mês depois. As alianças entre as potências arrastaram em poucos dias a Alemanha, a Rússia, a França e o Reino Unido.",
+        "es": "El 28 de junio de 1914, el archiduque Francisco Fernando y su esposa Sofía fueron asesinados a tiros en Sarajevo por Gavrilo Princip, un joven nacionalista serbobosnio. El gobierno de Viena culpó a Serbia y le declaró la guerra un mes después. Las alianzas entre las potencias arrastraron en pocos días a Alemania, Rusia, Francia y el Reino Unido."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Austria-Hungary",
-    "pt": "https://pt.wikipedia.org/wiki/Áustria-Hungria"
+    "pt": "https://pt.wikipedia.org/wiki/Áustria-Hungria",
+    "es": "https://es.wikipedia.org/wiki/Imperio_austrohúngaro"
   },
   "aliases": [
     "Áustria-Hungria",
@@ -86,11 +99,13 @@
     "Dual Monarchy",
     "Monarquia Dual",
     "Österreich-Ungarn",
-    "Austro-Hungarian Empire"
+    "Austro-Hungarian Empire",
+    "Monarquía austrohúngara"
   ],
   "summary": {
     "en": "The state created in 1867, when the Habsburg monarch Franz Joseph, weakened by defeat against Prussia, reached an agreement with the Hungarians and split his realm into two halves: he was emperor of Austria and king of Hungary. It brought together Germans, Hungarians, Czechs, Poles, Ukrainians, Croats, Romanians, Italians and other peoples, and Vienna became one of the great cultural centres of Europe. It occupied Bosnia in 1878 and annexed it in 1908. The assassination of its heir in Sarajevo led to World War I, and defeat in 1918 broke it up into several new states.",
-    "pt": "Estado criado em 1867, quando o monarca Habsburgo Francisco José, enfraquecido pela derrota para a Prússia, fez um acordo com os húngaros e dividiu seu reino em duas metades: era imperador da Áustria e rei da Hungria. Reunia alemães, húngaros, tchecos, poloneses, ucranianos, croatas, romenos, italianos e outros povos, e Viena se tornou um dos grandes centros culturais da Europa. Ocupou a Bósnia em 1878 e a anexou em 1908. O assassinato do seu herdeiro em Sarajevo levou à Primeira Guerra Mundial, e a derrota em 1918 o desfez em vários Estados novos."
+    "pt": "Estado criado em 1867, quando o monarca Habsburgo Francisco José, enfraquecido pela derrota para a Prússia, fez um acordo com os húngaros e dividiu seu reino em duas metades: era imperador da Áustria e rei da Hungria. Reunia alemães, húngaros, tchecos, poloneses, ucranianos, croatas, romenos, italianos e outros povos, e Viena se tornou um dos grandes centros culturais da Europa. Ocupou a Bósnia em 1878 e a anexou em 1908. O assassinato do seu herdeiro em Sarajevo levou à Primeira Guerra Mundial, e a derrota em 1918 o desfez em vários Estados novos.",
+    "es": "El Estado creado en 1867, cuando el monarca Habsburgo Francisco José, debilitado por la derrota ante Prusia, llegó a un acuerdo con los húngaros y dividió su reino en dos mitades: era emperador de Austria y rey de Hungría. Reunía a alemanes, húngaros, checos, polacos, ucranianos, croatas, rumanos, italianos y otros pueblos, y Viena se convirtió en uno de los grandes centros culturales de Europa. Ocupó Bosnia en 1878 y la anexionó en 1908. El asesinato de su heredero en Sarajevo condujo a la Primera Guerra Mundial, y la derrota de 1918 lo dividió en varios Estados nuevos."
   },
   "map": {
     "parts": [

@@ -3,7 +3,8 @@
   "slug": "mughal-empire",
   "name": {
     "en": "Mughal Empire",
-    "pt": "Império Mogol"
+    "pt": "Império Mogol",
+    "es": "Imperio mogol"
   },
   "peak": {
     "year": 1700,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts in 1526, with the victory that gave its founder control of northern India, and ends in 1857, when the last emperor was deposed and exiled after a great revolt. Its rule was interrupted from 1540 to 1555, and after 1707 the emperors gradually lost control of the provinces.",
-    "pt": "Começa em 1526, com a vitória que deu ao fundador o controle do norte da Índia, e termina em 1857, quando o último imperador foi deposto e exilado depois de uma grande revolta. O governo foi interrompido de 1540 a 1555, e depois de 1707 os imperadores foram perdendo o controle das províncias."
+    "pt": "Começa em 1526, com a vitória que deu ao fundador o controle do norte da Índia, e termina em 1857, quando o último imperador foi deposto e exilado depois de uma grande revolta. O governo foi interrompido de 1540 a 1555, e depois de 1707 os imperadores foram perdendo o controle das províncias.",
+    "es": "Comienza en 1526, con la victoria que dio a su fundador el control del norte de la India, y termina en 1857, cuando el último emperador fue depuesto y desterrado tras una gran revuelta. Su gobierno se interrumpió de 1540 a 1555, y después de 1707 los emperadores fueron perdiendo el control de las provincias."
   },
   "area": {
     "km2": 3741423,
@@ -34,49 +36,60 @@
   ],
   "capital": {
     "en": "Agra, later Delhi",
-    "pt": "Agra, depois Délhi"
+    "pt": "Agra, depois Délhi",
+    "es": "Agra, después Delhi"
   },
   "language": {
     "en": "Persian",
-    "pt": "Persa"
+    "pt": "Persa",
+    "es": "Persa"
   },
   "religion": {
     "en": "Sunni Islam",
-    "pt": "Islamismo Sunita"
+    "pt": "Islamismo Sunita",
+    "es": "Islam suní"
   },
   "religionNotes": {
     "en": "The dynasty and the ruling elite were Muslim, but most of the population was Hindu. One emperor even founded his own cult, blending elements of several religions.",
-    "pt": "A dinastia e a elite eram muçulmanas, mas a maior parte da população era hindu. Um dos imperadores chegou a fundar um culto próprio, misturando elementos de várias religiões."
+    "pt": "A dinastia e a elite eram muçulmanas, mas a maior parte da população era hindu. Um dos imperadores chegou a fundar um culto próprio, misturando elementos de várias religiões.",
+    "es": "La dinastía y la élite eran musulmanas, pero la mayor parte de la población era hindú. Uno de los emperadores llegó a fundar un culto propio, que mezclaba elementos de varias religiones."
   },
   "curiosities": [
     {
       "en": "Around 1700, it is estimated to have produced about a quarter of the world's economic output.",
       "pt": "Por volta de 1700, estima-se que produzia cerca de um quarto da riqueza do mundo.",
+      "es": "Hacia 1700, se calcula que producía cerca de una cuarta parte de la riqueza del mundo.",
       "details": {
         "en": "Estimates by the economic historian Angus Maddison put Mughal India at about 24% of world output around 1700, more than all of Western Europe. The wealth came from farming, from cotton and silk cloth sold all over the world and from a very efficient land tax.",
-        "pt": "Estimativas do historiador econômico Angus Maddison indicam que, por volta de 1700, a Índia mogol respondia por cerca de 24% da produção mundial, mais que toda a Europa ocidental. A riqueza vinha da agricultura, dos tecidos de algodão e seda vendidos para o mundo inteiro e de um imposto sobre a terra muito eficiente."
+        "pt": "Estimativas do historiador econômico Angus Maddison indicam que, por volta de 1700, a Índia mogol respondia por cerca de 24% da produção mundial, mais que toda a Europa ocidental. A riqueza vinha da agricultura, dos tecidos de algodão e seda vendidos para o mundo inteiro e de um imposto sobre a terra muito eficiente.",
+        "es": "Según las estimaciones del historiador económico Angus Maddison, hacia 1700 la India mogola representaba cerca del 24 % de la producción mundial, más que toda Europa occidental. La riqueza venía de la agricultura, de los tejidos de algodón y seda que se vendían al mundo entero y de un impuesto sobre la tierra muy eficiente."
       }
     },
     {
       "en": "Its emperors descended from two great Central Asian conquerors, one on the father's side and the other on the mother's.",
       "pt": "Seus imperadores descendiam de dois grandes conquistadores da Ásia Central, um pelo lado do pai e outro pelo da mãe.",
+      "es": "Sus emperadores descendían de dos grandes conquistadores de Asia Central, uno por parte de padre y otro por parte de madre.",
       "details": {
         "en": "The founder, Babur, descended from Tamerlane on his father's side and from Genghis Khan on his mother's. The word \"Mughal\" itself comes from the Persian word for \"Mongol\".",
-        "pt": "O fundador, Babur, descendia de Tamerlão pelo lado do pai e de Gengis Khan pelo lado da mãe. A própria palavra \"mogol\" vem da palavra persa para \"mongol\"."
+        "pt": "O fundador, Babur, descendia de Tamerlão pelo lado do pai e de Gengis Khan pelo lado da mãe. A própria palavra \"mogol\" vem da palavra persa para \"mongol\".",
+        "es": "El fundador, Babur, descendía de Tamerlán por parte de padre y de Gengis Kan por parte de madre. La propia palabra \"mogol\" viene de la palabra persa para \"mongol\"."
       }
     },
     {
       "en": "One of its emperors built a white marble mausoleum for his favourite wife, today one of the most visited monuments in the world.",
       "pt": "Um de seus imperadores construiu um mausoléu de mármore branco para a esposa favorita, hoje um dos monumentos mais visitados do mundo.",
+      "es": "Uno de sus emperadores construyó un mausoleo de mármol blanco para su esposa favorita, hoy uno de los monumentos más visitados del mundo.",
       "details": {
         "en": "The Taj Mahal, in Agra, was built by the emperor Shah Jahan for Mumtaz Mahal, who died in 1631 giving birth to the couple's 14th child. It took about 20 years and some 20,000 workers, and today draws millions of visitors a year.",
-        "pt": "O Taj Mahal, em Agra, foi construído pelo imperador Shah Jahan para Mumtaz Mahal, que morreu em 1631 ao dar à luz o 14º filho do casal. A obra levou cerca de 20 anos e uns 20 mil trabalhadores, e hoje recebe milhões de visitantes por ano."
+        "pt": "O Taj Mahal, em Agra, foi construído pelo imperador Shah Jahan para Mumtaz Mahal, que morreu em 1631 ao dar à luz o 14º filho do casal. A obra levou cerca de 20 anos e uns 20 mil trabalhadores, e hoje recebe milhões de visitantes por ano.",
+        "es": "El Taj Mahal, en Agra, lo construyó el emperador Sha Jahan para Mumtaz Mahal, que murió en 1631 al dar a luz al decimocuarto hijo de la pareja. La obra llevó unos 20 años y unos 20 000 trabajadores, y hoy recibe millones de visitantes al año."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Mughal_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Império_Mogol"
+    "pt": "https://pt.wikipedia.org/wiki/Império_Mogol",
+    "es": "https://es.wikipedia.org/wiki/Imperio_mogol"
   },
   "aliases": [
     "Mughal",
@@ -94,11 +107,15 @@
     "Hindustan",
     "Indostão",
     "India",
-    "Índia"
+    "Índia",
+    "Mogoles",
+    "Gran Mogol",
+    "Indostán"
   ],
   "summary": {
     "en": "A Muslim dynasty of Turco-Mongol origin that ruled almost all of the Indian subcontinent from the 16th to the 19th century. Founded by Babur, a prince from Central Asia, it peaked under Akbar, Jahangir, Shah Jahan and Aurangzeb, when it was one of the richest and most populous states in the world. A Persian-speaking Muslim elite ruled a mostly Hindu population. After 1707 it broke apart, and the British deposed the last emperor in 1857.",
-    "pt": "Dinastia muçulmana de origem turco-mongol que governou quase todo o subcontinente indiano entre os séculos XVI e XIX. Fundada por Babur, um príncipe vindo da Ásia Central, teve o auge com Akbar, Jahangir, Shah Jahan e Aurangzeb, quando era um dos Estados mais ricos e populosos do mundo. Uma elite muçulmana de língua persa governava uma população majoritariamente hindu. Depois de 1707 se fragmentou, e os britânicos depuseram o último imperador em 1857."
+    "pt": "Dinastia muçulmana de origem turco-mongol que governou quase todo o subcontinente indiano entre os séculos XVI e XIX. Fundada por Babur, um príncipe vindo da Ásia Central, teve o auge com Akbar, Jahangir, Shah Jahan e Aurangzeb, quando era um dos Estados mais ricos e populosos do mundo. Uma elite muçulmana de língua persa governava uma população majoritariamente hindu. Depois de 1707 se fragmentou, e os britânicos depuseram o último imperador em 1857.",
+    "es": "Dinastía musulmana de origen turcomongol que gobernó casi todo el subcontinente indio entre los siglos XVI y XIX. Fundada por Babur, un príncipe llegado de Asia Central, alcanzó su apogeo con Akbar, Jahangir, Sha Jahan y Aurangzeb, cuando era uno de los Estados más ricos y poblados del mundo. Una élite musulmana de lengua persa gobernaba a una población mayoritariamente hindú. Después de 1707 se fragmentó, y los británicos depusieron al último emperador en 1857."
   },
   "map": {
     "parts": [

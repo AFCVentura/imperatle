@@ -3,7 +3,8 @@
   "slug": "denmark-norway",
   "name": {
     "en": "Denmark–Norway",
-    "pt": "Dinamarca-Noruega"
+    "pt": "Dinamarca-Noruega",
+    "es": "Dinamarca-Noruega"
   },
   "peak": {
     "year": 1800,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts in 1536, when the neighbouring kingdom to the north lost its own government and came to be ruled from the capital, and ends in 1814, when, defeated alongside Napoleon, the country had to hand that kingdom over to another neighbour. The peak shown is 1800. The map includes the whole of the large Arctic island claimed by the crown, although colonisation was limited to posts on its west coast, and excludes a duchy to the south that the king ruled as a vassal of the Holy Roman Empire. The Caribbean islands and some of the trading posts are too small to appear on the map.",
-    "pt": "Começa em 1536, quando o reino vizinho do norte perdeu o governo próprio e passou a ser governado a partir da capital, e termina em 1814, quando, derrotado ao lado de Napoleão, o país teve de entregar esse reino a outro vizinho. O auge escolhido é 1800. O mapa inclui toda a grande ilha do Ártico reivindicada pela coroa, embora a colonização se limitasse a postos no litoral oeste, e exclui um ducado ao sul que o rei governava como vassalo do Sacro Império. As ilhas do Caribe e alguns entrepostos são pequenos demais para aparecer no mapa."
+    "pt": "Começa em 1536, quando o reino vizinho do norte perdeu o governo próprio e passou a ser governado a partir da capital, e termina em 1814, quando, derrotado ao lado de Napoleão, o país teve de entregar esse reino a outro vizinho. O auge escolhido é 1800. O mapa inclui toda a grande ilha do Ártico reivindicada pela coroa, embora a colonização se limitasse a postos no litoral oeste, e exclui um ducado ao sul que o rei governava como vassalo do Sacro Império. As ilhas do Caribe e alguns entrepostos são pequenos demais para aparecer no mapa.",
+    "es": "Comienza en 1536, cuando el reino vecino del norte perdió su gobierno propio y pasó a gobernarse desde la capital, y termina en 1814, cuando, derrotado junto a Napoleón, el país tuvo que entregar ese reino a otro vecino. El apogeo elegido es 1800. El mapa incluye toda la gran isla del Ártico reclamada por la corona, aunque la colonización se limitaba a puestos en su costa oeste, y excluye un ducado del sur que el rey gobernaba como vasallo del Sacro Imperio. Las islas del Caribe y algunas factorías son demasiado pequeñas para aparecer en el mapa."
   },
   "area": {
     "km2": 2610000,
@@ -38,49 +40,60 @@
   ],
   "capital": {
     "en": "Copenhagen",
-    "pt": "Copenhague"
+    "pt": "Copenhague",
+    "es": "Copenhague"
   },
   "language": {
     "en": "Danish (as well as Norwegian, German, Icelandic, Faroese and Greenlandic)",
-    "pt": "Dinamarquês (além de norueguês, alemão, islandês, feroês e groenlandês)"
+    "pt": "Dinamarquês (além de norueguês, alemão, islandês, feroês e groenlandês)",
+    "es": "Danés (además de noruego, alemán, islandés, feroés y groenlandés)"
   },
   "religion": {
     "en": "Lutheranism",
-    "pt": "Luteranismo"
+    "pt": "Luteranismo",
+    "es": "Luteranismo"
   },
   "religionNotes": {
     "en": "The Reformation was imposed by the king in 1536, and the Lutheran Church became a state church headed by the monarch, with other faiths restricted for a long time. Missionaries took Lutheranism to Greenland and to the trading post in India, where the first Protestant mission in Asia was founded in 1706.",
-    "pt": "A Reforma foi imposta pelo rei em 1536, e a Igreja Luterana virou uma igreja de Estado chefiada pelo monarca, com as outras religiões restringidas por muito tempo. Missionários levaram o luteranismo à Groenlândia e ao entreposto na Índia, onde foi fundada, em 1706, a primeira missão protestante da Ásia."
+    "pt": "A Reforma foi imposta pelo rei em 1536, e a Igreja Luterana virou uma igreja de Estado chefiada pelo monarca, com as outras religiões restringidas por muito tempo. Missionários levaram o luteranismo à Groenlândia e ao entreposto na Índia, onde foi fundada, em 1706, a primeira missão protestante da Ásia.",
+    "es": "La Reforma la impuso el rey en 1536, y la Iglesia luterana se convirtió en una iglesia de Estado encabezada por el monarca, con las demás religiones restringidas durante mucho tiempo. Los misioneros llevaron el luteranismo a Groenlandia y a la factoría de la India, donde en 1706 se fundó la primera misión protestante de Asia."
   },
   "curiosities": [
     {
       "en": "It was the first country to ban the transatlantic slave trade.",
       "pt": "Foi o primeiro país a proibir o tráfico transatlântico de escravizados.",
+      "es": "Fue el primer país en prohibir la trata transatlántica de esclavos.",
       "details": {
         "en": "A royal decree of 1792 banned the trade in enslaved Africans to its Caribbean colonies, with a ten-year transition period, and the ban came into force in 1803, before the British and American bans. Slavery itself, however, was only abolished in the Danish West Indies in 1848, after a revolt.",
-        "pt": "Um decreto real de 1792 proibiu o tráfico de africanos escravizados para suas colônias no Caribe, com dez anos de transição, e a proibição entrou em vigor em 1803, antes das proibições britânica e americana. A escravidão em si, porém, só foi abolida nas Índias Ocidentais Dinamarquesas em 1848, depois de uma revolta."
+        "pt": "Um decreto real de 1792 proibiu o tráfico de africanos escravizados para suas colônias no Caribe, com dez anos de transição, e a proibição entrou em vigor em 1803, antes das proibições britânica e americana. A escravidão em si, porém, só foi abolida nas Índias Ocidentais Dinamarquesas em 1848, depois de uma revolta.",
+        "es": "Un decreto real de 1792 prohibió la trata de africanos esclavizados hacia sus colonias del Caribe, con diez años de transición, y la prohibición entró en vigor en 1803, antes que las prohibiciones británica y estadounidense. Sin embargo, la esclavitud en sí no se abolió en las Indias Occidentales Danesas hasta 1848, tras una revuelta."
       }
     },
     {
       "en": "Its Caribbean islands stayed Danish for more than a century after its end, until they were sold to the United States in 1917.",
       "pt": "Suas ilhas no Caribe continuaram dinamarquesas por mais de um século depois do seu fim, até serem vendidas aos Estados Unidos em 1917.",
+      "es": "Sus islas del Caribe siguieron siendo danesas más de un siglo después de su fin, hasta que se vendieron a Estados Unidos en 1917.",
       "details": {
         "en": "In 1917, Denmark sold the Danish West Indies, St. Thomas, St. John and St. Croix, to the United States for 25 million dollars in gold. The Americans feared that Germany would use the islands as a submarine base, and they became the US Virgin Islands.",
-        "pt": "Em 1917, a Dinamarca vendeu as Índias Ocidentais Dinamarquesas, St. Thomas, St. John e St. Croix, aos Estados Unidos por 25 milhões de dólares em ouro. Os americanos temiam que a Alemanha usasse as ilhas como base de submarinos, e elas viraram as Ilhas Virgens Americanas."
+        "pt": "Em 1917, a Dinamarca vendeu as Índias Ocidentais Dinamarquesas, St. Thomas, St. John e St. Croix, aos Estados Unidos por 25 milhões de dólares em ouro. Os americanos temiam que a Alemanha usasse as ilhas como base de submarinos, e elas viraram as Ilhas Virgens Americanas.",
+        "es": "En 1917, Dinamarca vendió las Indias Occidentales Danesas, Santo Tomás, San Juan y Santa Cruz, a Estados Unidos por 25 millones de dólares en oro. Los estadounidenses temían que Alemania usara las islas como base de submarinos, y pasaron a ser las Islas Vírgenes de los Estados Unidos."
       }
     },
     {
       "en": "Its flag, a white cross on a red background, is considered the oldest still in use by a country, and according to legend it fell from the sky during a battle in 1219.",
       "pt": "Sua bandeira, uma cruz branca sobre fundo vermelho, é considerada a mais antiga ainda em uso por um país, e segundo a lenda caiu do céu durante uma batalha em 1219.",
+      "es": "Su bandera, una cruz blanca sobre fondo rojo, se considera la más antigua que un país sigue usando, y según la leyenda cayó del cielo durante una batalla en 1219.",
       "details": {
         "en": "According to the legend, the Dannebrog fell from the sky during the Battle of Lyndanisse, in Estonia, when King Valdemar II's army was losing, and turned the fight in favour of the Danes. The flag has been documented since the 14th century, and its Nordic cross inspired the flags of Sweden, Norway, Finland and Iceland.",
-        "pt": "Segundo a lenda, o Dannebrog caiu do céu durante a Batalha de Lyndanisse, na Estônia, quando o exército do rei Valdemar II estava perdendo, e virou a luta a favor dos dinamarqueses. A bandeira é documentada desde o século XIV, e sua cruz nórdica inspirou as bandeiras da Suécia, da Noruega, da Finlândia e da Islândia."
+        "pt": "Segundo a lenda, o Dannebrog caiu do céu durante a Batalha de Lyndanisse, na Estônia, quando o exército do rei Valdemar II estava perdendo, e virou a luta a favor dos dinamarqueses. A bandeira é documentada desde o século XIV, e sua cruz nórdica inspirou as bandeiras da Suécia, da Noruega, da Finlândia e da Islândia.",
+        "es": "Según la leyenda, el Dannebrog cayó del cielo durante la batalla de Lyndanisse, en Estonia, cuando el ejército del rey Valdemar II estaba perdiendo, y dio la vuelta a la lucha a favor de los daneses. La bandera está documentada desde el siglo XIV, y su cruz escandinava inspiró las banderas de Suecia, Noruega, Finlandia e Islandia."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Danish_colonial_empire",
-    "pt": "https://pt.wikipedia.org/wiki/Império_colonial_dinamarquês"
+    "pt": "https://pt.wikipedia.org/wiki/Império_colonial_dinamarquês",
+    "es": "https://es.wikipedia.org/wiki/Imperio_colonial_danés"
   },
   "aliases": [
     "Denmark",
@@ -93,11 +106,15 @@
     "Norway",
     "Noruega",
     "Danish Empire",
-    "Império Dinamarquês"
+    "Império Dinamarquês",
+    "Reino de Dinamarca y Noruega",
+    "Imperio colonial danés",
+    "Imperio danés"
   ],
   "summary": {
     "en": "The realm of the Danish crown between the Reformation and the Napoleonic Wars, formed by Denmark, Norway, which lost its own government in 1536, the North Atlantic islands of Iceland, the Faroes and Greenland, and small colonies overseas. In the 17th century, Denmark lost to Sweden the provinces east of the Øresund, such as Scania, but founded trading companies that set up Tranquebar in India, in 1620, forts on the Gold Coast of Africa and colonies in the Caribbean, where sugar was produced with enslaved labour. In 1721, the missionary Hans Egede began the colonisation of Greenland. Neutral in most European conflicts, the country grew rich from trade in the 18th century, but sided with Napoleon after the British bombarded Copenhagen in 1807. With the French defeat, the Treaty of Kiel of 1814 handed Norway over to Sweden, while Denmark kept Iceland, the Faroes and Greenland.",
-    "pt": "Conjunto de territórios da coroa dinamarquesa entre a Reforma e as Guerras Napoleônicas, formado pela Dinamarca, pela Noruega, que perdeu o governo próprio em 1536, pelas ilhas do Atlântico Norte, Islândia, Faroé e Groenlândia, e por pequenas colônias ultramarinas. No século XVII, a Dinamarca perdeu para a Suécia as províncias a leste do Øresund, como a Escânia, mas fundou companhias de comércio que criaram Tranquebar, na Índia, em 1620, fortes na Costa do Ouro, na África, e colônias no Caribe, onde se produzia açúcar com trabalho escravo. Em 1721, o missionário Hans Egede iniciou a colonização da Groenlândia. Neutro na maioria dos conflitos europeus, o país enriqueceu com o comércio no século XVIII, mas ficou do lado de Napoleão depois que os britânicos bombardearam Copenhague em 1807. Com a derrota francesa, o Tratado de Kiel, de 1814, entregou a Noruega à Suécia, e a Dinamarca ficou com a Islândia, as Faroé e a Groenlândia."
+    "pt": "Conjunto de territórios da coroa dinamarquesa entre a Reforma e as Guerras Napoleônicas, formado pela Dinamarca, pela Noruega, que perdeu o governo próprio em 1536, pelas ilhas do Atlântico Norte, Islândia, Faroé e Groenlândia, e por pequenas colônias ultramarinas. No século XVII, a Dinamarca perdeu para a Suécia as províncias a leste do Øresund, como a Escânia, mas fundou companhias de comércio que criaram Tranquebar, na Índia, em 1620, fortes na Costa do Ouro, na África, e colônias no Caribe, onde se produzia açúcar com trabalho escravo. Em 1721, o missionário Hans Egede iniciou a colonização da Groenlândia. Neutro na maioria dos conflitos europeus, o país enriqueceu com o comércio no século XVIII, mas ficou do lado de Napoleão depois que os britânicos bombardearam Copenhague em 1807. Com a derrota francesa, o Tratado de Kiel, de 1814, entregou a Noruega à Suécia, e a Dinamarca ficou com a Islândia, as Faroé e a Groenlândia.",
+    "es": "El conjunto de territorios de la corona danesa entre la Reforma y las guerras napoleónicas, formado por Dinamarca, Noruega, que perdió su gobierno propio en 1536, las islas del Atlántico Norte (Islandia, las Feroe y Groenlandia) y pequeñas colonias de ultramar. En el siglo XVII, Dinamarca perdió ante Suecia las provincias situadas al este del Øresund, como Escania, pero fundó compañías comerciales que establecieron Tranquebar, en la India, en 1620, fuertes en la Costa de Oro africana y colonias en el Caribe, donde se producía azúcar con trabajo esclavo. En 1721, el misionero Hans Egede inició la colonización de Groenlandia. Neutral en la mayoría de los conflictos europeos, el país se enriqueció con el comercio en el siglo XVIII, pero se alió con Napoleón después de que los británicos bombardearan Copenhague en 1807. Tras la derrota francesa, el Tratado de Kiel de 1814 entregó Noruega a Suecia, y Dinamarca conservó Islandia, las Feroe y Groenlandia."
   },
   "map": {
     "parts": [

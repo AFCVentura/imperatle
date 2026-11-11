@@ -3,7 +3,8 @@
   "slug": "aztec-empire",
   "name": {
     "en": "Aztec Empire",
-    "pt": "Império Asteca"
+    "pt": "Império Asteca",
+    "es": "Imperio azteca"
   },
   "peak": {
     "year": 1519,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "\"Aztec Empire\" is a modern name for the Triple Alliance of Tenochtitlan, Texcoco and Tlacopan, formed in 1428 and ended by the Spanish capture of Tenochtitlan in 1521.",
-    "pt": "O nome \"Império Asteca\" é moderno: ele era a Tríplice Aliança entre Tenochtitlan, Texcoco e Tlacopan, formada em 1428 e encerrada com a queda de Tenochtitlan diante dos espanhóis em 1521."
+    "pt": "O nome \"Império Asteca\" é moderno: ele era a Tríplice Aliança entre Tenochtitlan, Texcoco e Tlacopan, formada em 1428 e encerrada com a queda de Tenochtitlan diante dos espanhóis em 1521.",
+    "es": "El nombre \"Imperio azteca\" es moderno: en realidad era la Triple Alianza de Tenochtitlan, Texcoco y Tlacopan, formada en 1428 y terminada con la caída de Tenochtitlan ante los españoles en 1521."
   },
   "area": {
     "km2": 220000,
@@ -34,45 +36,55 @@
   ],
   "capital": {
     "en": "Tenochtitlan",
-    "pt": "Tenochtitlan"
+    "pt": "Tenochtitlan",
+    "es": "Tenochtitlan"
   },
   "language": {
     "en": "Nahuatl",
-    "pt": "Náuatle"
+    "pt": "Náuatle",
+    "es": "Náhuatl"
   },
   "religion": {
     "en": "Mexica religion (worship of Huitzilopochtli and others)",
-    "pt": "Religião mexica (culto a Huitzilopochtli e outros)"
+    "pt": "Religião mexica (culto a Huitzilopochtli e outros)",
+    "es": "Religión mexica (culto a Huitzilopochtli y otros dioses)"
   },
   "curiosities": [
     {
       "en": "Its capital, with perhaps 200,000 inhabitants, was among the largest cities in the world at the time.",
       "pt": "Sua capital, com talvez 200 mil habitantes, estava entre as maiores cidades do mundo na época.",
+      "es": "Su capital, con quizá 200 000 habitantes, estaba entre las mayores ciudades del mundo en su época.",
       "details": {
         "en": "Estimates put Tenochtitlan at 200,000 to 300,000 people in the early 16th century, more than any Spanish city of the time. The conquerors were amazed by its temples, markets and clean streets, and the great market of Tlatelolco drew tens of thousands of people a day.",
-        "pt": "As estimativas dão a Tenochtitlan entre 200 e 300 mil habitantes no início do século XVI, mais que qualquer cidade espanhola da época. Os conquistadores ficaram impressionados com seus templos, mercados e ruas limpas, e o grande mercado de Tlatelolco recebia dezenas de milhares de pessoas por dia."
+        "pt": "As estimativas dão a Tenochtitlan entre 200 e 300 mil habitantes no início do século XVI, mais que qualquer cidade espanhola da época. Os conquistadores ficaram impressionados com seus templos, mercados e ruas limpas, e o grande mercado de Tlatelolco recebia dezenas de milhares de pessoas por dia.",
+        "es": "Las estimaciones atribuyen a Tenochtitlan entre 200 000 y 300 000 habitantes a principios del siglo XVI, más que cualquier ciudad española de la época. Los conquistadores quedaron asombrados por sus templos, sus mercados y sus calles limpias, y el gran mercado de Tlatelolco recibía a decenas de miles de personas al día."
       }
     },
     {
       "en": "Its capital was built on an island in a lake, and one of the largest cities in the world stands on its ruins today.",
       "pt": "Sua capital foi construída numa ilha em um lago, e sobre as ruínas dela está hoje uma das maiores cidades do mundo.",
+      "es": "Su capital se construyó en una isla en medio de un lago, y sobre sus ruinas se levanta hoy una de las mayores ciudades del mundo.",
       "details": {
         "en": "According to tradition, the Mexica founded Tenochtitlan around 1325 on an island in Lake Texcoco, where they saw an eagle perched on a cactus, a scene now on the flag of Mexico. The city was linked to the shore by causeways and had aqueducts and dikes. After the conquest, the Spaniards built Mexico City on its ruins, and the lake was slowly drained.",
-        "pt": "Segundo a tradição, os mexicas fundaram Tenochtitlan por volta de 1325 numa ilha do lago Texcoco, onde viram uma águia pousada num cacto, cena que hoje está na bandeira do México. A cidade era ligada à margem por calçadas e tinha aquedutos e diques. Depois da conquista, os espanhóis ergueram a Cidade do México sobre as ruínas, e o lago foi drenado aos poucos."
+        "pt": "Segundo a tradição, os mexicas fundaram Tenochtitlan por volta de 1325 numa ilha do lago Texcoco, onde viram uma águia pousada num cacto, cena que hoje está na bandeira do México. A cidade era ligada à margem por calçadas e tinha aquedutos e diques. Depois da conquista, os espanhóis ergueram a Cidade do México sobre as ruínas, e o lago foi drenado aos poucos.",
+        "es": "Según la tradición, los mexicas fundaron Tenochtitlan hacia 1325 en una isla del lago de Texcoco, donde vieron un águila posada sobre un nopal, escena que hoy figura en la bandera de México. La ciudad estaba unida a la orilla por calzadas y tenía acueductos y diques. Tras la conquista, los españoles levantaron la Ciudad de México sobre sus ruinas, y el lago se fue desecando poco a poco."
       }
     },
     {
       "en": "It farmed on artificial islands built on a lake, the so-called \"floating gardens\".",
       "pt": "Plantava em ilhas artificiais construídas sobre um lago, os chamados \"jardins flutuantes\".",
+      "es": "Cultivaba en islas artificiales construidas sobre un lago, los llamados \"jardines flotantes\".",
       "details": {
         "en": "The chinampas were rectangular plots built from mud and plants from the lake bed, held in place by stakes and trees along their edges. They did not actually float, but were so fertile that they gave several harvests a year of maize, beans, squash and chillies. They still exist in Xochimilco, in Mexico City, a World Heritage Site.",
-        "pt": "As chinampas eram canteiros retangulares feitos de lama e plantas do fundo do lago, presos por estacas e árvores nas bordas. Não flutuavam de verdade, mas eram tão férteis que davam várias colheitas por ano de milho, feijão, abóbora e pimenta. Ainda existem em Xochimilco, na Cidade do México, que é Patrimônio Mundial."
+        "pt": "As chinampas eram canteiros retangulares feitos de lama e plantas do fundo do lago, presos por estacas e árvores nas bordas. Não flutuavam de verdade, mas eram tão férteis que davam várias colheitas por ano de milho, feijão, abóbora e pimenta. Ainda existem em Xochimilco, na Cidade do México, que é Patrimônio Mundial.",
+        "es": "Las chinampas eran parcelas rectangulares hechas con lodo y plantas del fondo del lago, sujetas con estacas y árboles en sus bordes. En realidad no flotaban, pero eran tan fértiles que daban varias cosechas al año de maíz, frijol, calabaza y chile. Todavía existen en Xochimilco, en la Ciudad de México, que es Patrimonio de la Humanidad."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Aztec_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Tríplice_Aliança_Asteca"
+    "pt": "https://pt.wikipedia.org/wiki/Tríplice_Aliança_Asteca",
+    "es": "https://es.wikipedia.org/wiki/Imperio_azteca"
   },
   "aliases": [
     "Aztecs",
@@ -84,11 +96,14 @@
     "Triple Alliance",
     "Tríplice Aliança",
     "Mexico",
-    "México"
+    "México",
+    "Aztecas",
+    "Triple Alianza"
   ],
   "summary": {
     "en": "An alliance of three cities in the Valley of Mexico, Tenochtitlan, Texcoco and Tlacopan, formed in 1428, in which the Mexica of Tenochtitlan soon became the leading power. It dominated dozens of peoples in central and southern Mexico, who paid tribute in food, cloth, cocoa and other goods but kept their local rulers. Its religion called for human sacrifice on a large scale. It fell in 1521, when the Spaniard Hernán Cortés, allied with thousands of Indigenous warriors who were enemies of the Mexica, took the capital after a long siege.",
-    "pt": "Aliança de três cidades do vale do México, Tenochtitlan, Texcoco e Tlacopan, formada em 1428, em que os mexicas de Tenochtitlan logo se tornaram a força principal. Dominava dezenas de povos do centro e do sul do México, que pagavam tributos em alimentos, tecidos, cacau e outros bens, mas mantinham seus governantes locais. Sua religião exigia sacrifícios humanos em grande escala. Caiu em 1521, quando o espanhol Hernán Cortés, aliado a milhares de guerreiros indígenas inimigos dos mexicas, tomou a capital depois de um longo cerco."
+    "pt": "Aliança de três cidades do vale do México, Tenochtitlan, Texcoco e Tlacopan, formada em 1428, em que os mexicas de Tenochtitlan logo se tornaram a força principal. Dominava dezenas de povos do centro e do sul do México, que pagavam tributos em alimentos, tecidos, cacau e outros bens, mas mantinham seus governantes locais. Sua religião exigia sacrifícios humanos em grande escala. Caiu em 1521, quando o espanhol Hernán Cortés, aliado a milhares de guerreiros indígenas inimigos dos mexicas, tomou a capital depois de um longo cerco.",
+    "es": "Una alianza de tres ciudades del valle de México, Tenochtitlan, Texcoco y Tlacopan, formada en 1428, en la que los mexicas de Tenochtitlan pronto se convirtieron en la fuerza principal. Dominaba a decenas de pueblos del centro y el sur de México, que pagaban tributo en alimentos, telas, cacao y otros bienes, pero conservaban a sus gobernantes locales. Su religión exigía sacrificios humanos a gran escala. Cayó en 1521, cuando el español Hernán Cortés, aliado con miles de guerreros indígenas enemigos de los mexicas, tomó la capital tras un largo asedio."
   },
   "map": {
     "parts": [

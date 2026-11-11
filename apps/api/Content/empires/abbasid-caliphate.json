@@ -3,7 +3,8 @@
   "slug": "abbasid-caliphate",
   "name": {
     "en": "Abbasid Caliphate",
-    "pt": "Califado Abássida"
+    "pt": "Califado Abássida",
+    "es": "Califato abasí"
   },
   "peak": {
     "year": 778,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts in 750, when the family overthrew the previous dynasty, and ends in 1258, when the capital was destroyed by invaders from the steppe. From the 10th century on the caliphs lost most of their political power, and a branch of the family kept the title, without real power, in another city until 1517.",
-    "pt": "Começa em 750, quando a família derrubou a dinastia anterior, e termina em 1258, quando a capital foi destruída por invasores vindos da estepe. A partir do século X os califas perderam quase todo o poder político, e um ramo da família manteve o título, sem poder real, em outra cidade até 1517."
+    "pt": "Começa em 750, quando a família derrubou a dinastia anterior, e termina em 1258, quando a capital foi destruída por invasores vindos da estepe. A partir do século X os califas perderam quase todo o poder político, e um ramo da família manteve o título, sem poder real, em outra cidade até 1517.",
+    "es": "Comienza en 750, cuando la familia derrocó a la dinastía anterior, y termina en 1258, cuando la capital fue destruida por invasores llegados de la estepa. A partir del siglo X los califas perdieron casi todo su poder político, y una rama de la familia conservó el título, sin poder real, en otra ciudad hasta 1517."
   },
   "area": {
     "km2": 8270834,
@@ -35,49 +37,60 @@
   ],
   "capital": {
     "en": "Baghdad",
-    "pt": "Bagdá"
+    "pt": "Bagdá",
+    "es": "Bagdad"
   },
   "language": {
     "en": "Arabic (Persian also widely used in the east)",
-    "pt": "Árabe (Persa também muito usado no leste)"
+    "pt": "Árabe (Persa também muito usado no leste)",
+    "es": "Árabe (el persa también se usaba mucho en el este)"
   },
   "religion": {
     "en": "Sunni Islam",
-    "pt": "Islamismo Sunita"
+    "pt": "Islamismo Sunita",
+    "es": "Islam suní"
   },
   "religionNotes": {
     "en": "The caliphs presented themselves as religious leaders of all Muslims. Large Christian, Jewish and Zoroastrian communities lived in the empire, paying a special tax.",
-    "pt": "Os califas se apresentavam como líderes religiosos de todos os muçulmanos. Grandes comunidades cristãs, judaicas e zoroastristas viviam no império, pagando um imposto especial."
+    "pt": "Os califas se apresentavam como líderes religiosos de todos os muçulmanos. Grandes comunidades cristãs, judaicas e zoroastristas viviam no império, pagando um imposto especial.",
+    "es": "Los califas se presentaban como líderes religiosos de todos los musulmanes. En el imperio vivían grandes comunidades cristianas, judías y zoroástricas, que pagaban un impuesto especial."
   },
   "curiosities": [
     {
       "en": "Its banner was black, in contrast to the white of the dynasty it overthrew.",
       "pt": "Sua bandeira era preta, em oposição à branca da dinastia que derrubou.",
+      "es": "Su estandarte era negro, en oposición al blanco de la dinastía que derrocó.",
       "details": {
         "en": "The Abbasids raised black banners in the revolt that began in 747 in Khorasan, in eastern Iran, a colour linked to prophecies about a coming saviour and to mourning. The Umayyads used white, and black became the official colour of the new dynasty, on its flags and in the clothes of its court.",
-        "pt": "Os abássidas ergueram estandartes pretos na revolta que começou em 747 no Coraçã, no leste do Irã, uma cor ligada a profecias sobre a chegada de um salvador e ao luto. Os omíadas usavam o branco, e o preto virou a cor oficial da nova dinastia, nas bandeiras e nas roupas da corte."
+        "pt": "Os abássidas ergueram estandartes pretos na revolta que começou em 747 no Coraçã, no leste do Irã, uma cor ligada a profecias sobre a chegada de um salvador e ao luto. Os omíadas usavam o branco, e o preto virou a cor oficial da nova dinastia, nas bandeiras e nas roupas da corte.",
+        "es": "Los abasíes alzaron estandartes negros en la revuelta que comenzó en 747 en el Jorasán, en el este de Irán, un color ligado a profecías sobre la llegada de un salvador y al luto. Los omeyas usaban el blanco, y el negro se convirtió en el color oficial de la nueva dinastía, en sus banderas y en la ropa de su corte."
       }
     },
     {
       "en": "The numerals we use today reached Europe through books written under its rule, such as those of a mathematician whose name gave us the word \"algorithm\".",
       "pt": "Os números que usamos hoje chegaram à Europa por meio de livros escritos sob seu governo, como os de um matemático cujo nome deu origem à palavra \"algoritmo\".",
+      "es": "Los números que usamos hoy llegaron a Europa a través de libros escritos bajo su gobierno, como los de un matemático cuyo nombre dio origen a la palabra \"algoritmo\".",
       "details": {
         "en": "Muhammad ibn Musa al-Khwarizmi worked at the House of Wisdom in Baghdad in the 9th century. His book on calculating with Indian numerals, translated into Latin in the 12th century, spread across Europe the digits 0 to 9 we now call Arabic. His name, Latinised as \"Algoritmi\", gave us \"algorithm\", and another of his books gave its name to algebra.",
-        "pt": "Muhammad ibn Musa al-Khwarizmi trabalhou na Casa da Sabedoria, em Bagdá, no século IX. Seu livro sobre o cálculo com os algarismos indianos, traduzido para o latim no século XII, espalhou pela Europa os números de 0 a 9 que hoje chamamos de arábicos. Seu nome, latinizado como \"Algoritmi\", deu origem a \"algoritmo\", e outro livro seu deu nome à álgebra."
+        "pt": "Muhammad ibn Musa al-Khwarizmi trabalhou na Casa da Sabedoria, em Bagdá, no século IX. Seu livro sobre o cálculo com os algarismos indianos, traduzido para o latim no século XII, espalhou pela Europa os números de 0 a 9 que hoje chamamos de arábicos. Seu nome, latinizado como \"Algoritmi\", deu origem a \"algoritmo\", e outro livro seu deu nome à álgebra.",
+        "es": "Muhammad ibn Musa al-Juarismi trabajó en la Casa de la Sabiduría de Bagdad en el siglo IX. Su libro sobre el cálculo con los numerales indios, traducido al latín en el siglo XII, difundió por Europa las cifras del 0 al 9 que hoy llamamos arábigas. Su nombre, latinizado como \"Algoritmi\", dio origen a \"algoritmo\", y otro de sus libros dio nombre al álgebra."
       }
     },
     {
       "en": "One of its caliphs appears as a character in the tales of \"One Thousand and One Nights\".",
       "pt": "Um de seus califas aparece como personagem nas histórias de \"As Mil e Uma Noites\".",
+      "es": "Uno de sus califas aparece como personaje en los relatos de \"Las mil y una noches\".",
       "details": {
         "en": "The caliph is Harun al-Rashid, who ruled from 786 to 809, at the height of Baghdad's wealth. In the \"One Thousand and One Nights\" he walks the city at night in disguise with his vizier Jafar. In real life he exchanged embassies with Charlemagne, to whom he is said to have sent an elephant as a gift.",
-        "pt": "O califa é Harun al-Rashid, que governou de 786 a 809, no auge da riqueza de Bagdá. Nas \"Mil e Uma Noites\", ele passeia disfarçado pela cidade à noite com seu vizir Jafar. Na vida real, trocou embaixadas com Carlos Magno, a quem teria mandado um elefante de presente."
+        "pt": "O califa é Harun al-Rashid, que governou de 786 a 809, no auge da riqueza de Bagdá. Nas \"Mil e Uma Noites\", ele passeia disfarçado pela cidade à noite com seu vizir Jafar. Na vida real, trocou embaixadas com Carlos Magno, a quem teria mandado um elefante de presente.",
+        "es": "El califa es Harún al-Rashid, que gobernó de 786 a 809, en el apogeo de la riqueza de Bagdad. En \"Las mil y una noches\" recorre la ciudad de noche, disfrazado, junto a su visir Yafar. En la vida real intercambió embajadas con Carlomagno, a quien, según se cuenta, envió un elefante como regalo."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Abbasid_Caliphate",
-    "pt": "https://pt.wikipedia.org/wiki/Califado_Abássida"
+    "pt": "https://pt.wikipedia.org/wiki/Califado_Abássida",
+    "es": "https://es.wikipedia.org/wiki/Califato_abasí"
   },
   "aliases": [
     "Abbasids",
@@ -92,11 +105,19 @@
     "Islamic Caliphate",
     "Califado Islâmico",
     "Iraq",
-    "Iraque"
+    "Iraque",
+    "Abasíes",
+    "Abásidas",
+    "Dinastía abasí",
+    "Imperio abasí",
+    "Califato árabe",
+    "Califato islámico",
+    "Irak"
   ],
   "summary": {
     "en": "The second great dynasty of caliphs in Islam, which took power from the Umayyads in 750 after a revolt that began in eastern Iran. In 762 it founded Baghdad, which became one of the largest cities in the world and the centre of a golden age of science, philosophy and the translation of Greek, Persian and Indian works. From the 9th century on, governors and regional dynasties gained autonomy, and in the 10th century the caliph became mainly a religious figure. It fell in 1258, when the Mongols sacked Baghdad and killed the last caliph.",
-    "pt": "Segunda grande dinastia de califas do Islã, que tomou o poder dos omíadas em 750, depois de uma revolta que começou no leste do Irã. Em 762 fundou Bagdá, que virou uma das maiores cidades do mundo e o centro de uma era de ouro da ciência, da filosofia e da tradução de obras gregas, persas e indianas. A partir do século IX, governadores e dinastias regionais ganharam autonomia, e no século X o califa virou uma figura sobretudo religiosa. Caiu em 1258, quando os mongóis saquearam Bagdá e mataram o último califa."
+    "pt": "Segunda grande dinastia de califas do Islã, que tomou o poder dos omíadas em 750, depois de uma revolta que começou no leste do Irã. Em 762 fundou Bagdá, que virou uma das maiores cidades do mundo e o centro de uma era de ouro da ciência, da filosofia e da tradução de obras gregas, persas e indianas. A partir do século IX, governadores e dinastias regionais ganharam autonomia, e no século X o califa virou uma figura sobretudo religiosa. Caiu em 1258, quando os mongóis saquearam Bagdá e mataram o último califa.",
+    "es": "La segunda gran dinastía de califas del islam, que arrebató el poder a los omeyas en 750 tras una revuelta iniciada en el este de Irán. En 762 fundó Bagdad, que llegó a ser una de las mayores ciudades del mundo y el centro de una edad de oro de la ciencia, la filosofía y la traducción de obras griegas, persas e indias. Desde el siglo IX, gobernadores y dinastías regionales ganaron autonomía, y en el siglo X el califa pasó a ser sobre todo una figura religiosa. Cayó en 1258, cuando los mongoles saquearon Bagdad y mataron al último califa."
   },
   "map": {
     "parts": [

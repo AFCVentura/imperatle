@@ -3,7 +3,8 @@
   "slug": "united-states",
   "name": {
     "en": "United States",
-    "pt": "Estados Unidos"
+    "pt": "Estados Unidos",
+    "es": "Estados Unidos"
   },
   "peak": {
     "year": 1940,
@@ -16,7 +17,8 @@
   "end": null,
   "durationNotes": {
     "en": "It starts in 1776, with the declaration of independence (recognised in 1783; the current constitution dates from 1789), and still exists. The peak shown is before the Philippines became independent, in 1946: after World War II the territory looked larger, but it included regions under military occupation.",
-    "pt": "Começa em 1776, com a declaração de independência (reconhecida em 1783; a constituição atual é de 1789), e ainda existe. O auge mostrado é antes da independência das Filipinas, em 1946: depois da Segunda Guerra o território parecia maior, mas incluía regiões sob ocupação militar."
+    "pt": "Começa em 1776, com a declaração de independência (reconhecida em 1783; a constituição atual é de 1789), e ainda existe. O auge mostrado é antes da independência das Filipinas, em 1946: depois da Segunda Guerra o território parecia maior, mas incluía regiões sob ocupação militar.",
+    "es": "Comienza en 1776, con la declaración de independencia (reconocida en 1783; la constitución actual es de 1789), y todavía existe. El apogeo mostrado es anterior a la independencia de Filipinas, en 1946: después de la Segunda Guerra Mundial el territorio parecía mayor, pero incluía regiones bajo ocupación militar."
   },
   "area": {
     "km2": 9655898,
@@ -33,49 +35,60 @@
   ],
   "capital": {
     "en": "Washington D.C.",
-    "pt": "Washington D.C."
+    "pt": "Washington D.C.",
+    "es": "Washington D. C."
   },
   "language": {
     "en": "English",
-    "pt": "Inglês"
+    "pt": "Inglês",
+    "es": "Inglés"
   },
   "religion": {
     "en": "Christianity (mostly Protestant)",
-    "pt": "Cristianismo (maioria protestante)"
+    "pt": "Cristianismo (maioria protestante)",
+    "es": "Cristianismo (mayoritariamente protestante)"
   },
   "religionNotes": {
     "en": "The constitution forbids an official religion and guarantees freedom of worship. Most people were Protestant, with large Catholic and Jewish communities.",
-    "pt": "A constituição proíbe uma religião oficial e garante a liberdade de culto. A maioria da população é protestante, com grandes comunidades católica e judaica."
+    "pt": "A constituição proíbe uma religião oficial e garante a liberdade de culto. A maioria da população é protestante, com grandes comunidades católica e judaica.",
+    "es": "La constitución prohíbe una religión oficial y garantiza la libertad de culto. La mayoría de la población es protestante, con grandes comunidades católica y judía."
   },
   "curiosities": [
     {
       "en": "It doubled its size in 1803 by buying a huge territory from a European power for about 15 million dollars.",
       "pt": "Dobrou de tamanho em 1803 ao comprar um território enorme de uma potência europeia por cerca de 15 milhões de dólares.",
+      "es": "Duplicó su tamaño en 1803 al comprar un enorme territorio a una potencia europea por unos 15 millones de dólares.",
       "details": {
         "en": "In 1803 President Thomas Jefferson bought the Louisiana territory from Napoleon's France: about 2.1 million km² between the Mississippi river and the Rocky Mountains, for 15 million dollars. Napoleon needed money for the war against Britain and had lost Haiti. The purchase doubled the size of the country, and all or part of 15 of today's states came out of it.",
-        "pt": "Em 1803, o presidente Thomas Jefferson comprou da França de Napoleão o território da Louisiana, cerca de 2,1 milhões de km² entre o rio Mississippi e as Montanhas Rochosas, por 15 milhões de dólares. Napoleão precisava de dinheiro para a guerra contra o Reino Unido e tinha perdido o Haiti. A compra dobrou o tamanho do país, e dela saíram, no todo ou em parte, 15 estados atuais."
+        "pt": "Em 1803, o presidente Thomas Jefferson comprou da França de Napoleão o território da Louisiana, cerca de 2,1 milhões de km² entre o rio Mississippi e as Montanhas Rochosas, por 15 milhões de dólares. Napoleão precisava de dinheiro para a guerra contra o Reino Unido e tinha perdido o Haiti. A compra dobrou o tamanho do país, e dela saíram, no todo ou em parte, 15 estados atuais.",
+        "es": "En 1803, el presidente Thomas Jefferson compró a la Francia de Napoleón el territorio de Luisiana: unos 2,1 millones de km² entre el río Misisipi y las montañas Rocosas, por 15 millones de dólares. Napoleón necesitaba dinero para la guerra contra el Reino Unido y había perdido Haití. La compra duplicó el tamaño del país, y de ella salieron, total o parcialmente, 15 de los estados actuales."
       }
     },
     {
       "en": "After a war in 1846–1848, it took about half of its southern neighbour's territory.",
       "pt": "Depois de uma guerra em 1846–1848, tomou cerca de metade do território do vizinho do sul.",
+      "es": "Tras una guerra en 1846-1848, se quedó con cerca de la mitad del territorio de su vecino del sur.",
       "details": {
         "en": "After annexing Texas, the United States went to war with Mexico in 1846. By the Treaty of Guadalupe Hidalgo, in 1848, Mexico gave up today's California, Nevada and Utah and most of Arizona, New Mexico and Colorado, in exchange for 15 million dollars; counting Texas, it lost about 55% of its territory. Gold was found in California that very year.",
-        "pt": "Depois de anexar o Texas, os Estados Unidos entraram em guerra com o México em 1846. Pelo Tratado de Guadalupe Hidalgo, de 1848, o México cedeu as atuais Califórnia, Nevada e Utah e boa parte do Arizona, do Novo México e do Colorado, em troca de 15 milhões de dólares; contando o Texas, perdeu cerca de 55% do território. Naquele mesmo ano, foi descoberto ouro na Califórnia."
+        "pt": "Depois de anexar o Texas, os Estados Unidos entraram em guerra com o México em 1846. Pelo Tratado de Guadalupe Hidalgo, de 1848, o México cedeu as atuais Califórnia, Nevada e Utah e boa parte do Arizona, do Novo México e do Colorado, em troca de 15 milhões de dólares; contando o Texas, perdeu cerca de 55% do território. Naquele mesmo ano, foi descoberto ouro na Califórnia.",
+        "es": "Después de anexionarse Texas, Estados Unidos entró en guerra con México en 1846. Por el Tratado de Guadalupe Hidalgo, de 1848, México cedió las actuales California, Nevada y Utah y buena parte de Arizona, Nuevo México y Colorado, a cambio de 15 millones de dólares; contando Texas, perdió cerca del 55 % de su territorio. Ese mismo año se descubrió oro en California."
       }
     },
     {
       "en": "It was the first country to use nuclear weapons in a war.",
       "pt": "Foi o primeiro país a usar armas nucleares em uma guerra.",
+      "es": "Fue el primer país en usar armas nucleares en una guerra.",
       "details": {
         "en": "The United States built the atomic bomb in the Manhattan Project and was the first to test it, in July 1945. In August it dropped bombs on Hiroshima and Nagasaki, in Japan, killing more than 100,000 people at once. To this day they are the only nuclear weapons ever used in war.",
-        "pt": "Os Estados Unidos desenvolveram a bomba atômica no Projeto Manhattan e foram os primeiros a testá-la, em julho de 1945. Em agosto, lançaram bombas sobre Hiroshima e Nagasaki, no Japão, matando mais de 100 mil pessoas de imediato. Até hoje, são as únicas armas nucleares já usadas numa guerra."
+        "pt": "Os Estados Unidos desenvolveram a bomba atômica no Projeto Manhattan e foram os primeiros a testá-la, em julho de 1945. Em agosto, lançaram bombas sobre Hiroshima e Nagasaki, no Japão, matando mais de 100 mil pessoas de imediato. Até hoje, são as únicas armas nucleares já usadas numa guerra.",
+        "es": "Estados Unidos desarrolló la bomba atómica en el Proyecto Manhattan y fue el primero en probarla, en julio de 1945. En agosto lanzó bombas sobre Hiroshima y Nagasaki, en Japón, que mataron de inmediato a más de 100 000 personas. Hasta hoy son las únicas armas nucleares utilizadas en una guerra."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/United_States",
-    "pt": "https://pt.wikipedia.org/wiki/Estados_Unidos"
+    "pt": "https://pt.wikipedia.org/wiki/Estados_Unidos",
+    "es": "https://es.wikipedia.org/wiki/Estados_Unidos"
   },
   "aliases": [
     "USA",
@@ -87,11 +100,18 @@
     "United States of America",
     "Estados Unidos da América",
     "American Empire",
-    "Império Americano"
+    "Império Americano",
+    "EE. UU.",
+    "EE.UU.",
+    "EEUU",
+    "Estados Unidos de América",
+    "Imperio estadounidense",
+    "Norteamérica"
   ],
   "summary": {
     "en": "A country formed by the thirteen British colonies on the Atlantic coast, which declared independence in 1776 and set up a federal republic, with a Constitution of 1787 that is still in force. During the 19th century it expanded to the Pacific through purchases, such as Louisiana and Alaska, and wars against Mexico and Native American peoples. The dispute over slavery led to the Civil War, from 1861 to 1865. In 1898 it took colonies such as Puerto Rico and the Philippines, and after the two world wars it became the greatest economic and military power on Earth.",
-    "pt": "País formado pelas Treze Colônias britânicas da costa atlântica, que declararam independência em 1776 e criaram uma república federal, com uma Constituição de 1787 que ainda está em vigor. Ao longo do século XIX, se expandiu até o Pacífico com compras, como a da Louisiana e a do Alasca, e guerras contra o México e os povos indígenas. A disputa sobre a escravidão levou à Guerra Civil, de 1861 a 1865. Em 1898 tomou colônias como Porto Rico e as Filipinas, e depois das duas guerras mundiais virou a maior potência econômica e militar do planeta."
+    "pt": "País formado pelas Treze Colônias britânicas da costa atlântica, que declararam independência em 1776 e criaram uma república federal, com uma Constituição de 1787 que ainda está em vigor. Ao longo do século XIX, se expandiu até o Pacífico com compras, como a da Louisiana e a do Alasca, e guerras contra o México e os povos indígenas. A disputa sobre a escravidão levou à Guerra Civil, de 1861 a 1865. Em 1898 tomou colônias como Porto Rico e as Filipinas, e depois das duas guerras mundiais virou a maior potência econômica e militar do planeta.",
+    "es": "País formado por las Trece Colonias británicas de la costa atlántica, que declararon la independencia en 1776 y crearon una república federal, con una Constitución de 1787 que sigue vigente. A lo largo del siglo XIX se expandió hasta el Pacífico mediante compras, como la de Luisiana y la de Alaska, y guerras contra México y los pueblos indígenas. La disputa sobre la esclavitud llevó a la guerra de Secesión, de 1861 a 1865. En 1898 se apoderó de colonias como Puerto Rico y Filipinas, y después de las dos guerras mundiales se convirtió en la mayor potencia económica y militar del planeta."
   },
   "map": {
     "parts": [

@@ -3,7 +3,8 @@
   "slug": "russian-empire",
   "name": {
     "en": "Russian Empire",
-    "pt": "Império Russo"
+    "pt": "Império Russo",
+    "es": "Imperio ruso"
   },
   "peak": {
     "year": 1866,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts when the monarch took the title of emperor, in 1721, and ends with the abdication of the last one, in 1917. The peak shown is before the sale of Alaska: around 1900 the territory looked larger, but it included a region under military occupation, not annexed.",
-    "pt": "Começa quando o monarca adotou o título de imperador, em 1721, e termina com a abdicação do último, em 1917. O auge escolhido é antes da venda do Alasca: por volta de 1900 o território parecia maior, mas incluía uma região ocupada militarmente, não anexada."
+    "pt": "Começa quando o monarca adotou o título de imperador, em 1721, e termina com a abdicação do último, em 1917. O auge escolhido é antes da venda do Alasca: por volta de 1900 o território parecia maior, mas incluía uma região ocupada militarmente, não anexada.",
+    "es": "Comienza cuando el monarca adoptó el título de emperador, en 1721, y termina con la abdicación del último, en 1917. El apogeo que se muestra es anterior a la venta de Alaska: hacia 1900 el territorio parecía mayor, pero incluía una región bajo ocupación militar, no anexionada."
   },
   "area": {
     "km2": 22660000,
@@ -37,49 +39,60 @@
   ],
   "capital": {
     "en": "Saint Petersburg",
-    "pt": "São Petersburgo"
+    "pt": "São Petersburgo",
+    "es": "San Petersburgo"
   },
   "language": {
     "en": "Russian",
-    "pt": "Russo"
+    "pt": "Russo",
+    "es": "Ruso"
   },
   "religion": {
     "en": "Orthodox Christianity",
-    "pt": "Cristianismo Ortodoxo"
+    "pt": "Cristianismo Ortodoxo",
+    "es": "Cristianismo ortodoxo"
   },
   "religionNotes": {
     "en": "The state church was run by a council appointed by the monarch. The empire also had large Muslim, Jewish, Catholic and Buddhist populations.",
-    "pt": "A igreja oficial era dirigida por um conselho nomeado pelo monarca. O império também tinha grandes populações muçulmanas, judaicas, católicas e budistas."
+    "pt": "A igreja oficial era dirigida por um conselho nomeado pelo monarca. O império também tinha grandes populações muçulmanas, judaicas, católicas e budistas.",
+    "es": "La Iglesia oficial estaba dirigida por un consejo nombrado por el monarca. El imperio también tenía grandes poblaciones musulmanas, judías, católicas y budistas."
   },
   "curiosities": [
     {
       "en": "It used a calendar that, in the early 20th century, ran 13 days behind the rest of Europe.",
       "pt": "Usava um calendário que, no início do século XX, estava 13 dias atrasado em relação ao resto da Europa.",
+      "es": "Usaba un calendario que, a comienzos del siglo XX, iba 13 días por detrás del resto de Europa.",
       "details": {
         "en": "Russia kept the Julian calendar, created by Julius Caesar, while most of Europe already used the Gregorian one, adopted by Catholic countries in 1582. That is why the \"October Revolution\" of 1917 took place on 7 November by the Western calendar. The Bolshevik government adopted the Gregorian calendar in 1918.",
-        "pt": "A Rússia manteve o calendário juliano, criado por Júlio César, enquanto a maior parte da Europa já usava o gregoriano, adotado pelos países católicos em 1582. Por isso a \"Revolução de Outubro\" de 1917 aconteceu em 7 de novembro pelo calendário ocidental. O governo bolchevique adotou o calendário gregoriano em 1918."
+        "pt": "A Rússia manteve o calendário juliano, criado por Júlio César, enquanto a maior parte da Europa já usava o gregoriano, adotado pelos países católicos em 1582. Por isso a \"Revolução de Outubro\" de 1917 aconteceu em 7 de novembro pelo calendário ocidental. O governo bolchevique adotou o calendário gregoriano em 1918.",
+        "es": "Rusia mantuvo el calendario juliano, creado por Julio César, mientras que la mayor parte de Europa ya usaba el gregoriano, adoptado por los países católicos en 1582. Por eso la \"Revolución de Octubre\" de 1917 ocurrió el 7 de noviembre según el calendario occidental. El gobierno bolchevique adoptó el calendario gregoriano en 1918."
       }
     },
     {
       "en": "It built the longest railway in the world, crossing the continent to the Pacific Ocean.",
       "pt": "Construiu a ferrovia mais longa do mundo, atravessando o continente até o Oceano Pacífico.",
+      "es": "Construyó el ferrocarril más largo del mundo, que atraviesa el continente hasta el océano Pacífico.",
       "details": {
         "en": "The Trans-Siberian Railway was built between 1891 and 1916 and links Moscow with Vladivostok, on the Pacific, over about 9,300 km, with seven hours of time difference between its two ends. It helped settle Siberia and move troops to the Far East, and it is still the longest continuous railway line in the world.",
-        "pt": "A Ferrovia Transiberiana foi construída entre 1891 e 1916 e liga Moscou a Vladivostok, no Oceano Pacífico, por cerca de 9.300 km, com sete horas de diferença de fuso entre as duas pontas. Ajudou a povoar a Sibéria e a levar tropas ao Extremo Oriente, e ainda é a linha ferroviária contínua mais longa do mundo."
+        "pt": "A Ferrovia Transiberiana foi construída entre 1891 e 1916 e liga Moscou a Vladivostok, no Oceano Pacífico, por cerca de 9.300 km, com sete horas de diferença de fuso entre as duas pontas. Ajudou a povoar a Sibéria e a levar tropas ao Extremo Oriente, e ainda é a linha ferroviária contínua mais longa do mundo.",
+        "es": "El Transiberiano se construyó entre 1891 y 1916 y une Moscú con Vladivostok, en el océano Pacífico, a lo largo de unos 9300 km, con siete horas de diferencia horaria entre sus dos extremos. Ayudó a poblar Siberia y a llevar tropas al Extremo Oriente, y sigue siendo la línea ferroviaria continua más larga del mundo."
       }
     },
     {
       "en": "Its army withstood Napoleon's invasion in 1812, which ended in a disastrous winter retreat.",
       "pt": "Seu exército resistiu à invasão de Napoleão em 1812, que terminou com uma retirada desastrosa no inverno.",
+      "es": "Su ejército resistió la invasión de Napoleón en 1812, que terminó con una desastrosa retirada en invierno.",
       "details": {
         "en": "Napoleon invaded Russia in June 1812 with about 600,000 men. The Russians fell back and burned what they left behind; after the bloody Battle of Borodino, the French entered a burning, empty Moscow. With no supplies and no surrender from the Tsar, Napoleon retreated in winter, and only a small part of his army made it back.",
-        "pt": "Napoleão invadiu a Rússia em junho de 1812 com cerca de 600 mil homens. Os russos recuaram e queimaram o que deixavam para trás; depois da sangrenta batalha de Borodino, os franceses entraram numa Moscou incendiada e vazia. Sem suprimentos e sem a rendição do czar, Napoleão recuou no inverno, e só uma pequena parte do exército voltou."
+        "pt": "Napoleão invadiu a Rússia em junho de 1812 com cerca de 600 mil homens. Os russos recuaram e queimaram o que deixavam para trás; depois da sangrenta batalha de Borodino, os franceses entraram numa Moscou incendiada e vazia. Sem suprimentos e sem a rendição do czar, Napoleão recuou no inverno, e só uma pequena parte do exército voltou.",
+        "es": "Napoleón invadió Rusia en junio de 1812 con unos 600 000 hombres. Los rusos se replegaron y quemaron lo que dejaban atrás; después de la sangrienta batalla de Borodinó, los franceses entraron en Moscú, incendiada y vacía. Sin suministros y sin la rendición del zar, Napoleón se retiró en pleno invierno, y solo una pequeña parte de su ejército regresó."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Russian_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Império_Russo"
+    "pt": "https://pt.wikipedia.org/wiki/Império_Russo",
+    "es": "https://es.wikipedia.org/wiki/Imperio_ruso"
   },
   "aliases": [
     "Russia",
@@ -91,11 +104,16 @@
     "Tsarist Empire",
     "Império Czarista",
     "Império Tsarista",
-    "Rossiyskaya Imperiya"
+    "Rossiyskaya Imperiya",
+    "Rusia",
+    "Rusia imperial",
+    "Rusia zarista",
+    "Imperio zarista"
   ],
   "summary": {
     "en": "The state created in 1721, when Tsar Peter the Great proclaimed himself emperor after defeating Sweden, which lasted until the Revolution of 1917. Peter modernised the country along European lines and founded Saint Petersburg as the new capital. The empire spread across Siberia to the Pacific and as far as Alaska, as well as into Ukraine, Poland, Finland, the Caucasus and Central Asia, becoming one of the largest empires in history. Serfdom was only abolished in 1861. Worn down by World War I, it saw Tsar Nicholas II abdicate in 1917, and the Bolsheviks took power months later.",
-    "pt": "Estado criado em 1721, quando o czar Pedro, o Grande, se proclamou imperador depois de vencer a Suécia, e que durou até a Revolução de 1917. Pedro modernizou o país nos moldes europeus e fundou São Petersburgo como nova capital. O império avançou pela Sibéria até o Pacífico e chegou ao Alasca, além de se estender pela Ucrânia, Polônia, Finlândia, Cáucaso e Ásia Central, tornando-se um dos maiores impérios da história. A servidão só foi abolida em 1861. Desgastado pela Primeira Guerra, viu o czar Nicolau II abdicar em 1917, e os bolcheviques tomaram o poder meses depois."
+    "pt": "Estado criado em 1721, quando o czar Pedro, o Grande, se proclamou imperador depois de vencer a Suécia, e que durou até a Revolução de 1917. Pedro modernizou o país nos moldes europeus e fundou São Petersburgo como nova capital. O império avançou pela Sibéria até o Pacífico e chegou ao Alasca, além de se estender pela Ucrânia, Polônia, Finlândia, Cáucaso e Ásia Central, tornando-se um dos maiores impérios da história. A servidão só foi abolida em 1861. Desgastado pela Primeira Guerra, viu o czar Nicolau II abdicar em 1917, e os bolcheviques tomaram o poder meses depois.",
+    "es": "El Estado creado en 1721, cuando el zar Pedro el Grande se proclamó emperador tras vencer a Suecia, y que duró hasta la Revolución de 1917. Pedro modernizó el país según el modelo europeo y fundó San Petersburgo como nueva capital. El imperio avanzó por Siberia hasta el Pacífico y llegó a Alaska, además de extenderse por Ucrania, Polonia, Finlandia, el Cáucaso y Asia Central, y se convirtió en uno de los mayores imperios de la historia. La servidumbre no se abolió hasta 1861. Desgastado por la Primera Guerra Mundial, vio abdicar al zar Nicolás II en 1917, y los bolcheviques tomaron el poder meses después."
   },
   "map": {
     "parts": [

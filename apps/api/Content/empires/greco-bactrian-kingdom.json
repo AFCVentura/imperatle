@@ -3,7 +3,8 @@
   "slug": "greco-bactrian-kingdom",
   "name": {
     "en": "Greco-Bactrian Kingdom",
-    "pt": "Reino Greco-Bactriano"
+    "pt": "Reino Greco-Bactriano",
+    "es": "Reino grecobactriano"
   },
   "peak": {
     "year": -170,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts around 256 BC, when the Greek governor of the region, appointed by the Hellenistic kingdom that ruled it, began to act independently, and ends around 120 BC, with the conquest by nomadic peoples from the north. The dates are uncertain because much of its history is known only from coins. The peak shown is 170 BC, after the conquest of lands in northern India, which soon afterwards broke away as kingdoms ruled by rival kings, the Indo-Greeks.",
-    "pt": "Começa por volta de 256 a.C., quando o governador grego da região, nomeado pelo reino helenístico que a dominava, passou a agir de forma independente, e termina por volta de 120 a.C., com a conquista por povos nômades vindos do norte. As datas são incertas porque boa parte da história é conhecida só pelas moedas. O auge escolhido é 170 a.C., depois da conquista de terras no norte da Índia, que pouco depois se separaram como reinos governados por reis rivais, os indo-gregos."
+    "pt": "Começa por volta de 256 a.C., quando o governador grego da região, nomeado pelo reino helenístico que a dominava, passou a agir de forma independente, e termina por volta de 120 a.C., com a conquista por povos nômades vindos do norte. As datas são incertas porque boa parte da história é conhecida só pelas moedas. O auge escolhido é 170 a.C., depois da conquista de terras no norte da Índia, que pouco depois se separaram como reinos governados por reis rivais, os indo-gregos.",
+    "es": "Comienza hacia el 256 a. C., cuando el gobernador griego de la región, nombrado por el reino helenístico que la dominaba, empezó a actuar de forma independiente, y termina hacia el 120 a. C., con la conquista por pueblos nómadas llegados del norte. Las fechas son inciertas porque buena parte de su historia solo se conoce por las monedas. El apogeo elegido es el 170 a. C., después de la conquista de tierras en el norte de la India, que poco después se separaron como reinos gobernados por reyes rivales, los indogriegos."
   },
   "area": {
     "km2": 1360000,
@@ -34,49 +36,60 @@
   ],
   "capital": {
     "en": "Balkh",
-    "pt": "Balkh"
+    "pt": "Balkh",
+    "es": "Balj"
   },
   "language": {
     "en": "Greek (alongside local Iranian languages and, in the Indian lands, Prakrit)",
-    "pt": "Grego (ao lado de línguas iranianas locais e, nas terras indianas, do prácrito)"
+    "pt": "Grego (ao lado de línguas iranianas locais e, nas terras indianas, do prácrito)",
+    "es": "Griego (junto a lenguas iranias locales y, en las tierras indias, el prácrito)"
   },
   "religion": {
     "en": "Ancient Greek religion (polytheistic), alongside local cults",
-    "pt": "Religião grega antiga (politeísta), ao lado dos cultos locais"
+    "pt": "Religião grega antiga (politeísta), ao lado dos cultos locais",
+    "es": "Religión griega antigua (politeísta), junto a los cultos locales"
   },
   "religionNotes": {
     "en": "Coins showed Greek gods such as Zeus, Heracles and Apollo, but the temples in the cities followed local models, and deities of the region, such as that of the river Oxus, also received offerings from Greeks. In the lands conquered in India, some kings began to use Buddhist and Hindu symbols on their coins.",
-    "pt": "As moedas mostravam deuses gregos como Zeus, Héracles e Apolo, mas os templos das cidades seguiam modelos locais, e divindades da região, como a do rio Oxus, também recebiam oferendas de gregos. Nas terras conquistadas na Índia, alguns reis passaram a usar símbolos budistas e hindus nas moedas."
+    "pt": "As moedas mostravam deuses gregos como Zeus, Héracles e Apolo, mas os templos das cidades seguiam modelos locais, e divindades da região, como a do rio Oxus, também recebiam oferendas de gregos. Nas terras conquistadas na Índia, alguns reis passaram a usar símbolos budistas e hindus nas moedas.",
+    "es": "Las monedas mostraban dioses griegos como Zeus, Heracles y Apolo, pero los templos de las ciudades seguían modelos locales, y divinidades de la región, como la del río Oxo, también recibían ofrendas de los griegos. En las tierras conquistadas en la India, algunos reyes empezaron a usar símbolos budistas e hindúes en sus monedas."
   },
   "curiosities": [
     {
       "en": "One of its kings minted coins with the oldest known images of the Hindu gods Krishna and Balarama.",
       "pt": "Um de seus reis cunhou moedas com as imagens mais antigas conhecidas dos deuses hindus Krishna e Balarama.",
+      "es": "Uno de sus reyes acuñó monedas con las imágenes más antiguas que se conocen de los dioses hindúes Krishna y Balarama.",
       "details": {
         "en": "Around 180 BC, King Agathocles issued coins with inscriptions in Greek and in an Indian script, showing the two divine brothers with their attributes: Krishna with a wheel and a conch, and Balarama with a plough. The coins were found at Ai-Khanoum in 1970. They show how the Greek kings adapted their propaganda to their Indian subjects.",
-        "pt": "Por volta de 180 a.C., o rei Agátocles emitiu moedas com inscrições em grego e numa escrita indiana, mostrando os dois irmãos divinos com seus atributos: Krishna com uma roda e uma concha, e Balarama com um arado. As moedas foram encontradas em Ai-Khanoum, em 1970. Elas mostram como os reis gregos adaptavam a sua propaganda aos súditos indianos."
+        "pt": "Por volta de 180 a.C., o rei Agátocles emitiu moedas com inscrições em grego e numa escrita indiana, mostrando os dois irmãos divinos com seus atributos: Krishna com uma roda e uma concha, e Balarama com um arado. As moedas foram encontradas em Ai-Khanoum, em 1970. Elas mostram como os reis gregos adaptavam a sua propaganda aos súditos indianos.",
+        "es": "Hacia el 180 a. C., el rey Agatocles emitió monedas con inscripciones en griego y en una escritura india, que mostraban a los dos hermanos divinos con sus atributos: Krishna con una rueda y una caracola, y Balarama con un arado. Las monedas se encontraron en Ai Khanum en 1970. Muestran cómo los reyes griegos adaptaban su propaganda a sus súbditos indios."
       }
     },
     {
       "en": "Ancient authors called it the kingdom \"of a thousand cities\".",
       "pt": "Autores antigos o chamavam de reino \"das mil cidades\".",
+      "es": "Los autores antiguos lo llamaban el reino \"de las mil ciudades\".",
       "details": {
         "en": "The Roman historian Justin, summarising an older work, speaks of the governor \"of the thousand cities\" of the region. The number is an exaggeration, but the area was rich, with irrigated oases, gold and trade routes between India, Persia and the steppes. Excavations have found planned and fortified cities, and the region was seen as one of the most prosperous in the East.",
-        "pt": "O historiador romano Justino, resumindo uma obra mais antiga, fala do governador \"das mil cidades\" da região. O número é um exagero, mas a área era rica, com oásis irrigados, ouro e rotas de comércio entre a Índia, a Pérsia e as estepes. Escavações encontraram cidades planejadas e fortificadas, e a região era vista como uma das mais prósperas do Oriente."
+        "pt": "O historiador romano Justino, resumindo uma obra mais antiga, fala do governador \"das mil cidades\" da região. O número é um exagero, mas a área era rica, com oásis irrigados, ouro e rotas de comércio entre a Índia, a Pérsia e as estepes. Escavações encontraram cidades planejadas e fortificadas, e a região era vista como uma das mais prósperas do Oriente.",
+        "es": "El historiador romano Justino, que resumió una obra más antigua, habla del gobernador \"de las mil ciudades\" de la región. La cifra es una exageración, pero la zona era rica, con oasis irrigados, oro y rutas comerciales entre la India, Persia y las estepas. Las excavaciones han encontrado ciudades planificadas y fortificadas, y la región era vista como una de las más prósperas de Oriente."
       }
     },
     {
       "en": "In one of its cities, in today's Afghanistan, a stone was found with advice copied from the sanctuary of Delphi, in Greece, the same one of \"Know thyself\".",
       "pt": "Numa de suas cidades, no atual Afeganistão, foi encontrada uma pedra com conselhos copiados do santuário de Delfos, na Grécia, o mesmo do \"Conhece-te a ti mesmo\".",
+      "es": "En una de sus ciudades, en el actual Afganistán, se encontró una piedra con consejos copiados del santuario de Delfos, en Grecia, el mismo del \"Conócete a ti mismo\".",
       "details": {
         "en": "In the 3rd century BC, a Greek named Clearchus copied the maxims of Delphi and had them carved at Ai-Khanoum, on the Amu Darya, in the tomb-shrine of the city's founder. Only the base survives, with the last five: \"As a child, be well-behaved; as a youth, self-controlled; in middle age, just; in old age, wise; at death, without sorrow.\" The city was excavated by French archaeologists from 1964 onwards.",
-        "pt": "No século III a.C., um grego chamado Clearco copiou as máximas de Delfos e as mandou gravar em Ai-Khanoum, às margens do Amu Darya, no santuário-túmulo do fundador da cidade. Só sobrou a base, com as cinco últimas: \"Na infância, sê disciplinado; na juventude, controla-te; na idade adulta, sê justo; na velhice, sê sábio; na morte, não sofras.\" A cidade foi escavada por arqueólogos franceses a partir de 1964."
+        "pt": "No século III a.C., um grego chamado Clearco copiou as máximas de Delfos e as mandou gravar em Ai-Khanoum, às margens do Amu Darya, no santuário-túmulo do fundador da cidade. Só sobrou a base, com as cinco últimas: \"Na infância, sê disciplinado; na juventude, controla-te; na idade adulta, sê justo; na velhice, sê sábio; na morte, não sofras.\" A cidade foi escavada por arqueólogos franceses a partir de 1964.",
+        "es": "En el siglo III a. C., un griego llamado Clearco copió las máximas de Delfos y las hizo grabar en Ai Khanum, a orillas del Amu Daria, en el santuario-tumba del fundador de la ciudad. Solo se conserva la base, con las cinco últimas: \"De niño, sé educado; de joven, contrólate; de adulto, sé justo; de anciano, sé sabio; al morir, no sufras.\" La ciudad fue excavada por arqueólogos franceses a partir de 1964."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Greco-Bactrian_Kingdom",
-    "pt": "https://pt.wikipedia.org/wiki/Reino_Greco-Báctrio"
+    "pt": "https://pt.wikipedia.org/wiki/Reino_Greco-Báctrio",
+    "es": "https://es.wikipedia.org/wiki/Reino_grecobactriano"
   },
   "aliases": [
     "Graeco-Bactrian Kingdom",
@@ -85,11 +98,13 @@
     "Báctria",
     "Bactriana",
     "Greco-Bactrians",
-    "Greco-Bactrianos"
+    "Greco-Bactrianos",
+    "Grecobactrianos"
   ],
   "summary": {
     "en": "A kingdom formed around 256 BC by Greeks who governed Bactria, the region between the Hindu Kush and the Amu Darya river, in today's Afghanistan, and who broke away from the Seleucid Empire. It was one of the most distant points of the Greek world that arose from the conquests of Alexander the Great, and it combined cities with Greek-style theatres and gymnasiums with Persian and Central Asian traditions. Under Euthydemus and his son Demetrius, it withstood a Seleucid siege and expanded into northern India around 180 BC. Later, disputes between rival kings divided the territory, and the Indian lands formed separate Indo-Greek kingdoms. Around 120 BC, nomadic peoples from the north, such as the Yuezhi and the Saka, conquered the region.",
-    "pt": "Reino formado por volta de 256 a.C. por gregos que governavam a Báctria, região entre o Hindu Kush e o rio Amu Darya, no atual Afeganistão, e que se separaram do Império Selêucida. Era um dos pontos mais distantes do mundo grego surgido das conquistas de Alexandre, o Grande, e combinava cidades com teatros e ginásios ao estilo grego com tradições persas e da Ásia Central. Sob Eutidemo e seu filho Demétrio, resistiu a um cerco selêucida e se expandiu para o norte da Índia por volta de 180 a.C. Depois, disputas entre reis rivais dividiram o território, e as terras indianas formaram reinos indo-gregos separados. Por volta de 120 a.C., povos nômades vindos do norte, como os iuezhis e os sakas, conquistaram a região."
+    "pt": "Reino formado por volta de 256 a.C. por gregos que governavam a Báctria, região entre o Hindu Kush e o rio Amu Darya, no atual Afeganistão, e que se separaram do Império Selêucida. Era um dos pontos mais distantes do mundo grego surgido das conquistas de Alexandre, o Grande, e combinava cidades com teatros e ginásios ao estilo grego com tradições persas e da Ásia Central. Sob Eutidemo e seu filho Demétrio, resistiu a um cerco selêucida e se expandiu para o norte da Índia por volta de 180 a.C. Depois, disputas entre reis rivais dividiram o território, e as terras indianas formaram reinos indo-gregos separados. Por volta de 120 a.C., povos nômades vindos do norte, como os iuezhis e os sakas, conquistaram a região.",
+    "es": "Reino formado hacia el 256 a. C. por los griegos que gobernaban Bactriana, la región entre el Hindú Kush y el río Amu Daria, en el actual Afganistán, y que se separaron del Imperio seléucida. Era uno de los puntos más lejanos del mundo griego surgido de las conquistas de Alejandro Magno, y combinaba ciudades con teatros y gimnasios al estilo griego con tradiciones persas y de Asia Central. Bajo Eutidemo y su hijo Demetrio, resistió un asedio seléucida y se expandió hacia el norte de la India hacia el 180 a. C. Después, las disputas entre reyes rivales dividieron el territorio, y las tierras indias formaron reinos indogriegos separados. Hacia el 120 a. C., pueblos nómadas llegados del norte, como los yuezhi y los sacas, conquistaron la región."
   },
   "map": {
     "parts": [

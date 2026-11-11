@@ -3,7 +3,8 @@
   "slug": "empire-of-japan",
   "name": {
     "en": "Empire of Japan",
-    "pt": "Império do Japão"
+    "pt": "Império do Japão",
+    "es": "Imperio del Japón"
   },
   "peak": {
     "year": 1942,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts in 1868, when power returned to the emperor after centuries of military rule, and ends in 1947, when a new constitution took effect. It had surrendered in 1945 and was under foreign occupation until then.",
-    "pt": "Começa em 1868, quando o poder voltou ao imperador após séculos de governo militar, e termina em 1947, quando entrou em vigor uma nova constituição. Tinha se rendido em 1945 e estava sob ocupação estrangeira desde então."
+    "pt": "Começa em 1868, quando o poder voltou ao imperador após séculos de governo militar, e termina em 1947, quando entrou em vigor uma nova constituição. Tinha se rendido em 1945 e estava sob ocupação estrangeira desde então.",
+    "es": "Comienza en 1868, cuando el poder volvió al emperador tras siglos de gobierno militar, y termina en 1947, cuando entró en vigor una nueva constitución. Se había rendido en 1945 y desde entonces estaba bajo ocupación extranjera."
   },
   "area": {
     "km2": 6545391,
@@ -35,49 +37,60 @@
   ],
   "capital": {
     "en": "Tokyo",
-    "pt": "Tóquio"
+    "pt": "Tóquio",
+    "es": "Tokio"
   },
   "language": {
     "en": "Japanese",
-    "pt": "Japonês"
+    "pt": "Japonês",
+    "es": "Japonés"
   },
   "religion": {
     "en": "State Shinto",
-    "pt": "Xintoísmo de Estado"
+    "pt": "Xintoísmo de Estado",
+    "es": "Sintoísmo de Estado"
   },
   "religionNotes": {
     "en": "The state promoted the worship of the emperor, said to descend from a sun goddess, as a patriotic duty. Buddhism remained widespread among the people.",
-    "pt": "O Estado promovia o culto ao imperador, tido como descendente de uma deusa do sol, como dever patriótico. O budismo continuava muito difundido entre a população."
+    "pt": "O Estado promovia o culto ao imperador, tido como descendente de uma deusa do sol, como dever patriótico. O budismo continuava muito difundido entre a população.",
+    "es": "El Estado promovía como deber patriótico el culto al emperador, al que se consideraba descendiente de una diosa del sol. El budismo seguía muy extendido entre la población."
   },
   "curiosities": [
     {
       "en": "In 1905, it became the first Asian country in modern times to defeat a European great power in a war.",
       "pt": "Em 1905, tornou-se o primeiro país asiático dos tempos modernos a derrotar uma grande potência europeia numa guerra.",
+      "es": "En 1905 se convirtió en el primer país asiático de la era moderna en derrotar a una gran potencia europea en una guerra.",
       "details": {
         "en": "In the Russo-Japanese War of 1904 and 1905, Japan took the Russian base of Port Arthur, in Manchuria, and destroyed Russia's Baltic Fleet at the Battle of Tsushima, after it had sailed halfway around the world. The peace was negotiated in the United States, and the victory showed the world that an Asian power could defeat a European one.",
-        "pt": "Na Guerra Russo-Japonesa, de 1904 e 1905, o Japão tomou a base russa de Port Arthur, na Manchúria, e destruiu a frota russa do Báltico na batalha de Tsushima, depois de ela ter navegado meio mundo. A paz foi negociada nos Estados Unidos, e a vitória mostrou ao mundo que uma potência asiática podia derrotar uma europeia."
+        "pt": "Na Guerra Russo-Japonesa, de 1904 e 1905, o Japão tomou a base russa de Port Arthur, na Manchúria, e destruiu a frota russa do Báltico na batalha de Tsushima, depois de ela ter navegado meio mundo. A paz foi negociada nos Estados Unidos, e a vitória mostrou ao mundo que uma potência asiática podia derrotar uma europeia.",
+        "es": "En la guerra ruso-japonesa de 1904 y 1905, Japón tomó la base rusa de Port Arthur, en Manchuria, y destruyó la flota rusa del Báltico en la batalla de Tsushima, después de que esta hubiera navegado medio mundo. La paz se negoció en Estados Unidos, y la victoria mostró al mundo que una potencia asiática podía derrotar a una europea."
       }
     },
     {
       "en": "Its surprise attack on a naval base in Hawaii brought the United States into World War II.",
       "pt": "Seu ataque surpresa a uma base naval no Havaí levou os Estados Unidos à Segunda Guerra Mundial.",
+      "es": "Su ataque por sorpresa a una base naval en Hawái hizo entrar a Estados Unidos en la Segunda Guerra Mundial.",
       "details": {
         "en": "On 7 December 1941, planes launched from Japanese aircraft carriers attacked the base at Pearl Harbor, in Hawaii, without a declaration of war. They sank or damaged eight battleships and killed more than 2,400 Americans. The next day the United States declared war on Japan, and soon after Germany declared war on the United States.",
-        "pt": "Em 7 de dezembro de 1941, aviões lançados de porta-aviões japoneses atacaram a base de Pearl Harbor, no Havaí, sem declaração de guerra. Afundaram ou danificaram oito encouraçados e mataram mais de 2.400 americanos. No dia seguinte, os Estados Unidos declararam guerra ao Japão, e logo depois a Alemanha declarou guerra aos Estados Unidos."
+        "pt": "Em 7 de dezembro de 1941, aviões lançados de porta-aviões japoneses atacaram a base de Pearl Harbor, no Havaí, sem declaração de guerra. Afundaram ou danificaram oito encouraçados e mataram mais de 2.400 americanos. No dia seguinte, os Estados Unidos declararam guerra ao Japão, e logo depois a Alemanha declarou guerra aos Estados Unidos.",
+        "es": "El 7 de diciembre de 1941, aviones lanzados desde portaaviones japoneses atacaron la base de Pearl Harbor, en Hawái, sin declaración de guerra. Hundieron o dañaron ocho acorazados y mataron a más de 2400 estadounidenses. Al día siguiente, Estados Unidos declaró la guerra a Japón, y poco después Alemania declaró la guerra a Estados Unidos."
       }
     },
     {
       "en": "It surrendered in 1945, days after two of its cities were destroyed by atomic bombs.",
       "pt": "Rendeu-se em 1945, dias depois de duas de suas cidades serem destruídas por bombas atômicas.",
+      "es": "Se rindió en 1945, días después de que dos de sus ciudades fueran destruidas por bombas atómicas.",
       "details": {
         "en": "The United States dropped atomic bombs on Hiroshima on 6 August 1945 and on Nagasaki three days later, killing more than 100,000 people at once and many more later from radiation. The Soviet Union also declared war on Japan on 8 August. Emperor Hirohito announced the surrender on the radio on 15 August, and it was signed on 2 September.",
-        "pt": "Os Estados Unidos lançaram bombas atômicas sobre Hiroshima, em 6 de agosto de 1945, e sobre Nagasaki, três dias depois, matando mais de 100 mil pessoas de imediato e muitas outras depois, pela radiação. A União Soviética também declarou guerra ao Japão em 8 de agosto. O imperador Hirohito anunciou a rendição pelo rádio em 15 de agosto, e ela foi assinada em 2 de setembro."
+        "pt": "Os Estados Unidos lançaram bombas atômicas sobre Hiroshima, em 6 de agosto de 1945, e sobre Nagasaki, três dias depois, matando mais de 100 mil pessoas de imediato e muitas outras depois, pela radiação. A União Soviética também declarou guerra ao Japão em 8 de agosto. O imperador Hirohito anunciou a rendição pelo rádio em 15 de agosto, e ela foi assinada em 2 de setembro.",
+        "es": "Estados Unidos lanzó bombas atómicas sobre Hiroshima, el 6 de agosto de 1945, y sobre Nagasaki, tres días después, que mataron a más de 100 000 personas en el acto y a muchas más después, por la radiación. La Unión Soviética también declaró la guerra a Japón el 8 de agosto. El emperador Hirohito anunció la rendición por radio el 15 de agosto, y esta se firmó el 2 de septiembre."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Empire_of_Japan",
-    "pt": "https://pt.wikipedia.org/wiki/Império_do_Japão"
+    "pt": "https://pt.wikipedia.org/wiki/Império_do_Japão",
+    "es": "https://es.wikipedia.org/wiki/Imperio_del_Japón"
   },
   "aliases": [
     "Japan",
@@ -90,11 +103,15 @@
     "Grande Império do Japão",
     "Dai Nippon",
     "Nippon",
-    "Nihon"
+    "Nihon",
+    "Japón",
+    "Imperio de Japón",
+    "Japón imperial"
   ],
   "summary": {
     "en": "The Japanese state between the Meiji Restoration of 1868, when power returned to the emperor after centuries of rule by the shoguns, and the constitution of 1947. In a few decades Japan industrialised, built a modern army and navy and defeated China and Russia. It annexed Taiwan and Korea, seized Manchuria and, from 1937, invaded China. In World War II it occupied Southeast Asia and much of the Pacific, with great brutality towards civilians and prisoners. It surrendered in 1945 and was occupied by the United States until 1952.",
-    "pt": "Estado japonês entre a Restauração Meiji, em 1868, quando o poder voltou ao imperador depois de séculos de governo dos xoguns, e a Constituição de 1947. Em poucas décadas, o Japão se industrializou, criou um exército e uma marinha modernos e venceu a China e a Rússia. Anexou Taiwan e a Coreia, tomou a Manchúria e, a partir de 1937, invadiu a China. Na Segunda Guerra, ocupou o Sudeste Asiático e boa parte do Pacífico, com grande brutalidade contra civis e prisioneiros. Rendeu-se em 1945 e ficou ocupado pelos Estados Unidos até 1952."
+    "pt": "Estado japonês entre a Restauração Meiji, em 1868, quando o poder voltou ao imperador depois de séculos de governo dos xoguns, e a Constituição de 1947. Em poucas décadas, o Japão se industrializou, criou um exército e uma marinha modernos e venceu a China e a Rússia. Anexou Taiwan e a Coreia, tomou a Manchúria e, a partir de 1937, invadiu a China. Na Segunda Guerra, ocupou o Sudeste Asiático e boa parte do Pacífico, com grande brutalidade contra civis e prisioneiros. Rendeu-se em 1945 e ficou ocupado pelos Estados Unidos até 1952.",
+    "es": "El Estado japonés entre la Restauración Meiji de 1868, cuando el poder volvió al emperador tras siglos de gobierno de los sogunes, y la Constitución de 1947. En pocas décadas, Japón se industrializó, creó un ejército y una marina modernos y venció a China y a Rusia. Anexionó Taiwán y Corea, se apoderó de Manchuria y, desde 1937, invadió China. En la Segunda Guerra Mundial ocupó el Sudeste Asiático y buena parte del Pacífico, con gran brutalidad contra civiles y prisioneros. Se rindió en 1945 y estuvo ocupado por Estados Unidos hasta 1952."
   },
   "map": {
     "parts": [

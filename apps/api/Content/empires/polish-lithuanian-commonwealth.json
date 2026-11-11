@@ -3,7 +3,8 @@
   "slug": "polish-lithuanian-commonwealth",
   "name": {
     "en": "Polish–Lithuanian Commonwealth",
-    "pt": "República das Duas Nações"
+    "pt": "República das Duas Nações",
+    "es": "República de las Dos Naciones"
   },
   "peak": {
     "year": 1619,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts in 1569, when a treaty turned the union between a neighbouring kingdom and grand duchy, which already shared the same monarch, into a single state, with a common king and parliament. It ends in 1795, when its three neighbours divided what was left of the territory. The peak shown is 1619, when a truce with Russia handed over Smolensk and the Chernihiv region. The map leaves out the Duchy of Prussia and the Duchy of Courland, vassals with their own dukes.",
-    "pt": "Começa em 1569, quando um tratado transformou a união entre um reino e um grão-ducado vizinhos, que já dividiam o mesmo monarca, num só Estado, com rei e parlamento comuns. Termina em 1795, quando os três vizinhos dividiram o que restava do território. O auge escolhido é 1619, quando uma trégua com a Rússia entregou Smolensk e a região de Chernihiv. O mapa não inclui o Ducado da Prússia nem o Ducado da Curlândia, que eram vassalos com duques próprios."
+    "pt": "Começa em 1569, quando um tratado transformou a união entre um reino e um grão-ducado vizinhos, que já dividiam o mesmo monarca, num só Estado, com rei e parlamento comuns. Termina em 1795, quando os três vizinhos dividiram o que restava do território. O auge escolhido é 1619, quando uma trégua com a Rússia entregou Smolensk e a região de Chernihiv. O mapa não inclui o Ducado da Prússia nem o Ducado da Curlândia, que eram vassalos com duques próprios.",
+    "es": "Comienza en 1569, cuando un tratado convirtió la unión entre un reino y un gran ducado vecinos, que ya compartían el mismo monarca, en un solo Estado, con un rey y un parlamento comunes. Termina en 1795, cuando sus tres vecinos se repartieron lo que quedaba del territorio. El apogeo que se muestra es 1619, cuando una tregua con Rusia le entregó Smolensk y la región de Chernígov. El mapa no incluye el Ducado de Prusia ni el Ducado de Curlandia, vasallos con duques propios."
   },
   "area": {
     "km2": 900000,
@@ -34,49 +36,60 @@
   ],
   "capital": {
     "en": "Kraków, later Warsaw (the court moved in 1596)",
-    "pt": "Cracóvia, depois Varsóvia (a corte se mudou em 1596)"
+    "pt": "Cracóvia, depois Varsóvia (a corte se mudou em 1596)",
+    "es": "Cracovia, después Varsovia (la corte se trasladó en 1596)"
   },
   "language": {
     "en": "Polish and Ruthenian (with Latin in administration and diplomacy)",
-    "pt": "Polonês e rutênio (com o latim na administração e na diplomacia)"
+    "pt": "Polonês e rutênio (com o latim na administração e na diplomacia)",
+    "es": "Polaco y ruteno (con el latín en la administración y la diplomacia)"
   },
   "religion": {
     "en": "Catholicism",
-    "pt": "Catolicismo"
+    "pt": "Catolicismo",
+    "es": "Catolicismo"
   },
   "religionNotes": {
     "en": "In 1573, the nobility approved a guarantee of peace between religions, rare in the Europe of the wars of religion. Besides Catholics, there were many Orthodox Christians in the eastern lands, Protestants, Muslim Tatars and the largest Jewish community in the world. In 1596, part of the Orthodox Church came to recognise the pope, giving rise to the Greek Catholic Church. With the Counter-Reformation, tolerance declined over the 17th century.",
-    "pt": "Em 1573, a nobreza aprovou uma garantia de paz entre as religiões, rara na Europa das guerras religiosas. Além dos católicos, havia muitos ortodoxos nas terras do leste, protestantes, tártaros muçulmanos e a maior comunidade judaica do mundo. Em 1596, parte da Igreja Ortodoxa passou a reconhecer o papa, dando origem à Igreja Greco-Católica. Com a Contrarreforma, a tolerância foi diminuindo ao longo do século XVII."
+    "pt": "Em 1573, a nobreza aprovou uma garantia de paz entre as religiões, rara na Europa das guerras religiosas. Além dos católicos, havia muitos ortodoxos nas terras do leste, protestantes, tártaros muçulmanos e a maior comunidade judaica do mundo. Em 1596, parte da Igreja Ortodoxa passou a reconhecer o papa, dando origem à Igreja Greco-Católica. Com a Contrarreforma, a tolerância foi diminuindo ao longo do século XVII.",
+    "es": "En 1573, la nobleza aprobó una garantía de paz entre las religiones, algo raro en la Europa de las guerras de religión. Además de los católicos, había muchos ortodoxos en las tierras del este, protestantes, tártaros musulmanes y la mayor comunidad judía del mundo. En 1596, parte de la Iglesia ortodoxa pasó a reconocer al papa, lo que dio origen a la Iglesia grecocatólica. Con la Contrarreforma, la tolerancia fue disminuyendo a lo largo del siglo XVII."
   },
   "curiosities": [
     {
       "en": "It was home to the largest Jewish community in the world, with its own council that worked like a parliament.",
       "pt": "Abrigava a maior comunidade judaica do mundo, com um conselho próprio que funcionava como um parlamento.",
+      "es": "Albergaba la mayor comunidad judía del mundo, con un consejo propio que funcionaba como un parlamento.",
       "details": {
         "en": "Since the Middle Ages, kings of the region had attracted Jews expelled from other parts of Europe, with guarantees of protection. By the 18th century they numbered about 750,000 people. Between 1580 and 1764, the so-called Council of Four Lands brought together representatives of the communities to collect taxes and decide internal matters. The region became the main centre of Ashkenazi Jewish culture until the 20th century.",
-        "pt": "Desde a Idade Média, reis da região atraíram judeus expulsos de outras partes da Europa, com garantias de proteção. No século XVIII, eram cerca de 750 mil pessoas. Entre 1580 e 1764, o chamado Conselho das Quatro Terras reunia representantes das comunidades para cobrar impostos e decidir questões internas. A região virou o principal centro da cultura judaica asquenaze até o século XX."
+        "pt": "Desde a Idade Média, reis da região atraíram judeus expulsos de outras partes da Europa, com garantias de proteção. No século XVIII, eram cerca de 750 mil pessoas. Entre 1580 e 1764, o chamado Conselho das Quatro Terras reunia representantes das comunidades para cobrar impostos e decidir questões internas. A região virou o principal centro da cultura judaica asquenaze até o século XX.",
+        "es": "Desde la Edad Media, los reyes de la región atrajeron a judíos expulsados de otras partes de Europa, con garantías de protección. En el siglo XVIII eran unas 750 000 personas. Entre 1580 y 1764, el llamado Consejo de las Cuatro Tierras reunía a representantes de las comunidades para recaudar impuestos y decidir asuntos internos. La región se convirtió en el principal centro de la cultura judía asquenazí hasta el siglo XX."
       }
     },
     {
       "en": "Its king led the cavalry charge that defeated the Ottoman siege of Vienna, in 1683.",
       "pt": "Seu rei liderou a carga de cavalaria que derrotou o cerco otomano a Viena, em 1683.",
+      "es": "Su rey dirigió la carga de caballería que puso fin al asedio otomano de Viena, en 1683.",
       "details": {
         "en": "Vienna had been besieged for two months by a huge Ottoman army when a relief force from several Christian states arrived. King Jan III Sobieski commanded the final attack, with about 18,000 horsemen riding down the hills around the city, in what is often described as the largest cavalry charge in history. The defeat marked the beginning of the Ottoman retreat in Europe.",
-        "pt": "Viena estava cercada havia dois meses por um enorme exército otomano quando chegou uma força de socorro de vários Estados cristãos. O rei Jan III Sobieski comandou o ataque final, com cerca de 18 mil cavaleiros descendo as colinas ao redor da cidade, no que costuma ser descrito como a maior carga de cavalaria da história. A derrota marcou o começo do recuo otomano na Europa."
+        "pt": "Viena estava cercada havia dois meses por um enorme exército otomano quando chegou uma força de socorro de vários Estados cristãos. O rei Jan III Sobieski comandou o ataque final, com cerca de 18 mil cavaleiros descendo as colinas ao redor da cidade, no que costuma ser descrito como a maior carga de cavalaria da história. A derrota marcou o começo do recuo otomano na Europa.",
+        "es": "Viena llevaba dos meses sitiada por un enorme ejército otomano cuando llegó una fuerza de socorro de varios Estados cristianos. El rey Juan III Sobieski dirigió el ataque final, con unos 18 000 jinetes que bajaron por las colinas que rodean la ciudad, en lo que suele describirse como la mayor carga de caballería de la historia. La derrota marcó el comienzo del retroceso otomano en Europa."
       }
     },
     {
       "en": "It was partitioned three times between Russia, Prussia and Austria, until it disappeared from the map entirely.",
       "pt": "Foi repartido três vezes entre a Rússia, a Prússia e a Áustria, até desaparecer completamente do mapa.",
+      "es": "Su territorio fue repartido tres veces entre Rusia, Prusia y Austria, hasta desaparecer por completo del mapa.",
       "details": {
         "en": "In the partitions of 1772, 1793 and 1795, the three neighbours took ever larger pieces of the territory, until nothing was left. Poland only returned as an independent country in 1918, after the First World War, 123 years later. Lithuania also became independent at the same time.",
-        "pt": "Nas partilhas de 1772, 1793 e 1795, os três vizinhos tomaram pedaços cada vez maiores do território, até não sobrar nada. O nome Polônia só voltou a existir como país independente em 1918, depois da Primeira Guerra Mundial, 123 anos mais tarde. A Lituânia também se tornou independente na mesma época."
+        "pt": "Nas partilhas de 1772, 1793 e 1795, os três vizinhos tomaram pedaços cada vez maiores do território, até não sobrar nada. O nome Polônia só voltou a existir como país independente em 1918, depois da Primeira Guerra Mundial, 123 anos mais tarde. A Lituânia também se tornou independente na mesma época.",
+        "es": "En los repartos de 1772, 1793 y 1795, los tres vecinos tomaron pedazos cada vez mayores del territorio, hasta que no quedó nada. Polonia no volvió a existir como país independiente hasta 1918, después de la Primera Guerra Mundial, 123 años más tarde. Lituania también se independizó en la misma época."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Polish–Lithuanian_Commonwealth",
-    "pt": "https://pt.wikipedia.org/wiki/República_das_Duas_Nações"
+    "pt": "https://pt.wikipedia.org/wiki/República_das_Duas_Nações",
+    "es": "https://es.wikipedia.org/wiki/República_de_las_Dos_Naciones"
   },
   "aliases": [
     "Polish-Lithuanian Commonwealth",
@@ -90,11 +103,17 @@
     "Polônia",
     "Polish Empire",
     "Império Polonês",
-    "Comunidade Polaco-Lituana"
+    "Comunidade Polaco-Lituana",
+    "Mancomunidad de Polonia-Lituania",
+    "República de Ambas Naciones",
+    "Primera República de Polonia",
+    "Unión polaco-lituana",
+    "Imperio polaco"
   ],
   "summary": {
     "en": "A state formed in 1569 by the Union of Lublin, which joined the Kingdom of Poland and the Grand Duchy of Lithuania under a common king and parliament. It was one of the largest and most populous powers in Europe, stretching from the Baltic Sea to near the Black Sea. It had a political system rare for its time: the king was elected by the nobility, which controlled parliament and had broad rights, and religious tolerance was guaranteed by law. In the 17th century, wars against Sweden, Russia and the Ottomans, along with a great Cossack revolt in Ukraine, devastated the country, and the requirement of unanimity in parliament weakened the government. In the 18th century, Russia, Prussia and Austria took the territory in three partitions, despite an attempt at reform with the constitution of 1791, and in 1795 the state disappeared from the map.",
-    "pt": "Estado formado em 1569 pela União de Lublin, que juntou o Reino da Polônia e o Grão-Ducado da Lituânia sob um rei e um parlamento comuns. Era uma das maiores e mais populosas potências da Europa, indo do Mar Báltico até perto do Mar Negro. Tinha um sistema político raro para a época: o rei era eleito pela nobreza, que controlava o parlamento e tinha amplos direitos, e a tolerância religiosa era garantida por lei. No século XVII, guerras contra a Suécia, a Rússia e os otomanos, além de uma grande revolta cossaca na Ucrânia, devastaram o país, e a exigência de unanimidade no parlamento enfraqueceu o governo. No século XVIII, a Rússia, a Prússia e a Áustria tomaram o território em três partilhas, apesar de uma tentativa de reforma com a constituição de 1791, e em 1795 o Estado desapareceu do mapa."
+    "pt": "Estado formado em 1569 pela União de Lublin, que juntou o Reino da Polônia e o Grão-Ducado da Lituânia sob um rei e um parlamento comuns. Era uma das maiores e mais populosas potências da Europa, indo do Mar Báltico até perto do Mar Negro. Tinha um sistema político raro para a época: o rei era eleito pela nobreza, que controlava o parlamento e tinha amplos direitos, e a tolerância religiosa era garantida por lei. No século XVII, guerras contra a Suécia, a Rússia e os otomanos, além de uma grande revolta cossaca na Ucrânia, devastaram o país, e a exigência de unanimidade no parlamento enfraqueceu o governo. No século XVIII, a Rússia, a Prússia e a Áustria tomaram o território em três partilhas, apesar de uma tentativa de reforma com a constituição de 1791, e em 1795 o Estado desapareceu do mapa.",
+    "es": "Estado formado en 1569 por la Unión de Lublin, que unió el Reino de Polonia y el Gran Ducado de Lituania bajo un rey y un parlamento comunes. Era una de las potencias más grandes y pobladas de Europa, y se extendía desde el mar Báltico hasta cerca del mar Negro. Tenía un sistema político raro para su época: el rey era elegido por la nobleza, que controlaba el parlamento y tenía amplios derechos, y la tolerancia religiosa estaba garantizada por ley. En el siglo XVII, las guerras contra Suecia, Rusia y los otomanos, además de una gran revuelta cosaca en Ucrania, devastaron el país, y la exigencia de unanimidad en el parlamento debilitó al gobierno. En el siglo XVIII, Rusia, Prusia y Austria se quedaron con el territorio en tres repartos, pese a un intento de reforma con la Constitución de 1791, y en 1795 el Estado desapareció del mapa."
   },
   "map": {
     "parts": [

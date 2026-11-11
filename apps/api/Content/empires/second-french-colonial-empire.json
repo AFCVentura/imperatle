@@ -3,7 +3,8 @@
   "slug": "second-french-colonial-empire",
   "name": {
     "en": "Second French Colonial Empire",
-    "pt": "Segundo Império Colonial Francês"
+    "pt": "Segundo Império Colonial Francês",
+    "es": "Segundo Imperio colonial francés"
   },
   "peak": {
     "year": 1920,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "Covers the second colonial empire, from the conquest of Algiers to Algerian independence. It excludes the earlier colonies in the Americas and India, mostly lost in the 18th century, and the overseas territories that are still French today.",
-    "pt": "Cobre o segundo império colonial, da conquista de Argel à independência da Argélia. Não inclui as colônias anteriores nas Américas e na Índia, perdidas em sua maioria no século XVIII, nem os territórios ultramarinos que seguem franceses hoje."
+    "pt": "Cobre o segundo império colonial, da conquista de Argel à independência da Argélia. Não inclui as colônias anteriores nas Américas e na Índia, perdidas em sua maioria no século XVIII, nem os territórios ultramarinos que seguem franceses hoje.",
+    "es": "Abarca el segundo imperio colonial, desde la conquista de Argel hasta la independencia de Argelia. No incluye las colonias anteriores en América y en la India, perdidas en su mayoría en el siglo XVIII, ni los territorios de ultramar que siguen siendo franceses hoy."
   },
   "area": {
     "km2": 12670000,
@@ -40,49 +42,60 @@
   ],
   "capital": {
     "en": "Paris",
-    "pt": "Paris"
+    "pt": "Paris",
+    "es": "París"
   },
   "language": {
     "en": "French",
-    "pt": "Francês"
+    "pt": "Francês",
+    "es": "Francés"
   },
   "religion": {
     "en": "Secular state (mostly Catholic in mainland France)",
-    "pt": "Estado laico (maioria católica na metrópole)"
+    "pt": "Estado laico (maioria católica na metrópole)",
+    "es": "Estado laico (mayoría católica en la metrópoli)"
   },
   "religionNotes": {
     "en": "From 1905 on, the state recognized no official religion. In the colonies, Islam was the faith of a large part of the population.",
-    "pt": "Desde 1905, o Estado não reconhecia nenhuma religião oficial. Nas colônias, o islamismo era a fé de grande parte da população."
+    "pt": "Desde 1905, o Estado não reconhecia nenhuma religião oficial. Nas colônias, o islamismo era a fé de grande parte da população.",
+    "es": "Desde 1905, el Estado no reconocía ninguna religión oficial. En las colonias, el islam era la fe de gran parte de la población."
   },
   "curiosities": [
     {
       "en": "In 1931 it held a great exhibition of its colonies in the capital, with about 8 million visitors.",
       "pt": "Em 1931, montou na capital uma grande exposição sobre suas colônias, com cerca de 8 milhões de visitantes.",
+      "es": "En 1931 organizó en su capital una gran exposición sobre sus colonias, con unos 8 millones de visitantes.",
       "details": {
         "en": "The International Colonial Exhibition of 1931, in the Bois de Vincennes, in Paris, ran for six months and had about 8 million visitors. It showed replicas of colonial monuments, such as the temple of Angkor Wat, and even people brought from Africa and Asia displayed as attractions. Surrealists and Communists organised a counter-exhibition against colonialism.",
-        "pt": "A Exposição Colonial Internacional de 1931, no Bosque de Vincennes, em Paris, durou seis meses e teve cerca de 8 milhões de visitantes. Mostrava réplicas de monumentos das colônias, como o templo de Angkor Wat, e até pessoas trazidas da África e da Ásia exibidas como atração. Surrealistas e comunistas organizaram uma contraexposição contra o colonialismo."
+        "pt": "A Exposição Colonial Internacional de 1931, no Bosque de Vincennes, em Paris, durou seis meses e teve cerca de 8 milhões de visitantes. Mostrava réplicas de monumentos das colônias, como o templo de Angkor Wat, e até pessoas trazidas da África e da Ásia exibidas como atração. Surrealistas e comunistas organizaram uma contraexposição contra o colonialismo.",
+        "es": "La Exposición Colonial Internacional de 1931, en el Bosque de Vincennes, en París, duró seis meses y tuvo unos 8 millones de visitantes. Mostraba réplicas de monumentos de las colonias, como el templo de Angkor Wat, e incluso a personas traídas de África y Asia exhibidas como atracción. Surrealistas y comunistas organizaron una contraexposición contra el colonialismo."
       }
     },
     {
       "en": "It created a currency for its African colonies that is still used in several countries.",
       "pt": "Criou para suas colônias africanas uma moeda que ainda circula em vários países.",
+      "es": "Creó para sus colonias africanas una moneda que todavía circula en varios países.",
       "details": {
         "en": "The CFA franc was created in 1945 for France's African colonies. It is still used today in 14 countries of West and Central Africa, in two versions, and has a fixed exchange rate with the euro, guaranteed by the French Treasury. Many Africans criticise it as a leftover of colonialism.",
-        "pt": "O franco CFA foi criado em 1945 para as colônias francesas da África. Ainda hoje circula em 14 países da África Ocidental e Central, em duas versões, e tem câmbio fixo com o euro, garantido pelo Tesouro francês. Muitos africanos criticam a moeda como um resquício do colonialismo."
+        "pt": "O franco CFA foi criado em 1945 para as colônias francesas da África. Ainda hoje circula em 14 países da África Ocidental e Central, em duas versões, e tem câmbio fixo com o euro, garantido pelo Tesouro francês. Muitos africanos criticam a moeda como um resquício do colonialismo.",
+        "es": "El franco CFA se creó en 1945 para las colonias francesas de África. Todavía hoy circula en 14 países de África Occidental y Central, en dos versiones, y tiene un tipo de cambio fijo con el euro, garantizado por el Tesoro francés. Muchos africanos lo critican como un resto del colonialismo."
       }
     },
     {
       "en": "Its language is still official in more than 20 African countries.",
       "pt": "Sua língua continua oficial em mais de 20 países da África.",
+      "es": "Su lengua sigue siendo oficial en más de 20 países africanos.",
       "details": {
         "en": "French is an official language in 21 African countries, such as Senegal, Côte d'Ivoire, Mali and the Democratic Republic of the Congo, a former Belgian colony. That is why most of the world's French speakers now live in Africa, and why Kinshasa is often called the largest French-speaking city in the world.",
-        "pt": "O francês é língua oficial em 21 países africanos, como Senegal, Costa do Marfim, Mali e a República Democrática do Congo, esta uma ex-colônia belga. Por isso, a maior parte dos falantes de francês do mundo vive hoje na África, e Kinshasa costuma ser apontada como a maior cidade francófona do planeta."
+        "pt": "O francês é língua oficial em 21 países africanos, como Senegal, Costa do Marfim, Mali e a República Democrática do Congo, esta uma ex-colônia belga. Por isso, a maior parte dos falantes de francês do mundo vive hoje na África, e Kinshasa costuma ser apontada como a maior cidade francófona do planeta.",
+        "es": "El francés es lengua oficial en 21 países africanos, como Senegal, Costa de Marfil, Malí y la República Democrática del Congo, esta última una antigua colonia belga. Por eso, la mayor parte de los hablantes de francés del mundo vive hoy en África, y Kinsasa suele señalarse como la mayor ciudad francófona del planeta."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/French_Colonial_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Império_Colonial_Francês"
+    "pt": "https://pt.wikipedia.org/wiki/Império_Colonial_Francês",
+    "es": "https://es.wikipedia.org/wiki/Imperio_colonial_francés"
   },
   "aliases": [
     "France",
@@ -92,11 +105,13 @@
     "French Empire",
     "Império Francês",
     "French Union",
-    "União Francesa"
+    "União Francesa",
+    "Francia"
   ],
   "summary": {
     "en": "The colonial empire France built from 1830, with the conquest of Algeria, after losing almost all its earlier colonies. It grew above all in the late 19th century, with the occupation of much of West and Central Africa, Madagascar and Indochina, and became the world's second largest empire, after the British. The French spoke of a \"civilising mission\", but their rule relied on forced labour and violent repression. After World War II it lost Indochina in the war of 1946 to 1954, and the independence of Algeria in 1962, after a bloody war, marked its end.",
-    "pt": "Império colonial que a França construiu a partir de 1830, com a conquista da Argélia, depois de perder quase todas as colônias anteriores. Cresceu sobretudo no fim do século XIX, com a ocupação de boa parte da África Ocidental e Central, de Madagascar e da Indochina, e se tornou o segundo maior império do mundo, depois do britânico. Os franceses falavam numa \"missão civilizadora\", mas o domínio se apoiava em trabalho forçado e em repressões violentas. Depois da Segunda Guerra, perdeu a Indochina na guerra de 1946 a 1954, e a independência da Argélia, em 1962, depois de uma guerra sangrenta, marcou seu fim."
+    "pt": "Império colonial que a França construiu a partir de 1830, com a conquista da Argélia, depois de perder quase todas as colônias anteriores. Cresceu sobretudo no fim do século XIX, com a ocupação de boa parte da África Ocidental e Central, de Madagascar e da Indochina, e se tornou o segundo maior império do mundo, depois do britânico. Os franceses falavam numa \"missão civilizadora\", mas o domínio se apoiava em trabalho forçado e em repressões violentas. Depois da Segunda Guerra, perdeu a Indochina na guerra de 1946 a 1954, e a independência da Argélia, em 1962, depois de uma guerra sangrenta, marcou seu fim.",
+    "es": "El imperio colonial que Francia construyó a partir de 1830, con la conquista de Argelia, después de perder casi todas sus colonias anteriores. Creció sobre todo a finales del siglo XIX, con la ocupación de buena parte de África Occidental y Central, Madagascar e Indochina, y llegó a ser el segundo mayor imperio del mundo, después del británico. Los franceses hablaban de una \"misión civilizadora\", pero su dominio se apoyaba en el trabajo forzado y en una represión violenta. Después de la Segunda Guerra Mundial perdió Indochina en la guerra de 1946 a 1954, y la independencia de Argelia, en 1962, tras una guerra sangrienta, marcó su fin."
   },
   "map": {
     "parts": [

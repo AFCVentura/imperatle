@@ -3,7 +3,8 @@
   "slug": "byzantine-empire",
   "name": {
     "en": "Byzantine Empire",
-    "pt": "Império Bizantino"
+    "pt": "Império Bizantino",
+    "es": "Imperio bizantino"
   },
   "peak": {
     "year": 565,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts in 395, when the empire was split into two halves and this one got its own emperor; many sources prefer 330, when its capital was inaugurated. It ends in 1453, with the fall of the capital.",
-    "pt": "Começa em 395, quando o império foi dividido em duas metades e esta passou a ter imperador próprio; muitas fontes preferem 330, ano da inauguração da capital. Termina em 1453, com a queda da capital."
+    "pt": "Começa em 395, quando o império foi dividido em duas metades e esta passou a ter imperador próprio; muitas fontes preferem 330, ano da inauguração da capital. Termina em 1453, com a queda da capital.",
+    "es": "Comienza en 395, cuando el imperio se dividió en dos mitades y esta pasó a tener emperador propio; muchas fuentes prefieren el 330, año de la inauguración de la capital. Termina en 1453, con la caída de la capital."
   },
   "area": {
     "km2": 2647330,
@@ -36,49 +38,60 @@
   ],
   "capital": {
     "en": "Constantinople",
-    "pt": "Constantinopla"
+    "pt": "Constantinopla",
+    "es": "Constantinopla"
   },
   "language": {
     "en": "Greek (Latin in law and administration until the 7th century)",
-    "pt": "Grego (latim nas leis e na administração até o século VII)"
+    "pt": "Grego (latim nas leis e na administração até o século VII)",
+    "es": "Griego (latín en las leyes y la administración hasta el siglo VII)"
   },
   "religion": {
     "en": "Christianity",
-    "pt": "Cristianismo"
+    "pt": "Cristianismo",
+    "es": "Cristianismo"
   },
   "religionNotes": {
     "en": "The emperor played a central role in church affairs, and disputes over the nature of Christ divided the eastern provinces. After the schism of 1054, its church became known as the Orthodox Church.",
-    "pt": "O imperador tinha papel central nas questões da Igreja, e disputas sobre a natureza de Cristo dividiam as províncias do Oriente. Depois do cisma de 1054, sua Igreja passou a ser conhecida como Ortodoxa."
+    "pt": "O imperador tinha papel central nas questões da Igreja, e disputas sobre a natureza de Cristo dividiam as províncias do Oriente. Depois do cisma de 1054, sua Igreja passou a ser conhecida como Ortodoxa.",
+    "es": "El emperador tenía un papel central en los asuntos de la Iglesia, y las disputas sobre la naturaleza de Cristo dividían las provincias de Oriente. Tras el cisma de 1054, su Iglesia pasó a conocerse como ortodoxa."
   },
   "curiosities": [
     {
       "en": "A devastating plague of the 6th century is named after one of its emperors.",
       "pt": "Uma praga devastadora do século VI leva o nome de um de seus imperadores.",
+      "es": "Una devastadora peste del siglo VI lleva el nombre de uno de sus emperadores.",
       "details": {
         "en": "The Plague of Justinian reached Egypt in 541 and Constantinople in 542, where, according to the historian Procopius, it killed thousands of people a day. It was caused by the same bacterium as the Black Death, Yersinia pestis, and came back in waves for two centuries. The emperor himself caught it but survived.",
-        "pt": "A Peste de Justiniano chegou ao Egito em 541 e a Constantinopla em 542, onde, segundo o historiador Procópio, matava milhares de pessoas por dia. Era causada pela mesma bactéria da Peste Negra, a Yersinia pestis, e voltou em ondas por dois séculos. O próprio imperador pegou a doença, mas sobreviveu."
+        "pt": "A Peste de Justiniano chegou ao Egito em 541 e a Constantinopla em 542, onde, segundo o historiador Procópio, matava milhares de pessoas por dia. Era causada pela mesma bactéria da Peste Negra, a Yersinia pestis, e voltou em ondas por dois séculos. O próprio imperador pegou a doença, mas sobreviveu.",
+        "es": "La plaga de Justiniano llegó a Egipto en 541 y a Constantinopla en 542, donde, según el historiador Procopio, mataba a miles de personas al día. La causaba la misma bacteria que la peste negra, Yersinia pestis, y volvió en oleadas durante dos siglos. El propio emperador contrajo la enfermedad, pero sobrevivió."
       }
     },
     {
       "en": "It fell when its capital was taken by a 21-year-old sultan who used giant cannons against the walls.",
       "pt": "Caiu quando sua capital foi tomada por um sultão de 21 anos, que usou canhões gigantes contra as muralhas.",
+      "es": "Cayó cuando su capital fue tomada por un sultán de 21 años que usó cañones gigantes contra las murallas.",
       "details": {
         "en": "The Ottoman sultan Mehmed II was 21 when he besieged Constantinople in 1453. He used huge cannons, one of them cast by a Hungarian founder named Orban, to batter the Theodosian Walls, which had held for almost a thousand years. The city fell on 29 May, and the last emperor, Constantine XI, died fighting.",
-        "pt": "O sultão otomano Mehmed II tinha 21 anos quando cercou Constantinopla, em 1453. Usou canhões enormes, um deles fundido por um húngaro chamado Orbán, para bater nas Muralhas de Teodósio, que resistiam havia quase mil anos. A cidade caiu em 29 de maio, e o último imperador, Constantino XI, morreu lutando."
+        "pt": "O sultão otomano Mehmed II tinha 21 anos quando cercou Constantinopla, em 1453. Usou canhões enormes, um deles fundido por um húngaro chamado Orbán, para bater nas Muralhas de Teodósio, que resistiam havia quase mil anos. A cidade caiu em 29 de maio, e o último imperador, Constantino XI, morreu lutando.",
+        "es": "El sultán otomano Mehmed II tenía 21 años cuando sitió Constantinopla en 1453. Usó cañones enormes, uno de ellos fundido por un húngaro llamado Orbán, para batir las murallas de Teodosio, que resistían desde hacía casi mil años. La ciudad cayó el 29 de mayo, y el último emperador, Constantino XI, murió luchando."
       }
     },
     {
       "en": "Its people called themselves Romans; the name it is known by today was coined by historians centuries later.",
       "pt": "Seus habitantes se chamavam de romanos; o nome pelo qual o império é conhecido hoje foi criado por historiadores séculos depois.",
+      "es": "Sus habitantes se llamaban a sí mismos romanos; el nombre con el que hoy se conoce al imperio lo crearon historiadores siglos después.",
       "details": {
         "en": "Its people called themselves \"Romaioi\", Romans, and to them the state was simply the Roman Empire. The word \"Byzantine\", from Byzantium, the old Greek name of the city, was popularised by the German historian Hieronymus Wolf in 1557, more than a hundred years after the empire fell.",
-        "pt": "Seus habitantes se chamavam de \"romaioi\", romanos, e para eles o Estado era simplesmente o Império Romano. O termo \"bizantino\", de Bizâncio, o antigo nome grego da cidade, foi popularizado pelo historiador alemão Hieronymus Wolf em 1557, mais de cem anos depois da queda do império."
+        "pt": "Seus habitantes se chamavam de \"romaioi\", romanos, e para eles o Estado era simplesmente o Império Romano. O termo \"bizantino\", de Bizâncio, o antigo nome grego da cidade, foi popularizado pelo historiador alemão Hieronymus Wolf em 1557, mais de cem anos depois da queda do império.",
+        "es": "Sus habitantes se llamaban a sí mismos \"romaioi\", romanos, y para ellos el Estado era simplemente el Imperio romano. El término \"bizantino\", de Bizancio, el antiguo nombre griego de la ciudad, lo popularizó el historiador alemán Hieronymus Wolf en 1557, más de cien años después de la caída del imperio."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Byzantine_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Império_Bizantino"
+    "pt": "https://pt.wikipedia.org/wiki/Império_Bizantino",
+    "es": "https://es.wikipedia.org/wiki/Imperio_bizantino"
   },
   "aliases": [
     "Byzantium",
@@ -92,11 +105,13 @@
     "Turkey",
     "Turquia",
     "Eastern Roman Empire",
-    "Império Romano Oriental"
+    "Império Romano Oriental",
+    "Imperio romano de Oriente"
   ],
   "summary": {
     "en": "The eastern half of the Roman Empire, which lived on for almost a thousand years after the fall of the West, with Constantinople as its capital. It spoke Greek, was Orthodox Christian and kept Roman law and administration. It peaked under Justinian, in the 6th century, when it took back Italy, North Africa and southern Spain. It later lost lands to the Arabs, Slavs, Bulgarians and Turks, and was sacked by the crusaders in 1204. It ended in 1453, when the Ottomans took Constantinople.",
-    "pt": "Metade oriental do Império Romano, que continuou existindo por quase mil anos depois da queda do Ocidente, com capital em Constantinopla. Falava grego, era cristã ortodoxa e manteve o direito e a administração romanos. Teve o auge com Justiniano, no século VI, quando retomou a Itália, o norte da África e o sul da Espanha. Depois perdeu terras para árabes, eslavos, búlgaros e turcos, e foi saqueada pelos cruzados em 1204. Acabou em 1453, quando os otomanos tomaram Constantinopla."
+    "pt": "Metade oriental do Império Romano, que continuou existindo por quase mil anos depois da queda do Ocidente, com capital em Constantinopla. Falava grego, era cristã ortodoxa e manteve o direito e a administração romanos. Teve o auge com Justiniano, no século VI, quando retomou a Itália, o norte da África e o sul da Espanha. Depois perdeu terras para árabes, eslavos, búlgaros e turcos, e foi saqueada pelos cruzados em 1204. Acabou em 1453, quando os otomanos tomaram Constantinopla.",
+    "es": "La mitad oriental del Imperio romano, que siguió existiendo casi mil años después de la caída de Occidente, con capital en Constantinopla. Hablaba griego, era cristiana ortodoxa y conservó el derecho y la administración romanos. Alcanzó su apogeo con Justiniano, en el siglo VI, cuando recuperó Italia, el norte de África y el sur de Hispania. Después perdió tierras ante árabes, eslavos, búlgaros y turcos, y fue saqueada por los cruzados en 1204. Terminó en 1453, cuando los otomanos tomaron Constantinopla."
   },
   "map": {
     "parts": [

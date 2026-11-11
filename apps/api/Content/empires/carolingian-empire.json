@@ -3,7 +3,8 @@
   "slug": "carolingian-empire",
   "name": {
     "en": "Carolingian Empire",
-    "pt": "Império Carolíngio"
+    "pt": "Império Carolíngio",
+    "es": "Imperio carolingio"
   },
   "peak": {
     "year": 814,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts in 800, when the king was crowned emperor by the pope in Rome, and ends in 888, with the death of the last ruler to bring all the parts together, after which the territory split for good into separate kingdoms. The peak shown is 814, the year the first emperor died. The map leaves out Rome and the pope's lands, which were under imperial protection but ruled by the pope himself, as well as the Duchy of Benevento and the Slavic peoples to the east, who paid tribute but kept their own rulers.",
-    "pt": "Começa em 800, quando o rei foi coroado imperador pelo papa em Roma, e termina em 888, com a morte do último governante a reunir todas as partes, depois da qual o território se dividiu de vez em reinos separados. O auge escolhido é 814, ano da morte do primeiro imperador. O mapa não inclui Roma e as terras do papa, que ficavam sob proteção imperial mas eram governadas pelo próprio papa, nem o ducado de Benevento e os povos eslavos a leste, que pagavam tributo mas mantinham governantes próprios."
+    "pt": "Começa em 800, quando o rei foi coroado imperador pelo papa em Roma, e termina em 888, com a morte do último governante a reunir todas as partes, depois da qual o território se dividiu de vez em reinos separados. O auge escolhido é 814, ano da morte do primeiro imperador. O mapa não inclui Roma e as terras do papa, que ficavam sob proteção imperial mas eram governadas pelo próprio papa, nem o ducado de Benevento e os povos eslavos a leste, que pagavam tributo mas mantinham governantes próprios.",
+    "es": "Comienza en 800, cuando el rey fue coronado emperador por el papa en Roma, y termina en 888, con la muerte del último gobernante que reunió todas las partes, tras la cual el territorio se dividió definitivamente en reinos separados. El apogeo elegido es 814, año de la muerte del primer emperador. El mapa no incluye Roma ni las tierras del papa, que estaban bajo protección imperial pero las gobernaba el propio papa, ni el ducado de Benevento y los pueblos eslavos del este, que pagaban tributo pero conservaban sus propios gobernantes."
   },
   "area": {
     "km2": 1300000,
@@ -34,49 +36,60 @@
   ],
   "capital": {
     "en": "Aachen",
-    "pt": "Aachen"
+    "pt": "Aachen",
+    "es": "Aquisgrán"
   },
   "language": {
     "en": "Latin (and Germanic and Romance dialects spoken by the people)",
-    "pt": "Latim (e dialetos germânicos e românicos falados pelo povo)"
+    "pt": "Latim (e dialetos germânicos e românicos falados pelo povo)",
+    "es": "Latín (y dialectos germánicos y romances hablados por el pueblo)"
   },
   "religion": {
     "en": "Catholicism",
-    "pt": "Catolicismo"
+    "pt": "Catolicismo",
+    "es": "Catolicismo"
   },
   "religionNotes": {
     "en": "The emperor ruled in alliance with the pope and saw it as his mission to protect and spread the faith. In the conquest of Saxony, baptism was imposed by force, and one law even set the death penalty for those who refused it. Monasteries were centres of teaching, book copying and land administration.",
-    "pt": "O imperador governava em aliança com o papa e via como sua missão proteger e espalhar a fé. Na conquista da Saxônia, o batismo foi imposto à força, e uma lei chegou a prever pena de morte para quem recusasse. Os mosteiros eram centros de ensino, de cópia de livros e de administração das terras."
+    "pt": "O imperador governava em aliança com o papa e via como sua missão proteger e espalhar a fé. Na conquista da Saxônia, o batismo foi imposto à força, e uma lei chegou a prever pena de morte para quem recusasse. Os mosteiros eram centros de ensino, de cópia de livros e de administração das terras.",
+    "es": "El emperador gobernaba en alianza con el papa y veía como su misión proteger y difundir la fe. En la conquista de Sajonia, el bautismo se impuso por la fuerza, y una ley llegó a prever la pena de muerte para quien lo rechazara. Los monasterios eran centros de enseñanza, de copia de libros y de administración de las tierras."
   },
   "curiosities": [
     {
       "en": "Its first emperor probably never learned to write, although he tried in his old age.",
       "pt": "Seu primeiro imperador provavelmente nunca aprendeu a escrever, embora tenha tentado na velhice.",
+      "es": "Su primer emperador probablemente nunca aprendió a escribir, aunque lo intentó en su vejez.",
       "details": {
         "en": "His biographer, Einhard, says he kept tablets and sheets under his pillow to practise his letters in his spare time, but that he started too late. Even so, he spoke Latin, understood Greek and gathered at court the greatest scholars of the time, such as the English monk Alcuin of York.",
-        "pt": "Seu biógrafo, Eginhardo, conta que ele guardava tábuas e folhas debaixo do travesseiro para treinar as letras nas horas vagas, mas que começou tarde demais. Mesmo assim, ele falava latim, entendia grego e reuniu na corte os maiores sábios da época, como o monge inglês Alcuíno de York."
+        "pt": "Seu biógrafo, Eginhardo, conta que ele guardava tábuas e folhas debaixo do travesseiro para treinar as letras nas horas vagas, mas que começou tarde demais. Mesmo assim, ele falava latim, entendia grego e reuniu na corte os maiores sábios da época, como o monge inglês Alcuíno de York.",
+        "es": "Su biógrafo, Eginardo, cuenta que guardaba tablillas y hojas bajo la almohada para practicar las letras en sus ratos libres, pero que empezó demasiado tarde. Aun así, hablaba latín, entendía el griego y reunió en su corte a los mayores sabios de la época, como el monje inglés Alcuino de York."
       }
     },
     {
       "en": "The division of the territory between three grandsons of the founder gave rise, in the long run, to France and Germany.",
       "pt": "A divisão do território entre três netos do fundador deu origem, a longo prazo, à França e à Alemanha.",
+      "es": "La división del territorio entre tres nietos del fundador dio origen, a largo plazo, a Francia y Alemania.",
       "details": {
         "en": "Under the Treaty of Verdun, in 843, the western part went to Charles the Bald and became the basis of France. The eastern part went to Louis the German and gave rise to Germany. The middle strip, with Italy and the lands between the other two, went to Lothair and ended up disputed by its neighbours for centuries, like the region of Alsace and Lorraine.",
-        "pt": "Pelo Tratado de Verdun, de 843, a parte oeste ficou com Carlos, o Calvo, e virou a base da França. A parte leste ficou com Luís, o Germânico, e deu origem à Alemanha. A faixa do meio, com a Itália e as terras entre os dois, ficou com Lotário e acabou disputada pelos vizinhos durante séculos, como a região da Alsácia e da Lorena."
+        "pt": "Pelo Tratado de Verdun, de 843, a parte oeste ficou com Carlos, o Calvo, e virou a base da França. A parte leste ficou com Luís, o Germânico, e deu origem à Alemanha. A faixa do meio, com a Itália e as terras entre os dois, ficou com Lotário e acabou disputada pelos vizinhos durante séculos, como a região da Alsácia e da Lorena.",
+        "es": "Por el Tratado de Verdún, de 843, la parte occidental quedó para Carlos el Calvo y se convirtió en la base de Francia. La parte oriental fue para Luis el Germánico y dio origen a Alemania. La franja central, con Italia y las tierras situadas entre las otras dos, quedó para Lotario y acabó disputada por sus vecinos durante siglos, como la región de Alsacia y Lorena."
       }
     },
     {
       "en": "Its founder is called the \"father of Europe\".",
       "pt": "Seu fundador é chamado de \"pai da Europa\".",
+      "es": "A su fundador se le llama el \"padre de Europa\".",
       "details": {
         "en": "A poem of the time already called Charlemagne the \"father of Europe\", for having brought under one government much of the lands that today make up France, Germany, Italy, Belgium, the Netherlands, Switzerland and Austria. Today, one of the most important prizes of the European Union, awarded in Aachen, bears his name.",
-        "pt": "Um poema da época já chamava Carlos Magno de \"pai da Europa\", por ter reunido sob um só governo boa parte das terras que hoje formam a França, a Alemanha, a Itália, a Bélgica, a Holanda, a Suíça e a Áustria. Hoje, um dos prêmios mais importantes da União Europeia, entregue em Aachen, leva o nome dele."
+        "pt": "Um poema da época já chamava Carlos Magno de \"pai da Europa\", por ter reunido sob um só governo boa parte das terras que hoje formam a França, a Alemanha, a Itália, a Bélgica, a Holanda, a Suíça e a Áustria. Hoje, um dos prêmios mais importantes da União Europeia, entregue em Aachen, leva o nome dele.",
+        "es": "Un poema de la época ya llamaba a Carlomagno \"padre de Europa\" por haber reunido bajo un solo gobierno buena parte de las tierras que hoy forman Francia, Alemania, Italia, Bélgica, los Países Bajos, Suiza y Austria. Hoy, uno de los premios más importantes de la Unión Europea, que se entrega en Aquisgrán, lleva su nombre."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Carolingian_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Império_Carolíngio"
+    "pt": "https://pt.wikipedia.org/wiki/Império_Carolíngio",
+    "es": "https://es.wikipedia.org/wiki/Imperio_carolingio"
   },
   "aliases": [
     "Francia",
@@ -88,11 +101,14 @@
     "Franks",
     "Francos",
     "Empire of Charlemagne",
-    "Império de Carlos Magno"
+    "Império de Carlos Magno",
+    "Reino de los francos",
+    "Imperio de Carlomagno"
   ],
   "summary": {
     "en": "An empire formed when Charlemagne, king of the Franks, was crowned emperor by Pope Leo III in Rome, on Christmas Day in the year 800. Heir to a kingdom that already ruled much of today's France, he conquered the Lombard kingdom in Italy, Saxony, Bavaria and the lands of the Avars, bringing most of Western and Central Europe under one government for the first time since the Roman Empire. His court at Aachen promoted a revival of learning and of the copying of ancient books, known as the Carolingian Renaissance. After the death of his son Louis the Pious, in 840, his grandsons fought over the inheritance, and the Treaty of Verdun, in 843, divided the empire into three parts, which in the long run gave rise to France and Germany. Unity was briefly restored by Charles the Fat, but disappeared for good in 888.",
-    "pt": "Império formado quando Carlos Magno, rei dos francos, foi coroado imperador pelo papa Leão III em Roma, no Natal do ano 800. Herdeiro de um reino que já dominava boa parte da atual França, ele conquistou o reino lombardo, na Itália, a Saxônia, a Baviera e as terras dos ávaros, reunindo a maior parte da Europa Ocidental e Central sob um só governo pela primeira vez desde o Império Romano. Sua corte em Aachen promoveu um renascimento do ensino e da cópia de livros antigos, conhecido como Renascimento Carolíngio. Depois da morte de seu filho Luís, o Piedoso, em 840, os netos disputaram a herança, e o Tratado de Verdun, de 843, dividiu o império em três partes, que a longo prazo deram origem à França e à Alemanha. A unidade foi restaurada brevemente por Carlos, o Gordo, mas desapareceu de vez em 888."
+    "pt": "Império formado quando Carlos Magno, rei dos francos, foi coroado imperador pelo papa Leão III em Roma, no Natal do ano 800. Herdeiro de um reino que já dominava boa parte da atual França, ele conquistou o reino lombardo, na Itália, a Saxônia, a Baviera e as terras dos ávaros, reunindo a maior parte da Europa Ocidental e Central sob um só governo pela primeira vez desde o Império Romano. Sua corte em Aachen promoveu um renascimento do ensino e da cópia de livros antigos, conhecido como Renascimento Carolíngio. Depois da morte de seu filho Luís, o Piedoso, em 840, os netos disputaram a herança, e o Tratado de Verdun, de 843, dividiu o império em três partes, que a longo prazo deram origem à França e à Alemanha. A unidade foi restaurada brevemente por Carlos, o Gordo, mas desapareceu de vez em 888.",
+    "es": "Imperio formado cuando Carlomagno, rey de los francos, fue coronado emperador por el papa León III en Roma, el día de Navidad del año 800. Heredero de un reino que ya dominaba buena parte de la actual Francia, conquistó el reino lombardo en Italia, Sajonia, Baviera y las tierras de los ávaros, y reunió la mayor parte de Europa occidental y central bajo un solo gobierno por primera vez desde el Imperio romano. Su corte en Aquisgrán impulsó un renacimiento de la enseñanza y de la copia de libros antiguos, conocido como Renacimiento carolingio. Tras la muerte de su hijo Ludovico Pío, en 840, sus nietos se disputaron la herencia, y el Tratado de Verdún, de 843, dividió el imperio en tres partes, que a largo plazo dieron origen a Francia y Alemania. Carlos el Gordo restableció brevemente la unidad, pero esta desapareció definitivamente en 888."
   },
   "map": {
     "parts": [

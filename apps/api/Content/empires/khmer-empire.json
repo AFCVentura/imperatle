@@ -3,7 +3,8 @@
   "slug": "khmer-empire",
   "name": {
     "en": "Khmer Empire",
-    "pt": "Império Khmer"
+    "pt": "Império Khmer",
+    "es": "Imperio jemer"
   },
   "peak": {
     "year": 1206,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It begins in 802, when a king proclaimed himself universal ruler and declared independence from Java. The end used here is 1431, when a neighbouring kingdom sacked the capital and it was abandoned; a smaller kingdom carried on for centuries.",
-    "pt": "Começa em 802, quando um rei se proclamou soberano universal e declarou independência de Java. O fim usado aqui é 1431, quando um reino vizinho saqueou a capital e ela foi abandonada; um reino menor continuou por séculos."
+    "pt": "Começa em 802, quando um rei se proclamou soberano universal e declarou independência de Java. O fim usado aqui é 1431, quando um reino vizinho saqueou a capital e ela foi abandonada; um reino menor continuou por séculos.",
+    "es": "Comienza en 802, cuando un rey se proclamó soberano universal y declaró la independencia respecto de Java. El final usado aquí es 1431, cuando un reino vecino saqueó la capital y esta fue abandonada; un reino más pequeño continuó durante siglos."
   },
   "area": {
     "km2": 939380,
@@ -34,45 +36,55 @@
   ],
   "capital": {
     "en": "Yasodharapura (Angkor)",
-    "pt": "Yasodharapura (Angkor)"
+    "pt": "Yasodharapura (Angkor)",
+    "es": "Yasodharapura (Angkor)"
   },
   "language": {
     "en": "Old Khmer (Sanskrit at court and in inscriptions)",
-    "pt": "Khmer antigo (sânscrito na corte e nas inscrições)"
+    "pt": "Khmer antigo (sânscrito na corte e nas inscrições)",
+    "es": "Jemer antiguo (sánscrito en la corte y en las inscripciones)"
   },
   "religion": {
     "en": "Hinduism (worship of Shiva and Vishnu), later Buddhism",
-    "pt": "Hinduísmo (culto a Shiva e Vishnu), depois budismo"
+    "pt": "Hinduísmo (culto a Shiva e Vishnu), depois budismo",
+    "es": "Hinduismo (culto a Shiva y Vishnu), después budismo"
   },
   "curiosities": [
     {
       "en": "It built artificial reservoirs several kilometres long.",
       "pt": "Construiu reservatórios artificiais com vários quilômetros de extensão.",
+      "es": "Construyó embalses artificiales de varios kilómetros de largo.",
       "details": {
         "en": "The largest, the West Baray, dug in the 11th century, is about 8 km long and 2 km wide and still holds water today. A network of canals, dykes and reservoirs stored water from the monsoon, and historians still debate how much of it served the rice fields and how much was religious symbolism.",
-        "pt": "O maior, o Baray Ocidental, escavado no século XI, tem cerca de 8 km de comprimento e 2 km de largura e ainda guarda água hoje. Uma rede de canais, diques e reservatórios armazenava a água das monções, e os historiadores ainda debatem quanto disso servia aos arrozais e quanto era simbolismo religioso."
+        "pt": "O maior, o Baray Ocidental, escavado no século XI, tem cerca de 8 km de comprimento e 2 km de largura e ainda guarda água hoje. Uma rede de canais, diques e reservatórios armazenava a água das monções, e os historiadores ainda debatem quanto disso servia aos arrozais e quanto era simbolismo religioso.",
+        "es": "El mayor, el Baray Occidental, excavado en el siglo XI, mide unos 8 km de largo y 2 km de ancho y todavía hoy guarda agua. Una red de canales, diques y embalses almacenaba el agua de los monzones, y los historiadores aún debaten cuánto de ello servía a los arrozales y cuánto era simbolismo religioso."
       }
     },
     {
       "en": "Its capital may have been the largest pre-industrial city in the world in area.",
       "pt": "Sua capital pode ter sido a maior cidade pré-industrial do mundo em área.",
+      "es": "Su capital pudo haber sido la mayor ciudad preindustrial del mundo en superficie.",
       "details": {
         "en": "Laser surveys from aircraft (lidar), carried out from 2007 on, revealed beneath the forest a grid of streets, canals and houses spread over about 1,000 km². Estimates of its population vary widely, but many put it in the hundreds of thousands at its height.",
-        "pt": "Levantamentos a laser feitos de avião (lidar), a partir de 2007, revelaram sob a floresta uma malha de ruas, canais e casas espalhada por cerca de 1.000 km². As estimativas da população variam muito, mas muitas falam em centenas de milhares de pessoas no auge."
+        "pt": "Levantamentos a laser feitos de avião (lidar), a partir de 2007, revelaram sob a floresta uma malha de ruas, canais e casas espalhada por cerca de 1.000 km². As estimativas da população variam muito, mas muitas falam em centenas de milhares de pessoas no auge.",
+        "es": "Los levantamientos con láser desde avión (lidar), realizados a partir de 2007, revelaron bajo la selva una trama de calles, canales y casas repartida por unos 1000 km². Las estimaciones de su población varían mucho, pero muchas hablan de cientos de miles de personas en su apogeo."
       }
     },
     {
       "en": "Its most famous temple is the largest religious monument in the world and appears on a country's flag today.",
       "pt": "Seu templo mais famoso é o maior monumento religioso do mundo e aparece hoje na bandeira de um país.",
+      "es": "Su templo más famoso es el mayor monumento religioso del mundo y aparece hoy en la bandera de un país.",
       "details": {
         "en": "Angkor Wat was built in the first half of the 12th century by Suryavarman II, dedicated to Vishnu, and later became Buddhist. Its moat-ringed grounds cover about 160 hectares, and its silhouette with three towers is at the centre of the flag of Cambodia.",
-        "pt": "Angkor Wat foi construído na primeira metade do século XII por Suryavarman II, dedicado a Vishnu, e depois se tornou budista. Seu terreno cercado por um fosso ocupa cerca de 160 hectares, e sua silhueta com três torres está no centro da bandeira do Camboja."
+        "pt": "Angkor Wat foi construído na primeira metade do século XII por Suryavarman II, dedicado a Vishnu, e depois se tornou budista. Seu terreno cercado por um fosso ocupa cerca de 160 hectares, e sua silhueta com três torres está no centro da bandeira do Camboja.",
+        "es": "Angkor Wat fue construido en la primera mitad del siglo XII por Suryavarman II, dedicado a Vishnu, y más tarde pasó a ser budista. Su recinto, rodeado por un foso, ocupa unas 160 hectáreas, y su silueta con tres torres está en el centro de la bandera de Camboya."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Khmer_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Império_Quemer"
+    "pt": "https://pt.wikipedia.org/wiki/Império_Quemer",
+    "es": "https://es.wikipedia.org/wiki/Imperio_jemer"
   },
   "aliases": [
     "Khmers",
@@ -81,11 +93,15 @@
     "Império Quemer",
     "Kambuja",
     "Cambodia",
-    "Camboja"
+    "Camboja",
+    "Jemeres",
+    "Reino jemer",
+    "Camboya"
   ],
   "summary": {
     "en": "A Hindu and later Buddhist kingdom of mainland Southeast Asia, founded in 802 by Jayavarman II, with its heartland in today's Cambodia. From Angkor it came to rule much of today's Thailand, Laos and southern Vietnam, sustained by rice farming and a vast network of reservoirs and canals. Its kings built hundreds of temples, among them Angkor Wat in the 12th century and the Bayon under Jayavarman VII, who also conquered the neighbouring kingdom of Champa. From the 13th century it lost ground to the Thai kingdoms, and in 1431 Ayutthaya sacked Angkor, which was abandoned as the centre of power moved south.",
-    "pt": "Reino hindu e depois budista do Sudeste Asiático continental, fundado em 802 por Jayavarman II, com o centro no atual Camboja. A partir de Angkor chegou a dominar boa parte das atuais Tailândia, Laos e sul do Vietnã, sustentado pelo cultivo de arroz e por uma vasta rede de reservatórios e canais. Seus reis ergueram centenas de templos, entre eles Angkor Wat, no século XII, e o Bayon, sob Jayavarman VII, que também conquistou o reino vizinho de Champa. A partir do século XIII perdeu terreno para os reinos tailandeses, e em 1431 Ayutthaya saqueou Angkor, abandonada enquanto o centro do poder se mudava para o sul."
+    "pt": "Reino hindu e depois budista do Sudeste Asiático continental, fundado em 802 por Jayavarman II, com o centro no atual Camboja. A partir de Angkor chegou a dominar boa parte das atuais Tailândia, Laos e sul do Vietnã, sustentado pelo cultivo de arroz e por uma vasta rede de reservatórios e canais. Seus reis ergueram centenas de templos, entre eles Angkor Wat, no século XII, e o Bayon, sob Jayavarman VII, que também conquistou o reino vizinho de Champa. A partir do século XIII perdeu terreno para os reinos tailandeses, e em 1431 Ayutthaya saqueou Angkor, abandonada enquanto o centro do poder se mudava para o sul.",
+    "es": "Reino hindú y después budista del Sudeste Asiático continental, fundado en 802 por Jayavarman II, con su centro en la actual Camboya. Desde Angkor llegó a dominar buena parte de las actuales Tailandia y Laos y del sur de Vietnam, sostenido por el cultivo de arroz y por una vasta red de embalses y canales. Sus reyes levantaron cientos de templos, entre ellos Angkor Wat, en el siglo XII, y el Bayón, bajo Jayavarman VII, que también conquistó el reino vecino de Champa. A partir del siglo XIII perdió terreno frente a los reinos tailandeses, y en 1431 Ayutthaya saqueó Angkor, que fue abandonada mientras el centro del poder se trasladaba al sur."
   },
   "map": {
     "parts": [

@@ -3,7 +3,8 @@
   "slug": "qing-dynasty",
   "name": {
     "en": "Qing Dynasty",
-    "pt": "Dinastia Qing"
+    "pt": "Dinastia Qing",
+    "es": "Dinastía Qing"
   },
   "peak": {
     "year": 1794,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts in 1636, when the dynasty adopted its name while still ruling only lands north of the Great Wall. Many sources start it in 1644 instead, when it took the country's capital and began ruling the rest of the country. It ends in 1912, with the abdication of the last emperor.",
-    "pt": "Começa em 1636, quando a dinastia adotou o nome, ainda governando só terras ao norte da Grande Muralha. Muitas fontes preferem começar em 1644, quando ela tomou a capital do país e passou a governar o resto do território. Termina em 1912, com a abdicação do último imperador."
+    "pt": "Começa em 1636, quando a dinastia adotou o nome, ainda governando só terras ao norte da Grande Muralha. Muitas fontes preferem começar em 1644, quando ela tomou a capital do país e passou a governar o resto do território. Termina em 1912, com a abdicação do último imperador.",
+    "es": "Comienza en 1636, año en que la dinastía adoptó su nombre, cuando todavía gobernaba solo tierras al norte de la Gran Muralla. Muchas fuentes prefieren situar el comienzo en 1644, cuando tomó la capital del país y pasó a gobernar el resto del territorio. Termina en 1912, con la abdicación del último emperador."
   },
   "area": {
     "km2": 12456420,
@@ -34,49 +36,60 @@
   ],
   "capital": {
     "en": "Beijing",
-    "pt": "Pequim"
+    "pt": "Pequim",
+    "es": "Pekín"
   },
   "language": {
     "en": "Classical Chinese, Manchu and Mongolian",
-    "pt": "Chinês clássico, manchu e mongol"
+    "pt": "Chinês clássico, manchu e mongol",
+    "es": "Chino clásico, manchú y mongol"
   },
   "religion": {
     "en": "Confucianism, Buddhism and Chinese folk religion",
-    "pt": "Confucionismo, budismo e religião tradicional chinesa"
+    "pt": "Confucionismo, budismo e religião tradicional chinesa",
+    "es": "Confucianismo, budismo y religión tradicional china"
   },
   "religionNotes": {
     "en": "The court followed Confucian state rites, sponsored Tibetan Buddhism and kept its own shamanic ceremonies from the ruling people's homeland.",
-    "pt": "A corte seguia os ritos confucionistas de Estado, patrocinava o budismo tibetano e mantinha cerimônias xamânicas da terra natal do povo governante."
+    "pt": "A corte seguia os ritos confucionistas de Estado, patrocinava o budismo tibetano e mantinha cerimônias xamânicas da terra natal do povo governante.",
+    "es": "La corte seguía los ritos confucianos del Estado, patrocinaba el budismo tibetano y mantenía ceremonias chamánicas propias de la tierra natal del pueblo gobernante."
   },
   "curiosities": [
     {
       "en": "In the early 19th century, it ruled about a third of the world's population.",
       "pt": "No início do século XIX, governava cerca de um terço da população mundial.",
+      "es": "A comienzos del siglo XIX gobernaba a cerca de un tercio de la población mundial.",
       "details": {
         "en": "Around 1800 China had 300 to 400 million people, in a world of about 1 billion. The growth came from a long period of peace and from new crops brought from the Americas, such as maize, sweet potatoes and peanuts, which could be grown on land that had been little used before.",
-        "pt": "Por volta de 1800, a China tinha entre 300 e 400 milhões de habitantes, num mundo de cerca de 1 bilhão de pessoas. O crescimento veio de um longo período de paz e de novos cultivos vindos da América, como o milho, a batata-doce e o amendoim, que podiam ser plantados em terras antes pouco usadas."
+        "pt": "Por volta de 1800, a China tinha entre 300 e 400 milhões de habitantes, num mundo de cerca de 1 bilhão de pessoas. O crescimento veio de um longo período de paz e de novos cultivos vindos da América, como o milho, a batata-doce e o amendoim, que podiam ser plantados em terras antes pouco usadas.",
+        "es": "Hacia 1800, China tenía entre 300 y 400 millones de habitantes, en un mundo de unos 1000 millones de personas. El crecimiento se debió a un largo período de paz y a nuevos cultivos llegados de América, como el maíz, la batata y el maní, que podían plantarse en tierras antes poco aprovechadas."
       }
     },
     {
       "en": "It faced a rebellion led by a man who claimed to be the younger brother of Jesus, one of the deadliest wars in history.",
       "pt": "Enfrentou uma rebelião liderada por um homem que dizia ser irmão mais novo de Jesus, uma das guerras mais mortais da história.",
+      "es": "Se enfrentó a una rebelión encabezada por un hombre que decía ser el hermano menor de Jesús, una de las guerras más mortíferas de la historia.",
       "details": {
         "en": "Hong Xiuquan, who failed the imperial exams several times, began to claim, after having visions and reading Christian pamphlets, that he was the younger brother of Jesus. His Taiping Rebellion (1850 to 1864) set up a kingdom with its capital in Nanjing and left 20 to 30 million dead, one of the deadliest wars in history.",
-        "pt": "Hong Xiuquan, reprovado várias vezes nos exames imperiais, passou a dizer, depois de ter visões e ler folhetos cristãos, que era o irmão mais novo de Jesus. Sua Rebelião Taiping (1850 a 1864) criou um reino com capital em Nanquim e deixou entre 20 e 30 milhões de mortos, uma das guerras mais mortais da história."
+        "pt": "Hong Xiuquan, reprovado várias vezes nos exames imperiais, passou a dizer, depois de ter visões e ler folhetos cristãos, que era o irmão mais novo de Jesus. Sua Rebelião Taiping (1850 a 1864) criou um reino com capital em Nanquim e deixou entre 20 e 30 milhões de mortos, uma das guerras mais mortais da história.",
+        "es": "Hong Xiuquan, que suspendió varias veces los exámenes imperiales, empezó a afirmar, después de tener visiones y leer folletos cristianos, que era el hermano menor de Jesús. Su Rebelión Taiping (de 1850 a 1864) creó un reino con capital en Nankín y dejó entre 20 y 30 millones de muertos, una de las guerras más mortíferas de la historia."
       }
     },
     {
       "en": "It was its country's last imperial dynasty; its last emperor took the throne at the age of two.",
       "pt": "Foi a última dinastia imperial de seu país; o último imperador subiu ao trono aos 2 anos.",
+      "es": "Fue la última dinastía imperial de su país; su último emperador subió al trono a los 2 años.",
       "details": {
         "en": "Puyi came to the throne in 1908, aged 2, and abdicated in 1912, aged 6. He went on living in the Forbidden City until 1924. Later the Japanese made him the puppet ruler of Manchukuo, in Manchuria, and he ended his life as a gardener in Beijing, in Communist China. His story inspired the 1987 film \"The Last Emperor\".",
-        "pt": "Puyi subiu ao trono em 1908, com 2 anos, e abdicou em 1912, com 6. Continuou morando na Cidade Proibida até 1924. Mais tarde, os japoneses o puseram como governante de fachada de Manchukuo, na Manchúria, e ele terminou a vida como jardineiro em Pequim, na China comunista. Sua história inspirou o filme \"O Último Imperador\", de 1987."
+        "pt": "Puyi subiu ao trono em 1908, com 2 anos, e abdicou em 1912, com 6. Continuou morando na Cidade Proibida até 1924. Mais tarde, os japoneses o puseram como governante de fachada de Manchukuo, na Manchúria, e ele terminou a vida como jardineiro em Pequim, na China comunista. Sua história inspirou o filme \"O Último Imperador\", de 1987.",
+        "es": "Puyi subió al trono en 1908, con 2 años, y abdicó en 1912, con 6. Siguió viviendo en la Ciudad Prohibida hasta 1924. Más tarde, los japoneses lo pusieron como gobernante títere de Manchukuo, en Manchuria, y terminó su vida como jardinero en Pekín, en la China comunista. Su historia inspiró la película \"El último emperador\", de 1987."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Qing_dynasty",
-    "pt": "https://pt.wikipedia.org/wiki/Dinastia_Qing"
+    "pt": "https://pt.wikipedia.org/wiki/Dinastia_Qing",
+    "es": "https://es.wikipedia.org/wiki/Dinastía_Qing"
   },
   "aliases": [
     "China",
@@ -94,11 +107,15 @@
     "Chinese Empire",
     "Império Chinês",
     "Ching",
-    "Tsing"
+    "Tsing",
+    "Gran Qing",
+    "Manchúes",
+    "Imperio chino"
   ],
   "summary": {
     "en": "China's last imperial dynasty, founded by the Manchus, a people from the northeast, who took Beijing in 1644. Under the emperors Kangxi, Yongzheng and Qianlong, in the 18th century, it doubled China's territory, adding Taiwan, Mongolia, Tibet and Xinjiang, and ruled the largest population on Earth. In the 19th century it suffered defeats by foreign powers, as in the Opium Wars, and devastating internal revolts. It was overthrown by the Revolution of 1911, and the last emperor, Puyi, abdicated in 1912, giving way to the Republic of China.",
-    "pt": "Última dinastia imperial da China, fundada pelos manchus, um povo do nordeste, que tomaram Pequim em 1644. Com os imperadores Kangxi, Yongzheng e Qianlong, no século XVIII, dobrou o território chinês, incorporando Taiwan, a Mongólia, o Tibete e Xinjiang, e governava a maior população do planeta. No século XIX, sofreu derrotas para potências estrangeiras, como nas Guerras do Ópio, e revoltas internas devastadoras. Foi derrubada pela Revolução de 1911, e o último imperador, Puyi, abdicou em 1912, dando lugar à República da China."
+    "pt": "Última dinastia imperial da China, fundada pelos manchus, um povo do nordeste, que tomaram Pequim em 1644. Com os imperadores Kangxi, Yongzheng e Qianlong, no século XVIII, dobrou o território chinês, incorporando Taiwan, a Mongólia, o Tibete e Xinjiang, e governava a maior população do planeta. No século XIX, sofreu derrotas para potências estrangeiras, como nas Guerras do Ópio, e revoltas internas devastadoras. Foi derrubada pela Revolução de 1911, e o último imperador, Puyi, abdicou em 1912, dando lugar à República da China.",
+    "es": "La última dinastía imperial de China, fundada por los manchúes, un pueblo del noreste, que tomaron Pekín en 1644. Con los emperadores Kangxi, Yongzheng y Qianlong, en el siglo XVIII, duplicó el territorio chino al incorporar Taiwán, Mongolia, el Tíbet y Xinjiang, y gobernó a la mayor población del planeta. En el siglo XIX sufrió derrotas ante potencias extranjeras, como en las guerras del Opio, y revueltas internas devastadoras. Fue derrocada por la Revolución de 1911, y el último emperador, Puyi, abdicó en 1912, lo que dio paso a la República de China."
   },
   "map": {
     "parts": [

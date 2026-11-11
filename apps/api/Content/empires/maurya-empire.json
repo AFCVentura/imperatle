@@ -3,7 +3,8 @@
   "slug": "maurya-empire",
   "name": {
     "en": "Maurya Empire",
-    "pt": "Império Máuria"
+    "pt": "Império Máuria",
+    "es": "Imperio maurya"
   },
   "peak": {
     "year": -250,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts around 322 BCE, when its founder overthrew the ruling dynasty of the Ganges valley, and ends around 185 BCE, when the last king was killed by his own general.",
-    "pt": "Começa por volta de 322 a.C., quando o fundador derrubou a dinastia que governava o vale do Ganges, e termina por volta de 185 a.C., quando o último rei foi morto pelo próprio general."
+    "pt": "Começa por volta de 322 a.C., quando o fundador derrubou a dinastia que governava o vale do Ganges, e termina por volta de 185 a.C., quando o último rei foi morto pelo próprio general.",
+    "es": "Comienza hacia el 322 a. C., cuando su fundador derrocó a la dinastía que gobernaba el valle del Ganges, y termina hacia el 185 a. C., cuando el último rey fue asesinado por su propio general."
   },
   "area": {
     "km2": 3920869,
@@ -34,49 +36,60 @@
   ],
   "capital": {
     "en": "Pataliputra",
-    "pt": "Pataliputra"
+    "pt": "Pataliputra",
+    "es": "Pataliputra"
   },
   "language": {
     "en": "Prakrit (Magadhi)",
-    "pt": "Prácrito (Magadi)"
+    "pt": "Prácrito (Magadi)",
+    "es": "Prácrito (magadhi)"
   },
   "religion": {
     "en": "Brahmanism, Buddhism and Jainism",
-    "pt": "Bramanismo, budismo e jainismo"
+    "pt": "Bramanismo, budismo e jainismo",
+    "es": "Brahmanismo, budismo y jainismo"
   },
   "religionNotes": {
     "en": "Tradition says the founder ended his life as a Jain monk, and his grandson embraced Buddhism and sent missionaries to spread it abroad. Most of the people followed the Brahmanical traditions that gave rise to Hinduism.",
-    "pt": "A tradição diz que o fundador terminou a vida como monge jainista, e seu neto abraçou o budismo e enviou missionários para espalhá-lo no exterior. A maior parte do povo seguia as tradições bramânicas que deram origem ao hinduísmo."
+    "pt": "A tradição diz que o fundador terminou a vida como monge jainista, e seu neto abraçou o budismo e enviou missionários para espalhá-lo no exterior. A maior parte do povo seguia as tradições bramânicas que deram origem ao hinduísmo.",
+    "es": "La tradición dice que el fundador terminó su vida como monje jainista, y que su nieto abrazó el budismo y envió misioneros a difundirlo en el extranjero. La mayor parte del pueblo seguía las tradiciones brahmánicas que dieron origen al hinduismo."
   },
   "curiosities": [
     {
       "en": "One of its emperors had his edicts carved on rocks and pillars across the subcontinent, the oldest deciphered texts of the region.",
       "pt": "Um de seus imperadores mandou gravar seus editos em rochas e pilares por todo o subcontinente, os textos mais antigos já decifrados da região.",
+      "es": "Uno de sus emperadores mandó grabar sus edictos en rocas y pilares por todo el subcontinente, los textos más antiguos que se han descifrado en la región.",
       "details": {
         "en": "Ashoka's edicts were carved on more than 30 rocks and pillars from Afghanistan to southern India, most of them in Prakrit, in the Brahmi script, and a few in Greek and Aramaic. They preach dharma: respect for parents, kindness to animals and tolerance between religions. The Brahmi script was only deciphered in 1837, by the Briton James Prinsep.",
-        "pt": "Os editos de Ashoka foram gravados em mais de 30 rochas e pilares do Afeganistão ao sul da Índia, a maioria em prácrito, na escrita brami, e alguns em grego e aramaico. Pregam o dharma: respeito aos pais, bondade com os animais e tolerância entre as religiões. A escrita brami só foi decifrada em 1837, pelo britânico James Prinsep."
+        "pt": "Os editos de Ashoka foram gravados em mais de 30 rochas e pilares do Afeganistão ao sul da Índia, a maioria em prácrito, na escrita brami, e alguns em grego e aramaico. Pregam o dharma: respeito aos pais, bondade com os animais e tolerância entre as religiões. A escrita brami só foi decifrada em 1837, pelo britânico James Prinsep.",
+        "es": "Los edictos de Ashoka se grabaron en más de 30 rocas y pilares, desde Afganistán hasta el sur de la India, la mayoría en prácrito, en escritura brahmi, y algunos en griego y arameo. Predican el dharma: respeto a los padres, bondad con los animales y tolerancia entre las religiones. La escritura brahmi no se descifró hasta 1837, gracias al británico James Prinsep."
       }
     },
     {
       "en": "Horrified by a bloody war on the east coast, its most famous emperor gave up conquest and embraced Buddhism.",
       "pt": "Horrorizado com uma guerra sangrenta na costa leste, seu imperador mais famoso desistiu das conquistas e abraçou o budismo.",
+      "es": "Horrorizado por una guerra sangrienta en la costa este, su emperador más famoso renunció a las conquistas y abrazó el budismo.",
       "details": {
         "en": "Around 261 BCE Ashoka conquered Kalinga, in today's Odisha. In one of his edicts he himself says that 100,000 people were killed and 150,000 deported, and that he felt deep remorse. From then on he embraced Buddhism, gave up wars of conquest and sent missionaries to other lands, including Sri Lanka.",
-        "pt": "Por volta de 261 a.C., Ashoka conquistou Kalinga, na atual Odisha. Num de seus editos, ele mesmo conta que 100 mil pessoas foram mortas e 150 mil deportadas, e diz sentir um remorso profundo. A partir daí, abraçou o budismo, renunciou às guerras de conquista e mandou missionários a outras terras, entre elas o Sri Lanka."
+        "pt": "Por volta de 261 a.C., Ashoka conquistou Kalinga, na atual Odisha. Num de seus editos, ele mesmo conta que 100 mil pessoas foram mortas e 150 mil deportadas, e diz sentir um remorso profundo. A partir daí, abraçou o budismo, renunciou às guerras de conquista e mandou missionários a outras terras, entre elas o Sri Lanka.",
+        "es": "Hacia el 261 a. C., Ashoka conquistó Kalinga, en la actual Odisha. En uno de sus edictos, él mismo cuenta que murieron 100 000 personas y 150 000 fueron deportadas, y dice sentir un profundo remordimiento. A partir de entonces abrazó el budismo, renunció a las guerras de conquista y envió misioneros a otras tierras, entre ellas Sri Lanka."
       }
     },
     {
       "en": "The lions carved on top of one of its pillars are today the national emblem of India.",
       "pt": "Os leões esculpidos no alto de um de seus pilares são hoje o emblema nacional da Índia.",
+      "es": "Los leones esculpidos en lo alto de uno de sus pilares son hoy el emblema nacional de la India.",
       "details": {
         "en": "The Lion Capital of Sarnath, with four lions standing back to back on a base with a wheel, was carved for a pillar of Ashoka at the place where the Buddha is said to have given his first sermon. It was adopted as India's national emblem in 1950, and the wheel, the Ashoka Chakra, sits at the centre of the country's flag.",
-        "pt": "O Capitel dos Leões de Sarnath, com quatro leões de costas uns para os outros sobre uma base com uma roda, foi esculpido para um pilar de Ashoka no lugar onde Buda teria feito seu primeiro sermão. Foi adotado como emblema nacional da Índia em 1950, e a roda, o Ashoka Chakra, está no centro da bandeira do país."
+        "pt": "O Capitel dos Leões de Sarnath, com quatro leões de costas uns para os outros sobre uma base com uma roda, foi esculpido para um pilar de Ashoka no lugar onde Buda teria feito seu primeiro sermão. Foi adotado como emblema nacional da Índia em 1950, e a roda, o Ashoka Chakra, está no centro da bandeira do país.",
+        "es": "El Capitel de los Leones de Sarnath, con cuatro leones espalda con espalda sobre una base con una rueda, se esculpió para un pilar de Ashoka en el lugar donde, según la tradición, Buda pronunció su primer sermón. Se adoptó como emblema nacional de la India en 1950, y la rueda, el chakra de Ashoka, está en el centro de la bandera del país."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Maurya_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Império_Máuria"
+    "pt": "https://pt.wikipedia.org/wiki/Império_Máuria",
+    "es": "https://es.wikipedia.org/wiki/Imperio_Maurya"
   },
   "aliases": [
     "Mauryan Empire",
@@ -87,11 +100,14 @@
     "Dinastia Máuria",
     "Magadha",
     "India",
-    "Índia"
+    "Índia",
+    "Mauryas",
+    "Dinastía maurya"
   ],
   "summary": {
     "en": "The first empire to unite almost all of the Indian subcontinent, founded around 322 BCE by Chandragupta Maurya, who overthrew the Nanda Dynasty in the kingdom of Magadha, in the Ganges valley. Chandragupta took today's Afghanistan from the Greek king Seleucus, and his son Bindusara pushed the empire south. His grandson Ashoka conquered Kalinga, converted to Buddhism and began to rule by preaching non-violence and tolerance. The empire had a large bureaucracy and a huge army, but it broke apart after Ashoka and ended around 185 BCE, when the last king was killed by his general.",
-    "pt": "Primeiro império a unificar quase todo o subcontinente indiano, fundado por volta de 322 a.C. por Chandragupta Máuria, que derrubou a Dinastia Nanda no reino de Mágada, no vale do Ganges. Chandragupta tomou do rei grego Seleuco o atual Afeganistão, e seu filho Bindusara levou o império para o sul. O neto, Ashoka, conquistou Kalinga, se converteu ao budismo e passou a governar pregando a não violência e a tolerância. O império tinha uma grande burocracia e um exército enorme, mas se fragmentou depois de Ashoka e acabou por volta de 185 a.C., quando o último rei foi morto pelo próprio general."
+    "pt": "Primeiro império a unificar quase todo o subcontinente indiano, fundado por volta de 322 a.C. por Chandragupta Máuria, que derrubou a Dinastia Nanda no reino de Mágada, no vale do Ganges. Chandragupta tomou do rei grego Seleuco o atual Afeganistão, e seu filho Bindusara levou o império para o sul. O neto, Ashoka, conquistou Kalinga, se converteu ao budismo e passou a governar pregando a não violência e a tolerância. O império tinha uma grande burocracia e um exército enorme, mas se fragmentou depois de Ashoka e acabou por volta de 185 a.C., quando o último rei foi morto pelo próprio general.",
+    "es": "El primer imperio que unificó casi todo el subcontinente indio, fundado hacia el 322 a. C. por Chandragupta Maurya, que derrocó a la dinastía Nanda en el reino de Magadha, en el valle del Ganges. Chandragupta le arrebató al rey griego Seleuco el actual Afganistán, y su hijo Bindusara extendió el imperio hacia el sur. Su nieto Ashoka conquistó Kalinga, se convirtió al budismo y pasó a gobernar predicando la no violencia y la tolerancia. El imperio tenía una gran burocracia y un ejército enorme, pero se fragmentó después de Ashoka y llegó a su fin hacia el 185 a. C., cuando el último rey fue asesinado por su propio general."
   },
   "map": {
     "parts": [

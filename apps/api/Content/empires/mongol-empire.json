@@ -3,7 +3,8 @@
   "slug": "mongol-empire",
   "name": {
     "en": "Mongol Empire",
-    "pt": "Império Mongol"
+    "pt": "Império Mongol",
+    "es": "Imperio mongol"
   },
   "peak": {
     "year": 1279,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "There is no single end date. In 1260 the empire split into four parts; in 1294 the leader who still held them loosely together died; and in 1368 the main one of the four fell, which is the date used here. 1260 and 1294 are also accepted.",
-    "pt": "Não há uma data única para o fim. Em 1260 o império se dividiu em quatro partes; em 1294 morreu o líder que ainda mantinha certa unidade entre elas; e em 1368 caiu a principal das quatro, que é a data usada aqui. 1260 e 1294 também são aceitos."
+    "pt": "Não há uma data única para o fim. Em 1260 o império se dividiu em quatro partes; em 1294 morreu o líder que ainda mantinha certa unidade entre elas; e em 1368 caiu a principal das quatro, que é a data usada aqui. 1260 e 1294 também são aceitos.",
+    "es": "No hay una fecha única para el final. En 1260 el imperio se dividió en cuatro partes; en 1294 murió el líder que aún mantenía cierta unidad entre ellas; y en 1368 cayó la principal de las cuatro, que es la fecha usada aquí. También se aceptan 1260 y 1294."
   },
   "area": {
     "km2": 24000000,
@@ -35,45 +37,55 @@
   ],
   "capital": {
     "en": "Karakorum (later Khanbaliq)",
-    "pt": "Karakorum (depois Khanbaliq)"
+    "pt": "Karakorum (depois Khanbaliq)",
+    "es": "Karakórum (después Janbalic)"
   },
   "language": {
     "en": "Mongolian",
-    "pt": "Mongol"
+    "pt": "Mongol",
+    "es": "Mongol"
   },
   "religion": {
     "en": "Tengrism (tolerant of other religions)",
-    "pt": "Tengrismo (com tolerância a outras religiões)"
+    "pt": "Tengrismo (com tolerância a outras religiões)",
+    "es": "Tengrianismo (con tolerancia hacia otras religiones)"
   },
   "curiosities": [
     {
       "en": "It was founded by a leader who united nomadic tribes under one banner.",
       "pt": "Foi fundado por um líder que uniu tribos nômades sob uma só bandeira.",
+      "es": "Lo fundó un líder que unió a tribus nómadas bajo una sola bandera.",
       "details": {
         "en": "Temüjin lost his father as a child and grew up in poverty, abandoned by his own clan. Through alliances and wars he united rival tribes such as the Tatars, Merkits and Naimans, and in 1206 an assembly, the kurultai, proclaimed him Genghis Khan. He reorganised the warriors into units of 10, 100, 1,000 and 10,000 men, mixing the tribes to end old rivalries.",
-        "pt": "Temujin perdeu o pai ainda criança e cresceu na pobreza, abandonado pelo próprio clã. Com alianças e guerras, uniu tribos rivais como tártaros, merquitas e naimanes, e em 1206 uma assembleia, o kurultai, o proclamou Gengis Khan. Ele reorganizou os guerreiros em unidades de 10, 100, 1.000 e 10.000 homens, misturando as tribos para acabar com as velhas rivalidades."
+        "pt": "Temujin perdeu o pai ainda criança e cresceu na pobreza, abandonado pelo próprio clã. Com alianças e guerras, uniu tribos rivais como tártaros, merquitas e naimanes, e em 1206 uma assembleia, o kurultai, o proclamou Gengis Khan. Ele reorganizou os guerreiros em unidades de 10, 100, 1.000 e 10.000 homens, misturando as tribos para acabar com as velhas rivalidades.",
+        "es": "Temuyín perdió a su padre cuando era niño y creció en la pobreza, abandonado por su propio clan. Con alianzas y guerras unió a tribus rivales como los tártaros, los merkitas y los naimanos, y en 1206 una asamblea, el kurultai, lo proclamó Gengis Kan. Reorganizó a los guerreros en unidades de 10, 100, 1000 y 10 000 hombres, y mezcló las tribus para acabar con las viejas rivalidades."
       }
     },
     {
       "en": "Its warriors fought as mounted archers, and each one brought several horses to swap during marches.",
       "pt": "Seus guerreiros lutavam como arqueiros a cavalo, e cada um levava vários cavalos para trocar durante as marchas.",
+      "es": "Sus guerreros combatían como arqueros a caballo, y cada uno llevaba varios caballos para cambiarlos durante las marchas.",
       "details": {
         "en": "Each Mongol warrior took three to five horses, switching whenever one tired, which let armies cover long distances quickly. They shot short, powerful composite bows from the saddle, and on the longest marches they even lived on their animals' milk and blood.",
-        "pt": "Cada guerreiro mongol levava de três a cinco cavalos e trocava sempre que um cansava, o que permitia percorrer longas distâncias em pouco tempo. Disparavam arcos compostos, curtos e potentes, de cima da sela, e nas marchas mais longas chegavam a se alimentar do leite e do sangue dos animais."
+        "pt": "Cada guerreiro mongol levava de três a cinco cavalos e trocava sempre que um cansava, o que permitia percorrer longas distâncias em pouco tempo. Disparavam arcos compostos, curtos e potentes, de cima da sela, e nas marchas mais longas chegavam a se alimentar do leite e do sangue dos animais.",
+        "es": "Cada guerrero mongol llevaba de tres a cinco caballos y cambiaba de montura cada vez que una se cansaba, lo que permitía recorrer largas distancias en poco tiempo. Disparaban arcos compuestos, cortos y potentes, desde la silla, y en las marchas más largas llegaban a alimentarse de la leche y la sangre de sus animales."
       }
     },
     {
       "en": "It became the largest contiguous land empire in history.",
       "pt": "Tornou-se o maior império contíguo da história.",
+      "es": "Llegó a ser el mayor imperio contiguo de la historia.",
       "details": {
         "en": "At its height, around 1279, the empire covered about 24 million km², from Korea to eastern Europe and from Siberia to the Persian Gulf. Only the British Empire was larger, but it was spread over several continents; no other empire has held so much unbroken territory.",
-        "pt": "No auge, por volta de 1279, o império cobria cerca de 24 milhões de km², da Coreia ao leste da Europa e da Sibéria ao Golfo Pérsico. Só o Império Britânico foi maior, mas espalhado por vários continentes; nenhum outro teve tanto território contínuo."
+        "pt": "No auge, por volta de 1279, o império cobria cerca de 24 milhões de km², da Coreia ao leste da Europa e da Sibéria ao Golfo Pérsico. Só o Império Britânico foi maior, mas espalhado por vários continentes; nenhum outro teve tanto território contínuo.",
+        "es": "En su apogeo, hacia 1279, el imperio abarcaba unos 24 millones de km², desde Corea hasta el este de Europa y desde Siberia hasta el golfo Pérsico. Solo el Imperio británico fue más grande, pero estaba repartido por varios continentes; ningún otro tuvo tanto territorio continuo."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Mongol_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Império_Mongol"
+    "pt": "https://pt.wikipedia.org/wiki/Império_Mongol",
+    "es": "https://es.wikipedia.org/wiki/Imperio_mongol"
   },
   "aliases": [
     "Mongols",
@@ -83,11 +95,14 @@
     "Mongolia",
     "Mongólia",
     "Genghis Khan",
-    "Gengis Khan"
+    "Gengis Khan",
+    "Mongoles",
+    "Gengis Kan"
   ],
   "summary": {
     "en": "An empire founded in 1206 by Temüjin, who took the title Genghis Khan after uniting the nomadic tribes of Mongolia. With fast, disciplined cavalry, he and his successors conquered China, Central Asia, Persia, Russia and parts of the Middle East, in campaigns of enormous violence. The empire made the Silk Road safe, easing trade and journeys such as Marco Polo's. After 1260 it split into four great khanates, and the Yuan Dynasty, in China, fell in 1368.",
-    "pt": "Império fundado em 1206 por Temujin, que recebeu o título de Gengis Khan ao unir as tribos nômades da Mongólia. Com uma cavalaria rápida e disciplinada, ele e seus sucessores conquistaram a China, a Ásia Central, a Pérsia, a Rússia e partes do Oriente Médio, em campanhas de enorme violência. O império deu segurança à Rota da Seda, facilitando o comércio e viagens como a de Marco Polo. Depois de 1260 se dividiu em quatro grandes canatos, e a Dinastia Yuan, na China, caiu em 1368."
+    "pt": "Império fundado em 1206 por Temujin, que recebeu o título de Gengis Khan ao unir as tribos nômades da Mongólia. Com uma cavalaria rápida e disciplinada, ele e seus sucessores conquistaram a China, a Ásia Central, a Pérsia, a Rússia e partes do Oriente Médio, em campanhas de enorme violência. O império deu segurança à Rota da Seda, facilitando o comércio e viagens como a de Marco Polo. Depois de 1260 se dividiu em quatro grandes canatos, e a Dinastia Yuan, na China, caiu em 1368.",
+    "es": "Imperio fundado en 1206 por Temuyín, que recibió el título de Gengis Kan al unir a las tribus nómadas de Mongolia. Con una caballería rápida y disciplinada, él y sus sucesores conquistaron China, Asia Central, Persia, Rusia y partes de Oriente Medio, en campañas de enorme violencia. El imperio dio seguridad a la Ruta de la Seda, lo que facilitó el comercio y viajes como el de Marco Polo. Después de 1260 se dividió en cuatro grandes kanatos, y la dinastía Yuan, en China, cayó en 1368."
   },
   "map": {
     "parts": [

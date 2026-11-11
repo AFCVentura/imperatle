@@ -3,7 +3,8 @@
   "slug": "inca-empire",
   "name": {
     "en": "Inca Empire",
-    "pt": "Império Inca"
+    "pt": "Império Inca",
+    "es": "Imperio incaico"
   },
   "peak": {
     "year": 1527,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "Pizarro's Spaniards captured and executed Emperor Atahualpa in 1533, but a rump Inca state held out in Vilcabamba until 1572, when the last emperor, Túpac Amaru, was captured and executed.",
-    "pt": "Os espanhóis de Pizarro capturaram e executaram o imperador Atahualpa em 1533, mas um Estado inca de resistência sobreviveu em Vilcabamba até 1572, quando o último imperador, Túpac Amaru, foi capturado e executado."
+    "pt": "Os espanhóis de Pizarro capturaram e executaram o imperador Atahualpa em 1533, mas um Estado inca de resistência sobreviveu em Vilcabamba até 1572, quando o último imperador, Túpac Amaru, foi capturado e executado.",
+    "es": "Los españoles de Pizarro capturaron y ejecutaron al emperador Atahualpa en 1533, pero un Estado inca de resistencia sobrevivió en Vilcabamba hasta 1572, cuando el último emperador, Túpac Amaru, fue capturado y ejecutado."
   },
   "area": {
     "km2": 2000000,
@@ -34,45 +36,55 @@
   ],
   "capital": {
     "en": "Cusco",
-    "pt": "Cusco"
+    "pt": "Cusco",
+    "es": "Cusco"
   },
   "language": {
     "en": "Quechua",
-    "pt": "Quéchua"
+    "pt": "Quéchua",
+    "es": "Quechua"
   },
   "religion": {
     "en": "Worship of Inti (the sun god)",
-    "pt": "Culto a Inti (deus-sol)"
+    "pt": "Culto a Inti (deus-sol)",
+    "es": "Culto a Inti (dios sol)"
   },
   "curiosities": [
     {
       "en": "It kept records with knotted cords instead of writing.",
       "pt": "Guardava registros em cordões com nós em vez de escrita.",
+      "es": "Llevaba sus registros con cuerdas anudadas en lugar de escritura.",
       "details": {
         "en": "The quipus were cords of wool or cotton with knots of different kinds, colours and positions that recorded numbers in a decimal system: censuses, tribute, herds and the stocks of the warehouses. They were read by specialists, the quipucamayocs. Some researchers think they also stored stories, but that has not been deciphered.",
-        "pt": "Os quipos eram cordões de lã ou algodão com nós de vários tipos, cores e posições, que registravam números no sistema decimal: censos, tributos, rebanhos e estoques dos armazéns. Eram lidos por especialistas, os quipucamayocs. Alguns pesquisadores acham que também guardavam narrativas, mas isso ainda não foi decifrado."
+        "pt": "Os quipos eram cordões de lã ou algodão com nós de vários tipos, cores e posições, que registravam números no sistema decimal: censos, tributos, rebanhos e estoques dos armazéns. Eram lidos por especialistas, os quipucamayocs. Alguns pesquisadores acham que também guardavam narrativas, mas isso ainda não foi decifrado.",
+        "es": "Los quipus eran cuerdas de lana o algodón con nudos de distintos tipos, colores y posiciones, que registraban números en un sistema decimal: censos, tributos, rebaños y existencias de los almacenes. Los leían especialistas, los quipucamayoc. Algunos investigadores creen que también guardaban relatos, pero eso aún no se ha descifrado."
       }
     },
     {
       "en": "The name it is commonly known by was actually a title given to its nobility; its original name, in Quechua, meant 'the four parts together'.",
       "pt": "O nome pelo qual é conhecido era na verdade um título dado à sua nobreza; seu nome original, em quéchua, significava 'as quatro partes juntas'.",
+      "es": "El nombre con el que se lo conoce era en realidad un título de su nobleza; su nombre original era Tahuantinsuyo.",
       "details": {
         "en": "In Quechua, \"Inca\" was the title of the ruler, the Sapa Inca, and of the elite linked to him, not the name of the people or the state. The empire was called Tawantinsuyu, \"the four parts together\", because it was divided into four great regions that met in Cusco. The Spaniards ended up using \"Inca\" for everything.",
-        "pt": "Em quéchua, \"inca\" era o título do governante, o Sapa Inca, e da elite ligada a ele, não o nome do povo ou do Estado. O império se chamava Tawantinsuyu, \"as quatro partes juntas\", por ser dividido em quatro grandes regiões que se encontravam em Cusco. Os espanhóis acabaram usando \"inca\" para tudo."
+        "pt": "Em quéchua, \"inca\" era o título do governante, o Sapa Inca, e da elite ligada a ele, não o nome do povo ou do Estado. O império se chamava Tawantinsuyu, \"as quatro partes juntas\", por ser dividido em quatro grandes regiões que se encontravam em Cusco. Os espanhóis acabaram usando \"inca\" para tudo.",
+        "es": "En quechua, \"inca\" era el título del gobernante, el Sapa Inca, y de la élite ligada a él, no el nombre del pueblo ni del Estado. El imperio se llamaba Tahuantinsuyo (Tawantinsuyu), \"las cuatro partes juntas\", porque estaba dividido en cuatro grandes regiones que se unían en Cusco. Los españoles acabaron usando \"inca\" para todo."
       }
     },
     {
       "en": "It was the largest empire in the Americas before the arrival of Europeans.",
       "pt": "Foi o maior império da América antes da chegada dos europeus.",
+      "es": "Fue el mayor imperio de América antes de la llegada de los europeos.",
       "details": {
         "en": "At its height, around 1527, the empire covered perhaps 2 million km² and had 10 to 12 million people, across today's Peru, Ecuador, Bolivia, Chile, Argentina and Colombia. It was built in less than a hundred years, without horses, without wheels for transport and without writing.",
-        "pt": "No auge, por volta de 1527, o império tinha talvez 2 milhões de km² e entre 10 e 12 milhões de habitantes, espalhados pelos atuais Peru, Equador, Bolívia, Chile, Argentina e Colômbia. Foi construído em menos de cem anos, sem cavalos, sem rodas para transporte e sem escrita."
+        "pt": "No auge, por volta de 1527, o império tinha talvez 2 milhões de km² e entre 10 e 12 milhões de habitantes, espalhados pelos atuais Peru, Equador, Bolívia, Chile, Argentina e Colômbia. Foi construído em menos de cem anos, sem cavalos, sem rodas para transporte e sem escrita.",
+        "es": "En su apogeo, hacia 1527, el imperio abarcaba quizá 2 millones de km² y tenía entre 10 y 12 millones de habitantes, repartidos por los actuales Perú, Ecuador, Bolivia, Chile, Argentina y Colombia. Se construyó en menos de cien años, sin caballos, sin ruedas para el transporte y sin escritura."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Inca_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Império_Inca"
+    "pt": "https://pt.wikipedia.org/wiki/Império_Inca",
+    "es": "https://es.wikipedia.org/wiki/Imperio_incaico"
   },
   "aliases": [
     "Incas",
@@ -82,11 +94,14 @@
     "Tawantinsuyu",
     "Tahuantinsuyu",
     "Tawantinsuyo",
-    "Peru"
+    "Peru",
+    "Tahuantinsuyo",
+    "Incario"
   ],
   "summary": {
     "en": "The largest empire of pre-Columbian America, which the Incas themselves called Tawantinsuyu, \"the four parts together\". From Cusco, in the Andes of Peru, it expanded above all after 1438, under Pachacuti and his successors, until it stretched from southern Colombia to central Chile. It held the land together with a network of more than 30,000 km of roads, organised compulsory labour shifts for the state and stored food in warehouses across the Andes. Weakened by a civil war and epidemics, it was conquered by Francisco Pizarro from 1532; its last stronghold, Vilcabamba, fell in 1572.",
-    "pt": "Maior império da América pré-colombiana, que os próprios incas chamavam de Tawantinsuyu, \"as quatro partes juntas\". A partir de Cusco, nos Andes do Peru, se expandiu sobretudo depois de 1438, com Pachacútec e seus sucessores, até ir do sul da Colômbia ao centro do Chile. Unia o território com uma rede de mais de 30 mil km de estradas, organizava o trabalho em turnos obrigatórios para o Estado e guardava comida em armazéns espalhados pelos Andes. Enfraquecido por uma guerra civil e por epidemias, foi conquistado por Francisco Pizarro a partir de 1532; o último reduto, Vilcabamba, caiu em 1572."
+    "pt": "Maior império da América pré-colombiana, que os próprios incas chamavam de Tawantinsuyu, \"as quatro partes juntas\". A partir de Cusco, nos Andes do Peru, se expandiu sobretudo depois de 1438, com Pachacútec e seus sucessores, até ir do sul da Colômbia ao centro do Chile. Unia o território com uma rede de mais de 30 mil km de estradas, organizava o trabalho em turnos obrigatórios para o Estado e guardava comida em armazéns espalhados pelos Andes. Enfraquecido por uma guerra civil e por epidemias, foi conquistado por Francisco Pizarro a partir de 1532; o último reduto, Vilcabamba, caiu em 1572.",
+    "es": "El mayor imperio de la América precolombina, al que los propios incas llamaban Tahuantinsuyo, \"las cuatro partes juntas\". Desde Cusco, en los Andes del Perú, se expandió sobre todo a partir de 1438, con Pachacútec y sus sucesores, hasta extenderse desde el sur de Colombia hasta el centro de Chile. Unía el territorio con una red de más de 30 000 km de caminos, organizaba el trabajo por turnos obligatorios para el Estado y guardaba comida en almacenes repartidos por los Andes. Debilitado por una guerra civil y por epidemias, fue conquistado por Francisco Pizarro a partir de 1532; su último reducto, Vilcabamba, cayó en 1572."
   },
   "map": {
     "parts": [

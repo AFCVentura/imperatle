@@ -3,7 +3,8 @@
   "slug": "first-french-empire",
   "name": {
     "en": "First French Empire",
-    "pt": "Primeiro Império Francês"
+    "pt": "Primeiro Império Francês",
+    "es": "Primer Imperio francés"
   },
   "peak": {
     "year": 1812,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts in 1804, when the ruler was proclaimed emperor, and ends in 1815. It had already fallen once in 1814, but its ruler returned from exile and held power again for about a hundred days.",
-    "pt": "Começa em 1804, quando o governante foi proclamado imperador, e termina em 1815. Já tinha caído uma vez em 1814, mas o governante voltou do exílio e retomou o poder por cerca de cem dias."
+    "pt": "Começa em 1804, quando o governante foi proclamado imperador, e termina em 1815. Já tinha caído uma vez em 1814, mas o governante voltou do exílio e retomou o poder por cerca de cem dias.",
+    "es": "Comienza en 1804, cuando el gobernante fue proclamado emperador, y termina en 1815. Ya había caído una vez en 1814, pero el gobernante regresó del exilio y recuperó el poder durante unos cien días."
   },
   "area": {
     "km2": 882590,
@@ -34,49 +36,60 @@
   ],
   "capital": {
     "en": "Paris",
-    "pt": "Paris"
+    "pt": "Paris",
+    "es": "París"
   },
   "language": {
     "en": "French",
-    "pt": "Francês"
+    "pt": "Francês",
+    "es": "Francés"
   },
   "religion": {
     "en": "Catholicism",
-    "pt": "Catolicismo"
+    "pt": "Catolicismo",
+    "es": "Catolicismo"
   },
   "religionNotes": {
     "en": "An agreement with the pope made Catholicism the religion of most of the population, but not the official religion. Protestants and Jews were also recognised and protected by the state.",
-    "pt": "Um acordo com o papa definiu o catolicismo como religião da maioria da população, mas não como religião oficial. Protestantes e judeus também foram reconhecidos e protegidos pelo Estado."
+    "pt": "Um acordo com o papa definiu o catolicismo como religião da maioria da população, mas não como religião oficial. Protestantes e judeus também foram reconhecidos e protegidos pelo Estado.",
+    "es": "Un acuerdo con el papa reconoció el catolicismo como religión de la mayoría de la población, pero no como religión oficial. Los protestantes y los judíos también fueron reconocidos y protegidos por el Estado."
   },
   "curiosities": [
     {
       "en": "It tried to ruin a rival island nation by banning the whole continent from trading with it.",
       "pt": "Tentou arruinar uma nação insular rival proibindo todo o continente de comerciar com ela.",
+      "es": "Intentó arruinar a una nación insular rival prohibiendo a todo el continente comerciar con ella.",
       "details": {
         "en": "The Continental System, decreed in 1806, banned the countries under French rule or allied with France from trading with Britain, which Napoleon could not beat at sea after his defeat at Trafalgar. The blockade also hurt Europe's own economy and led to wars: Portugal refused to join, and Russia stopped enforcing it, which prompted the invasion of 1812.",
-        "pt": "O Bloqueio Continental, decretado em 1806, proibia os países sob domínio ou aliança francesa de comerciar com o Reino Unido, que Napoleão não conseguia vencer no mar desde a derrota em Trafalgar. O bloqueio também prejudicou a economia europeia e levou a guerras: Portugal se recusou a aderir, e a Rússia deixou de cumpri-lo, o que motivou a invasão de 1812."
+        "pt": "O Bloqueio Continental, decretado em 1806, proibia os países sob domínio ou aliança francesa de comerciar com o Reino Unido, que Napoleão não conseguia vencer no mar desde a derrota em Trafalgar. O bloqueio também prejudicou a economia europeia e levou a guerras: Portugal se recusou a aderir, e a Rússia deixou de cumpri-lo, o que motivou a invasão de 1812.",
+        "es": "El Bloqueo Continental, decretado en 1806, prohibía a los países bajo dominio o alianza francesa comerciar con el Reino Unido, al que Napoleón no lograba vencer en el mar desde la derrota de Trafalgar. El bloqueo también perjudicó a la propia economía europea y llevó a guerras: Portugal se negó a sumarse, y Rusia dejó de cumplirlo, lo que motivó la invasión de 1812."
       }
     },
     {
       "en": "Its invasion of a European country made that country's royal court flee to South America in 1807.",
       "pt": "Sua invasão a um país europeu fez a corte real desse país fugir para a América do Sul em 1807.",
+      "es": "Su invasión de un país vecino hizo que la corte real de ese país huyera a América del Sur en 1807.",
       "details": {
         "en": "In November 1807, General Junot's troops invaded Portugal, which had not joined the Continental System. The Prince Regent João, Queen Maria I and some 10,000 to 15,000 people sailed for Brazil under escort of the British navy, taking the government and the crown's treasures with them. The court stayed in Rio de Janeiro until 1821.",
-        "pt": "Em novembro de 1807, as tropas do general Junot invadiram Portugal, que não tinha aderido ao Bloqueio Continental. O príncipe regente dom João, a rainha dona Maria I e cerca de 10 a 15 mil pessoas embarcaram para o Brasil sob escolta da Marinha britânica, levando o governo e os tesouros da coroa. A corte ficou no Rio de Janeiro até 1821."
+        "pt": "Em novembro de 1807, as tropas do general Junot invadiram Portugal, que não tinha aderido ao Bloqueio Continental. O príncipe regente dom João, a rainha dona Maria I e cerca de 10 a 15 mil pessoas embarcaram para o Brasil sob escolta da Marinha britânica, levando o governo e os tesouros da coroa. A corte ficou no Rio de Janeiro até 1821.",
+        "es": "En noviembre de 1807, las tropas del general Junot invadieron Portugal, que no se había sumado al Bloqueo Continental. El príncipe regente don Juan, la reina doña María I y entre 10 000 y 15 000 personas embarcaron rumbo a Brasil escoltados por la Marina británica, llevándose el gobierno y los tesoros de la corona. La corte permaneció en Río de Janeiro hasta 1821."
       }
     },
     {
       "en": "Its emperor died in exile on a remote island in the South Atlantic.",
       "pt": "Seu imperador morreu exilado numa ilha remota no Atlântico Sul.",
+      "es": "Su emperador murió desterrado en una isla remota del Atlántico Sur.",
       "details": {
         "en": "After Waterloo, the British sent Napoleon to Saint Helena, an island in the middle of the South Atlantic, almost 2,000 km from the coast of Africa. He spent his last six years there and died in 1821, probably of stomach cancer. In 1840 his remains were brought to Paris, and they now lie at Les Invalides.",
-        "pt": "Depois de Waterloo, os britânicos mandaram Napoleão para Santa Helena, uma ilha no meio do Atlântico Sul, a quase 2 mil km da costa da África. Ele viveu ali seus últimos seis anos e morreu em 1821, provavelmente de câncer no estômago. Em 1840, seus restos foram levados para Paris e estão hoje no Palácio dos Inválidos."
+        "pt": "Depois de Waterloo, os britânicos mandaram Napoleão para Santa Helena, uma ilha no meio do Atlântico Sul, a quase 2 mil km da costa da África. Ele viveu ali seus últimos seis anos e morreu em 1821, provavelmente de câncer no estômago. Em 1840, seus restos foram levados para Paris e estão hoje no Palácio dos Inválidos.",
+        "es": "Después de Waterloo, los británicos enviaron a Napoleón a Santa Elena, una isla en medio del Atlántico Sur, a casi 2000 km de la costa de África. Allí pasó sus últimos seis años y murió en 1821, probablemente de cáncer de estómago. En 1840 sus restos fueron trasladados a París, y hoy reposan en Los Inválidos."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/First_French_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Primeiro_Império_Francês"
+    "pt": "https://pt.wikipedia.org/wiki/Primeiro_Império_Francês",
+    "es": "https://es.wikipedia.org/wiki/Primer_Imperio_francés"
   },
   "aliases": [
     "France",
@@ -88,11 +101,14 @@
     "Napoleon",
     "Napoleão",
     "Napoleonic France",
-    "França Napoleônica"
+    "França Napoleônica",
+    "Francia",
+    "Francia napoleónica"
   ],
   "summary": {
     "en": "The regime created by Napoleon Bonaparte, who seized power in a coup in 1799 and crowned himself Emperor of the French in 1804. Through a string of victories he dominated most of Europe: he annexed lands in Italy, Germany and the Low Countries and put relatives and allies on the thrones of Spain, Naples and Holland. He spread the Civil Code and ideas of the French Revolution across the continent. The empire began to fall with the disastrous invasion of Russia in 1812 and ended with the defeat at Waterloo in 1815.",
-    "pt": "Regime criado por Napoleão Bonaparte, que chegou ao poder num golpe em 1799 e se coroou imperador dos franceses em 1804. Com uma série de vitórias, dominou a maior parte da Europa: anexou terras da Itália, da Alemanha e dos Países Baixos e pôs parentes e aliados nos tronos da Espanha, de Nápoles e da Holanda. Espalhou pelo continente o Código Civil e ideias da Revolução Francesa. Começou a cair com o desastre da invasão da Rússia, em 1812, e acabou com a derrota em Waterloo, em 1815."
+    "pt": "Regime criado por Napoleão Bonaparte, que chegou ao poder num golpe em 1799 e se coroou imperador dos franceses em 1804. Com uma série de vitórias, dominou a maior parte da Europa: anexou terras da Itália, da Alemanha e dos Países Baixos e pôs parentes e aliados nos tronos da Espanha, de Nápoles e da Holanda. Espalhou pelo continente o Código Civil e ideias da Revolução Francesa. Começou a cair com o desastre da invasão da Rússia, em 1812, e acabou com a derrota em Waterloo, em 1815.",
+    "es": "El régimen creado por Napoleón Bonaparte, que llegó al poder con un golpe de Estado en 1799 y se coronó emperador de los franceses en 1804. Con una serie de victorias dominó la mayor parte de Europa: anexionó tierras de Italia, Alemania y los Países Bajos y puso a parientes y aliados en los tronos de España, Nápoles y Holanda. Difundió por el continente el Código Civil y las ideas de la Revolución francesa. El imperio empezó a caer con la desastrosa invasión de Rusia en 1812 y terminó con la derrota de Waterloo en 1815."
   },
   "map": {
     "parts": [

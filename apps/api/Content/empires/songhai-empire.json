@@ -3,7 +3,8 @@
   "slug": "songhai-empire",
   "name": {
     "en": "Songhai Empire",
-    "pt": "Império Songai"
+    "pt": "Império Songai",
+    "es": "Imperio songhai"
   },
   "peak": {
     "year": 1520,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "The kingdom of Gao had existed since the 7th century, but it only became an empire from 1464, when Sonni Ali took the throne and began his conquests. It ends in 1591, when an invading army from the north won the decisive battle and took the main cities; part of the royal family held out in the south for decades, in a small kingdom. The map leaves out the eastern states that only paid tribute.",
-    "pt": "O reino de Gao existia desde o século VII, mas só virou império a partir de 1464, quando Sonni Ali subiu ao trono e começou as conquistas. Termina em 1591, quando um exército invasor vindo do norte venceu a batalha decisiva e tomou as principais cidades; parte da família real resistiu no sul por décadas, num pequeno reino. O mapa não inclui os Estados do leste que só pagavam tributo."
+    "pt": "O reino de Gao existia desde o século VII, mas só virou império a partir de 1464, quando Sonni Ali subiu ao trono e começou as conquistas. Termina em 1591, quando um exército invasor vindo do norte venceu a batalha decisiva e tomou as principais cidades; parte da família real resistiu no sul por décadas, num pequeno reino. O mapa não inclui os Estados do leste que só pagavam tributo.",
+    "es": "El reino de Gao existía desde el siglo VII, pero solo se convirtió en imperio a partir de 1464, cuando Sonni Alí subió al trono y comenzó sus conquistas. Termina en 1591, cuando un ejército invasor venido del norte ganó la batalla decisiva y tomó las principales ciudades; parte de la familia real resistió en el sur durante décadas, en un pequeño reino. El mapa no incluye los Estados del este que solo pagaban tributo."
   },
   "area": {
     "km2": 631450,
@@ -34,49 +36,60 @@
   ],
   "capital": {
     "en": "Gao",
-    "pt": "Gao"
+    "pt": "Gao",
+    "es": "Gao"
   },
   "language": {
     "en": "Songhai (with Arabic as the written language and the language of religion)",
-    "pt": "Songai (com o árabe como língua escrita e da religião)"
+    "pt": "Songai (com o árabe como língua escrita e da religião)",
+    "es": "Songhay (con el árabe como lengua escrita y de la religión)"
   },
   "religion": {
     "en": "Islam in the cities and at court, with traditional religions in the countryside",
-    "pt": "Islamismo nas cidades e na corte, com religiões tradicionais no campo"
+    "pt": "Islamismo nas cidades e na corte, com religiões tradicionais no campo",
+    "es": "Islam en las ciudades y en la corte, con religiones tradicionales en el campo"
   },
   "religionNotes": {
     "en": "The first great ruler mixed Islam with the traditional cults and persecuted the Muslim scholars of Timbuktu; the Islamic chronicles remember him as a tyrant, and oral tradition as a sorcerer king. His successor, who took power in a coup, was a devout Muslim, supported the scholars and used Islam to unite the administration. In the countryside, most of the population still followed the cults of the ancestors and of the river spirits.",
-    "pt": "O primeiro grande governante misturava o islã com os cultos tradicionais e perseguiu os sábios muçulmanos de Tombuctu; as crônicas islâmicas o lembram como tirano, e a tradição oral, como um rei feiticeiro. O sucessor, que tomou o poder num golpe, foi um muçulmano devoto, apoiou os estudiosos e usou o islã para unir a administração. No campo, a maioria da população continuava seguindo os cultos dos ancestrais e dos espíritos do rio."
+    "pt": "O primeiro grande governante misturava o islã com os cultos tradicionais e perseguiu os sábios muçulmanos de Tombuctu; as crônicas islâmicas o lembram como tirano, e a tradição oral, como um rei feiticeiro. O sucessor, que tomou o poder num golpe, foi um muçulmano devoto, apoiou os estudiosos e usou o islã para unir a administração. No campo, a maioria da população continuava seguindo os cultos dos ancestrais e dos espíritos do rio.",
+    "es": "El primer gran gobernante mezclaba el islam con los cultos tradicionales y persiguió a los sabios musulmanes de Tombuctú; las crónicas islámicas lo recuerdan como un tirano, y la tradición oral, como un rey hechicero. Su sucesor, que tomó el poder con un golpe, fue un musulmán devoto, apoyó a los eruditos y usó el islam para unificar la administración. En el campo, la mayor parte de la población seguía los cultos de los antepasados y de los espíritus del río."
   },
   "curiosities": [
     {
       "en": "In the Saharan salt mines the empire fought over, the houses and even the mosque were made of blocks of salt.",
       "pt": "Nas minas de sal do Saara que o império disputava, as casas e até a mesquita eram feitas de blocos de sal.",
+      "es": "En las minas de sal del Sahara que el imperio se disputaba, las casas y hasta la mezquita estaban hechas de bloques de sal.",
       "details": {
         "en": "Taghaza, in the middle of the desert, in the north of today's Mali, was described in the 14th century by the traveller Ibn Battuta: houses and a mosque of salt blocks, with roofs of camel skin, and enslaved workers digging out the salt. Each camel carried two large slabs to Timbuktu, where salt, scarce in the south, was exchanged for gold. Control of the mines was disputed with Morocco and was one of the causes of the invasion that ended the empire.",
-        "pt": "Tegaza, no meio do deserto, no norte do atual Mali, foi descrita no século XIV pelo viajante Ibn Battuta: casas e mesquita de blocos de sal, com telhados de couro de camelo, e trabalhadores escravizados escavando o sal. Cada camelo levava duas grandes placas até Tombuctu, onde o sal, raro no sul, era trocado por ouro. O controle das minas era disputado com o Marrocos e foi uma das causas da invasão que acabou com o império."
+        "pt": "Tegaza, no meio do deserto, no norte do atual Mali, foi descrita no século XIV pelo viajante Ibn Battuta: casas e mesquita de blocos de sal, com telhados de couro de camelo, e trabalhadores escravizados escavando o sal. Cada camelo levava duas grandes placas até Tombuctu, onde o sal, raro no sul, era trocado por ouro. O controle das minas era disputado com o Marrocos e foi uma das causas da invasão que acabou com o império.",
+        "es": "Taghaza, en pleno desierto, en el norte del actual Malí, fue descrita en el siglo XIV por el viajero Ibn Battuta: casas y mezquita de bloques de sal, con techos de piel de camello, y trabajadores esclavizados que extraían la sal. Cada camello llevaba dos grandes placas hasta Tombuctú, donde la sal, escasa en el sur, se cambiaba por oro. El control de las minas se disputaba con Marruecos y fue una de las causas de la invasión que acabó con el imperio."
       }
     },
     {
       "en": "In 2012, librarians in Timbuktu, one of the empire's great cities, hid and smuggled out more than 300,000 old manuscripts in sacks and canoes to save them from jihadist groups.",
       "pt": "Em 2012, bibliotecários de Tombuctu, uma das grandes cidades do império, esconderam e contrabandearam em sacos e canoas mais de 300 mil manuscritos antigos para salvá-los de grupos jihadistas.",
+      "es": "En 2012, bibliotecarios de Tombuctú, una de las grandes ciudades del imperio, escondieron y sacaron de contrabando, en sacos y canoas, más de 300 000 manuscritos antiguos para salvarlos de grupos yihadistas.",
       "details": {
         "en": "The manuscripts, from the 13th to the 19th century, cover law, astronomy, medicine, mathematics and poetry, and many were copied in the period when the city's scholars were famous throughout the Islamic world. One of them, Ahmad Baba, said that his library of 1,600 volumes was among the smallest in his family. When jihadist groups took the city, families and librarians took the books in secret to Bamako, the capital of Mali; even so, the occupiers burned about 4,000 manuscripts before leaving, in 2013.",
-        "pt": "Os manuscritos, do século XIII ao XIX, tratam de direito, astronomia, medicina, matemática e poesia, e muitos foram copiados na época em que os sábios da cidade eram famosos em todo o mundo islâmico. Um deles, Ahmad Baba, dizia que sua biblioteca de 1.600 volumes estava entre as menores da família. Quando grupos jihadistas tomaram a cidade, famílias e bibliotecários levaram os livros às escondidas até Bamako, a capital do Mali; mesmo assim, os ocupantes queimaram cerca de 4 mil manuscritos antes de sair, em 2013."
+        "pt": "Os manuscritos, do século XIII ao XIX, tratam de direito, astronomia, medicina, matemática e poesia, e muitos foram copiados na época em que os sábios da cidade eram famosos em todo o mundo islâmico. Um deles, Ahmad Baba, dizia que sua biblioteca de 1.600 volumes estava entre as menores da família. Quando grupos jihadistas tomaram a cidade, famílias e bibliotecários levaram os livros às escondidas até Bamako, a capital do Mali; mesmo assim, os ocupantes queimaram cerca de 4 mil manuscritos antes de sair, em 2013.",
+        "es": "Los manuscritos, de los siglos XIII al XIX, tratan de derecho, astronomía, medicina, matemáticas y poesía, y muchos se copiaron en la época en que los sabios de la ciudad eran famosos en todo el mundo islámico. Uno de ellos, Ahmad Baba, decía que su biblioteca de 1600 volúmenes estaba entre las más pequeñas de su familia. Cuando grupos yihadistas tomaron la ciudad, familias y bibliotecarios llevaron los libros en secreto hasta Bamako, la capital de Malí; aun así, los ocupantes quemaron unos 4000 manuscritos antes de marcharse, en 2013."
       }
     },
     {
       "en": "It was one of the largest empires in African history, successor to the empire where Mansa Musa reigned.",
       "pt": "Foi um dos maiores impérios da história da África, sucessor do império onde reinou Mansa Musa.",
+      "es": "Fue uno de los mayores imperios de la historia de África, sucesor del imperio en el que reinó Mansa Musa.",
       "details": {
         "en": "In the 14th century, Gao was a vassal of the Mali Empire. As Mali weakened, the Songhai took Timbuktu in 1468 and Djenné in 1473, and went on to rule a strip of about 2,000 km along the Niger, from the region of the Senegal River to the Aïr, in today's Niger. Counting the states that paid tribute, some historians estimate its area at about 1.4 million km².",
-        "pt": "No século XIV, Gao era vassala do Império do Mali. Com o enfraquecimento do Mali, os songais tomaram Tombuctu em 1468 e Djenné em 1473, e passaram a dominar uma faixa de cerca de 2 mil km ao longo do Níger, da região do rio Senegal até o Aïr, no atual Níger. Contando os Estados que pagavam tributo, alguns historiadores estimam sua área em cerca de 1,4 milhão de km²."
+        "pt": "No século XIV, Gao era vassala do Império do Mali. Com o enfraquecimento do Mali, os songais tomaram Tombuctu em 1468 e Djenné em 1473, e passaram a dominar uma faixa de cerca de 2 mil km ao longo do Níger, da região do rio Senegal até o Aïr, no atual Níger. Contando os Estados que pagavam tributo, alguns historiadores estimam sua área em cerca de 1,4 milhão de km².",
+        "es": "En el siglo XIV, Gao era vasalla del Imperio de Malí. Con el debilitamiento de Malí, los songhai tomaron Tombuctú en 1468 y Djenné en 1473, y pasaron a dominar una franja de unos 2000 km a lo largo del Níger, desde la región del río Senegal hasta el Aïr, en el actual Níger. Contando los Estados que pagaban tributo, algunos historiadores calculan su superficie en cerca de 1,4 millones de km²."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Songhai_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Império_Songai"
+    "pt": "https://pt.wikipedia.org/wiki/Império_Songai",
+    "es": "https://es.wikipedia.org/wiki/Imperio_songhai"
   },
   "aliases": [
     "Songhai",
@@ -90,7 +103,8 @@
   ],
   "summary": {
     "en": "A West African empire formed in the 15th century along the Niger River, from the city of Gao. Sonni Ali, who had a fleet of war canoes on the river, took Timbuktu and Djenné and extended his rule over much of the Niger valley. After his death, the general Askia Muhammad seized power and founded a new dynasty, which organised the territory into provinces, with governors, a standing army and common weights and measures. The empire controlled the trade in gold, salt and enslaved people that crossed the Sahara. Succession disputes weakened the dynasty at the end of the 16th century, shortly before the invasion that put an end to the empire.",
-    "pt": "Império da África Ocidental formado no século XV ao longo do rio Níger, a partir da cidade de Gao. Sonni Ali, que tinha uma frota de canoas de guerra no rio, tomou Tombuctu e Djenné e estendeu o domínio por boa parte do vale do Níger. Depois da morte dele, o general Askia Muhammad tomou o poder e fundou uma nova dinastia, que organizou o território em províncias, com governadores, um exército permanente e pesos e medidas comuns. O império controlava o comércio de ouro, sal e escravizados que cruzava o Saara. Disputas pela sucessão enfraqueceram a dinastia no fim do século XVI, pouco antes da invasão que pôs fim ao império."
+    "pt": "Império da África Ocidental formado no século XV ao longo do rio Níger, a partir da cidade de Gao. Sonni Ali, que tinha uma frota de canoas de guerra no rio, tomou Tombuctu e Djenné e estendeu o domínio por boa parte do vale do Níger. Depois da morte dele, o general Askia Muhammad tomou o poder e fundou uma nova dinastia, que organizou o território em províncias, com governadores, um exército permanente e pesos e medidas comuns. O império controlava o comércio de ouro, sal e escravizados que cruzava o Saara. Disputas pela sucessão enfraqueceram a dinastia no fim do século XVI, pouco antes da invasão que pôs fim ao império.",
+    "es": "Imperio de África Occidental formado en el siglo XV a lo largo del río Níger, a partir de la ciudad de Gao. Sonni Alí, que tenía una flota de canoas de guerra en el río, tomó Tombuctú y Djenné y extendió su dominio por buena parte del valle del Níger. Tras su muerte, el general Askia Mohamed tomó el poder y fundó una nueva dinastía, que organizó el territorio en provincias, con gobernadores, un ejército permanente y pesos y medidas comunes. El imperio controlaba el comercio de oro, sal y personas esclavizadas que cruzaba el Sahara. Las disputas por la sucesión debilitaron a la dinastía a finales del siglo XVI, poco antes de la invasión que puso fin al imperio."
   },
   "map": {
     "parts": [

@@ -3,7 +3,8 @@
   "slug": "fatimid-caliphate",
   "name": {
     "en": "Fatimid Caliphate",
-    "pt": "Califado Fatímida"
+    "pt": "Califado Fatímida",
+    "es": "Califato fatimí"
   },
   "peak": {
     "year": 975,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts in 909, when a religious leader backed by Berber tribes overthrew the dynasty that ruled what is now Tunisia and proclaimed himself caliph. It ends in 1171, when the vizier who in fact governed Egypt abolished the caliphate and returned the country to the allegiance of the Sunni caliph of Baghdad. The map shows the peak, around 975, and leaves out Sicily, ruled by vassal emirs who were almost independent.",
-    "pt": "Começa em 909, quando um líder religioso apoiado por tribos berberes derrubou a dinastia que governava a atual Tunísia e se proclamou califa. Termina em 1171, quando o vizir que de fato governava o Egito aboliu o califado e devolveu o país à obediência do califa sunita de Bagdá. O mapa mostra o auge, por volta de 975, e não inclui a Sicília, governada por emires vassalos quase independentes."
+    "pt": "Começa em 909, quando um líder religioso apoiado por tribos berberes derrubou a dinastia que governava a atual Tunísia e se proclamou califa. Termina em 1171, quando o vizir que de fato governava o Egito aboliu o califado e devolveu o país à obediência do califa sunita de Bagdá. O mapa mostra o auge, por volta de 975, e não inclui a Sicília, governada por emires vassalos quase independentes.",
+    "es": "Comienza en 909, cuando un líder religioso apoyado por tribus bereberes derrocó a la dinastía que gobernaba el actual Túnez y se proclamó califa. Termina en 1171, cuando el visir que de hecho gobernaba Egipto abolió el califato y devolvió el país a la obediencia del califa suní de Bagdad. El mapa muestra el apogeo, hacia 975, y no incluye Sicilia, gobernada por emires vasallos casi independientes."
   },
   "area": {
     "km2": 1954620,
@@ -35,49 +37,60 @@
   ],
   "capital": {
     "en": "Mahdia and other cities in today's Tunisia, later Cairo",
-    "pt": "Mahdia e outras cidades na atual Tunísia, depois Cairo"
+    "pt": "Mahdia e outras cidades na atual Tunísia, depois Cairo",
+    "es": "Mahdía y otras ciudades del actual Túnez, luego El Cairo"
   },
   "language": {
     "en": "Arabic (with Berber and Coptic also spoken)",
-    "pt": "Árabe (com o berbere e o copta também falados)"
+    "pt": "Árabe (com o berbere e o copta também falados)",
+    "es": "Árabe (también se hablaban el bereber y el copto)"
   },
   "religion": {
     "en": "Ismaili Shia Islam at court, with a Sunni majority and large Christian and Jewish communities",
-    "pt": "Islamismo xiita ismaelita na corte, com maioria sunita e grandes comunidades cristãs e judaicas"
+    "pt": "Islamismo xiita ismaelita na corte, com maioria sunita e grandes comunidades cristãs e judaicas",
+    "es": "Islam chií ismailí en la corte, con mayoría suní y grandes comunidades cristianas y judías"
   },
   "religionNotes": {
     "en": "The caliphs were also the imams of Ismailism, a Shia branch that saw them as infallible guides, and they sent missionaries to preach from Yemen to India. Even so, most of their subjects remained Sunni, and Christians and Jews, numerous in Egypt, held important posts in the administration.",
-    "pt": "Os califas eram também os imãs do ismaelismo, um ramo xiita que os via como guias infalíveis, e mandavam missionários pregar do Iêmen à Índia. Mesmo assim, a maioria dos súditos continuou sunita, e cristãos e judeus, numerosos no Egito, ocupavam cargos importantes na administração."
+    "pt": "Os califas eram também os imãs do ismaelismo, um ramo xiita que os via como guias infalíveis, e mandavam missionários pregar do Iêmen à Índia. Mesmo assim, a maioria dos súditos continuou sunita, e cristãos e judeus, numerosos no Egito, ocupavam cargos importantes na administração.",
+    "es": "Los califas eran también los imanes del ismailismo, una rama chií que los consideraba guías infalibles, y enviaban misioneros a predicar desde Yemen hasta la India. Aun así, la mayoría de sus súbditos siguió siendo suní, y los cristianos y judíos, numerosos en Egipto, ocupaban cargos importantes en la administración."
   },
   "curiosities": [
     {
       "en": "The scientist Ibn al-Haytham feigned madness to escape an impossible order from the caliph and, under house arrest, wrote the book that explained how vision works.",
       "pt": "O cientista Ibn al-Haytham fingiu loucura para escapar de uma ordem impossível do califa e, preso em casa, escreveu o livro que explicou como a visão funciona.",
+      "es": "El científico Ibn al-Haytham fingió estar loco para librarse de una orden imposible del califa y, recluido en su casa, escribió el libro que explicó cómo funciona la visión.",
       "details": {
         "en": "According to his biographers, Ibn al-Haytham, born in Basra, claimed he could control the floods of the Nile, and the caliph al-Hakim called him to Egypt. Near Aswan, he realised the project was impossible with the means of the time and, fearing the caliph's anger, pretended to be mad, living confined until al-Hakim's death, in 1021. His Book of Optics showed, with experiments, that we see because light from objects enters the eye, and not because the eye emits rays. Translated into Latin, it influenced European science for centuries, and in the West he became known as Alhazen.",
-        "pt": "Segundo seus biógrafos, Ibn al-Haytham, nascido em Basra, disse que conseguiria controlar as cheias do Nilo, e o califa al-Hakim o chamou ao Egito. Perto de Assuã, ele percebeu que o projeto era impossível com os meios da época e, com medo da fúria do califa, fingiu-se de louco, vivendo confinado até a morte de al-Hakim, em 1021. Seu Livro da Óptica mostrou, com experimentos, que enxergamos porque a luz dos objetos entra no olho, e não porque o olho emite raios. Traduzido para o latim, influenciou a ciência europeia por séculos, e no Ocidente ele ficou conhecido como Alhazen."
+        "pt": "Segundo seus biógrafos, Ibn al-Haytham, nascido em Basra, disse que conseguiria controlar as cheias do Nilo, e o califa al-Hakim o chamou ao Egito. Perto de Assuã, ele percebeu que o projeto era impossível com os meios da época e, com medo da fúria do califa, fingiu-se de louco, vivendo confinado até a morte de al-Hakim, em 1021. Seu Livro da Óptica mostrou, com experimentos, que enxergamos porque a luz dos objetos entra no olho, e não porque o olho emite raios. Traduzido para o latim, influenciou a ciência europeia por séculos, e no Ocidente ele ficou conhecido como Alhazen.",
+        "es": "Según sus biógrafos, Ibn al-Haytham, nacido en Basora, afirmó que podría controlar las crecidas del Nilo, y el califa al-Hákim lo llamó a Egipto. Cerca de Asuán se dio cuenta de que el proyecto era imposible con los medios de la época y, por miedo a la ira del califa, fingió estar loco y vivió recluido hasta la muerte de al-Hákim, en 1021. Su Libro de óptica demostró, con experimentos, que vemos porque la luz de los objetos entra en el ojo, y no porque el ojo emita rayos. Traducido al latín, influyó en la ciencia europea durante siglos, y en Occidente se le conoció como Alhacén."
       }
     },
     {
       "en": "A mosque-university founded by the dynasty in 970 still operates today and is the greatest centre of Sunni Islamic learning, even though it was created by Shiites.",
       "pt": "Uma mesquita-universidade fundada pela dinastia em 970 funciona até hoje e é o maior centro de estudos do islã sunita, mesmo tendo sido criada por xiitas.",
+      "es": "Una mezquita-universidad fundada por la dinastía en 970 sigue funcionando hoy y es el mayor centro de estudios del islam suní, aunque la crearon chiíes.",
       "details": {
         "en": "Al-Azhar was founded in Cairo soon after the conquest of Egypt, and from 988 the caliphs paid scholars to teach there, which makes it one of the oldest universities still in operation. Its name, \"the resplendent\", is probably a reference to the epithet of the woman from whom the dynasty claimed descent. After the end of the caliphate it became Sunni, and today it receives students from dozens of countries, and its Grand Imam is one of the highest authorities of Sunni Islam.",
-        "pt": "Al-Azhar foi fundada no Cairo logo depois da conquista do Egito, e a partir de 988 os califas passaram a pagar estudiosos para ensinar ali, o que faz dela uma das universidades mais antigas ainda em funcionamento. Seu nome, \"a resplandecente\", provavelmente é uma referência ao epíteto da mulher de quem a dinastia dizia descender. Depois do fim do califado ela passou a ser sunita, e hoje recebe estudantes de dezenas de países, e seu grande imã é uma das maiores autoridades do islã sunita."
+        "pt": "Al-Azhar foi fundada no Cairo logo depois da conquista do Egito, e a partir de 988 os califas passaram a pagar estudiosos para ensinar ali, o que faz dela uma das universidades mais antigas ainda em funcionamento. Seu nome, \"a resplandecente\", provavelmente é uma referência ao epíteto da mulher de quem a dinastia dizia descender. Depois do fim do califado ela passou a ser sunita, e hoje recebe estudantes de dezenas de países, e seu grande imã é uma das maiores autoridades do islã sunita.",
+        "es": "Al-Azhar se fundó en El Cairo poco después de la conquista de Egipto, y desde 988 los califas pagaron a eruditos para que enseñaran allí, lo que la convierte en una de las universidades más antiguas aún en funcionamiento. Su nombre, \"la resplandeciente\", es probablemente una referencia al epíteto de la mujer de quien la dinastía decía descender. Tras el fin del califato pasó a ser suní; hoy recibe estudiantes de decenas de países, y su gran imán es una de las mayores autoridades del islam suní."
       }
     },
     {
       "en": "Its rulers claimed descent from Fatima, Muhammad's daughter, and the dynasty's name comes from her.",
       "pt": "Seus governantes diziam descender de Fátima, filha de Maomé, e o nome da dinastia vem dela.",
+      "es": "Sus gobernantes afirmaban descender de Fátima, hija de Mahoma, y el nombre de la dinastía viene de ella.",
       "details": {
         "en": "Fatima married Ali, Muhammad's cousin, and from their sons, Hasan and Husayn, descends the line that the Shiites consider the legitimate leaders of the Muslims. The founder of the dynasty claimed to descend from them through the imam Ismail, who gave his name to Ismailism. Their Sunni rivals disputed this: in 1011, scholars gathered in Baghdad signed a manifesto declaring the lineage false, and historians still debate the question.",
-        "pt": "Fátima se casou com Ali, primo de Maomé, e dos filhos deles, Hassan e Hussein, descende a linhagem que os xiitas consideram os líderes legítimos dos muçulmanos. O fundador da dinastia dizia descender deles pelo imã Ismail, que deu nome ao ismaelismo. Os rivais sunitas contestavam: em 1011, sábios reunidos em Bagdá assinaram um manifesto declarando a linhagem falsa, e os historiadores ainda discutem a questão."
+        "pt": "Fátima se casou com Ali, primo de Maomé, e dos filhos deles, Hassan e Hussein, descende a linhagem que os xiitas consideram os líderes legítimos dos muçulmanos. O fundador da dinastia dizia descender deles pelo imã Ismail, que deu nome ao ismaelismo. Os rivais sunitas contestavam: em 1011, sábios reunidos em Bagdá assinaram um manifesto declarando a linhagem falsa, e os historiadores ainda discutem a questão.",
+        "es": "Fátima se casó con Alí, primo de Mahoma, y de sus hijos, Hasán y Husáin, desciende el linaje que los chiíes consideran los líderes legítimos de los musulmanes. El fundador de la dinastía afirmaba descender de ellos a través del imán Ismail, que dio nombre al ismailismo. Sus rivales suníes lo negaban: en 1011, unos sabios reunidos en Bagdad firmaron un manifiesto que declaraba falso el linaje, y los historiadores aún debaten la cuestión."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Fatimid_Caliphate",
-    "pt": "https://pt.wikipedia.org/wiki/Califado_Fatímida"
+    "pt": "https://pt.wikipedia.org/wiki/Califado_Fatímida",
+    "es": "https://es.wikipedia.org/wiki/Califato_fatimí"
   },
   "aliases": [
     "Fatimids",
@@ -87,11 +100,15 @@
     "Fatimid Dynasty",
     "Dinastia Fatímida",
     "Califado Fatimida",
-    "Fatimite Caliphate"
+    "Fatimite Caliphate",
+    "Fatimíes",
+    "Fatimitas",
+    "Califato fatimita"
   ],
   "summary": {
     "en": "A Shia caliphate founded in 909 in North Africa, in opposition to the Sunni caliph of Baghdad, who claimed the leadership of all Muslims. In 969, its general Jawhar conquered Egypt without much resistance and founded a new capital there, to which the court moved. From Egypt, the caliphate ruled the Levant, Palestine and the holy cities of Arabia, and profited from the trade between the Mediterranean and the Indian Ocean through the Red Sea. In the 11th century, it lost North Africa to former vassals and Syria to the Seljuk Turks and the Crusaders, and power passed into the hands of the viziers. In 1171, one of them, Saladin, put an end to the dynasty.",
-    "pt": "Califado xiita fundado em 909 no norte da África, em oposição ao califa sunita de Bagdá, que reivindicava a liderança de todos os muçulmanos. Em 969, seu general Jawhar conquistou o Egito sem grande resistência e fundou ali uma nova capital, para onde a corte se mudou. A partir do Egito, o califado dominou o Levante, a Palestina e as cidades sagradas da Arábia, e lucrou com o comércio entre o Mediterrâneo e o Oceano Índico pelo Mar Vermelho. No século XI, perdeu o norte da África para antigos vassalos e a Síria para os turcos seljúcidas e os cruzados, e o poder passou para as mãos dos vizires. Em 1171, um deles, Saladino, pôs fim à dinastia."
+    "pt": "Califado xiita fundado em 909 no norte da África, em oposição ao califa sunita de Bagdá, que reivindicava a liderança de todos os muçulmanos. Em 969, seu general Jawhar conquistou o Egito sem grande resistência e fundou ali uma nova capital, para onde a corte se mudou. A partir do Egito, o califado dominou o Levante, a Palestina e as cidades sagradas da Arábia, e lucrou com o comércio entre o Mediterrâneo e o Oceano Índico pelo Mar Vermelho. No século XI, perdeu o norte da África para antigos vassalos e a Síria para os turcos seljúcidas e os cruzados, e o poder passou para as mãos dos vizires. Em 1171, um deles, Saladino, pôs fim à dinastia.",
+    "es": "Un califato chií fundado en 909 en el norte de África, en oposición al califa suní de Bagdad, que reivindicaba el liderazgo de todos los musulmanes. En 969, su general Chauhar conquistó Egipto sin gran resistencia y fundó allí una nueva capital, a la que se trasladó la corte. Desde Egipto, el califato dominó el Levante, Palestina y las ciudades santas de Arabia, y se benefició del comercio entre el Mediterráneo y el océano Índico a través del mar Rojo. En el siglo XI perdió el norte de África ante antiguos vasallos y Siria ante los turcos selyúcidas y los cruzados, y el poder pasó a manos de los visires. En 1171, uno de ellos, Saladino, puso fin a la dinastía."
   },
   "map": {
     "parts": [

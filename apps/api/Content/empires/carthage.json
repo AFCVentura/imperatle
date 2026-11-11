@@ -3,7 +3,8 @@
   "slug": "carthage",
   "name": {
     "en": "Carthage",
-    "pt": "Cartago"
+    "pt": "Cartago",
+    "es": "Cartago"
   },
   "peak": {
     "year": -218,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "Tradition places its founding in 814 BCE, by settlers from a Phoenician city. It became an independent power from the 7th century BCE and ends in 146 BCE, when its capital was destroyed.",
-    "pt": "A tradição situa sua fundação em 814 a.C., por colonos de uma cidade fenícia. Tornou-se uma potência independente a partir do século VII a.C. e termina em 146 a.C., quando sua capital foi destruída."
+    "pt": "A tradição situa sua fundação em 814 a.C., por colonos de uma cidade fenícia. Tornou-se uma potência independente a partir do século VII a.C. e termina em 146 a.C., quando sua capital foi destruída.",
+    "es": "La tradición sitúa su fundación en 814 a. C., por colonos de una ciudad fenicia. Se convirtió en una potencia independiente a partir del siglo VII a. C. y termina en 146 a. C., cuando su capital fue destruida."
   },
   "area": {
     "km2": 458998,
@@ -35,49 +37,60 @@
   ],
   "capital": {
     "en": "Carthage",
-    "pt": "Cartago"
+    "pt": "Cartago",
+    "es": "Cartago"
   },
   "language": {
     "en": "Punic",
-    "pt": "Púnico"
+    "pt": "Púnico",
+    "es": "Púnico"
   },
   "religion": {
     "en": "Phoenician polytheism (worship of Baal Hammon and Tanit)",
-    "pt": "Politeísmo fenício (culto a Baal Hammon e Tanit)"
+    "pt": "Politeísmo fenício (culto a Baal Hammon e Tanit)",
+    "es": "Politeísmo fenicio (culto a Baal Hammon y Tanit)"
   },
   "religionNotes": {
     "en": "Ancient writers accused it of sacrificing children to its gods. Burial grounds full of infant remains found by archaeologists keep the debate alive.",
-    "pt": "Escritores antigos o acusavam de sacrificar crianças aos deuses. Cemitérios cheios de restos de bebês encontrados por arqueólogos mantêm o debate vivo."
+    "pt": "Escritores antigos o acusavam de sacrificar crianças aos deuses. Cemitérios cheios de restos de bebês encontrados por arqueólogos mantêm o debate vivo.",
+    "es": "Los autores antiguos la acusaban de sacrificar niños a sus dioses. Los cementerios llenos de restos de bebés hallados por los arqueólogos mantienen vivo el debate."
   },
   "curiosities": [
     {
       "en": "After its fall, the victors ordered one of its farming manuals translated into Latin, so highly was it valued.",
       "pt": "Depois de sua queda, os vencedores mandaram traduzir para o latim um de seus manuais de agricultura, de tão valorizado que era.",
+      "es": "Tras su caída, los vencedores valoraban tanto uno de sus manuales de agricultura que mandaron traducirlo al latín.",
       "details": {
         "en": "Mago wrote a treatise on farming in 28 books, in the Punic language. When Carthage was destroyed in 146 BCE, the Roman Senate gave the city's libraries to the Numidian kings, but ordered this one work translated into Latin. Roman writers such as Columella called him the \"father of agriculture\". The original is lost; only passages quoted by them survive.",
-        "pt": "Magão escreveu um tratado de agricultura em 28 livros, em língua púnica. Quando Cartago foi destruída, em 146 a.C., o Senado romano deu as bibliotecas da cidade aos reis númidas, mas mandou traduzir para o latim apenas essa obra. Autores romanos como Columela o chamavam de \"pai da agricultura\". O original se perdeu, e só restam trechos citados por eles."
+        "pt": "Magão escreveu um tratado de agricultura em 28 livros, em língua púnica. Quando Cartago foi destruída, em 146 a.C., o Senado romano deu as bibliotecas da cidade aos reis númidas, mas mandou traduzir para o latim apenas essa obra. Autores romanos como Columela o chamavam de \"pai da agricultura\". O original se perdeu, e só restam trechos citados por eles.",
+        "es": "Magón escribió un tratado de agricultura en 28 libros, en lengua púnica. Cuando Cartago fue destruida, en 146 a. C., el Senado romano entregó las bibliotecas de la ciudad a los reyes númidas, pero ordenó traducir al latín solo esa obra. Autores romanos como Columela lo llamaban \"padre de la agricultura\". El original se perdió, y solo quedan pasajes citados por ellos."
       }
     },
     {
       "en": "Its capital had a circular military harbour that could shelter more than 200 warships, with the admiral's headquarters on an island in the middle.",
       "pt": "Sua capital tinha um porto militar circular capaz de abrigar mais de 200 navios de guerra, com o quartel do almirante numa ilha no meio.",
+      "es": "Su capital tenía un puerto militar circular capaz de albergar más de 200 barcos de guerra, con el cuartel del almirante en una isla en el centro.",
       "details": {
         "en": "Carthage had two harbours: a rectangular one for merchant ships and a circular one, the cothon, for the war fleet. According to the historian Appian, the naval harbour had covered docks for 220 ships and, on a central island, the admiral's house, from which the sea was watched. The outlines of both harbours can still be seen in Carthage, in Tunisia.",
-        "pt": "Cartago tinha dois portos: um retangular, para os navios mercantes, e outro circular, o cóton, para a frota de guerra. Segundo o historiador Apiano, o porto militar tinha docas cobertas para 220 navios e, numa ilha no centro, a casa do almirante, de onde se vigiava o mar. Os contornos dos dois portos ainda podem ser vistos em Cartago, na Tunísia."
+        "pt": "Cartago tinha dois portos: um retangular, para os navios mercantes, e outro circular, o cóton, para a frota de guerra. Segundo o historiador Apiano, o porto militar tinha docas cobertas para 220 navios e, numa ilha no centro, a casa do almirante, de onde se vigiava o mar. Os contornos dos dois portos ainda podem ser vistos em Cartago, na Tunísia.",
+        "es": "Cartago tenía dos puertos: uno rectangular, para los barcos mercantes, y otro circular, el cothon, para la flota de guerra. Según el historiador Apiano, el puerto militar tenía cobertizos para 220 barcos y, en una isla central, la casa del almirante, desde donde se vigilaba el mar. Los contornos de ambos puertos aún pueden verse en Cartago, en Túnez."
       }
     },
     {
       "en": "One of its generals crossed the Alps with war elephants to invade Italy.",
       "pt": "Um de seus generais atravessou os Alpes com elefantes de guerra para invadir a Itália.",
+      "es": "Uno de sus generales cruzó los Alpes con elefantes de guerra para invadir Italia.",
       "details": {
         "en": "Hannibal Barca left Spain in 218 BCE with tens of thousands of soldiers and about 37 elephants, crossed the Pyrenees and the Alps and invaded Italy. Almost all the elephants died on the way or in the first winter, but he beat the Romans at the Trebia, Lake Trasimene and Cannae. He stayed 15 years in Italy without taking Rome and was defeated at Zama, in Africa, in 202 BCE.",
-        "pt": "Aníbal Barca saiu da Espanha em 218 a.C. com dezenas de milhares de soldados e cerca de 37 elefantes, atravessou os Pireneus e os Alpes e invadiu a Itália. Quase todos os elefantes morreram no caminho ou no primeiro inverno, mas ele venceu os romanos no Trébia, no lago Trasimeno e em Canas. Ficou 15 anos na Itália sem tomar Roma e foi derrotado em Zama, na África, em 202 a.C."
+        "pt": "Aníbal Barca saiu da Espanha em 218 a.C. com dezenas de milhares de soldados e cerca de 37 elefantes, atravessou os Pireneus e os Alpes e invadiu a Itália. Quase todos os elefantes morreram no caminho ou no primeiro inverno, mas ele venceu os romanos no Trébia, no lago Trasimeno e em Canas. Ficou 15 anos na Itália sem tomar Roma e foi derrotado em Zama, na África, em 202 a.C.",
+        "es": "Aníbal Barca partió de Hispania en 218 a. C. con decenas de miles de soldados y unos 37 elefantes, cruzó los Pirineos y los Alpes e invadió Italia. Casi todos los elefantes murieron en el camino o en el primer invierno, pero venció a los romanos en el Trebia, en el lago Trasimeno y en Cannas. Pasó 15 años en Italia sin tomar Roma y fue derrotado en Zama, en África, en 202 a. C."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Ancient_Carthage",
-    "pt": "https://pt.wikipedia.org/wiki/Civilização_cartaginesa"
+    "pt": "https://pt.wikipedia.org/wiki/Civilização_cartaginesa",
+    "es": "https://es.wikipedia.org/wiki/Estado_púnico"
   },
   "aliases": [
     "Ancient Carthage",
@@ -91,11 +104,16 @@
     "Tunisia",
     "Tunísia",
     "Carthaginian Empire",
-    "Império Cartaginês"
+    "Império Cartaginês",
+    "Cartago antigua",
+    "Estado púnico",
+    "República cartaginesa",
+    "Túnez"
   ],
   "summary": {
     "en": "A city founded by Phoenician settlers from Tyre on the coast of today's Tunisia, which became the greatest trading and naval power of the western Mediterranean. It controlled North Africa, southern Spain, Sardinia, parts of Sicily and several islands, and grew rich trading metals, cloth and farm goods. It was a republic run by elected magistrates and a council of wealthy families. It fought Rome in three wars, the Punic Wars, and was destroyed in 146 BCE, at the end of the third.",
-    "pt": "Cidade fundada por colonos fenícios de Tiro no litoral da atual Tunísia, que virou a maior potência comercial e naval do Mediterrâneo ocidental. Controlava o norte da África, o sul da Espanha, a Sardenha, partes da Sicília e várias ilhas, e enriquecia com o comércio de metais, tecidos e produtos agrícolas. Era uma república governada por magistrados eleitos e por um conselho de famílias ricas. Enfrentou Roma em três guerras, as Guerras Púnicas, e foi destruída em 146 a.C., ao fim da terceira."
+    "pt": "Cidade fundada por colonos fenícios de Tiro no litoral da atual Tunísia, que virou a maior potência comercial e naval do Mediterrâneo ocidental. Controlava o norte da África, o sul da Espanha, a Sardenha, partes da Sicília e várias ilhas, e enriquecia com o comércio de metais, tecidos e produtos agrícolas. Era uma república governada por magistrados eleitos e por um conselho de famílias ricas. Enfrentou Roma em três guerras, as Guerras Púnicas, e foi destruída em 146 a.C., ao fim da terceira.",
+    "es": "Una ciudad fundada por colonos fenicios de Tiro en la costa del actual Túnez, que se convirtió en la mayor potencia comercial y naval del Mediterráneo occidental. Controlaba el norte de África, el sur de Hispania, Cerdeña, partes de Sicilia y varias islas, y se enriqueció con el comercio de metales, telas y productos agrícolas. Era una república gobernada por magistrados elegidos y por un consejo de familias ricas. Se enfrentó a Roma en tres guerras, las guerras púnicas, y fue destruida en 146 a. C., al final de la tercera."
   },
   "map": {
     "parts": [

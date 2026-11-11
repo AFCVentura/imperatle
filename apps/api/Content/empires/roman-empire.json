@@ -3,7 +3,8 @@
   "slug": "roman-empire",
   "name": {
     "en": "Roman Empire",
-    "pt": "Império Romano"
+    "pt": "Império Romano",
+    "es": "Imperio romano"
   },
   "peak": {
     "year": 117,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "Covers the imperial period up to the permanent division in 395. It excludes the kingdom and republic that came before it, and the two halves into which the empire was then split, each with its own emperor, treated here as separate empires.",
-    "pt": "Cobre o período imperial até a divisão definitiva, em 395. Exclui o reino e a república que vieram antes, e as duas metades em que o império foi dividido, cada uma com seu imperador, tratadas aqui como impérios separados."
+    "pt": "Cobre o período imperial até a divisão definitiva, em 395. Exclui o reino e a república que vieram antes, e as duas metades em que o império foi dividido, cada uma com seu imperador, tratadas aqui como impérios separados.",
+    "es": "Abarca el período imperial hasta la división definitiva, en el 395. Excluye el reino y la república que lo precedieron, y las dos mitades en que se dividió después el imperio, cada una con su emperador, que aquí se tratan como imperios distintos."
   },
   "area": {
     "km2": 5000000,
@@ -36,45 +38,55 @@
   ],
   "capital": {
     "en": "Rome",
-    "pt": "Roma"
+    "pt": "Roma",
+    "es": "Roma"
   },
   "language": {
     "en": "Latin (and Greek in the East)",
-    "pt": "Latim (e grego no Oriente)"
+    "pt": "Latim (e grego no Oriente)",
+    "es": "Latín (y griego en Oriente)"
   },
   "religion": {
     "en": "Roman polytheism (later Christianity)",
-    "pt": "Politeísmo romano (depois cristianismo)"
+    "pt": "Politeísmo romano (depois cristianismo)",
+    "es": "Politeísmo romano (después, cristianismo)"
   },
   "curiosities": [
     {
       "en": "It built a wall across an entire island to mark its northernmost border.",
       "pt": "Construiu um muro de um lado a outro de uma ilha para marcar sua fronteira mais ao norte.",
+      "es": "Construyó un muro de un lado a otro de una isla para marcar su frontera más septentrional.",
       "details": {
         "en": "Hadrian's Wall was built from 122 CE on the orders of Emperor Hadrian and crossed northern Britain from coast to coast, for about 117 km, with forts and watchtowers. Around 142 the Romans raised the Antonine Wall further north, in today's Scotland, but abandoned it within a generation. Much of Hadrian's Wall still stands and is a World Heritage Site.",
-        "pt": "A Muralha de Adriano foi construída a partir de 122 d.C., por ordem do imperador Adriano, e cruzava o norte da Britânia de costa a costa, por cerca de 117 km, com fortes e torres de vigia. Por volta de 142, os romanos ergueram mais ao norte a Muralha de Antonino, na atual Escócia, mas a abandonaram em uma geração. Boa parte da Muralha de Adriano ainda está de pé e é Patrimônio Mundial."
+        "pt": "A Muralha de Adriano foi construída a partir de 122 d.C., por ordem do imperador Adriano, e cruzava o norte da Britânia de costa a costa, por cerca de 117 km, com fortes e torres de vigia. Por volta de 142, os romanos ergueram mais ao norte a Muralha de Antonino, na atual Escócia, mas a abandonaram em uma geração. Boa parte da Muralha de Adriano ainda está de pé e é Patrimônio Mundial.",
+        "es": "El Muro de Adriano se construyó a partir del 122 d. C., por orden del emperador Adriano, y cruzaba el norte de Britania de costa a costa, a lo largo de unos 117 km, con fuertes y torres de vigilancia. Hacia el 142, los romanos levantaron más al norte el Muro de Antonino, en la actual Escocia, pero lo abandonaron en una generación. Buena parte del Muro de Adriano sigue en pie y es Patrimonio de la Humanidad."
       }
     },
     {
       "en": "Two months of our calendar honour its first ruler and the last dictator of the regime that came before it.",
       "pt": "Dois meses do nosso calendário homenageiam seu primeiro governante e o último ditador do regime anterior.",
+      "es": "Dos meses de nuestro calendario honran a su primer gobernante y al último dictador del régimen anterior.",
       "details": {
         "en": "July honours Julius Caesar, born in that month, who was named dictator for life of the Republic and murdered in 44 BCE; the office of dictator was abolished soon after. August honours his adopted heir Augustus, the first emperor. They used to be called Quintilis and Sextilis, the fifth and sixth months of the old Roman calendar, which began in March. The Julian calendar, created by Caesar in 46 BCE, is the basis of the one we use today.",
-        "pt": "Julho homenageia Júlio César, nascido nesse mês, que foi nomeado ditador vitalício da República e assassinado em 44 a.C.; o cargo de ditador foi abolido logo depois. Agosto homenageia seu herdeiro adotivo, Augusto, o primeiro imperador. Antes, os dois meses se chamavam Quintilis e Sextilis, o quinto e o sexto do antigo calendário romano, que começava em março. O calendário juliano, criado por César em 46 a.C., é a base do que usamos hoje."
+        "pt": "Julho homenageia Júlio César, nascido nesse mês, que foi nomeado ditador vitalício da República e assassinado em 44 a.C.; o cargo de ditador foi abolido logo depois. Agosto homenageia seu herdeiro adotivo, Augusto, o primeiro imperador. Antes, os dois meses se chamavam Quintilis e Sextilis, o quinto e o sexto do antigo calendário romano, que começava em março. O calendário juliano, criado por César em 46 a.C., é a base do que usamos hoje.",
+        "es": "Julio honra a Julio César, nacido en ese mes, que fue nombrado dictador vitalicio de la República y asesinado en el 44 a. C.; el cargo de dictador se abolió poco después. Agosto honra a su heredero adoptivo, Augusto, el primer emperador. Antes, esos dos meses se llamaban quintilis y sextilis, el quinto y el sexto del antiguo calendario romano, que empezaba en marzo. El calendario juliano, creado por César en el 46 a. C., es la base del que usamos hoy."
       }
     },
     {
       "en": "According to legend, its capital was founded by twins raised by a she-wolf.",
       "pt": "Segundo a lenda, sua capital foi fundada por gêmeos criados por uma loba.",
+      "es": "Según la leyenda, su capital la fundaron unos gemelos criados por una loba.",
       "details": {
         "en": "According to legend, the twins Romulus and Remus, sons of the god Mars, were thrown into the river Tiber as babies, and a she-wolf suckled them. As adults they founded Rome in 753 BCE, but they quarrelled, and Romulus killed Remus and gave his own name to the city. The she-wolf with the twins is still the symbol of Rome.",
-        "pt": "Segundo a lenda, os gêmeos Rômulo e Remo, filhos do deus Marte, foram jogados no rio Tibre ainda bebês, e uma loba os amamentou. Adultos, fundaram Roma em 753 a.C., mas brigaram, e Rômulo matou Remo e deu o próprio nome à cidade. A loba com os gêmeos é até hoje o símbolo de Roma."
+        "pt": "Segundo a lenda, os gêmeos Rômulo e Remo, filhos do deus Marte, foram jogados no rio Tibre ainda bebês, e uma loba os amamentou. Adultos, fundaram Roma em 753 a.C., mas brigaram, e Rômulo matou Remo e deu o próprio nome à cidade. A loba com os gêmeos é até hoje o símbolo de Roma.",
+        "es": "Según la leyenda, los gemelos Rómulo y Remo, hijos del dios Marte, fueron arrojados al río Tíber cuando eran bebés, y una loba los amamantó. Ya adultos, fundaron Roma en el 753 a. C., pero se pelearon, y Rómulo mató a Remo y dio su propio nombre a la ciudad. La loba con los gemelos sigue siendo hoy el símbolo de Roma."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Roman_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Império_Romano"
+    "pt": "https://pt.wikipedia.org/wiki/Império_Romano",
+    "es": "https://es.wikipedia.org/wiki/Imperio_romano"
   },
   "aliases": [
     "Rome",
@@ -86,11 +98,13 @@
     "Imperium Romanum",
     "SPQR",
     "Italy",
-    "Itália"
+    "Itália",
+    "Antigua Roma"
   ],
   "summary": {
     "en": "The imperial phase of the Roman state, which began in 27 BCE, when Octavian took the title Augustus and began to rule alone, ending the Republic. At its height, under Trajan in 117 CE, it stretched from Britain to Mesopotamia and surrounded the whole Mediterranean, which the Romans called \"our sea\". Its legacy includes Roman law, Latin, the source of languages such as Portuguese, and great works such as roads, aqueducts and the Colosseum. In the 4th century it adopted Christianity, and in 395, on the death of Theodosius I, it was permanently divided into two halves, each with its own emperor: the western half fell in 476, and the eastern half lasted until 1453.",
-    "pt": "Fase imperial do Estado romano, que começou em 27 a.C., quando Otaviano recebeu o título de Augusto e passou a governar sozinho, encerrando a República. No auge, com Trajano, em 117 d.C., ia da Britânia à Mesopotâmia e cercava todo o Mediterrâneo, que os romanos chamavam de \"nosso mar\". Deixou como herança o direito romano, o latim, de onde vêm línguas como o português, e grandes obras como estradas, aquedutos e o Coliseu. No século IV adotou o cristianismo e, em 395, com a morte de Teodósio I, foi dividido de forma definitiva em duas metades, cada uma com seu imperador: a ocidental caiu em 476, e a oriental durou até 1453."
+    "pt": "Fase imperial do Estado romano, que começou em 27 a.C., quando Otaviano recebeu o título de Augusto e passou a governar sozinho, encerrando a República. No auge, com Trajano, em 117 d.C., ia da Britânia à Mesopotâmia e cercava todo o Mediterrâneo, que os romanos chamavam de \"nosso mar\". Deixou como herança o direito romano, o latim, de onde vêm línguas como o português, e grandes obras como estradas, aquedutos e o Coliseu. No século IV adotou o cristianismo e, em 395, com a morte de Teodósio I, foi dividido de forma definitiva em duas metades, cada uma com seu imperador: a ocidental caiu em 476, e a oriental durou até 1453.",
+    "es": "La fase imperial del Estado romano, que comenzó en el 27 a. C., cuando Octaviano recibió el título de Augusto y pasó a gobernar en solitario, lo que puso fin a la República. En su apogeo, con Trajano, en el 117 d. C., iba desde Britania hasta Mesopotamia y rodeaba todo el Mediterráneo, al que los romanos llamaban \"nuestro mar\". Dejó como herencia el derecho romano, el latín, del que vienen lenguas como el español y el portugués, y grandes obras como calzadas, acueductos y el Coliseo. En el siglo IV adoptó el cristianismo y, en el 395, a la muerte de Teodosio I, se dividió definitivamente en dos mitades, cada una con su emperador: la occidental cayó en el 476, y la oriental duró hasta 1453."
   },
   "map": {
     "parts": [

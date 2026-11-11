@@ -3,7 +3,8 @@
   "slug": "seljuk-empire",
   "name": {
     "en": "Seljuk Empire",
-    "pt": "Império Seljúcida"
+    "pt": "Império Seljúcida",
+    "es": "Imperio selyúcida"
   },
   "peak": {
     "year": 1092,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts around 1037, when two brothers from a clan of Turkic nomads took the first great cities of northeastern Iran, and ends in 1194, when the last sultan was killed in battle by a former vassal from Central Asia. From 1118, the empire was divided between two branches of the family, and the sultans' power passed more and more to the military governors. The peak shown is 1092, the year of the death of the dynasty's most powerful sultan. The map excludes the Christian kingdom of the Caucasus, which paid tribute but kept its own kings, and the Turkic khanates of Central Asia, which had become vassals only a few years before.",
-    "pt": "Começa por volta de 1037, quando dois irmãos de um clã de nômades turcos tomaram as primeiras grandes cidades do nordeste do Irã, e termina em 1194, quando o último sultão foi morto em batalha por um antigo vassalo da Ásia Central. A partir de 1118, o império ficou dividido entre dois ramos da família, e o poder dos sultões passou cada vez mais aos governadores militares. O auge escolhido é 1092, ano da morte do sultão mais poderoso da dinastia. O mapa exclui o reino cristão do Cáucaso, que pagava tributo mas mantinha os próprios reis, e os canatos turcos da Ásia Central, que só tinham se tornado vassalos poucos anos antes."
+    "pt": "Começa por volta de 1037, quando dois irmãos de um clã de nômades turcos tomaram as primeiras grandes cidades do nordeste do Irã, e termina em 1194, quando o último sultão foi morto em batalha por um antigo vassalo da Ásia Central. A partir de 1118, o império ficou dividido entre dois ramos da família, e o poder dos sultões passou cada vez mais aos governadores militares. O auge escolhido é 1092, ano da morte do sultão mais poderoso da dinastia. O mapa exclui o reino cristão do Cáucaso, que pagava tributo mas mantinha os próprios reis, e os canatos turcos da Ásia Central, que só tinham se tornado vassalos poucos anos antes.",
+    "es": "Comienza hacia 1037, cuando dos hermanos de un clan de nómadas túrquicos tomaron las primeras grandes ciudades del nordeste de Irán, y termina en 1194, cuando el último sultán murió en batalla a manos de un antiguo vasallo de Asia Central. A partir de 1118, el imperio quedó dividido entre dos ramas de la familia, y el poder de los sultanes pasó cada vez más a los gobernadores militares. El apogeo elegido es 1092, año de la muerte del sultán más poderoso de la dinastía. El mapa excluye el reino cristiano del Cáucaso, que pagaba tributo pero conservaba sus propios reyes, y los kanatos túrquicos de Asia Central, que se habían convertido en vasallos solo unos pocos años antes."
   },
   "area": {
     "km2": 3400000,
@@ -35,49 +37,60 @@
   ],
   "capital": {
     "en": "Isfahan (earlier, Nishapur and Rey; later, Merv and Hamadan)",
-    "pt": "Isfahan (antes, Nishapur e Rey; depois, Merv e Hamadã)"
+    "pt": "Isfahan (antes, Nishapur e Rey; depois, Merv e Hamadã)",
+    "es": "Isfahán (antes, Nishapur y Rayy; después, Merv y Hamadán)"
   },
   "language": {
     "en": "Persian (as well as Turkic and Arabic)",
-    "pt": "Persa (além do turco e do árabe)"
+    "pt": "Persa (além do turco e do árabe)",
+    "es": "Persa (además del túrquico y del árabe)"
   },
   "religion": {
     "en": "Sunni Islam",
-    "pt": "Islamismo Sunita"
+    "pt": "Islamismo Sunita",
+    "es": "Islam suní"
   },
   "religionNotes": {
     "en": "The sultans presented themselves as defenders of Sunni Islam and of the caliph of Baghdad, at a time when much of the Islamic world was ruled by Shi'ite dynasties, such as the one that ruled Egypt.",
-    "pt": "Os sultões se apresentavam como defensores do islamismo sunita e do califa de Bagdá, num momento em que boa parte do mundo islâmico era governada por dinastias xiitas, como a que governava o Egito."
+    "pt": "Os sultões se apresentavam como defensores do islamismo sunita e do califa de Bagdá, num momento em que boa parte do mundo islâmico era governada por dinastias xiitas, como a que governava o Egito.",
+    "es": "Los sultanes se presentaban como defensores del islam suní y del califa de Bagdad, en un momento en que buena parte del mundo islámico estaba gobernada por dinastías chiíes, como la que gobernaba Egipto."
   },
   "curiosities": [
     {
       "en": "Its most powerful vizier was one of the first famous victims of a sect that gave rise to the word \"assassin\".",
       "pt": "Seu vizir mais poderoso foi uma das primeiras vítimas famosas de uma seita que deu origem à palavra \"assassino\".",
+      "es": "Su visir más poderoso fue una de las primeras víctimas famosas de una secta que dio origen a la palabra \"asesino\".",
       "details": {
         "en": "Nizam al-Mulk was killed in 1092 by a Nizari disguised as a dervish, on the orders of Hassan-i Sabbah, of Alamut. The Nizaris were called \"hashishiyyin\", from which the word \"assassin\" comes.",
-        "pt": "Nizam al-Mulk foi morto em 1092 por um nizarita disfarçado de dervixe, a mando de Hassan-i Sabbah, de Alamut. Os nizaritas eram chamados de \"hashishiyyin\", de onde vem a palavra \"assassino\"."
+        "pt": "Nizam al-Mulk foi morto em 1092 por um nizarita disfarçado de dervixe, a mando de Hassan-i Sabbah, de Alamut. Os nizaritas eram chamados de \"hashishiyyin\", de onde vem a palavra \"assassino\".",
+        "es": "Nizam al-Mulk fue asesinado en 1092 por un nizarí disfrazado de derviche, por orden de Hassan-i Sabbah, de Alamut. A los nizaríes los llamaban \"hashishiyyin\", de donde viene la palabra \"asesino\"."
       }
     },
     {
       "en": "It created a network of great state-funded religious schools, considered forerunners of universities.",
       "pt": "Criou uma rede de grandes escolas religiosas mantidas pelo Estado, consideradas precursoras das universidades.",
+      "es": "Creó una red de grandes escuelas religiosas sostenidas por el Estado, consideradas precursoras de las universidades.",
       "details": {
         "en": "The Nizamiyya madrasas, founded by Nizam al-Mulk from 1065 in Baghdad, Nishapur and other cities, had paid teachers and students on scholarships. The philosopher al-Ghazali taught at the one in Baghdad.",
-        "pt": "As madraças Nizamiyya, fundadas por Nizam al-Mulk a partir de 1065 em Bagdá, Nishapur e outras cidades, tinham professores pagos e alunos com bolsa. O filósofo al-Ghazali ensinou na de Bagdá."
+        "pt": "As madraças Nizamiyya, fundadas por Nizam al-Mulk a partir de 1065 em Bagdá, Nishapur e outras cidades, tinham professores pagos e alunos com bolsa. O filósofo al-Ghazali ensinou na de Bagdá.",
+        "es": "Las madrasas Nizamiyya, fundadas por Nizam al-Mulk a partir de 1065 en Bagdad, Nishapur y otras ciudades, tenían profesores pagados y alumnos becados. El filósofo Al-Ghazali (Algacel) enseñó en la de Bagdad."
       }
     },
     {
       "en": "It was after one of its victories that Turkic peoples began to settle in the region that is now Turkey.",
       "pt": "Foi a partir de uma vitória sua que povos turcos começaram a se instalar na região que hoje é a Turquia.",
+      "es": "A partir de una de sus victorias, pueblos túrquicos empezaron a asentarse en la región que hoy es Turquía.",
       "details": {
         "en": "After Manzikert, in 1071, the Turkmens occupied Anatolia, and a branch of the family founded the Sultanate of Rum there.",
-        "pt": "Depois de Manzikert, em 1071, os turcomanos ocuparam a Anatólia, e um ramo da família fundou ali o Sultanato de Rum."
+        "pt": "Depois de Manzikert, em 1071, os turcomanos ocuparam a Anatólia, e um ramo da família fundou ali o Sultanato de Rum.",
+        "es": "Tras Manzikert, en 1071, los turcomanos ocuparon Anatolia, y una rama de la familia fundó allí el Sultanato de Rum."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Seljuk_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Império_Seljúcida"
+    "pt": "https://pt.wikipedia.org/wiki/Império_Seljúcida",
+    "es": "https://es.wikipedia.org/wiki/Imperio_selyúcida"
   },
   "aliases": [
     "Great Seljuks",
@@ -96,11 +109,17 @@
     "Irã",
     "Irão",
     "Great Seljuk Empire",
-    "Grande Império Seljúcida"
+    "Grande Império Seljúcida",
+    "Selyúcidas",
+    "Gran Imperio selyúcida",
+    "Grandes selyúcidas",
+    "Turcos selyúcidas",
+    "Sultanato selyúcida"
   ],
   "summary": {
     "en": "A Turkic Muslim empire founded by the Seljuks, a clan of the Oghuz Turks that migrated from the steppe to Central Asia and converted to Sunni Islam. The brothers Tughril and Chaghri defeated the Ghaznavids at Dandanaqan, in 1040, and conquered Iran. In 1055, Tughril entered Baghdad, freed the Abbasid caliph from the control of the Shi'ite Buyids and received the title of sultan. His nephew Alp Arslan defeated the Byzantines at Manzikert, in 1071, and captured Emperor Romanos IV. Under Malik-Shah and his vizier Nizam al-Mulk, the empire reached its peak, stretching from Central Asia to the Mediterranean, and the poet Omar Khayyam created a new calendar at the Isfahan observatory. After 1092, succession wars divided the empire, and the losses in Anatolia led Byzantium to ask the pope for help, which gave rise to the First Crusade. Sultan Sanjar, in the east, was defeated by the Kara-Khitai in 1141, and in 1194 the last sultan was killed by the Khwarazmshah.",
-    "pt": "Império turco e muçulmano fundado pelos seljúcidas, um clã dos turcos oguzes que migrou da estepe para a Ásia Central e se converteu ao islamismo sunita. Os irmãos Tughril e Chaghri derrotaram os gaznévidas em Dandanaqan, em 1040, e conquistaram o Irã. Em 1055, Tughril entrou em Bagdá, libertou o califa abássida do controle dos buídas, que eram xiitas, e recebeu o título de sultão. Seu sobrinho Alp Arslan derrotou os bizantinos em Manzikert, em 1071, e capturou o imperador Romano IV. Sob Malik-Shah e o seu vizir Nizam al-Mulk, o império chegou ao auge, indo da Ásia Central ao Mediterrâneo, e o poeta Omar Khayyam criou um novo calendário no observatório de Isfahan. Depois de 1092, guerras de sucessão dividiram o império, e as perdas na Anatólia levaram Bizâncio a pedir ajuda ao papa, o que deu origem à Primeira Cruzada. O sultão Sanjar, no leste, foi derrotado pelos Kara-Khitai em 1141, e em 1194 o último sultão foi morto pelo xá de Khwarezm."
+    "pt": "Império turco e muçulmano fundado pelos seljúcidas, um clã dos turcos oguzes que migrou da estepe para a Ásia Central e se converteu ao islamismo sunita. Os irmãos Tughril e Chaghri derrotaram os gaznévidas em Dandanaqan, em 1040, e conquistaram o Irã. Em 1055, Tughril entrou em Bagdá, libertou o califa abássida do controle dos buídas, que eram xiitas, e recebeu o título de sultão. Seu sobrinho Alp Arslan derrotou os bizantinos em Manzikert, em 1071, e capturou o imperador Romano IV. Sob Malik-Shah e o seu vizir Nizam al-Mulk, o império chegou ao auge, indo da Ásia Central ao Mediterrâneo, e o poeta Omar Khayyam criou um novo calendário no observatório de Isfahan. Depois de 1092, guerras de sucessão dividiram o império, e as perdas na Anatólia levaram Bizâncio a pedir ajuda ao papa, o que deu origem à Primeira Cruzada. O sultão Sanjar, no leste, foi derrotado pelos Kara-Khitai em 1141, e em 1194 o último sultão foi morto pelo xá de Khwarezm.",
+    "es": "Imperio túrquico y musulmán fundado por los selyúcidas, un clan de los turcos oguz que emigró de la estepa a Asia Central y se convirtió al islam suní. Los hermanos Tugrïl y Chagri derrotaron a los gaznávidas en Dandanaqan, en 1040, y conquistaron Irán. En 1055, Tugrïl entró en Bagdad, liberó al califa abasí del control de los búyidas, que eran chiíes, y recibió el título de sultán. Su sobrino Alp Arslan derrotó a los bizantinos en Manzikert, en 1071, y capturó al emperador Romano IV. Con Malik Shah y su visir Nizam al-Mulk, el imperio alcanzó su apogeo, desde Asia Central hasta el Mediterráneo, y el poeta Omar Jayam creó un nuevo calendario en el observatorio de Isfahán. Después de 1092, las guerras de sucesión dividieron el imperio, y las pérdidas en Anatolia llevaron a Bizancio a pedir ayuda al papa, lo que dio origen a la primera cruzada. El sultán Sanjar, en el este, fue derrotado por los kara-kitai en 1141, y en 1194 el último sultán murió a manos del sah de Corasmia."
   },
   "map": {
     "parts": [

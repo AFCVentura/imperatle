@@ -3,7 +3,8 @@
   "slug": "second-portuguese-empire",
   "name": {
     "en": "Second Portuguese Empire",
-    "pt": "Segundo Império Português"
+    "pt": "Segundo Império Português",
+    "es": "Segundo Imperio portugués"
   },
   "peak": {
     "year": 1820,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts around 1663, when the loss of the main fortresses in South Asia shifted the centre of the empire to its large colony in South America, and ends in 1822, with the independence of that colony, recognised in 1825. The peak shown is 1820, after treaties that greatly extended the South American borders towards the interior. The earlier phase, focused on trade in Asia, and the later one, focused on the occupation of Africa, are treated here as separate empires.",
-    "pt": "Começa por volta de 1663, quando a perda das principais fortalezas no sul da Ásia deslocou o centro do império para a sua grande colônia na América do Sul, e termina em 1822, com a independência dessa colônia, reconhecida em 1825. O auge escolhido é 1820, depois de tratados que ampliaram muito as fronteiras sul-americanas em direção ao interior. As fases anterior, voltada ao comércio na Ásia, e posterior, voltada à ocupação da África, são tratadas aqui como impérios separados."
+    "pt": "Começa por volta de 1663, quando a perda das principais fortalezas no sul da Ásia deslocou o centro do império para a sua grande colônia na América do Sul, e termina em 1822, com a independência dessa colônia, reconhecida em 1825. O auge escolhido é 1820, depois de tratados que ampliaram muito as fronteiras sul-americanas em direção ao interior. As fases anterior, voltada ao comércio na Ásia, e posterior, voltada à ocupação da África, são tratadas aqui como impérios separados.",
+    "es": "Comienza hacia 1663, cuando la pérdida de las principales fortalezas del sur de Asia desplazó el centro del imperio a su gran colonia de América del Sur, y termina en 1822, con la independencia de esa colonia, reconocida en 1825. El apogeo que se muestra es 1820, después de unos tratados que ampliaron mucho las fronteras sudamericanas hacia el interior. La fase anterior, centrada en el comercio en Asia, y la posterior, centrada en la ocupación de África, se tratan aquí como imperios distintos."
   },
   "area": {
     "km2": 8218649,
@@ -38,49 +40,60 @@
   ],
   "capital": {
     "en": "Lisbon (Rio de Janeiro from 1808 to 1821)",
-    "pt": "Lisboa (Rio de Janeiro de 1808 a 1821)"
+    "pt": "Lisboa (Rio de Janeiro de 1808 a 1821)",
+    "es": "Lisboa (Río de Janeiro de 1808 a 1821)"
   },
   "language": {
     "en": "Portuguese",
-    "pt": "Português"
+    "pt": "Português",
+    "es": "Portugués"
   },
   "religion": {
     "en": "Catholicism",
-    "pt": "Catolicismo"
+    "pt": "Catolicismo",
+    "es": "Catolicismo"
   },
   "religionNotes": {
     "en": "The Inquisition watched over Catholic orthodoxy in the homeland and in its colonies until 1821. The Crown also controlled the appointment of bishops and the missions overseas, by a grant from the pope.",
-    "pt": "A Inquisição vigiou a ortodoxia católica na metrópole e nas colônias até 1821. A Coroa também controlava a nomeação de bispos e as missões no ultramar, por concessão do papa."
+    "pt": "A Inquisição vigiou a ortodoxia católica na metrópole e nas colônias até 1821. A Coroa também controlava a nomeação de bispos e as missões no ultramar, por concessão do papa.",
+    "es": "La Inquisición vigiló la ortodoxia católica en la metrópoli y en las colonias hasta 1821. La Corona también controlaba el nombramiento de obispos y las misiones de ultramar, por concesión del papa."
   },
   "curiosities": [
     {
       "en": "A gold rush in its American colony produced hundreds of tonnes of gold in the 18th century, much of which ended up in England.",
       "pt": "Uma corrida do ouro em sua colônia americana produziu centenas de toneladas de ouro no século XVIII, boa parte das quais acabou na Inglaterra.",
+      "es": "Una fiebre del oro en su colonia americana produjo cientos de toneladas de oro en el siglo XVIII, buena parte de las cuales acabó en Inglaterra.",
       "details": {
         "en": "From the late 17th century until around 1760, the mines of Minas Gerais yielded something like 800 to 1,000 tonnes of gold. Because of trade agreements such as the Methuen Treaty of 1703, Portugal imported many English goods and paid with this gold, which helped finance the British economy.",
-        "pt": "Do fim do século XVII até cerca de 1760, as minas de Minas Gerais renderam algo como 800 a 1.000 toneladas de ouro. Por causa de acordos comerciais como o Tratado de Methuen, de 1703, Portugal importava muitos produtos ingleses e pagava com esse ouro, o que ajudou a financiar a economia britânica."
+        "pt": "Do fim do século XVII até cerca de 1760, as minas de Minas Gerais renderam algo como 800 a 1.000 toneladas de ouro. Por causa de acordos comerciais como o Tratado de Methuen, de 1703, Portugal importava muitos produtos ingleses e pagava com esse ouro, o que ajudou a financiar a economia britânica.",
+        "es": "Desde finales del siglo XVII hasta cerca de 1760, las minas de Minas Gerais rindieron entre 800 y 1000 toneladas de oro, aproximadamente. Debido a acuerdos comerciales como el Tratado de Methuen, de 1703, Portugal importaba muchos productos ingleses y los pagaba con ese oro, lo que ayudó a financiar la economía británica."
       }
     },
     {
       "en": "Its American colony was the largest destination of enslaved Africans carried across the Atlantic.",
       "pt": "Sua colônia americana foi o maior destino de africanos escravizados levados pelo Atlântico.",
+      "es": "Su colonia americana fue el mayor destino de los africanos esclavizados llevados a través del Atlántico.",
       "details": {
         "en": "Between the 15th and the 19th centuries, about 12.5 million Africans were forced onto ships bound for the Americas. Portuguese and Brazilian ships carried about 5.8 million of them, close to half, most of them to Brazil, the country that received the most enslaved people in the world. The trade to Brazil was only effectively banned in 1850.",
-        "pt": "Entre os séculos XV e XIX, cerca de 12,5 milhões de africanos foram embarcados à força para as Américas. Navios portugueses e brasileiros levaram cerca de 5,8 milhões deles, perto de metade, a maioria para o Brasil, o país que mais recebeu pessoas escravizadas no mundo. O tráfico para o Brasil só foi proibido de fato em 1850."
+        "pt": "Entre os séculos XV e XIX, cerca de 12,5 milhões de africanos foram embarcados à força para as Américas. Navios portugueses e brasileiros levaram cerca de 5,8 milhões deles, perto de metade, a maioria para o Brasil, o país que mais recebeu pessoas escravizadas no mundo. O tráfico para o Brasil só foi proibido de fato em 1850.",
+        "es": "Entre los siglos XV y XIX, unos 12,5 millones de africanos fueron embarcados a la fuerza rumbo a América. Los barcos portugueses y brasileños transportaron a unos 5,8 millones de ellos, cerca de la mitad, la mayoría a Brasil, el país que más personas esclavizadas recibió en el mundo. El tráfico hacia Brasil no se prohibió de forma efectiva hasta 1850."
       }
     },
     {
       "en": "The heir to the throne stayed in its largest colony and declared its independence, becoming its first emperor.",
       "pt": "O herdeiro do trono ficou em sua maior colônia e declarou a independência dela, tornando-se seu primeiro imperador.",
+      "es": "El heredero del trono se quedó en su mayor colonia y proclamó su independencia; fue su primer emperador.",
       "details": {
         "en": "When John VI returned to Portugal in 1821, he left his son Pedro as prince regent in Brazil. Faced with orders from the Cortes in Lisbon to return, Pedro stayed (the \"Dia do Fico\") and on 7 September 1822 proclaimed independence, being acclaimed emperor. Later he was also king of Portugal for a few days, as Pedro IV.",
-        "pt": "Quando D. João VI voltou a Portugal em 1821, deixou o filho Pedro como príncipe regente no Brasil. Diante das ordens das cortes de Lisboa para que voltasse, Pedro ficou (\"Dia do Fico\") e em 7 de setembro de 1822 proclamou a independência, sendo aclamado imperador. Depois, ainda foi rei de Portugal por alguns dias, como D. Pedro IV."
+        "pt": "Quando D. João VI voltou a Portugal em 1821, deixou o filho Pedro como príncipe regente no Brasil. Diante das ordens das cortes de Lisboa para que voltasse, Pedro ficou (\"Dia do Fico\") e em 7 de setembro de 1822 proclamou a independência, sendo aclamado imperador. Depois, ainda foi rei de Portugal por alguns dias, como D. Pedro IV.",
+        "es": "Cuando Juan VI volvió a Portugal en 1821, dejó a su hijo Pedro como príncipe regente en Brasil. Ante las órdenes de las Cortes de Lisboa para que regresara, Pedro se quedó (el \"Dia do Fico\", el \"día del me quedo\") y el 7 de septiembre de 1822 proclamó la independencia y fue aclamado emperador. Más tarde también fue rey de Portugal durante unos días, como Pedro IV."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Portuguese_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Império_Português"
+    "pt": "https://pt.wikipedia.org/wiki/Império_Português",
+    "es": "https://es.wikipedia.org/wiki/Imperio_portugués"
   },
   "aliases": [
     "Portugal",
@@ -94,11 +107,14 @@
     "Império Lusitano",
     "Reino Unido de Portugal, Brasil e Algarves",
     "United Kingdom of Portugal, Brazil and the Algarves",
-    "Império Luso-Brasileiro"
+    "Império Luso-Brasileiro",
+    "Reino Unido de Portugal, Brasil y los Algarbes",
+    "Imperio luso-brasileño"
   ],
   "summary": {
     "en": "The phase of the Portuguese Empire in which its centre moved from Asia to Brazil, after the Dutch took the main fortresses in Ceylon and India, around 1663. The economy revolved around sugar, tobacco and, from the late 17th century, the gold and diamonds of Minas Gerais, sustained by the trade in enslaved Africans brought mainly from Angola. Treaties such as that of Madrid, in 1750, extended the borders of Brazil far beyond the Tordesillas line. In 1808, fleeing Napoleon's invasion, the court moved to Rio de Janeiro, and in 1815 Brazil was raised to a kingdom united with Portugal. With the king's return to Lisbon and pressure to recolonise Brazil, Prince Pedro declared independence in 1822.",
-    "pt": "Fase do Império Português em que o centro passou da Ásia para o Brasil, depois que os neerlandeses tomaram as principais fortalezas no Ceilão e na Índia, por volta de 1663. A economia girava em torno do açúcar, do tabaco e, a partir do fim do século XVII, do ouro e dos diamantes de Minas Gerais, sustentada pelo tráfico de africanos escravizados vindos sobretudo de Angola. Tratados como o de Madri, de 1750, ampliaram as fronteiras do Brasil muito além da linha de Tordesilhas. Em 1808, fugindo da invasão de Napoleão, a corte se mudou para o Rio de Janeiro, e em 1815 o Brasil foi elevado a reino unido a Portugal. Com a volta do rei a Lisboa e a pressão para recolonizar o Brasil, o príncipe Pedro declarou a independência em 1822."
+    "pt": "Fase do Império Português em que o centro passou da Ásia para o Brasil, depois que os neerlandeses tomaram as principais fortalezas no Ceilão e na Índia, por volta de 1663. A economia girava em torno do açúcar, do tabaco e, a partir do fim do século XVII, do ouro e dos diamantes de Minas Gerais, sustentada pelo tráfico de africanos escravizados vindos sobretudo de Angola. Tratados como o de Madri, de 1750, ampliaram as fronteiras do Brasil muito além da linha de Tordesilhas. Em 1808, fugindo da invasão de Napoleão, a corte se mudou para o Rio de Janeiro, e em 1815 o Brasil foi elevado a reino unido a Portugal. Com a volta do rei a Lisboa e a pressão para recolonizar o Brasil, o príncipe Pedro declarou a independência em 1822.",
+    "es": "La fase del Imperio portugués en la que su centro pasó de Asia a Brasil, después de que los neerlandeses tomaran las principales fortalezas de Ceilán y la India, hacia 1663. La economía giraba en torno al azúcar, el tabaco y, desde finales del siglo XVII, el oro y los diamantes de Minas Gerais, y se sostenía con el tráfico de africanos esclavizados traídos sobre todo de Angola. Tratados como el de Madrid, de 1750, ampliaron las fronteras de Brasil mucho más allá de la línea de Tordesillas. En 1808, huyendo de la invasión de Napoleón, la corte se trasladó a Río de Janeiro, y en 1815 Brasil fue elevado a reino unido con Portugal. Con el regreso del rey a Lisboa y la presión para recolonizar Brasil, el príncipe Pedro proclamó la independencia en 1822."
   },
   "map": {
     "parts": [

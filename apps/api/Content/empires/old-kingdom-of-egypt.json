@@ -3,7 +3,8 @@
   "slug": "old-kingdom-of-egypt",
   "name": {
     "en": "Old Kingdom of Egypt",
-    "pt": "Império Antigo do Egito"
+    "pt": "Império Antigo do Egito",
+    "es": "Imperio Antiguo de Egipto"
   },
   "peak": {
     "year": -2550,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "The dates follow the most widely accepted chronology and may vary by a few decades. It starts with the Third Dynasty, when the kings began to build pyramids, and ends when central power fell apart and the governors of the provinces began to act on their own.",
-    "pt": "As datas seguem a cronologia mais aceita e podem variar algumas décadas. Começa com a terceira dinastia, quando os reis passaram a construir pirâmides, e termina quando o poder central se desfez e os governadores das províncias passaram a agir por conta própria."
+    "pt": "As datas seguem a cronologia mais aceita e podem variar algumas décadas. Começa com a terceira dinastia, quando os reis passaram a construir pirâmides, e termina quando o poder central se desfez e os governadores das províncias passaram a agir por conta própria.",
+    "es": "Las fechas siguen la cronología más aceptada y pueden variar algunas décadas. Comienza con la dinastía III, cuando los reyes empezaron a construir pirámides, y termina cuando el poder central se deshizo y los gobernadores de las provincias empezaron a actuar por su cuenta."
   },
   "area": {
     "km2": 93000,
@@ -34,49 +36,60 @@
   ],
   "capital": {
     "en": "Memphis",
-    "pt": "Mênfis"
+    "pt": "Mênfis",
+    "es": "Menfis"
   },
   "language": {
     "en": "Egyptian",
-    "pt": "Egípcio"
+    "pt": "Egípcio",
+    "es": "Egipcio"
   },
   "religion": {
     "en": "Worship of Ra (the sun god) and of the pharaoh as a living god",
-    "pt": "Culto a Rá (deus do Sol) e ao faraó como deus vivo"
+    "pt": "Culto a Rá (deus do Sol) e ao faraó como deus vivo",
+    "es": "Culto a Ra (dios del Sol) y al faraón como dios vivo"
   },
   "religionNotes": {
     "en": "The king was seen as the incarnation of the god Horus on Earth and, on dying, would join the gods in the sky. From the Fifth Dynasty, the worship of the Sun grew stronger, and several kings built sun temples. The walls of the pyramids of this period bear the oldest known religious texts.",
-    "pt": "O rei era visto como a encarnação do deus Hórus na Terra e, ao morrer, se juntaria aos deuses no céu. A partir da quinta dinastia, o culto ao Sol ganhou força, e vários reis construíram templos solares. As paredes das pirâmides dessa época trazem os textos religiosos mais antigos que se conhecem."
+    "pt": "O rei era visto como a encarnação do deus Hórus na Terra e, ao morrer, se juntaria aos deuses no céu. A partir da quinta dinastia, o culto ao Sol ganhou força, e vários reis construíram templos solares. As paredes das pirâmides dessa época trazem os textos religiosos mais antigos que se conhecem.",
+    "es": "El rey era visto como la encarnación del dios Horus en la Tierra y, al morir, se uniría a los dioses en el cielo. A partir de la dinastía V, el culto al Sol cobró fuerza, y varios reyes construyeron templos solares. Las paredes de las pirámides de esta época contienen los textos religiosos más antiguos que se conocen."
   },
   "curiosities": [
     {
       "en": "According to tradition, one of its kings had the longest reign in history, with more than 90 years on the throne.",
       "pt": "Segundo a tradição, um de seus reis teve o reinado mais longo da história, com mais de 90 anos no trono.",
+      "es": "Según la tradición, uno de sus reyes tuvo el reinado más largo de la historia, con más de 90 años en el trono.",
       "details": {
         "en": "Pepi II is said to have come to the throne at about six years of age. The Egyptian priest Manetho, who wrote a history of Egypt in the 3rd century BC, says he reigned for 94 years. Many historians today think it was about 60 years, but even so it would be one of the longest known reigns. The end of his rule coincided with the decline of central power.",
-        "pt": "Pepi II teria subido ao trono por volta dos seis anos de idade. O sacerdote egípcio Manetão, que escreveu uma história do Egito no século III a.C., diz que ele reinou 94 anos. Muitos historiadores hoje acham que foram cerca de 60 anos, mas mesmo assim seria um dos reinados mais longos conhecidos. O fim do seu governo coincidiu com a decadência do poder central."
+        "pt": "Pepi II teria subido ao trono por volta dos seis anos de idade. O sacerdote egípcio Manetão, que escreveu uma história do Egito no século III a.C., diz que ele reinou 94 anos. Muitos historiadores hoje acham que foram cerca de 60 anos, mas mesmo assim seria um dos reinados mais longos conhecidos. O fim do seu governo coincidiu com a decadência do poder central.",
+        "es": "Se dice que Pepi II subió al trono hacia los seis años de edad. El sacerdote egipcio Manetón, que escribió una historia de Egipto en el siglo III a. C., afirma que reinó 94 años. Hoy muchos historiadores creen que fueron unos 60 años, pero aun así sería uno de los reinados más largos que se conocen. El final de su gobierno coincidió con la decadencia del poder central."
       }
     },
     {
       "en": "One of its great architects was, centuries later, worshipped as the god of medicine.",
       "pt": "Um de seus grandes arquitetos foi, séculos depois, adorado como deus da medicina.",
+      "es": "Uno de sus grandes arquitectos fue, siglos después, venerado como dios de la medicina.",
       "details": {
         "en": "Imhotep was King Djoser's chief minister and designed the step pyramid of Saqqara, the first pyramid, around 2670 BC. He is the first architect in history known by name. Over time, his fame as a sage grew so much that he came to be worshipped as the god of medicine, and the Greeks identified him with Asclepius. Today he is best known as the villain of the 1999 film \"The Mummy\".",
-        "pt": "Imhotep era o principal ministro do rei Djoser e projetou a pirâmide de degraus de Saqqara, a primeira pirâmide, por volta de 2670 a.C. É o primeiro arquiteto da história conhecido pelo nome. Com o tempo, sua fama de sábio cresceu tanto que ele passou a ser venerado como deus da medicina, e os gregos o identificaram com Asclépio. Hoje é mais conhecido como o vilão do filme \"A Múmia\", de 1999."
+        "pt": "Imhotep era o principal ministro do rei Djoser e projetou a pirâmide de degraus de Saqqara, a primeira pirâmide, por volta de 2670 a.C. É o primeiro arquiteto da história conhecido pelo nome. Com o tempo, sua fama de sábio cresceu tanto que ele passou a ser venerado como deus da medicina, e os gregos o identificaram com Asclépio. Hoje é mais conhecido como o vilão do filme \"A Múmia\", de 1999.",
+        "es": "Imhotep era el principal ministro del rey Zoser y diseñó la pirámide escalonada de Saqqara, la primera pirámide, hacia el 2670 a. C. Es el primer arquitecto de la historia conocido por su nombre. Con el tiempo, su fama de sabio creció tanto que pasó a ser venerado como dios de la medicina, y los griegos lo identificaron con Asclepio. Hoy se le conoce sobre todo como el villano de la película \"La momia\", de 1999."
       }
     },
     {
       "en": "It built the Giza complex, with the three great pyramids, among them that of Khufu, the largest of all, and the Great Sphinx.",
       "pt": "Construiu o complexo de Gizé, com as três grandes pirâmides, entre elas a de Quéops, a maior de todas, e a Grande Esfinge.",
+      "es": "Construyó el complejo de Guiza, con las tres grandes pirámides, entre ellas la de Keops, la mayor de todas, y la Gran Esfinge.",
       "details": {
         "en": "The pyramids were built for three generations of the same family: Khufu, his son Khafre and his grandson Menkaure, between about 2560 and 2500 BC. Khufu's, with about 2.3 million stone blocks, was originally 146 metres tall and was the tallest building in the world for about 3,800 years. It is also the only one of the seven wonders of the ancient world still standing. The Sphinx, with the body of a lion and a human head, was carved directly into the rock beside Khafre's pyramid, and probably bears his face.",
-        "pt": "As pirâmides foram construídas para três gerações da mesma família: Quéops, seu filho Quéfren e seu neto Miquerinos, entre cerca de 2560 e 2500 a.C. A de Quéops, com cerca de 2,3 milhões de blocos de pedra, tinha originalmente 146 metros de altura e foi o edifício mais alto do mundo por cerca de 3.800 anos. É também a única das sete maravilhas do mundo antigo que ainda está de pé. A Esfinge, com corpo de leão e cabeça humana, foi esculpida direto na rocha ao lado da pirâmide de Quéfren, e provavelmente tem o rosto dele."
+        "pt": "As pirâmides foram construídas para três gerações da mesma família: Quéops, seu filho Quéfren e seu neto Miquerinos, entre cerca de 2560 e 2500 a.C. A de Quéops, com cerca de 2,3 milhões de blocos de pedra, tinha originalmente 146 metros de altura e foi o edifício mais alto do mundo por cerca de 3.800 anos. É também a única das sete maravilhas do mundo antigo que ainda está de pé. A Esfinge, com corpo de leão e cabeça humana, foi esculpida direto na rocha ao lado da pirâmide de Quéfren, e provavelmente tem o rosto dele.",
+        "es": "Las pirámides se construyeron para tres generaciones de la misma familia: Keops, su hijo Kefrén y su nieto Micerino, entre el 2560 y el 2500 a. C., aproximadamente. La de Keops, con unos 2,3 millones de bloques de piedra, medía originalmente 146 metros de altura y fue el edificio más alto del mundo durante unos 3800 años. Es también la única de las siete maravillas del mundo antiguo que sigue en pie. La Esfinge, con cuerpo de león y cabeza humana, se esculpió directamente en la roca junto a la pirámide de Kefrén, y probablemente tiene su rostro."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Old_Kingdom_of_Egypt",
-    "pt": "https://pt.wikipedia.org/wiki/Império_Antigo"
+    "pt": "https://pt.wikipedia.org/wiki/Império_Antigo",
+    "es": "https://es.wikipedia.org/wiki/Imperio_Antiguo_de_Egipto"
   },
   "aliases": [
     "Egypt",
@@ -93,11 +106,15 @@
     "Pharaohs",
     "Faraós",
     "Age of the Pyramids",
-    "Era das Pirâmides"
+    "Era das Pirâmides",
+    "Antiguo Egipto",
+    "Faraones",
+    "Era de las pirámides"
   ],
   "summary": {
     "en": "The first great period of unity and prosperity of ancient Egypt, between about 2686 and 2181 BC. With its capital at Memphis, near today's Cairo, the pharaohs ruled as living gods and organised an administration able to gather thousands of workers, grain and stone to build the first pyramids: Djoser's step pyramid, at Saqqara, and those of Khufu, Khafre and Menkaure, at Giza. Expeditions sought copper and turquoise in Sinai, cedar wood in Lebanon and gold and incense in Nubia and Punt. At the end of the period, the power of the provincial governors grew, and a series of weak Nile floods contributed to famines. Around 2181 BC, the kingdom broke apart, beginning the so-called First Intermediate Period.",
-    "pt": "Primeiro grande período de unidade e prosperidade do Egito antigo, entre cerca de 2686 e 2181 a.C. Com capital em Mênfis, perto da atual Cairo, os faraós governavam como deuses vivos e organizaram uma administração capaz de reunir milhares de trabalhadores, grãos e pedra para construir as primeiras pirâmides: a de degraus de Djoser, em Saqqara, e as de Quéops, Quéfren e Miquerinos, em Gizé. Expedições buscavam cobre e turquesa no Sinai, madeira de cedro no Líbano e ouro e incenso na Núbia e em Punt. No fim do período, o poder dos governadores das províncias cresceu, e uma série de cheias fracas do Nilo contribuiu para crises de fome. Por volta de 2181 a.C., o reino se fragmentou, dando início ao chamado Primeiro Período Intermediário."
+    "pt": "Primeiro grande período de unidade e prosperidade do Egito antigo, entre cerca de 2686 e 2181 a.C. Com capital em Mênfis, perto da atual Cairo, os faraós governavam como deuses vivos e organizaram uma administração capaz de reunir milhares de trabalhadores, grãos e pedra para construir as primeiras pirâmides: a de degraus de Djoser, em Saqqara, e as de Quéops, Quéfren e Miquerinos, em Gizé. Expedições buscavam cobre e turquesa no Sinai, madeira de cedro no Líbano e ouro e incenso na Núbia e em Punt. No fim do período, o poder dos governadores das províncias cresceu, e uma série de cheias fracas do Nilo contribuiu para crises de fome. Por volta de 2181 a.C., o reino se fragmentou, dando início ao chamado Primeiro Período Intermediário.",
+    "es": "El primer gran período de unidad y prosperidad del antiguo Egipto, entre el 2686 y el 2181 a. C., aproximadamente. Con la capital en Menfis, cerca de lo que hoy es El Cairo, los faraones gobernaban como dioses vivos y organizaron una administración capaz de reunir a miles de trabajadores, grano y piedra para construir las primeras pirámides: la escalonada de Zoser, en Saqqara, y las de Keops, Kefrén y Micerino, en Guiza. Las expediciones buscaban cobre y turquesa en el Sinaí, madera de cedro en el Líbano y oro e incienso en Nubia y en Punt. Al final del período, el poder de los gobernadores provinciales creció, y una serie de crecidas débiles del Nilo contribuyó a las hambrunas. Hacia el 2181 a. C., el reino se fragmentó, lo que dio inicio al llamado Primer Período Intermedio."
   },
   "map": {
     "parts": [

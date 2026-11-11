@@ -3,7 +3,8 @@
   "slug": "tibetan-empire",
   "name": {
     "en": "Tibetan Empire",
-    "pt": "Império Tibetano"
+    "pt": "Império Tibetano",
+    "es": "Imperio tibetano"
   },
   "peak": {
     "year": 800,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts around 618, when the founder took the throne and completed the union of the clans of the plateau, and ends in 842, when the emperor's assassination led to a dispute between heirs that split the territory. The peak shown is 800, when it already controlled the Hexi Corridor, taken from China. The map leaves out Khotan and the cities of the Tarim Basin, where local rulers stayed in power under supervision, as well as the lands further north, which changed hands several times in the wars against the Uyghurs.",
-    "pt": "Começa por volta de 618, quando o fundador assumiu o trono e completou a união dos clãs do planalto, e termina em 842, quando o assassinato do imperador levou a uma disputa entre herdeiros que dividiu o território. O auge escolhido é 800, quando já controlava o corredor de Hexi, tomado da China. O mapa não inclui Khotan e as cidades da Bacia do Tarim, onde governantes locais continuaram no poder sob supervisão, nem as terras mais ao norte, que trocaram de mãos várias vezes nas guerras contra os uigures."
+    "pt": "Começa por volta de 618, quando o fundador assumiu o trono e completou a união dos clãs do planalto, e termina em 842, quando o assassinato do imperador levou a uma disputa entre herdeiros que dividiu o território. O auge escolhido é 800, quando já controlava o corredor de Hexi, tomado da China. O mapa não inclui Khotan e as cidades da Bacia do Tarim, onde governantes locais continuaram no poder sob supervisão, nem as terras mais ao norte, que trocaram de mãos várias vezes nas guerras contra os uigures.",
+    "es": "Comienza hacia 618, cuando el fundador subió al trono y completó la unión de los clanes de la meseta, y termina en 842, cuando el asesinato del emperador provocó una disputa entre herederos que dividió el territorio. El apogeo elegido es 800, cuando ya controlaba el corredor del Hexi, arrebatado a China. El mapa no incluye Jotán ni las ciudades de la cuenca del Tarim, donde los gobernantes locales siguieron en el poder bajo supervisión, ni las tierras más al norte, que cambiaron de manos varias veces en las guerras contra los uigures."
   },
   "area": {
     "km2": 2700000,
@@ -34,49 +36,60 @@
   ],
   "capital": {
     "en": "Lhasa (although the court spent much of its time in travelling camps)",
-    "pt": "Lhasa (embora a corte vivesse boa parte do tempo em acampamentos itinerantes)"
+    "pt": "Lhasa (embora a corte vivesse boa parte do tempo em acampamentos itinerantes)",
+    "es": "Lhasa (aunque la corte pasaba buena parte del tiempo en campamentos itinerantes)"
   },
   "language": {
     "en": "Old Tibetan",
-    "pt": "Tibetano antigo"
+    "pt": "Tibetano antigo",
+    "es": "Tibetano antiguo"
   },
   "religion": {
     "en": "Traditional Tibetan religion, later Buddhism",
-    "pt": "Religião tradicional tibetana, depois budismo"
+    "pt": "Religião tradicional tibetana, depois budismo",
+    "es": "Religión tradicional tibetana, después budismo"
   },
   "religionNotes": {
     "en": "The first kings were seen as descendants of deities who came down from the sky, and the traditional religion had rituals performed by court priests. Buddhism arrived in the 7th century and became the official religion around 779, when the first monastery was founded. The rivalry between nobles tied to the two traditions continued until the end of the empire.",
-    "pt": "Os primeiros reis eram vistos como descendentes de divindades que desceram do céu, e a religião tradicional tinha rituais feitos por sacerdotes da corte. O budismo chegou no século VII e virou religião oficial por volta de 779, quando foi fundado o primeiro mosteiro. A disputa entre os nobres ligados às duas tradições continuou até o fim do império."
+    "pt": "Os primeiros reis eram vistos como descendentes de divindades que desceram do céu, e a religião tradicional tinha rituais feitos por sacerdotes da corte. O budismo chegou no século VII e virou religião oficial por volta de 779, quando foi fundado o primeiro mosteiro. A disputa entre os nobres ligados às duas tradições continuou até o fim do império.",
+    "es": "Los primeros reyes eran vistos como descendientes de divinidades que habían bajado del cielo, y la religión tradicional tenía rituales a cargo de sacerdotes de la corte. El budismo llegó en el siglo VII y se convirtió en religión oficial hacia 779, cuando se fundó el primer monasterio. La rivalidad entre los nobles vinculados a las dos tradiciones continuó hasta el fin del imperio."
   },
   "curiosities": [
     {
       "en": "The script it created from an Indian alphabet is still in use today, with few changes.",
       "pt": "A escrita que criou a partir de um alfabeto indiano é usada até hoje, com poucas mudanças.",
+      "es": "La escritura que creó a partir de un alfabeto indio se sigue usando hoy, con pocos cambios.",
       "details": {
         "en": "According to tradition, the king sent a minister, Thonmi Sambhota, to study in India, and he came back with an alphabet adapted from the script used there. The script was used to translate Buddhist texts, record laws and write court chronicles. More than 1,300 years later, it is still used for Tibetan and for neighbouring languages, such as Dzongkha, the official language of Bhutan.",
-        "pt": "Segundo a tradição, o rei enviou um ministro, Thonmi Sambhota, para estudar na Índia, e ele voltou com um alfabeto adaptado da escrita usada lá. A escrita serviu para traduzir textos budistas, registrar leis e escrever crônicas da corte. Mais de 1.300 anos depois, ela continua sendo usada para o tibetano e para línguas vizinhas, como o dzongkha, a língua oficial do Butão."
+        "pt": "Segundo a tradição, o rei enviou um ministro, Thonmi Sambhota, para estudar na Índia, e ele voltou com um alfabeto adaptado da escrita usada lá. A escrita serviu para traduzir textos budistas, registrar leis e escrever crônicas da corte. Mais de 1.300 anos depois, ela continua sendo usada para o tibetano e para línguas vizinhas, como o dzongkha, a língua oficial do Butão.",
+        "es": "Según la tradición, el rey envió a un ministro, Thonmi Sambhota, a estudiar a la India, y este volvió con un alfabeto adaptado de la escritura que se usaba allí. La escritura sirvió para traducir textos budistas, registrar leyes y redactar crónicas de la corte. Más de 1300 años después, se sigue usando para el tibetano y para lenguas vecinas, como el dzongkha, la lengua oficial de Bután."
       }
     },
     {
       "en": "Its founder built a palace on the hill where the Potala Palace stands today.",
       "pt": "Seu fundador construiu um palácio no morro onde hoje fica o Palácio de Potala.",
+      "es": "Su fundador construyó un palacio en la colina donde hoy se alza el palacio de Potala.",
       "details": {
         "en": "According to tradition, the king built a fortress on the Red Hill, in Lhasa, in the 7th century. A thousand years later, in the 17th century, the fifth Dalai Lama built the Potala Palace on the same spot, with more than a thousand rooms, and it was the seat of government until 1959. Two rooms of the palace are said to be remains of the original building.",
-        "pt": "Segundo a tradição, o rei ergueu uma fortaleza no Morro Vermelho, em Lhasa, no século VII. Mil anos depois, no século XVII, o quinto Dalai Lama construiu no mesmo lugar o Palácio de Potala, com mais de mil cômodos, que foi sede do governo até 1959. Duas salas do palácio seriam ainda restos da construção original."
+        "pt": "Segundo a tradição, o rei ergueu uma fortaleza no Morro Vermelho, em Lhasa, no século VII. Mil anos depois, no século XVII, o quinto Dalai Lama construiu no mesmo lugar o Palácio de Potala, com mais de mil cômodos, que foi sede do governo até 1959. Duas salas do palácio seriam ainda restos da construção original.",
+        "es": "Según la tradición, el rey levantó una fortaleza en la Colina Roja, en Lhasa, en el siglo VII. Mil años después, en el siglo XVII, el quinto dalái lama construyó en el mismo lugar el palacio de Potala, con más de mil estancias, que fue sede del gobierno hasta 1959. Se dice que dos salas del palacio son restos de la construcción original."
       }
     },
     {
       "en": "Its territory lay on the highest plateau in the world, with an average altitude of more than 4,000 metres.",
       "pt": "Seu território ficava no planalto mais alto do mundo, com altitude média acima de 4 mil metros.",
+      "es": "Su territorio se encontraba en la meseta más alta del mundo, con una altitud media de más de 4000 metros.",
       "details": {
         "en": "The plateau, surrounded by the Himalayas to the south and by other mountain ranges to the north and west, is called the \"roof of the world\". The thin air and the cold made life hard for foreign armies, which helped the empire hold out against its enemies. At the same time, the horsemen of the plateau came down to fight on the plains of China and Central Asia.",
-        "pt": "O planalto, cercado pelo Himalaia ao sul e por outras cordilheiras ao norte e oeste, é chamado de \"teto do mundo\". O ar rarefeito e o frio dificultavam a vida de exércitos estrangeiros, o que ajudou o império a resistir aos inimigos. Ao mesmo tempo, os cavaleiros do planalto desciam para lutar nas planícies da China e da Ásia Central."
+        "pt": "O planalto, cercado pelo Himalaia ao sul e por outras cordilheiras ao norte e oeste, é chamado de \"teto do mundo\". O ar rarefeito e o frio dificultavam a vida de exércitos estrangeiros, o que ajudou o império a resistir aos inimigos. Ao mesmo tempo, os cavaleiros do planalto desciam para lutar nas planícies da China e da Ásia Central.",
+        "es": "La meseta, rodeada por el Himalaya al sur y por otras cordilleras al norte y al oeste, es llamada el \"techo del mundo\". El aire enrarecido y el frío dificultaban la vida a los ejércitos extranjeros, lo que ayudó al imperio a resistir a sus enemigos. Al mismo tiempo, los jinetes de la meseta bajaban a combatir en las llanuras de China y de Asia Central."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Tibetan_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Império_Tibetano"
+    "pt": "https://pt.wikipedia.org/wiki/Império_Tibetano",
+    "es": "https://es.wikipedia.org/wiki/Imperio_tibetano"
   },
   "aliases": [
     "Tibet",
@@ -87,11 +100,13 @@
     "Tibetan Kingdom",
     "Reino Tibetano",
     "Yarlung Dynasty",
-    "Dinastia Yarlung"
+    "Dinastia Yarlung",
+    "Imperio del Tíbet"
   ],
   "summary": {
     "en": "An empire formed in the early 7th century, when Songtsen Gampo united the peoples of the Tibetan Plateau and made Lhasa its centre. According to tradition, he married princesses from Nepal and China and had the Tibetan script created from an Indian alphabet. In the 8th and 9th centuries, the empire competed with the Tang Dynasty, the Uyghurs and the Arabs for control of Central Asia and the Silk Road, and it even occupied the Chinese capital, Chang'an, for a few days in 763. Under Trisong Detsen, Buddhism became the official religion. In 821, a peace treaty with China fixed the borders between the two. In 842, the assassination of Emperor Langdarma led to a war of succession, and the empire split into several local kingdoms.",
-    "pt": "Império formado no início do século VII, quando Songtsen Gampo uniu os povos do planalto tibetano e fez de Lhasa o seu centro. Segundo a tradição, ele se casou com princesas do Nepal e da China e mandou criar a escrita tibetana a partir de um alfabeto indiano. Nos séculos VIII e IX, o império disputou com a Dinastia Tang, com os uigures e com os árabes o controle da Ásia Central e da Rota da Seda, e chegou a ocupar por alguns dias a capital chinesa, Chang'an, em 763. Sob Trisong Detsen, o budismo virou religião oficial. Em 821, um tratado de paz com a China fixou as fronteiras entre os dois. Em 842, o assassinato do imperador Langdarma levou a uma guerra de sucessão, e o império se dividiu em vários reinos locais."
+    "pt": "Império formado no início do século VII, quando Songtsen Gampo uniu os povos do planalto tibetano e fez de Lhasa o seu centro. Segundo a tradição, ele se casou com princesas do Nepal e da China e mandou criar a escrita tibetana a partir de um alfabeto indiano. Nos séculos VIII e IX, o império disputou com a Dinastia Tang, com os uigures e com os árabes o controle da Ásia Central e da Rota da Seda, e chegou a ocupar por alguns dias a capital chinesa, Chang'an, em 763. Sob Trisong Detsen, o budismo virou religião oficial. Em 821, um tratado de paz com a China fixou as fronteiras entre os dois. Em 842, o assassinato do imperador Langdarma levou a uma guerra de sucessão, e o império se dividiu em vários reinos locais.",
+    "es": "Imperio formado a principios del siglo VII, cuando Songtsen Gampo unió a los pueblos de la meseta tibetana e hizo de Lhasa su centro. Según la tradición, se casó con princesas de Nepal y de China y mandó crear la escritura tibetana a partir de un alfabeto indio. En los siglos VIII y IX, el imperio se disputó con la dinastía Tang, los uigures y los árabes el control de Asia Central y de la Ruta de la Seda, y llegó a ocupar durante unos días la capital china, Chang'an, en 763. Con Trisong Detsen, el budismo se convirtió en religión oficial. En 821, un tratado de paz con China fijó las fronteras entre ambos. En 842, el asesinato del emperador Langdarma desencadenó una guerra de sucesión, y el imperio se dividió en varios reinos locales."
   },
   "map": {
     "parts": [

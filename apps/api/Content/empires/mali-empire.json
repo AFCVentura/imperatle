@@ -3,7 +3,8 @@
   "slug": "mali-empire",
   "name": {
     "en": "Mali Empire",
-    "pt": "Império do Mali"
+    "pt": "Império do Mali",
+    "es": "Imperio de Malí"
   },
   "peak": {
     "year": 1380,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts with a battle won by its founder around 1235. From the 15th century on it lost most of its lands, and it survived as a small kingdom until about 1670, when its capital was sacked.",
-    "pt": "Começa com uma batalha vencida pelo fundador, por volta de 1235. A partir do século XV perdeu a maior parte das terras e sobreviveu como um pequeno reino até cerca de 1670, quando sua capital foi saqueada."
+    "pt": "Começa com uma batalha vencida pelo fundador, por volta de 1235. A partir do século XV perdeu a maior parte das terras e sobreviveu como um pequeno reino até cerca de 1670, quando sua capital foi saqueada.",
+    "es": "Comienza con una batalla ganada por su fundador hacia 1235. A partir del siglo XV perdió la mayor parte de sus tierras, y sobrevivió como un pequeño reino hasta alrededor de 1670, cuando su capital fue saqueada."
   },
   "area": {
     "km2": 1115236,
@@ -34,49 +36,60 @@
   ],
   "capital": {
     "en": "Niani",
-    "pt": "Niani"
+    "pt": "Niani",
+    "es": "Niani"
   },
   "language": {
     "en": "Mandinka",
-    "pt": "Mandinka"
+    "pt": "Mandinka",
+    "es": "Mandinga"
   },
   "religion": {
     "en": "Sunni Islam",
-    "pt": "Islamismo Sunita"
+    "pt": "Islamismo Sunita",
+    "es": "Islam suní"
   },
   "religionNotes": {
     "en": "The rulers and merchants were Muslim, but most of the rural population kept traditional African religions, and the court kept some of their rituals.",
-    "pt": "Os governantes e mercadores eram muçulmanos, mas a maior parte da população rural manteve as religiões tradicionais africanas, e a corte conservou alguns de seus rituais."
+    "pt": "Os governantes e mercadores eram muçulmanos, mas a maior parte da população rural manteve as religiões tradicionais africanas, e a corte conservou alguns de seus rituais.",
+    "es": "Los gobernantes y los mercaderes eran musulmanes, pero la mayor parte de la población rural mantuvo las religiones tradicionales africanas, y la corte conservó algunos de sus rituales."
   },
   "curiosities": [
     {
       "en": "According to an account of the time, one of its kings set out across the Atlantic with a large fleet and never came back.",
       "pt": "Segundo um relato da época, um de seus reis partiu pelo Atlântico com uma grande frota e nunca mais voltou.",
+      "es": "Según un relato de la época, uno de sus reyes partió por el Atlántico con una gran flota y nunca volvió.",
       "details": {
         "en": "The story comes from Mansa Musa himself, who told it in Cairo, according to the historian al-Umari: the king before him wanted to find the end of the ocean. He first sent hundreds of boats, of which only one came back; then he set out himself with an even larger fleet and was never seen again, leaving the throne to Musa. There is no evidence that they reached anywhere.",
-        "pt": "O relato vem do próprio Mansa Musa, que o contou no Cairo, segundo o historiador al-Umari: o rei anterior quis descobrir onde o oceano terminava. Primeiro mandou centenas de barcos, dos quais só um voltou; depois partiu ele mesmo com uma frota ainda maior e nunca mais foi visto, deixando o trono para Musa. Não há provas de que tenham chegado a algum lugar."
+        "pt": "O relato vem do próprio Mansa Musa, que o contou no Cairo, segundo o historiador al-Umari: o rei anterior quis descobrir onde o oceano terminava. Primeiro mandou centenas de barcos, dos quais só um voltou; depois partiu ele mesmo com uma frota ainda maior e nunca mais foi visto, deixando o trono para Musa. Não há provas de que tenham chegado a algum lugar.",
+        "es": "El relato viene del propio Mansa Musa, que lo contó en El Cairo, según el historiador al-Umari: el rey anterior a él quería descubrir dónde terminaba el océano. Primero envió cientos de barcas, de las que solo volvió una; después partió él mismo con una flota aún mayor y nunca más se le vio, y dejó el trono a Musa. No hay pruebas de que llegaran a ningún lugar."
       }
     },
     {
       "en": "The story of its founder is still told by griots, traditional singers and storytellers, in a long oral epic.",
       "pt": "A história do seu fundador ainda é contada por griôs, cantores e contadores de histórias tradicionais, numa longa epopeia oral.",
+      "es": "La historia de su fundador todavía la cuentan los griots, cantores y narradores tradicionales, en una larga epopeya oral.",
       "details": {
         "en": "The Epic of Sundiata tells how Sundiata Keita, a crippled and scorned boy who walked late in life, overcame exile and defeated the sorcerer king Sumanguru. It has been handed down for generations by the griots, who still sing it today in Mali, Guinea and other countries of the region.",
-        "pt": "A Epopeia de Sundiata conta como Sundiata Keita, um menino aleijado e desprezado que só aprendeu a andar tarde, superou o exílio e derrotou o rei feiticeiro Sumanguru. É transmitida de geração em geração pelos griôs, que até hoje a cantam no Mali, na Guiné e em outros países da região."
+        "pt": "A Epopeia de Sundiata conta como Sundiata Keita, um menino aleijado e desprezado que só aprendeu a andar tarde, superou o exílio e derrotou o rei feiticeiro Sumanguru. É transmitida de geração em geração pelos griôs, que até hoje a cantam no Mali, na Guiné e em outros países da região.",
+        "es": "La epopeya de Sundiata cuenta cómo Sundiata Keita, un niño lisiado y despreciado que tardó mucho en aprender a caminar, superó el exilio y derrotó al rey hechicero Sumanguru. Se ha transmitido de generación en generación gracias a los griots, que todavía hoy la cantan en Malí, Guinea y otros países de la región."
       }
     },
     {
       "en": "On a pilgrimage to Mecca in 1324, its ruler spent so much gold in Cairo that the metal lost value there for years.",
       "pt": "Numa peregrinação a Meca em 1324, seu governante gastou tanto ouro no Cairo que o metal perdeu valor ali por anos.",
+      "es": "En una peregrinación a La Meca en 1324, su gobernante gastó tanto oro en El Cairo que el metal perdió valor allí durante años.",
       "details": {
         "en": "Mansa Musa travelled to Mecca in 1324 with a retinue of thousands and huge amounts of gold. In Cairo he and his followers spent and gave away so much that gold lost value in the city for years, according to al-Umari. The journey put Mali on European maps, such as the Catalan Atlas of 1375, where Musa is drawn holding a gold nugget.",
-        "pt": "Mansa Musa viajou a Meca em 1324 com uma comitiva de milhares de pessoas e enormes quantidades de ouro. No Cairo, ele e sua comitiva gastaram e doaram tanto que o ouro perdeu valor na cidade por anos, segundo al-Umari. A viagem pôs o Mali nos mapas europeus, como o Atlas Catalão de 1375, em que Musa aparece segurando uma pepita de ouro."
+        "pt": "Mansa Musa viajou a Meca em 1324 com uma comitiva de milhares de pessoas e enormes quantidades de ouro. No Cairo, ele e sua comitiva gastaram e doaram tanto que o ouro perdeu valor na cidade por anos, segundo al-Umari. A viagem pôs o Mali nos mapas europeus, como o Atlas Catalão de 1375, em que Musa aparece segurando uma pepita de ouro.",
+        "es": "Mansa Musa viajó a La Meca en 1324 con un séquito de miles de personas y enormes cantidades de oro. En El Cairo, él y su séquito gastaron y regalaron tanto que el oro perdió valor en la ciudad durante años, según al-Umari. El viaje puso a Malí en los mapas europeos, como el Atlas catalán de 1375, en el que Musa aparece sosteniendo una pepita de oro."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Mali_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Império_do_Mali"
+    "pt": "https://pt.wikipedia.org/wiki/Império_do_Mali",
+    "es": "https://es.wikipedia.org/wiki/Imperio_de_Mali"
   },
   "aliases": [
     "Mali",
@@ -87,11 +100,13 @@
     "Mandinka Empire",
     "Império Mandinga",
     "Mandinga",
-    "Malinke"
+    "Malinke",
+    "Reino de Malí"
   ],
   "summary": {
     "en": "A West African empire founded around 1235 by Sundiata Keita, king of the Mandinka, when he defeated King Sumanguru at the Battle of Kirina. It controlled the gold mines and the trade routes across the Sahara that linked West Africa with the north of the continent. It had rich cities such as Timbuktu, Djenné and Gao, which became centres of Islamic learning. It peaked in the 14th century, under Mansa Musa and Mansa Suleyman, and from the 15th century lost lands to the Tuareg and the Songhai Empire until it became a small kingdom.",
-    "pt": "Império da África Ocidental fundado por volta de 1235 por Sundiata Keita, rei dos mandingas, ao vencer o rei Sumanguru na batalha de Kirina. Controlava as minas de ouro e as rotas de comércio que cruzavam o Saara, ligando a África Ocidental ao norte do continente. Tinha cidades ricas, como Tombuctu, Djenné e Gao, que viraram centros de estudo do Islã. Teve o auge no século XIV, com Mansa Musa e Mansa Suleiman, e a partir do século XV perdeu terras para os tuaregues e para o Império Songai, até virar um pequeno reino."
+    "pt": "Império da África Ocidental fundado por volta de 1235 por Sundiata Keita, rei dos mandingas, ao vencer o rei Sumanguru na batalha de Kirina. Controlava as minas de ouro e as rotas de comércio que cruzavam o Saara, ligando a África Ocidental ao norte do continente. Tinha cidades ricas, como Tombuctu, Djenné e Gao, que viraram centros de estudo do Islã. Teve o auge no século XIV, com Mansa Musa e Mansa Suleiman, e a partir do século XV perdeu terras para os tuaregues e para o Império Songai, até virar um pequeno reino.",
+    "es": "Imperio de África Occidental fundado hacia 1235 por Sundiata Keita, rey de los mandingas, al vencer al rey Sumanguru en la batalla de Kirina. Controlaba las minas de oro y las rutas comerciales que cruzaban el Sahara y unían África Occidental con el norte del continente. Tenía ciudades ricas como Tombuctú, Djenné y Gao, que se convirtieron en centros de estudio del islam. Alcanzó su apogeo en el siglo XIV, con Mansa Musa y Mansa Suleyman, y a partir del siglo XV perdió tierras frente a los tuaregs y el Imperio songhai, hasta quedar reducido a un pequeño reino."
   },
   "map": {
     "parts": [

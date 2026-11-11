@@ -3,7 +3,8 @@
   "slug": "delhi-sultanate",
   "name": {
     "en": "Delhi Sultanate",
-    "pt": "Sultanato de Délhi"
+    "pt": "Sultanato de Délhi",
+    "es": "Sultanato de Delhi"
   },
   "peak": {
     "year": 1333,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts in 1206, when a general of slave origin declared himself sovereign after the death of the conqueror he served, and ends in 1526, when the last ruler was killed in a battle against an invader from Central Asia. Over this time, five different dynasties succeeded one another on the throne. The peak shown is 1333, when its rule reached the far south of the subcontinent, but only for a short time, as the southern provinces rebelled in the following years.",
-    "pt": "Começa em 1206, quando um general de origem escrava se declarou soberano depois da morte do conquistador que servia, e termina em 1526, quando o último soberano foi morto numa batalha contra um invasor vindo da Ásia Central. Ao longo desse tempo, cinco dinastias diferentes se sucederam no trono. O auge escolhido é 1333, quando o seu domínio chegou ao extremo sul do subcontinente, mas por pouco tempo, pois as províncias do sul se revoltaram nos anos seguintes."
+    "pt": "Começa em 1206, quando um general de origem escrava se declarou soberano depois da morte do conquistador que servia, e termina em 1526, quando o último soberano foi morto numa batalha contra um invasor vindo da Ásia Central. Ao longo desse tempo, cinco dinastias diferentes se sucederam no trono. O auge escolhido é 1333, quando o seu domínio chegou ao extremo sul do subcontinente, mas por pouco tempo, pois as províncias do sul se revoltaram nos anos seguintes.",
+    "es": "Comienza en 1206, cuando un general de origen esclavo se proclamó soberano tras la muerte del conquistador al que servía, y termina en 1526, cuando el último soberano murió en una batalla contra un invasor llegado de Asia Central. A lo largo de ese tiempo se sucedieron en el trono cinco dinastías distintas. El apogeo elegido es 1333, cuando su dominio llegó al extremo sur del subcontinente, aunque por poco tiempo, ya que las provincias del sur se rebelaron en los años siguientes."
   },
   "area": {
     "km2": 2440000,
@@ -34,49 +36,60 @@
   ],
   "capital": {
     "en": "Delhi (Daulatabad from 1327 to 1335 and Agra from 1506)",
-    "pt": "Délhi (Daulatabad de 1327 a 1335 e Agra a partir de 1506)"
+    "pt": "Délhi (Daulatabad de 1327 a 1335 e Agra a partir de 1506)",
+    "es": "Delhi (Daulatabad de 1327 a 1335 y Agra desde 1506)"
   },
   "language": {
     "en": "Persian (as well as Hindavi)",
-    "pt": "Persa (além do hindavi)"
+    "pt": "Persa (além do hindavi)",
+    "es": "Persa (además del hindavi)"
   },
   "religion": {
     "en": "Sunni Islam",
-    "pt": "Islamismo Sunita"
+    "pt": "Islamismo Sunita",
+    "es": "Islam suní"
   },
   "religionNotes": {
     "en": "The rulers were Sunni Muslims and ruled a mostly Hindu population, which could generally keep its religion by paying a special tax. Temples were destroyed in some campaigns, but the Sufis, Muslim mystics, played a large role in conversions, and the contact between the two cultures gave rise to a common language that later split into Hindi and Urdu.",
-    "pt": "Os governantes eram muçulmanos sunitas e governavam uma população de maioria hindu, que em geral podia manter a sua religião mediante o pagamento de um imposto especial. Templos foram destruídos em algumas campanhas, mas os sufis, místicos muçulmanos, tiveram grande papel nas conversões, e o contato entre as duas culturas deu origem a uma língua comum que mais tarde se dividiu em hindi e urdu."
+    "pt": "Os governantes eram muçulmanos sunitas e governavam uma população de maioria hindu, que em geral podia manter a sua religião mediante o pagamento de um imposto especial. Templos foram destruídos em algumas campanhas, mas os sufis, místicos muçulmanos, tiveram grande papel nas conversões, e o contato entre as duas culturas deu origem a uma língua comum que mais tarde se dividiu em hindi e urdu.",
+    "es": "Los gobernantes eran musulmanes suníes y gobernaban a una población mayoritariamente hindú, que en general podía conservar su religión pagando un impuesto especial. En algunas campañas se destruyeron templos, pero los sufíes, místicos musulmanes, tuvieron un gran papel en las conversiones, y el contacto entre ambas culturas dio origen a una lengua común que más tarde se dividió en hindi y urdu."
   },
   "curiosities": [
     {
       "en": "The most famous Moroccan traveller of the Middle Ages worked for years as a judge in its capital.",
       "pt": "O viajante marroquino mais famoso da Idade Média trabalhou durante anos como juiz na sua capital.",
+      "es": "El viajero marroquí más famoso de la Edad Media trabajó durante años como juez en su capital.",
       "details": {
         "en": "Ibn Battuta arrived in 1334 and served as qadi of Delhi for about seven years, under Muhammad bin Tughlaq. He described the sultan as both generous and cruel.",
-        "pt": "Ibn Battuta chegou em 1334 e serviu como cádi de Délhi por cerca de sete anos, sob Muhammad bin Tughlaq. Ele descreveu o sultão como generoso e cruel ao mesmo tempo."
+        "pt": "Ibn Battuta chegou em 1334 e serviu como cádi de Délhi por cerca de sete anos, sob Muhammad bin Tughlaq. Ele descreveu o sultão como generoso e cruel ao mesmo tempo.",
+        "es": "Ibn Battuta llegó en 1334 y fue cadí de Delhi durante unos siete años, bajo Muhammad bin Tughluq. Describió al sultán como generoso y cruel a la vez."
       }
     },
     {
       "en": "It held out against the invasions of the Mongols, who conquered almost all of Asia around it.",
       "pt": "Resistiu às invasões dos mongóis, que conquistaram quase toda a Ásia ao redor.",
+      "es": "Resistió las invasiones de los mongoles, que conquistaron casi toda Asia a su alrededor.",
       "details": {
         "en": "Between 1290 and 1310, Alauddin Khalji defeated several armies of the Chagatai Khanate, one of them at the gates of Delhi. India escaped Mongol rule.",
-        "pt": "Entre 1290 e 1310, Alauddin Khalji derrotou vários exércitos do Canato de Chagatai, um deles às portas de Délhi. A Índia escapou do domínio mongol."
+        "pt": "Entre 1290 e 1310, Alauddin Khalji derrotou vários exércitos do Canato de Chagatai, um deles às portas de Délhi. A Índia escapou do domínio mongol.",
+        "es": "Entre 1290 y 1310, Alaudín Khalji derrotó a varios ejércitos del Kanato de Chagatai, uno de ellos a las puertas de Delhi. La India escapó del dominio mongol."
       }
     },
     {
       "en": "Its last ruler was killed in a battle against an invader who used cannons and founded the dynasty that would build the Taj Mahal.",
       "pt": "Seu último soberano foi morto numa batalha contra um invasor que usava canhões e fundou a dinastia que construiria o Taj Mahal.",
+      "es": "Su último soberano murió en una batalla contra un invasor que usaba cañones y que fundó la dinastía que construiría el Taj Mahal.",
       "details": {
         "en": "This was the First Battle of Panipat, in 1526, in which Babur, with artillery and muskets, defeated the much larger army of Ibrahim Lodi.",
-        "pt": "É a Primeira Batalha de Panipat, em 1526, em que Babur, com artilharia e mosquetes, derrotou o exército muito maior de Ibrahim Lodi."
+        "pt": "É a Primeira Batalha de Panipat, em 1526, em que Babur, com artilharia e mosquetes, derrotou o exército muito maior de Ibrahim Lodi.",
+        "es": "Fue la primera batalla de Panipat, en 1526, en la que Babur, con artillería y mosquetes, derrotó al ejército, mucho mayor, de Ibrahim Lodi."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Delhi_Sultanate",
-    "pt": "https://pt.wikipedia.org/wiki/Sultanato_de_Deli"
+    "pt": "https://pt.wikipedia.org/wiki/Sultanato_de_Deli",
+    "es": "https://es.wikipedia.org/wiki/Sultanato_de_Delhi"
   },
   "aliases": [
     "Sultanate of Delhi",
@@ -95,11 +108,15 @@
     "Hindustan",
     "Indostão",
     "India",
-    "Índia"
+    "Índia",
+    "Dinastía de los Esclavos",
+    "Mamelucos de Delhi",
+    "Indostán"
   ],
   "summary": {
     "en": "A Muslim sultanate in northern India, founded in 1206 by Qutb ud-Din Aibak, a general of slave origin who served the Afghan conqueror Muhammad of Ghor. Five dynasties succeeded one another on the throne: the Slave (or Mamluk) Dynasty, the Khalji, the Tughlaq, the Sayyid and the Lodi. The sultanate withstood several Mongol invasions and, under Alauddin Khalji and Muhammad bin Tughlaq, expanded to the south of the subcontinent. Tughlaq's attempts to move the capital to the Deccan and to create a copper currency failed, and the southern provinces broke away, giving rise to the Bahmani Sultanate and the Vijayanagara Empire. In 1398, Timur sacked Delhi, and the sultanate was reduced to a small region. In 1526, the last sultan, Ibrahim Lodi, was defeated and killed by Babur at the First Battle of Panipat, which began the Mughal Empire.",
-    "pt": "Sultanato muçulmano do norte da Índia, fundado em 1206 por Qutb ud-Din Aibak, um general de origem escrava do conquistador afegão Muhammad de Ghor. Cinco dinastias se sucederam no trono: a dos Escravos (ou Mameluca), a Khalji, a Tughlaq, a Sayyid e a Lodi. O sultanato resistiu a várias invasões mongóis e, sob Alauddin Khalji e Muhammad bin Tughlaq, expandiu-se até o sul do subcontinente. As tentativas de Tughlaq de mudar a capital para o Decão e de criar uma moeda de cobre fracassaram, e as províncias do sul se separaram, dando origem ao Sultanato Bahmani e ao Império Vijayanagara. Em 1398, Tamerlão saqueou Délhi, e o sultanato ficou reduzido a uma pequena região. Em 1526, o último sultão, Ibrahim Lodi, foi derrotado e morto por Babur na Primeira Batalha de Panipat, que deu início ao Império Mogol."
+    "pt": "Sultanato muçulmano do norte da Índia, fundado em 1206 por Qutb ud-Din Aibak, um general de origem escrava do conquistador afegão Muhammad de Ghor. Cinco dinastias se sucederam no trono: a dos Escravos (ou Mameluca), a Khalji, a Tughlaq, a Sayyid e a Lodi. O sultanato resistiu a várias invasões mongóis e, sob Alauddin Khalji e Muhammad bin Tughlaq, expandiu-se até o sul do subcontinente. As tentativas de Tughlaq de mudar a capital para o Decão e de criar uma moeda de cobre fracassaram, e as províncias do sul se separaram, dando origem ao Sultanato Bahmani e ao Império Vijayanagara. Em 1398, Tamerlão saqueou Délhi, e o sultanato ficou reduzido a uma pequena região. Em 1526, o último sultão, Ibrahim Lodi, foi derrotado e morto por Babur na Primeira Batalha de Panipat, que deu início ao Império Mogol.",
+    "es": "Un sultanato musulmán del norte de la India, fundado en 1206 por Qutb-ud-din Aibak, un general de origen esclavo al servicio del conquistador afgano Muhammad de Gur. Se sucedieron en el trono cinco dinastías: la de los Esclavos (o mameluca), la Khalji, la Tughlaq, la Sayyid y la Lodi. El sultanato resistió varias invasiones mongolas y, con Alaudín Khalji y Muhammad bin Tughluq, se extendió hasta el sur del subcontinente. Los intentos de Tughluq de trasladar la capital al Decán y de crear una moneda de cobre fracasaron, y las provincias del sur se separaron, lo que dio origen al Sultanato bahmaní y al Imperio vijayanagara. En 1398, Tamerlán saqueó Delhi, y el sultanato quedó reducido a una pequeña región. En 1526, el último sultán, Ibrahim Lodi, fue derrotado y muerto por Babur en la primera batalla de Panipat, que dio inicio al Imperio mogol."
   },
   "map": {
     "parts": [

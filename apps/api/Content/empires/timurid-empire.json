@@ -3,7 +3,8 @@
   "slug": "timurid-empire",
   "name": {
     "en": "Timurid Empire",
-    "pt": "Império Timúrida"
+    "pt": "Império Timúrida",
+    "es": "Imperio timúrida"
   },
   "peak": {
     "year": 1402,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts in 1370, when its founder took power in Central Asia, and ends in 1507, with the fall of its last capital. After the founder's death in 1405, his heirs fought among themselves and the empire shrank to its eastern half.",
-    "pt": "Começa em 1370, quando o fundador tomou o poder na Ásia Central, e termina em 1507, com a queda de sua última capital. Após a morte do fundador, em 1405, os herdeiros brigaram entre si e o império encolheu para sua metade leste."
+    "pt": "Começa em 1370, quando o fundador tomou o poder na Ásia Central, e termina em 1507, com a queda de sua última capital. Após a morte do fundador, em 1405, os herdeiros brigaram entre si e o império encolheu para sua metade leste.",
+    "es": "Comienza en 1370, cuando su fundador tomó el poder en Asia Central, y termina en 1507, con la caída de su última capital. Tras la muerte del fundador, en 1405, sus herederos lucharon entre sí y el imperio quedó reducido a su mitad oriental."
   },
   "area": {
     "km2": 5149962,
@@ -34,49 +36,60 @@
   ],
   "capital": {
     "en": "Samarkand, later Herat",
-    "pt": "Samarcanda, depois Herat"
+    "pt": "Samarcanda, depois Herat",
+    "es": "Samarcanda, después Herat"
   },
   "language": {
     "en": "Persian (and Chagatai Turkic at court)",
-    "pt": "Persa (e turco chagatai na corte)"
+    "pt": "Persa (e turco chagatai na corte)",
+    "es": "Persa (y turco chagatai en la corte)"
   },
   "religion": {
     "en": "Sunni Islam",
-    "pt": "Islamismo Sunita"
+    "pt": "Islamismo Sunita",
+    "es": "Islam suní"
   },
   "religionNotes": {
     "en": "The ruling family also kept Mongol traditions and laws alongside Islamic law. The founder never took the title of Khan, as he did not descend from the great Mongol conqueror.",
-    "pt": "A família governante também manteve tradições e leis mongóis ao lado da lei islâmica. O fundador nunca usou o título de Khan, porque não descendia do grande conquistador mongol."
+    "pt": "A família governante também manteve tradições e leis mongóis ao lado da lei islâmica. O fundador nunca usou o título de Khan, porque não descendia do grande conquistador mongol.",
+    "es": "La familia gobernante también mantuvo tradiciones y leyes mongolas junto a la ley islámica. El fundador nunca usó el título de kan, porque no descendía del gran conquistador mongol."
   },
   "curiosities": [
     {
       "en": "Soviet scientists opened its founder's tomb in June 1941. Legend says it carried a curse, and two days later Germany invaded the USSR.",
       "pt": "Cientistas soviéticos abriram a tumba do fundador em junho de 1941. Diz a lenda que havia uma maldição, e dois dias depois a Alemanha invadiu a URSS.",
+      "es": "Unos científicos soviéticos abrieron la tumba de su fundador en junio de 1941. Cuenta la leyenda que pesaba sobre ella una maldición, y dos días después Alemania invadió la URSS.",
       "details": {
         "en": "The Gur-e-Amir mausoleum, in Samarkand, was opened by Soviet scientists led by Mikhail Gerasimov in June 1941. Legend says an inscription threatened disaster for anyone who disturbed the tomb; days later, on 22 June, Germany invaded the USSR. The remains were reburied at the end of 1942, as the Soviets began to turn the tide at Stalingrad.",
-        "pt": "O mausoléu Gur-e-Amir, em Samarcanda, foi aberto por cientistas soviéticos liderados por Mikhail Gerasimov em junho de 1941. Diz a lenda que uma inscrição ameaçava com uma desgraça quem perturbasse o túmulo; dias depois, em 22 de junho, a Alemanha invadiu a URSS. Os restos foram enterrados de novo no fim de 1942, quando os soviéticos começavam a virar a batalha de Stalingrado."
+        "pt": "O mausoléu Gur-e-Amir, em Samarcanda, foi aberto por cientistas soviéticos liderados por Mikhail Gerasimov em junho de 1941. Diz a lenda que uma inscrição ameaçava com uma desgraça quem perturbasse o túmulo; dias depois, em 22 de junho, a Alemanha invadiu a URSS. Os restos foram enterrados de novo no fim de 1942, quando os soviéticos começavam a virar a batalha de Stalingrado.",
+        "es": "El mausoleo Gur-e Amir, en Samarcanda, fue abierto por científicos soviéticos dirigidos por Mijaíl Guerásimov en junio de 1941. Cuenta la leyenda que una inscripción amenazaba con una desgracia a quien perturbara la tumba; días después, el 22 de junio, Alemania invadió la URSS. Los restos volvieron a enterrarse a finales de 1942, cuando los soviéticos empezaban a darle la vuelta a la batalla de Stalingrado."
       }
     },
     {
       "en": "A descendant of its founder, driven out of Central Asia, founded a new empire in India in 1526.",
       "pt": "Um descendente do fundador, expulso da Ásia Central, fundou um novo império na Índia em 1526.",
+      "es": "Un descendiente de su fundador, expulsado de Asia Central, fundó un nuevo imperio en la India en 1526.",
       "details": {
         "en": "Babur, a descendant of Timur on his father's side, lost Samarkand and the Ferghana valley to the Uzbeks and settled in Kabul. From there he invaded India and, in 1526, defeated the Sultan of Delhi at the Battle of Panipat, founding the Mughal Empire, which would rule much of India for more than three centuries.",
-        "pt": "Babur, descendente de Timur pelo lado do pai, perdeu Samarcanda e o vale de Fergana para os uzbeques e se instalou em Cabul. De lá invadiu a Índia e, em 1526, venceu o sultão de Délhi na batalha de Panipat, fundando o Império Mogol, que governaria grande parte da Índia por mais de três séculos."
+        "pt": "Babur, descendente de Timur pelo lado do pai, perdeu Samarcanda e o vale de Fergana para os uzbeques e se instalou em Cabul. De lá invadiu a Índia e, em 1526, venceu o sultão de Délhi na batalha de Panipat, fundando o Império Mogol, que governaria grande parte da Índia por mais de três séculos.",
+        "es": "Babur, descendiente de Timur por línea paterna, perdió Samarcanda y el valle de Ferganá ante los uzbekos y se instaló en Kabul. Desde allí invadió la India y, en 1526, venció al sultán de Delhi en la batalla de Panipat, con lo que fundó el Imperio mogol, que gobernaría gran parte de la India durante más de tres siglos."
       }
     },
     {
       "en": "Its founder, lame in one leg, was known in Europe as Tamerlane.",
       "pt": "Seu fundador, manco de uma perna, era conhecido na Europa como Tamerlão.",
+      "es": "Su fundador, cojo de una pierna, era conocido en Europa como Tamerlán.",
       "details": {
         "en": "\"Tamerlane\" comes from the Persian \"Timur-e Lang\", \"Timur the Lame\", a nickname given by his enemies: arrow wounds in his youth crippled his right leg and arm, as the study of his remains in 1941 confirmed. The name became famous in Europe through a play by the Englishman Christopher Marlowe, \"Tamburlaine\", from around 1587.",
-        "pt": "\"Tamerlão\" vem do persa \"Timur-e Lang\", \"Timur, o Manco\", apelido dado pelos inimigos: flechadas na juventude deixaram a perna e o braço direitos com sequelas, o que o estudo dos restos, em 1941, confirmou. O nome ficou famoso na Europa graças a uma peça do inglês Christopher Marlowe, \"Tamburlaine\", de por volta de 1587."
+        "pt": "\"Tamerlão\" vem do persa \"Timur-e Lang\", \"Timur, o Manco\", apelido dado pelos inimigos: flechadas na juventude deixaram a perna e o braço direitos com sequelas, o que o estudo dos restos, em 1941, confirmou. O nome ficou famoso na Europa graças a uma peça do inglês Christopher Marlowe, \"Tamburlaine\", de por volta de 1587.",
+        "es": "\"Tamerlán\" viene del persa \"Timur-e Lang\", \"Timur el Cojo\", apodo que le dieron sus enemigos: unas heridas de flecha en su juventud le dejaron secuelas en la pierna y el brazo derechos, como confirmó en 1941 el estudio de sus restos. El nombre se hizo famoso en Europa gracias a una obra del inglés Christopher Marlowe, \"Tamburlaine\", de hacia 1587."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Timurid_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Dinastia_Tim%C3%BArida"
+    "pt": "https://pt.wikipedia.org/wiki/Dinastia_Tim%C3%BArida",
+    "es": "https://es.wikipedia.org/wiki/Imperio_timúrida"
   },
   "aliases": [
     "Timurids",
@@ -88,11 +101,13 @@
     "Timur",
     "Gurkani",
     "Uzbekistan",
-    "Uzbequistão"
+    "Uzbequistão",
+    "Tamerlán"
   ],
   "summary": {
     "en": "An empire founded by Timur, known in the West as Tamerlane, a Turco-Mongol chief who took power in Samarkand in 1370. In three decades of extremely violent campaigns he conquered Persia, Mesopotamia and the Caucasus, sacked Delhi and Damascus and defeated the Ottomans and the Golden Horde. After his death in 1405 his heirs split the empire, but cities such as Samarkand and Herat saw a brilliant flowering of Persian art, architecture and science. It lost Central Asia to the Uzbeks and ended in 1507, with the fall of Herat; a descendant, Babur, would later found the Mughal Empire.",
-    "pt": "Império fundado por Timur, conhecido no Ocidente como Tamerlão, um chefe turco-mongol que tomou o poder em Samarcanda em 1370. Em três décadas de campanhas extremamente violentas, conquistou a Pérsia, a Mesopotâmia e o Cáucaso, saqueou Délhi e Damasco e derrotou os otomanos e a Horda Dourada. Depois de sua morte, em 1405, os herdeiros dividiram o império, mas cidades como Samarcanda e Herat viveram um brilhante florescimento da arte, da arquitetura e da ciência persas. Perdeu a Ásia Central para os uzbeques e acabou em 1507, com a queda de Herat; um descendente, Babur, fundaria depois o Império Mogol."
+    "pt": "Império fundado por Timur, conhecido no Ocidente como Tamerlão, um chefe turco-mongol que tomou o poder em Samarcanda em 1370. Em três décadas de campanhas extremamente violentas, conquistou a Pérsia, a Mesopotâmia e o Cáucaso, saqueou Délhi e Damasco e derrotou os otomanos e a Horda Dourada. Depois de sua morte, em 1405, os herdeiros dividiram o império, mas cidades como Samarcanda e Herat viveram um brilhante florescimento da arte, da arquitetura e da ciência persas. Perdeu a Ásia Central para os uzbeques e acabou em 1507, com a queda de Herat; um descendente, Babur, fundaria depois o Império Mogol.",
+    "es": "Imperio fundado por Timur, conocido en Occidente como Tamerlán, un jefe turco-mongol que tomó el poder en Samarcanda en 1370. En tres décadas de campañas extremadamente violentas conquistó Persia, Mesopotamia y el Cáucaso, saqueó Delhi y Damasco y derrotó a los otomanos y a la Horda de Oro. Tras su muerte, en 1405, sus herederos dividieron el imperio, pero ciudades como Samarcanda y Herat vivieron un brillante florecimiento del arte, la arquitectura y la ciencia persas. Perdió Asia Central ante los uzbekos y terminó en 1507, con la caída de Herat; un descendiente, Babur, fundaría después el Imperio mogol."
   },
   "map": {
     "parts": [

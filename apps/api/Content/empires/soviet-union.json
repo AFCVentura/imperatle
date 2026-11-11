@@ -3,7 +3,8 @@
   "slug": "soviet-union",
   "name": {
     "en": "Soviet Union",
-    "pt": "União Soviética"
+    "pt": "União Soviética",
+    "es": "Unión Soviética"
   },
   "peak": {
     "year": 1947,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts with the 1922 treaty that united the first Soviet republics and ends with its dissolution, in December 1991. The peak shown is 1947, when the post-war borders were settled, and they barely changed until 1991. The map shows only the territory of the republics, without allied or occupied countries or the bases leased in Finland and China.",
-    "pt": "Começa com o tratado de 1922 que uniu as primeiras repúblicas soviéticas e termina com a dissolução, em dezembro de 1991. O auge escolhido é 1947, quando as fronteiras do pós-guerra se fecharam, e elas quase não mudaram até 1991. O mapa mostra só o território das repúblicas, sem os países aliados ou ocupados nem as bases arrendadas na Finlândia e na China."
+    "pt": "Começa com o tratado de 1922 que uniu as primeiras repúblicas soviéticas e termina com a dissolução, em dezembro de 1991. O auge escolhido é 1947, quando as fronteiras do pós-guerra se fecharam, e elas quase não mudaram até 1991. O mapa mostra só o território das repúblicas, sem os países aliados ou ocupados nem as bases arrendadas na Finlândia e na China.",
+    "es": "Comienza con el tratado de 1922 que unió las primeras repúblicas soviéticas y termina con su disolución, en diciembre de 1991. El apogeo elegido es 1947, cuando se fijaron las fronteras de la posguerra, que apenas cambiaron hasta 1991. El mapa muestra solo el territorio de las repúblicas, sin los países aliados u ocupados ni las bases arrendadas en Finlandia y China."
   },
   "area": {
     "km2": 22400000,
@@ -36,49 +38,60 @@
   ],
   "capital": {
     "en": "Moscow",
-    "pt": "Moscou"
+    "pt": "Moscou",
+    "es": "Moscú"
   },
   "language": {
     "en": "Russian (plus each republic's own languages)",
-    "pt": "Russo (além das línguas próprias de cada república)"
+    "pt": "Russo (além das línguas próprias de cada república)",
+    "es": "Ruso (además de las lenguas propias de cada república)"
   },
   "religion": {
     "en": "State atheism",
-    "pt": "Ateísmo de Estado"
+    "pt": "Ateísmo de Estado",
+    "es": "Ateísmo de Estado"
   },
   "religionNotes": {
     "en": "The state was officially atheist: religion was banned from government, schools and public spaces, and atheism was part of education. Even so, much of the population kept its faith, mainly Orthodox Christian and Muslim.",
-    "pt": "O Estado era oficialmente ateu: a religião foi proibida no governo, nas escolas e nos espaços públicos, e o ateísmo fazia parte do ensino. Mesmo assim, boa parte da população manteve a fé, principalmente cristã ortodoxa e muçulmana."
+    "pt": "O Estado era oficialmente ateu: a religião foi proibida no governo, nas escolas e nos espaços públicos, e o ateísmo fazia parte do ensino. Mesmo assim, boa parte da população manteve a fé, principalmente cristã ortodoxa e muçulmana.",
+    "es": "El Estado era oficialmente ateo: la religión estaba prohibida en el gobierno, en las escuelas y en los espacios públicos, y el ateísmo formaba parte de la enseñanza. Aun así, buena parte de la población conservó su fe, sobre todo cristiana ortodoxa y musulmana."
   },
   "curiosities": [
     {
       "en": "One of its researchers created, in 1984, one of the best-selling video games in history.",
       "pt": "Um de seus pesquisadores criou, em 1984, um dos videogames mais vendidos da história.",
+      "es": "Uno de sus investigadores creó, en 1984, uno de los videojuegos más vendidos de la historia.",
       "details": {
         "en": "Tetris was created by Alexey Pajitnov, a programmer at a computing centre of the Academy of Sciences in Moscow, on a computer with no graphics screen. The name combines \"tetra\", since each piece has four blocks, and \"tennis\", his favourite sport. The game spread around the world, but the rights stayed with a state agency, and Pajitnov only began earning from his creation in 1996.",
-        "pt": "O Tetris foi criado por Alexey Pajitnov, programador de um centro de computação da Academia de Ciências, em Moscou, num computador sem tela gráfica. O nome junta \"tetra\", porque cada peça tem quatro blocos, e \"tênis\", o esporte favorito dele. O jogo se espalhou pelo mundo, mas os direitos ficaram com uma agência estatal, e Pajitnov só passou a receber pela criação em 1996."
+        "pt": "O Tetris foi criado por Alexey Pajitnov, programador de um centro de computação da Academia de Ciências, em Moscou, num computador sem tela gráfica. O nome junta \"tetra\", porque cada peça tem quatro blocos, e \"tênis\", o esporte favorito dele. O jogo se espalhou pelo mundo, mas os direitos ficaram com uma agência estatal, e Pajitnov só passou a receber pela criação em 1996.",
+        "es": "Tetris fue creado por Alekséi Pázhitnov, programador de un centro de computación de la Academia de Ciencias, en Moscú, en una máquina sin pantalla gráfica. El nombre une \"tetra\", porque cada pieza tiene cuatro bloques, y \"tenis\", su deporte favorito. El juego se difundió por todo el mundo, pero los derechos quedaron en manos de una agencia estatal, y Pázhitnov solo empezó a cobrar por su creación en 1996."
       }
     },
     {
       "en": "In 1986, one of its power plants suffered the worst nuclear accident in history.",
       "pt": "Em 1986, uma de suas usinas sofreu o pior acidente nuclear da história.",
+      "es": "En 1986, una de sus centrales sufrió el peor accidente nuclear de la historia.",
       "details": {
         "en": "On 26 April 1986, reactor 4 at Chernobyl, in Ukraine, exploded during a safety test. The radioactive cloud spread across Europe, and the government only acknowledged the accident after Sweden detected the radiation. More than 100,000 people were evacuated at the time, and a 30 km exclusion zone around the plant still exists today.",
-        "pt": "Em 26 de abril de 1986, o reator 4 de Chernobyl, na Ucrânia, explodiu durante um teste de segurança. A nuvem radioativa se espalhou pela Europa, e o governo só admitiu o acidente depois que a Suécia detectou a radiação. Mais de 100 mil pessoas foram retiradas na época, e uma zona de exclusão de 30 km ao redor da usina existe até hoje."
+        "pt": "Em 26 de abril de 1986, o reator 4 de Chernobyl, na Ucrânia, explodiu durante um teste de segurança. A nuvem radioativa se espalhou pela Europa, e o governo só admitiu o acidente depois que a Suécia detectou a radiação. Mais de 100 mil pessoas foram retiradas na época, e uma zona de exclusão de 30 km ao redor da usina existe até hoje.",
+        "es": "El 26 de abril de 1986, el reactor 4 de Chernóbil, en Ucrania, explotó durante una prueba de seguridad. La nube radiactiva se extendió por Europa, y el gobierno solo reconoció el accidente después de que Suecia detectara la radiación. Más de 100 000 personas fueron evacuadas en aquel momento, y todavía hoy existe una zona de exclusión de 30 km alrededor de la central."
       }
     },
     {
       "en": "It sent the first human into space, in 1961.",
       "pt": "Mandou o primeiro ser humano ao espaço, em 1961.",
+      "es": "Envió al primer ser humano al espacio, en 1961.",
       "details": {
         "en": "On 12 April 1961, Yuri Gagarin made one full orbit of the Earth aboard Vostok 1, in a 108-minute flight, and at the end parachuted out before the capsule landed. Four years earlier, the country had already launched Sputnik, the first artificial satellite. Gagarin became a worldwide celebrity and died in 1968, in a training jet crash.",
-        "pt": "Em 12 de abril de 1961, Iuri Gagarin deu uma volta completa na Terra a bordo da Vostok 1, num voo de 108 minutos, e no fim saltou de paraquedas antes do pouso da cápsula. Quatro anos antes, o país já tinha lançado o Sputnik, o primeiro satélite artificial. Gagarin virou celebridade mundial e morreu em 1968, num acidente com um avião de treinamento."
+        "pt": "Em 12 de abril de 1961, Iuri Gagarin deu uma volta completa na Terra a bordo da Vostok 1, num voo de 108 minutos, e no fim saltou de paraquedas antes do pouso da cápsula. Quatro anos antes, o país já tinha lançado o Sputnik, o primeiro satélite artificial. Gagarin virou celebridade mundial e morreu em 1968, num acidente com um avião de treinamento.",
+        "es": "El 12 de abril de 1961, Yuri Gagarin dio una vuelta completa a la Tierra a bordo del Vostok 1, en un vuelo de 108 minutos, y al final saltó en paracaídas antes de que la cápsula aterrizara. Cuatro años antes, el país ya había lanzado el Sputnik, el primer satélite artificial. Gagarin se convirtió en una celebridad mundial y murió en 1968, en un accidente con un avión de entrenamiento."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Soviet_Union",
-    "pt": "https://pt.wikipedia.org/wiki/União_Soviética"
+    "pt": "https://pt.wikipedia.org/wiki/União_Soviética",
+    "es": "https://es.wikipedia.org/wiki/Unión_Soviética"
   },
   "aliases": [
     "URSS",
@@ -86,11 +99,13 @@
     "União das Repúblicas Socialistas Soviéticas",
     "Union of Soviet Socialist Republics",
     "CCCP",
-    "SSSR"
+    "SSSR",
+    "Unión de Repúblicas Socialistas Soviéticas"
   ],
   "summary": {
     "en": "The state created in 1922 under Lenin's leadership, after the 1917 Revolution and the civil war, which came to unite 15 republics governed by the Communist Party from Moscow. With the collectivisation of agriculture and an entirely state-run industry, organised in five-year plans, it went in a few decades from a mostly agrarian country to one of the world's largest industrial powers. It played a decisive role in the defeat of Nazi Germany in World War II, with more than 25 million dead, and then competed with the United States for world leadership during the Cold War, including the space race, in which it launched the first satellite and the first human into space. Gorbachev's reforms, from 1985, opened the way to the independence of the republics, and the country was dissolved in 1991.",
-    "pt": "Estado criado em 1922 sob a liderança de Lênin, depois da Revolução de 1917 e da guerra civil, que chegou a reunir 15 repúblicas governadas pelo Partido Comunista, a partir de Moscou. Com a coletivização do campo e uma indústria inteiramente estatal, organizada em planos quinquenais, passou em poucas décadas de um país majoritariamente agrário a uma das maiores potências industriais do mundo. Teve papel decisivo na derrota da Alemanha nazista na Segunda Guerra, com mais de 25 milhões de mortos, e depois disputou com os Estados Unidos a liderança mundial durante a Guerra Fria, incluindo a corrida espacial, em que lançou o primeiro satélite e o primeiro ser humano ao espaço. As reformas de Gorbachev, a partir de 1985, abriram caminho para a independência das repúblicas, e o país foi dissolvido em 1991."
+    "pt": "Estado criado em 1922 sob a liderança de Lênin, depois da Revolução de 1917 e da guerra civil, que chegou a reunir 15 repúblicas governadas pelo Partido Comunista, a partir de Moscou. Com a coletivização do campo e uma indústria inteiramente estatal, organizada em planos quinquenais, passou em poucas décadas de um país majoritariamente agrário a uma das maiores potências industriais do mundo. Teve papel decisivo na derrota da Alemanha nazista na Segunda Guerra, com mais de 25 milhões de mortos, e depois disputou com os Estados Unidos a liderança mundial durante a Guerra Fria, incluindo a corrida espacial, em que lançou o primeiro satélite e o primeiro ser humano ao espaço. As reformas de Gorbachev, a partir de 1985, abriram caminho para a independência das repúblicas, e o país foi dissolvido em 1991.",
+    "es": "Estado creado en 1922 bajo el liderazgo de Lenin, después de la Revolución de 1917 y la guerra civil, que llegó a reunir 15 repúblicas gobernadas por el Partido Comunista desde Moscú. Con la colectivización del campo y una industria totalmente estatal, organizada en planes quinquenales, pasó en pocas décadas de ser un país mayoritariamente agrario a ser una de las mayores potencias industriales del mundo. Tuvo un papel decisivo en la derrota de la Alemania nazi en la Segunda Guerra Mundial, con más de 25 millones de muertos, y después disputó a Estados Unidos el liderazgo mundial durante la Guerra Fría, incluida la carrera espacial, en la que lanzó el primer satélite y el primer ser humano al espacio. Las reformas de Gorbachov, a partir de 1985, abrieron el camino a la independencia de las repúblicas, y el país se disolvió en 1991."
   },
   "map": {
     "parts": [

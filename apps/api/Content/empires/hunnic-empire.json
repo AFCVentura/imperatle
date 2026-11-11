@@ -3,7 +3,8 @@
   "slug": "hunnic-empire",
   "name": {
     "en": "Hunnic Empire",
-    "pt": "Império Huno"
+    "pt": "Império Huno",
+    "es": "Imperio huno"
   },
   "peak": {
     "year": 451,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "There is no exact start date: these peoples reached Europe around 370, but were only united under a single ruler decades later. The end used here is 469, when the last of the empire's great leaders died.",
-    "pt": "Não há uma data exata para o início: esses povos chegaram à Europa por volta de 370, mas só se uniram sob um único governante décadas depois. O fim usado aqui é 469, quando morreu o último dos grandes líderes do império."
+    "pt": "Não há uma data exata para o início: esses povos chegaram à Europa por volta de 370, mas só se uniram sob um único governante décadas depois. O fim usado aqui é 469, quando morreu o último dos grandes líderes do império.",
+    "es": "No hay una fecha exacta de inicio: estos pueblos llegaron a Europa hacia 370, pero solo se unieron bajo un único gobernante décadas después. El final usado aquí es 469, cuando murió el último de los grandes líderes del imperio."
   },
   "area": {
     "km2": 1832119,
@@ -35,45 +37,55 @@
   ],
   "capital": {
     "en": "No fixed capital (itinerant court; the main one was on the Pannonian plain)",
-    "pt": "Sem capital fixa (corte itinerante; a principal ficava na planície da Panônia)"
+    "pt": "Sem capital fixa (corte itinerante; a principal ficava na planície da Panônia)",
+    "es": "Sin capital fija (corte itinerante; la principal estaba en la llanura panónica)"
   },
   "language": {
     "en": "Unknown (Gothic and Latin were also spoken at court)",
-    "pt": "Desconhecida (gótico e latim também eram falados na corte)"
+    "pt": "Desconhecida (gótico e latim também eram falados na corte)",
+    "es": "Desconocida (en la corte también se hablaban el gótico y el latín)"
   },
   "religion": {
     "en": "Traditional steppe religion (poorly documented)",
-    "pt": "Religião tradicional da estepe (pouco documentada)"
+    "pt": "Religião tradicional da estepe (pouco documentada)",
+    "es": "Religión tradicional de la estepa (poco documentada)"
   },
   "curiosities": [
     {
       "en": "Many of its people had elongated skulls, shaped by binding babies' heads.",
       "pt": "Muitos de seus habitantes tinham o crânio alongado, moldado com faixas amarradas na cabeça dos bebês.",
+      "es": "Muchos de sus habitantes tenían el cráneo alargado, moldeado con vendas atadas a la cabeza de los bebés.",
       "details": {
         "en": "Tight bands or boards were tied around infants' heads while the skull was still soft, stretching it upwards. Elongated skulls from this period appear in graves from the Danube to the Caucasus, and the custom spread to allied peoples, including several Germanic groups, as a mark of status.",
-        "pt": "Faixas apertadas ou tábuas eram amarradas na cabeça dos bebês enquanto o crânio ainda era mole, alongando-o para cima. Crânios alongados dessa época aparecem em túmulos do Danúbio ao Cáucaso, e o costume se espalhou para povos aliados, entre eles vários grupos germânicos, como sinal de status."
+        "pt": "Faixas apertadas ou tábuas eram amarradas na cabeça dos bebês enquanto o crânio ainda era mole, alongando-o para cima. Crânios alongados dessa época aparecem em túmulos do Danúbio ao Cáucaso, e o costume se espalhou para povos aliados, entre eles vários grupos germânicos, como sinal de status.",
+        "es": "Se ataban vendas apretadas o tablillas a la cabeza de los bebés mientras el cráneo aún era blando, lo que lo alargaba hacia arriba. Aparecen cráneos alargados de esta época en tumbas desde el Danubio hasta el Cáucaso, y la costumbre se extendió a pueblos aliados, entre ellos varios grupos germánicos, como señal de estatus."
       }
     },
     {
       "en": "Its arrival pushed entire peoples across the borders of Rome.",
       "pt": "Sua chegada empurrou povos inteiros para dentro das fronteiras de Roma.",
+      "es": "Su llegada empujó a pueblos enteros al interior de las fronteras de Roma.",
       "details": {
         "en": "Around 375 these horsemen crushed the Goths north of the Black Sea. In 376 tens of thousands of Goths begged to cross the Danube into Roman territory; mistreated, they rebelled and in 378 killed Emperor Valens at the Battle of Adrianople, one of the worst Roman defeats ever.",
-        "pt": "Por volta de 375, esses cavaleiros esmagaram os godos ao norte do Mar Negro. Em 376, dezenas de milhares de godos pediram para atravessar o Danúbio e entrar em território romano; maltratados, eles se revoltaram e em 378 mataram o imperador Valente na Batalha de Adrianópolis, uma das piores derrotas romanas."
+        "pt": "Por volta de 375, esses cavaleiros esmagaram os godos ao norte do Mar Negro. Em 376, dezenas de milhares de godos pediram para atravessar o Danúbio e entrar em território romano; maltratados, eles se revoltaram e em 378 mataram o imperador Valente na Batalha de Adrianópolis, uma das piores derrotas romanas.",
+        "es": "Hacia 375, estos jinetes aplastaron a los godos al norte del mar Negro. En 376, decenas de miles de godos pidieron cruzar el Danubio y entrar en territorio romano; maltratados, se rebelaron y en 378 mataron al emperador Valente en la batalla de Adrianópolis, una de las peores derrotas de la historia de Roma."
       }
     },
     {
       "en": "Its most famous leader became known as the \"Scourge of God\" and turned back from Rome after meeting the pope.",
       "pt": "Seu líder mais famoso ficou conhecido como o \"Flagelo de Deus\" e desistiu de Roma depois de se encontrar com o papa.",
+      "es": "Su líder más famoso fue conocido como el \"Azote de Dios\" y renunció a marchar sobre Roma tras reunirse con el papa.",
       "details": {
         "en": "In 452 Attila invaded northern Italy and destroyed Aquileia. Near Mantua he met an embassy led by Pope Leo I and withdrew. Tradition credits the pope, but hunger and disease in his army, and an Eastern Roman attack on his lands, probably weighed more. The nickname comes from later Christian writers, who saw him as a punishment sent by God.",
-        "pt": "Em 452, Átila invadiu o norte da Itália e destruiu Aquileia. Perto de Mântua recebeu uma embaixada liderada pelo papa Leão I e recuou. A tradição dá o mérito ao papa, mas a fome e as doenças no exército, e um ataque romano oriental às suas terras, provavelmente pesaram mais. O apelido vem de escritores cristãos posteriores, que o viam como um castigo enviado por Deus."
+        "pt": "Em 452, Átila invadiu o norte da Itália e destruiu Aquileia. Perto de Mântua recebeu uma embaixada liderada pelo papa Leão I e recuou. A tradição dá o mérito ao papa, mas a fome e as doenças no exército, e um ataque romano oriental às suas terras, provavelmente pesaram mais. O apelido vem de escritores cristãos posteriores, que o viam como um castigo enviado por Deus.",
+        "es": "En 452, Atila invadió el norte de Italia y destruyó Aquilea. Cerca de Mantua recibió una embajada encabezada por el papa León I y se retiró. La tradición atribuye el mérito al papa, pero el hambre y las enfermedades en su ejército, y un ataque del Imperio romano de Oriente contra sus tierras, probablemente pesaron más. El apodo viene de escritores cristianos posteriores, que lo veían como un castigo enviado por Dios."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Huns",
-    "pt": "https://pt.wikipedia.org/wiki/Hunos"
+    "pt": "https://pt.wikipedia.org/wiki/Hunos",
+    "es": "https://es.wikipedia.org/wiki/Imperio_huno"
   },
   "aliases": [
     "Huns",
@@ -85,7 +97,8 @@
   ],
   "summary": {
     "en": "A confederation of nomadic peoples from the steppes, of still debated origin, that reached Europe around 370 and pushed the Goths into the Roman Empire. Under Attila, who ruled from 434 (alongside his brother Bleda until 445) to 453, it dominated the lands from the Danube plain to the Caspian Sea and extracted heavy tributes in gold from Constantinople. In 451 it invaded Gaul and was stopped at the Battle of the Catalaunian Plains, and in 452 it ravaged northern Italy. After Attila's death the subject peoples rebelled and defeated his sons at the Battle of Nedao, in 454, and the empire fell apart soon after.",
-    "pt": "Confederação de povos nômades das estepes, de origem ainda debatida, que chegou à Europa por volta de 370 e empurrou os godos para dentro do Império Romano. Sob Átila, que governou de 434 (ao lado do irmão Bleda até 445) a 453, dominou as terras da planície do Danúbio ao Mar Cáspio e cobrou pesados tributos em ouro de Constantinopla. Em 451 invadiu a Gália e foi detido na Batalha dos Campos Cataláunicos, e em 452 devastou o norte da Itália. Após a morte de Átila, os povos submetidos se revoltaram e derrotaram seus filhos na Batalha de Nedao, em 454, e o império se desfez pouco depois."
+    "pt": "Confederação de povos nômades das estepes, de origem ainda debatida, que chegou à Europa por volta de 370 e empurrou os godos para dentro do Império Romano. Sob Átila, que governou de 434 (ao lado do irmão Bleda até 445) a 453, dominou as terras da planície do Danúbio ao Mar Cáspio e cobrou pesados tributos em ouro de Constantinopla. Em 451 invadiu a Gália e foi detido na Batalha dos Campos Cataláunicos, e em 452 devastou o norte da Itália. Após a morte de Átila, os povos submetidos se revoltaram e derrotaram seus filhos na Batalha de Nedao, em 454, e o império se desfez pouco depois.",
+    "es": "Confederación de pueblos nómadas de las estepas, de origen todavía debatido, que llegó a Europa hacia 370 y empujó a los godos al interior del Imperio romano. Bajo Atila, que gobernó desde 434 (junto a su hermano Bleda hasta 445) hasta 453, dominó las tierras desde la llanura del Danubio hasta el mar Caspio y exigió fuertes tributos en oro a Constantinopla. En 451 invadió la Galia y fue detenida en la batalla de los Campos Cataláunicos, y en 452 arrasó el norte de Italia. Tras la muerte de Atila, los pueblos sometidos se rebelaron y derrotaron a sus hijos en la batalla de Nedao, en 454, y el imperio se deshizo poco después."
   },
   "map": {
     "parts": [

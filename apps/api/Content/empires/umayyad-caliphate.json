@@ -3,7 +3,8 @@
   "slug": "umayyad-caliphate",
   "name": {
     "en": "Umayyad Caliphate",
-    "pt": "Califado Omíada"
+    "pt": "Califado Omíada",
+    "es": "Califato omeya"
   },
   "peak": {
     "year": 720,
@@ -32,49 +33,60 @@
   ],
   "capital": {
     "en": "Damascus",
-    "pt": "Damasco"
+    "pt": "Damasco",
+    "es": "Damasco"
   },
   "language": {
     "en": "Arabic",
-    "pt": "Árabe"
+    "pt": "Árabe",
+    "es": "Árabe"
   },
   "religion": {
     "en": "Islam",
-    "pt": "Islamismo"
+    "pt": "Islamismo",
+    "es": "Islam"
   },
   "religionNotes": {
     "en": "This was the Islam later called Sunni, a term not yet in common use. Most of the population was still Christian, Jewish or Zoroastrian, and non-Muslims kept their faith in exchange for a special tax.",
-    "pt": "Era o islamismo que mais tarde seria chamado de sunita, termo que ainda não era comum. A maior parte da população ainda era cristã, judia ou zoroastrista, e os não muçulmanos mantinham sua fé em troca de um imposto especial."
+    "pt": "Era o islamismo que mais tarde seria chamado de sunita, termo que ainda não era comum. A maior parte da população ainda era cristã, judia ou zoroastrista, e os não muçulmanos mantinham sua fé em troca de um imposto especial.",
+    "es": "Era el islam que más tarde se llamaría suní, un término que aún no era habitual. La mayor parte de la población seguía siendo cristiana, judía o zoroastriana, y los no musulmanes conservaban su fe a cambio de un impuesto especial."
   },
   "curiosities": [
     {
       "en": "Its desert palaces were decorated with frescoes of people and animals, something rare in Islamic art.",
       "pt": "Seus palácios no deserto tinham afrescos com pessoas e animais, algo raro na arte islâmica.",
+      "es": "Sus palacios del desierto estaban decorados con frescos de personas y animales, algo raro en el arte islámico.",
       "details": {
         "en": "Palaces such as Qusayr Amra, in today's Jordan, built in the early 8th century, have walls covered in paintings of hunts, musicians, dancers and bathers, and even a dome with a map of the constellations. Islamic religious art avoided images of living beings, but the Umayyads, drawing on Byzantine and Persian art, used them in their palaces. Qusayr Amra is a World Heritage Site.",
-        "pt": "Palácios como Qusayr Amra, na atual Jordânia, construído no início do século VIII, têm paredes cobertas de pinturas de caçadas, músicos, dançarinas e banhistas, e até uma cúpula com um mapa das constelações. A arte religiosa islâmica evitava imagens de seres vivos, mas os omíadas, influenciados pela arte bizantina e persa, as usavam nos palácios. Qusayr Amra é Patrimônio Mundial."
+        "pt": "Palácios como Qusayr Amra, na atual Jordânia, construído no início do século VIII, têm paredes cobertas de pinturas de caçadas, músicos, dançarinas e banhistas, e até uma cúpula com um mapa das constelações. A arte religiosa islâmica evitava imagens de seres vivos, mas os omíadas, influenciados pela arte bizantina e persa, as usavam nos palácios. Qusayr Amra é Patrimônio Mundial.",
+        "es": "Palacios como Qusayr Amra, en la actual Jordania, construido a principios del siglo VIII, tienen las paredes cubiertas de pinturas de cacerías, músicos, bailarinas y bañistas, e incluso una cúpula con un mapa de las constelaciones. El arte religioso islámico evitaba las imágenes de seres vivos, pero los omeyas, influidos por el arte bizantino y el persa, las usaban en sus palacios. Qusayr Amra es Patrimonio de la Humanidad."
       }
     },
     {
       "en": "It entered the Iberian Peninsula in 711 by crossing a strait that still bears its commander's name.",
       "pt": "Entrou na Península Ibérica em 711 cruzando um estreito que até hoje leva o nome do seu comandante.",
+      "es": "Entró en la península ibérica en 711 cruzando un estrecho que todavía hoy lleva el nombre de su comandante.",
       "details": {
         "en": "In 711 the Berber general Tariq ibn Ziyad crossed the strait with an army of about 7,000 men and defeated the Visigothic king Roderic. The rock where he landed became known as Jabal Tariq, \"Tariq's mountain\" in Arabic, from which the name Gibraltar comes. Within a few years the Muslims ruled almost the whole peninsula.",
-        "pt": "Em 711, o general berbere Tárique ibne Ziade cruzou o estreito com um exército de cerca de 7 mil homens e derrotou o rei visigodo Rodrigo. O rochedo onde desembarcou ficou conhecido como Jabal Tariq, \"monte de Tárique\" em árabe, de onde vem o nome Gibraltar. Em poucos anos, os muçulmanos dominaram quase toda a península."
+        "pt": "Em 711, o general berbere Tárique ibne Ziade cruzou o estreito com um exército de cerca de 7 mil homens e derrotou o rei visigodo Rodrigo. O rochedo onde desembarcou ficou conhecido como Jabal Tariq, \"monte de Tárique\" em árabe, de onde vem o nome Gibraltar. Em poucos anos, os muçulmanos dominaram quase toda a península.",
+        "es": "En 711, el general bereber Táriq ibn Ziyad cruzó el estrecho con un ejército de unos 7000 hombres y derrotó al rey visigodo Rodrigo. La roca donde desembarcó pasó a conocerse como Yabal Tariq, \"monte de Táriq\" en árabe, de donde viene el nombre de Gibraltar. En pocos años, los musulmanes dominaron casi toda la península."
       }
     },
     {
       "en": "A surviving branch of its dynasty went on to rule for centuries from Córdoba, in Europe.",
       "pt": "Um ramo sobrevivente de sua dinastia governou por séculos a partir de Córdoba, na Europa.",
+      "es": "Una rama superviviente de su dinastía gobernó durante siglos desde Córdoba, en Europa.",
       "details": {
         "en": "When the Abbasids massacred the Umayyad family in 750, Prince Abd al-Rahman fled west and, in 756, founded an independent emirate in Córdoba, in the Iberian Peninsula. His descendants proclaimed themselves caliphs in 929 and ruled until 1031. The Great Mosque of Córdoba, begun by him, is now a cathedral and a World Heritage Site.",
-        "pt": "Quando os abássidas massacraram a família omíada, em 750, o príncipe Abd al-Rahman fugiu para o oeste e, em 756, fundou um emirado independente em Córdoba, na Península Ibérica. Seus descendentes se proclamaram califas em 929 e governaram até 1031. A Grande Mesquita de Córdoba, iniciada por ele, é hoje uma catedral e Patrimônio Mundial."
+        "pt": "Quando os abássidas massacraram a família omíada, em 750, o príncipe Abd al-Rahman fugiu para o oeste e, em 756, fundou um emirado independente em Córdoba, na Península Ibérica. Seus descendentes se proclamaram califas em 929 e governaram até 1031. A Grande Mesquita de Córdoba, iniciada por ele, é hoje uma catedral e Patrimônio Mundial.",
+        "es": "Cuando los abasíes masacraron a la familia omeya en 750, el príncipe Abderramán huyó hacia el oeste y, en 756, fundó un emirato independiente en Córdoba, en la península ibérica. Sus descendientes se proclamaron califas en 929 y gobernaron hasta 1031. La Mezquita de Córdoba, que él mandó iniciar, es hoy una catedral y Patrimonio de la Humanidad."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Umayyad_Caliphate",
-    "pt": "https://pt.wikipedia.org/wiki/Califado_Omíada"
+    "pt": "https://pt.wikipedia.org/wiki/Califado_Omíada",
+    "es": "https://es.wikipedia.org/wiki/Califato_omeya"
   },
   "aliases": [
     "Umayyads",
@@ -91,11 +103,18 @@
     "Islamic Caliphate",
     "Califado Islâmico",
     "Syria",
-    "Síria"
+    "Síria",
+    "Omeyas",
+    "Omeya",
+    "Dinastía omeya",
+    "Imperio omeya",
+    "Califato árabe",
+    "Califato islámico"
   ],
   "summary": {
     "en": "The first hereditary dynasty of caliphs, founded in 661 by Muawiya, governor of Syria, who made Damascus the capital. It carried on the Arab conquests and, in the early 8th century, ruled from North Africa and the Iberian Peninsula to Central Asia and the Indus valley, one of the largest empires the world had seen. It made Arabic the language of government, minted the first Islamic coins and built the Dome of the Rock, in Jerusalem. Discontent among non-Arab Muslims and internal rivalries led to the Abbasid revolt, which overthrew the dynasty in 750.",
-    "pt": "Primeira dinastia hereditária de califas, fundada em 661 por Muawiya, governador da Síria, que fez de Damasco a capital. Continuou as conquistas árabes e, no início do século VIII, governava do norte da África e da Península Ibérica até a Ásia Central e o vale do Indo, um dos maiores impérios que o mundo já tinha visto. Fez do árabe a língua da administração, cunhou as primeiras moedas islâmicas e construiu a Cúpula da Rocha, em Jerusalém. A insatisfação dos muçulmanos não árabes e as rivalidades internas levaram à revolta abássida, que derrubou a dinastia em 750."
+    "pt": "Primeira dinastia hereditária de califas, fundada em 661 por Muawiya, governador da Síria, que fez de Damasco a capital. Continuou as conquistas árabes e, no início do século VIII, governava do norte da África e da Península Ibérica até a Ásia Central e o vale do Indo, um dos maiores impérios que o mundo já tinha visto. Fez do árabe a língua da administração, cunhou as primeiras moedas islâmicas e construiu a Cúpula da Rocha, em Jerusalém. A insatisfação dos muçulmanos não árabes e as rivalidades internas levaram à revolta abássida, que derrubou a dinastia em 750.",
+    "es": "Primera dinastía hereditaria de califas, fundada en 661 por Muawiya, gobernador de Siria, que hizo de Damasco la capital. Continuó las conquistas árabes y, a principios del siglo VIII, gobernaba desde el norte de África y la península ibérica hasta Asia Central y el valle del Indo, uno de los mayores imperios que el mundo había conocido. Hizo del árabe la lengua de la administración, acuñó las primeras monedas islámicas y construyó la Cúpula de la Roca, en Jerusalén. El descontento de los musulmanes no árabes y las rivalidades internas llevaron a la revuelta abasí, que derrocó a la dinastía en 750."
   },
   "map": {
     "parts": [

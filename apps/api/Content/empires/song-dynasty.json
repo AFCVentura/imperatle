@@ -3,7 +3,8 @@
   "slug": "song-dynasty",
   "name": {
     "en": "Song Dynasty",
-    "pt": "Dinastia Song"
+    "pt": "Dinastia Song",
+    "es": "Dinastía Song"
   },
   "peak": {
     "year": 1111,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts in 960, when a general took the throne in a coup and founded the dynasty, and ends in 1279, when the last emperor, still a child, died in a naval battle against invaders from the north. In 1127, other invaders from the north took the northern half of the territory and the capital, and the court took refuge in the south, where the dynasty carried on for another 150 years. The map shows the territory before that loss and leaves out the lands in the northwest conquered in the early 12th century.",
-    "pt": "Começa em 960, quando um general tomou o trono num golpe e fundou a dinastia, e termina em 1279, quando o último imperador, ainda criança, morreu numa batalha naval contra invasores vindos do norte. Em 1127, outros invasores do norte tomaram a metade norte do território e a capital, e a corte se refugiou no sul, onde a dinastia continuou por mais 150 anos. O mapa mostra o território antes dessa perda e não inclui as terras do noroeste conquistadas no início do século XII."
+    "pt": "Começa em 960, quando um general tomou o trono num golpe e fundou a dinastia, e termina em 1279, quando o último imperador, ainda criança, morreu numa batalha naval contra invasores vindos do norte. Em 1127, outros invasores do norte tomaram a metade norte do território e a capital, e a corte se refugiou no sul, onde a dinastia continuou por mais 150 anos. O mapa mostra o território antes dessa perda e não inclui as terras do noroeste conquistadas no início do século XII.",
+    "es": "Comienza en 960, cuando un general tomó el trono con un golpe y fundó la dinastía, y termina en 1279, cuando el último emperador, todavía un niño, murió en una batalla naval contra invasores venidos del norte. En 1127, otros invasores del norte tomaron la mitad norte del territorio y la capital, y la corte se refugió en el sur, donde la dinastía siguió otros 150 años. El mapa muestra el territorio antes de esa pérdida y no incluye las tierras del noroeste conquistadas a principios del siglo XII."
   },
   "area": {
     "km2": 2763480,
@@ -34,49 +36,60 @@
   ],
   "capital": {
     "en": "Kaifeng, later Lin'an (today's Hangzhou)",
-    "pt": "Kaifeng, depois Lin'an (atual Hangzhou)"
+    "pt": "Kaifeng, depois Lin'an (atual Hangzhou)",
+    "es": "Kaifeng, después Lin'an (actual Hangzhou)"
   },
   "language": {
     "en": "Middle Chinese (with Classical Chinese as the written language)",
-    "pt": "Chinês médio (com o chinês clássico como língua escrita)"
+    "pt": "Chinês médio (com o chinês clássico como língua escrita)",
+    "es": "Chino medio (con el chino clásico como lengua escrita)"
   },
   "religion": {
     "en": "Confucianism, Buddhism and Taoism",
-    "pt": "Confucionismo, budismo e taoísmo"
+    "pt": "Confucionismo, budismo e taoísmo",
+    "es": "Confucianismo, budismo y taoísmo"
   },
   "religionNotes": {
     "en": "In this period Neo-Confucianism took shape, a reading of Confucius that absorbed ideas from Buddhism and Taoism and became the basis of official Chinese thought for centuries. One of the emperors was a fervent Taoist and had temples built all over the territory. Chan Buddhism flourished in the monasteries and was taken to Japan, where it became known as Zen.",
-    "pt": "Nesta época tomou forma o neoconfucionismo, uma leitura de Confúcio que absorveu ideias do budismo e do taoísmo e virou a base do pensamento oficial chinês por séculos. Um dos imperadores era taoísta fervoroso e mandou erguer templos por todo o território. O budismo chan floresceu nos mosteiros e foi levado ao Japão, onde ficou conhecido como zen."
+    "pt": "Nesta época tomou forma o neoconfucionismo, uma leitura de Confúcio que absorveu ideias do budismo e do taoísmo e virou a base do pensamento oficial chinês por séculos. Um dos imperadores era taoísta fervoroso e mandou erguer templos por todo o território. O budismo chan floresceu nos mosteiros e foi levado ao Japão, onde ficou conhecido como zen.",
+    "es": "En esta época tomó forma el neoconfucianismo, una lectura de Confucio que absorbió ideas del budismo y del taoísmo y fue durante siglos la base del pensamiento oficial chino. Uno de los emperadores era un taoísta ferviente y mandó levantar templos por todo el territorio. El budismo chan floreció en los monasterios y fue llevado a Japón, donde se conoció como zen."
   },
   "curiosities": [
     {
       "en": "A fast-ripening rice brought from Southeast Asia allowed two harvests a year, and the population reached about 100 million for the first time.",
       "pt": "Um arroz de ciclo curto trazido do Sudeste Asiático permitiu duas colheitas por ano, e a população chegou pela primeira vez a cerca de 100 milhões.",
+      "es": "Un arroz de ciclo corto traído del Sudeste Asiático permitió dos cosechas al año, y la población llegó por primera vez a unos 100 millones.",
       "details": {
         "en": "In 1012, after a drought, the emperor ordered seeds of a rice from what is now central Vietnam to be distributed in the south. It resisted dry spells and ripened in a few months, so the same field could be planted twice a year. With more food, the population roughly doubled, and historians estimate it at about 100 million around the year 1100.",
-        "pt": "Em 1012, depois de uma seca, o imperador mandou distribuir no sul sementes de um arroz vindo do atual centro do Vietnã. Ele resistia à falta de chuva e amadurecia em poucos meses, então o mesmo campo podia ser plantado duas vezes por ano. Com mais comida, a população praticamente dobrou, e os historiadores estimam que chegou a cerca de 100 milhões por volta do ano 1100."
+        "pt": "Em 1012, depois de uma seca, o imperador mandou distribuir no sul sementes de um arroz vindo do atual centro do Vietnã. Ele resistia à falta de chuva e amadurecia em poucos meses, então o mesmo campo podia ser plantado duas vezes por ano. Com mais comida, a população praticamente dobrou, e os historiadores estimam que chegou a cerca de 100 milhões por volta do ano 1100.",
+        "es": "En 1012, tras una sequía, el emperador mandó repartir en el sur semillas de un arroz procedente del actual centro de Vietnam. Resistía la falta de lluvia y maduraba en pocos meses, así que el mismo campo podía sembrarse dos veces al año. Con más alimento, la población casi se duplicó, y los historiadores calculan que llegó a unos 100 millones hacia el año 1100."
       }
     },
     {
       "en": "Japanese monks took from here the whisked powdered tea that gave rise to the Japanese tea ceremony and to matcha.",
       "pt": "Monges japoneses levaram daqui o chá em pó batido, que deu origem à cerimônia do chá do Japão e ao matchá.",
+      "es": "Unos monjes japoneses se llevaron de aquí el té en polvo batido que dio origen a la ceremonia del té japonesa y al matcha.",
       "details": {
         "en": "At the time, tea leaves were ground into powder and whisked with hot water in a bowl, with a bamboo whisk, and there were even contests to see whose foam was best. In 1191, the Japanese monk Eisai returned from his studies with seeds and the method, which spread through the Zen monasteries. In China, loose-leaf tea later took its place, but in Japan the powder survived as matcha.",
-        "pt": "Na época, as folhas eram moídas até virar pó e batidas com água quente numa tigela, com um batedor de bambu, e havia até disputas para ver quem fazia a melhor espuma. Em 1191, o monge japonês Eisai voltou dos estudos com sementes e o método, que se espalhou pelos mosteiros zen. Na China, o chá em folhas tomou o lugar dele depois, mas no Japão o pó sobreviveu como matchá."
+        "pt": "Na época, as folhas eram moídas até virar pó e batidas com água quente numa tigela, com um batedor de bambu, e havia até disputas para ver quem fazia a melhor espuma. Em 1191, o monge japonês Eisai voltou dos estudos com sementes e o método, que se espalhou pelos mosteiros zen. Na China, o chá em folhas tomou o lugar dele depois, mas no Japão o pó sobreviveu como matchá.",
+        "es": "En aquella época, las hojas se molían hasta convertirlas en polvo y se batían con agua caliente en un cuenco, con un batidor de bambú, e incluso había concursos para ver quién lograba la mejor espuma. En 1191, el monje japonés Eisai volvió de sus estudios con semillas y el método, que se extendió por los monasterios zen. En China, el té en hojas ocupó su lugar más tarde, pero en Japón el polvo sobrevivió como matcha."
       }
     },
     {
       "en": "This era gave us printing with movable type, about 400 years before Gutenberg, and the oldest record of the magnetic compass being used at sea.",
       "pt": "Vem desta época a impressão com tipos móveis, cerca de 400 anos antes de Gutenberg, e o registro mais antigo do uso da bússola magnética na navegação.",
+      "es": "De esta época son la imprenta de tipos móviles, unos 400 años antes de Gutenberg, y el registro más antiguo del uso de la brújula magnética en la navegación.",
       "details": {
         "en": "Around 1040, the craftsman Bi Sheng made movable type out of baked clay, but woodblocks stayed more common, because Chinese has thousands of characters. Magnetic spoons had long been used in divination; a military manual of 1044 describes a magnetized needle, and a book of 1119 tells how ships from Guangzhou used it to find their way on cloudy days.",
-        "pt": "Por volta de 1040, o artesão Bi Sheng fez tipos móveis de argila cozida, mas os blocos de madeira continuaram mais comuns, porque o chinês tem milhares de caracteres. Colheres magnéticas já eram usadas havia muito em adivinhação; um manual militar de 1044 descreve uma agulha magnetizada, e um livro de 1119 conta que navios de Cantão a usavam para se orientar em dias nublados."
+        "pt": "Por volta de 1040, o artesão Bi Sheng fez tipos móveis de argila cozida, mas os blocos de madeira continuaram mais comuns, porque o chinês tem milhares de caracteres. Colheres magnéticas já eram usadas havia muito em adivinhação; um manual militar de 1044 descreve uma agulha magnetizada, e um livro de 1119 conta que navios de Cantão a usavam para se orientar em dias nublados.",
+        "es": "Hacia 1040, el artesano Bi Sheng hizo tipos móviles de arcilla cocida, pero los bloques de madera siguieron siendo más comunes, porque el chino tiene miles de caracteres. Las cucharas magnéticas se usaban desde hacía mucho en la adivinación; un manual militar de 1044 describe una aguja imantada, y un libro de 1119 cuenta que los barcos de Cantón la usaban para orientarse en los días nublados."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Song_dynasty",
-    "pt": "https://pt.wikipedia.org/wiki/Dinastia_Song"
+    "pt": "https://pt.wikipedia.org/wiki/Dinastia_Song",
+    "es": "https://es.wikipedia.org/wiki/Dinastía_Song"
   },
   "aliases": [
     "China",
@@ -91,11 +104,16 @@
     "Song China",
     "China Song",
     "Chinese Empire",
-    "Império Chinês"
+    "Império Chinês",
+    "Song del Norte",
+    "Song del Sur",
+    "Gran Song",
+    "Imperio chino"
   ],
   "summary": {
     "en": "The dynasty founded in 960 by the general Zhao Kuangyin, who reunified most of China after half a century of division. Wary of the military, it handed the government to scholar-officials chosen through civil service examinations, which grew to accept tens of thousands of candidates. Its economy was one of the most advanced of its time, with large cities, busy markets and maritime trade from southern ports to Southeast Asia, India and the Middle East. It also stood out in landscape painting and porcelain. Its armies, however, struggled against the peoples of the north, and in 1127 it lost the northern half of its territory, continuing in the south until the Mongol conquest in 1279.",
-    "pt": "Dinastia fundada em 960 pelo general Zhao Kuangyin, que reunificou a maior parte da China depois de meio século de divisão. Desconfiada dos militares, entregou o governo a servidores letrados escolhidos por exames, que chegaram a reunir dezenas de milhares de candidatos. Sua economia foi uma das mais avançadas da época, com grandes cidades, mercados movimentados e comércio marítimo a partir dos portos do sul até o Sudeste Asiático, a Índia e o Oriente Médio. Também se destacou na pintura de paisagens e na porcelana. Seus exércitos, porém, tinham dificuldade contra os povos do norte, e em 1127 perdeu a metade norte do território, continuando no sul até a conquista mongol, em 1279."
+    "pt": "Dinastia fundada em 960 pelo general Zhao Kuangyin, que reunificou a maior parte da China depois de meio século de divisão. Desconfiada dos militares, entregou o governo a servidores letrados escolhidos por exames, que chegaram a reunir dezenas de milhares de candidatos. Sua economia foi uma das mais avançadas da época, com grandes cidades, mercados movimentados e comércio marítimo a partir dos portos do sul até o Sudeste Asiático, a Índia e o Oriente Médio. Também se destacou na pintura de paisagens e na porcelana. Seus exércitos, porém, tinham dificuldade contra os povos do norte, e em 1127 perdeu a metade norte do território, continuando no sul até a conquista mongol, em 1279.",
+    "es": "Dinastía fundada en 960 por el general Zhao Kuangyin, que reunificó la mayor parte de China tras medio siglo de división. Desconfiada de los militares, entregó el gobierno a funcionarios letrados elegidos mediante exámenes, que llegaron a reunir a decenas de miles de candidatos. Su economía fue una de las más avanzadas de su tiempo, con grandes ciudades, mercados concurridos y comercio marítimo desde los puertos del sur hasta el Sudeste Asiático, la India y Oriente Medio. También destacó en la pintura de paisajes y en la porcelana. Sus ejércitos, sin embargo, tenían dificultades frente a los pueblos del norte, y en 1127 perdió la mitad norte de su territorio, aunque siguió en el sur hasta la conquista mongola, en 1279."
   },
   "map": {
     "parts": [

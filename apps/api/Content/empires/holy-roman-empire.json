@@ -3,7 +3,8 @@
   "slug": "holy-roman-empire",
   "name": {
     "en": "Holy Roman Empire",
-    "pt": "Sacro Império Romano-Germânico"
+    "pt": "Sacro Império Romano-Germânico",
+    "es": "Sacro Imperio romano germánico"
   },
   "peak": {
     "year": 1050,
@@ -19,7 +20,8 @@
   },
   "durationNotes": {
     "en": "It starts in 962, when a German king was crowned emperor in Rome, although some historians date it back to 800. It ends in 1806, dissolved under pressure from a French conqueror.",
-    "pt": "Começa em 962, quando um rei germânico foi coroado imperador em Roma, embora alguns historiadores o façam começar em 800. Termina em 1806, dissolvido sob pressão de um conquistador francês."
+    "pt": "Começa em 962, quando um rei germânico foi coroado imperador em Roma, embora alguns historiadores o façam começar em 800. Termina em 1806, dissolvido sob pressão de um conquistador francês.",
+    "es": "Comienza en 962, cuando un rey germano fue coronado emperador en Roma, aunque algunos historiadores sitúan su inicio en el año 800. Termina en 1806, disuelto bajo la presión de un conquistador francés."
   },
   "area": {
     "km2": 883033,
@@ -34,49 +36,60 @@
   ],
   "capital": {
     "en": "No fixed capital (travelling court; Aachen for the king's coronation)",
-    "pt": "Sem capital fixa (corte itinerante; Aachen para a coroação do rei)"
+    "pt": "Sem capital fixa (corte itinerante; Aachen para a coroação do rei)",
+    "es": "Sin capital fija (corte itinerante; Aquisgrán para la coronación del rey)"
   },
   "language": {
     "en": "Latin (and German, along with many local languages)",
-    "pt": "Latim (e alemão, além de muitas línguas locais)"
+    "pt": "Latim (e alemão, além de muitas línguas locais)",
+    "es": "Latín (y alemán, además de muchas lenguas locales)"
   },
   "religion": {
     "en": "Catholicism (later also Lutheranism and Calvinism)",
-    "pt": "Catolicismo (depois também luteranismo e calvinismo)"
+    "pt": "Catolicismo (depois também luteranismo e calvinismo)",
+    "es": "Catolicismo (después también luteranismo y calvinismo)"
   },
   "religionNotes": {
     "en": "After the Reformation, a peace signed in 1555 let each prince choose the religion of his own territory, Catholic or Lutheran.",
-    "pt": "Depois da Reforma, uma paz assinada em 1555 permitiu que cada príncipe escolhesse a religião do seu território, católica ou luterana."
+    "pt": "Depois da Reforma, uma paz assinada em 1555 permitiu que cada príncipe escolhesse a religião do seu território, católica ou luterana.",
+    "es": "Después de la Reforma, una paz firmada en 1555 permitió que cada príncipe eligiera la religión de su territorio, católica o luterana."
   },
   "curiosities": [
     {
       "en": "Its ruler was not born to the throne but chosen by a small group of princes, seven of them for centuries.",
       "pt": "Seu governante não herdava o trono, mas era escolhido por um pequeno grupo de príncipes, sete deles durante séculos.",
+      "es": "Su gobernante no heredaba el trono, sino que lo elegía un pequeño grupo de príncipes, siete de ellos durante siglos.",
       "details": {
         "en": "The Golden Bull of 1356 fixed seven prince-electors: the archbishops of Mainz, Cologne and Trier, the King of Bohemia, the Count Palatine of the Rhine, the Duke of Saxony and the Margrave of Brandenburg. The number changed a little later on. In practice, from 1438 they almost always chose a Habsburg, but candidates still had to buy votes and make promises to the electors.",
-        "pt": "A Bula de Ouro de 1356 fixou sete príncipes eleitores: os arcebispos de Mainz, Colônia e Trier, o rei da Boêmia, o conde palatino do Reno, o duque da Saxônia e o margrave de Brandemburgo. Depois o número mudou um pouco. Na prática, a partir de 1438 eles quase sempre escolheram um Habsburgo, mas os candidatos ainda precisavam comprar votos e fazer promessas aos eleitores."
+        "pt": "A Bula de Ouro de 1356 fixou sete príncipes eleitores: os arcebispos de Mainz, Colônia e Trier, o rei da Boêmia, o conde palatino do Reno, o duque da Saxônia e o margrave de Brandemburgo. Depois o número mudou um pouco. Na prática, a partir de 1438 eles quase sempre escolheram um Habsburgo, mas os candidatos ainda precisavam comprar votos e fazer promessas aos eleitores.",
+        "es": "La Bula de Oro de 1356 fijó siete príncipes electores: los arzobispos de Maguncia, Colonia y Tréveris, el rey de Bohemia, el conde palatino del Rin, el duque de Sajonia y el margrave de Brandeburgo. Más tarde el número cambió un poco. En la práctica, a partir de 1438 casi siempre eligieron a un Habsburgo, pero los candidatos aún tenían que comprar votos y hacer promesas a los electores."
       }
     },
     {
       "en": "The Protestant Reformation began in its lands, when a monk published his 95 theses in 1517.",
       "pt": "A Reforma Protestante começou em suas terras, quando um monge publicou suas 95 teses em 1517.",
+      "es": "La Reforma protestante comenzó en sus tierras, cuando un monje publicó sus 95 tesis en 1517.",
       "details": {
         "en": "In 1517 the monk Martin Luther made public in Wittenberg, in Saxony, 95 theses against the Church's sale of indulgences. Thanks to the printing press his ideas spread quickly, and many princes turned Protestant, partly to gain independence from the emperor and the pope. The religious split later led to the Thirty Years' War (1618 to 1648), one of the most destructive in European history.",
-        "pt": "Em 1517, o monge Martinho Lutero divulgou em Wittenberg, na Saxônia, 95 teses contra a venda de indulgências pela Igreja. Graças à imprensa, as ideias se espalharam rápido, e muitos príncipes aderiram ao protestantismo, em parte para ganhar autonomia diante do imperador e do papa. A divisão religiosa levou mais tarde à Guerra dos Trinta Anos (1618 a 1648), uma das mais destrutivas da história da Europa."
+        "pt": "Em 1517, o monge Martinho Lutero divulgou em Wittenberg, na Saxônia, 95 teses contra a venda de indulgências pela Igreja. Graças à imprensa, as ideias se espalharam rápido, e muitos príncipes aderiram ao protestantismo, em parte para ganhar autonomia diante do imperador e do papa. A divisão religiosa levou mais tarde à Guerra dos Trinta Anos (1618 a 1648), uma das mais destrutivas da história da Europa.",
+        "es": "En 1517, el monje Martín Lutero dio a conocer en Wittenberg, en Sajonia, 95 tesis contra la venta de indulgencias por parte de la Iglesia. Gracias a la imprenta, sus ideas se difundieron rápido, y muchos príncipes se pasaron al protestantismo, en parte para ganar autonomía frente al emperador y el papa. La división religiosa llevó más tarde a la guerra de los Treinta Años (1618 a 1648), una de las más destructivas de la historia de Europa."
       }
     },
     {
       "en": "A French philosopher joked that it was neither holy, nor Roman, nor an empire.",
       "pt": "Um filósofo francês brincou que ele não era nem sacro, nem romano, nem império.",
+      "es": "Un filósofo francés bromeó con que no era ni sacro, ni romano, ni imperio.",
       "details": {
         "en": "The line is Voltaire's, from an essay of 1756: the body that called itself the Holy Roman Empire was \"in no way holy, nor Roman, nor an empire\". He was mocking an empire that, by then, was a patchwork of more than 300 states with an emperor of very limited power.",
-        "pt": "A frase é de Voltaire, num ensaio de 1756: o conjunto que se chamava Sacro Império Romano \"não era de forma alguma nem sacro, nem romano, nem império\". Ele zombava de um império que, na época, era uma colcha de mais de 300 Estados, com um imperador de poder bem limitado."
+        "pt": "A frase é de Voltaire, num ensaio de 1756: o conjunto que se chamava Sacro Império Romano \"não era de forma alguma nem sacro, nem romano, nem império\". Ele zombava de um império que, na época, era uma colcha de mais de 300 Estados, com um imperador de poder bem limitado.",
+        "es": "La frase es de Voltaire, en un ensayo de 1756: el conjunto que se llamaba Sacro Imperio romano \"no era en modo alguno ni sacro, ni romano, ni imperio\". Se burlaba de un imperio que, en esa época, era un mosaico de más de 300 Estados, con un emperador de poder muy limitado."
       }
     }
   ],
   "wikipedia": {
     "en": "https://en.wikipedia.org/wiki/Holy_Roman_Empire",
-    "pt": "https://pt.wikipedia.org/wiki/Sacro_Império_Romano-Germânico"
+    "pt": "https://pt.wikipedia.org/wiki/Sacro_Império_Romano-Germânico",
+    "es": "https://es.wikipedia.org/wiki/Sacro_Imperio_Romano_Germánico"
   },
   "aliases": [
     "HRE",
@@ -89,11 +102,14 @@
     "Germany",
     "Alemanha",
     "Austria",
-    "Áustria"
+    "Áustria",
+    "Sacro Imperio romano germánico de la nación alemana",
+    "Alemania"
   ],
   "summary": {
     "en": "A union of kingdoms, duchies, bishoprics and cities in central Europe that saw itself as heir to the Western Roman Empire, joining the kingdoms of Germany, Italy and, later, Burgundy. It began with the crowning of Otto I by the pope in 962 and peaked in the 11th century, when emperors even had a say in choosing popes. From the 13th century on, power shifted more and more to the princes, and the empire became a patchwork of hundreds of nearly independent states, led from the 15th century by the Habsburg family. Napoleon brought it to an end in 1806.",
-    "pt": "União de reinos, ducados, bispados e cidades da Europa central que se via como herdeira do Império Romano do Ocidente, reunindo os reinos da Alemanha, da Itália e, depois, da Borgonha. Começou com a coroação de Oto I pelo papa, em 962, e teve o auge no século XI, quando os imperadores chegavam a interferir na escolha dos papas. A partir do século XIII, o poder passou cada vez mais para os príncipes, e o império virou uma colcha de centenas de Estados quase independentes, liderada desde o século XV pela família Habsburgo. Napoleão o levou ao fim em 1806."
+    "pt": "União de reinos, ducados, bispados e cidades da Europa central que se via como herdeira do Império Romano do Ocidente, reunindo os reinos da Alemanha, da Itália e, depois, da Borgonha. Começou com a coroação de Oto I pelo papa, em 962, e teve o auge no século XI, quando os imperadores chegavam a interferir na escolha dos papas. A partir do século XIII, o poder passou cada vez mais para os príncipes, e o império virou uma colcha de centenas de Estados quase independentes, liderada desde o século XV pela família Habsburgo. Napoleão o levou ao fim em 1806.",
+    "es": "Unión de reinos, ducados, obispados y ciudades de Europa Central que se veía como heredera del Imperio romano de Occidente y que reunía los reinos de Germania, Italia y, más tarde, Borgoña. Comenzó con la coronación de Otón I por el papa en 962 y tuvo su apogeo en el siglo XI, cuando los emperadores llegaban a intervenir en la elección de los papas. A partir del siglo XIII, el poder pasó cada vez más a los príncipes, y el imperio se convirtió en un mosaico de cientos de Estados casi independientes, encabezado desde el siglo XV por la familia Habsburgo. Napoleón le puso fin en 1806."
   },
   "map": {
     "parts": [
