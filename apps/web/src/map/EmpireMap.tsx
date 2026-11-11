@@ -8,6 +8,8 @@ import { GlobeMap } from "./GlobeMap";
 import { countryName, loadWorld, type CountryFeature, type MapLocale, type MapStage, type World } from "./geo";
 
 export type MapMode = "flat" | "globe";
+// The same, by the name the game board uses (map/stage.ts has its own MapMode).
+export type MapView = MapMode;
 
 export type EmpireMapLabels = {
   zoomIn: string;
@@ -33,13 +35,15 @@ type Props = {
   overlays?: DrawnRing[];
   // A guessed empire's territory, tinted and outlined over the answer.
   guess?: MultiPolygon | null;
+  // Told when the player switches between the flat map and the globe.
+  onModeChange?: (mode: MapMode) => void;
 };
 
 const MODE_KEY = "imperatle:mapMode";
 
 // The player's last choice; flat by default. Storage can be unavailable
 // (private mode, blocked site data), which just means the default.
-function savedMode(): MapMode {
+export function savedMode(): MapMode {
   try {
     return typeof window !== "undefined" && localStorage.getItem(MODE_KEY) === "globe" ? "globe" : "flat";
   } catch {
@@ -53,7 +57,7 @@ type Label = { id: string; name: string; x: number; y: number; view: unknown[] }
 // The map card: flat map or globe (the player's choice, remembered), with
 // "focus" (fly back to the empire) and fullscreen. In fullscreen on a phone it
 // tries to turn to landscape, where the map has more room.
-export function EmpireMap({ empire, stage, locale, labels, className = "aspect-[4/3] w-full", frameShape, draw = null, overlays, guess }: Props) {
+export function EmpireMap({ empire, stage, locale, labels, className = "aspect-[4/3] w-full", frameShape, draw = null, overlays, guess, onModeChange }: Props) {
   const frameRef = useRef<HTMLDivElement | null>(null);
   // Same element, as state: tooltips render inside it while it's fullscreen.
   const [frame, setFrame] = useState<HTMLDivElement | null>(null);
@@ -119,6 +123,7 @@ export function EmpireMap({ empire, stage, locale, labels, className = "aspect-[
   const toggleMode = () => {
     const next = mode === "flat" ? "globe" : "flat";
     setMode(next);
+    onModeChange?.(next);
     try {
       localStorage.setItem(MODE_KEY, next);
     } catch {

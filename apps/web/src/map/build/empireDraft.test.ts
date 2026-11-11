@@ -65,6 +65,12 @@ describe("toContentJson", () => {
     ]);
   });
 
+  it("writes spread only when marked, right after the map's precision", () => {
+    expect(JSON.parse(toContentJson(valid()))).not.toHaveProperty("spread");
+    const keys = Object.keys(JSON.parse(toContentJson({ ...valid(), spread: true })));
+    expect(keys[keys.indexOf("mapAccuracy") + 1]).toBe("spread");
+  });
+
   it("writes aliases, the summary and clue explanations only when filled in", () => {
     const draft: EmpireDraft = {
       ...valid(),

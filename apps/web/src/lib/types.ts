@@ -176,6 +176,12 @@ export interface GuessComparison {
   // How much of the answer lies inside the guess, and the other way (0-1).
   answerCovered?: number | null;
   guessCovered?: number | null;
+  // [longitude, latitude] of each middle, for the flat map's arrow.
+  guessCentre?: [number, number] | null;
+  answerCentre?: [number, number] | null;
+  // Spread-out territory (colonial empires): no arrow to or from it.
+  answerSpread?: boolean;
+  guessSpread?: boolean;
 }
 
 export interface GuessResponse {

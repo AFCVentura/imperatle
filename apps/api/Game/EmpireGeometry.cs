@@ -16,7 +16,17 @@ namespace Imperatle.Api.Game;
 // - AnswerCovered / GuessCovered: how much of each one lies inside the other
 //   (1 = all of it), so "the answer is inside your guess" can be told apart
 //   from a small overlap, though both give a small Shared.
-public record Proximity(double Shared, int? DistanceKm, double BearingDegrees, double AnswerCovered = 0, double GuessCovered = 0);
+// - GuessCentre / AnswerCentre: the two middles, [longitude, latitude] in
+//   degrees, so the web app can also point the arrow the way it looks on
+//   its flat map (BearingDegrees is the way on the globe).
+public record Proximity(
+    double Shared,
+    int? DistanceKm,
+    double BearingDegrees,
+    double AnswerCovered = 0,
+    double GuessCovered = 0,
+    double[]? GuessCentre = null,
+    double[]? AnswerCentre = null);
 
 public static class EmpireGeometry
 {
@@ -62,8 +72,13 @@ public static class EmpireGeometry
             distance,
             Bearing(guess.Centre, answer.Centre),
             answer.AreaKm2 > 0 ? Math.Clamp(both / answer.AreaKm2, 0, 1) : 0,
-            guess.AreaKm2 > 0 ? Math.Clamp(both / guess.AreaKm2, 0, 1) : 0);
+            guess.AreaKm2 > 0 ? Math.Clamp(both / guess.AreaKm2, 0, 1) : 0,
+            Degrees(guess.Centre),
+            Degrees(answer.Centre));
     }
+
+    private static double[] Degrees((double Lon, double Lat) point) =>
+        [Math.Round(point.Lon * 180 / Math.PI, 2), Math.Round(point.Lat * 180 / Math.PI, 2)];
 
     // Shapes may cross the date line with longitudes past ±180, so the guess
     // is also tried a full turn to each side.

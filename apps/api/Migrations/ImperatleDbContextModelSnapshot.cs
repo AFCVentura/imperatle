@@ -146,6 +146,9 @@ namespace Imperatle.Api.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<bool>("Spread")
+                        .HasColumnType("boolean");
+
                     b.Property<int>("StartYear")
                         .HasColumnType("integer");
 

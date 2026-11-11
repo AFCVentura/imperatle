@@ -187,6 +187,23 @@ public class RevealBuilderTests
         Assert.InRange(comparison.Shared!.Value, 0.32, 0.35);
     }
 
+    // The middles go along (degrees), for the flat map's arrow; and whether
+    // either side is marked spread out.
+    [Fact]
+    public void Comparison_carries_the_middles_and_the_spread_marks()
+    {
+        var guess = Empire(slug: "a7", shape: Box(0, 0, 10, 10));
+        var answer = Empire(slug: "b7", shape: Box(20, 0, 30, 10));
+        answer.Spread = true;
+
+        var comparison = RevealBuilder.BuildComparison(guess, answer);
+        Assert.Equal(5, comparison.GuessCentre![0], 0.5);
+        Assert.Equal(5, comparison.GuessCentre[1], 0.5);
+        Assert.Equal(25, comparison.AnswerCentre![0], 0.5);
+        Assert.True(comparison.AnswerSpread);
+        Assert.False(comparison.GuessSpread);
+    }
+
     [Fact]
     public void Without_a_map_there_is_no_proximity()
     {

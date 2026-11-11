@@ -38,6 +38,9 @@ export type EmpireDraft = {
   durationNotes?: Text;
   area: { km2: number; precision: (typeof AREA_PRECISIONS)[number] };
   mapAccuracy: (typeof MAP_ACCURACIES)[number];
+  // Territory spread over far-apart places (colonial empires): the game shows
+  // "spread out" instead of a direction arrow. Written only when true.
+  spread?: boolean;
   continents: Continent[];
   // One, or two when the territory was split about evenly between them.
   primaryContinents: Continent[];
@@ -163,6 +166,7 @@ export function toContentJson(draft: EmpireDraft): string {
     ...(blank(durationNotes) ? {} : { durationNotes }),
     area: rest.area,
     mapAccuracy: rest.mapAccuracy,
+    ...(rest.spread ? { spread: true } : {}),
     continents: rest.continents,
     primaryContinents: rest.primaryContinents,
     capital: rest.capital,

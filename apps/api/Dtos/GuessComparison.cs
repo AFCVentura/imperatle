@@ -16,4 +16,10 @@ public record GuessComparison(
     int? DistanceKm = null,
     double? BearingDegrees = null,
     double? AnswerCovered = null,
-    double? GuessCovered = null);
+    double? GuessCovered = null,
+    // [longitude, latitude] of each middle, for the flat map's arrow.
+    double[]? GuessCentre = null,
+    double[]? AnswerCentre = null,
+    // Spread-out territory (Empire.Spread): no arrow to or from it.
+    bool AnswerSpread = false,
+    bool GuessSpread = false);

@@ -49,6 +49,10 @@
       "description": "How well historians know the borders on the map: Precise (High), Approximate (Medium), Speculative (Low).",
       "enum": ["Precise", "Approximate", "Speculative"]
     },
+    "spread": {
+      "description": "Territory spread over far-apart places (colonial empires, e.g. Belgium and the Congo). The distance cell shows \"Spread\" instead of a direction arrow. Left out when false.",
+      "type": "boolean"
+    },
     "continents": {
       "description": "Every continent where the empire held territory at its peak.",
       "type": "array",

@@ -115,7 +115,12 @@
       "distance": {
         "info": "Onde fica a resposta em relação ao seu palpite. Quando os dois ficam longe, aparecem a direção e a distância entre as fronteiras. Quando os territórios se cruzam, aparece quanto eles têm em comum, e a direção some quando eles praticamente se sobrepõem. Quando um fica quase todo dentro do outro, aparece Dentro do palpite ou Contém o palpite.",
         "here": "Aqui: a resposta fica {direction} do seu palpite.",
-        "noMap": "Sem mapa pra comparar a posição destes dois."
+        "noMap": "Sem mapa pra comparar a posição destes dois.",
+        "spreadAnswer": "A resposta tem territórios espalhados por lugares distantes do mundo, então nenhuma seta apontaria pra ela de verdade.",
+        "spreadGuess": "O seu palpite tem territórios espalhados por lugares distantes do mundo, então nenhuma seta sairia dele de verdade.",
+        "spreadBoth": "Os dois têm territórios espalhados por lugares distantes do mundo, então nenhuma seta faria sentido.",
+        "arrowFlat": "A seta segue o mapa plano.",
+        "arrowGlobe": "A seta segue o globo: é a rota mais curta, que no mapa plano pode parecer outra direção."
       }
     },
     "fieldInfo": {
@@ -153,7 +158,8 @@
       "neighbours": "Vizinhos",
       "shared": "{percent} em comum",
       "inside": "Dentro do palpite",
-      "contains": "Contém o palpite"
+      "contains": "Contém o palpite",
+      "spread": "Espalhado"
     },
     "directions": {
       "N": "ao norte",

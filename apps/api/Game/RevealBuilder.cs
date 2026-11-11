@@ -65,7 +65,11 @@ public static class RevealBuilder
             proximity?.DistanceKm,
             proximity?.BearingDegrees,
             proximity is null ? null : Math.Round(proximity.AnswerCovered, 3),
-            proximity is null ? null : Math.Round(proximity.GuessCovered, 3));
+            proximity is null ? null : Math.Round(proximity.GuessCovered, 3),
+            proximity?.GuessCentre,
+            proximity?.AnswerCentre,
+            correctEmpire.Spread,
+            guessedEmpire.Spread);
     }
 
     // "Same era" when the two were contemporaries at their peaks (each one

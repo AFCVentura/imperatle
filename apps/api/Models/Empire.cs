@@ -26,6 +26,12 @@ public class Empire
     public YearPrecision ReferenceYearPrecision { get; set; }
     public BorderConfidence MapBorderConfidence { get; set; }
 
+    // Territory spread over far-apart places (colonial empires: Belgium and
+    // the Congo, Britain and its dominions). No direction arrow points to or
+    // from it: the middle of such a map is somewhere players wouldn't link to
+    // the empire. A content choice, not computed.
+    public bool Spread { get; set; }
+
     public List<Continent> Continents { get; set; } = [];
     // One, or two when the territory was split about evenly between them.
     public List<Continent> PrimaryContinents { get; set; } = [];

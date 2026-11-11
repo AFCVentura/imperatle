@@ -26,6 +26,7 @@
     "precision": "Approximate"
   },
   "mapAccuracy": "Approximate",
+  "spread": true,
   "continents": [
     "NorthAmerica",
     "Europe",

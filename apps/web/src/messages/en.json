@@ -115,7 +115,12 @@
       "distance": {
         "info": "Where the answer lies from your guess. When the two are apart, you get the direction and the distance between their borders. When the territories overlap, you get how much they share, and the direction goes away once they mostly overlap. When one lies almost entirely inside the other, you get Inside your guess or Contains your guess.",
         "here": "Here: the answer lies {direction} of your guess.",
-        "noMap": "No map to compare where these two are."
+        "noMap": "No map to compare where these two are.",
+        "spreadAnswer": "The answer's territory is spread over far-apart places, so no arrow would really point to it.",
+        "spreadGuess": "Your guess's territory is spread over far-apart places, so no arrow would really start from it.",
+        "spreadBoth": "Both are spread over far-apart places, so no arrow would make sense.",
+        "arrowFlat": "The arrow follows the flat map.",
+        "arrowGlobe": "The arrow follows the globe: it's the shortest route, which on the flat map may look like another direction."
       }
     },
     "fieldInfo": {
@@ -153,7 +158,8 @@
       "neighbours": "Neighbours",
       "shared": "{percent} shared",
       "inside": "Inside your guess",
-      "contains": "Contains your guess"
+      "contains": "Contains your guess",
+      "spread": "Spread out"
     },
     "directions": {
       "N": "north",

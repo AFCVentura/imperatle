@@ -26,6 +26,7 @@
     "precision": "Approximate"
   },
   "mapAccuracy": "Precise",
+  "spread": true,
   "continents": [
     "Europe",
     "Africa",

@@ -706,6 +706,11 @@ function EmpireForm({
         </Field>
       </div>
 
+      <label className="flex items-center gap-2 text-sm">
+        <input type="checkbox" checked={!!draft.spread} onChange={(e) => edit((d) => ({ ...d, spread: e.target.checked }))} />
+        Território espalhado (colônias longe da metrópole): no jogo, a distância mostra &quot;Espalhado&quot; em vez de seta
+      </label>
+
       <Field label={`Continentes (a segunda caixa marca o principal; dois quando o território se divide por igual)${autoMark("continents")}`}>
         <div className="flex flex-wrap gap-x-4 gap-y-1">
           {CONTINENTS.map((c) => (

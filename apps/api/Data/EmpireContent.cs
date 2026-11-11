@@ -35,6 +35,9 @@ public record EmpireContent(
     List<string>? Aliases = null,
     // A few sentences on what the empire was, shown once the round is over.
     LocalizedText? Summary = null,
+    // Territory spread over far-apart places (colonial empires): no
+    // direction arrow to or from it (see Empire.Spread).
+    bool Spread = false,
     [property: JsonPropertyName("$schema")] string? Schema = null)
 {
     // The empire's shape (GeoJSON MultiPolygon, coordinates only), read from

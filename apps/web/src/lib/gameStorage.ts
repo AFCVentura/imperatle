@@ -9,6 +9,12 @@ export interface GuessProximity {
   // the answer (0-1). Missing from guesses saved before they existed.
   answerCovered?: number;
   guessCovered?: number;
+  // The two middles ([longitude, latitude]), for the flat map's arrow.
+  guessCentre?: [number, number] | null;
+  answerCentre?: [number, number] | null;
+  // Spread-out territories: no arrow to or from them.
+  answerSpread?: boolean;
+  guessSpread?: boolean;
 }
 
 export interface GuessHistoryEntry {
@@ -37,6 +43,10 @@ export function comparisonFields(comparison: GuessComparison | null | undefined)
             bearingDegrees: comparison.bearingDegrees,
             answerCovered: comparison.answerCovered ?? 0,
             guessCovered: comparison.guessCovered ?? 0,
+            guessCentre: comparison.guessCentre ?? null,
+            answerCentre: comparison.answerCentre ?? null,
+            answerSpread: comparison.answerSpread ?? false,
+            guessSpread: comparison.guessSpread ?? false,
           }
         : null,
   };

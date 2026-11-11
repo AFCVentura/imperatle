@@ -4,7 +4,7 @@ import type { MultiPolygon } from "geojson";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 import { getGuessShape, getMapShape, getTodayProgress, submitGuess } from "@/lib/api";
-import { EmpireMap } from "@/map/EmpireMap";
+import { EmpireMap, savedMode, type MapView } from "@/map/EmpireMap";
 import type { MapLocale, MapStage } from "@/map/geo";
 import { mapStageForMode, type MapMode } from "@/map/stage";
 import { openStats } from "@/lib/dialogs";
@@ -184,6 +184,8 @@ export function PlayBoard({
   // another since the last guess (`at` = how many guesses there were then).
   const [pickedOutline, setPickedOutline] = useState<{ index: number; at: number } | null>(null);
   const [outlineOn, setOutlineOn] = useState(true);
+  // Flat map or globe, as the map shows it: the distance arrows follow it.
+  const [mapView, setMapView] = useState<MapView>(savedMode);
 
   // The callbacks are rebuilt on every render of the caller; the round's key
   // is what decides when to load or save again.
@@ -316,6 +318,7 @@ export function PlayBoard({
       hintsOff={!hints}
       outlined={canOutline && outlineOn && guessShape ? outlinedIndex : null}
       onOutline={canOutline ? toggleOutline : undefined}
+      mapView={mapView}
     />
   );
 
@@ -341,6 +344,7 @@ export function PlayBoard({
                   flat: t("mapFlat"),
                 }}
                 guess={outlineOn ? guessShape : null}
+                onModeChange={setMapView}
                 frameShape={frame}
                 // Same height as the old map card: capped at 30% of the screen
                 // height, so the map never takes over short screens. Tablets
