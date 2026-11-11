@@ -15,8 +15,9 @@ public class PracticeSession
     public Empire Empire { get; set; } = null!;
 
     public PracticeDifficulty Difficulty { get; set; }
-    public BroadEra? Era { get; set; }
-    public Continent? Continent { get; set; }
+    // Empty = any era / any continent.
+    public List<BroadEra> Eras { get; set; } = [];
+    public List<Continent> Continents { get; set; } = [];
     public int AttemptsAllowed { get; set; }
     public bool HintsEnabled { get; set; }
     public PracticeMapMode MapMode { get; set; }

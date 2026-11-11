@@ -54,7 +54,7 @@ test.describe("perks, supporter", () => {
     await page.goto("/en/practice");
     await expect(page.getByRole("button", { name: "Start", exact: true })).toBeEnabled();
 
-    await page.getByRole("group", { name: "Attempts" }).getByRole("button", { name: "3", exact: true }).click();
+    await page.getByRole("slider", { name: "Attempts" }).fill("3");
     await page.getByRole("group", { name: "Clues" }).getByRole("button", { name: "Off" }).click();
     await page.getByRole("group", { name: "Map" }).getByRole("button", { name: "Outline only" }).click();
     await expect(page.getByText(/empires match/)).toBeVisible();
@@ -93,7 +93,7 @@ test.describe("perks, supporter", () => {
     const empires = await getEmpires(request);
     await finishToday(page.request);
     await page.goto("/en/practice");
-    await page.getByRole("group", { name: "Attempts" }).getByRole("button", { name: "7", exact: true }).click();
+    await page.getByRole("slider", { name: "Attempts" }).fill("7");
     await page.getByRole("group", { name: "Clues" }).getByRole("button", { name: "On" }).click();
     await page.getByRole("group", { name: "Map" }).getByRole("button", { name: "Full from the start" }).click();
     const started = page.waitForResponse((r) => new URL(r.url()).pathname === "/practice" && r.request().method() === "POST");
@@ -149,7 +149,7 @@ test.describe("perks, supporter", () => {
 
     // Easy + Asia holds today's empire (Mongol) among a few others. Rounds
     // skip the last 10 empires played, so 15 rounds go through all of them.
-    const options = { difficulty: "Easy", attempts: 3, hints: true, map: "Progressive", era: null, continent: 1 };
+    const options = { difficulty: "Easy", attempts: 3, hints: true, map: "Progressive", eras: [], continents: [1] };
     let seen = false;
     for (let i = 0; i < 15 && !seen; i++) {
       const res = await api.post(`${SUPPORTER_API_URL}/practice`, { data: options });

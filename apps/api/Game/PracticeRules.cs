@@ -28,8 +28,8 @@ public static class PracticeRules
         options.Attempts is >= MinAttempts and <= MaxAttempts
         && Enum.IsDefined(options.Difficulty)
         && Enum.IsDefined(options.Map)
-        && (options.Era is null || Enum.IsDefined(options.Era.Value))
-        && (options.Continent is null || Enum.IsDefined(options.Continent.Value));
+        && (options.Eras ?? []).All(Enum.IsDefined)
+        && (options.Continents ?? []).All(Enum.IsDefined);
 
     // The ids matching the options.
     public static List<int> Eligible(
@@ -37,10 +37,12 @@ public static class PracticeRules
         PracticeOptions options,
         PracticeDifficultyTiers tiers)
     {
+        var eras = options.Eras ?? [];
+        var continents = options.Continents ?? [];
         return candidates
             .Where(c => options.Difficulty == PracticeDifficulty.Any || tiers.TierFor(c.Slug, c.PeakAreaKm2) == options.Difficulty)
-            .Where(c => options.Era is null || RevealBuilder.ComputeBroadEra(c.ReferenceYear) == options.Era)
-            .Where(c => options.Continent is null || c.PrimaryContinents.Contains(options.Continent.Value))
+            .Where(c => eras.Length == 0 || eras.Contains(RevealBuilder.ComputeBroadEra(c.ReferenceYear)))
+            .Where(c => continents.Length == 0 || c.PrimaryContinents.Any(continents.Contains))
             .Select(c => c.Id)
             .Order()
             .ToList();

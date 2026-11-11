@@ -238,12 +238,14 @@ public class LaunchIntegrationTests
         }
 
         // Defaults, all filters, then each filter on its own (numbers for
-        // era and continent, names for difficulty and map, as the web sends).
+        // eras and continents, repeated for several picks; names for
+        // difficulty and map, as the web sends).
         Assert.Equal(3, await Count(""));
         Assert.Equal(3, await Count("difficulty=Any&attempts=7&hints=true&map=Progressive"));
-        Assert.Equal(2, await Count($"difficulty=Any&attempts=7&hints=true&map=Progressive&continent={(int)Continent.Europe}"));
-        Assert.Equal(2, await Count($"difficulty=Any&attempts=5&hints=false&map=Full&era={(int)BroadEra.Antiquity}"));
-        Assert.Equal(1, await Count($"era={(int)BroadEra.Antiquity}&continent={(int)Continent.Asia}"));
+        Assert.Equal(2, await Count($"difficulty=Any&attempts=7&hints=true&map=Progressive&continents={(int)Continent.Europe}"));
+        Assert.Equal(2, await Count($"difficulty=Any&attempts=5&hints=false&map=Full&eras={(int)BroadEra.Antiquity}"));
+        Assert.Equal(1, await Count($"eras={(int)BroadEra.Antiquity}&continents={(int)Continent.Asia}"));
+        Assert.Equal(3, await Count($"continents={(int)Continent.Europe}&continents={(int)Continent.Asia}"));
 
         // Out-of-range attempts are refused, not silently replaced by the default.
         var invalid = await client.GetAsync("/practice/pool?attempts=50", Ct);

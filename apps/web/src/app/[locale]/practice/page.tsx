@@ -3,7 +3,7 @@ import { getEmpires } from "@/lib/api";
 import type { EmpireSummary } from "@/lib/types";
 import { PracticeClient } from "./PracticeClient";
 
-type Props = { params: Promise<{ locale: string }> };
+type Props = { params: Promise<{ locale: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
@@ -11,8 +11,10 @@ export async function generateMetadata({ params }: Props) {
   return { title: `${t("title")} · Imperatle`, robots: { index: false } };
 }
 
-export default async function Page({ params }: Props) {
+export default async function Page({ params, searchParams }: Props) {
   const { locale } = await params;
+  // ?setup: the menu's "Practice" entry, which opens the options screen.
+  const openSetup = (await searchParams).setup !== undefined;
   setRequestLocale(locale);
   const t = await getTranslations("Practice");
   const tGame = await getTranslations("Game");
@@ -27,7 +29,7 @@ export default async function Page({ params }: Props) {
   return (
     <div className="flex flex-1 flex-col items-center gap-3 px-4 pt-3 pb-8 sm:px-6">
       <h1 className="font-display text-2xl tracking-wide">{t("title")}</h1>
-      {empires ? <PracticeClient empires={empires} /> : <p className="text-sm text-danger">{tGame("loadError")}</p>}
+      {empires ? <PracticeClient empires={empires} openSetup={openSetup} /> : <p className="text-sm text-danger">{tGame("loadError")}</p>}
     </div>
   );
 }

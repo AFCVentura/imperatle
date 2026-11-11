@@ -25,6 +25,7 @@
   "Footer": {
     "copyright": "© {year} Imperatle",
     "support": "Support the project",
+    "supporter": "You're a supporter. Thank you!",
     "challengeNumber": "Imperatle #{number}",
     "privacy": "Privacy",
     "terms": "Terms",
@@ -372,6 +373,8 @@
     "startError": "Couldn't start a round. Try again.",
     "playAgain": "Play again",
     "changeSettings": "Change settings",
+    "resume": "Back to the round in progress",
+    "multiInfo": "You can pick more than one.",
     "endNote": "Practice round: your stats and streak are unchanged.",
     "attemptsShort": "{count} attempts",
     "dailyFirstTitle": "Today's challenge first",

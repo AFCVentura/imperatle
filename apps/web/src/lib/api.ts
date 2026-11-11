@@ -182,8 +182,9 @@ function practiceQuery(options: PracticeOptions): string {
     hints: String(options.hints),
     map: options.map,
   });
-  if (options.era !== null) params.set("era", String(options.era));
-  if (options.continent !== null) params.set("continent", String(options.continent));
+  // Repeated keys for several picks (eras=0&eras=2), as ASP.NET Core binds lists.
+  for (const era of options.eras) params.append("eras", String(era));
+  for (const continent of options.continents) params.append("continents", String(continent));
   return params.toString();
 }
 

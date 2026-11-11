@@ -332,9 +332,9 @@ namespace Imperatle.Api.Migrations
                     b.Property<DateTime?>("CompletedAtUtc")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("Continent")
-                        .HasMaxLength(20)
-                        .HasColumnType("character varying(20)");
+                    b.PrimitiveCollection<int[]>("Continents")
+                        .IsRequired()
+                        .HasColumnType("integer[]");
 
                     b.Property<bool>("Correct")
                         .HasColumnType("boolean");
@@ -350,9 +350,9 @@ namespace Imperatle.Api.Migrations
                     b.Property<int>("EmpireId")
                         .HasColumnType("integer");
 
-                    b.Property<string>("Era")
-                        .HasMaxLength(20)
-                        .HasColumnType("character varying(20)");
+                    b.PrimitiveCollection<int[]>("Eras")
+                        .IsRequired()
+                        .HasColumnType("integer[]");
 
                     b.Property<bool>("HintsEnabled")
                         .HasColumnType("boolean");

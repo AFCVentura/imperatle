@@ -76,8 +76,8 @@ public class PracticeController(
             UserId = player.UserId,
             EmpireId = PracticeRules.Pick(pool, recent, Random.Shared),
             Difficulty = options.Difficulty,
-            Era = options.Era,
-            Continent = options.Continent,
+            Eras = [.. (options.Eras ?? []).Distinct().Order()],
+            Continents = [.. (options.Continents ?? []).Distinct().Order()],
             AttemptsAllowed = options.Attempts,
             HintsEnabled = options.Hints,
             MapMode = options.Map,
@@ -240,5 +240,5 @@ public class PracticeController(
     }
 
     private static PracticeOptions OptionsOf(PracticeSession s) =>
-        new(s.Difficulty, s.AttemptsAllowed, s.HintsEnabled, s.MapMode, s.Era, s.Continent);
+        new(s.Difficulty, s.AttemptsAllowed, s.HintsEnabled, s.MapMode, [.. s.Eras], [.. s.Continents]);
 }

@@ -259,17 +259,20 @@ export type PracticeDifficulty = (typeof PRACTICE_DIFFICULTIES)[number];
 export const PRACTICE_MAP_MODES = ["Progressive", "Full", "Outline"] as const;
 export type PracticeMapMode = (typeof PRACTICE_MAP_MODES)[number];
 
-export const PRACTICE_ATTEMPTS = [3, 5, 7, 10] as const;
+// Same limits as the API (PracticeRules).
+export const PRACTICE_MIN_ATTEMPTS = 3;
+export const PRACTICE_MAX_ATTEMPTS = 10;
 
-// Era and continent are indexes into BROAD_ERAS and CONTINENTS (null = any),
-// like every other game enum; difficulty and map travel as names.
+// Eras and continents are indexes into BROAD_ERAS and CONTINENTS, like every
+// other game enum (empty = any; several = any of them); difficulty and map
+// travel as names.
 export interface PracticeOptions {
   difficulty: PracticeDifficulty;
   attempts: number;
   hints: boolean;
   map: PracticeMapMode;
-  era: number | null;
-  continent: number | null;
+  eras: number[];
+  continents: number[];
 }
 
 export const DEFAULT_PRACTICE_OPTIONS: PracticeOptions = {
@@ -277,8 +280,8 @@ export const DEFAULT_PRACTICE_OPTIONS: PracticeOptions = {
   attempts: 7,
   hints: true,
   map: "Progressive",
-  era: null,
-  continent: null,
+  eras: [],
+  continents: [],
 };
 
 export interface PracticeSession {

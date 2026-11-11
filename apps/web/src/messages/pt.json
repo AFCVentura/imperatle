@@ -25,6 +25,7 @@
   "Footer": {
     "copyright": "© {year} Imperatle",
     "support": "Apoiar o projeto",
+    "supporter": "Você apoia o Imperatle. Obrigado!",
     "challengeNumber": "Imperatle #{number}",
     "privacy": "Privacidade",
     "terms": "Termos",
@@ -372,6 +373,8 @@
     "startError": "Não deu pra começar a rodada. Tente de novo.",
     "playAgain": "Jogar de novo",
     "changeSettings": "Mudar opções",
+    "resume": "Voltar à rodada em andamento",
+    "multiInfo": "Dá pra marcar mais de uma.",
     "endNote": "Rodada de treino: suas estatísticas e sua sequência continuam iguais.",
     "attemptsShort": "{count} tentativas",
     "dailyFirstTitle": "Primeiro, o desafio de hoje",

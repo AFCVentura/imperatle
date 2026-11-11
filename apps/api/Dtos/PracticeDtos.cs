@@ -3,16 +3,16 @@ using Imperatle.Api.Models;
 
 namespace Imperatle.Api.Dtos;
 
-// What the supporter picks before a practice round. Era and Continent are
-// optional filters (null = any) and arrive as numbers, like the other game
-// enums; Difficulty and Map as names.
+// What the supporter picks before a practice round. Eras and Continents are
+// optional filters (null or empty = any; several = any of them) and arrive as
+// numbers, like the other game enums; Difficulty and Map as names.
 public record PracticeOptions(
     PracticeDifficulty Difficulty = PracticeDifficulty.Any,
     int Attempts = GameRules.AttemptsAllowed,
     bool Hints = true,
     PracticeMapMode Map = PracticeMapMode.Progressive,
-    BroadEra? Era = null,
-    Continent? Continent = null);
+    BroadEra[]? Eras = null,
+    Continent[]? Continents = null);
 
 // A round's state, without the empire until it's over. Returned when the
 // round starts and when the page reloads mid-round.

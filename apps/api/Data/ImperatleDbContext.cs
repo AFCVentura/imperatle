@@ -79,8 +79,6 @@ public class ImperatleDbContext(DbContextOptions<ImperatleDbContext> options) : 
             session.Property(s => s.Difficulty).HasConversion<string>().HasMaxLength(20);
             session.Property(s => s.Version).IsRowVersion();
             session.Property(s => s.MapMode).HasConversion<string>().HasMaxLength(20);
-            session.Property(s => s.Era).HasConversion<string>().HasMaxLength(20);
-            session.Property(s => s.Continent).HasConversion<string>().HasMaxLength(20);
             // Recent rounds of a player, to avoid repeating an empire too soon.
             session.HasIndex(s => new { s.AnonymousId, s.CreatedAtUtc });
             session.HasIndex(s => new { s.UserId, s.CreatedAtUtc });

@@ -11,10 +11,11 @@ import { openAbout, openAccount, openFeedback, openHowToPlay, openStats, openSup
 import { useMe } from "@/lib/me";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 
-// Supporter perks: pages rather than dialogs.
+// Supporter perks: pages rather than dialogs. Practice opens on its options
+// screen (?setup), with a way back to a round in progress.
 const PERK_LINKS = [
   { href: "/archive", key: "archive" },
-  { href: "/practice", key: "practice" },
+  { href: "/practice?setup=1", key: "practice" },
 ] as const;
 
 export function Header() {

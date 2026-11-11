@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { ApiStatusError, DailyNotFinishedError, getPracticePool, getPracticeSession, PerkLockedError, startPractice } from "./api";
 import type { PracticeOptions } from "./types";
 
-const options: PracticeOptions = { difficulty: "Any", attempts: 7, hints: true, map: "Progressive", era: null, continent: null };
+const options: PracticeOptions = { difficulty: "Any", attempts: 7, hints: true, map: "Progressive", eras: [], continents: [] };
 
 const fetchMock = vi.fn();
 
@@ -45,5 +45,13 @@ describe("practice refusals", () => {
   it("still reads the pool count once practice is open", async () => {
     respond(200, { count: 12 });
     expect(await getPracticePool(options)).toBe(12);
+  });
+
+  it("sends several eras and continents as repeated keys", async () => {
+    respond(200, { count: 3 });
+    await getPracticePool({ ...options, eras: [0, 2], continents: [1] });
+    const query = new URL(String(fetchMock.mock.calls[0][0]), "http://test").searchParams;
+    expect(query.getAll("eras")).toEqual(["0", "2"]);
+    expect(query.getAll("continents")).toEqual(["1"]);
   });
 });

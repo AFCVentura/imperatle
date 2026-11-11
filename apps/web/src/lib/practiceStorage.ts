@@ -1,5 +1,14 @@
 import type { GameProgress } from "./gameStorage";
-import { BROAD_ERAS, CONTINENTS, DEFAULT_PRACTICE_OPTIONS, PRACTICE_ATTEMPTS, PRACTICE_DIFFICULTIES, PRACTICE_MAP_MODES, type PracticeOptions } from "./types";
+import {
+  BROAD_ERAS,
+  CONTINENTS,
+  DEFAULT_PRACTICE_OPTIONS,
+  PRACTICE_DIFFICULTIES,
+  PRACTICE_MAP_MODES,
+  PRACTICE_MAX_ATTEMPTS,
+  PRACTICE_MIN_ATTEMPTS,
+  type PracticeOptions,
+} from "./types";
 
 // Per-browser conveniences for practice mode: the last options picked, and
 // the round in progress (so a reload resumes it). The server keeps the round
@@ -13,21 +22,30 @@ export interface SavedPracticeRound {
 }
 
 // Anything stored that doesn't fit the current options (an old version,
-// hand edits) falls back to the defaults field by field.
+// hand edits) falls back to the defaults field by field. Before 1.5 era and
+// continent were a single number (or null); that choice is kept as a list.
 export function sanitizePracticeOptions(value: unknown): PracticeOptions {
-  const v = (value && typeof value === "object" ? value : {}) as Partial<Record<keyof PracticeOptions, unknown>>;
+  const v = (value && typeof value === "object" ? value : {}) as Partial<Record<keyof PracticeOptions | "era" | "continent", unknown>>;
   const pick = <T>(candidate: unknown, allowed: readonly T[], fallback: T): T =>
     allowed.includes(candidate as T) ? (candidate as T) : fallback;
-  const index = (candidate: unknown, length: number) =>
-    typeof candidate === "number" && Number.isInteger(candidate) && candidate >= 0 && candidate < length ? candidate : null;
+  const isIndex = (candidate: unknown, length: number): candidate is number =>
+    typeof candidate === "number" && Number.isInteger(candidate) && candidate >= 0 && candidate < length;
+  const indexes = (list: unknown, single: unknown, length: number) => {
+    const raw = Array.isArray(list) ? list : [single];
+    return [...new Set(raw.filter((i) => isIndex(i, length)))].sort((a, b) => a - b);
+  };
+  const attempts = v.attempts;
 
   return {
     difficulty: pick(v.difficulty, PRACTICE_DIFFICULTIES, DEFAULT_PRACTICE_OPTIONS.difficulty),
-    attempts: pick(v.attempts, PRACTICE_ATTEMPTS as readonly number[], DEFAULT_PRACTICE_OPTIONS.attempts),
+    attempts:
+      typeof attempts === "number" && Number.isInteger(attempts) && attempts >= PRACTICE_MIN_ATTEMPTS && attempts <= PRACTICE_MAX_ATTEMPTS
+        ? attempts
+        : DEFAULT_PRACTICE_OPTIONS.attempts,
     hints: typeof v.hints === "boolean" ? v.hints : DEFAULT_PRACTICE_OPTIONS.hints,
     map: pick(v.map, PRACTICE_MAP_MODES, DEFAULT_PRACTICE_OPTIONS.map),
-    era: index(v.era, BROAD_ERAS.length),
-    continent: index(v.continent, CONTINENTS.length),
+    eras: indexes(v.eras, v.era, BROAD_ERAS.length),
+    continents: indexes(v.continents, v.continent, CONTINENTS.length),
   };
 }
 

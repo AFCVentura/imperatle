@@ -32,15 +32,18 @@ public class PracticeTests
         Assert.Equal(valid, PracticeRules.IsValid(new PracticeOptions(Attempts: attempts)));
     }
 
-    // The web app sends difficulty and map by name, era and continent as
-    // numbers like every other game enum; anything left out takes its default.
+    // The web app sends difficulty and map by name, eras and continents as
+    // lists of numbers like every other game enum; anything left out takes
+    // its default.
     [Fact]
     public void Options_read_from_the_web_apps_json()
     {
         var web = new JsonSerializerOptions(JsonSerializerDefaults.Web);
-        Assert.Equal(
-            new PracticeOptions(PracticeDifficulty.Hard, 5, false, PracticeMapMode.Outline, BroadEra.MiddleAges, null),
-            JsonSerializer.Deserialize<PracticeOptions>("""{"difficulty":"Hard","attempts":5,"hints":false,"map":"Outline","era":1,"continent":null}""", web));
+        var read = JsonSerializer.Deserialize<PracticeOptions>(
+            """{"difficulty":"Hard","attempts":5,"hints":false,"map":"Outline","eras":[0,2],"continents":[]}""", web)!;
+        Assert.Equal(new PracticeOptions(PracticeDifficulty.Hard, 5, false, PracticeMapMode.Outline), read with { Eras = null, Continents = null });
+        Assert.Equal([BroadEra.Antiquity, BroadEra.Modern], read.Eras);
+        Assert.Empty(read.Continents!);
         Assert.Equal(new PracticeOptions(), JsonSerializer.Deserialize<PracticeOptions>("{}", web));
     }
 
@@ -49,9 +52,9 @@ public class PracticeTests
     {
         Assert.False(PracticeRules.IsValid(new PracticeOptions(Difficulty: (PracticeDifficulty)42)));
         Assert.False(PracticeRules.IsValid(new PracticeOptions(Map: (PracticeMapMode)42)));
-        Assert.False(PracticeRules.IsValid(new PracticeOptions(Era: (BroadEra)42)));
-        Assert.False(PracticeRules.IsValid(new PracticeOptions(Continent: (Continent)42)));
-        Assert.True(PracticeRules.IsValid(new PracticeOptions(Era: BroadEra.Modern, Continent: Continent.Africa)));
+        Assert.False(PracticeRules.IsValid(new PracticeOptions(Eras: [BroadEra.Modern, (BroadEra)42])));
+        Assert.False(PracticeRules.IsValid(new PracticeOptions(Continents: [(Continent)42])));
+        Assert.True(PracticeRules.IsValid(new PracticeOptions(Eras: [BroadEra.Modern, BroadEra.Antiquity], Continents: [Continent.Africa, Continent.Asia])));
     }
 
     [Fact]
@@ -105,9 +108,15 @@ public class PracticeTests
         Assert.Equal([1, 2, 3, 4], PracticeRules.Eligible(candidates, new PracticeOptions(), Tiers));
         Assert.Equal([1, 3], PracticeRules.Eligible(candidates, new PracticeOptions(PracticeDifficulty.Easy), Tiers));
         Assert.Equal([2, 4], PracticeRules.Eligible(candidates, new PracticeOptions(PracticeDifficulty.Hard), Tiers));
-        Assert.Equal([1, 2, 4], PracticeRules.Eligible(candidates, new PracticeOptions(Era: BroadEra.Antiquity), Tiers));
-        Assert.Equal([3], PracticeRules.Eligible(candidates, new PracticeOptions(Era: BroadEra.Modern), Tiers));
-        Assert.Equal([1, 3], PracticeRules.Eligible(candidates, new PracticeOptions(Continent: Continent.Europe), Tiers));
+        Assert.Equal([1, 2, 4], PracticeRules.Eligible(candidates, new PracticeOptions(Eras: [BroadEra.Antiquity]), Tiers));
+        Assert.Equal([3], PracticeRules.Eligible(candidates, new PracticeOptions(Eras: [BroadEra.Modern]), Tiers));
+        Assert.Equal([1, 3], PracticeRules.Eligible(candidates, new PracticeOptions(Continents: [Continent.Europe]), Tiers));
+        // Several picks: any of them.
+        Assert.Equal([1, 2, 3, 4], PracticeRules.Eligible(candidates, new PracticeOptions(Eras: [BroadEra.Antiquity, BroadEra.Modern]), Tiers));
+        Assert.Equal([1, 3, 4], PracticeRules.Eligible(candidates, new PracticeOptions(Continents: [Continent.Europe, Continent.Africa]), Tiers));
+        Assert.Equal([3], PracticeRules.Eligible(candidates, new PracticeOptions(Eras: [BroadEra.Modern], Continents: [Continent.Asia, Continent.Africa]), Tiers));
+        // Empty lists mean any, like null.
+        Assert.Equal([1, 2, 3, 4], PracticeRules.Eligible(candidates, new PracticeOptions(Eras: [], Continents: []), Tiers));
     }
 
     [Fact]
@@ -216,7 +225,9 @@ public class PracticeTests
         await using var _ = db;
 
         var withoutClues = Started(await controller.Start(new PracticeOptions(Attempts: 5, Hints: false, Map: PracticeMapMode.Outline), Ct));
-        Assert.Equal(new PracticeOptions(Attempts: 5, Hints: false, Map: PracticeMapMode.Outline), withoutClues.Options);
+        Assert.Equal(new PracticeOptions(Attempts: 5, Hints: false, Map: PracticeMapMode.Outline), withoutClues.Options with { Eras = null, Continents = null });
+        Assert.Empty(withoutClues.Options.Eras!);
+        Assert.Empty(withoutClues.Options.Continents!);
         var answerId = (await db.PracticeSessions.SingleAsync(s => s.Id == withoutClues.Id, Ct)).EmpireId;
         var wrong = empires.Values.First(e => e.Id != answerId);
 

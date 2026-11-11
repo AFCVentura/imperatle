@@ -14,7 +14,7 @@ export async function Footer({ challengeNumber }: FooterProps) {
 
   return (
     <footer className="flex shrink-0 flex-col items-center gap-2 border-t border-line px-4 py-6 text-center text-sm text-muted">
-      <SupportButton label={t("support")} />
+      <SupportButton label={t("support")} supporterLabel={t("supporter")} />
       <p className="font-display">{t("copyright", { year })}</p>
       {challengeNumber !== null && <p className="font-display">{t("challengeNumber", { number: challengeNumber })}</p>}
       <VersionButton label={t("version", { version: CURRENT_VERSION })} title={t("changelog")} />
