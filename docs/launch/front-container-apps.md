@@ -130,10 +130,9 @@ GitHub > repositório > Settings > Secrets and variables > Actions > aba **Varia
 
 ```
 gh variable set NEXT_PUBLIC_CF_ANALYTICS_TOKEN --body "<TOKEN_DO_PASSO_1>"
-gh variable set NEXT_PUBLIC_PADDLE_CLIENT_TOKEN --body "<CLIENT_SIDE_TOKEN>"
-gh variable set NEXT_PUBLIC_PADDLE_SUPPORTER_PRICE_ID --body "<pri_...>"
-gh variable set NEXT_PUBLIC_PADDLE_ENVIRONMENT --body "<sandbox ou production>"
 ```
+
+> Desde 11/11/2026 o pagamento é pela Stripe e o site não precisa de nenhuma variável de pagamento: as `NEXT_PUBLIC_PADDLE_*` saíram do Dockerfile e do workflow e podem ser apagadas (`gh variable delete NEXT_PUBLIC_PADDLE_CLIENT_TOKEN` etc.). As chaves da Stripe ficam só na API (ver `stripe-setup.md`).
 
 Argumentos de build que o job passa para a imagem:
 
@@ -141,12 +140,9 @@ Argumentos de build que o job passa para a imagem:
 |---|---|---|
 | `NEXT_PUBLIC_API_URL` | fixo no workflow (`API_URL`) | `https://api.imperatle.com` |
 | `NEXT_PUBLIC_SITE_URL` | fixo no workflow (`WEB_URL`) | `https://imperatle.com` |
-| `NEXT_PUBLIC_PADDLE_CLIENT_TOKEN` | variável do repositório | `test_...` no sandbox, `live_...` em produção |
-| `NEXT_PUBLIC_PADDLE_SUPPORTER_PRICE_ID` | variável do repositório | o `pri_...` do Apoio (do mesmo ambiente do token) |
-| `NEXT_PUBLIC_PADDLE_ENVIRONMENT` | variável do repositório | `sandbox` se vazia; `production` tem que bater com um token `live_...` |
 | `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` | variável do repositório | vazia = site sem contagem de visitas |
 
-- [ ] As quatro variáveis criadas (`gh variable list` confere). Usar **os mesmos valores Paddle que estão hoje no projeto da Vercel** (Vercel > projeto > Settings > Environment Variables), para o checkout continuar igual.
+- [ ] A variável criada (`gh variable list` confere).
 
 ### 7. Primeiro deploy
 

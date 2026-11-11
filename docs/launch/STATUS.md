@@ -2,6 +2,8 @@
 
 Atualizado em 3 de novembro de 2026. Nada aqui foi para o `main`, nada foi enviado (push) nem publicado (deploy).
 
+> **11/11/2026: o pagamento do Apoio trocou a Paddle pela Stripe.** O que este documento diz da Paddle ficou como registro do lançamento; as instruções que ainda valem foram atualizadas abaixo. Configuração da Stripe: [stripe-setup.md](stripe-setup.md); teste local: [sandbox-purchase-test.md](sandbox-purchase-test.md). A 1.5.0 também traz as dicas repaginadas (uma por erro, comparação de área, época e distância, contorno do palpite no mapa).
+
 ## O que a branch tem
 
 A `feat/launch` saiu do `origin/main` e junta as três branches dos agentes, com merges de verdade (o histórico de cada uma fica):
@@ -46,16 +48,16 @@ Em cima dos merges (commits próprios da integração):
    Sem `Dev__IsSupporter` (ou com `false`), arquivo e treino respondem 403, como em produção para quem não é apoiador.
 3. Site: `apps/web/.env.local` com `NEXT_PUBLIC_API_URL=http://localhost:5055`, depois `npm ci` e `npm run dev` (http://localhost:3000).
 4. Login com Google localmente: precisa de `Auth__Google__ClientId` e `Auth__Google__ClientSecret` (ver `docs/launch/google-oauth-setup.md`). Sem eles, o resto funciona e o botão de entrar volta com mensagem de erro.
-5. Checkout da Paddle localmente: precisa das variáveis `NEXT_PUBLIC_PADDLE_*` no `.env.local` e, para o webhook chegar, de um túnel público até a API (ver `docs/launch/paddle-setup.md`).
+5. Compra de teste localmente: `scripts/sandbox-test.ps1` sobe tudo com a chave de teste da Stripe e o `stripe listen` (ver `docs/launch/sandbox-purchase-test.md`).
 
 Observação: com `Dev:IsSupporter` e **sem** login, as páginas de arquivo e treino abrem, mas o selo "Apoiadores" continua no menu, porque o `/me` de quem não está logado não tem usuário. Logado, o `/me` também diz apoiador.
 
 ## O que você precisa fazer à mão
 
 - **Google OAuth**: criar o cliente OAuth "Aplicativo da Web" no Google Cloud, cadastrar `https://api.imperatle.com/signin-google` (e `http://localhost:5055/signin-google` para testar), preencher a tela de consentimento. Passo a passo em `docs/launch/google-oauth-setup.md`.
-- **Paddle**: conta sandbox (e depois a de produção, que passa por verificação da Paddle), produto "Apoiador (vitalício)" com preço único de cerca de US$ 4,99 e preços por país, destino de webhook para `https://api.imperatle.com/webhooks/paddle`, client-side token. Passo a passo em `docs/launch/paddle-setup.md`.
-- **Variáveis no Azure (API)**: `Auth__Google__ClientId`, `Auth__Google__ClientSecret` (secret), `Auth__CookieDomain=imperatle.com`, `Paddle__WebhookSecret` (secret), `Paddle__SupporterPriceId`, `Paddle__Environment`. Conferir que `Cors__AllowedOrigins` tem `https://imperatle.com,https://www.imperatle.com`. A API precisa estar num subdomínio do site (ex.: `api.imperatle.com`) para o cookie de login valer nos dois.
-- **Variáveis do site**: `NEXT_PUBLIC_PADDLE_CLIENT_TOKEN`, `NEXT_PUBLIC_PADDLE_SUPPORTER_PRICE_ID`, `NEXT_PUBLIC_PADDLE_ENVIRONMENT` e `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` (Cloudflare Web Analytics). Na Vercel enquanto o site estiver lá; no Azure, variáveis do repositório no GitHub. Elas entram no build: mudar e fazer novo deploy.
+- **Stripe**: produto e preço de produção (US$ 4,99 / R$ 9,90 / EUR 4,99), webhook para `https://api.imperatle.com/webhooks/stripe` com os cinco eventos, e-mail de recibo ligado. Passo a passo em `docs/launch/stripe-setup.md`.
+- **Variáveis no Azure (API)**: `Auth__Google__ClientId`, `Auth__Google__ClientSecret` (secret), `Auth__CookieDomain=imperatle.com`, `Stripe__SecretKey` (secret), `Stripe__WebhookSecret` (secret), `Stripe__SupporterPriceId`. Apagar as `Paddle__*`. Conferir que `Cors__AllowedOrigins` tem `https://imperatle.com,https://www.imperatle.com`. A API precisa estar num subdomínio do site (ex.: `api.imperatle.com`) para o cookie de login valer nos dois.
+- **Variáveis do site**: só `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` (Cloudflare Web Analytics), como variável do repositório no GitHub; as `NEXT_PUBLIC_PADDLE_*` podem ser apagadas. Ela entra no build: mudar e fazer novo deploy.
 - **Vercel Hobby não permite uso comercial.** Decidido: o site vai para um segundo Container App, no mesmo ambiente da API. Imagem, job de deploy (desligado até `AZURE_DEPLOY_WEB = true`) e passo a passo prontos; analytics trocado pela Cloudflare e textos legais já falando em Azure (branch `feat/front-azure`). Checklist com o Azure CLI: `docs/launch/front-container-apps.md`.
 - **Revisão jurídica**: política de privacidade, termos e reembolso foram escritos pelos agentes (pt e en), não por advogado. A Paddle também exige termos e política de reembolso publicados para aprovar a conta.
 - **Faixas de dificuldade do treino**: revisar `apps/api/Content/practice-difficulty.json` (quais impérios são fácil, médio e difícil; os que não estão na lista caem numa faixa pela área máxima). O conteúdo é escolha sua.
@@ -66,8 +68,8 @@ Observação: com `Dev:IsSupporter` e **sem** login, as páginas de arquivo e tr
 
 - Manter ou não o `Dev:IsSupporter` (é só de Development; dá para apagar o `DevSupporterCurrentPlayer` sem afetar produção).
 - ~~Onde hospedar o site~~: decidido, Azure Container Apps (ver acima).
-- Preço final e preços por país (configurados na Paddle, não no código).
-- Se o modo treino também deve guardar os palpites no servidor (hoje só jogo do dia e arquivo guardam; o treino recupera a rodada pelo id salvo no navegador).
+- Preço final e preços por moeda (configurados na Stripe, não no código).
+- Desde a 1.5.0 o treino também guarda os palpites no servidor (`PracticeSession.GuessedSlugs`), para liberar o contorno só dos impérios já chutados na rodada.
 
 ## O que fica para o agente de QA
 

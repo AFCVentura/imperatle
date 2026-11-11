@@ -7,7 +7,7 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-17-4169E1?logo=postgresql&logoColor=white)
 ![Azure Container Apps](https://img.shields.io/badge/Azure-Container_Apps-0078D4?logo=microsoftazure&logoColor=white)
 
-A daily guessing game about historical empires and other great powers. Every day the map shows one of them at its greatest extent, and players have 7 attempts to name it. Each wrong guess says whether the answer was larger or smaller and lasted longer or shorter, and unlocks new clues: era, continents, capital, language, peak year and more.
+A daily guessing game about historical empires and other great powers. Every day the map shows one of them at its greatest extent, and players have 7 attempts to name it. Each wrong guess says whether the answer was larger or smaller, older or more recent, and where it lies from the guess (direction and distance, or how much the two territories share), can be outlined over the map, and unlocks one clue: the era, the map with the continents, three curiosities, then the map with the countries. The end of the round shows the answer's fact sheet (capital, language, religion, dates, area) and the curiosities explained.
 
 Available in English and Portuguese.
 
@@ -66,7 +66,6 @@ The web app reads `NEXT_PUBLIC_API_URL` and `NEXT_PUBLIC_SITE_URL` (public addre
 | Repository variable | What |
 |---|---|
 | `AZURE_DEPLOY_WEB` | `true` turns on the "Deploy web to Azure" job. Off (unset) by default. |
-| `NEXT_PUBLIC_PADDLE_CLIENT_TOKEN`, `NEXT_PUBLIC_PADDLE_SUPPORTER_PRICE_ID`, `NEXT_PUBLIC_PADDLE_ENVIRONMENT` | Passed as build arguments (see Paddle below). |
 | `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` | Cloudflare Web Analytics site token (public). Unset, the page renders no analytics script. |
 
 `NEXT_PUBLIC_API_URL` and `NEXT_PUBLIC_SITE_URL` are fixed in the workflow (`API_URL`, `WEB_URL`). Page views are counted by Cloudflare Web Analytics (cookieless beacon), only when `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` is set at build time. Moving the site, step by step, in Portuguese: [docs/launch/front-container-apps.md](docs/launch/front-container-apps.md).
@@ -78,29 +77,24 @@ The web app reads `NEXT_PUBLIC_API_URL` and `NEXT_PUBLIC_SITE_URL` (public addre
 
 Step by step, in Portuguese: [docs/launch/google-oauth-setup.md](docs/launch/google-oauth-setup.md). The login cookie is encrypted with ASP.NET Core Data Protection keys stored in the database (`DataProtectionKeys` table), so logins survive deploys and work across replicas.
 
-### Paddle (Supporter purchase)
+### Stripe (Supporter purchase)
 
-The one-time "Supporter (lifetime)" purchase uses [Paddle Billing](https://developer.paddle.com) as merchant of record. Step-by-step account setup, in Portuguese: [docs/launch/paddle-setup.md](docs/launch/paddle-setup.md).
+The one-time "Supporter (lifetime)" purchase goes through [Stripe Checkout](https://docs.stripe.com/payments/checkout); the author sells it and Stripe processes the payment. Step-by-step setup (test mode, then live), in Portuguese: [docs/launch/stripe-setup.md](docs/launch/stripe-setup.md). A local test purchase: [docs/launch/sandbox-purchase-test.md](docs/launch/sandbox-purchase-test.md) (`scripts/sandbox-test.ps1`).
 
 | Variable | Where | What |
 |---|---|---|
-| `Paddle__WebhookSecret` | API (secret) | Secret key of the notification destination (Paddle > Developer tools > Notifications). Empty = every webhook is rejected. |
-| `Paddle__SupporterPriceId` | API | The Supporter price id (`pri_...`). Only a completed transaction containing this price grants Supporter. |
-| `Paddle__Environment` | API | `sandbox` (default) or `production`. Informative; the secret already belongs to one environment. |
-| `Paddle__WebhookToleranceSeconds` | API | How old a signed webhook may be before it's refused as stale. Default `300`. |
-| `NEXT_PUBLIC_PADDLE_CLIENT_TOKEN` | Web | Client-side token (`test_...` in sandbox, `live_...` in production), Paddle > Developer tools > Authentication. Public by design. |
-| `NEXT_PUBLIC_PADDLE_SUPPORTER_PRICE_ID` | Web | The same `pri_...` as `Paddle__SupporterPriceId`. |
-| `NEXT_PUBLIC_PADDLE_ENVIRONMENT` | Web | `sandbox` (default) or `production`. Must match the token. |
+| `Stripe__SecretKey` | API (secret) | Secret API key, `sk_test_...` or `sk_live_...`. Empty = the purchase is unavailable. |
+| `Stripe__WebhookSecret` | API (secret) | Signing secret of the webhook endpoint (`whsec_...`). Empty = every webhook is rejected. |
+| `Stripe__SupporterPriceId` | API | The Supporter price (`price_...`), with an amount per currency; Checkout picks the buyer's. |
+| `Stripe__WebhookToleranceSeconds` | API | How old a signed webhook may be before it's refused as stale. Default `300`. |
 
-Without the two web variables the Supporter dialog shows "not available yet" instead of the button.
-
-How it fits together: the browser opens Paddle's overlay checkout with `customData.userId` (buying requires being signed in); Paddle then calls `POST /webhooks/paddle`, which checks the `Paddle-Signature` HMAC over the raw body, refuses stale timestamps, records each event id so retries are applied once, sets `SupporterSinceUtc` on `transaction.completed` and clears it on an approved full refund or chargeback (`adjustment.created` / `adjustment.updated`).
+The web app needs no payment variable: it asks the API for the price (`GET /support/price`, cached for an hour) and for a Checkout session (`POST /support/checkout`: signed in, same origin, rate limited; a supporter is never charged again), then sends the player to Stripe's page. Stripe calls `POST /webhooks/stripe`, which checks the `Stripe-Signature`, refuses stale timestamps, records each event id so retries are applied once, sets `SupporterSinceUtc` on `checkout.session.completed` (or `async_payment_succeeded` for delayed methods) and clears it on a full refund (`charge.refunded`) or a lost dispute (`charge.dispute.closed`).
 
 ### Development and practice mode
 
 | Setting | Where | What it does |
 |---|---|---|
-| `Dev:IsSupporter` (`Dev__IsSupporter`) | API, Development only | `true` makes every player a supporter (signed in or not), to try the supporter perks (past games, practice) without Google or Paddle. Applied as a Development-only wrapper around the real current player (`DevSupporterCurrentPlayer`); ignored outside Development. |
+| `Dev:IsSupporter` (`Dev__IsSupporter`) | API, Development only | `true` makes every player a supporter (signed in or not), to try the supporter perks (past games, practice) without Google or Stripe. Applied as a Development-only wrapper around the real current player (`DevSupporterCurrentPlayer`); ignored outside Development. |
 
 The ad slot (`apps/web/src/app/[locale]/AdSlot.tsx`, under the page content) is a reserved place only: it renders nothing while `ADS_ENABLED` in `apps/web/src/lib/ads.ts` is `false`, and never for supporters.
 
@@ -108,8 +102,8 @@ Practice opens only after the player's daily game of the day is over (won or los
 
 ## Tests
 
-- **API** (`tests/Imperatle.Api.Tests`, xUnit v3): scheduler rotation, content validation (including every shipped empire file and map), clue unlocking, size and duration comparisons, statistics, the content import, accounts (moving anonymous games into an account, `/me`, account deletion, login redirect and origin checks, server-side sessions: a login cookie replayed after logout, "sign out of all devices" and a deleted account are refused, on a TestServer), the Paddle webhook (signature, stale and replayed events, grant and refund), the archive and practice perks, and the launch integration (one owner rule for the daily game, stats, archive and practice, stored guesses rebuilt on a second device, the practice pool read from the query string through the real MVC pipeline). Run with `dotnet test --solution apps/api/Imperatle.Api.sln`. Simultaneous guesses (never more counted than the attempt limit) are checked against a real Postgres in `GuessConcurrencyPostgresTests`, skipped unless `IMPERATLE_TEST_POSTGRES` holds a connection string to a scratch database (e.g. `Host=localhost;Port=5432;Database=imperatle_fixes;Username=imperatle;Password=imperatle`; it migrates that database and adds rows to it).
-- **Web** (`apps/web`, Vitest): share text, number and year formatting, empire name search, the `/me` client, the Supporter purchase flow, rebuilding a board from the server's progress, the ad slot rule. Run with `npm test`.
+- **API** (`tests/Imperatle.Api.Tests`, xUnit v3): scheduler rotation, content validation (including every shipped empire file and map), clue unlocking (one clue per wrong guess), the area and era comparisons, how much two maps share and how far apart they are (with the real shapes), guessed shapes served only to whoever guessed them, statistics, the content import, accounts (moving anonymous games into an account, `/me`, account deletion, login redirect and origin checks, server-side sessions: a login cookie replayed after logout, "sign out of all devices" and a deleted account are refused, on a TestServer), the Stripe checkout and webhook (signature, stale and replayed events, grant, refund and disputes), the archive and practice perks, and the launch integration (one owner rule for the daily game, stats, archive and practice, stored guesses rebuilt on a second device, the practice pool read from the query string through the real MVC pipeline). Run with `dotnet test --solution apps/api/Imperatle.Api.sln`. Simultaneous guesses (never more counted than the attempt limit) are checked against a real Postgres in `GuessConcurrencyPostgresTests`, skipped unless `IMPERATLE_TEST_POSTGRES` holds a connection string to a scratch database (e.g. `Host=localhost;Port=5432;Database=imperatle_fixes;Username=imperatle;Password=imperatle`; it migrates that database and adds rows to it).
+- **Web** (`apps/web`, Vitest): share text, number and year formatting, empire name search, the `/me` client, the Supporter purchase flow, rebuilding a board from the server's progress, the clue order, practice options, the ad slot rule. Run with `npm test`. End-to-end (Playwright, its own API and database): `npm run e2e`.
 
 CI runs both, plus lint, type checking and a production build, on every push and pull request. CodeQL scans C#, TypeScript and the workflows, and Dependabot keeps dependencies current.
 

@@ -16,6 +16,43 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    version: "1.5.0",
+    date: "2026-11-11",
+    empires: [],
+    features: [
+      {
+        en: "Clues, redone: each miss unlocks one clue, in this order: the era, the map with the continents, three curiosities and the map with the countries. Capital, language, religion, dates and area move to the fact sheet at the end.",
+        pt: "Dicas repaginadas: cada erro libera uma dica, nesta ordem: a era, o mapa com os continentes, três curiosidades e o mapa com os países. Capital, idioma, religião, datas e área vão para a ficha completa no fim.",
+      },
+      {
+        en: "Each wrong guess now compares area, era (older, more recent or same era) and distance: the direction and kilometres to the answer, or how much the two territories share.",
+        pt: "Cada palpite errado agora compara área, época (mais antiga, mais recente ou da mesma época) e distância: a direção e os quilômetros até a resposta, ou quanto os dois territórios têm em comum.",
+      },
+      {
+        en: "Click a guess's name to see its outline over the map. The latest guess shows up on its own.",
+        pt: "Clique no nome de um palpite para ver o contorno dele sobre o mapa. O palpite mais recente aparece sozinho.",
+      },
+      {
+        en: "The end of a round opens on the answer's fact sheet, with the guesses and the curiosities explained right below.",
+        pt: "O fim da rodada abre na ficha completa da resposta, com os palpites e as curiosidades explicadas logo abaixo.",
+      },
+      {
+        en: "Practice: pick several eras and continents at once, and the number of attempts on a slider. The menu's Practice entry opens the options.",
+        pt: "Treino: dá para marcar várias épocas e continentes ao mesmo tempo, e escolher as tentativas num controle deslizante. O Treino no menu abre as opções.",
+      },
+    ],
+    fixes: [
+      {
+        en: "Support payments now go through Stripe. Supporters see a thank-you in the footer instead of the support button.",
+        pt: "Os pagamentos do Apoio agora passam pela Stripe. Quem apoia vê um agradecimento no rodapé no lugar do botão de apoiar.",
+      },
+      {
+        en: "The outline of a country picked on the map no longer disappears in dark mode.",
+        pt: "O contorno do país escolhido no mapa não some mais no modo escuro.",
+      },
+    ],
+  },
+  {
     version: "1.4.3",
     date: "2026-11-06",
     empires: [],
