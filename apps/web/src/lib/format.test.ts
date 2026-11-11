@@ -7,6 +7,7 @@ describe("formatAreaKm2", () => {
   it("uses each language's thousands separator", () => {
     expect(formatAreaKm2(24000000, "en", false)).toBe("24,000,000 km²");
     expect(formatAreaKm2(24000000, "pt", false)).toBe("24.000.000 km²");
+    expect(formatAreaKm2(24000000, "es", false)).toBe("24.000.000 km²");
   });
 
   it("marks approximate areas", () => {
@@ -22,8 +23,17 @@ describe("splitAstronomicalYear", () => {
 });
 
 describe("pickLocalized", () => {
-  it("falls back to English for any locale other than pt", () => {
+  it("falls back to English for any locale other than pt and es", () => {
     expect(pickLocalized("Rome", "Roma", "pt")).toBe("Roma");
     expect(pickLocalized("Rome", "Roma", "en")).toBe("Rome");
+    expect(pickLocalized("Rome", "Roma", "fr", "Roma")).toBe("Rome");
+  });
+
+  it("shows Spanish in es, and English when there's no Spanish text yet", () => {
+    expect(pickLocalized("Ottoman Empire", "Império Otomano", "es", "Imperio otomano")).toBe("Imperio otomano");
+    // Saved before Spanish existed, or not translated yet.
+    expect(pickLocalized("Ottoman Empire", "Império Otomano", "es")).toBe("Ottoman Empire");
+    expect(pickLocalized("Ottoman Empire", "Império Otomano", "es", "")).toBe("Ottoman Empire");
+    expect(pickLocalized("Ottoman Empire", "Império Otomano", "es", null)).toBe("Ottoman Empire");
   });
 });

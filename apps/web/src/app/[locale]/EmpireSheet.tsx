@@ -43,7 +43,7 @@ export function Accordion({ title, defaultOpen = false, children }: { title: str
 export function EmpireSheet({ answer }: { answer: EmpireAnswer }) {
   const t = useTranslations("Game");
   const locale = useLocale();
-  const local = (en: string | undefined, pt: string | undefined) => pickLocalized(en ?? "", pt ?? en ?? "", locale);
+  const local = (en: string | undefined, pt: string | undefined, es: string | undefined) => pickLocalized(en ?? "", pt ?? en ?? "", locale, es);
 
   function year(y: number) {
     const { absoluteYear, isBce } = splitAstronomicalYear(y);
@@ -67,7 +67,7 @@ export function EmpireSheet({ answer }: { answer: EmpireAnswer }) {
     {
       label: t("fields.lifespan"),
       value: `${year(answer.startYear)} – ${answer.endYear !== null ? year(answer.endYear) : t("year.present")}`,
-      notes: local(answer.durationNotesEn, answer.durationNotesPt),
+      notes: local(answer.durationNotesEn, answer.durationNotesPt, answer.durationNotesEs),
     },
     { label: t("fields.referenceYear"), value: year(answer.referenceYear), half: "left" },
     {
@@ -76,12 +76,12 @@ export function EmpireSheet({ answer }: { answer: EmpireAnswer }) {
       half: "right",
     },
     { label: t("fields.continents"), value: continents },
-    { label: t("fields.capital"), value: local(answer.capitalEn, answer.capitalPt) },
-    { label: t("fields.language"), value: local(answer.languageEn, answer.languagePt) },
-    { label: t("fields.religion"), value: local(answer.religionEn, answer.religionPt), notes: local(answer.religionNotesEn, answer.religionNotesPt) },
+    { label: t("fields.capital"), value: local(answer.capitalEn, answer.capitalPt, answer.capitalEs) },
+    { label: t("fields.language"), value: local(answer.languageEn, answer.languagePt, answer.languageEs) },
+    { label: t("fields.religion"), value: local(answer.religionEn, answer.religionPt, answer.religionEs), notes: local(answer.religionNotesEn, answer.religionNotesPt, answer.religionNotesEs) },
     { label: t("fields.mapConfidence"), value: t(`enums.borderConfidence.${borderConfidenceFromApi(answer.mapBorderConfidence)}`) },
   ];
-  const summary = local(answer.summaryEn, answer.summaryPt);
+  const summary = local(answer.summaryEn, answer.summaryPt, answer.summaryEs);
 
   return (
     <>
@@ -143,10 +143,10 @@ export function CuriosityList({ answer }: { answer: EmpireAnswer }) {
   return (
     <ul className="divide-y divide-line">
       {answer.hints.map((c, i) => {
-        const details = pickLocalized(c.detailsEn ?? "", c.detailsPt ?? "", locale);
+        const details = pickLocalized(c.detailsEn ?? "", c.detailsPt ?? "", locale, c.detailsEs);
         return (
           <li key={i} className="px-4 py-3">
-            <p className="text-sm font-medium">{pickLocalized(c.textEn, c.textPt, locale)}</p>
+            <p className="text-sm font-medium">{pickLocalized(c.textEn, c.textPt, locale, c.textEs)}</p>
             {details && <p className="mt-1 text-sm leading-relaxed text-muted">{details}</p>}
           </li>
         );

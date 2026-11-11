@@ -32,7 +32,7 @@ export function DevMaps({ empires }: { empires: { id: string; label: string; sha
             <option key={e.id} value={e.id}>{e.label}</option>
           ))}
         </select>
-        <Toggle options={[{ value: "pt", label: "PT" }, { value: "en", label: "EN" }]} value={locale} onChange={setLocale} />
+        <Toggle options={[{ value: "pt", label: "PT" }, { value: "en", label: "EN" }, { value: "es", label: "ES" }]} value={locale} onChange={setLocale} />
       </div>
       <Toggle options={STAGES} value={stage} onChange={setStage} />
 

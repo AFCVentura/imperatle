@@ -45,10 +45,14 @@ export interface TodayChallenge {
   mapBorderConfidence?: number | null;
 }
 
+// The *Es (Spanish) fields are optional everywhere: answers and guesses saved
+// before Spanish existed don't have them, and pickLocalized falls back to
+// English when they're missing.
 export interface EmpireSummary {
   id: number;
   nameEn: string;
   namePt: string;
+  nameEs?: string;
   // Other names the search also matches (spellings, other languages, "China"
   // for a Chinese dynasty).
   aliases: string[];
@@ -59,10 +63,12 @@ export interface EmpireSummary {
 export interface EmpireHint {
   textEn: string;
   textPt: string;
+  textEs?: string;
   // Only in the answer, once the round is over: a longer explanation of the
   // clue. Empty when there's none; missing from answers saved before it existed.
   detailsEn?: string;
   detailsPt?: string;
+  detailsEs?: string;
 }
 
 // Cumulative reveal for the current attempt count -- every field stays null
@@ -75,8 +81,10 @@ export interface ChallengeReveal {
   primaryContinents: number[] | null;
   capitalEn: string | null;
   capitalPt: string | null;
+  capitalEs?: string | null;
   languageEn: string | null;
   languagePt: string | null;
+  languageEs?: string | null;
   hints: EmpireHint[] | null;
   referenceYear: number | null;
   referenceYearPrecision: number | null;
@@ -88,12 +96,15 @@ export interface ChallengeReveal {
   ongoing: boolean | null;
   durationNotesEn: string | null;
   durationNotesPt: string | null;
+  durationNotesEs?: string | null;
   peakAreaKm2: number | null;
   areaPrecision: number | null;
   religionEn: string | null;
   religionPt: string | null;
+  religionEs?: string | null;
   religionNotesEn: string | null;
   religionNotesPt: string | null;
+  religionNotesEs?: string | null;
 }
 
 // All-locked placeholder shown before the player's first guess -- lets the
@@ -106,8 +117,10 @@ export const EMPTY_REVEAL: ChallengeReveal = {
   primaryContinents: null,
   capitalEn: null,
   capitalPt: null,
+  capitalEs: null,
   languageEn: null,
   languagePt: null,
+  languageEs: null,
   hints: null,
   referenceYear: null,
   referenceYearPrecision: null,
@@ -118,12 +131,15 @@ export const EMPTY_REVEAL: ChallengeReveal = {
   ongoing: null,
   durationNotesEn: null,
   durationNotesPt: null,
+  durationNotesEs: null,
   peakAreaKm2: null,
   areaPrecision: null,
   religionEn: null,
   religionPt: null,
+  religionEs: null,
   religionNotesEn: null,
   religionNotesPt: null,
+  religionNotesEs: null,
 };
 
 export interface EmpireAnswer {
@@ -131,14 +147,17 @@ export interface EmpireAnswer {
   slug: string;
   nameEn: string;
   namePt: string;
+  nameEs?: string;
   broadEra: number;
   mapBorderConfidence: number;
   continents: number[];
   primaryContinents: number[];
   capitalEn: string;
   capitalPt: string;
+  capitalEs?: string;
   languageEn: string;
   languagePt: string;
+  languageEs?: string;
   hints: EmpireHint[];
   referenceYear: number;
   referenceYearPrecision: number;
@@ -149,20 +168,25 @@ export interface EmpireAnswer {
   ongoing: boolean;
   durationNotesEn: string;
   durationNotesPt: string;
+  durationNotesEs?: string;
   peakAreaKm2: number;
   areaPrecision: number;
   religionEn: string;
   religionPt: string;
+  religionEs?: string;
   religionNotesEn: string;
   religionNotesPt: string;
+  religionNotesEs?: string;
   // Empty when the empire has no link. Missing from answers saved before the
   // field existed.
   wikipediaEn?: string;
   wikipediaPt?: string;
+  wikipediaEs?: string;
   // What the empire was, in a few sentences. Empty when there's none yet;
   // missing from answers saved before the field existed.
   summaryEn?: string;
   summaryPt?: string;
+  summaryEs?: string;
 }
 
 // How the answer compares with a wrong guess (COMPARISON_RESULTS indexes):
@@ -259,6 +283,7 @@ export interface PlayedGuess {
   empireId: number;
   nameEn: string;
   namePt: string;
+  nameEs?: string;
   correct: boolean;
   comparison: GuessComparison | null;
 }

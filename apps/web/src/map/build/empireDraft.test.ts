@@ -38,11 +38,29 @@ describe("validateDraft", () => {
     [{ religion: { en: "Old faith — new", pt: "Antiga" } }, "travessão"],
     [{ durationNotes: { en: "Only one phase", pt: "" } }, "nota da duração (pt): vazio"],
     [{ wikipedia: { en: "https://en.wikipedia.org/wiki/Rome", pt: "https://en.wikipedia.org/wiki/Rome" } }, "wikipedia (pt)"],
+    [{ capital: { en: "Rome", pt: "Roma", es: "Roma — capital" } }, "capital (es): sem travessão"],
+    [{ wikipedia: { en: "https://en.wikipedia.org/wiki/Rome", pt: "https://pt.wikipedia.org/wiki/Roma", es: "https://en.wikipedia.org/wiki/Rome" } }, "wikipedia (es)"],
     [{ map: { parts: [] } }, "entidade do Cliopatria"],
     [{ map: { parts: [{ country: "PYF" }] } }, "entidade do Cliopatria"],
     [{ map: { parts: [{ polity: "Test Polity", year: 100 }, { country: "pyf" }] } }, "3 letras"],
   ] as [Partial<EmpireDraft>, string][])("reports %o", (change, message) => {
     expect(validateDraft({ ...valid(), ...change }).some((e) => e.includes(message))).toBe(true);
+  });
+
+  it("accepts Spanish texts, and their absence", () => {
+    const draft: EmpireDraft = {
+      ...valid(),
+      name: { en: "Test Empire", pt: "Império Teste", es: "Imperio de prueba" },
+      curiosities: [{ en: "One.", pt: "Um.", es: "Uno.", details: { en: "More.", pt: "Mais.", es: "Más." } }, { en: "Two.", pt: "Dois.", es: "" }, { en: "Three.", pt: "Três." }],
+      wikipedia: { en: "https://en.wikipedia.org/wiki/Rome", pt: "https://pt.wikipedia.org/wiki/Roma", es: "" },
+    };
+    expect(validateDraft(draft)).toEqual([]);
+  });
+
+  it("refuses a Spanish name another empire already uses", () => {
+    const draft: EmpireDraft = { ...valid(), name: { en: "Test Empire", pt: "Império Teste", es: "Imperio de prueba" } };
+    const errors = validateDraft(draft, [{ slug: "other", name: { en: "Other", pt: "Outro", es: "imperio de prueba" } }]);
+    expect(errors.some((e) => e.includes("nome (es)"))).toBe(true);
   });
 
   it("accepts today's territories next to a polity", () => {
@@ -88,6 +106,43 @@ describe("toContentJson", () => {
     expect(json.curiosities[0].details).toEqual({ en: "More.", pt: "Mais." });
     expect(json.curiosities[1]).toEqual({ en: "Two.", pt: "Dois." });
     expect(Object.keys(json).slice(-3)).toEqual(["aliases", "summary", "map"]);
+  });
+
+  it("keeps Spanish texts in the order en, pt, es and never drops them", () => {
+    const draft: EmpireDraft = {
+      ...valid(),
+      // Out of order, as the form may leave an edited text.
+      name: { es: "Imperio de prueba", en: "Test Empire", pt: "Império Teste" },
+      capital: { en: "Capital", pt: "Capital", es: "" },
+      curiosities: [
+        { details: { es: "Más.", pt: "Mais.", en: "More." }, es: "Uno.", pt: "Um.", en: "One." },
+        { en: "Two.", pt: "Dois.", es: "Dos." },
+        { en: "Three.", pt: "Três." },
+      ],
+      summary: { en: "", pt: "", es: "Solo en español." },
+      wikipedia: { en: "https://en.wikipedia.org/wiki/Rome", pt: "https://pt.wikipedia.org/wiki/Roma", es: "https://es.wikipedia.org/wiki/Roma" },
+    };
+    const text = toContentJson(draft);
+    const json = JSON.parse(text);
+    expect(Object.keys(json.name)).toEqual(["en", "pt", "es"]);
+    expect(json.name.es).toBe("Imperio de prueba");
+    // An empty Spanish text is left out (the game falls back to English).
+    expect(Object.keys(json.capital)).toEqual(["en", "pt"]);
+    expect(Object.keys(json.curiosities[0])).toEqual(["en", "pt", "es", "details"]);
+    expect(Object.keys(json.curiosities[0].details)).toEqual(["en", "pt", "es"]);
+    expect(json.curiosities[1].es).toBe("Dos.");
+    expect(json.summary).toEqual({ en: "", pt: "", es: "Solo en español." });
+    expect(json.wikipedia.es).toBe("https://es.wikipedia.org/wiki/Roma");
+    expect(text).toContain(`"name": {\n    "en": "Test Empire",\n    "pt": "Império Teste",\n    "es": "Imperio de prueba"\n  }`);
+  });
+
+  it("keeps a drawn ring on one line", () => {
+    const draft: EmpireDraft = {
+      ...valid(),
+      name: { en: "Test Empire", pt: "Império Teste", es: "Imperio de prueba" },
+      map: { parts: [{ polity: "Test Polity", year: 100 }, { draw: "add", ring: [[0, 0], [1, 0], [1, 1]] }] },
+    };
+    expect(toContentJson(draft)).toContain('"ring": [[0,0],[1,0],[1,1]]');
   });
 
   it("flags a repeated alias", () => {

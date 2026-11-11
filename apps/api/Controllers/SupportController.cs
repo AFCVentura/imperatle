@@ -85,7 +85,7 @@ public class SupportController(
         // RequireAllowedOrigin already checked it's one of the web app's origins,
         // so Stripe only ever sends the buyer back to our own site.
         var origin = Request.Headers.Origin.ToString().TrimEnd('/');
-        var locale = request.Locale == "pt" ? "pt" : "en";
+        var locale = request.Locale is "pt" or "es" ? request.Locale : "en";
 
         try
         {

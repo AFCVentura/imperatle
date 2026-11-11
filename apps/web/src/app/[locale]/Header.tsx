@@ -85,6 +85,7 @@ export function Header() {
           empireId: g.empireId,
           nameEn: g.nameEn,
           namePt: g.namePt,
+          nameEs: g.nameEs,
           correct: false,
           ...comparisonFields(g.comparison),
         })),

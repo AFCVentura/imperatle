@@ -83,6 +83,7 @@
         "properties": {
           "en": { "type": "string", "minLength": 1 },
           "pt": { "type": "string", "minLength": 1 },
+          "es": { "type": "string", "minLength": 1, "description": "Spanish. Optional: falls back to English when left out." },
           "details": { "$ref": "#/$defs/text", "description": "Optional longer explanation of the clue, shown only once the round is over (it may name what the clue hides)." }
         }
       }
@@ -101,7 +102,8 @@
       "required": ["en", "pt"],
       "properties": {
         "en": { "type": "string", "pattern": "^https://en\\.wikipedia\\.org/wiki/.+" },
-        "pt": { "type": "string", "pattern": "^https://pt\\.wikipedia\\.org/wiki/.+" }
+        "pt": { "type": "string", "pattern": "^https://pt\\.wikipedia\\.org/wiki/.+" },
+        "es": { "type": "string", "pattern": "^https://es\\.wikipedia\\.org/wiki/.+", "description": "Optional: falls back to English when left out." }
       }
     },
     "map": {
@@ -167,7 +169,8 @@
       "required": ["en", "pt"],
       "properties": {
         "en": { "type": "string", "minLength": 1 },
-        "pt": { "type": "string", "minLength": 1 }
+        "pt": { "type": "string", "minLength": 1 },
+        "es": { "type": "string", "minLength": 1, "description": "Spanish. Optional: falls back to English when left out." }
       }
     },
     "year": {

@@ -80,7 +80,7 @@ public class DevController(ImperatleDbContext db, IWebHostEnvironment env) : Con
         await db.SaveChangesAsync();
 
         var guesses = wrongGuesses
-            .Select(g => new DevGuess(g.Id, g.NameEn, g.NamePt, RevealBuilder.BuildComparison(g, next)))
+            .Select(g => new DevGuess(g.Id, g.NameEn, g.NamePt, g.NameEs, RevealBuilder.BuildComparison(g, next)))
             .ToList();
         return Ok(new DevPreviewResponse(today, guesses, RevealBuilder.BuildReveal(next, wrongGuesses.Count)));
     }
@@ -99,6 +99,6 @@ public class DevController(ImperatleDbContext db, IWebHostEnvironment env) : Con
     }
 }
 
-public record DevGuess(int EmpireId, string NameEn, string NamePt, GuessComparison Comparison);
+public record DevGuess(int EmpireId, string NameEn, string NamePt, string NameEs, GuessComparison Comparison);
 
 public record DevPreviewResponse(DateOnly Date, List<DevGuess> Guesses, ChallengeReveal Reveal);

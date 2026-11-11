@@ -63,6 +63,43 @@ public class DatabaseTests
         Assert.Subset(firstHintIds.ToHashSet(), empires["a"].Hints.Select(h => h.Id).ToHashSet());
     }
 
+    // Spanish is optional in the files: without "es" the columns get the
+    // English text, so the web always has something to show in Spanish.
+    [Fact]
+    public async Task Import_fills_spanish_texts_falling_back_to_english()
+    {
+        await using var db = NewDb();
+        var withSpanish = Content("a") with
+        {
+            Name = new("Empire A", "Império A", "Imperio A"),
+            Capital = new("Rome", "Roma", "Roma"),
+            Curiosities = [new("1", "1", new("d1", "d1", "d1 es"), "1 es"), new("2", "2"), new("3", "3")],
+            Wikipedia = new("https://en.wikipedia.org/wiki/a", "https://pt.wikipedia.org/wiki/a", "https://es.wikipedia.org/wiki/a"),
+        };
+        await EmpireContentImporter.SyncAsync(db, [withSpanish, Content("b")]);
+
+        var empires = await db.Empires.Include(e => e.Hints).ToDictionaryAsync(e => e.Slug, TestContext.Current.CancellationToken);
+        var a = empires["a"];
+        Assert.Equal("Imperio A", a.NameEs);
+        Assert.Equal("Roma", a.CapitalEs);
+        Assert.Equal("https://es.wikipedia.org/wiki/a", a.WikipediaEs);
+        var first = a.Hints.Single(h => h.Order == 0);
+        Assert.Equal("1 es", first.TextEs);
+        Assert.Equal("d1 es", first.DetailsEs);
+        Assert.Equal("2", a.Hints.Single(h => h.Order == 1).TextEs); // no "es": English
+
+        var b = empires["b"];
+        Assert.Equal("b", b.NameEs);
+        Assert.Equal("Capital", b.CapitalEs);
+        Assert.Equal("https://en.wikipedia.org/wiki/b", b.WikipediaEs);
+        Assert.Equal("", b.SummaryEs); // no summary at all stays empty
+
+        var answer = RevealBuilder.BuildAnswer(a);
+        Assert.Equal("Imperio A", answer.NameEs);
+        Assert.Equal("1 es", answer.Hints[0].TextEs);
+        Assert.Equal("d1 es", answer.Hints[0].DetailsEs);
+    }
+
     [Fact]
     public async Task Scheduling_a_date_is_idempotent_and_skips_inactive_empires()
     {

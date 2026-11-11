@@ -25,8 +25,8 @@ const spectral = Spectral({ variable: "--font-spectral", subsets: ["latin"], wei
 
 const OG_LOCALES: Record<string, string> = { en: "en_US", pt: "pt_BR", es: "es_ES" };
 
-// hreflang alternates: tells search engines /en and /pt are the same page in
-// two languages. The game is a single page, so the layout covers it; a page
+// hreflang alternates: tells search engines /en, /pt and /es are the same
+// page in each language. The game is a single page, so the layout covers it; a page
 // with its own path would need its own alternates.
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;

@@ -276,6 +276,7 @@ export function PlayBoard({
           empireId: empire.id,
           nameEn: empire.nameEn,
           namePt: empire.namePt,
+          nameEs: empire.nameEs,
           correct: result.correct,
           ...comparisonFields(result.comparison),
         },
@@ -305,7 +306,7 @@ export function PlayBoard({
 
   const lastGuess = guesses[guesses.length - 1];
   const wrongGuessCount = guesses.filter((g) => !g.correct).length;
-  const wikipediaUrl = answer ? pickLocalized(answer.wikipediaEn ?? "", answer.wikipediaPt ?? "", locale) : "";
+  const wikipediaUrl = answer ? pickLocalized(answer.wikipediaEn ?? "", answer.wikipediaPt ?? "", locale, answer.wikipediaEs) : "";
 
   // The map shows the most detailed level unlocked so far, unless the player
   // picked another one under it; a new unlock switches to it again.
@@ -362,7 +363,7 @@ export function PlayBoard({
             {shape && borderConfidence !== null && <PrecisionChip confidence={borderConfidence} />}
             {outlinedGuess && guessShape && (
               <OutlineChip
-                name={pickLocalized(outlinedGuess.nameEn, outlinedGuess.namePt, locale)}
+                name={pickLocalized(outlinedGuess.nameEn, outlinedGuess.namePt, locale, outlinedGuess.nameEs)}
                 on={outlineOn}
                 onToggle={() => setOutlineOn((on) => !on)}
               />
@@ -415,7 +416,7 @@ export function PlayBoard({
         <div className="rounded-2xl border border-line bg-surface px-4 py-3">
           <h2 className="font-display text-xl">{lastGuess?.correct ? t("correctTitle") : t("gameOverTitle")}</h2>
           <p className="mt-1 text-sm">
-            {t("answerWasLabel")}: <strong>{pickLocalized(answer.nameEn, answer.namePt, locale)}</strong>
+            {t("answerWasLabel")}: <strong>{pickLocalized(answer.nameEn, answer.namePt, locale, answer.nameEs)}</strong>
           </p>
           {session.endNote && <p className="mt-1 text-sm text-muted">{session.endNote}</p>}
           <div className="mt-3 flex flex-wrap items-center gap-2">

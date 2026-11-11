@@ -1,8 +1,10 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
+import { intlLocale } from "@/i18n/locales";
 import { RELEASES, type Localized } from "@/lib/changelog";
 import { CHANGELOG_EVENT } from "@/lib/dialogs";
+import { pickLocalized } from "@/lib/pickLocalized";
 import { AppDialog } from "./AppDialog";
 
 // Every version of the game, newest first, opened from the version number in
@@ -10,10 +12,10 @@ import { AppDialog } from "./AppDialog";
 export function ChangelogDialog() {
   const t = useTranslations("Changelog");
   const locale = useLocale();
-  const text = (l: Localized) => (locale === "pt" ? l.pt : l.en);
+  const text = (l: Localized) => pickLocalized(l.en, l.pt, locale, l.es);
   // Noon, so the date doesn't shift a day in any time zone.
   const formatDate = (date: string) =>
-    new Date(`${date}T12:00:00`).toLocaleDateString(locale === "pt" ? "pt-BR" : "en-US", { day: "numeric", month: "long", year: "numeric" });
+    new Date(`${date}T12:00:00`).toLocaleDateString(intlLocale(locale), { day: "numeric", month: "long", year: "numeric" });
 
   return (
     <AppDialog event={CHANGELOG_EVENT} title={t("title")} selectable>

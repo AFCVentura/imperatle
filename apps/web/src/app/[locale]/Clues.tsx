@@ -44,7 +44,7 @@ export function ClueRow({ clue, revealed }: { clue: Clue; revealed: RevealedClue
     info = t(clue.stage === "continents" ? "clueInfo.mapContinents" : "clueInfo.mapCountries");
   } else {
     const hint = revealed.hints?.[clue.index];
-    value = hint ? pickLocalized(hint.textEn, hint.textPt, locale) : null;
+    value = hint ? pickLocalized(hint.textEn, hint.textPt, locale, hint.textEs) : null;
     info = t("clueInfo.curiosity");
   }
 

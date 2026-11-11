@@ -69,6 +69,10 @@ namespace Imperatle.Api.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("CapitalEs")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("CapitalPt")
                         .IsRequired()
                         .HasColumnType("text");
@@ -78,6 +82,10 @@ namespace Imperatle.Api.Migrations
                         .HasColumnType("integer[]");
 
                     b.Property<string>("DurationNotesEn")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("DurationNotesEs")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -95,6 +103,10 @@ namespace Imperatle.Api.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("LanguageEs")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("LanguagePt")
                         .IsRequired()
                         .HasColumnType("text");
@@ -106,6 +118,10 @@ namespace Imperatle.Api.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("NameEn")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("NameEs")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -130,7 +146,15 @@ namespace Imperatle.Api.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("ReligionEs")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("ReligionNotesEn")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("ReligionNotesEs")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -159,11 +183,19 @@ namespace Imperatle.Api.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("SummaryEs")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("SummaryPt")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("WikipediaEn")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("WikipediaEs")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -191,6 +223,10 @@ namespace Imperatle.Api.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("DetailsEs")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("DetailsPt")
                         .IsRequired()
                         .HasColumnType("text");
@@ -202,6 +238,10 @@ namespace Imperatle.Api.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("TextEn")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("TextEs")
                         .IsRequired()
                         .HasColumnType("text");
 

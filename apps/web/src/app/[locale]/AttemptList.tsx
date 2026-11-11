@@ -120,7 +120,7 @@ function CorrectGuess({ guess, number }: { guess: GuessHistoryEntry; number: num
     <div className="flex h-8 items-stretch rounded-full border border-success/50 bg-success/15 text-xs">
       <span className="flex w-7 shrink-0 items-center justify-center text-muted/70">{number}</span>
       <span className="min-w-0 flex-1 self-center px-1">
-        <MarqueeText className="font-medium text-muted">{pickLocalized(guess.nameEn, guess.namePt, locale)}</MarqueeText>
+        <MarqueeText className="font-medium text-muted">{pickLocalized(guess.nameEn, guess.namePt, locale, guess.nameEs)}</MarqueeText>
       </span>
       <span className="shrink-0 self-center px-3 font-semibold text-success">{t("correctGuessMark")}</span>
     </div>
@@ -152,7 +152,7 @@ function WrongGuess({
         role: "button",
         tabIndex: 0,
         "aria-pressed": outlined,
-        "aria-label": `${pickLocalized(guess.nameEn, guess.namePt, locale)}: ${t(outlined ? "outline.hideLabel" : "outline.showLabel")}`,
+        "aria-label": `${pickLocalized(guess.nameEn, guess.namePt, locale, guess.nameEs)}: ${t(outlined ? "outline.hideLabel" : "outline.showLabel")}`,
         onClick: () => {
           hide();
           onOutline();
@@ -176,7 +176,7 @@ function WrongGuess({
         <span className="min-w-0 flex-1 self-center px-1">
           <MarqueeText className="font-medium text-muted">
             {outlined && <GuessSwatch className="mr-1.5 inline-block align-[-1px]" />}
-            {pickLocalized(guess.nameEn, guess.namePt, locale)}
+            {pickLocalized(guess.nameEn, guess.namePt, locale, guess.nameEs)}
           </MarqueeText>
         </span>
         {tooltip}

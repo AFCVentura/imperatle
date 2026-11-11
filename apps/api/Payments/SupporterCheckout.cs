@@ -73,7 +73,7 @@ public class StripeSupporterCheckout(IOptions<StripeOptions> options, IMemoryCac
             // The webhook grants Supporter to this user; the e-mail only fills the form.
             ClientReferenceId = request.UserId.ToString(),
             CustomerEmail = string.IsNullOrWhiteSpace(request.Email) ? null : request.Email,
-            Locale = request.Locale == "pt" ? "pt-BR" : "en",
+            Locale = request.Locale switch { "pt" => "pt-BR", "es" => "es", _ => "en" },
             SuccessUrl = request.SuccessUrl,
             CancelUrl = request.CancelUrl,
             Metadata = metadata,

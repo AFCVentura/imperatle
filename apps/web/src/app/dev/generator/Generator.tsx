@@ -16,6 +16,7 @@ import {
   validateDraft,
   type EmpireDraft,
   type Text,
+  TEXT_LANGS,
 } from "@/map/build/empireDraft";
 import type { Polity, PolitySummary } from "@/map/build/localData";
 import type { ResolvedPart } from "@/app/api/dev/empires/[slug]/route";
@@ -156,7 +157,11 @@ export function Generator() {
     let current = true;
     fetch(`/api/geo/wikipedia?wikidata=${wikidata}`)
       .then((r) => r.json())
-      .then((l: { en: string | null; pt: string | null }) => current && setWikiLinks({ id: wikidata, links: { en: l.en ?? "", pt: l.pt ?? "" } }), () => {});
+      .then(
+        (l: { en: string | null; pt: string | null; es?: string | null }) =>
+          current && setWikiLinks({ id: wikidata, links: { en: l.en ?? "", pt: l.pt ?? "", es: l.es ?? "" } }),
+        () => {},
+      );
     return () => {
       current = false;
     };
@@ -766,7 +771,7 @@ function EmpireForm({
           <TextField
             label={`Dica ${i + 1} (${["menos óbvia", "média", "mais óbvia"][i]})`}
             value={c}
-            onChange={(text) => edit((d) => ({ ...d, curiosities: d.curiosities.map((x, j) => (j === i ? { ...x, en: text.en, pt: text.pt } : x)) }))}
+            onChange={(text) => edit((d) => ({ ...d, curiosities: d.curiosities.map((x, j) => (j === i ? { ...x, en: text.en, pt: text.pt, es: text.es } : x)) }))}
             multiline
           />
           <TextField
@@ -804,16 +809,18 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
   );
 }
 
-function TextField({ label, value, onChange, multiline }: { label: string; value: Text; onChange: (t: Text, lang: "en" | "pt") => void; multiline?: boolean }) {
+// One input per language; Spanish is optional (empty = the game shows the
+// English text).
+function TextField({ label, value, onChange, multiline }: { label: string; value: Text; onChange: (t: Text, lang: (typeof TEXT_LANGS)[number]) => void; multiline?: boolean }) {
   return (
     <div className="flex flex-col gap-1">
       <span className="text-xs font-semibold text-muted">{label}</span>
-      <div className="grid grid-cols-2 gap-2">
-        {(["en", "pt"] as const).map((lang) =>
+      <div className="grid grid-cols-3 gap-2">
+        {TEXT_LANGS.map((lang) =>
           multiline ? (
-            <textarea key={lang} rows={2} placeholder={lang} value={value[lang]} onChange={(e) => onChange({ ...value, [lang]: e.target.value }, lang)} className={inputClass} />
+            <textarea key={lang} rows={2} placeholder={lang === "es" ? "es (opcional)" : lang} value={value[lang] ?? ""} onChange={(e) => onChange({ ...value, [lang]: e.target.value }, lang)} className={inputClass} />
           ) : (
-            <input key={lang} placeholder={lang} value={value[lang]} onChange={(e) => onChange({ ...value, [lang]: e.target.value }, lang)} className={inputClass} />
+            <input key={lang} placeholder={lang === "es" ? "es (opcional)" : lang} value={value[lang] ?? ""} onChange={(e) => onChange({ ...value, [lang]: e.target.value }, lang)} className={inputClass} />
           ),
         )}
       </div>

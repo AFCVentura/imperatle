@@ -22,6 +22,7 @@ function fromServer(guesses: PlayedGuess[]): GuessHistoryEntry[] {
     empireId: g.empireId,
     nameEn: g.nameEn,
     namePt: g.namePt,
+    nameEs: g.nameEs,
     correct: g.correct,
     ...comparisonFields(g.comparison),
   }));
@@ -58,6 +59,7 @@ export function reconcileProgress(
       empireId: 0,
       nameEn: unknownGuessLabel,
       namePt: unknownGuessLabel,
+      nameEs: unknownGuessLabel,
       correct: server.correct && i === server.attemptsUsed - 1,
       areaComparison: null,
       eraComparison: null,

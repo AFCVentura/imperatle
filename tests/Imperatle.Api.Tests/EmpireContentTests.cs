@@ -83,6 +83,10 @@ public class EmpireContentTests
         { ValidEmpire() with { Summary = new("A great empire.", "") }, "summary.pt is empty" },
         { ValidEmpire() with { Curiosities = [new("One.", "Um.", new("More — on one.", "Mais.")), new("Two.", "Dois."), new("Three.", "Três.")] }, "curiosities[0].details.en has an em dash" },
         { ValidEmpire() with { Aliases = ["Mughal", " "] }, "aliases[1] is empty" },
+        { ValidEmpire() with { Capital = new("Rome", "Roma", " ") }, "capital.es is empty" },
+        { ValidEmpire() with { Religion = new("Old faith", "Antiga", "Antigua -- luego nueva") }, "religion.es has an em dash" },
+        { ValidEmpire() with { Curiosities = [new("One.", "Um.", Es: "Uno — dos."), new("Two.", "Dois."), new("Three.", "Três.")] }, "curiosities[0].es has an em dash" },
+        { ValidEmpire() with { Wikipedia = new("https://en.wikipedia.org/wiki/Rome", "https://pt.wikipedia.org/wiki/Roma", "https://en.wikipedia.org/wiki/Rome") }, "wikipedia.es" },
         { ValidEmpire() with { Aliases = ["Mughal", "mughal "] }, "more than once" },
         { ValidEmpire() with { Map = new([]) }, "at least one Cliopatria polity" },
         { ValidEmpire() with { Map = new([new(Country: "PYF")]) }, "at least one Cliopatria polity" },
@@ -110,6 +114,28 @@ public class EmpireContentTests
         var errors = EmpireContentLoader.Validate(empire, fileSlug);
 
         Assert.Contains(errors, e => e.Contains(expectedMessage));
+    }
+
+    [Fact]
+    public void Spanish_texts_are_optional()
+    {
+        var empire = ValidEmpire() with
+        {
+            Name = new("Test Empire", "Império Teste", "Imperio de prueba"),
+            Curiosities = [new("One.", "Um.", new("More.", "Mais.", "Más."), "Uno."), new("Two.", "Dois."), new("Three.", "Três.")],
+            Wikipedia = new("https://en.wikipedia.org/wiki/Rome", "https://pt.wikipedia.org/wiki/Roma", "https://es.wikipedia.org/wiki/Roma"),
+        };
+        Assert.Empty(EmpireContentLoader.Validate(empire, "test-empire"));
+        Assert.Equal("Imperio de prueba", empire.Name.EsOrEn);
+        Assert.Equal("Capital", empire.Capital.EsOrEn); // no "es": English
+    }
+
+    [Fact]
+    public void Two_empires_cannot_share_a_spanish_name()
+    {
+        var a = ValidEmpire("a", "A") with { Name = new("A", "A pt", "Mismo") };
+        var b = ValidEmpire("b", "B") with { Name = new("B", "B pt", "mismo") };
+        Assert.Contains(EmpireContentLoader.ValidateSet([a, b]), e => e.StartsWith("name.es"));
     }
 
     [Fact]

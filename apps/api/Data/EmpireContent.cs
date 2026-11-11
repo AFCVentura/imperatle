@@ -46,11 +46,20 @@ public record EmpireContent(
     public string? MapShape { get; init; }
 }
 
-public record LocalizedText(string En, string Pt);
+// Es (Spanish) is optional: null = the game falls back to the English text.
+public record LocalizedText(string En, string Pt, string? Es = null)
+{
+    // The Spanish text, or the English one when there is none yet.
+    public string EsOrEn => string.IsNullOrWhiteSpace(Es) ? En : Es;
+}
 
 // A clue revealed during the round, plus an optional longer explanation of
 // it shown only once the round is over (it may name what the clue hides).
-public record Curiosity(string En, string Pt, LocalizedText? Details = null);
+// Es is optional, like LocalizedText.Es (null = falls back to English).
+public record Curiosity(string En, string Pt, LocalizedText? Details = null, string? Es = null)
+{
+    public string EsOrEn => string.IsNullOrWhiteSpace(Es) ? En : Es;
+}
 
 // Negative = BCE as historians write it (-27 is 27 BCE); there is no year 0.
 public record YearValue(int Year, YearPrecision Precision);

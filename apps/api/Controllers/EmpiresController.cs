@@ -16,7 +16,7 @@ public class EmpiresController(ImperatleDbContext db) : ControllerBase
         var empires = await db.Empires
             .Where(e => e.Active)
             .OrderBy(e => e.NameEn)
-            .Select(e => new EmpireSummary(e.Id, e.NameEn, e.NamePt, e.Aliases, e.Slug))
+            .Select(e => new EmpireSummary(e.Id, e.NameEn, e.NamePt, e.NameEs, e.Aliases, e.Slug))
             .ToListAsync();
 
         return Ok(empires);

@@ -8,9 +8,11 @@ import type { GeometryCollection, Topology } from "topojson-specification";
 // from scripts/maps/extract-empire.mjs).
 
 export type MapStage = 1 | 2 | 3; // 1 outline, 2 + continents, 3 + countries
-export type MapLocale = "en" | "pt";
+export type MapLocale = "en" | "pt" | "es";
 
-export type CountryProps = { en: string; pt: string; continent: string };
+// es is missing from a world file built before Spanish (countryName falls
+// back to English).
+export type CountryProps = { en: string; pt: string; es?: string; continent: string };
 export type CountryFeature = Feature<MultiPolygon, CountryProps>;
 export type WorldTopology = Topology<{ countries: GeometryCollection<CountryProps> }>;
 

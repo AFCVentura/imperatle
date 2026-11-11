@@ -62,6 +62,15 @@ describe("reconcileProgress", () => {
     expect(rebuilt?.guesses[0].proximity).toMatchObject({ shared: 0, distanceKm: 1200, bearingDegrees: 90, answerSpread: false });
   });
 
+  it("carries the Spanish name, and keeps working without it", () => {
+    const withEs = { ...played(4, false), nameEs: "Imperio 4" };
+    const rebuilt = reconcileProgress("2026-11-01", null, server({ attemptsUsed: 2, guesses: [withEs, played(5, false)] }), "?");
+    expect(rebuilt?.guesses[0].nameEs).toBe("Imperio 4");
+    // Saved before Spanish existed (and an older API): no nameEs at all.
+    expect(rebuilt?.guesses[1].nameEs).toBeUndefined();
+    expect(rebuilt?.guesses[1].nameEn).toBe("Empire 5");
+  });
+
   it("replaces placeholder rows once the server has the guesses", () => {
     const placeholders: GameProgress = { ...local, guesses: local.guesses.map((g) => ({ ...g, empireId: 0 })) };
     const fixed = reconcileProgress("2026-11-01", placeholders, server({ attemptsUsed: 2, guesses: [played(4, false), played(5, false)] }), "?");

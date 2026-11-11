@@ -137,7 +137,7 @@ export async function devForceToday(slug: string): Promise<void> {
 
 export interface DevPreview {
   date: string;
-  guesses: { empireId: number; nameEn: string; namePt: string; comparison: GuessComparison }[];
+  guesses: { empireId: number; nameEn: string; namePt: string; nameEs?: string; comparison: GuessComparison }[];
   reveal: ChallengeReveal;
 }
 

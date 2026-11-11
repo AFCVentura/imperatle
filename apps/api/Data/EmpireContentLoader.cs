@@ -204,7 +204,7 @@ public static partial class EmpireContentLoader
         for (var i = 0; i < empire.Curiosities.Count; i++)
         {
             var curiosity = empire.Curiosities[i];
-            CheckText(errors, $"curiosities[{i}]", new LocalizedText(curiosity.En, curiosity.Pt));
+            CheckText(errors, $"curiosities[{i}]", new LocalizedText(curiosity.En, curiosity.Pt, curiosity.Es));
             if (curiosity.Details is not null)
             {
                 CheckText(errors, $"curiosities[{i}].details", curiosity.Details);
@@ -214,8 +214,13 @@ public static partial class EmpireContentLoader
         // Article links shown after the round, one per language.
         if (empire.Wikipedia is not null)
         {
-            foreach (var (lang, url) in new[] { ("en", empire.Wikipedia.En), ("pt", empire.Wikipedia.Pt) })
+            // Spanish is optional (falls back to the English article).
+            foreach (var (lang, url) in new[] { ("en", empire.Wikipedia.En), ("pt", empire.Wikipedia.Pt), ("es", empire.Wikipedia.Es) })
             {
+                if (url is null)
+                {
+                    continue;
+                }
                 if (!url.StartsWith($"https://{lang}.wikipedia.org/wiki/", StringComparison.Ordinal) || url.Length <= $"https://{lang}.wikipedia.org/wiki/".Length)
                 {
                     errors.Add($"wikipedia.{lang} must be an article link on {lang}.wikipedia.org, e.g. https://{lang}.wikipedia.org/wiki/...");
@@ -396,13 +401,23 @@ public static partial class EmpireContentLoader
         {
             errors.Add($"name.pt \"{group.Key}\" is used by {string.Join(", ", group.Select(e => e.Slug))}");
         }
+        foreach (var group in empires.Where(e => e.Name.Es is not null).GroupBy(e => e.Name.Es!.Trim(), StringComparer.OrdinalIgnoreCase).Where(g => g.Count() > 1))
+        {
+            errors.Add($"name.es \"{group.Key}\" is used by {string.Join(", ", group.Select(e => e.Slug))}");
+        }
         return errors;
     }
 
     private static void CheckText(List<string> errors, string field, LocalizedText text)
     {
-        foreach (var (lang, value) in new[] { ("en", text.En), ("pt", text.Pt) })
+        // "es" is optional (null = falls back to English), but when it's
+        // there it follows the same rules.
+        foreach (var (lang, value) in new[] { ("en", text.En), ("pt", text.Pt), ("es", text.Es) })
         {
+            if (lang == "es" && value is null)
+            {
+                continue;
+            }
             if (string.IsNullOrWhiteSpace(value))
             {
                 errors.Add($"{field}.{lang} is empty");

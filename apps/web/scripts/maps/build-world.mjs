@@ -41,6 +41,13 @@ const PT_BR = {
   "Vietname": "Vietnã",
 };
 
+// Natural Earth's NAME_ES, except where it differs from the short name the
+// map shows in the other languages.
+const ES = {
+  "República de China": "Taiwán",
+  "Suazilandia": "Esuatini",
+};
+
 const ne = JSON.parse(readFileSync(src, "utf8"));
 const countries = {
   type: "FeatureCollection",
@@ -50,6 +57,7 @@ const countries = {
     properties: {
       en: f.properties.NAME_EN,
       pt: PT_BR[f.properties.NAME_PT] ?? f.properties.NAME_PT,
+      es: ES[f.properties.NAME_ES] ?? f.properties.NAME_ES,
       continent: f.properties.CONTINENT,
     },
     geometry: f.geometry,

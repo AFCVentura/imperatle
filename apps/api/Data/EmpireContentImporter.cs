@@ -42,11 +42,14 @@ public static class EmpireContentImporter
         return (added, updated, deactivated);
     }
 
+    // Spanish texts fall back to English while a file has no "es" yet
+    // (LocalizedText.EsOrEn), so the DTOs always carry something to show.
     private static void Apply(EmpireContent c, Empire e)
     {
         e.Active = true;
         e.NameEn = c.Name.En;
         e.NamePt = c.Name.Pt;
+        e.NameEs = c.Name.EsOrEn;
         e.ReferenceYear = c.Peak.Year;
         e.ReferenceYearPrecision = c.Peak.Precision;
         e.StartYear = c.Start.Year;
@@ -55,6 +58,7 @@ public static class EmpireContentImporter
         e.EndYearPrecision = c.End?.Precision;
         e.DurationNotesEn = c.DurationNotes?.En ?? string.Empty;
         e.DurationNotesPt = c.DurationNotes?.Pt ?? string.Empty;
+        e.DurationNotesEs = c.DurationNotes?.EsOrEn ?? string.Empty;
         e.PeakAreaKm2 = c.Area.Km2;
         e.AreaPrecision = c.Area.Precision;
         e.MapBorderConfidence = c.MapAccuracy;
@@ -63,18 +67,24 @@ public static class EmpireContentImporter
         e.PrimaryContinents = [.. c.PrimaryContinents];
         e.CapitalEn = c.Capital.En;
         e.CapitalPt = c.Capital.Pt;
+        e.CapitalEs = c.Capital.EsOrEn;
         e.LanguageEn = c.Language.En;
         e.LanguagePt = c.Language.Pt;
+        e.LanguageEs = c.Language.EsOrEn;
         e.ReligionEn = c.Religion.En;
         e.ReligionPt = c.Religion.Pt;
+        e.ReligionEs = c.Religion.EsOrEn;
         e.ReligionNotesEn = c.ReligionNotes?.En ?? string.Empty;
         e.ReligionNotesPt = c.ReligionNotes?.Pt ?? string.Empty;
+        e.ReligionNotesEs = c.ReligionNotes?.EsOrEn ?? string.Empty;
         e.MapShape = c.MapShape;
         e.WikipediaEn = c.Wikipedia?.En ?? string.Empty;
         e.WikipediaPt = c.Wikipedia?.Pt ?? string.Empty;
+        e.WikipediaEs = c.Wikipedia?.EsOrEn ?? string.Empty;
         e.Aliases = [.. c.Aliases ?? []];
         e.SummaryEn = c.Summary?.En ?? string.Empty;
         e.SummaryPt = c.Summary?.Pt ?? string.Empty;
+        e.SummaryEs = c.Summary?.EsOrEn ?? string.Empty;
 
         // Hints are matched by position, so re-importing updates their text
         // in place instead of recreating rows.
@@ -88,8 +98,10 @@ public static class EmpireContentImporter
             }
             hint.TextEn = c.Curiosities[order].En;
             hint.TextPt = c.Curiosities[order].Pt;
+            hint.TextEs = c.Curiosities[order].EsOrEn;
             hint.DetailsEn = c.Curiosities[order].Details?.En ?? string.Empty;
             hint.DetailsPt = c.Curiosities[order].Details?.Pt ?? string.Empty;
+            hint.DetailsEs = c.Curiosities[order].Details?.EsOrEn ?? string.Empty;
         }
         e.Hints.RemoveAll(h => h.Order >= c.Curiosities.Count);
     }

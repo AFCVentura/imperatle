@@ -19,6 +19,7 @@ public class Empire
 
     public string NameEn { get; set; } = string.Empty;
     public string NamePt { get; set; } = string.Empty;
+    public string NameEs { get; set; } = string.Empty;
 
     // Years are negative for BCE as historians write them (-27 = 27 BCE, no
     // year 0). This one is the "greatest territorial extent" point the map shows.
@@ -38,12 +39,15 @@ public class Empire
 
     public string CapitalEn { get; set; } = string.Empty;
     public string CapitalPt { get; set; } = string.Empty;
+    public string CapitalEs { get; set; } = string.Empty;
 
     public string LanguageEn { get; set; } = string.Empty;
     public string LanguagePt { get; set; } = string.Empty;
+    public string LanguageEs { get; set; } = string.Empty;
 
     public string ReligionEn { get; set; } = string.Empty;
     public string ReligionPt { get; set; } = string.Empty;
+    public string ReligionEs { get; set; } = string.Empty;
 
     // Empire's lifespan, distinct from ReferenceYear (its peak). No end year =
     // it still exists, and its duration runs to the current year.
@@ -58,11 +62,13 @@ public class Empire
     // Empty string = no caveat needed for this empire.
     public string DurationNotesEn { get; set; } = string.Empty;
     public string DurationNotesPt { get; set; } = string.Empty;
+    public string DurationNotesEs { get; set; } = string.Empty;
 
     // Free-text caveat shown next to the religion in the UI, e.g. noting that
     // most subjects followed other faiths. Empty string = no caveat needed.
     public string ReligionNotesEn { get; set; } = string.Empty;
     public string ReligionNotesPt { get; set; } = string.Empty;
+    public string ReligionNotesEs { get; set; } = string.Empty;
 
     // Territory at peak extent (same reference point as ReferenceYear), in km².
     public int PeakAreaKm2 { get; set; }
@@ -72,6 +78,7 @@ public class Empire
     // Empty string = no link.
     public string WikipediaEn { get; set; } = string.Empty;
     public string WikipediaPt { get; set; } = string.Empty;
+    public string WikipediaEs { get; set; } = string.Empty;
 
     // Other names the guess list also matches (spellings, other languages,
     // "China" for a Chinese dynasty). Never shown as the answer.
@@ -81,6 +88,7 @@ public class Empire
     // Empty string = none yet.
     public string SummaryEn { get; set; } = string.Empty;
     public string SummaryPt { get; set; } = string.Empty;
+    public string SummaryEs { get; set; } = string.Empty;
 
     // Max 3, revealed in Order (0 = least obvious, 2 = most obvious).
     public List<EmpireHint> Hints { get; set; } = [];

@@ -9,7 +9,11 @@ export const YEAR_PRECISIONS = ["Exact", "Approximate", "Century"] as const;
 export const AREA_PRECISIONS = ["Exact", "Approximate"] as const;
 export const MAP_ACCURACIES = ["Precise", "Approximate", "Speculative"] as const;
 
-export type Text = { en: string; pt: string };
+// Spanish (es) is optional: left out, the game shows the English text.
+export type Text = { en: string; pt: string; es?: string };
+
+// The languages a text is written in, in the content files' key order.
+export const TEXT_LANGS = ["en", "pt", "es"] as const;
 
 // A Cliopatria polity at a year, today's territory (Natural Earth's 3-letter
 // code) for land the dataset misses, or an area drawn by hand on the map to
@@ -63,8 +67,15 @@ export type Curiosity = Text & { details?: Text };
 export const CURIOSITY_COUNT = 3;
 export const MAX_PRIMARY_CONTINENTS = 2;
 
-// An optional text with both languages empty counts as not filled in.
-export const isBlank = (t?: Text) => !t || (!t.en.trim() && !t.pt.trim());
+// An optional text with every language empty counts as not filled in.
+export const isBlank = (t?: Text) => !t || (!t.en.trim() && !t.pt.trim() && !(t.es ?? "").trim());
+
+// A text in the content files' key order (en, pt, es), without an empty
+// Spanish text (it falls back to English). Never drops a filled-in one.
+export function orderedText<T extends Text>(t: T): Text & Omit<T, keyof Text> {
+  const { en, pt, es, ...rest } = t;
+  return { en, pt, ...(es?.trim() ? { es } : {}), ...rest } as Text & Omit<T, keyof Text>;
+}
 
 // The rules EmpireContentLoader.Validate (API) applies on startup, checked
 // while the form is filled in. Keep both in sync.
@@ -85,6 +96,8 @@ export function validateDraft(draft: EmpireDraft, others: { slug: string; name: 
   for (const o of others) {
     if (same(o.name.en, draft.name.en)) errors.push(`nome (en): "${draft.name.en}" já é usado por ${o.slug}`);
     if (same(o.name.pt, draft.name.pt)) errors.push(`nome (pt): "${draft.name.pt}" já é usado por ${o.slug}`);
+    if (o.name.es?.trim() && draft.name.es?.trim() && same(o.name.es, draft.name.es))
+      errors.push(`nome (es): "${draft.name.es}" já é usado por ${o.slug}`);
   }
 
   // An empire that still exists runs to this year.
@@ -120,9 +133,11 @@ export function validateDraft(draft: EmpireDraft, others: { slug: string; name: 
   }
 
   if (!isBlank(draft.wikipedia)) {
-    for (const lang of ["en", "pt"] as const) {
+    for (const lang of TEXT_LANGS) {
       const prefix = `https://${lang}.wikipedia.org/wiki/`;
-      const url = draft.wikipedia![lang];
+      const url = draft.wikipedia![lang] ?? "";
+      // Spanish is optional (falls back to the English article).
+      if (lang === "es" && !url.trim()) continue;
       if (!url.startsWith(prefix) || url.length <= prefix.length) errors.push(`wikipedia (${lang}): tem que ser um link de ${lang}.wikipedia.org`);
     }
   }
@@ -138,8 +153,10 @@ export function validateDraft(draft: EmpireDraft, others: { slug: string; name: 
 }
 
 function checkText(errors: string[], label: string, text: Text) {
-  for (const lang of ["en", "pt"] as const) {
+  for (const lang of TEXT_LANGS) {
     const value = text[lang] ?? "";
+    // Spanish is optional: empty means "use the English text".
+    if (lang === "es" && !value.trim()) continue;
     if (!value.trim()) errors.push(`${label} (${lang}): vazio`);
     // House style: no em dashes in player-facing text.
     else if (value.includes("—") || value.includes("--")) errors.push(`${label} (${lang}): sem travessão nem "--"; use vírgula, dois-pontos, ponto ou parênteses`);
@@ -149,35 +166,40 @@ function checkText(errors: string[], label: string, text: Text) {
 // Aliases as saved: trimmed, empty entries dropped.
 export const cleanAliases = (aliases?: string[]) => (aliases ?? []).map((a) => a.trim()).filter(Boolean);
 
-// Optional texts are left out of the file when both languages are empty.
+// Optional texts are left out of the file when every language is empty.
+// Texts keep the key order en, pt, es (es only when filled in).
 export function toContentJson(draft: EmpireDraft): string {
   const blank = isBlank;
-  const { durationNotes, religionNotes, wikipedia, summary, ...rest } = draft;
-  const aliases = cleanAliases(rest.aliases);
+  const text = orderedText;
+  const durationNotes = draft.durationNotes && text(draft.durationNotes);
+  const religionNotes = draft.religionNotes && text(draft.religionNotes);
+  const wikipedia = draft.wikipedia && text(draft.wikipedia);
+  const summary = draft.summary && text(draft.summary);
+  const aliases = cleanAliases(draft.aliases);
   // A clue's explanation is left out when empty, like the other optional texts.
-  const curiosities = rest.curiosities.map(({ details, ...text }) => (blank(details) ? text : { ...text, details }));
+  const curiosities = draft.curiosities.map(({ details, ...clue }) => (blank(details) ? text(clue) : { ...text(clue), details: text(details!) }));
   const ordered = {
     $schema: "../empire.schema.json",
-    slug: rest.slug,
-    name: rest.name,
-    peak: rest.peak,
-    start: rest.start,
-    end: rest.end,
+    slug: draft.slug,
+    name: text(draft.name),
+    peak: draft.peak,
+    start: draft.start,
+    end: draft.end,
     ...(blank(durationNotes) ? {} : { durationNotes }),
-    area: rest.area,
-    mapAccuracy: rest.mapAccuracy,
-    ...(rest.spread ? { spread: true } : {}),
-    continents: rest.continents,
-    primaryContinents: rest.primaryContinents,
-    capital: rest.capital,
-    language: rest.language,
-    religion: rest.religion,
+    area: draft.area,
+    mapAccuracy: draft.mapAccuracy,
+    ...(draft.spread ? { spread: true } : {}),
+    continents: draft.continents,
+    primaryContinents: draft.primaryContinents,
+    capital: text(draft.capital),
+    language: text(draft.language),
+    religion: text(draft.religion),
     ...(blank(religionNotes) ? {} : { religionNotes }),
     curiosities,
     ...(blank(wikipedia) ? {} : { wikipedia }),
     ...(aliases.length === 0 ? {} : { aliases }),
     ...(blank(summary) ? {} : { summary }),
-    map: rest.map,
+    map: draft.map,
   };
   // A drawn ring stays on one line, or each point would take four.
   const rings: string[] = [];

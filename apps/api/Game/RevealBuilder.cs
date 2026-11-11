@@ -32,8 +32,10 @@ public static class RevealBuilder
             PrimaryContinents: null,
             CapitalEn: null,
             CapitalPt: null,
+            CapitalEs: null,
             LanguageEn: null,
             LanguagePt: null,
+            LanguageEs: null,
             Hints: hintCount > 0 ? empire.Hints.OrderBy(h => h.Order).Take(hintCount).Select(ToDto).ToList() : null,
             ReferenceYear: null,
             ReferenceYearPrecision: null,
@@ -44,12 +46,15 @@ public static class RevealBuilder
             Ongoing: null,
             DurationNotesEn: null,
             DurationNotesPt: null,
+            DurationNotesEs: null,
             PeakAreaKm2: null,
             AreaPrecision: null,
             ReligionEn: null,
             ReligionPt: null,
+            ReligionEs: null,
             ReligionNotesEn: null,
-            ReligionNotesPt: null
+            ReligionNotesPt: null,
+            ReligionNotesEs: null
         );
     }
 
@@ -104,14 +109,17 @@ public static class RevealBuilder
         empire.Slug,
         empire.NameEn,
         empire.NamePt,
+        empire.NameEs,
         ComputeBroadEra(empire.ReferenceYear),
         empire.MapBorderConfidence,
         empire.Continents,
         empire.PrimaryContinents,
         empire.CapitalEn,
         empire.CapitalPt,
+        empire.CapitalEs,
         empire.LanguageEn,
         empire.LanguagePt,
+        empire.LanguageEs,
         empire.Hints.OrderBy(h => h.Order).Select(ToAnswerDto).ToList(),
         empire.ReferenceYear,
         empire.ReferenceYearPrecision,
@@ -122,18 +130,23 @@ public static class RevealBuilder
         empire.EndYear is null,
         empire.DurationNotesEn,
         empire.DurationNotesPt,
+        empire.DurationNotesEs,
         empire.PeakAreaKm2,
         empire.AreaPrecision,
         empire.ReligionEn,
         empire.ReligionPt,
+        empire.ReligionEs,
         empire.ReligionNotesEn,
         empire.ReligionNotesPt,
+        empire.ReligionNotesEs,
         empire.WikipediaEn,
         empire.WikipediaPt,
+        empire.WikipediaEs,
         empire.SummaryEn,
-        empire.SummaryPt);
+        empire.SummaryPt,
+        empire.SummaryEs);
 
-    private static EmpireHintDto ToDto(EmpireHint hint) => new(hint.TextEn, hint.TextPt);
+    private static EmpireHintDto ToDto(EmpireHint hint) => new(hint.TextEn, hint.TextPt, hint.TextEs);
 
-    private static EmpireHintAnswerDto ToAnswerDto(EmpireHint hint) => new(hint.TextEn, hint.TextPt, hint.DetailsEn, hint.DetailsPt);
+    private static EmpireHintAnswerDto ToAnswerDto(EmpireHint hint) => new(hint.TextEn, hint.TextPt, hint.TextEs, hint.DetailsEn, hint.DetailsPt, hint.DetailsEs);
 }

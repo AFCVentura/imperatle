@@ -21,6 +21,8 @@ export interface GuessHistoryEntry {
   empireId: number;
   nameEn: string;
   namePt: string;
+  // Missing from rounds saved before Spanish existed.
+  nameEs?: string;
   correct: boolean;
   // Null for a correct guess (no comparison shown -- it's an exact match).
   areaComparison: ComparisonResult | null;

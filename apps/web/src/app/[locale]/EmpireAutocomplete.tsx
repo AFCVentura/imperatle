@@ -2,7 +2,7 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import { useMemo, useState, type KeyboardEvent, type ReactNode } from "react";
-import { matchEmpire, type EmpireMatch } from "@/lib/matchEmpireName";
+import { matchEmpire, otherEmpireNames, type EmpireMatch } from "@/lib/matchEmpireName";
 import { pickLocalized } from "@/lib/pickLocalized";
 import type { EmpireSummary } from "@/lib/types";
 
@@ -46,10 +46,10 @@ export function EmpireAutocomplete({ empires, clearKey, busy, onSelect, onSubmit
     if (!query.trim()) return [];
     const matches = empires
       .map((empire) => {
-        const name = pickLocalized(empire.nameEn, empire.namePt, locale);
-        // The name in the other language counts as one more alias.
-        const otherName = name === empire.nameEn ? empire.namePt : empire.nameEn;
-        const match = matchEmpire(name, [otherName, ...(empire.aliases ?? [])], query);
+        const name = pickLocalized(empire.nameEn, empire.namePt, locale, empire.nameEs);
+        // The names in the other languages count as more aliases.
+        const others = otherEmpireNames(name, [empire.nameEn, empire.namePt, empire.nameEs], empire.aliases);
+        const match = matchEmpire(name, others, query);
         return match ? { empire, name, ...match } : null;
       })
       .filter((s): s is Suggestion => s !== null);

@@ -35,6 +35,7 @@ public static class PlayedGuesses
                     empire.Id,
                     empire.NameEn,
                     empire.NamePt,
+                    empire.NameEs,
                     correct,
                     correct ? null : RevealBuilder.BuildComparison(empire, target));
             })

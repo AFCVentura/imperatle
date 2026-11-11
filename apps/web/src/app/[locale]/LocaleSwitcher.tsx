@@ -10,6 +10,7 @@ import { routing } from "@/i18n/routing";
 const LOCALE_NAMES: Record<(typeof routing.locales)[number], string> = {
   en: "English",
   pt: "Português",
+  es: "Español",
 };
 
 // Switches language on the same page: next-intl's router swaps the locale

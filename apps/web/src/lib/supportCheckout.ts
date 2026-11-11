@@ -1,3 +1,5 @@
+import { intlLocale } from "../i18n/locales";
+
 // The Supporter purchase through the API and Stripe Checkout: the price to
 // show in the dialog, and the hosted checkout page the "buy" button goes to.
 // No Stripe key in the browser: the API creates the session.
@@ -104,7 +106,7 @@ const ZERO_DECIMAL = new Set(["bif", "clp", "djf", "gnf", "jpy", "kmf", "krw", "
 export function formatPrice(price: SupportPrice, currency: string | null, locale: string): string | null {
   const amount = currency ? price.amounts?.[currency] : undefined;
   if (currency === null || amount === undefined) return null;
-  return new Intl.NumberFormat(locale === "pt" ? "pt-BR" : "en-US", {
+  return new Intl.NumberFormat(intlLocale(locale), {
     style: "currency",
     currency: currency.toUpperCase(),
     // The local sign ("$", "Ft", "₺") rather than a code like "CLP"; the
