@@ -63,7 +63,9 @@ public static class RevealBuilder
             CompareEra(guessedEmpire, correctEmpire),
             proximity?.Shared,
             proximity?.DistanceKm,
-            proximity?.BearingDegrees);
+            proximity?.BearingDegrees,
+            proximity is null ? null : Math.Round(proximity.AnswerCovered, 3),
+            proximity is null ? null : Math.Round(proximity.GuessCovered, 3));
     }
 
     // "Same era" when the two were contemporaries at their peaks (each one

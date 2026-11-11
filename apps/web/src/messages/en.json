@@ -113,7 +113,7 @@
         "Approximate": "The answer and your guess are from the same era: each still existed at the other's peak, or their peaks were 25 years apart or less."
       },
       "distance": {
-        "info": "Where the answer lies from your guess. When the two are apart, you get the direction and the distance between their borders. When the territories overlap, you get how much they share, and the direction goes away once they mostly overlap.",
+        "info": "Where the answer lies from your guess. When the two are apart, you get the direction and the distance between their borders. When the territories overlap, you get how much they share, and the direction goes away once they mostly overlap. When one lies almost entirely inside the other, you get Inside your guess or Contains your guess.",
         "here": "Here: the answer lies {direction} of your guess.",
         "noMap": "No map to compare where these two are."
       }
@@ -151,7 +151,9 @@
     "goToPractice": "Go to practice",
     "proximity": {
       "neighbours": "Neighbours",
-      "shared": "{percent} shared"
+      "shared": "{percent} shared",
+      "inside": "Inside your guess",
+      "contains": "Contains your guess"
     },
     "directions": {
       "N": "north",

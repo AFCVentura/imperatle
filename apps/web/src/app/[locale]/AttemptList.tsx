@@ -215,16 +215,35 @@ function ComparisonBadge({ kind, result }: { kind: "area" | "era"; result: Compa
 export const SHARES_A_LOT = 0.2;
 // Borders closer than this read as "neighbours".
 export const NEIGHBOURS_KM = 50;
+// From this share of one territory inside the other, it's "inside" (the
+// Xiongnu inside the Mongol Empire): the shared part of both together is
+// small, but an arrow from one middle to the other would mislead.
+export const COVERED = 0.9;
 
 const DIRECTIONS = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"] as const;
 
+type ProximityKind = "inside" | "contains" | "shared" | "neighbours" | "distance";
+
 // Where the answer is from the guess, in one cell:
 // - apart: arrow + distance between the borders (or "neighbours");
+// - one almost inside the other: "inside your guess" / "contains your guess";
 // - sharing a little: arrow + how much they share;
 // - sharing a lot: only how much they share.
 export function proximityDisplay(p: GuessProximity) {
-  const showArrow = p.shared < SHARES_A_LOT;
-  const kind = p.shared > 0 ? "shared" : (p.distanceKm ?? 0) < NEIGHBOURS_KM ? "neighbours" : "distance";
+  const answerInside = (p.answerCovered ?? 0) >= COVERED;
+  const guessInside = (p.guessCovered ?? 0) >= COVERED;
+  // Both inside each other = about the same territory: the share says it.
+  const kind: ProximityKind =
+    answerInside && !guessInside
+      ? "inside"
+      : guessInside && !answerInside
+        ? "contains"
+        : p.shared > 0
+          ? "shared"
+          : (p.distanceKm ?? 0) < NEIGHBOURS_KM
+            ? "neighbours"
+            : "distance";
+  const showArrow = p.shared < SHARES_A_LOT && kind !== "inside" && kind !== "contains";
   const percent = p.shared * 100;
   return {
     showArrow,
@@ -251,12 +270,14 @@ function ProximityBadge({ proximity }: { proximity: GuessProximity | null }) {
   }
 
   const d = proximityDisplay(proximity);
-  const text =
-    d.kind === "shared"
-      ? t("proximity.shared", { percent: d.percent })
-      : d.kind === "neighbours"
-        ? t("proximity.neighbours")
-        : `${d.km.toLocaleString(locale)} km`;
+  const texts: Record<ProximityKind, string> = {
+    inside: t("proximity.inside"),
+    contains: t("proximity.contains"),
+    shared: t("proximity.shared", { percent: d.percent }),
+    neighbours: t("proximity.neighbours"),
+    distance: `${d.km.toLocaleString(locale)} km`,
+  };
+  const text = texts[d.kind];
 
   return (
     <Badge

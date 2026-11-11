@@ -12,8 +12,11 @@ namespace Imperatle.Api.Game;
 //   together (intersection over union), so 1 only when they're the same;
 // - DistanceKm: between the borders, when they don't overlap at all;
 // - BearingDegrees: compass direction (0 = north) from the middle of the
-//   guess to the middle of the answer.
-public record Proximity(double Shared, int? DistanceKm, double BearingDegrees);
+//   guess to the middle of the answer;
+// - AnswerCovered / GuessCovered: how much of each one lies inside the other
+//   (1 = all of it), so "the answer is inside your guess" can be told apart
+//   from a small overlap, though both give a small Shared.
+public record Proximity(double Shared, int? DistanceKm, double BearingDegrees, double AnswerCovered = 0, double GuessCovered = 0);
 
 public static class EmpireGeometry
 {
@@ -54,7 +57,12 @@ public static class EmpireGeometry
         var union = guess.AreaKm2 + answer.AreaKm2 - both;
         var shared = union > 0 ? Math.Clamp(both / union, 0, 1) : 0;
         int? distance = shared > 0 ? null : (int)Math.Round(BorderDistanceKm(guess.Border, answer.Border));
-        return new Proximity(shared, distance, Bearing(guess.Centre, answer.Centre));
+        return new Proximity(
+            shared,
+            distance,
+            Bearing(guess.Centre, answer.Centre),
+            answer.AreaKm2 > 0 ? Math.Clamp(both / answer.AreaKm2, 0, 1) : 0,
+            guess.AreaKm2 > 0 ? Math.Clamp(both / guess.AreaKm2, 0, 1) : 0);
     }
 
     // Shapes may cross the date line with longitudes past ±180, so the guess

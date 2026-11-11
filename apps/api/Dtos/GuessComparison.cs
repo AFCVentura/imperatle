@@ -6,11 +6,14 @@ namespace Imperatle.Api.Dtos;
 // stage: how the answer compares with the guessed empire.
 // - Area: bigger/smaller at the peak.
 // - Era: Bigger = more recent, Smaller = older, Approximate = same era.
-// - Shared (0-1), DistanceKm, BearingDegrees: where the answer is from the
-//   guess (see EmpireGeometry); null when either empire has no map.
+// - Shared (0-1), DistanceKm, BearingDegrees, AnswerCovered, GuessCovered:
+//   where the answer is from the guess (see EmpireGeometry); null when
+//   either empire has no map.
 public record GuessComparison(
     ComparisonResult Area,
     ComparisonResult Era,
     double? Shared = null,
     int? DistanceKm = null,
-    double? BearingDegrees = null);
+    double? BearingDegrees = null,
+    double? AnswerCovered = null,
+    double? GuessCovered = null);

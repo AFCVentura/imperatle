@@ -5,6 +5,10 @@ export interface GuessProximity {
   shared: number;
   distanceKm: number | null;
   bearingDegrees: number;
+  // How much of the answer lies inside the guess, and of the guess inside
+  // the answer (0-1). Missing from guesses saved before they existed.
+  answerCovered?: number;
+  guessCovered?: number;
 }
 
 export interface GuessHistoryEntry {
@@ -27,7 +31,13 @@ export function comparisonFields(comparison: GuessComparison | null | undefined)
     eraComparison: comparison ? comparisonFromApi(comparison.era) : null,
     proximity:
       comparison && comparison.shared != null && comparison.bearingDegrees != null
-        ? { shared: comparison.shared, distanceKm: comparison.distanceKm ?? null, bearingDegrees: comparison.bearingDegrees }
+        ? {
+            shared: comparison.shared,
+            distanceKm: comparison.distanceKm ?? null,
+            bearingDegrees: comparison.bearingDegrees,
+            answerCovered: comparison.answerCovered ?? 0,
+            guessCovered: comparison.guessCovered ?? 0,
+          }
         : null,
   };
 }

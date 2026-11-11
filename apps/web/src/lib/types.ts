@@ -173,6 +173,9 @@ export interface GuessComparison {
   shared?: number | null;
   distanceKm?: number | null;
   bearingDegrees?: number | null;
+  // How much of the answer lies inside the guess, and the other way (0-1).
+  answerCovered?: number | null;
+  guessCovered?: number | null;
 }
 
 export interface GuessResponse {

@@ -37,6 +37,20 @@ public class EmpireGeometryTests
         Assert.InRange(roman.BearingDegrees, 45, 135);
     }
 
+    // One territory almost inside the other: a small share of both together,
+    // but nearly all of the smaller one is covered.
+    [Fact]
+    public void An_empire_inside_another_is_covered_both_ways()
+    {
+        var xiongnuInMongol = Compare("mongol-empire", "xiongnu");
+        Assert.True(xiongnuInMongol.Shared < 0.3);
+        Assert.InRange(xiongnuInMongol.AnswerCovered, 0.9, 1);
+
+        var mongolAroundXiongnu = Compare("xiongnu", "mongol-empire");
+        Assert.InRange(mongolAroundXiongnu.GuessCovered, 0.9, 1);
+        Assert.True(mongolAroundXiongnu.AnswerCovered < 0.3);
+    }
+
     // Spread over every ocean: it has to come out whole, quickly enough.
     [Fact]
     public void British_empire_compares_with_anything()
