@@ -25,7 +25,9 @@ param(
     [string]$StripeKeyFile = 'C:\secrets\stripe-imperatle-test.txt',
     [string]$PriceId = 'price_1UaM8fIFWEpVTgv82PSgNYo7',
     [string]$GoogleClientId = '373010422141-j2an0fgj0cfdkpj3g5iddelc1htr6696.apps.googleusercontent.com',
-    [string]$Database = 'imperatle_sandbox'
+    [string]$Database = 'imperatle_sandbox',
+    # Another port for the site when 3000 is taken (the API is told to accept it).
+    [int]$WebPort = 3000
 )
 
 # Not 'Stop': in Windows PowerShell 5.1 any stderr line from a native program
@@ -43,7 +45,7 @@ $ComposeFile = Join-Path $RepoRoot 'docker-compose.yml'
 $ComposeProject = 'imperatle'
 $StateFile = Join-Path $env:TEMP 'imperatle-sandbox-test.pids'
 $ApiUrl = 'http://localhost:5055'
-$WebUrl = 'http://localhost:3000'
+$WebUrl = "http://localhost:$WebPort"
 
 function Write-Step([string]$text) { Write-Host "==> $text" -ForegroundColor Cyan }
 function Fail([string]$text) { Write-Host "ERRO: $text" -ForegroundColor Red; exit 1 }
@@ -76,7 +78,7 @@ function Test-Port([int]$port) {
     $client = New-Object System.Net.Sockets.TcpClient
     try { $client.Connect('127.0.0.1', $port); return $true } catch { return $false } finally { $client.Dispose() }
 }
-foreach ($port in 5055, 3000) {
+foreach ($port in 5055, $WebPort) {
     if (Test-Port $port) { Fail "A porta $port ja esta em uso. Feche a API/site que ja estao rodando (ou rode este script com -Stop) e tente de novo." }
 }
 
@@ -125,7 +127,7 @@ if ("$exists".Trim() -ne '1') {
 
 # ---------------------------------------------------------------- processes
 $names = @(
-    'ConnectionStrings__DefaultConnection', 'Dev__IsSupporter', 'Auth__CookieDomain',
+    'ConnectionStrings__DefaultConnection', 'Dev__IsSupporter', 'Auth__CookieDomain', 'Cors__AllowedOrigins',
     'Auth__Google__ClientId', 'Auth__Google__ClientSecret',
     'Stripe__SecretKey', 'Stripe__WebhookSecret', 'Stripe__SupporterPriceId',
     'NEXT_PUBLIC_API_URL', 'STRIPE_API_KEY'
@@ -138,6 +140,8 @@ try {
     $env:ConnectionStrings__DefaultConnection = "Host=localhost;Port=5432;Database=$Database;Username=imperatle;Password=imperatle"
     $env:Dev__IsSupporter = 'false'          # real supporter check, not the dev shortcut
     $env:Auth__CookieDomain = ''              # cookie stays on localhost
+    # The site's origin: CORS, where the login may return to, and Stripe's return pages.
+    $env:Cors__AllowedOrigins = $WebUrl
     $env:Auth__Google__ClientId = $GoogleClientId
     $env:Auth__Google__ClientSecret = $googleSecret
     $env:Stripe__SecretKey = $stripeKey
@@ -154,8 +158,8 @@ try {
 
     # Web (process env wins over apps/web/.env.local in Next.js).
     $env:NEXT_PUBLIC_API_URL = $ApiUrl
-    $webCommand = "`$host.UI.RawUI.WindowTitle = 'Imperatle web (Stripe teste)'; npm run dev"
-    if (-not (Test-Path (Join-Path $WebDir 'node_modules'))) { $webCommand = "`$host.UI.RawUI.WindowTitle = 'Imperatle web (Stripe teste)'; npm ci; npm run dev" }
+    $webCommand = "`$host.UI.RawUI.WindowTitle = 'Imperatle web (Stripe teste)'; npm run dev -- -p $WebPort"
+    if (-not (Test-Path (Join-Path $WebDir 'node_modules'))) { $webCommand = "`$host.UI.RawUI.WindowTitle = 'Imperatle web (Stripe teste)'; npm ci; npm run dev -- -p $WebPort" }
     Write-Step "Iniciando o site em $WebUrl (janela nova)"
     $web = Start-Process powershell -PassThru -WorkingDirectory $WebDir -ArgumentList '-NoExit', '-Command', $webCommand
     $pids += $web.Id
