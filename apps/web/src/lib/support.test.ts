@@ -58,6 +58,19 @@ describe("price in the dialog", () => {
     expect(guessCurrency(price, undefined)).toBe("usd");
   });
 
+  it("knows the other currencies when the price lists them", () => {
+    const wide: SupportPrice = { ...price, amounts: { usd: 499, brl: 990, eur: 499, gbp: 399, cad: 699, aud: 799, mxn: 7900, jpy: 700, inr: 19900 } };
+    expect(guessCurrency(wide, "Europe/London")).toBe("gbp");
+    expect(guessCurrency(wide, "America/Toronto")).toBe("cad");
+    expect(guessCurrency(wide, "Australia/Sydney")).toBe("aud");
+    expect(guessCurrency(wide, "America/Mexico_City")).toBe("mxn");
+    expect(guessCurrency(wide, "Asia/Tokyo")).toBe("jpy");
+    expect(guessCurrency(wide, "Asia/Kolkata")).toBe("inr");
+    expect(guessCurrency(wide, "America/New_York")).toBe("usd");
+    expect(formatPrice(wide, "jpy", "en")).toBe("¥700");
+    expect(formatPrice(wide, "gbp", "en")).toBe("£3.99");
+  });
+
   it("uses the default when the local currency isn't sold", () => {
     expect(guessCurrency({ ...price, amounts: { usd: 499 } }, "America/Sao_Paulo")).toBe("usd");
   });

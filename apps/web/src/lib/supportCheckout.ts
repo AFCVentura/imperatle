@@ -40,23 +40,53 @@ const EURO_ZONES = new Set([
   "Atlantic/Madeira", "Atlantic/Canary", "Africa/Ceuta",
 ]);
 
+// The other currencies the price may list (GBP, CAD, AUD, MXN, JPY, INR).
+// A currency the price doesn't list falls back to the default.
+const OTHER_ZONES: Record<string, string> = {
+  "Europe/London": "gbp", "Europe/Guernsey": "gbp", "Europe/Jersey": "gbp", "Europe/Isle_of_Man": "gbp",
+  "America/Toronto": "cad", "America/Montreal": "cad", "America/Vancouver": "cad", "America/Edmonton": "cad",
+  "America/Winnipeg": "cad", "America/Halifax": "cad", "America/St_Johns": "cad", "America/Regina": "cad",
+  "America/Moncton": "cad", "America/Glace_Bay": "cad", "America/Goose_Bay": "cad", "America/Whitehorse": "cad",
+  "America/Dawson": "cad", "America/Dawson_Creek": "cad", "America/Fort_Nelson": "cad", "America/Creston": "cad",
+  "America/Iqaluit": "cad", "America/Rankin_Inlet": "cad", "America/Resolute": "cad", "America/Cambridge_Bay": "cad",
+  "America/Inuvik": "cad", "America/Swift_Current": "cad", "America/Atikokan": "cad", "America/Blanc-Sablon": "cad",
+  "America/Thunder_Bay": "cad", "America/Nipigon": "cad", "America/Rainy_River": "cad", "America/Yellowknife": "cad",
+  "America/Pangnirtung": "cad",
+  "America/Mexico_City": "mxn", "America/Cancun": "mxn", "America/Merida": "mxn", "America/Monterrey": "mxn",
+  "America/Matamoros": "mxn", "America/Chihuahua": "mxn", "America/Ciudad_Juarez": "mxn", "America/Ojinaga": "mxn",
+  "America/Mazatlan": "mxn", "America/Bahia_Banderas": "mxn", "America/Hermosillo": "mxn", "America/Tijuana": "mxn",
+  "Asia/Tokyo": "jpy",
+  "Asia/Kolkata": "inr", "Asia/Calcutta": "inr",
+};
+
+function localCurrency(timeZone: string | undefined): string | null {
+  if (!timeZone) return null;
+  if (BRAZIL_ZONES.has(timeZone)) return "brl";
+  if (EURO_ZONES.has(timeZone)) return "eur";
+  if (timeZone.startsWith("Australia/")) return "aud";
+  return OTHER_ZONES[timeZone] ?? null;
+}
+
 export function guessCurrency(price: SupportPrice, timeZone: string | undefined): string | null {
   const amounts = price.amounts;
   if (!amounts) return null;
-  const local = timeZone && BRAZIL_ZONES.has(timeZone) ? "brl" : timeZone && EURO_ZONES.has(timeZone) ? "eur" : null;
+  const local = localCurrency(timeZone);
   if (local && local in amounts) return local;
   if (price.defaultCurrency && price.defaultCurrency in amounts) return price.defaultCurrency;
   return Object.keys(amounts)[0] ?? null;
 }
 
 // "R$ 9,90", "US$ 4.99", "€4.99"...
+// Stripe gives these in whole units (700 = ¥700), the rest in cents.
+const ZERO_DECIMAL = new Set(["bif", "clp", "djf", "gnf", "jpy", "kmf", "krw", "mga", "pyg", "rwf", "ugx", "vnd", "vuv", "xaf", "xof", "xpf"]);
+
 export function formatPrice(price: SupportPrice, currency: string | null, locale: string): string | null {
   const amount = currency ? price.amounts?.[currency] : undefined;
   if (currency === null || amount === undefined) return null;
   return new Intl.NumberFormat(locale === "pt" ? "pt-BR" : "en-US", {
     style: "currency",
     currency: currency.toUpperCase(),
-  }).format(amount / 100);
+  }).format(ZERO_DECIMAL.has(currency) ? amount : amount / 100);
 }
 
 export type CheckoutStart =
