@@ -66,10 +66,12 @@ export const RELEASES: Release[] = [
       {
         en: "Practice: smart pacing spreads the six clues over the attempts you pick, so they all show up before the last one. On by default; the info icon next to Clues turns it off.",
         pt: "Treino: a adaptação inteligente espalha as seis dicas pelas tentativas escolhidas, para que todas apareçam antes da última. Vem ligada; o ícone de informação ao lado de Dicas desliga.",
+        es: "Práctica: el ritmo inteligente reparte las seis pistas entre los intentos elegidos, para que todas aparezcan antes del último. Viene activado; el icono de información junto a Pistas lo desactiva.",
       },
       {
         en: "Pages that don't exist now show a page of their own, with the way back to the game.",
         pt: "Páginas que não existem agora mostram uma página própria, com o caminho de volta ao jogo.",
+        es: "Las páginas que no existen ahora muestran una página propia, con el camino de vuelta al juego.",
       },
       {
         en: "Every empire has its own page, with the fact sheet and the curiosities: \"Empires\" in the footer, or \"About this empire\" at the end of a round.",
@@ -90,6 +92,7 @@ export const RELEASES: Release[] = [
       {
         en: "Five history slips fixed: the Ethiopian, First French, Ilkhanate, Safavid and Inca texts.",
         pt: "Cinco deslizes históricos corrigidos: nos textos do Império Etíope, do Primeiro Império Francês, do Ilcanato, do Safávida e do Inca.",
+        es: "Cinco errores históricos corregidos: en los textos del Imperio etíope, el Primer Imperio francés, el Ilkanato, el Imperio safávida y el Imperio inca.",
       },
     ],
   },
