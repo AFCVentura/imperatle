@@ -51,8 +51,8 @@ export const RELEASES: Release[] = [
     ],
     fixes: [
       {
-        en: "Support payments now go through Stripe, in 24 currencies. Supporters see a thank-you in the footer instead of the support button.",
-        pt: "Os pagamentos do Apoio agora passam pela Stripe, em 24 moedas. Quem apoia vê um agradecimento no rodapé no lugar do botão de apoiar.",
+        en: "Support payments now go through Stripe, in 25 currencies. Supporters see a thank-you in the footer instead of the support button.",
+        pt: "Os pagamentos do Apoio agora passam pela Stripe, em 25 moedas. Quem apoia vê um agradecimento no rodapé no lugar do botão de apoiar.",
       },
       {
         en: "The outline of a country picked on the map no longer disappears in dark mode.",

@@ -23,6 +23,8 @@ import "../globals.css";
 const cinzel = Cinzel({ variable: "--font-cinzel", subsets: ["latin"] });
 const spectral = Spectral({ variable: "--font-spectral", subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
+const OG_LOCALES: Record<string, string> = { en: "en_US", pt: "pt_BR", es: "es_ES" };
+
 // hreflang alternates: tells search engines /en and /pt are the same page in
 // two languages. The game is a single page, so the layout covers it; a page
 // with its own path would need its own alternates.
@@ -30,9 +32,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Metadata" });
 
+  // What the game is, in the title: it weighs most in search results.
+  const title = t("title");
+  // Open Graph wants a region with the language.
+  const ogLocale = OG_LOCALES[locale] ?? locale;
+
   return {
     metadataBase: new URL(SITE_URL),
-    title: "Imperatle",
+    title,
     description: t("description"),
     alternates: {
       canonical: `/${locale}`,
@@ -44,16 +51,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     // The share image itself comes from opengraph-image.png and
     // twitter-image.png next to this layout; this adds the text around it.
     openGraph: {
-      title: "Imperatle",
+      title,
       description: t("description"),
       siteName: "Imperatle",
       type: "website",
-      locale,
+      locale: ogLocale,
       url: `/${locale}`,
     },
     twitter: {
       card: "summary_large_image",
-      title: "Imperatle",
+      title,
       description: t("description"),
     },
   };
