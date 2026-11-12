@@ -32,7 +32,8 @@
     "terms": "Terms",
     "version": "Version {version}",
     "changelog": "See what changed in each version",
-    "refunds": "Refunds"
+    "refunds": "Refunds",
+    "empires": "Empires"
   },
   "Game": {
     "attempts": "Attempts: {used}/{total}",
@@ -198,7 +199,8 @@
     },
     "precisionChip": "Borders: {value} precision",
     "sheetTitle": "Fact sheet",
-    "curiositiesTitle": "The curiosities"
+    "curiositiesTitle": "The curiosities",
+    "empirePage": "About this empire"
   },
   "HowToPlay": {
     "title": "How to play",
@@ -459,5 +461,13 @@
     "title": "Lost to history",
     "body": "This page fell with its empire, or it never existed. Today's challenge is still waiting.",
     "backToGame": "Back to the game"
+  },
+  "Empires": {
+    "indexTitle": "Empires in Imperatle",
+    "indexDescription": "Every empire and historical power in Imperatle, the daily history map game: fact sheets, summaries and curiosities.",
+    "indexIntro": "The {count} empires and historical powers that can show up in the game. Each page has the fact sheet and the curiosities you see at the end of a round.",
+    "backToList": "All empires",
+    "playToday": "Play today's challenge",
+    "loadError": "Couldn't load the list. Try again in a moment."
   }
 }

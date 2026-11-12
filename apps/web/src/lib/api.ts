@@ -4,6 +4,7 @@ import type {
   ArchiveList,
   ChallengeProgress,
   ChallengeReveal,
+  EmpireAnswer,
   EmpireSummary,
   GuessComparison,
   GuessResponse,
@@ -42,6 +43,21 @@ export async function getGuessShape(date: string, empireId: number): Promise<Mul
 export async function getEmpires(): Promise<EmpireSummary[]> {
   const res = await fetch(`${API_URL}/empires`, { cache: "no-store" });
   if (!res.ok) throw new Error(`Failed to load empires: ${res.status}`);
+  return res.json();
+}
+
+// The public empire pages (list, sitemap, one page each). Cached for an hour:
+// content changes only with a deploy.
+export async function getEmpireList(): Promise<EmpireSummary[]> {
+  const res = await fetch(`${API_URL}/empires`, { next: { revalidate: 3600 } });
+  if (!res.ok) throw new Error(`Failed to load empires: ${res.status}`);
+  return res.json();
+}
+
+export async function getEmpirePage(slug: string): Promise<EmpireAnswer | null> {
+  const res = await fetch(`${API_URL}/empires/${encodeURIComponent(slug)}`, { next: { revalidate: 3600 } });
+  if (res.status === 404) return null;
+  if (!res.ok) throw new Error(`Failed to load empire ${slug}: ${res.status}`);
   return res.json();
 }
 

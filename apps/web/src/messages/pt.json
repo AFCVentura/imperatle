@@ -32,7 +32,8 @@
     "terms": "Termos",
     "version": "Versão {version}",
     "changelog": "Ver o que mudou em cada versão",
-    "refunds": "Reembolso"
+    "refunds": "Reembolso",
+    "empires": "Impérios"
   },
   "Game": {
     "attempts": "Tentativas: {used}/{total}",
@@ -198,7 +199,8 @@
     },
     "precisionChip": "Fronteiras: precisão {value}",
     "sheetTitle": "Ficha completa",
-    "curiositiesTitle": "As curiosidades"
+    "curiositiesTitle": "As curiosidades",
+    "empirePage": "Sobre este império"
   },
   "HowToPlay": {
     "title": "Como jogar",
@@ -459,5 +461,13 @@
     "title": "Perdida na história",
     "body": "Esta página caiu junto com o seu império, ou nunca existiu. O desafio de hoje continua esperando.",
     "backToGame": "Voltar ao jogo"
+  },
+  "Empires": {
+    "indexTitle": "Impérios do Imperatle",
+    "indexDescription": "Todos os impérios e potências históricas do Imperatle, o jogo diário de história pelo mapa: fichas, resumos e curiosidades.",
+    "indexIntro": "Os {count} impérios e potências históricas que podem aparecer no jogo. Cada página tem a ficha completa e as curiosidades que aparecem no fim da rodada.",
+    "backToList": "Todos os impérios",
+    "playToday": "Jogar o desafio de hoje",
+    "loadError": "Não deu para carregar a lista. Tente de novo daqui a pouco."
   }
 }

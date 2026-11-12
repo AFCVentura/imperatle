@@ -420,6 +420,12 @@ export function PlayBoard({
           {session.endNote && <p className="mt-1 text-sm text-muted">{session.endNote}</p>}
           <div className="mt-3 flex flex-wrap items-center gap-2">
             {session.endActions?.(guesses)}
+            <Link
+              href={`/empires/${answer.slug}`}
+              className="inline-flex items-center rounded-full border border-line px-4 py-1.5 text-sm font-medium hover:bg-background"
+            >
+              {t("empirePage")}
+            </Link>
             {wikipediaUrl && (
               <a
                 href={wikipediaUrl}

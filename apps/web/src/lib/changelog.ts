@@ -48,6 +48,10 @@ export const RELEASES: Release[] = [
         en: "Pages that don't exist now show a page of their own, with the way back to the game.",
         pt: "Páginas que não existem agora mostram uma página própria, com o caminho de volta ao jogo.",
       },
+      {
+        en: "Every empire has its own page, with the fact sheet and the curiosities: \"Empires\" in the footer, or \"About this empire\" at the end of a round.",
+        pt: "Cada império ganhou uma página própria, com a ficha completa e as curiosidades: \"Impérios\" no rodapé, ou \"Sobre este império\" no fim da rodada.",
+      },
     ],
     fixes: [
       {

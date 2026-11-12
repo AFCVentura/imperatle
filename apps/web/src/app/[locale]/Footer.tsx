@@ -18,7 +18,10 @@ export async function Footer({ challengeNumber }: FooterProps) {
       <p className="font-display">{t("copyright", { year })}</p>
       {challengeNumber !== null && <p className="font-display">{t("challengeNumber", { number: challengeNumber })}</p>}
       <VersionButton label={t("version", { version: CURRENT_VERSION })} title={t("changelog")} />
-      <nav className="flex gap-4 text-xs">
+      <nav className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs">
+        <Link href="/empires" className="underline-offset-2 hover:text-foreground hover:underline">
+          {t("empires")}
+        </Link>
         <Link href="/privacy" className="underline-offset-2 hover:text-foreground hover:underline">
           {t("privacy")}
         </Link>

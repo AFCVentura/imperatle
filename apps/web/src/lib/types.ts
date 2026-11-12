@@ -52,6 +52,8 @@ export interface EmpireSummary {
   // Other names the search also matches (spellings, other languages, "China"
   // for a Chinese dynasty).
   aliases: string[];
+  // The empire's public page: /{locale}/empires/{slug}.
+  slug: string;
 }
 
 export interface EmpireHint {
