@@ -439,5 +439,10 @@
   },
   "Share": {
     "archiveTitle": "Archive #{number}"
+  },
+  "NotFound": {
+    "title": "Lost to history",
+    "body": "This page fell with its empire, or it never existed. Today's challenge is still waiting.",
+    "backToGame": "Back to the game"
   }
 }
