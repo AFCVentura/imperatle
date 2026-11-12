@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { useRouter } from "@/i18n/navigation";
 import {
   DailyNotFinishedError,
@@ -30,6 +30,7 @@ import {
 import { PlayBoard, type PlaySession } from "../GameBoard";
 import { PerkLocked, PerkMessage, PracticeNeedsDaily } from "../PerkLocked";
 import { AdaptiveHintsNote } from "./AdaptiveHintsNote";
+import { DAILY_ATTEMPTS } from "@/lib/clues";
 
 type View =
   | { status: "loading" }
@@ -313,7 +314,8 @@ function PracticeSetup({
             step={1}
             value={options.attempts}
             onChange={(e) => set("attempts", Number(e.target.value))}
-            className="w-full cursor-pointer accent-accent"
+            style={{ "--range-fill": `${((options.attempts - PRACTICE_MIN_ATTEMPTS) / (PRACTICE_MAX_ATTEMPTS - PRACTICE_MIN_ATTEMPTS)) * 100}%` } as CSSProperties}
+            className="range w-full cursor-pointer"
           />
           <div aria-hidden className="flex justify-between text-xs text-muted tabular-nums">
             <span>{PRACTICE_MIN_ATTEMPTS}</span>
@@ -322,6 +324,12 @@ function PracticeSetup({
         </div>
         <OptionGroup
           label={t("hints")}
+          // Only where it changes something: clues on, and not the daily 7.
+          labelExtra={
+            options.hints && options.attempts !== DAILY_ATTEMPTS ? (
+              <AdaptiveHintsNote attempts={options.attempts} adaptive={options.adaptiveHints} onChange={(v) => set("adaptiveHints", v)} />
+            ) : null
+          }
           info={t("hintsInfo")}
           value={options.hints}
           choices={[
@@ -330,9 +338,6 @@ function PracticeSetup({
           ]}
           onPick={(v) => set("hints", v)}
         />
-        {options.hints && (
-          <AdaptiveHintsNote attempts={options.attempts} adaptive={options.adaptiveHints} onChange={(v) => set("adaptiveHints", v)} />
-        )}
         <OptionGroup
           label={t("map")}
           info={t("mapInfo")}
@@ -427,12 +432,15 @@ function MultiOptionGroup({
 
 function OptionGroup<T extends string | number | boolean | null>({
   label,
+  labelExtra,
   info,
   value,
   choices,
   onPick,
 }: {
   label: string;
+  // Next to the label, e.g. an info button.
+  labelExtra?: ReactNode;
   info?: string;
   value: T;
   choices: { value: T; label: string }[];
@@ -440,7 +448,10 @@ function OptionGroup<T extends string | number | boolean | null>({
 }) {
   return (
     <div role="group" aria-label={label} className="flex flex-col gap-1.5">
-      <p className="font-display text-sm tracking-wide text-muted">{label}</p>
+      <div className="flex items-center gap-1.5">
+        <p className="font-display text-sm tracking-wide text-muted">{label}</p>
+        {labelExtra}
+      </div>
       <div className="flex flex-wrap gap-1.5">
         {choices.map((choice) => (
           <button

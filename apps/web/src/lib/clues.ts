@@ -15,6 +15,9 @@ export const CLUES: Clue[] = [
   { kind: "map", stage: "countries" },
 ];
 
+// One clue per wrong guess fits exactly: the daily game's 7 attempts.
+export const DAILY_ATTEMPTS = CLUES.length + 1;
+
 // The clue unlocked by wrong guess number n (1-based), if any.
 export const clueFor = (n: number): Clue | null => CLUES[n - 1] ?? null;
 
