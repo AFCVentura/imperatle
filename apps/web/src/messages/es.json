@@ -439,5 +439,10 @@
   },
   "Share": {
     "archiveTitle": "Archivo #{number}"
+  },
+  "NotFound": {
+    "title": "Perdida en la historia",
+    "body": "Esta página cayó junto con su imperio, o nunca existió. El desafío de hoy te sigue esperando.",
+    "backToGame": "Volver al juego"
   }
 }
