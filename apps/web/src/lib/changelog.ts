@@ -17,7 +17,7 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     version: "1.5.0",
-    date: "2026-11-11",
+    date: "2026-11-12",
     empires: [],
     features: [
       {
@@ -40,6 +40,14 @@ export const RELEASES: Release[] = [
         en: "Practice: pick several eras and continents at once, and the number of attempts on a slider. The menu's Practice entry opens the options.",
         pt: "Treino: dá para marcar várias épocas e continentes ao mesmo tempo, e escolher as tentativas num controle deslizante. O Treino no menu abre as opções.",
       },
+      {
+        en: "Practice: smart pacing spreads the six clues over the attempts you pick, so they all show up before the last one. On by default; the info icon next to Clues turns it off.",
+        pt: "Treino: a adaptação inteligente espalha as seis dicas pelas tentativas escolhidas, para que todas apareçam antes da última. Vem ligada; o ícone de informação ao lado de Dicas desliga.",
+      },
+      {
+        en: "Pages that don't exist now show a page of their own, with the way back to the game.",
+        pt: "Páginas que não existem agora mostram uma página própria, com o caminho de volta ao jogo.",
+      },
     ],
     fixes: [
       {
@@ -49,6 +57,10 @@ export const RELEASES: Release[] = [
       {
         en: "The outline of a country picked on the map no longer disappears in dark mode.",
         pt: "O contorno do país escolhido no mapa não some mais no modo escuro.",
+      },
+      {
+        en: "Five history slips fixed: the Ethiopian, First French, Ilkhanate, Safavid and Inca texts.",
+        pt: "Cinco deslizes históricos corrigidos: nos textos do Império Etíope, do Primeiro Império Francês, do Ilcanato, do Safávida e do Inca.",
       },
     ],
   },
