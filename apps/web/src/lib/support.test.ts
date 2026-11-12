@@ -69,6 +69,12 @@ describe("price in the dialog", () => {
     expect(guessCurrency(wide, "America/New_York")).toBe("usd");
     expect(formatPrice(wide, "jpy", "en")).toBe("¥700");
     expect(formatPrice(wide, "gbp", "en")).toBe("£3.99");
+    const more: SupportPrice = { ...wide, amounts: { ...wide.amounts!, try: 9900, clp: 2990, krw: 4900, huf: 149000, ars: 299000 } };
+    expect(guessCurrency(more, "Europe/Istanbul")).toBe("try");
+    expect(guessCurrency(more, "America/Argentina/Buenos_Aires")).toBe("ars");
+    expect(formatPrice(more, "clp", "en")).toBe("$2,990");
+    expect(formatPrice(more, "krw", "en")).toBe("₩4,900");
+    expect(formatPrice(more, "huf", "en")).toMatch(/^Ft\s1,490$/);
   });
 
   it("uses the default when the local currency isn't sold", () => {

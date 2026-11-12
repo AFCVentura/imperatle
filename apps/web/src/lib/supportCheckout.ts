@@ -40,7 +40,7 @@ const EURO_ZONES = new Set([
   "Atlantic/Madeira", "Atlantic/Canary", "Africa/Ceuta",
 ]);
 
-// The other currencies the price may list (GBP, CAD, AUD, MXN, JPY, INR).
+// The other currencies the price lists (see the Stripe price in stripe-setup.md).
 // A currency the price doesn't list falls back to the default.
 const OTHER_ZONES: Record<string, string> = {
   "Europe/London": "gbp", "Europe/Guernsey": "gbp", "Europe/Jersey": "gbp", "Europe/Isle_of_Man": "gbp",
@@ -57,6 +57,27 @@ const OTHER_ZONES: Record<string, string> = {
   "America/Mazatlan": "mxn", "America/Bahia_Banderas": "mxn", "America/Hermosillo": "mxn", "America/Tijuana": "mxn",
   "Asia/Tokyo": "jpy",
   "Asia/Kolkata": "inr", "Asia/Calcutta": "inr",
+  "Europe/Istanbul": "try", "Asia/Istanbul": "try",
+  "Europe/Warsaw": "pln",
+  "Europe/Kyiv": "uah", "Europe/Kiev": "uah", "Europe/Uzhgorod": "uah", "Europe/Zaporozhye": "uah",
+  "Europe/Bucharest": "ron",
+  "Europe/Budapest": "huf",
+  "Europe/Prague": "czk",
+  "Asia/Almaty": "kzt", "Asia/Qostanay": "kzt", "Asia/Aqtobe": "kzt", "Asia/Aqtau": "kzt", "Asia/Atyrau": "kzt",
+  "Asia/Oral": "kzt", "Asia/Qyzylorda": "kzt",
+  "America/Argentina/Buenos_Aires": "ars", "America/Buenos_Aires": "ars", "America/Argentina/Cordoba": "ars",
+  "America/Cordoba": "ars", "America/Argentina/Salta": "ars", "America/Argentina/Jujuy": "ars",
+  "America/Argentina/Tucuman": "ars", "America/Argentina/Catamarca": "ars", "America/Argentina/La_Rioja": "ars",
+  "America/Argentina/San_Juan": "ars", "America/Argentina/Mendoza": "ars", "America/Mendoza": "ars",
+  "America/Argentina/San_Luis": "ars", "America/Argentina/Rio_Gallegos": "ars", "America/Argentina/Ushuaia": "ars",
+  "America/Santiago": "clp", "America/Punta_Arenas": "clp", "Pacific/Easter": "clp",
+  "America/Bogota": "cop",
+  "America/Lima": "pen",
+  "Asia/Seoul": "krw",
+  "Asia/Manila": "php",
+  "Asia/Jakarta": "idr", "Asia/Pontianak": "idr", "Asia/Makassar": "idr", "Asia/Jayapura": "idr",
+  "Asia/Kuala_Lumpur": "myr", "Asia/Kuching": "myr",
+  "Africa/Johannesburg": "zar",
 };
 
 function localCurrency(timeZone: string | undefined): string | null {
@@ -86,6 +107,11 @@ export function formatPrice(price: SupportPrice, currency: string | null, locale
   return new Intl.NumberFormat(locale === "pt" ? "pt-BR" : "en-US", {
     style: "currency",
     currency: currency.toUpperCase(),
+    // The local sign ("$", "Ft", "₺") rather than a code like "CLP"; the
+    // dollar keeps "US$" in Portuguese, where "$" alone could be anything.
+    currencyDisplay: currency === "usd" ? "symbol" : "narrowSymbol",
+    // "₺99", not "₺99.00".
+    trailingZeroDisplay: "stripIfInteger",
   }).format(ZERO_DECIMAL.has(currency) ? amount : amount / 100);
 }
 
