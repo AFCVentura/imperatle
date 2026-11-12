@@ -21,10 +21,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const empire = await getEmpirePage(slug).catch(() => null);
   if (!empire) return { title: "Imperatle" };
-  const name = pickLocalized(empire.nameEn, empire.namePt, locale);
+  const name = pickLocalized(empire.nameEn, empire.namePt, locale, empire.nameEs);
   return {
     title: `${name} · Imperatle`,
-    description: shortDescription(pickLocalized(empire.summaryEn ?? "", empire.summaryPt ?? "", locale)),
+    description: shortDescription(pickLocalized(empire.summaryEn ?? "", empire.summaryPt ?? "", locale, empire.summaryEs)),
     alternates: {
       canonical: `/${locale}/empires/${slug}`,
       languages: Object.fromEntries(routing.locales.map((l) => [l, `/${l}/empires/${slug}`])),
@@ -44,8 +44,8 @@ export default async function EmpirePage({ params }: Props) {
   const empire = await getEmpirePage(slug);
   if (!empire) notFound();
 
-  const name = pickLocalized(empire.nameEn, empire.namePt, locale);
-  const wikipedia = pickLocalized(empire.wikipediaEn ?? "", empire.wikipediaPt ?? "", locale);
+  const name = pickLocalized(empire.nameEn, empire.namePt, locale, empire.nameEs);
+  const wikipedia = pickLocalized(empire.wikipediaEn ?? "", empire.wikipediaPt ?? "", locale, empire.wikipediaEs);
 
   return (
     <article className="mx-auto flex w-full max-w-md flex-col gap-4 px-4 pt-4 pb-10">

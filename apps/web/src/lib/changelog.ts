@@ -76,6 +76,7 @@ export const RELEASES: Release[] = [
       {
         en: "Every empire has its own page, with the fact sheet and the curiosities: \"Empires\" in the footer, or \"About this empire\" at the end of a round.",
         pt: "Cada império ganhou uma página própria, com a ficha completa e as curiosidades: \"Impérios\" no rodapé, ou \"Sobre este império\" no fim da rodada.",
+        es: "Cada imperio tiene su propia página, con la ficha completa y las curiosidades: \"Imperios\" en el pie de página, o \"Sobre este imperio\" al final de la ronda.",
       },
     ],
     fixes: [

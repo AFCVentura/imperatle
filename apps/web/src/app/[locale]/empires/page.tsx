@@ -39,7 +39,7 @@ export default async function EmpiresIndex({ params }: Props) {
     empires = null;
   }
   const named = (empires ?? [])
-    .map((e) => ({ slug: e.slug, name: pickLocalized(e.nameEn, e.namePt, locale) }))
+    .map((e) => ({ slug: e.slug, name: pickLocalized(e.nameEn, e.namePt, locale, e.nameEs) }))
     .sort((a, b) => a.name.localeCompare(b.name, locale));
 
   return (
