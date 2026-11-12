@@ -16,6 +16,19 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    version: "1.6.1",
+    date: "2026-11-12",
+    empires: [],
+    features: [],
+    fixes: [
+      {
+        en: "The site icon has a brown background, so it stands out on white and dark pages, like search results.",
+        pt: "O ícone do site ganhou fundo marrom, para aparecer bem em páginas brancas e escuras, como os resultados de busca.",
+        es: "El icono del sitio tiene fondo marrón, para verse bien en páginas blancas y oscuras, como los resultados de búsqueda.",
+      },
+    ],
+  },
+  {
     version: "1.6.0",
     date: "2026-11-12",
     empires: [],

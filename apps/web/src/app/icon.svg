@@ -22,6 +22,8 @@
       <circle cx="50" cy="62" r="19" fill="#000"/>
     </mask>
   </defs>
+  <!-- Brown tile behind the gem, so the icon reads on white and dark search pages alike. -->
+  <rect x="-20" y="0" width="140" height="140" rx="30" fill="#432818"/>
 
   <g mask="url(#hole)">
   <!-- Bisel externo: 4 faixas entre o losango de fora e o de dentro -->
