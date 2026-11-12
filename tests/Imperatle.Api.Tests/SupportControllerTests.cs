@@ -23,13 +23,18 @@ public class SupportControllerTests
     {
         public SupporterCheckoutRequest? LastRequest { get; private set; }
         public bool Fail { get; init; }
+        // A network failure (Stripe unreachable), not a Stripe error.
+        public bool Offline { get; init; }
 
-        public Task<SupporterPrice?> GetPriceAsync(CancellationToken ct = default) => Fail
+        public Task<SupporterPrice?> GetPriceAsync(CancellationToken ct = default) => Offline
+            ? throw new HttpRequestException("api.stripe.com:443 timed out")
+            : Fail
             ? throw new StripeException("down")
             : Task.FromResult<SupporterPrice?>(new SupporterPrice("usd", new Dictionary<string, long> { ["usd"] = 499, ["brl"] = 990 }));
 
         public Task<string> CreateSessionAsync(SupporterCheckoutRequest request, CancellationToken ct = default)
         {
+            if (Offline) throw new HttpRequestException("api.stripe.com:443 timed out");
             if (Fail) throw new StripeException("down");
             LastRequest = request;
             return Task.FromResult("https://checkout.stripe.com/c/pay/cs_test_1");
@@ -152,6 +157,21 @@ public class SupportControllerTests
         await using var db = PerksTestSupport.NewDb();
         var user = await AddUserAsync(db);
         var controller = Controller(db, new Player(user.Id), new FakeCheckout { Fail = true });
+
+        var checkout = await controller.Checkout(new SupportCheckoutRequest("en"), TestContext.Current.CancellationToken);
+        var price = await controller.Price(TestContext.Current.CancellationToken);
+
+        Assert.Equal(StatusCodes.Status502BadGateway, Assert.IsType<StatusCodeResult>(checkout).StatusCode);
+        Assert.True(price.Available);
+        Assert.Null(price.Amounts);
+    }
+
+    [Fact]
+    public async Task Stripe_unreachable_still_offers_the_purchase_without_the_amount()
+    {
+        await using var db = PerksTestSupport.NewDb();
+        var user = await AddUserAsync(db);
+        var controller = Controller(db, new Player(user.Id), new FakeCheckout { Offline = true });
 
         var checkout = await controller.Checkout(new SupportCheckoutRequest("en"), TestContext.Current.CancellationToken);
         var price = await controller.Price(TestContext.Current.CancellationToken);

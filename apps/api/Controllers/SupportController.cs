@@ -29,6 +29,8 @@ public class SupportController(
 {
     // Available = the purchase is configured; Amounts null = Stripe didn't
     // answer, the dialog shows the purchase without the amount.
+    private static readonly TimeSpan PriceTimeout = TimeSpan.FromSeconds(8);
+
     [HttpGet("price")]
     public async Task<SupportPriceResponse> Price(CancellationToken ct)
     {
@@ -37,13 +39,19 @@ public class SupportController(
             return new SupportPriceResponse(false, null, null);
         }
 
+        // Stripe unreachable or slow (seen locally on 12/11: the call hung for
+        // over a minute and ended in a 500): the dialog still offers the
+        // purchase, just without the amount. Short timeout so it doesn't wait.
+        using var timeout = CancellationTokenSource.CreateLinkedTokenSource(ct);
+        timeout.CancelAfter(PriceTimeout);
         try
         {
-            var price = await checkout.GetPriceAsync(ct);
+            var price = await checkout.GetPriceAsync(timeout.Token);
             Response.Headers.CacheControl = "public, max-age=300";
             return new SupportPriceResponse(true, price?.DefaultCurrency, price?.Amounts);
         }
-        catch (StripeException e)
+        catch (Exception e) when (e is StripeException or HttpRequestException
+            || (e is OperationCanceledException && !ct.IsCancellationRequested))
         {
             logger.LogWarning(e, "Could not read the Supporter price from Stripe");
             return new SupportPriceResponse(true, null, null);
@@ -89,7 +97,7 @@ public class SupportController(
                 CancelUrl: $"{origin}/{locale}?support=1"), ct);
             return Ok(new SupportCheckoutResponse(url));
         }
-        catch (StripeException e)
+        catch (Exception e) when (e is StripeException or HttpRequestException)
         {
             logger.LogError(e, "Could not create the Stripe Checkout session for user {UserId}", user.Id);
             return StatusCode(StatusCodes.Status502BadGateway);
