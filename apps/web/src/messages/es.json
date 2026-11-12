@@ -72,7 +72,8 @@
       "unlockedAt": "Desbloqueado en el intento {n}",
       "showNote": "Ver nota",
       "lifespan": "Período",
-      "notes": "Nota"
+      "notes": "Nota",
+      "unlockedAtEnd": "Desbloqueado al final"
     },
     "enums": {
       "broadEra": {
@@ -435,7 +436,20 @@
     "attemptsShort": "{count} intentos",
     "dailyFirstTitle": "Primero, el desafío de hoy",
     "dailyFirstText": "Termina el desafío de hoy para desbloquear la práctica. Así la práctica nunca revela la respuesta del día.",
-    "dailyFirstButton": "Jugar el desafío de hoy"
+    "dailyFirstButton": "Jugar el desafío de hoy",
+    "adaptive": {
+      "label": "Ritmo inteligente",
+      "on": "activado",
+      "off": "desactivado",
+      "title": "Ritmo inteligente de las pistas",
+      "body": "Reparte las 6 pistas entre los intentos que elegiste, para que todas aparezcan antes del último.",
+      "switch": "Activar",
+      "same": "Con {count} intentos no cambia nada: una pista por fallo, como en el juego diario.",
+      "fewOn": "Con {count} intentos, cada fallo desbloquea más de una pista.",
+      "fewOff": "Desactivado, con {count} intentos solo ves las {shown} primeras pistas.",
+      "manyOn": "Con {count} intentos, las pistas se espacian y la última llega con el último fallo.",
+      "manyOff": "Desactivado, con {count} intentos las pistas se acaban en el fallo {last} y los últimos intentos no traen nada nuevo."
+    }
   },
   "Share": {
     "archiveTitle": "Archivo #{number}"
