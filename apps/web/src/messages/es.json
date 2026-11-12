@@ -33,7 +33,8 @@
     "version": "Versión {version}",
     "changelog": "Ver qué cambió en cada versión",
     "refunds": "Reembolsos",
-    "empires": "Imperios"
+    "empires": "Imperios",
+    "about": "Sobre"
   },
   "Game": {
     "attempts": "Intentos: {used}/{total}",
@@ -323,7 +324,8 @@
     "mistakesLink": "Envíanos un comentario.",
     "authorTitle": "Quién lo hizo",
     "author": "Hecho por <link>Ventura</link>, desarrollador brasileño.",
-    "stack": "Next.js, ASP.NET Core y PostgreSQL."
+    "stack": "Next.js, ASP.NET Core y PostgreSQL.",
+    "more": "Más sobre el juego"
   },
   "Changelog": {
     "title": "Historial de versiones",
@@ -469,5 +471,49 @@
     "backToList": "Todos los imperios",
     "playToday": "Jugar el desafío de hoy",
     "loadError": "No se pudo cargar la lista. Inténtalo de nuevo en un momento."
+  },
+  "AboutPage": {
+    "title": "Sobre Imperatle",
+    "description": "Qué es Imperatle, el juego diario de adivinar imperios por el mapa: cómo funciona, preguntas frecuentes, fuentes de los mapas y quién lo hizo.",
+    "intro1": "Imperatle es un juego diario de historia y geografía. Cada día, un imperio u otra potencia histórica aparece en el mapa, en el auge de su expansión, y tienes 7 intentos para descubrir cuál es.",
+    "intro2": "Son {count} imperios y potencias, de la Antigüedad al siglo XX: de Roma, Persia y la China de los Han a los mongoles, los incas, el Imperio jemer y los imperios coloniales europeos. El juego es gratis, no pide registro y está en español, portugués e inglés.",
+    "howTitle": "Cómo funciona",
+    "how": "Cada intento fallido compara tu respuesta con la solución: si era más grande o más pequeña en su auge, si es más antigua o más reciente, y a qué distancia y en qué dirección está. Cada fallo también desbloquea una pista: primero la época, después el mapa con los continentes, tres curiosidades y, al final, el mapa con los países actuales. Al terminar la ronda aparece la ficha completa de la respuesta, con capital, idioma, religión, fechas, área y el contexto histórico.",
+    "faqTitle": "Preguntas frecuentes",
+    "faq": {
+      "free": {
+        "q": "¿Imperatle es gratis?",
+        "a": "Sí. El desafío del día es gratis para siempre. Quien quiera apoyar el proyecto hace un pago único y obtiene el modo práctica y los juegos anteriores."
+      },
+      "account": {
+        "q": "¿Necesito crear una cuenta?",
+        "a": "No. Sin cuenta, tu progreso y tus estadísticas se quedan en el navegador. Entrar con Google sirve para guardar las estadísticas y ver las mismas en el móvil y en el ordenador."
+      },
+      "when": {
+        "q": "¿Cuándo sale un desafío nuevo?",
+        "a": "Cada día, a medianoche en horario de Brasilia (3:00 UTC)."
+      },
+      "powers": {
+        "q": "¿Por qué \"imperios y otras potencias\"?",
+        "a": "Porque no toda gran potencia de la historia se llamaba imperio: hay califatos, dinastías, reinos y repúblicas, como el Califato abasí, la dinastía Song y la República de las Dos Naciones."
+      },
+      "maps": {
+        "q": "¿De dónde salen los mapas?",
+        "a": "Las fronteras históricas están adaptadas de Cliopatria (Seshat Global History Databank) y el mapa del mundo viene de Natural Earth. Las fronteras antiguas siempre son aproximadas, y cada mapa indica su propia precisión."
+      },
+      "more": {
+        "q": "¿Puedo jugar los días anteriores o practicar?",
+        "a": "Sí, como mecenas: los juegos anteriores traen el desafío de cualquier día pasado, y el modo práctica sortea imperios cuantas veces quieras, con filtros de época, continente y dificultad, sin tocar tus estadísticas."
+      },
+      "list": {
+        "q": "¿Hay una lista de los imperios del juego?",
+        "a": "Sí, en la página <link>Imperios</link>, con la ficha y las curiosidades de cada uno."
+      },
+      "mistake": {
+        "q": "Encontré un error. ¿Cómo aviso?",
+        "a": "Con el botón de comentarios del menú. Toda corrección histórica es bienvenida."
+      }
+    },
+    "play": "Jugar el desafío de hoy"
   }
 }

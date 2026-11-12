@@ -33,7 +33,8 @@
     "version": "Versão {version}",
     "changelog": "Ver o que mudou em cada versão",
     "refunds": "Reembolso",
-    "empires": "Impérios"
+    "empires": "Impérios",
+    "about": "Sobre"
   },
   "Game": {
     "attempts": "Tentativas: {used}/{total}",
@@ -323,7 +324,8 @@
     "mistakesLink": "Mande um feedback.",
     "authorTitle": "Quem fez",
     "author": "Feito por <link>Ventura</link>, desenvolvedor brasileiro.",
-    "stack": "Next.js, ASP.NET Core e PostgreSQL."
+    "stack": "Next.js, ASP.NET Core e PostgreSQL.",
+    "more": "Mais sobre o jogo"
   },
   "Changelog": {
     "title": "Histórico de versões",
@@ -469,5 +471,49 @@
     "backToList": "Todos os impérios",
     "playToday": "Jogar o desafio de hoje",
     "loadError": "Não deu para carregar a lista. Tente de novo daqui a pouco."
+  },
+  "AboutPage": {
+    "title": "Sobre o Imperatle",
+    "description": "O que é o Imperatle, o jogo diário de adivinhar impérios pelo mapa: como funciona, perguntas frequentes, fontes dos mapas e quem fez.",
+    "intro1": "O Imperatle é um jogo diário de história e geografia. Todo dia, um império ou outra potência histórica aparece no mapa, retratado no auge da sua expansão, e você tem 7 tentativas para descobrir qual é.",
+    "intro2": "São {count} impérios e potências, da Antiguidade ao século 20: de Roma, da Pérsia e da China dos Han aos mongóis, aos incas, ao Império Khmer e aos impérios coloniais europeus. O jogo é gratuito, não exige cadastro e está em português, inglês e espanhol.",
+    "howTitle": "Como funciona",
+    "how": "Cada palpite errado compara o seu chute com a resposta: se ela era maior ou menor no auge, se é mais antiga ou mais recente, e a que distância e em que direção fica. Cada erro também libera uma dica: primeiro a era, depois o mapa com os continentes, três curiosidades e, por fim, o mapa com os países atuais. No fim da rodada aparece a ficha completa da resposta, com capital, idioma, religião, datas, área e o contexto histórico.",
+    "faqTitle": "Perguntas frequentes",
+    "faq": {
+      "free": {
+        "q": "O Imperatle é grátis?",
+        "a": "Sim. O desafio do dia é gratuito para sempre. Quem quiser apoiar o projeto faz um pagamento único e ganha o modo treino e os jogos anteriores."
+      },
+      "account": {
+        "q": "Preciso criar uma conta?",
+        "a": "Não. Sem conta, seu progresso e suas estatísticas ficam no navegador. Entrar com o Google serve para guardar as estatísticas e ver as mesmas no celular e no computador."
+      },
+      "when": {
+        "q": "Quando sai um desafio novo?",
+        "a": "Todo dia, à meia-noite no horário de Brasília (3h em UTC)."
+      },
+      "powers": {
+        "q": "Por que \"impérios e outras potências\"?",
+        "a": "Porque nem toda grande potência da história se chamava império: há califados, dinastias, reinos e repúblicas, como o Califado Abássida, a Dinastia Song e a República das Duas Nações."
+      },
+      "maps": {
+        "q": "De onde vêm os mapas?",
+        "a": "As fronteiras históricas são adaptadas do Cliopatria (Seshat Global History Databank) e o mapa do mundo vem do Natural Earth. Fronteiras antigas são sempre aproximadas, e cada mapa indica a própria precisão."
+      },
+      "more": {
+        "q": "Posso jogar os dias anteriores ou treinar?",
+        "a": "Sim, como apoiador: os jogos anteriores trazem o desafio de qualquer dia que já passou, e o modo treino sorteia impérios à vontade, com filtros de época, continente e dificuldade, sem mexer nas suas estatísticas."
+      },
+      "list": {
+        "q": "Existe uma lista dos impérios do jogo?",
+        "a": "Sim, na página <link>Impérios</link>, com a ficha e as curiosidades de cada um."
+      },
+      "mistake": {
+        "q": "Achei um erro. Como aviso?",
+        "a": "Pelo botão de feedback no menu. Toda correção histórica é bem-vinda."
+      }
+    },
+    "play": "Jogar o desafio de hoje"
   }
 }

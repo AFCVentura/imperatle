@@ -16,6 +16,19 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    version: "1.7.0",
+    date: "2026-11-12",
+    empires: [],
+    features: [
+      {
+        en: "An About page with frequently asked questions, in the footer and at the end of the menu's About window.",
+        pt: "Página Sobre com perguntas frequentes, no rodapé e no fim da janela Sobre do menu.",
+        es: "Una página Sobre con preguntas frecuentes, en el pie de página y al final de la ventana Sobre del menú.",
+      },
+    ],
+    fixes: [],
+  },
+  {
     version: "1.6.1",
     date: "2026-11-12",
     empires: [],

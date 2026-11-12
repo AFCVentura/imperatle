@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { ABOUT_EVENT, openFeedback } from "@/lib/dialogs";
 import { AppDialog } from "./AppDialog";
 
@@ -50,6 +51,15 @@ export function AboutDialog() {
         </p>
         <p className="text-xs text-muted">{t("stack")}</p>
       </section>
+
+      {/* The full About page (FAQ, how it works); closes this window on the way. */}
+      <Link
+        href="/about"
+        onClick={(e) => e.currentTarget.closest("dialog")?.close()}
+        className="self-start font-semibold text-highlight underline underline-offset-2"
+      >
+        {t("more")}
+      </Link>
     </AppDialog>
   );
 }
