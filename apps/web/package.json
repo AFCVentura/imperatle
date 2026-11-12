@@ -46,6 +46,6 @@
     "topojson-server": "^3.0.1",
     "topojson-simplify": "^3.0.3",
     "typescript": "^5",
-    "vitest": "^4.1.11"
+    "vitest": "^5.1.0"
   }
 }
