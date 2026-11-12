@@ -72,7 +72,8 @@
       "unlockedAt": "Unlocked on attempt {n}",
       "showNote": "Show note",
       "lifespan": "Period",
-      "notes": "Note"
+      "notes": "Note",
+      "unlockedAtEnd": "Unlocked at the end"
     },
     "enums": {
       "broadEra": {
@@ -435,7 +436,20 @@
     "attemptsShort": "{count} attempts",
     "dailyFirstTitle": "Today's challenge first",
     "dailyFirstText": "Finish today's challenge to unlock practice. That way practice never gives away today's answer.",
-    "dailyFirstButton": "Play today's challenge"
+    "dailyFirstButton": "Play today's challenge",
+    "adaptive": {
+      "label": "Smart pacing",
+      "on": "on",
+      "off": "off",
+      "title": "Smart clue pacing",
+      "body": "Spreads the 6 clues over the attempts you picked, so they all show up before the last one.",
+      "switch": "Turn on",
+      "same": "With {count} attempts nothing changes: one clue per miss, like the daily game.",
+      "fewOn": "With {count} attempts, each miss unlocks more than one clue.",
+      "fewOff": "Off, with {count} attempts you only see the first {shown} clues.",
+      "manyOn": "With {count} attempts, the clues are spaced out and the last one comes with the last miss.",
+      "manyOff": "Off, with {count} attempts the clues run out at miss {last} and the last attempts bring nothing new."
+    }
   },
   "Share": {
     "archiveTitle": "Archive #{number}"

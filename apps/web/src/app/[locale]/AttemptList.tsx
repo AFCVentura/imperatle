@@ -7,7 +7,7 @@ import { flatBearing } from "@/lib/flatBearing";
 import { pickLocalized } from "@/lib/pickLocalized";
 import type { ComparisonResult } from "@/lib/types";
 import { useTooltip } from "@/lib/useTooltip";
-import { clueFor, type RevealedClues } from "@/lib/clues";
+import { cluesUnlockedBy, type Clue, type RevealedClues } from "@/lib/clues";
 import { activateOnKey, ClueRow, useClueName } from "./Clues";
 import { GuessSwatch } from "./MapChips";
 import type { MapView } from "@/map/EmpireMap";
@@ -20,6 +20,8 @@ interface AttemptListProps {
   gameOver: boolean;
   // Practice option: wrong guesses unlock no clues.
   hintsOff?: boolean;
+  // Practice option: the clues spread over the attempts (lib/clues, clueStep).
+  adaptiveHints?: boolean;
   // The guess drawn over the map (index into guesses), or null; clicking a
   // wrong guess's name picks it (or hides it, if it's the one drawn).
   outlined?: number | null;
@@ -38,19 +40,20 @@ const COMPARISON_ARROW: Record<ComparisonResult, string> = {
 // (click: outline it on the map), how the answer compares with it (area,
 // era, distance), and the one clue it unlocked. Unused slots come last, each
 // saying which clue it would unlock, so the whole board is visible upfront.
-export function AttemptList({ guesses, attemptsAllowed, revealed, gameOver, hintsOff = false, outlined = null, onOutline, mapView = "flat" }: AttemptListProps) {
+export function AttemptList({ guesses, attemptsAllowed, revealed, gameOver, hintsOff = false, adaptiveHints = false, outlined = null, onOutline, mapView = "flat" }: AttemptListProps) {
   const t = useTranslations("Game");
   const clueName = useClueName();
 
   // Wrong guess n unlocks clue n; a correct guess unlocks nothing.
   const wrongNumberOf = guesses.map((_, i) => guesses.slice(0, i + 1).filter((g) => !g.correct).length);
   const wrongSoFar = guesses.filter((g) => !g.correct).length;
+  const unlockedBy = (n: number): Clue[] => cluesUnlockedBy(n, attemptsAllowed, adaptiveHints);
 
   const emptySlots = gameOver
     ? []
     : Array.from({ length: Math.max(0, attemptsAllowed - guesses.length) }, (_, i) => {
         const number = guesses.length + i + 1;
-        return { number, clue: hintsOff ? null : clueFor(wrongSoFar + i + 1) };
+        return { number, clues: hintsOff ? [] : unlockedBy(wrongSoFar + i + 1) };
       });
 
   return (
@@ -59,7 +62,7 @@ export function AttemptList({ guesses, attemptsAllowed, revealed, gameOver, hint
         .map((guess, i) => ({ guess, index: i }))
         .reverse()
         .map(({ guess, index }) => {
-          const clue = guess.correct || hintsOff ? null : clueFor(wrongNumberOf[index]);
+          const clues = guess.correct || hintsOff ? [] : unlockedBy(wrongNumberOf[index]);
           return guess.correct ? (
             <CorrectGuess key={index} guess={guess} number={index + 1} />
           ) : (
@@ -69,7 +72,15 @@ export function AttemptList({ guesses, attemptsAllowed, revealed, gameOver, hint
               number={index + 1}
               outlined={outlined === index}
               onOutline={onOutline ? () => onOutline(index) : undefined}
-              clue={clue ? <ClueRow clue={clue} revealed={revealed} /> : null}
+              clue={
+                clues.length > 0 ? (
+                  <div className="divide-y divide-line">
+                    {clues.map((clue) => (
+                      <ClueRow key={clueName(clue)} clue={clue} revealed={revealed} />
+                    ))}
+                  </div>
+                ) : null
+              }
               mapView={mapView}
             />
           );
@@ -77,7 +88,7 @@ export function AttemptList({ guesses, attemptsAllowed, revealed, gameOver, hint
 
       {emptySlots.length > 0 && (
         <div className="flex flex-col gap-1">
-          {emptySlots.map(({ number, clue }) => (
+          {emptySlots.map(({ number, clues }) => (
             <div
               key={number}
               className="flex h-7 items-center overflow-hidden rounded-full border border-dashed border-line text-xs"
@@ -85,8 +96,8 @@ export function AttemptList({ guesses, attemptsAllowed, revealed, gameOver, hint
               <span className="flex w-7 shrink-0 items-center justify-center text-muted/60">{number}</span>
               <span className="min-w-0 flex-1 px-1">
                 <MarqueeText className="text-muted/70">
-                  {clue
-                    ? t("unlocksLabel", { fields: clueName(clue) })
+                  {clues.length > 0
+                    ? t("unlocksLabel", { fields: clues.map(clueName).join(", ") })
                     : number === attemptsAllowed
                       ? t("lastAttempt")
                       : hintsOff

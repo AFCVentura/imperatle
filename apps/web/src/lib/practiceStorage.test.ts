@@ -4,7 +4,7 @@ import { DEFAULT_PRACTICE_OPTIONS } from "./types";
 
 describe("sanitizePracticeOptions", () => {
   it("keeps valid options", () => {
-    const options = { difficulty: "Hard", attempts: 4, hints: false, map: "Outline", eras: [0, 2], continents: [5] } as const;
+    const options = { difficulty: "Hard", attempts: 4, hints: false, map: "Outline", eras: [0, 2], continents: [5], adaptiveHints: false } as const;
     expect(sanitizePracticeOptions(options)).toEqual(options);
   });
 
@@ -14,6 +14,7 @@ describe("sanitizePracticeOptions", () => {
       sanitizePracticeOptions({ difficulty: "Insane", attempts: 99, hints: "yes", map: "3D", eras: [7, "x"], continents: [-1] }),
     ).toEqual(DEFAULT_PRACTICE_OPTIONS);
     expect(sanitizePracticeOptions({ attempts: 10 }).attempts).toBe(10);
+    expect(sanitizePracticeOptions({ adaptiveHints: "no" }).adaptiveHints).toBe(true);
     expect(sanitizePracticeOptions({ attempts: 2 }).attempts).toBe(DEFAULT_PRACTICE_OPTIONS.attempts);
     expect(sanitizePracticeOptions({ attempts: 6.5 }).attempts).toBe(DEFAULT_PRACTICE_OPTIONS.attempts);
   });

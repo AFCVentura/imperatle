@@ -29,6 +29,7 @@ import {
 } from "@/lib/types";
 import { PlayBoard, type PlaySession } from "../GameBoard";
 import { PerkLocked, PerkMessage, PracticeNeedsDaily } from "../PerkLocked";
+import { AdaptiveHintsNote } from "./AdaptiveHintsNote";
 
 type View =
   | { status: "loading" }
@@ -177,6 +178,8 @@ export function PracticeClient({ empires, openSetup }: { empires: EmpireSummary[
     submit: (empireId) => submitPracticeGuess(round.id, empireId),
     save: (progress) => savePracticeRound({ id: round.id, progress }),
     hints: roundOptions.hints,
+    // Rounds started before the option existed come back without it.
+    adaptiveHints: roundOptions.adaptiveHints ?? false,
     mapMode: roundOptions.map,
     endNote: t("endNote"),
     endActions: () => (
@@ -327,6 +330,9 @@ function PracticeSetup({
           ]}
           onPick={(v) => set("hints", v)}
         />
+        {options.hints && (
+          <AdaptiveHintsNote attempts={options.attempts} adaptive={options.adaptiveHints} onChange={(v) => set("adaptiveHints", v)} />
+        )}
         <OptionGroup
           label={t("map")}
           info={t("mapInfo")}

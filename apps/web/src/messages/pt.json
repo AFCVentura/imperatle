@@ -72,7 +72,8 @@
       "unlockedAt": "Liberado na tentativa {n}",
       "showNote": "Mostrar observação",
       "lifespan": "Período",
-      "notes": "Observação"
+      "notes": "Observação",
+      "unlockedAtEnd": "Liberado no fim"
     },
     "enums": {
       "broadEra": {
@@ -435,7 +436,20 @@
     "attemptsShort": "{count} tentativas",
     "dailyFirstTitle": "Primeiro, o desafio de hoje",
     "dailyFirstText": "Termine o desafio de hoje pra liberar o treino. Assim o treino nunca entrega a resposta do dia.",
-    "dailyFirstButton": "Jogar o desafio de hoje"
+    "dailyFirstButton": "Jogar o desafio de hoje",
+    "adaptive": {
+      "label": "Adaptação inteligente",
+      "on": "ligada",
+      "off": "desligada",
+      "title": "Adaptação inteligente das dicas",
+      "body": "Espalha as 6 dicas pelas tentativas que você escolheu, para que todas apareçam antes da última.",
+      "switch": "Ativar",
+      "same": "Com {count} tentativas não muda nada: é uma dica por erro, como no jogo diário.",
+      "fewOn": "Com {count} tentativas, cada erro libera mais de uma dica.",
+      "fewOff": "Desligada, com {count} tentativas você só vê as {shown} primeiras dicas.",
+      "manyOn": "Com {count} tentativas, as dicas ficam mais espaçadas e a última chega no último erro.",
+      "manyOff": "Desligada, com {count} tentativas as dicas acabam no {last}º erro e as últimas tentativas não trazem nada novo."
+    }
   },
   "Share": {
     "archiveTitle": "Arquivo #{number}"

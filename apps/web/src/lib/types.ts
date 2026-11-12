@@ -293,6 +293,8 @@ export interface PracticeOptions {
   map: PracticeMapMode;
   eras: number[];
   continents: number[];
+  // The clues spread over the attempts (lib/clues, clueStep).
+  adaptiveHints: boolean;
 }
 
 export const DEFAULT_PRACTICE_OPTIONS: PracticeOptions = {
@@ -302,6 +304,7 @@ export const DEFAULT_PRACTICE_OPTIONS: PracticeOptions = {
   map: "Progressive",
   eras: [],
   continents: [],
+  adaptiveHints: true,
 };
 
 export interface PracticeSession {

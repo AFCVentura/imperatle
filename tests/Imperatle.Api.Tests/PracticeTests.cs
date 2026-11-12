@@ -45,6 +45,7 @@ public class PracticeTests
         Assert.Equal([BroadEra.Antiquity, BroadEra.Modern], read.Eras);
         Assert.Empty(read.Continents!);
         Assert.Equal(new PracticeOptions(), JsonSerializer.Deserialize<PracticeOptions>("{}", web));
+        Assert.True(new PracticeOptions().AdaptiveHints);
     }
 
     [Fact]
@@ -216,6 +217,41 @@ public class PracticeTests
         Assert.True(last.GameOver);
         Assert.Equal(answer.Id, last.Answer!.Id);
         Assert.Equal(answer.Id, Started(await controller.Get(session.Id, Ct)).Answer!.Id);
+    }
+
+    // Adaptive clues: the six clues spread so the last one comes with the
+    // last wrong guess. 7 attempts = the daily game's one per error.
+    [Theory]
+    [InlineData(3, true, new[] { 3, 6 })]
+    [InlineData(4, true, new[] { 2, 4, 6 })]
+    [InlineData(5, true, new[] { 2, 3, 5, 6 })]
+    [InlineData(7, true, new[] { 1, 2, 3, 4, 5, 6 })]
+    [InlineData(10, true, new[] { 1, 1, 2, 3, 3, 4, 5, 5, 6 })]
+    [InlineData(3, false, new[] { 1, 2 })]
+    [InlineData(10, false, new[] { 1, 2, 3, 4, 5, 6, 6, 6, 6 })]
+    public void Clues_out_after_each_wrong_guess(int attempts, bool adaptive, int[] expected)
+    {
+        var steps = Enumerable.Range(1, attempts - 1).Select(w => PracticeRules.ClueStep(w, attempts, adaptive));
+        Assert.Equal(expected, steps);
+        Assert.Equal(0, PracticeRules.ClueStep(0, attempts, adaptive));
+    }
+
+    [Fact]
+    public async Task Adaptive_clues_with_3_attempts_give_the_first_curiosity_on_the_first_error()
+    {
+        var (controller, _, empires, db) = await SetupAsync();
+        await using var _ = db;
+
+        foreach (var adaptive in new[] { true, false })
+        {
+            var round = Started(await controller.Start(new PracticeOptions(Attempts: 3, AdaptiveHints: adaptive), Ct));
+            Assert.Equal(adaptive, round.Options.AdaptiveHints);
+            var answerId = (await db.PracticeSessions.SingleAsync(s => s.Id == round.Id, Ct)).EmpireId;
+            var wrong = empires.Values.First(e => e.Id != answerId);
+            var reveal = Guessed(await controller.Guess(round.Id, new GuessRequest(wrong.Id), Ct)).Reveal!;
+            Assert.NotNull(reveal.BroadEra);
+            Assert.Equal(adaptive ? 1 : 0, reveal.Hints?.Count ?? 0);
+        }
     }
 
     [Fact]

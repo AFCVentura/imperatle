@@ -22,7 +22,7 @@ import { reconcileProgress } from "@/lib/reconcileProgress";
 import type { ChallengeReveal, EmpireAnswer, EmpireSummary, GuessResponse, TodayChallenge } from "@/lib/types";
 import { EmpireAutocomplete } from "./EmpireAutocomplete";
 import { AttemptList } from "./AttemptList";
-import type { RevealedClues } from "@/lib/clues";
+import { clueStep, type RevealedClues } from "@/lib/clues";
 import { Accordion, CuriosityList, EmpireSheet } from "./EmpireSheet";
 import { OutlineChip, PrecisionChip } from "./MapChips";
 import { MapStagePicker } from "./MapStagePicker";
@@ -47,6 +47,9 @@ export interface PlaySession {
   save: (progress: GameProgress) => void;
   // false = no clue rows until the round ends (practice option).
   hints?: boolean;
+  // Practice option: the clues (map levels included) spread over the
+  // attempts instead of one per wrong guess (lib/clues, clueStep).
+  adaptiveHints?: boolean;
   mapMode?: MapMode;
   // Daily game only: the stats dialog pops up when the round ends.
   openStatsOnEnd?: boolean;
@@ -164,6 +167,9 @@ export function PlayBoard({
   const locale = useLocale();
   const hints = session.hints ?? true;
   const mapMode = session.mapMode ?? "Progressive";
+  // Without clues the map keeps the daily pace.
+  const adaptiveHints = hints && (session.adaptiveHints ?? false);
+  const cluesOut = (wrongGuesses: number) => clueStep(wrongGuesses, session.attemptsAllowed, adaptiveHints);
 
   const [guesses, setGuesses] = useState<GuessHistoryEntry[]>(initial?.guesses ?? []);
   const [reveal, setReveal] = useState<ChallengeReveal | null>(initial?.reveal ?? null);
@@ -176,7 +182,7 @@ export function PlayBoard({
   const [pickedStage, setPickedStage] = useState<{ stage: MapStage; unlocked: MapStage } | null>(null);
   // Levels unlocked before this visit don't flash on a reload.
   const [stageOnArrival] = useState(() =>
-    mapStageForMode(mapMode, initial?.guesses.filter((g) => !g.correct).length ?? 0, initial?.gameOver ?? false),
+    mapStageForMode(mapMode, cluesOut(initial?.guesses.filter((g) => !g.correct).length ?? 0), initial?.gameOver ?? false),
   );
   // Guessed empires' shapes, by empire id, loaded when first outlined.
   const [guessShapes, setGuessShapes] = useState<Record<number, MultiPolygon | "failed">>({});
@@ -303,7 +309,7 @@ export function PlayBoard({
 
   // The map shows the most detailed level unlocked so far, unless the player
   // picked another one under it; a new unlock switches to it again.
-  const unlockedStage = mapStageForMode(mapMode, wrongGuessCount, gameOver);
+  const unlockedStage = mapStageForMode(mapMode, cluesOut(wrongGuessCount), gameOver);
   const shownStage = pickedStage?.unlocked === unlockedStage ? pickedStage.stage : unlockedStage;
   const justUnlocked = unlockedStage > stageOnArrival ? unlockedStage : null;
   // An outline-only round has nothing to pick until it's over.
@@ -316,6 +322,7 @@ export function PlayBoard({
       revealed={revealed}
       gameOver={gameOver}
       hintsOff={!hints}
+      adaptiveHints={adaptiveHints}
       outlined={canOutline && outlineOn && guessShape ? outlinedIndex : null}
       onOutline={canOutline ? toggleOutline : undefined}
       mapView={mapView}
@@ -367,6 +374,8 @@ export function PlayBoard({
               unlocked={unlockedStage}
               justUnlocked={justUnlocked}
               onPick={(stage) => setPickedStage({ stage, unlocked: unlockedStage })}
+              attemptsAllowed={session.attemptsAllowed}
+              adaptiveHints={adaptiveHints}
             />
           )}
         </>

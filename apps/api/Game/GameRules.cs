@@ -20,6 +20,7 @@ public static class GameRules
     public const int EraClueAt = 1;
     public const int FirstCuriosityAt = 3;
     public const int CuriosityCount = 3;
+    public const int ClueCount = 6;
 
     public static int CuriositiesAfter(int wrongGuesses) =>
         Math.Clamp(wrongGuesses - FirstCuriosityAt + 1, 0, CuriosityCount);

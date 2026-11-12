@@ -320,6 +320,9 @@ namespace Imperatle.Api.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<bool>("AdaptiveHints")
+                        .HasColumnType("boolean");
+
                     b.Property<Guid>("AnonymousId")
                         .HasColumnType("uuid");
 

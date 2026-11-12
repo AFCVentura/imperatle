@@ -80,6 +80,7 @@ public class PracticeController(
             Continents = [.. (options.Continents ?? []).Distinct().Order()],
             AttemptsAllowed = options.Attempts,
             HintsEnabled = options.Hints,
+            AdaptiveHints = options.AdaptiveHints,
             MapMode = options.Map,
             CreatedAtUtc = DateTime.UtcNow,
         };
@@ -267,5 +268,5 @@ public class PracticeController(
     }
 
     private static PracticeOptions OptionsOf(PracticeSession s) =>
-        new(s.Difficulty, s.AttemptsAllowed, s.HintsEnabled, s.MapMode, [.. s.Eras], [.. s.Continents]);
+        new(s.Difficulty, s.AttemptsAllowed, s.HintsEnabled, s.MapMode, [.. s.Eras], [.. s.Continents], s.AdaptiveHints);
 }

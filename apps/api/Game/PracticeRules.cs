@@ -61,8 +61,40 @@ public static class PracticeRules
         return pool[random.Next(pool.Count)];
     }
 
-    // Mid-round clues: the daily game's progression, or none at all when the
-    // player turned clues off. The area/duration arrows are always given.
-    public static ChallengeReveal? RevealFor(PracticeSession session, Empire empire, int attemptNumber) =>
-        session.HintsEnabled && attemptNumber > 0 ? RevealBuilder.BuildReveal(empire, attemptNumber) : null;
+    // How many clues of the daily game's queue (GameRules: era, map with
+    // continents, 3 curiosities, map with countries) are out after this many
+    // wrong guesses. Off: one per wrong guess, like the daily game, so 3
+    // attempts never get past the second clue and 10 run out at the 6th
+    // error. Adaptive (the default): the six clues are spread over the
+    // wrong guesses the round allows, the last one arriving with the last
+    // wrong guess, rounded half up. With 7 attempts both are the same.
+    // The web app has the same function (lib/clues.ts, clueStep).
+    public static int ClueStep(int wrongGuesses, int attemptsAllowed, bool adaptive)
+    {
+        if (wrongGuesses <= 0)
+        {
+            return 0;
+        }
+        if (!adaptive || attemptsAllowed <= 1)
+        {
+            return Math.Min(wrongGuesses, GameRules.ClueCount);
+        }
+        var wrongAllowed = attemptsAllowed - 1;
+        // floor(wrong * clues / wrongAllowed + 1/2), in integers.
+        var step = (2 * wrongGuesses * GameRules.ClueCount + wrongAllowed) / (2 * wrongAllowed);
+        return Math.Min(step, GameRules.ClueCount);
+    }
+
+    // Mid-round clues: the daily game's progression (or spread over the
+    // round's attempts, see ClueStep), or none at all when the player turned
+    // clues off. The area/duration arrows are always given.
+    public static ChallengeReveal? RevealFor(PracticeSession session, Empire empire, int attemptNumber)
+    {
+        if (!session.HintsEnabled || attemptNumber <= 0)
+        {
+            return null;
+        }
+        var step = ClueStep(attemptNumber, session.AttemptsAllowed, session.AdaptiveHints);
+        return step > 0 ? RevealBuilder.BuildReveal(empire, step) : null;
+    }
 }

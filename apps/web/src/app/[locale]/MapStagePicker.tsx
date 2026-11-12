@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import type { MapStage } from "@/map/geo";
 import { CONTINENTS_AFTER, COUNTRIES_AFTER } from "@/map/stage";
+import { wrongGuessUnlocking } from "@/lib/clues";
 import { useTooltip } from "@/lib/useTooltip";
 
 interface MapStagePickerProps {
@@ -12,17 +13,21 @@ interface MapStagePickerProps {
   // player notices the map just gained detail.
   justUnlocked: MapStage | null;
   onPick: (stage: MapStage) => void;
+  // To say on which attempt a locked level opens.
+  attemptsAllowed: number;
+  adaptiveHints: boolean;
 }
 
 // Small text links under the map: outline, continents, countries. A locked
 // level is dimmed and says on which attempt it unlocks; an unlocked one
 // switches the map to that level.
-export function MapStagePicker({ shown, unlocked, justUnlocked, onPick }: MapStagePickerProps) {
+export function MapStagePicker({ shown, unlocked, justUnlocked, onPick, attemptsAllowed, adaptiveHints }: MapStagePickerProps) {
   const t = useTranslations("Game");
-  const stages: { stage: MapStage; label: string; unlocksAt: number }[] = [
+  const unlocksAt = (cluesOut: number) => wrongGuessUnlocking(cluesOut, attemptsAllowed, adaptiveHints);
+  const stages: { stage: MapStage; label: string; unlocksAt: number | null }[] = [
     { stage: 1, label: t("mapStageOutline"), unlocksAt: 0 },
-    { stage: 2, label: t("mapStageContinents"), unlocksAt: CONTINENTS_AFTER },
-    { stage: 3, label: t("mapStageCountries"), unlocksAt: COUNTRIES_AFTER },
+    { stage: 2, label: t("mapStageContinents"), unlocksAt: unlocksAt(CONTINENTS_AFTER) },
+    { stage: 3, label: t("mapStageCountries"), unlocksAt: unlocksAt(COUNTRIES_AFTER) },
   ];
 
   return (
@@ -34,7 +39,7 @@ export function MapStagePicker({ shown, unlocked, justUnlocked, onPick }: MapSta
             label={s.label}
             current={s.stage === shown}
             locked={s.stage > unlocked}
-            lockedText={t("fields.unlockedAt", { n: s.unlocksAt })}
+            lockedText={s.unlocksAt === null ? t("fields.unlockedAtEnd") : t("fields.unlockedAt", { n: s.unlocksAt })}
             flash={s.stage === justUnlocked}
             onPick={() => onPick(s.stage)}
           />

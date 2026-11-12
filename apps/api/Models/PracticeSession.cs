@@ -20,6 +20,9 @@ public class PracticeSession
     public List<Continent> Continents { get; set; } = [];
     public int AttemptsAllowed { get; set; }
     public bool HintsEnabled { get; set; }
+    // Clues spread over the attempts (PracticeRules.ClueStep). Rounds from
+    // before 1.5 have false: one clue per wrong guess, as they were played.
+    public bool AdaptiveHints { get; set; }
     public PracticeMapMode MapMode { get; set; }
 
     public int AttemptsUsed { get; set; }

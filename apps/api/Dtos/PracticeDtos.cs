@@ -12,7 +12,8 @@ public record PracticeOptions(
     bool Hints = true,
     PracticeMapMode Map = PracticeMapMode.Progressive,
     BroadEra[]? Eras = null,
-    Continent[]? Continents = null);
+    Continent[]? Continents = null,
+    bool AdaptiveHints = true);
 
 // A round's state, without the empire until it's over. Returned when the
 // round starts and when the page reloads mid-round.
