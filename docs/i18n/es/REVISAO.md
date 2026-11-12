@@ -22,7 +22,9 @@ Resumo das listas dos 5 agentes de tradução (interface + 4 lotes de impérios)
 
 ## 2. Possíveis erros que já estavam no original (pt/en/es)
 
-Os agentes traduziram fielmente e só marcaram. Conferir e, se for o caso, corrigir nos três idiomas:
+**12/11: os 5 foram corrigidos nos três idiomas** (pt/en em `9f0343a` na `feature/stripe`, es em seguida na `feature/es`). Ilcanato ficou "seu avanço foi parado" ("parado", não "detido", pra não soar como prisão). Decisões da seção 1: ficam como estão; curiosidade não muda conforme o país do idioma (#13) e o formato dos números é indiferente (#9).
+
+Os agentes traduziram fielmente e só marcaram:
 
 - **Etíope:** "batizado Tafari". Tafari era o nome de nascimento; o de batismo era Haile Selassie.
 - **Primeiro Império Francês:** Portugal chamado de "vizinho", mas não faz fronteira com a França.
