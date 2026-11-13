@@ -117,7 +117,14 @@
         "Approximate": "La respuesta y tu intento son de la misma época: cada uno seguía existiendo en el apogeo del otro, o sus apogeos estuvieron separados por 25 años o menos."
       },
       "distance": {
-        "info": "Dónde está la respuesta con respecto a tu intento. Cuando los dos están separados, ves la dirección y la distancia entre sus fronteras. Cuando los territorios se cruzan, ves cuánto comparten, y la dirección desaparece cuando prácticamente se superponen. Cuando uno está casi entero dentro del otro, ves Dentro del intento o Contiene el intento.",
+        "info": "Dónde está la respuesta con respecto a tu intento.",
+        "kind": {
+          "inside": "Dentro del intento: la respuesta está casi entera dentro del territorio de tu intento.",
+          "contains": "Contiene el intento: tu intento está casi entero dentro del territorio de la respuesta.",
+          "shared": "{percent} en común: los territorios se cruzan, y esta es la parte que comparten, contando el área de los dos juntos.",
+          "neighbours": "Vecinos: sus fronteras están a menos de 50 km una de la otra.",
+          "distance": "{km} km entre sus fronteras más cercanas."
+        },
         "here": "Aquí: la respuesta está {direction} de tu intento.",
         "noMap": "No hay mapa para comparar dónde están estos dos.",
         "spreadAnswer": "La respuesta tiene territorios repartidos por lugares lejanos del mundo, así que ninguna flecha apuntaría de verdad hacia ella.",

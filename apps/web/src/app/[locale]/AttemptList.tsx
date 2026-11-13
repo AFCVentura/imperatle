@@ -320,7 +320,9 @@ function ProximityBadge({ proximity, view }: { proximity: GuessProximity | null;
       info={
         <>
           {t("comparisonInfo.distance.info")}
-          {d.kind === "spread" && <span className="mt-1 block">{spreadInfo}</span>}
+          <span className="mt-1 block">
+            {d.kind === "spread" ? spreadInfo : t(`comparisonInfo.distance.kind.${d.kind}`, { percent: d.percent, km: d.km.toLocaleString(locale) })}
+          </span>
           {d.showArrow && (
             <span className="mt-1 block">
               {t("comparisonInfo.distance.here", { direction: t(`directions.${d.direction}`) })}{" "}

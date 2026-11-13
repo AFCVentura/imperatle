@@ -117,7 +117,14 @@
         "Approximate": "A resposta e o seu palpite são da mesma época: os dois existiam ao mesmo tempo no auge de cada um, ou os auges ficaram a até 25 anos de distância."
       },
       "distance": {
-        "info": "Onde fica a resposta em relação ao seu palpite. Quando os dois ficam longe, aparecem a direção e a distância entre as fronteiras. Quando os territórios se cruzam, aparece quanto eles têm em comum, e a direção some quando eles praticamente se sobrepõem. Quando um fica quase todo dentro do outro, aparece Dentro do palpite ou Contém o palpite.",
+        "info": "Onde fica a resposta em relação ao seu palpite.",
+        "kind": {
+          "inside": "Dentro do palpite: a resposta fica quase toda dentro do território do seu palpite.",
+          "contains": "Contém o palpite: o seu palpite fica quase todo dentro do território da resposta.",
+          "shared": "{percent} em comum: os territórios se cruzam, e essa é a parte que os dois dividem, contando a área dos dois juntos.",
+          "neighbours": "Vizinhos: as fronteiras dos dois ficam a menos de 50 km uma da outra.",
+          "distance": "{km} km de distância entre as fronteiras mais próximas dos dois."
+        },
         "here": "Aqui: a resposta fica {direction} do seu palpite.",
         "noMap": "Sem mapa pra comparar a posição destes dois.",
         "spreadAnswer": "A resposta tem territórios espalhados por lugares distantes do mundo, então nenhuma seta apontaria pra ela de verdade.",

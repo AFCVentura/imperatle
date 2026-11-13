@@ -117,7 +117,14 @@
         "Approximate": "The answer and your guess are from the same era: each still existed at the other's peak, or their peaks were 25 years apart or less."
       },
       "distance": {
-        "info": "Where the answer lies from your guess. When the two are apart, you get the direction and the distance between their borders. When the territories overlap, you get how much they share, and the direction goes away once they mostly overlap. When one lies almost entirely inside the other, you get Inside your guess or Contains your guess.",
+        "info": "Where the answer lies from your guess.",
+        "kind": {
+          "inside": "Inside your guess: the answer lies almost entirely within your guess's territory.",
+          "contains": "Contains your guess: your guess lies almost entirely within the answer's territory.",
+          "shared": "{percent} shared: the territories overlap, and this is the part they share, out of the two areas together.",
+          "neighbours": "Neighbours: their borders are less than 50 km apart.",
+          "distance": "{km} km between their closest borders."
+        },
         "here": "Here: the answer lies {direction} of your guess.",
         "noMap": "No map to compare where these two are.",
         "spreadAnswer": "The answer's territory is spread over far-apart places, so no arrow would really point to it.",

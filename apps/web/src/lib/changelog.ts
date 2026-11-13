@@ -16,6 +16,19 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    version: "1.8.1",
+    date: "2026-11-13",
+    empires: [],
+    features: [],
+    fixes: [
+      {
+        en: "The Distance explanation is shorter and only explains the result you got.",
+        pt: "A explicação da Distância ficou mais curta e explica só o resultado que apareceu.",
+        es: "La explicación de la Distancia es más corta y explica solo el resultado que salió.",
+      },
+    ],
+  },
+  {
     version: "1.8.0",
     date: "2026-11-12",
     empires: [],
