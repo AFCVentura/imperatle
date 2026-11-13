@@ -418,6 +418,10 @@
     "hintsOn": "Activadas",
     "hintsOff": "Desactivadas",
     "hintsInfo": "Desactivadas: cada fallo solo muestra área, época y distancia. La ficha completa y las curiosidades aparecen al final.",
+    "guessOutlines": "Intentos en el mapa",
+    "guessOutlinesOn": "Activados",
+    "guessOutlinesOff": "Desactivados",
+    "guessOutlinesInfo": "Activados: el contorno de un intento fallido se puede mostrar en el mapa, empezando oculto. Desactivados: el mapa solo muestra la respuesta.",
     "map": "Mapa",
     "mapOptions": {
       "Progressive": "Poco a poco",

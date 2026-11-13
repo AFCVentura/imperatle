@@ -16,6 +16,30 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    version: "1.8.0",
+    date: "2026-11-12",
+    empires: [],
+    features: [
+      {
+        en: "Practice: a \"Guesses on the map\" option, to play without the guesses' outlines.",
+        pt: "Treino: opção \"Palpites no mapa\", pra jogar sem o contorno dos palpites.",
+        es: "Práctica: opción \"Intentos en el mapa\", para jugar sin el contorno de los intentos.",
+      },
+      {
+        en: "A wrong guess's outline now starts hidden, as an extra help shown with a click.",
+        pt: "O contorno do palpite errado agora começa escondido, como ajuda extra que aparece com um clique.",
+        es: "El contorno del intento fallido ahora empieza oculto, como ayuda extra que aparece con un clic.",
+      },
+    ],
+    fixes: [
+      {
+        en: "With the guess hidden, the focus button frames only the answer.",
+        pt: "Com o palpite escondido, o botão de foco enquadra só a resposta.",
+        es: "Con el intento oculto, el botón de enfoque encuadra solo la respuesta.",
+      },
+    ],
+  },
+  {
     version: "1.7.0",
     date: "2026-11-12",
     empires: [],

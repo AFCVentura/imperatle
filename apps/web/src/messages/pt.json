@@ -418,6 +418,10 @@
     "hintsOn": "Ligadas",
     "hintsOff": "Desligadas",
     "hintsInfo": "Desligadas: cada erro só mostra área, época e distância. A ficha completa e as curiosidades aparecem no fim.",
+    "guessOutlines": "Palpites no mapa",
+    "guessOutlinesOn": "Ligados",
+    "guessOutlinesOff": "Desligados",
+    "guessOutlinesInfo": "Ligados: o contorno de um palpite errado pode ser mostrado no mapa, começando escondido. Desligados: o mapa só mostra a resposta.",
     "map": "Mapa",
     "mapOptions": {
       "Progressive": "Aos poucos",

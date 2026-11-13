@@ -181,13 +181,15 @@ export function PracticeClient({ empires, openSetup }: { empires: EmpireSummary[
     hints: roundOptions.hints,
     // Rounds started before the option existed come back without it.
     adaptiveHints: roundOptions.adaptiveHints ?? false,
+    // A display choice kept in this browser, not part of the round.
+    guessOutlines: options.guessOutlines,
     mapMode: roundOptions.map,
     endNote: t("endNote"),
     endActions: () => (
       <>
         <button
           type="button"
-          onClick={() => start(roundOptions)}
+          onClick={() => start({ ...roundOptions, guessOutlines: options.guessOutlines })}
           disabled={starting}
           className="rounded-full bg-accent px-5 py-1.5 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/85 disabled:opacity-50"
         >
@@ -337,6 +339,16 @@ function PracticeSetup({
             { value: false, label: t("hintsOff") },
           ]}
           onPick={(v) => set("hints", v)}
+        />
+        <OptionGroup
+          label={t("guessOutlines")}
+          info={t("guessOutlinesInfo")}
+          value={options.guessOutlines}
+          choices={[
+            { value: true, label: t("guessOutlinesOn") },
+            { value: false, label: t("guessOutlinesOff") },
+          ]}
+          onPick={(v) => set("guessOutlines", v)}
         />
         <OptionGroup
           label={t("map")}

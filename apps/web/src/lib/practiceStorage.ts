@@ -47,6 +47,7 @@ export function sanitizePracticeOptions(value: unknown): PracticeOptions {
     eras: indexes(v.eras, v.era, BROAD_ERAS.length),
     continents: indexes(v.continents, v.continent, CONTINENTS.length),
     adaptiveHints: typeof v.adaptiveHints === "boolean" ? v.adaptiveHints : DEFAULT_PRACTICE_OPTIONS.adaptiveHints,
+    guessOutlines: typeof v.guessOutlines === "boolean" ? v.guessOutlines : DEFAULT_PRACTICE_OPTIONS.guessOutlines,
   };
 }
 

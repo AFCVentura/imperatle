@@ -218,7 +218,9 @@ export const getPracticePool = (options: PracticeOptions) =>
 // Null when the options match too few empires to start a round.
 export async function startPractice(options: PracticeOptions): Promise<PracticeSession | null> {
   try {
-    return await perkFetch<PracticeSession>("/practice", { method: "POST", body: JSON.stringify(options) });
+    // guessOutlines is a display choice that stays in the browser.
+    const { guessOutlines: _display, ...round } = options;
+    return await perkFetch<PracticeSession>("/practice", { method: "POST", body: JSON.stringify(round) });
   } catch (e) {
     if (e instanceof ApiStatusError && e.status === 422) return null;
     throw e;

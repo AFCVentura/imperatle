@@ -322,6 +322,9 @@ export interface PracticeOptions {
   continents: number[];
   // The clues spread over the attempts (lib/clues, clueStep).
   adaptiveHints: boolean;
+  // Browser-only: wrong guesses can be outlined on the map (never sent to
+  // the API, which ignores it).
+  guessOutlines: boolean;
 }
 
 export const DEFAULT_PRACTICE_OPTIONS: PracticeOptions = {
@@ -332,6 +335,7 @@ export const DEFAULT_PRACTICE_OPTIONS: PracticeOptions = {
   eras: [],
   continents: [],
   adaptiveHints: true,
+  guessOutlines: true,
 };
 
 export interface PracticeSession {

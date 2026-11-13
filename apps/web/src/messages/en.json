@@ -418,6 +418,10 @@
     "hintsOn": "On",
     "hintsOff": "Off",
     "hintsInfo": "Off: each miss only shows area, era and distance. The fact sheet and the curiosities show up at the end.",
+    "guessOutlines": "Guesses on the map",
+    "guessOutlinesOn": "On",
+    "guessOutlinesOff": "Off",
+    "guessOutlinesInfo": "On: a wrong guess's outline can be shown on the map, starting hidden. Off: the map only shows the answer.",
     "map": "Map",
     "mapOptions": {
       "Progressive": "Step by step",

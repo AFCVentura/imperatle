@@ -4,7 +4,7 @@ import { DEFAULT_PRACTICE_OPTIONS } from "./types";
 
 describe("sanitizePracticeOptions", () => {
   it("keeps valid options", () => {
-    const options = { difficulty: "Hard", attempts: 4, hints: false, map: "Outline", eras: [0, 2], continents: [5], adaptiveHints: false } as const;
+    const options = { difficulty: "Hard", attempts: 4, hints: false, map: "Outline", eras: [0, 2], continents: [5], adaptiveHints: false, guessOutlines: false } as const;
     expect(sanitizePracticeOptions(options)).toEqual(options);
   });
 

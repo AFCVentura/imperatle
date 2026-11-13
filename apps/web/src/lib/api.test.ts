@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { ApiStatusError, DailyNotFinishedError, getPracticePool, getPracticeSession, PerkLockedError, startPractice } from "./api";
 import type { PracticeOptions } from "./types";
 
-const options: PracticeOptions = { difficulty: "Any", attempts: 7, hints: true, map: "Progressive", eras: [], continents: [], adaptiveHints: true };
+const options: PracticeOptions = { difficulty: "Any", attempts: 7, hints: true, map: "Progressive", eras: [], continents: [], adaptiveHints: true, guessOutlines: true };
 
 const fetchMock = vi.fn();
 

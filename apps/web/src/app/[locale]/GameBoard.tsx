@@ -50,6 +50,8 @@ export interface PlaySession {
   // Practice option: the clues (map levels included) spread over the
   // attempts instead of one per wrong guess (lib/clues, clueStep).
   adaptiveHints?: boolean;
+  // Practice option: false = guesses are never outlined on the map.
+  guessOutlines?: boolean;
   mapMode?: MapMode;
   // Daily game only: the stats dialog pops up when the round ends.
   openStatsOnEnd?: boolean;
@@ -189,7 +191,9 @@ export function PlayBoard({
   // The outlined guess: the latest wrong one, unless the player picked
   // another since the last guess (`at` = how many guesses there were then).
   const [pickedOutline, setPickedOutline] = useState<{ index: number; at: number } | null>(null);
-  const [outlineOn, setOutlineOn] = useState(true);
+  // Hidden until the player asks for it: the outline gives away direction
+  // and size at a glance, so it's an extra help, not the default.
+  const [outlineOn, setOutlineOn] = useState(false);
   // Flat map or globe, as the map shows it: the distance arrows follow it.
   const [mapView, setMapView] = useState<MapView>(savedMode);
 
@@ -224,7 +228,7 @@ export function PlayBoard({
   // stored) have no empire to draw.
   const outlinedEmpireId = outlinedGuess && outlinedGuess.empireId > 0 ? outlinedGuess.empireId : null;
   const outlinedShape = outlinedEmpireId !== null ? guessShapes[outlinedEmpireId] : undefined;
-  const canOutline = hasMap && shape !== "failed" && !!session.loadGuessShape;
+  const canOutline = hasMap && shape !== "failed" && !!session.loadGuessShape && session.guessOutlines !== false;
 
   useEffect(() => {
     const load = sessionRef.current.loadGuessShape;
@@ -240,14 +244,16 @@ export function PlayBoard({
   }, [canOutline, outlinedEmpireId, outlinedShape]);
 
   const guessShape = outlinedShape && outlinedShape !== "failed" ? outlinedShape : null;
-  // Framed on the answer and the outlined guess together, so the guess is in
-  // view. Hiding the outline keeps the frame, so the map doesn't move.
+  // Framed on the answer and the outlined guess together while the guess is
+  // shown, so it's in view; hidden, the frame (and the focus button) is the
+  // answer alone.
+  const shownGuess = canOutline && outlineOn ? guessShape : null;
   const frame = useMemo<MultiPolygon | undefined>(
     () =>
-      guessShape && shape && shape !== "failed"
-        ? { type: "MultiPolygon", coordinates: [...shape.coordinates, ...guessShape.coordinates] }
+      shownGuess && shape && shape !== "failed"
+        ? { type: "MultiPolygon", coordinates: [...shape.coordinates, ...shownGuess.coordinates] }
         : undefined,
-    [guessShape, shape],
+    [shownGuess, shape],
   );
 
   function toggleOutline(index: number) {
@@ -282,8 +288,7 @@ export function PlayBoard({
         },
       ]);
       if (result.reveal) setReveal(result.reveal);
-      // A new guess is outlined right away.
-      setOutlineOn(true);
+      // A new guess keeps the outline as the player left it (shown or hidden).
       if (result.gameOver) {
         setGameOver(true);
         setAnswer(result.answer);
@@ -324,7 +329,7 @@ export function PlayBoard({
       gameOver={gameOver}
       hintsOff={!hints}
       adaptiveHints={adaptiveHints}
-      outlined={canOutline && outlineOn && guessShape ? outlinedIndex : null}
+      outlined={shownGuess ? outlinedIndex : null}
       onOutline={canOutline ? toggleOutline : undefined}
       mapView={mapView}
     />
@@ -351,7 +356,7 @@ export function PlayBoard({
                   globe: t("mapGlobe"),
                   flat: t("mapFlat"),
                 }}
-                guess={outlineOn ? guessShape : null}
+                guess={shownGuess}
                 onModeChange={setMapView}
                 frameShape={frame}
                 // Same height as the old map card: capped at 30% of the screen
@@ -361,7 +366,7 @@ export function PlayBoard({
               />
             </div>
             {shape && borderConfidence !== null && <PrecisionChip confidence={borderConfidence} />}
-            {outlinedGuess && guessShape && (
+            {canOutline && outlinedGuess && guessShape && (
               <OutlineChip
                 name={pickLocalized(outlinedGuess.nameEn, outlinedGuess.namePt, locale, outlinedGuess.nameEs)}
                 on={outlineOn}
