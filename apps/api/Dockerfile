@@ -1,5 +1,5 @@
 # Build stage: restore and publish with the full SDK.
-FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:11.0 AS build
 WORKDIR /src
 
 # The .csproj alone first, so the restore layer is reused while packages don't change.
