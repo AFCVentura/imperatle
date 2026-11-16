@@ -16,6 +16,19 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    version: "1.9.0",
+    date: "2026-11-16",
+    empires: [],
+    features: [
+      {
+        en: "Sharing: each miss gets a coloured square for how close it was on the map (🟨 shares territory, 🟧 close, 🟥 far), and the link opens the game in your language.",
+        pt: "Compartilhar: cada erro ganha um quadradinho colorido conforme a distância no mapa (🟨 divide território, 🟧 perto, 🟥 longe), e o link abre o jogo no seu idioma.",
+        es: "Compartir: cada fallo lleva un cuadradito de color según lo cerca que quedó en el mapa (🟨 comparte territorio, 🟧 cerca, 🟥 lejos), y el enlace abre el juego en tu idioma.",
+      },
+    ],
+    fixes: [],
+  },
+  {
     version: "1.8.1",
     date: "2026-11-13",
     empires: [],

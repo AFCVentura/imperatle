@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import type { GuessHistoryEntry } from "./gameStorage";
 import en from "../messages/en.json";
 import pt from "../messages/pt.json";
-import { buildShareText } from "./share";
+import { buildShareText, proximitySquare, shareUrl } from "./share";
 
 const wrong = (area: GuessHistoryEntry["areaComparison"], era: GuessHistoryEntry["areaComparison"]): GuessHistoryEntry => ({
   empireId: 1,
@@ -19,7 +19,7 @@ describe("buildShareText", () => {
   it("shows the score, one line per guess and the link", () => {
     const text = buildShareText([wrong("Bigger", "Smaller"), right], 12, 7);
 
-    expect(text).toBe(["Imperatle #12 🏛️ 2/7", "", "❌ 🗺️⬆️ ⏳⬇️", "✅", "", "https://imperatle.com"].join("\n"));
+    expect(text).toBe(["Imperatle #12 🏛️ 2/7", "", "⬜ 🗺️⬆️ ⏳⬇️", "🟩", "", "https://imperatle.com"].join("\n"));
   });
 
   it("uses X for a lost game", () => {
@@ -30,7 +30,7 @@ describe("buildShareText", () => {
 
   it("shares a past game under its own title, never as that day's daily result", () => {
     const guesses = [wrong("Bigger", "Smaller"), right];
-    const text = buildShareText(guesses, 12, 7, "Arquivo #12");
+    const text = buildShareText(guesses, 12, 7, { title: "Arquivo #12" });
 
     expect(text.split("\n")[0]).toBe("Arquivo #12 🏛️ 2/7");
     expect(text).not.toContain("Imperatle #");
@@ -44,7 +44,7 @@ describe("buildShareText", () => {
       [en, "Archive #12"],
     ] as const) {
       const title = messages.Share.archiveTitle.replace("{number}", "12");
-      expect(buildShareText([right], 12, 7, title).split("\n")[0]).toBe(`${expected} 🏛️ 1/7`);
+      expect(buildShareText([right], 12, 7, { title }).split("\n")[0]).toBe(`${expected} 🏛️ 1/7`);
       // A past game is not a Practice round: the share must not borrow that mode's name.
       expect(title).not.toContain(messages.Practice.title);
     }
@@ -55,5 +55,39 @@ describe("buildShareText", () => {
 
     expect(text).not.toContain("Empire");
     expect(text).not.toContain("Império");
+  });
+
+  it("links to the sharer's language, English on the bare address", () => {
+    expect(buildShareText([right], 1, 7, { locale: "pt" }).split("\n").at(-1)).toBe("https://imperatle.com/pt");
+    expect(buildShareText([right], 1, 7, { locale: "es" }).split("\n").at(-1)).toBe("https://imperatle.com/es");
+    expect(shareUrl("en")).toBe("https://imperatle.com");
+    expect(shareUrl()).toBe("https://imperatle.com");
+  });
+});
+
+describe("proximitySquare", () => {
+  const p = (shared: number, distanceKm: number | null, extra = {}) => ({ shared, distanceKm, bearingDegrees: 0, ...extra });
+
+  it("is yellow when the guess shares territory with the answer", () => {
+    expect(proximitySquare(p(0.3, 0))).toBe("🟨");
+    expect(proximitySquare(p(0.001, 0))).toBe("🟨");
+    expect(proximitySquare(p(0, 0, { answerCovered: 0.95 }))).toBe("🟨");
+  });
+
+  it("is orange when apart but close, red when far", () => {
+    expect(proximitySquare(p(0, 20))).toBe("🟧");
+    expect(proximitySquare(p(0, 999))).toBe("🟧");
+    expect(proximitySquare(p(0, 1000))).toBe("🟥");
+    expect(proximitySquare(p(0, 8000))).toBe("🟥");
+  });
+
+  it("is white when there's no map to compare", () => {
+    expect(proximitySquare(null)).toBe("⬜");
+    expect(proximitySquare(undefined)).toBe("⬜");
+  });
+
+  it("puts each wrong guess's square at the start of its line", () => {
+    const guess = { ...wrong("Smaller", "Bigger"), proximity: p(0, 300) };
+    expect(buildShareText([guess, right], 5, 7).split("\n").slice(2, 4)).toEqual(["🟧 🗺️⬇️ ⏳⬆️", "🟩"]);
   });
 });

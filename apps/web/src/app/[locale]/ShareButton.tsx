@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import type { GuessHistoryEntry } from "@/lib/gameStorage";
 import { buildShareText, shareResult } from "@/lib/share";
@@ -16,11 +16,12 @@ interface ShareButtonProps {
 export function ShareButton({ guesses, challengeNumber, attemptsAllowed, archive = false }: ShareButtonProps) {
   const t = useTranslations("Stats");
   const tShare = useTranslations("Share");
+  const locale = useLocale();
   const [feedback, setFeedback] = useState<"copied" | "failed" | null>(null);
 
   async function handleShare() {
     const title = archive ? tShare("archiveTitle", { number: challengeNumber }) : undefined;
-    const outcome = await shareResult(buildShareText(guesses, challengeNumber, attemptsAllowed, title));
+    const outcome = await shareResult(buildShareText(guesses, challengeNumber, attemptsAllowed, { title, locale }));
     if (outcome === "shared") return;
     setFeedback(outcome);
     window.setTimeout(() => setFeedback(null), 2000);
