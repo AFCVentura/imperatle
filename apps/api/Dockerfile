@@ -10,7 +10,7 @@ COPY . .
 RUN dotnet publish Imperatle.Api.csproj -c Release --no-restore -o /app
 
 # Runtime stage: ASP.NET runtime only, no SDK.
-FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:11.0 AS runtime
 WORKDIR /app
 COPY --from=build /app .
 
