@@ -56,14 +56,14 @@ export default async function EmpirePage({ params }: Props) {
         <h1 className="font-display text-2xl">{name}</h1>
       </header>
 
-      <section className="rounded-2xl border border-line bg-surface">
-        <h2 className="border-b border-line px-4 py-2.5 font-display text-base tracking-wide text-muted">{tGame("sheetTitle")}</h2>
+      <section className="rounded-2xl border-2 border-line bg-surface">
+        <h2 className="border-b-2 border-line px-4 py-2.5 font-display text-base tracking-wide text-muted">{tGame("sheetTitle")}</h2>
         <EmpireSheet answer={empire} />
       </section>
 
       {empire.hints.length > 0 && (
-        <section className="rounded-2xl border border-line bg-surface">
-          <h2 className="border-b border-line px-4 py-2.5 font-display text-base tracking-wide text-muted">{tGame("curiositiesTitle")}</h2>
+        <section className="rounded-2xl border-2 border-line bg-surface">
+          <h2 className="border-b-2 border-line px-4 py-2.5 font-display text-base tracking-wide text-muted">{tGame("curiositiesTitle")}</h2>
           <CuriosityList answer={empire} />
         </section>
       )}
@@ -77,7 +77,7 @@ export default async function EmpirePage({ params }: Props) {
             href={wikipedia}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-full border border-line px-4 py-1.5 text-sm font-medium hover:bg-surface"
+            className="inline-flex items-center gap-1.5 rounded-full border-2 border-line px-4 py-1.5 text-sm font-medium hover:bg-surface"
           >
             {tGame("readOnWikipedia")}
           </a>

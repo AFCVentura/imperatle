@@ -212,28 +212,6 @@ input[type="range"].range:focus-visible {
   border-radius: 9999px;
 }
 
-/* Outlines at 2px instead of Tailwind's 1px: thin lines disappeared on a
-   phone in daylight. Unlayered, so these beat the utilities (which live in
-   a cascade layer) without touching every border class in the components. */
-.border {
-  border-width: 2px;
-}
-.border-t {
-  border-top-width: 2px;
-}
-.border-b {
-  border-bottom-width: 2px;
-}
-.border-l {
-  border-left-width: 2px;
-}
-.border-r {
-  border-right-width: 2px;
-}
-.divide-y > :not(:last-child) {
-  border-bottom-width: 2px;
-}
-
 /* The Imperatle wordmark keeps the light Cinzel weight of the logo images. */
 .font-logo {
   font-weight: 400;

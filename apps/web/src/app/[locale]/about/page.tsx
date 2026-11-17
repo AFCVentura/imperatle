@@ -79,7 +79,7 @@ export default async function AboutPage({ params }: Props) {
 
       <section className="flex flex-col gap-3">
         <h2 className="font-display text-base text-muted">{t("faqTitle")}</h2>
-        <dl className="flex flex-col divide-y divide-line rounded-2xl border border-line bg-surface">
+        <dl className="flex flex-col divide-y-2 divide-line rounded-2xl border-2 border-line bg-surface">
           {FAQ_KEYS.map((key) => (
             <div key={key} className="px-4 py-3">
               <dt className="font-semibold">{t(`faq.${key}.q`)}</dt>

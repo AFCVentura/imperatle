@@ -114,7 +114,7 @@ export function SupportDialog() {
           <p>{t("intro")}</p>
           <div className="flex flex-col gap-1.5">
             <p className="font-display text-base text-muted">{t("perksTitle")}</p>
-            <ul className="flex flex-col gap-1.5 rounded-xl border border-line bg-surface px-3 py-2.5">
+            <ul className="flex flex-col gap-1.5 rounded-xl border-2 border-line bg-surface px-3 py-2.5">
               {PERKS.map((perk) => (
                 <li key={perk} className="flex gap-2">
                   <span aria-hidden className="text-highlight">
@@ -129,7 +129,7 @@ export function SupportDialog() {
           </div>
 
           {view === "supporter" && (
-            <p className="rounded-xl border border-highlight/60 px-3 py-2.5 text-center font-display text-highlight">
+            <p className="rounded-xl border-2 border-highlight/60 px-3 py-2.5 text-center font-display text-highlight">
               {t("alreadySupporter")}
             </p>
           )}
@@ -175,7 +175,7 @@ export function SupportDialog() {
         </>
       )}
       <form method="dialog" className="self-center">
-        <button className="rounded-full border border-line px-6 py-1.5 text-sm font-semibold hover:bg-surface">
+        <button className="rounded-full border-2 border-line px-6 py-1.5 text-sm font-semibold hover:bg-surface">
           {t("close")}
         </button>
       </form>

@@ -97,7 +97,7 @@ export function Header() {
     });
 
   const debugButtonClass =
-    "rounded-md border border-header-foreground/40 px-2 py-0.5 text-xs font-semibold text-header-foreground hover:bg-header-foreground/10 disabled:opacity-50";
+    "rounded-md border-2 border-header-foreground/40 px-2 py-0.5 text-xs font-semibold text-header-foreground hover:bg-header-foreground/10 disabled:opacity-50";
 
   useEffect(() => {
     if (!open) return;
@@ -220,7 +220,7 @@ export function Header() {
               >
                 {t(`menu.${key}`)}
                 {lockPerks && (
-                  <span className="flex items-center gap-1 rounded-full border border-highlight/60 px-2 py-px font-display text-[0.625rem] tracking-wide text-highlight">
+                  <span className="flex items-center gap-1 rounded-full border-2 border-highlight/60 px-2 py-px font-display text-[0.625rem] tracking-wide text-highlight">
                     <svg viewBox="0 0 24 24" className="size-3" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden>
                       <rect x="5" y="11" width="14" height="9" rx="2" />
                       <path strokeLinecap="round" d="M8 11V8a4 4 0 0 1 8 0v3" />
@@ -230,7 +230,7 @@ export function Header() {
                 )}
               </Link>
             ))}
-            <div className="my-1 border-t border-line" />
+            <div className="my-1 border-t-2 border-line" />
             {menuItems.map(({ label, detail, open: openDialog }) => (
               <button
                 key={label}
@@ -245,7 +245,7 @@ export function Header() {
                 {detail && <span className="truncate text-xs text-muted">{detail}</span>}
               </button>
             ))}
-            <div className="mt-auto flex flex-col gap-4 border-t border-line pt-4">
+            <div className="mt-auto flex flex-col gap-4 border-t-2 border-line pt-4">
               <ThemeSwitcher />
               <LocaleSwitcher onSwitch={() => setOpen(false)} />
             </div>

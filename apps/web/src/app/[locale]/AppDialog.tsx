@@ -47,7 +47,7 @@ export function AppDialog({ event, title, onOpen, selectable = false, children }
       onClick={(e) => {
         if (e.target === dialogRef.current) close();
       }}
-      className={`m-auto max-h-[85dvh] w-[min(28rem,calc(100vw-2rem))] rounded-2xl border border-line bg-background p-0 text-foreground shadow-xl backdrop:bg-black/50 ${
+      className={`m-auto max-h-[85dvh] w-[min(28rem,calc(100vw-2rem))] rounded-2xl border-2 border-line bg-background p-0 text-foreground shadow-xl backdrop:bg-black/50 ${
         selectable ? "" : "select-none"
       }`}
     >

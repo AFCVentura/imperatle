@@ -142,7 +142,7 @@ export function HintCard({
             ?
           </button>
           {notesOpen && (
-            <div className="absolute left-1/2 top-full z-20 mt-1.5 w-56 -translate-x-1/2 rounded-lg border border-line bg-background p-2.5 text-left text-xs leading-snug text-foreground shadow-lg">
+            <div className="absolute left-1/2 top-full z-20 mt-1.5 w-56 -translate-x-1/2 rounded-lg border-2 border-line bg-background p-2.5 text-left text-xs leading-snug text-foreground shadow-lg">
               {notes}
             </div>
           )}

@@ -126,7 +126,7 @@ export function useTooltip(content: ReactNode, container?: Element | null) {
           el.style.left = `${left}px`;
         }}
         style={{ top: position.top, bottom: position.bottom, maxWidth: position.maxWidth, left: 0 }}
-        className="pointer-events-none fixed z-50 w-max select-none rounded-lg border border-line bg-background px-3 py-2 text-left text-xs leading-snug text-foreground shadow-lg"
+        className="pointer-events-none fixed z-50 w-max select-none rounded-lg border-2 border-line bg-background px-3 py-2 text-left text-xs leading-snug text-foreground shadow-lg"
       >
         {content}
       </div>,

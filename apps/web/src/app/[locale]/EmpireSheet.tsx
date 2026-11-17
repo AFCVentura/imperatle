@@ -11,7 +11,7 @@ import { areaPrecisionFromApi, borderConfidenceFromApi, continentFromApi, type E
 export function Accordion({ title, defaultOpen = false, children }: { title: string; defaultOpen?: boolean; children: ReactNode }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="rounded-2xl border border-line bg-surface">
+    <div className="rounded-2xl border-2 border-line bg-surface">
       <button
         type="button"
         aria-expanded={open}
@@ -32,7 +32,7 @@ export function Accordion({ title, defaultOpen = false, children }: { title: str
           <path d="m6 9 6 6 6-6" />
         </svg>
       </button>
-      {open && <div className="border-t border-line">{children}</div>}
+      {open && <div className="border-t-2 border-line">{children}</div>}
     </div>
   );
 }
@@ -91,7 +91,7 @@ export function EmpireSheet({ answer }: { answer: EmpireAnswer }) {
         ))}
       </dl>
       {summary && (
-        <div className="border-t border-line px-4 py-3">
+        <div className="border-t-2 border-line px-4 py-3">
           <h3 className="font-display text-[0.6875rem] tracking-wide text-muted">{t("aboutEmpireTitle")}</h3>
           <p className="mt-0.5 text-sm leading-relaxed">{summary}</p>
         </div>
@@ -116,7 +116,7 @@ function SheetRow({
   const t = useTranslations("Game");
   const [open, setOpen] = useState(false);
   return (
-    <div className={`border-line px-4 py-2 ${half ? "" : "col-span-2"} ${first ? "" : "border-t"} ${half === "left" ? "border-r" : ""}`}>
+    <div className={`border-line px-4 py-2 ${half ? "" : "col-span-2"} ${first ? "" : "border-t-2"} ${half === "left" ? "border-r-2" : ""}`}>
       <dt className="flex items-center gap-1.5 font-display text-[0.6875rem] tracking-wide text-muted">
         {label}
         {notes && (
@@ -141,7 +141,7 @@ function SheetRow({
 export function CuriosityList({ answer }: { answer: EmpireAnswer }) {
   const locale = useLocale();
   return (
-    <ul className="divide-y divide-line">
+    <ul className="divide-y-2 divide-line">
       {answer.hints.map((c, i) => {
         const details = pickLocalized(c.detailsEn ?? "", c.detailsPt ?? "", locale, c.detailsEs);
         return (
