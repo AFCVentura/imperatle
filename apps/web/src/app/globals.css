@@ -9,19 +9,22 @@
    Components only use the semantic tokens below (surface, line, muted,
    accent...), never raw palette colors. */
 
+/* Light theme: Spectral and the 1px outlines are thin, so the text and
+   lines carry the contrast instead (body text ~14:1, secondary ~7:1, lines
+   ~2.7:1) on a paler, less yellow parchment. Still brown and rust. */
 :root {
   color-scheme: light;
-  --background: #fcf3dd;
-  --foreground: #432818;
-  --surface: #f8e4b4;
-  --line: rgb(153 88 42 / 0.3);
-  --muted: #99582a;
+  --background: #faf6ec;
+  --foreground: #2b170b;
+  --surface: #f2e7cf;
+  --line: rgb(122 63 22 / 0.55);
+  --muted: #7a3f16;
   --header: #6f1d1b;
   --header-foreground: #ffe6a7;
   --accent: #6f1d1b;
   --accent-foreground: #ffe6a7;
   --highlight: #6f1d1b;
-  --success: #7a6230;
+  --success: #5e4a1c;
   --danger: #6f1d1b;
   --map: #fffaf0;
   --map-line: #bb9457;
