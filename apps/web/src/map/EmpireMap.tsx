@@ -152,7 +152,9 @@ export function EmpireMap({ empire, stage, locale, labels, className = "aspect-[
       }}
       onContextMenu={(e) => e.preventDefault()}
       className={
-        "relative overflow-hidden bg-map select-none [-webkit-touch-callout:none] " +
+        // Outline only (stage 1): the canvas draws no world, so this is the
+        // whole background; from stage 2 the canvas paints sea and land.
+        `relative overflow-hidden ${stage === 1 ? "bg-map-blank" : "bg-map"} select-none [-webkit-touch-callout:none] ` +
         (isFull
           ? fullscreen === "covered" ? "fixed inset-0 z-50" : "h-full w-full"
           : `${className} rounded-xl border-2 border-map-line`)

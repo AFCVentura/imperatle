@@ -28,6 +28,8 @@
   --map: #fffaf0;
   --map-line: #bb9457;
   --map-ocean: #efe0b9;
+  /* Behind the bare outline (first stage): the sea's beige, not white. */
+  --map-blank: var(--map-ocean);
   --map-border: #c9a774;
   --map-empire: #9a2f28;
   --map-empire-line: #6f1d1b;
@@ -63,6 +65,7 @@
   --map: #ffe6a7;
   --map-line: #99582a;
   --map-ocean: #e3c88e;
+  --map-blank: var(--map);
   --map-border: #b08a55;
   --map-empire: #9a2f28;
   --map-empire-line: #6f1d1b;
@@ -87,6 +90,7 @@
   --color-danger: var(--danger);
   --color-map: var(--map);
   --color-map-line: var(--map-line);
+  --color-map-blank: var(--map-blank);
   --color-chart-bar: var(--chart-bar);
   --color-chart-highlight: var(--chart-highlight);
   --font-sans: var(--theme-font-body);
