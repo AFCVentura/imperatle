@@ -9,22 +9,21 @@
    Components only use the semantic tokens below (surface, line, muted,
    accent...), never raw palette colors. */
 
-/* Light theme: Spectral and the 1px outlines are thin, so the text and
-   lines carry the contrast instead (body text ~14:1, secondary ~7:1, lines
-   ~2.7:1) on a paler, less yellow parchment. Still brown and rust. */
 :root {
   color-scheme: light;
-  --background: #faf6ec;
-  --foreground: #2b170b;
-  --surface: #f2e7cf;
-  --line: rgb(122 63 22 / 0.55);
-  --muted: #7a3f16;
+  --background: #fcf3dd;
+  --foreground: #432818;
+  --surface: #f8e4b4;
+  /* Secondary text and outlines a step darker than the palette's rust, so
+     they still read on a phone in daylight (~6:1 and ~1.6:1). */
+  --line: rgb(153 88 42 / 0.35);
+  --muted: #8a4d23;
   --header: #6f1d1b;
   --header-foreground: #ffe6a7;
   --accent: #6f1d1b;
   --accent-foreground: #ffe6a7;
   --highlight: #6f1d1b;
-  --success: #5e4a1c;
+  --success: #7a6230;
   --danger: #6f1d1b;
   --map: #fffaf0;
   --map-line: #bb9457;
@@ -51,8 +50,9 @@
   --background: #22140c;
   --foreground: #ffe6a7;
   --surface: #432818;
-  --line: rgb(255 230 167 / 0.14);
-  --muted: #bb9457;
+  /* Secondary text a step lighter (~7.5:1), still well below the main text. */
+  --line: rgb(255 230 167 / 0.18);
+  --muted: #c9a263;
   --header: #4a1312;
   --header-foreground: #ffe6a7;
   --accent: #bb9457;
@@ -91,6 +91,11 @@
   --color-chart-highlight: var(--chart-highlight);
   --font-sans: var(--theme-font-body);
   --font-display: var(--theme-font-display);
+  /* Every Tailwind weight bold, like the body. Only the logo stays light
+     (font-logo). */
+  --font-weight-normal: 700;
+  --font-weight-medium: 700;
+  --font-weight-semibold: 700;
 
   /* A map detail level that was just unlocked flashes twice under the map. */
   --animate-unlock: unlock 0.9s ease-in-out 2;
@@ -134,6 +139,9 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--theme-font-body), Georgia, serif;
+  /* Bold everywhere (see the font weights in @theme): thin Spectral looked
+     fine on a desktop and vanished on a phone outdoors. */
+  font-weight: 700;
   transition:
     background-color 0.2s,
     color 0.2s;
@@ -202,4 +210,31 @@ input[type="range"].range:focus-visible {
   outline: 2px solid var(--highlight);
   outline-offset: 2px;
   border-radius: 9999px;
+}
+
+/* Outlines at 2px instead of Tailwind's 1px: thin lines disappeared on a
+   phone in daylight. Unlayered, so these beat the utilities (which live in
+   a cascade layer) without touching every border class in the components. */
+.border {
+  border-width: 2px;
+}
+.border-t {
+  border-top-width: 2px;
+}
+.border-b {
+  border-bottom-width: 2px;
+}
+.border-l {
+  border-left-width: 2px;
+}
+.border-r {
+  border-right-width: 2px;
+}
+.divide-y > :not(:last-child) {
+  border-bottom-width: 2px;
+}
+
+/* The Imperatle wordmark keeps the light Cinzel weight of the logo images. */
+.font-logo {
+  font-weight: 400;
 }

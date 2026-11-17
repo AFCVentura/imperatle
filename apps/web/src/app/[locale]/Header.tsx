@@ -140,7 +140,7 @@ export function Header() {
           </NextLink>
         )}
         {/* Back to the game from Privacy or Terms. */}
-        <Link href="/" className="font-display text-2xl tracking-wider">
+        <Link href="/" className="font-display font-logo text-2xl tracking-wider">
           Imperatle
         </Link>
         {process.env.NODE_ENV !== "production" && (
@@ -197,7 +197,7 @@ export function Header() {
           <div className="absolute inset-0 bg-black/40" onClick={() => setOpen(false)} />
           <nav className="absolute right-0 top-0 flex h-full w-72 max-w-[85vw] flex-col gap-1 bg-background p-4 text-foreground shadow-xl">
             <div className="mb-2 flex items-center justify-between">
-              <Link href="/" onClick={() => setOpen(false)} className="font-display text-xl tracking-wider">
+              <Link href="/" onClick={() => setOpen(false)} className="font-display font-logo text-xl tracking-wider">
                 Imperatle
               </Link>
               <button
