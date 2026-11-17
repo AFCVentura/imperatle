@@ -21,7 +21,13 @@
       "practice": "Practice",
       "supportersBadge": "Supporters"
     },
-    "language": "Language"
+    "language": "Language",
+    "theme": "Theme",
+    "themeOptions": {
+      "system": "System",
+      "light": "Light",
+      "dark": "Dark"
+    }
   },
   "Footer": {
     "copyright": "© {year} Imperatle",

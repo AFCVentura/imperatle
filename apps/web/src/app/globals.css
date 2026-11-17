@@ -10,6 +10,7 @@
    accent...), never raw palette colors. */
 
 :root {
+  color-scheme: light;
   --background: #fcf3dd;
   --foreground: #432818;
   --surface: #f8e4b4;
@@ -40,31 +41,32 @@
   --theme-font-body: var(--font-spectral);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #22140c;
-    --foreground: #ffe6a7;
-    --surface: #432818;
-    --line: rgb(255 230 167 / 0.14);
-    --muted: #bb9457;
-    --header: #4a1312;
-    --header-foreground: #ffe6a7;
-    --accent: #bb9457;
-    --accent-foreground: #22140c;
-    --highlight: #e0b46c;
-    --success: #d4b26a;
-    --danger: #e0705e;
-    --map: #ffe6a7;
-    --map-line: #99582a;
-    --map-ocean: #e3c88e;
-    --map-border: #b08a55;
-    --map-empire: #9a2f28;
-    --map-empire-line: #6f1d1b;
-    /* #9a4f1c is just under 3:1 on this surface; every tower carries a
-       visible value label, which covers it. */
-    --chart-bar: #9a4f1c;
-    --chart-highlight: #b98d24;
-  }
+/* Dark theme: set on <html data-theme> by the boot script in the layout,
+   from the player's choice in the menu or the device setting (the default). */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #22140c;
+  --foreground: #ffe6a7;
+  --surface: #432818;
+  --line: rgb(255 230 167 / 0.14);
+  --muted: #bb9457;
+  --header: #4a1312;
+  --header-foreground: #ffe6a7;
+  --accent: #bb9457;
+  --accent-foreground: #22140c;
+  --highlight: #e0b46c;
+  --success: #d4b26a;
+  --danger: #e0705e;
+  --map: #ffe6a7;
+  --map-line: #99582a;
+  --map-ocean: #e3c88e;
+  --map-border: #b08a55;
+  --map-empire: #9a2f28;
+  --map-empire-line: #6f1d1b;
+  /* #9a4f1c is just under 3:1 on this surface; every tower carries a
+     visible value label, which covers it. */
+  --chart-bar: #9a4f1c;
+  --chart-highlight: #b98d24;
 }
 
 @theme inline {
@@ -142,11 +144,9 @@ body {
   --range-track-line: rgb(153 88 42 / 0.45);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --range-track: rgb(255 230 167 / 0.16);
-    --range-track-line: rgb(255 230 167 / 0.28);
-  }
+:root[data-theme="dark"] {
+  --range-track: rgb(255 230 167 / 0.16);
+  --range-track-line: rgb(255 230 167 / 0.28);
 }
 
 input[type="range"].range {

@@ -10,6 +10,7 @@ import type { EmpireSummary } from "@/lib/types";
 import { openAbout, openAccount, openFeedback, openHowToPlay, openStats, openSupport } from "@/lib/dialogs";
 import { useMe } from "@/lib/me";
 import { LocaleSwitcher } from "./LocaleSwitcher";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 // Dev only: pins today's answer to any empire (fresh round, no guesses), to
 // try the comparisons with unusual answers (spread-out or tiny empires).
@@ -244,7 +245,8 @@ export function Header() {
                 {detail && <span className="truncate text-xs text-muted">{detail}</span>}
               </button>
             ))}
-            <div className="mt-auto border-t border-line pt-4">
+            <div className="mt-auto flex flex-col gap-4 border-t border-line pt-4">
+              <ThemeSwitcher />
               <LocaleSwitcher onSwitch={() => setOpen(false)} />
             </div>
           </nav>
