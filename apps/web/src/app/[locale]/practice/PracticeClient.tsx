@@ -195,7 +195,7 @@ export function PracticeClient({ empires, openSetup }: { empires: EmpireSummary[
         >
           {starting ? t("starting") : t("playAgain")}
         </button>
-        <button type="button" onClick={changeSettings} className="rounded-full border-2 border-line px-4 py-1.5 text-sm font-medium hover:bg-background">
+        <button type="button" onClick={changeSettings} className="rounded-full border-(length:--bw-pill) border-line px-4 py-1.5 text-sm font-medium hover:bg-background">
           {t("changeSettings")}
         </button>
       </>
@@ -209,7 +209,7 @@ export function PracticeClient({ empires, openSetup }: { empires: EmpireSummary[
         <button
           type="button"
           onClick={changeSettings}
-          className="flex items-center gap-1.5 rounded-full border-2 border-line px-3 py-1 text-sm font-medium hover:bg-surface"
+          className="flex items-center gap-1.5 rounded-full border-(length:--bw-pill) border-line px-3 py-1 text-sm font-medium hover:bg-surface"
         >
           <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden>
             <path strokeLinecap="round" d="M4 7h10M18 7h2M4 17h4M12 17h8" />
@@ -249,7 +249,7 @@ function OptionsSummary({ options }: { options: PracticeOptions }) {
   return (
     <ul className="flex flex-wrap gap-1 text-xs">
       {parts.map((part) => (
-        <li key={part} className="rounded-full border-2 border-line px-2 py-0.5 text-muted">
+        <li key={part} className="rounded-full border-(length:--bw-pill) border-line px-2 py-0.5 text-muted">
           {part}
         </li>
       ))}
@@ -295,7 +295,7 @@ function PracticeSetup({
     <div className="flex w-full max-w-md flex-col gap-4">
       <p className="text-sm leading-relaxed text-muted">{t("intro")}</p>
 
-      <div className="flex flex-col gap-4 rounded-2xl border-2 border-line bg-surface px-4 py-4">
+      <div className="flex flex-col gap-4 rounded-2xl border-(length:--bw-box) border-line bg-surface px-4 py-4">
         <OptionGroup
           label={t("difficulty")}
           info={t("difficultyInfo")}
@@ -398,7 +398,7 @@ function PracticeSetup({
 }
 
 const chipClass = (on: boolean) =>
-  "rounded-full border-2 px-3 py-1 text-sm transition-colors " +
+  "rounded-full border-(length:--bw-pill) px-3 py-1 text-sm transition-colors " +
   (on ? "border-accent bg-accent text-accent-foreground" : "border-line bg-background hover:bg-surface");
 
 // Several picks at once (indexes into labels). "Any" is the empty list and

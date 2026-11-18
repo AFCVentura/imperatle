@@ -17,6 +17,7 @@ import { SupportDialog } from "./SupportDialog";
 import { AdSlot } from "./AdSlot";
 import { SITE_URL } from "@/lib/site";
 import { cloudflareBeacon } from "@/lib/analytics";
+import { PREVIEW_BOOT_SCRIPT } from "@/lib/previewBoot";
 import { THEME_BOOT_SCRIPT } from "@/lib/theme";
 import "../globals.css";
 
@@ -112,6 +113,8 @@ export default async function LocaleLayout({
       <head>
         {/* Light or dark before the first paint (lib/theme.ts). */}
         <script dangerouslySetInnerHTML={{ __html: THEME_BOOT_SCRIPT }} />
+        {/* Dev only: the variants of /dev/visual (lib/previewBoot.ts). */}
+        {process.env.NODE_ENV !== "production" && <script dangerouslySetInnerHTML={{ __html: PREVIEW_BOOT_SCRIPT }} />}
       </head>
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider>

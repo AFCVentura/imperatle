@@ -295,7 +295,7 @@ export function Generator() {
           <select
             value={editing ?? ""}
             onChange={(e) => (e.target.value ? openExisting(e.target.value) : startOver())}
-            className="ml-auto rounded-md border-2 border-line bg-surface px-2 py-1 text-sm"
+            className="ml-auto rounded-md border-(length:--bw-box) border-line bg-surface px-2 py-1 text-sm"
           >
             <option value="">Novo império</option>
             {existing.map((e) => (
@@ -306,7 +306,7 @@ export function Generator() {
           </select>
         </div>
         {editing && (
-          <p className="rounded-md border-2 border-line bg-surface px-2 py-1 text-xs">
+          <p className="rounded-md border-(length:--bw-box) border-line bg-surface px-2 py-1 text-xs">
             Editando <strong>{editing}</strong> (salvar sobrescreve). Mexeu nas partes? &quot;Recalcular área e continentes&quot;.
           </p>
         )}
@@ -328,7 +328,7 @@ export function Generator() {
         {parts.length > 0 && (
           <ul className="flex flex-col gap-1">
             {parts.map((p, i) => (
-              <li key={`${p.kind === "polity" ? p.polity.id : p.kind === "country" ? p.country : p.mode}-${i}`} className="flex flex-wrap items-center gap-2 rounded-lg border-2 border-line bg-surface px-3 py-1 text-sm">
+              <li key={`${p.kind === "polity" ? p.polity.id : p.kind === "country" ? p.country : p.mode}-${i}`} className="flex flex-wrap items-center gap-2 rounded-lg border-(length:--bw-box) border-line bg-surface px-3 py-1 text-sm">
                 {p.kind === "draw" ? (
                   <span>
                     <span className="font-semibold" style={{ color: p.mode === "add" ? "rgb(22 140 60)" : "rgb(200 30 30)" }}>
@@ -353,7 +353,7 @@ export function Generator() {
                     <select
                       value={p.rangeIndex}
                       onChange={(e) => setParts((ps) => ps.map((q, j) => (j === i && q.kind === "polity" ? { ...q, rangeIndex: Number(e.target.value) } : q)))}
-                      className="rounded border-2 border-line bg-background px-1 py-0.5"
+                      className="rounded border-(length:--bw-box) border-line bg-background px-1 py-0.5"
                     >
                       {p.polity.ranges.map((r, j) => (
                         <option key={j} value={j}>
@@ -422,7 +422,7 @@ export function Generator() {
       <section className="flex flex-col gap-4">
         <fieldset disabled={!!saved} className="disabled:opacity-60">
           {editing && (
-            <button type="button" onClick={recalculate} className="mb-3 rounded-full border-2 border-line px-4 py-1 text-sm hover:bg-surface">
+            <button type="button" onClick={recalculate} className="mb-3 rounded-full border-(length:--bw-pill) border-line px-4 py-1 text-sm hover:bg-surface">
               Recalcular área e continentes
             </button>
           )}
@@ -430,7 +430,7 @@ export function Generator() {
         </fieldset>
 
         {saved ? (
-          <div className="flex flex-col gap-2 rounded-lg border-2 border-success bg-surface p-3 text-sm">
+          <div className="flex flex-col gap-2 rounded-lg border-(length:--bw-box) border-success bg-surface p-3 text-sm">
             <p className="font-semibold text-success">✓ Império {editing ? "atualizado" : "salvo"}.</p>
             <ul className="list-disc pl-5 text-muted">
               {saved.map((f) => (
@@ -443,7 +443,7 @@ export function Generator() {
             </button>
           </div>
         ) : (
-          <div className="flex flex-col gap-2 rounded-lg border-2 border-line bg-surface p-3 text-sm">
+          <div className="flex flex-col gap-2 rounded-lg border-(length:--bw-box) border-line bg-surface p-3 text-sm">
             {errors.length > 0 ? (
               <>
                 <p className="font-semibold">Falta resolver ({errors.length}):</p>
@@ -517,11 +517,11 @@ function PolitySearch({ onPick }: { onPick: (p: Polity) => void }) {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Entidade do Cliopatria (inglês: mongol, ottoman)"
-        className="w-full rounded-lg border-2 border-line bg-surface px-3 py-1.5 text-sm"
+        className="w-full rounded-lg border-(length:--bw-box) border-line bg-surface px-3 py-1.5 text-sm"
       />
       {error && <p className="mt-1 text-sm text-danger">{error}</p>}
       {list.length > 0 && (
-        <ul className="absolute z-20 mt-1 max-h-80 w-full overflow-auto rounded-lg border-2 border-line bg-background text-sm shadow-lg">
+        <ul className="absolute z-20 mt-1 max-h-80 w-full overflow-auto rounded-lg border-(length:--bw-box) border-line bg-background text-sm shadow-lg">
           {list.map((p) => (
             <li key={p.id}>
               <button type="button" onClick={() => pick(p.id)} className="flex w-full justify-between gap-3 px-3 py-1.5 text-left hover:bg-surface">
@@ -555,7 +555,7 @@ function DrawTools({ mode, onMode, canUndo, onUndo }: { mode: DrawMode | null; o
             key={o.label}
             type="button"
             onClick={() => onMode(o.value)}
-            className={`rounded-full border-2 px-3 py-0.5 ${mode === o.value ? "border-foreground bg-foreground text-background" : "border-line hover:bg-surface"}`}
+            className={`rounded-full border-(length:--bw-pill) px-3 py-0.5 ${mode === o.value ? "border-foreground bg-foreground text-background" : "border-line hover:bg-surface"}`}
           >
             {o.label}
           </button>
@@ -603,7 +603,7 @@ function BoxInput({ value, onChange }: { value?: Box; onChange: (b?: Box) => voi
             next[k] = Number(e.target.value);
             onChange(next);
           }}
-          className="w-16 rounded border-2 border-line bg-background px-1 py-0.5"
+          className="w-16 rounded border-(length:--bw-box) border-line bg-background px-1 py-0.5"
         />
       ))}
       {value && !isValidBox(value) && <span className="text-danger">oeste &lt; leste, sul &lt; norte</span>}
@@ -634,10 +634,10 @@ function CountrySearch({ names, onPick }: { names: Map<string, string>; onPick: 
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Território atual (ex.: Polinésia Francesa)"
-        className="w-full rounded-lg border-2 border-line bg-surface px-3 py-1.5 text-sm"
+        className="w-full rounded-lg border-(length:--bw-box) border-line bg-surface px-3 py-1.5 text-sm"
       />
       {list.length > 0 && (
-        <ul className="absolute z-20 mt-1 max-h-80 w-full overflow-auto rounded-lg border-2 border-line bg-background text-sm shadow-lg">
+        <ul className="absolute z-20 mt-1 max-h-80 w-full overflow-auto rounded-lg border-(length:--bw-box) border-line bg-background text-sm shadow-lg">
           {list.map(([code, name]) => (
             <li key={code}>
               <button
@@ -798,7 +798,7 @@ function EmpireForm({
   );
 }
 
-const inputClass = "w-full rounded-md border-2 border-line bg-surface px-2 py-1";
+const inputClass = "w-full rounded-md border-(length:--bw-box) border-line bg-surface px-2 py-1";
 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
@@ -861,7 +861,7 @@ function EndField({ label, value, onChange }: { label: string; value: EmpireDraf
 
 function Select<T extends string>({ value, options, onChange }: { value: T; options: readonly T[]; onChange: (v: T) => void }) {
   return (
-    <select value={value} onChange={(e) => onChange(e.target.value as T)} className="rounded-md border-2 border-line bg-surface px-1 py-1">
+    <select value={value} onChange={(e) => onChange(e.target.value as T)} className="rounded-md border-(length:--bw-box) border-line bg-surface px-1 py-1">
       {options.map((o) => (
         <option key={o} value={o}>
           {o}

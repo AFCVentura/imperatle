@@ -16,6 +16,25 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    version: "1.10.0",
+    date: "2026-11-18",
+    empires: [],
+    features: [
+      {
+        en: "Light or dark look: choose System, Light or Dark in the menu, above Language.",
+        pt: "Tema claro ou escuro: escolha Sistema, Claro ou Escuro no menu, acima de Idioma.",
+        es: "Tema claro u oscuro: elige Sistema, Claro u Oscuro en el menú, encima de Idioma.",
+      },
+    ],
+    fixes: [
+      {
+        en: "Easier to read on a phone in daylight: slightly heavier text, darker outlines and secondary text.",
+        pt: "Mais fácil de ler no celular sob luz forte: texto um pouco mais grosso, contornos e textos secundários mais escuros.",
+        es: "Más fácil de leer en el móvil a plena luz: texto un poco más grueso, contornos y textos secundarios más oscuros.",
+      },
+    ],
+  },
+  {
     version: "1.9.0",
     date: "2026-11-16",
     empires: [],

@@ -20,7 +20,7 @@ export function ChangelogDialog() {
   return (
     <AppDialog event={CHANGELOG_EVENT} title={t("title")} selectable>
       {RELEASES.map((release) => (
-        <section key={release.version} className="flex flex-col gap-2 border-t-2 border-line pt-3 first:border-t-0 first:pt-0">
+        <section key={release.version} className="flex flex-col gap-2 border-t-(length:--bw-div) border-line pt-3 first:border-t-0 first:pt-0">
           <h3 className="flex flex-wrap items-baseline gap-x-2">
             <span className="font-display text-lg">{t("version", { version: release.version })}</span>
             <span className="text-xs text-muted">{formatDate(release.date)}</span>

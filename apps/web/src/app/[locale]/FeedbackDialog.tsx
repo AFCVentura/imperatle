@@ -65,7 +65,7 @@ export function FeedbackDialog() {
                 type="button"
                 aria-pressed={category === c}
                 onClick={() => setCategory(c)}
-                className={`rounded-full border-2 px-3 py-1 text-xs transition-colors ${
+                className={`rounded-full border-(length:--bw-pill) px-3 py-1 text-xs transition-colors ${
                   category === c
                     ? "border-accent bg-accent text-accent-foreground"
                     : "border-line text-foreground hover:bg-surface"
@@ -86,7 +86,7 @@ export function FeedbackDialog() {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder={t(`placeholders.${category}`)}
-              className="resize-y rounded-xl border-2 border-line bg-surface px-3 py-2 outline-none placeholder:text-muted/70 focus:border-highlight"
+              className="resize-y rounded-xl border-(length:--bw-box) border-line bg-surface px-3 py-2 outline-none placeholder:text-muted/70 focus:border-highlight"
             />
             <span className="self-end text-[0.6875rem] tabular-nums text-muted">
               {message.length}/{MAX_LENGTH}
@@ -101,7 +101,7 @@ export function FeedbackDialog() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder={t("emailPlaceholder")}
-              className="rounded-full border-2 border-line bg-surface px-3 py-1.5 outline-none placeholder:text-muted/70 focus:border-highlight"
+              className="rounded-full border-(length:--bw-pill) border-line bg-surface px-3 py-1.5 outline-none placeholder:text-muted/70 focus:border-highlight"
             />
           </label>
 

@@ -15,7 +15,7 @@ function useCollapsed() {
 }
 
 const CHIP =
-  "group absolute z-10 flex cursor-pointer select-none items-center rounded-full border-2 border-line bg-background/90 px-1.5 py-0.5 text-[0.6875rem] font-medium text-muted shadow-sm outline-none hover:text-foreground focus-visible:ring-2 focus-visible:ring-highlight/50";
+  "group absolute z-10 flex cursor-pointer select-none items-center rounded-full border-(length:--bw-pill) border-line bg-background/90 px-1.5 py-0.5 text-[0.6875rem] font-medium text-muted shadow-sm outline-none hover:text-foreground focus-visible:ring-2 focus-visible:ring-highlight/50";
 
 // `before`: the label sits before the icon (the gap goes on its right).
 function ChipLabel({ collapsed, before = false, children }: { collapsed: boolean; before?: boolean; children: ReactNode }) {

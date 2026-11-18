@@ -26,7 +26,7 @@ export function TowerChart({ towers, caption }: { towers: Tower[]; caption: stri
 
   return (
     <figure className="flex flex-col gap-1">
-      <div className="flex items-end gap-1.5 border-b-2 border-line" aria-hidden>
+      <div className="flex items-end gap-1.5 border-b-(length:--bw-div) border-line" aria-hidden>
         {towers.map((tower) => (
           <TowerColumn key={tower.key} tower={tower} heightPx={(tower.value / max) * MAX_TOWER_PX} />
         ))}

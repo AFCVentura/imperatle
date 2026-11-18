@@ -15,8 +15,8 @@
   --foreground: #432818;
   --surface: #f8e4b4;
   /* Secondary text and outlines a step darker than the palette's rust, so
-     they still read on a phone in daylight (~6:1 and ~1.6:1). */
-  --line: rgb(153 88 42 / 0.35);
+     the thin outlines and text still read on a phone in daylight. */
+  --line: rgb(153 88 42 / 0.55);
   --muted: #8a4d23;
   --header: #6f1d1b;
   --header-foreground: #ffe6a7;
@@ -30,6 +30,17 @@
   --map-ocean: #efe0b9;
   /* Behind the bare outline (first stage): the sea's beige, not white. */
   --map-blank: var(--map-ocean);
+  /* Outline widths: cards and boxes, pills (buttons, chips, the input) and
+     the dividers inside a card. The border classes read these. */
+  --bw-box: 1px;
+  --bw-pill: 1px;
+  --bw-div: 1px;
+  /* Text weights: the body and Tailwind's normal/medium/semibold, one step
+     heavier than the font's defaults so thin Spectral holds up on a phone. */
+  --fw-body: 500;
+  --fw-normal: 500;
+  --fw-medium: 600;
+  --fw-semibold: 700;
   --map-border: #c9a774;
   --map-empire: #9a2f28;
   --map-empire-line: #6f1d1b;
@@ -53,7 +64,7 @@
   --foreground: #ffe6a7;
   --surface: #432818;
   /* Secondary text a step lighter (~7.5:1), still well below the main text. */
-  --line: rgb(255 230 167 / 0.18);
+  --line: rgb(255 230 167 / 0.26);
   --muted: #c9a263;
   --header: #4a1312;
   --header-foreground: #ffe6a7;
@@ -95,11 +106,11 @@
   --color-chart-highlight: var(--chart-highlight);
   --font-sans: var(--theme-font-body);
   --font-display: var(--theme-font-display);
-  /* Every Tailwind weight bold, like the body. Only the logo stays light
-     (font-logo). */
-  --font-weight-normal: 700;
-  --font-weight-medium: 700;
-  --font-weight-semibold: 700;
+  /* A step heavier than Tailwind's defaults (see --fw-*). The logo stays
+     light (font-logo). */
+  --font-weight-normal: var(--fw-normal);
+  --font-weight-medium: var(--fw-medium);
+  --font-weight-semibold: var(--fw-semibold);
 
   /* A map detail level that was just unlocked flashes twice under the map. */
   --animate-unlock: unlock 0.9s ease-in-out 2;
@@ -143,9 +154,9 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--theme-font-body), Georgia, serif;
-  /* Bold everywhere (see the font weights in @theme): thin Spectral looked
-     fine on a desktop and vanished on a phone outdoors. */
-  font-weight: 700;
+  /* Medium, not regular (see --fw-*): regular Spectral looked fine on a
+     desktop and faded on a phone outdoors. */
+  font-weight: var(--fw-body);
   transition:
     background-color 0.2s,
     color 0.2s;

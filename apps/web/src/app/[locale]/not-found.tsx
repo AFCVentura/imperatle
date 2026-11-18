@@ -8,7 +8,7 @@ export default function NotFound() {
 
   return (
     <div className="flex flex-1 flex-col items-center justify-center px-4 py-10">
-      <div className="flex w-full max-w-md flex-col items-center gap-3 rounded-2xl border-2 border-line bg-surface px-5 py-8 text-center">
+      <div className="flex w-full max-w-md flex-col items-center gap-3 rounded-2xl border-(length:--bw-box) border-line bg-surface px-5 py-8 text-center">
         <p className="font-display text-5xl text-highlight" aria-hidden>
           404
         </p>

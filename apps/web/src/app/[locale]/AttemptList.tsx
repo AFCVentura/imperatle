@@ -74,7 +74,7 @@ export function AttemptList({ guesses, attemptsAllowed, revealed, gameOver, hint
               onOutline={onOutline ? () => onOutline(index) : undefined}
               clue={
                 clues.length > 0 ? (
-                  <div className="divide-y-2 divide-line">
+                  <div className="divide-y-(length:--bw-div) divide-line">
                     {clues.map((clue) => (
                       <ClueRow key={clueName(clue)} clue={clue} revealed={revealed} />
                     ))}
@@ -91,7 +91,7 @@ export function AttemptList({ guesses, attemptsAllowed, revealed, gameOver, hint
           {emptySlots.map(({ number, clues }) => (
             <div
               key={number}
-              className="flex h-7 items-center overflow-hidden rounded-full border-2 border-dashed border-line text-xs"
+              className="flex h-7 items-center overflow-hidden rounded-full border-(length:--bw-pill) border-dashed border-line text-xs"
             >
               <span className="flex w-7 shrink-0 items-center justify-center text-muted/60">{number}</span>
               <span className="min-w-0 flex-1 px-1">
@@ -117,7 +117,7 @@ function CorrectGuess({ guess, number }: { guess: GuessHistoryEntry; number: num
   const t = useTranslations("Game");
   const locale = useLocale();
   return (
-    <div className="flex h-8 items-stretch rounded-full border-2 border-success/50 bg-success/15 text-xs">
+    <div className="flex h-8 items-stretch rounded-full border-(length:--bw-pill) border-success/50 bg-success/15 text-xs">
       <span className="flex w-7 shrink-0 items-center justify-center text-muted/70">{number}</span>
       <span className="min-w-0 flex-1 self-center px-1">
         <MarqueeText className="font-medium text-muted">{pickLocalized(guess.nameEn, guess.namePt, locale, guess.nameEs)}</MarqueeText>
@@ -162,7 +162,7 @@ function WrongGuess({
     : {};
 
   return (
-    <div className={`rounded-2xl border-2 bg-surface text-xs transition-colors ${outlined ? "border-highlight" : "border-line"}`}>
+    <div className={`rounded-2xl border-(length:--bw-box) bg-surface text-xs transition-colors ${outlined ? "border-highlight" : "border-line"}`}>
       <div
         {...outlineProps}
         className={`flex h-8 items-stretch rounded-t-2xl outline-none focus-visible:bg-background/60 ${
@@ -181,14 +181,14 @@ function WrongGuess({
         </span>
         {tooltip}
       </div>
-      <div className="flex h-7 items-stretch border-t-2 border-line">
+      <div className="flex h-7 items-stretch border-t-(length:--bw-div) border-line">
         <ComparisonBadge kind="area" result={guess.areaComparison ?? null} />
         <span className="w-px shrink-0 bg-line" />
         <ComparisonBadge kind="era" result={guess.eraComparison ?? null} />
         <span className="w-px shrink-0 bg-line" />
         <ProximityBadge proximity={guess.proximity ?? null} view={mapView} />
       </div>
-      {clue && <div className="border-t-2 border-line">{clue}</div>}
+      {clue && <div className="border-t-(length:--bw-div) border-line">{clue}</div>}
     </div>
   );
 }

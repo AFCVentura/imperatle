@@ -12,7 +12,7 @@ export function ThemeSwitcher() {
   return (
     <div role="group" aria-label={t("theme")} className="flex flex-col gap-1.5">
       <span className="px-3 font-display text-xs tracking-wide text-muted">{t("theme")}</span>
-      <div className="flex gap-1 rounded-full border-2 border-line p-1">
+      <div className="flex gap-1 rounded-full border-(length:--bw-pill) border-line p-1">
         {THEME_PREFERENCES.map((option) => {
           const active = option === current;
           return (

@@ -10,7 +10,7 @@ export function PerkLocked({ perk }: { perk: "archive" | "practice" }) {
   const t = useTranslations("Perks");
 
   return (
-    <div className="flex w-full max-w-md flex-col items-center gap-3 rounded-2xl border-2 border-line bg-surface px-5 py-6 text-center">
+    <div className="flex w-full max-w-md flex-col items-center gap-3 rounded-2xl border-(length:--bw-box) border-line bg-surface px-5 py-6 text-center">
       <svg viewBox="0 0 24 24" className="size-8 text-highlight" fill="none" stroke="currentColor" strokeWidth={1.8} aria-hidden>
         <rect x="5" y="11" width="14" height="9" rx="2" />
         <path strokeLinecap="round" d="M8 11V8a4 4 0 0 1 8 0v3" />
@@ -38,7 +38,7 @@ export function PracticeNeedsDaily() {
   const t = useTranslations("Practice");
 
   return (
-    <div className="flex w-full max-w-md flex-col items-center gap-3 rounded-2xl border-2 border-line bg-surface px-5 py-6 text-center">
+    <div className="flex w-full max-w-md flex-col items-center gap-3 rounded-2xl border-(length:--bw-box) border-line bg-surface px-5 py-6 text-center">
       <svg viewBox="0 0 24 24" className="size-8 text-highlight" fill="none" stroke="currentColor" strokeWidth={1.8} aria-hidden>
         <circle cx="12" cy="12" r="8" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l2.5 2.5" />

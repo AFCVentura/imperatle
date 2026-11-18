@@ -13,7 +13,7 @@ export async function Footer({ challengeNumber }: FooterProps) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="flex shrink-0 flex-col items-center gap-2 border-t-2 border-line px-4 py-6 text-center text-sm text-muted">
+    <footer className="flex shrink-0 flex-col items-center gap-2 border-t-(length:--bw-div) border-line px-4 py-6 text-center text-sm text-muted">
       <SupportButton label={t("support")} supporterLabel={t("supporter")} />
       <p className="font-display">{t("copyright", { year })}</p>
       {challengeNumber !== null && <p className="font-display">{t("challengeNumber", { number: challengeNumber })}</p>}

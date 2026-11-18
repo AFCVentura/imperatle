@@ -157,7 +157,7 @@ export function EmpireMap({ empire, stage, locale, labels, className = "aspect-[
         `relative overflow-hidden ${stage === 1 ? "bg-map-blank" : "bg-map"} select-none [-webkit-touch-callout:none] ` +
         (isFull
           ? fullscreen === "covered" ? "fixed inset-0 z-50" : "h-full w-full"
-          : `${className} rounded-xl border-2 border-map-line`)
+          : `${className} rounded-xl border-(length:--bw-box) border-map-line`)
       }
     >
       {world && empire && size.width > 0 ? (
@@ -258,7 +258,7 @@ function MapButton({ onClick, title, portal, children }: { onClick: () => void; 
         onClick();
       }}
       aria-label={title}
-      className="flex size-9 items-center justify-center rounded-full border-2 border-map-line bg-background/90 text-foreground shadow-sm hover:bg-surface"
+      className="flex size-9 items-center justify-center rounded-full border-(length:--bw-pill) border-map-line bg-background/90 text-foreground shadow-sm hover:bg-surface"
     >
       <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
         {children}
