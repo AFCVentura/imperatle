@@ -21,7 +21,13 @@
       "practice": "Treino",
       "supportersBadge": "Apoiadores"
     },
-    "language": "Idioma"
+    "language": "Idioma",
+    "theme": "Tema",
+    "themeOptions": {
+      "system": "Sistema",
+      "light": "Claro",
+      "dark": "Escuro"
+    }
   },
   "Footer": {
     "copyright": "© {year} Imperatle",

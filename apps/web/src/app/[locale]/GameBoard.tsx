@@ -94,13 +94,13 @@ export function GameBoard({ challenge, empires }: GameBoardProps) {
         <button
           type="button"
           onClick={openStats}
-          className="rounded-full border border-line px-4 py-1.5 text-sm font-medium hover:bg-background"
+          className="rounded-full border-(length:--bw-pill) border-line px-4 py-1.5 text-sm font-medium hover:bg-background"
         >
           {t("viewStats")}
         </button>
         {/* Practice opens once today's game is over (the API decides). */}
         {me?.user?.isSupporter && (
-          <Link href="/practice" className="rounded-full border border-line px-4 py-1.5 text-sm font-medium hover:bg-background">
+          <Link href="/practice" className="rounded-full border-(length:--bw-pill) border-line px-4 py-1.5 text-sm font-medium hover:bg-background">
             {t("goToPractice")}
           </Link>
         )}
@@ -386,7 +386,7 @@ export function PlayBoard({
           )}
         </>
       ) : (
-        <div className="flex h-40 items-center justify-center rounded-xl border-2 border-dashed border-line text-sm text-muted">
+        <div className="flex h-40 items-center justify-center rounded-xl border-(length:--bw-box) border-dashed border-line text-sm text-muted">
           {t("mapComingSoon")}
         </div>
       )}
@@ -395,7 +395,7 @@ export function PlayBoard({
         // Phone: pinned to the bottom of the screen (and moved after the
         // hints) so a guess never needs scrolling back up. From md up it sits
         // under the map as before.
-        <div className="sticky bottom-0 z-10 order-last -mx-4 flex gap-2 border-t border-line bg-background px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:static md:order-none md:mx-0 md:border-0 md:p-0">
+        <div className="sticky bottom-0 z-10 order-last -mx-4 flex gap-2 border-t-(length:--bw-div) border-line bg-background px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:static md:order-none md:mx-0 md:border-0 md:p-0">
           <EmpireAutocomplete
             clearKey={guesses.length}
             empires={empires}
@@ -418,7 +418,7 @@ export function PlayBoard({
       {error && <p className="text-sm text-danger">{t("submitError")}</p>}
 
       {gameOver && answer && (
-        <div className="rounded-2xl border border-line bg-surface px-4 py-3">
+        <div className="rounded-2xl border-(length:--bw-box) border-line bg-surface px-4 py-3">
           <h2 className="font-display text-xl">{lastGuess?.correct ? t("correctTitle") : t("gameOverTitle")}</h2>
           <p className="mt-1 text-sm">
             {t("answerWasLabel")}: <strong>{pickLocalized(answer.nameEn, answer.namePt, locale, answer.nameEs)}</strong>
@@ -428,7 +428,7 @@ export function PlayBoard({
             {session.endActions?.(guesses)}
             <Link
               href={`/empires/${answer.slug}`}
-              className="inline-flex items-center rounded-full border border-line px-4 py-1.5 text-sm font-medium hover:bg-background"
+              className="inline-flex items-center rounded-full border-(length:--bw-pill) border-line px-4 py-1.5 text-sm font-medium hover:bg-background"
             >
               {t("empirePage")}
             </Link>
@@ -437,7 +437,7 @@ export function PlayBoard({
                 href={wikipediaUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full border border-line px-4 py-1.5 text-sm font-medium hover:bg-background"
+                className="inline-flex items-center gap-1.5 rounded-full border-(length:--bw-pill) border-line px-4 py-1.5 text-sm font-medium hover:bg-background"
               >
                 {t("readOnWikipedia")}
                 <svg viewBox="0 0 24 24" className="size-3.5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>

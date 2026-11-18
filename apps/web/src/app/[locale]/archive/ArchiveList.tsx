@@ -60,7 +60,7 @@ export function ArchiveList() {
                   aria-pressed={filter === f}
                   onClick={() => setFilter(f)}
                   className={
-                    "rounded-full border px-2.5 py-0.5 transition-colors " +
+                    "rounded-full border-(length:--bw-pill) px-2.5 py-0.5 transition-colors " +
                     (filter === f ? "border-accent bg-accent text-accent-foreground" : "border-line hover:bg-surface")
                   }
                 >
@@ -76,7 +76,7 @@ export function ArchiveList() {
               <h2 className="mb-1.5 font-display text-base tracking-wide text-muted">
                 {capitalize(monthFormat.format(new Date(`${month.key}-01T00:00:00Z`)))}
               </h2>
-              <ul className="divide-y divide-line overflow-hidden rounded-2xl border border-line bg-surface">
+              <ul className="divide-y-(length:--bw-div) divide-line overflow-hidden rounded-2xl border-(length:--bw-box) border-line bg-surface">
                 {month.days.map((day) => (
                   <li key={day.date}>
                     <ArchiveRow day={day} attemptsAllowed={attemptsAllowed} />

@@ -15,7 +15,7 @@ export function SupportButton({ label, supporterLabel }: { label: string; suppor
     <button
       type="button"
       onClick={openSupport}
-      className="rounded-full border border-line px-4 py-1.5 font-medium text-foreground hover:bg-surface"
+      className="rounded-full border-(length:--bw-pill) border-line px-4 py-1.5 font-medium text-foreground hover:bg-surface"
     >
       {label}
     </button>

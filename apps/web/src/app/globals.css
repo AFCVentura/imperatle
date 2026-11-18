@@ -10,11 +10,14 @@
    accent...), never raw palette colors. */
 
 :root {
+  color-scheme: light;
   --background: #fcf3dd;
   --foreground: #432818;
   --surface: #f8e4b4;
-  --line: rgb(153 88 42 / 0.3);
-  --muted: #99582a;
+  /* Secondary text and outlines a step darker than the palette's rust, so
+     the thin outlines and text still read on a phone in daylight. */
+  --line: rgb(153 88 42 / 0.55);
+  --muted: #8a4d23;
   --header: #6f1d1b;
   --header-foreground: #ffe6a7;
   --accent: #6f1d1b;
@@ -25,6 +28,19 @@
   --map: #fffaf0;
   --map-line: #bb9457;
   --map-ocean: #efe0b9;
+  /* Behind the bare outline (first stage): the sea's beige, not white. */
+  --map-blank: var(--map-ocean);
+  /* Outline widths: cards and boxes, pills (buttons, chips, the input) and
+     the dividers inside a card. The border classes read these. */
+  --bw-box: 1px;
+  --bw-pill: 1px;
+  --bw-div: 1px;
+  /* Text weights: the body and Tailwind's normal/medium/semibold, one step
+     heavier than the font's defaults so thin Spectral holds up on a phone. */
+  --fw-body: 500;
+  --fw-normal: 500;
+  --fw-medium: 600;
+  --fw-semibold: 700;
   --map-border: #c9a774;
   --map-empire: #9a2f28;
   --map-empire-line: #6f1d1b;
@@ -40,31 +56,34 @@
   --theme-font-body: var(--font-spectral);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #22140c;
-    --foreground: #ffe6a7;
-    --surface: #432818;
-    --line: rgb(255 230 167 / 0.14);
-    --muted: #bb9457;
-    --header: #4a1312;
-    --header-foreground: #ffe6a7;
-    --accent: #bb9457;
-    --accent-foreground: #22140c;
-    --highlight: #e0b46c;
-    --success: #d4b26a;
-    --danger: #e0705e;
-    --map: #ffe6a7;
-    --map-line: #99582a;
-    --map-ocean: #e3c88e;
-    --map-border: #b08a55;
-    --map-empire: #9a2f28;
-    --map-empire-line: #6f1d1b;
-    /* #9a4f1c is just under 3:1 on this surface; every tower carries a
-       visible value label, which covers it. */
-    --chart-bar: #9a4f1c;
-    --chart-highlight: #b98d24;
-  }
+/* Dark theme: set on <html data-theme> by the boot script in the layout,
+   from the player's choice in the menu or the device setting (the default). */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #22140c;
+  --foreground: #ffe6a7;
+  --surface: #432818;
+  /* Secondary text a step lighter (~7.5:1), still well below the main text. */
+  --line: rgb(255 230 167 / 0.26);
+  --muted: #c9a263;
+  --header: #4a1312;
+  --header-foreground: #ffe6a7;
+  --accent: #bb9457;
+  --accent-foreground: #22140c;
+  --highlight: #e0b46c;
+  --success: #d4b26a;
+  --danger: #e0705e;
+  --map: #ffe6a7;
+  --map-line: #99582a;
+  --map-ocean: #e3c88e;
+  --map-blank: var(--map);
+  --map-border: #b08a55;
+  --map-empire: #9a2f28;
+  --map-empire-line: #6f1d1b;
+  /* #9a4f1c is just under 3:1 on this surface; every tower carries a
+     visible value label, which covers it. */
+  --chart-bar: #9a4f1c;
+  --chart-highlight: #b98d24;
 }
 
 @theme inline {
@@ -82,10 +101,16 @@
   --color-danger: var(--danger);
   --color-map: var(--map);
   --color-map-line: var(--map-line);
+  --color-map-blank: var(--map-blank);
   --color-chart-bar: var(--chart-bar);
   --color-chart-highlight: var(--chart-highlight);
   --font-sans: var(--theme-font-body);
   --font-display: var(--theme-font-display);
+  /* A step heavier than Tailwind's defaults (see --fw-*). The logo stays
+     light (font-logo). */
+  --font-weight-normal: var(--fw-normal);
+  --font-weight-medium: var(--fw-medium);
+  --font-weight-semibold: var(--fw-semibold);
 
   /* A map detail level that was just unlocked flashes twice under the map. */
   --animate-unlock: unlock 0.9s ease-in-out 2;
@@ -129,6 +154,9 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--theme-font-body), Georgia, serif;
+  /* Medium, not regular (see --fw-*): regular Spectral looked fine on a
+     desktop and faded on a phone outdoors. */
+  font-weight: var(--fw-body);
   transition:
     background-color 0.2s,
     color 0.2s;
@@ -142,11 +170,9 @@ body {
   --range-track-line: rgb(153 88 42 / 0.45);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --range-track: rgb(255 230 167 / 0.16);
-    --range-track-line: rgb(255 230 167 / 0.28);
-  }
+:root[data-theme="dark"] {
+  --range-track: rgb(255 230 167 / 0.16);
+  --range-track-line: rgb(255 230 167 / 0.28);
 }
 
 input[type="range"].range {
@@ -199,4 +225,9 @@ input[type="range"].range:focus-visible {
   outline: 2px solid var(--highlight);
   outline-offset: 2px;
   border-radius: 9999px;
+}
+
+/* The Imperatle wordmark keeps the light Cinzel weight of the logo images. */
+.font-logo {
+  font-weight: 400;
 }

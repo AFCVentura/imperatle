@@ -27,7 +27,7 @@ export function DevMaps({ empires }: { empires: { id: string; label: string; sha
       <h1 className="text-xl font-semibold">Revisão dos mapas</h1>
 
       <div className="flex flex-wrap gap-2 text-sm">
-        <select value={empireId} onChange={(e) => setEmpireId(e.target.value)} className="rounded-md border border-line bg-surface px-2 py-1">
+        <select value={empireId} onChange={(e) => setEmpireId(e.target.value)} className="rounded-md border-(length:--bw-box) border-line bg-surface px-2 py-1">
           {empires.map((e) => (
             <option key={e.id} value={e.id}>{e.label}</option>
           ))}
@@ -64,7 +64,7 @@ export function DevMaps({ empires }: { empires: { id: string; label: string; sha
 
 function Toggle<T extends string | number>({ options, value, onChange }: { options: { value: T; label: string }[]; value: T; onChange: (v: T) => void }) {
   return (
-    <div className="flex overflow-hidden rounded-md border border-line text-sm">
+    <div className="flex overflow-hidden rounded-md border-(length:--bw-box) border-line text-sm">
       {options.map((o) => (
         <button
           key={o.value}

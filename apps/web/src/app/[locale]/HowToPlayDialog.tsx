@@ -15,7 +15,7 @@ export function HowToPlayDialog({ attemptsAllowed }: { attemptsAllowed: number |
 
       <div className="flex flex-col gap-1.5">
         <p>{t("compare")}</p>
-        <ul className="flex flex-col gap-1 rounded-xl border border-line bg-surface px-3 py-2 text-xs">
+        <ul className="flex flex-col gap-1 rounded-xl border-(length:--bw-box) border-line bg-surface px-3 py-2 text-xs">
           <li>
             <span className="inline-block w-5 font-semibold text-danger">✕</span>
             {t("wrong")}

@@ -65,7 +65,7 @@ export function AccountDialog() {
       selectable
     >
       {error && (
-        <p role="alert" className="rounded-xl border border-highlight/60 px-3 py-2 text-highlight">
+        <p role="alert" className="rounded-xl border-(length:--bw-box) border-highlight/60 px-3 py-2 text-highlight">
           {error === "login" ? t("loginError") : t("error")}
         </p>
       )}
@@ -77,7 +77,7 @@ export function AccountDialog() {
           <p>{t("intro")}</p>
           <div className="flex flex-col gap-1.5">
             <p className="font-display text-base text-muted">{t("perksTitle")}</p>
-            <ul className="flex flex-col gap-1.5 rounded-xl border border-line bg-surface px-3 py-2.5">
+            <ul className="flex flex-col gap-1.5 rounded-xl border-(length:--bw-box) border-line bg-surface px-3 py-2.5">
               {PERKS.map((perk) => (
                 <li key={perk} className="flex gap-2">
                   <span aria-hidden className="text-highlight">
@@ -93,7 +93,7 @@ export function AccountDialog() {
           <button
             type="button"
             onClick={() => window.location.assign(googleLoginUrl(currentPageUrl()))}
-            className="flex items-center justify-center gap-2.5 self-center rounded-full border border-line bg-white px-5 py-2 text-sm font-semibold text-neutral-800 shadow-sm transition-colors hover:bg-neutral-100"
+            className="flex items-center justify-center gap-2.5 self-center rounded-full border-(length:--bw-pill) border-line bg-white px-5 py-2 text-sm font-semibold text-neutral-800 shadow-sm transition-colors hover:bg-neutral-100"
           >
             <GoogleLogo />
             {t("google")}
@@ -104,12 +104,12 @@ export function AccountDialog() {
 
       {user && !confirming && (
         <>
-          <div className="flex flex-col gap-0.5 rounded-xl border border-line bg-surface px-3 py-2.5">
+          <div className="flex flex-col gap-0.5 rounded-xl border-(length:--bw-box) border-line bg-surface px-3 py-2.5">
             <span className="text-xs text-muted">{t("signedInAs")}</span>
             <span className="flex items-center gap-2 font-semibold">
               {user.displayName}
               {user.isSupporter && (
-                <span className="rounded-full border border-highlight/60 px-2 py-0.5 font-display text-xs tracking-wide text-highlight">
+                <span className="rounded-full border-(length:--bw-pill) border-highlight/60 px-2 py-0.5 font-display text-xs tracking-wide text-highlight">
                   {t("supporter")}
                 </span>
               )}
@@ -130,7 +130,7 @@ export function AccountDialog() {
                 type="button"
                 onClick={() => run(() => logout({ allDevices: true }))}
                 disabled={busy}
-                className={`${buttonClass} border border-line hover:bg-surface`}
+                className={`${buttonClass} border-(length:--bw-box) border-line hover:bg-surface`}
               >
                 {t("signOutAll")}
               </button>
@@ -157,7 +157,7 @@ export function AccountDialog() {
               type="button"
               onClick={() => setConfirming(false)}
               disabled={busy}
-              className={`${buttonClass} border border-line hover:bg-surface`}
+              className={`${buttonClass} border-(length:--bw-box) border-line hover:bg-surface`}
             >
               {t("cancel")}
             </button>

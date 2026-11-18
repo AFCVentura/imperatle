@@ -97,7 +97,7 @@ export function AdaptiveHintsNote({
           id={panelId}
           role="dialog"
           aria-label={t("adaptive.title")}
-          className="absolute -left-16 top-full z-30 mt-1.5 flex w-72 max-w-[calc(100vw-3rem)] flex-col gap-2 rounded-xl border border-line bg-background px-3.5 py-3 text-xs leading-relaxed shadow-lg"
+          className="absolute -left-16 top-full z-30 mt-1.5 flex w-72 max-w-[calc(100vw-3rem)] flex-col gap-2 rounded-xl border-(length:--bw-box) border-line bg-background px-3.5 py-3 text-xs leading-relaxed shadow-lg"
         >
           <p className="font-display text-sm font-semibold">{t("adaptive.title")}</p>
           <p>{t("adaptive.body")}</p>

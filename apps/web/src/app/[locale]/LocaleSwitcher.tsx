@@ -25,7 +25,7 @@ export function LocaleSwitcher({ onSwitch }: { onSwitch?: () => void }) {
   return (
     <div role="group" aria-label={t("language")} className="flex flex-col gap-1.5">
       <span className="px-3 font-display text-xs tracking-wide text-muted">{t("language")}</span>
-      <div className="flex gap-1 rounded-full border border-line p-1">
+      <div className="flex gap-1 rounded-full border-(length:--bw-pill) border-line p-1">
         {routing.locales.map((l) => {
           const active = l === locale;
           return (

@@ -4,6 +4,7 @@ import type { MultiPolygon } from "geojson";
 import { geoCentroid, geoContains, geoGraticule10, geoOrthographic, geoPath } from "d3-geo";
 import { interpolate } from "d3-interpolate";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useTheme } from "@/lib/theme";
 import { GUESS_FILL_ALPHA, loadWorld, readMapColors, visiblePieces, worldPieces, type CountryFeature, type MapStage, type World } from "./geo";
 
 type Props = {
@@ -31,6 +32,8 @@ const graticule = geoGraticule10();
 export function GlobeMap({ world, empire, frame, guess = null, stage, width, height, focusSignal, zoomSignal, selected, onCountry }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const viewRef = useRef<View>({ rotate: [0, 0], scale: 1 });
+  // The canvas reads the map colors once per paint, so it repaints on a theme switch.
+  const theme = useTheme();
   const drawRef = useRef<() => void>(() => {});
   const stageRef = useRef(stage);
   const frameRef = useRef(0);
@@ -139,7 +142,7 @@ export function GlobeMap({ world, empire, frame, guess = null, stage, width, hei
       }
     };
     drawRef.current();
-  }, [world, light, empire, guess, width, height, stage, selected]);
+  }, [world, light, empire, guess, width, height, stage, selected, theme]);
 
   // A new empire starts framed on it; a resize (fullscreen, rotating the
   // phone) keeps the view, with the zoom scaled to the new globe size.

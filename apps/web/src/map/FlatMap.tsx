@@ -6,6 +6,7 @@ import { select } from "d3-selection";
 import "d3-transition";
 import { zoom, zoomIdentity, type ZoomBehavior, type ZoomTransform } from "d3-zoom";
 import { useEffect, useMemo, useRef } from "react";
+import { useTheme } from "@/lib/theme";
 import { GUESS_FILL_ALPHA, readMapColors, type CountryFeature, type MapStage, type World } from "./geo";
 
 // A ring of [longitude, latitude] points drawn by hand in the empire
@@ -93,6 +94,8 @@ export function FlatMap({ world, empire, frame, draw = null, overlays, guess = n
   const transformRef = useRef<ZoomTransform>(zoomIdentity);
   const viewRef = useRef<View | null>(null);
   const stageRef = useRef(stage);
+  // The canvas reads the map colors once per paint, so it repaints on a theme switch.
+  const theme = useTheme();
   const drawRef = useRef<() => void>(() => {});
   const frameRef = useRef(0);
   const drawModeRef = useRef(draw);
@@ -222,7 +225,7 @@ export function FlatMap({ world, empire, frame, draw = null, overlays, guess = n
       }
     };
     schedule();
-  }, [geo, empireShape, guessShape, overlayShapes, stage, selectedShape, width, height]);
+  }, [geo, empireShape, guessShape, overlayShapes, stage, selectedShape, width, height, theme]);
 
   // Zoom behaviour, rebuilt with the geometry (new size or empire). After a
   // resize it puts back what the player was looking at.

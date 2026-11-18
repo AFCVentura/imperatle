@@ -10,6 +10,7 @@ import type { EmpireSummary } from "@/lib/types";
 import { openAbout, openAccount, openFeedback, openHowToPlay, openStats, openSupport } from "@/lib/dialogs";
 import { useMe } from "@/lib/me";
 import { LocaleSwitcher } from "./LocaleSwitcher";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 // Dev only: pins today's answer to any empire (fresh round, no guesses), to
 // try the comparisons with unusual answers (spread-out or tiny empires).
@@ -96,7 +97,7 @@ export function Header() {
     });
 
   const debugButtonClass =
-    "rounded-md border border-header-foreground/40 px-2 py-0.5 text-xs font-semibold text-header-foreground hover:bg-header-foreground/10 disabled:opacity-50";
+    "rounded-md border-(length:--bw-box) border-header-foreground/40 px-2 py-0.5 text-xs font-semibold text-header-foreground hover:bg-header-foreground/10 disabled:opacity-50";
 
   useEffect(() => {
     if (!open) return;
@@ -139,7 +140,7 @@ export function Header() {
           </NextLink>
         )}
         {/* Back to the game from Privacy or Terms. */}
-        <Link href="/" className="font-display text-2xl tracking-wider">
+        <Link href="/" className="font-display font-logo text-2xl tracking-wider">
           Imperatle
         </Link>
         {process.env.NODE_ENV !== "production" && (
@@ -196,7 +197,7 @@ export function Header() {
           <div className="absolute inset-0 bg-black/40" onClick={() => setOpen(false)} />
           <nav className="absolute right-0 top-0 flex h-full w-72 max-w-[85vw] flex-col gap-1 bg-background p-4 text-foreground shadow-xl">
             <div className="mb-2 flex items-center justify-between">
-              <Link href="/" onClick={() => setOpen(false)} className="font-display text-xl tracking-wider">
+              <Link href="/" onClick={() => setOpen(false)} className="font-display font-logo text-xl tracking-wider">
                 Imperatle
               </Link>
               <button
@@ -219,7 +220,7 @@ export function Header() {
               >
                 {t(`menu.${key}`)}
                 {lockPerks && (
-                  <span className="flex items-center gap-1 rounded-full border border-highlight/60 px-2 py-px font-display text-[0.625rem] tracking-wide text-highlight">
+                  <span className="flex items-center gap-1 rounded-full border-(length:--bw-pill) border-highlight/60 px-2 py-px font-display text-[0.625rem] tracking-wide text-highlight">
                     <svg viewBox="0 0 24 24" className="size-3" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden>
                       <rect x="5" y="11" width="14" height="9" rx="2" />
                       <path strokeLinecap="round" d="M8 11V8a4 4 0 0 1 8 0v3" />
@@ -229,7 +230,7 @@ export function Header() {
                 )}
               </Link>
             ))}
-            <div className="my-1 border-t border-line" />
+            <div className="my-1 border-t-(length:--bw-div) border-line" />
             {menuItems.map(({ label, detail, open: openDialog }) => (
               <button
                 key={label}
@@ -244,7 +245,8 @@ export function Header() {
                 {detail && <span className="truncate text-xs text-muted">{detail}</span>}
               </button>
             ))}
-            <div className="mt-auto border-t border-line pt-4">
+            <div className="mt-auto flex flex-col gap-4 border-t-(length:--bw-div) border-line pt-4">
+              <ThemeSwitcher />
               <LocaleSwitcher onSwitch={() => setOpen(false)} />
             </div>
           </nav>
